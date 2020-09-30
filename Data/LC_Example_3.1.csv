@@ -1,0 +1,13 @@
+Time ( \( T \) ),1,2,3,4,5,6,7,8,9,10,11,12,
+Flat Payments,11,11,11,11,11,11,11,11,11,11,11,11,
+Increasing Payments,0,2,4,6,8,10,12,14,16,18,20,22,
+Flat Interest Rate,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,=0.055*B13,
+Increasing Interest Rate,=0*B13,=0.01*B13,=0.02*B13,=0.03*B13,=0.04*B13,=0.05*B13,=0.06*B13,=0.07*B13,=0.08*B13,=0.09*B13,=0.1*B13,=0.11*B13,
+Discounted Value - Flat,=1/(1+B4),=B6/(1+C4),=C6/(1+D4),=D6/(1+E4),=E6/(1+F4),=F6/(1+G4),=G6/(1+H4),=H6/(1+I4),=I6/(1+J4),=J6/(1+K4),=K6/(1+L4),=L6/(1+M4),
+Discounted Value - Increasing,=1/(1+B5),=B7/(1+C5),=C7/(1+D5),=D7/(1+E5),=E7/(1+F5),=F7/(1+G5),=G7/(1+H5),=H7/(1+I5),=I7/(1+J5),=J7/(1+K5),=K7/(1+L5),=L7/(1+M5),
+Discounted Payments,,,,,,,,,,,,,Sum
+"Flat Payments, Flat Interest",=B2*B6,=C2*C6,=D2*D6,=E2*E6,=F2*F6,=G2*G6,=H2*H6,=I2*I6,=J2*J6,=K2*K6,=L2*L6,=M2*M6,=SUM(B9:M9)
+"Flat Payments, Increasing Interest",=B2*B7,=C2*C7,=D2*D7,=E2*E7,=F2*F7,=G2*G7,=H2*H7,=I2*I7,=J2*J7,=K2*K7,=L2*L7,=M2*M7,=SUM(B10:M10)
+"Increasing Payments, Flat Interest",=B3*B6,=C3*C6,=D3*D6,=E3*E6,=F3*F6,=G3*G6,=H3*H6,=I3*I6,=J3*J6,=K3*K6,=L3*L6,=M3*M6,=SUM(B11:M11)
+"Increasing Payments, Increasing Interest",=B3*B7,=C3*C7,=D3*D7,=E3*E7,=F3*F7,=G3*G7,=H3*H7,=I3*I7,=J3*J7,=K3*K7,=L3*L7,=M3*M7,=SUM(B12:M12)
+Interest Rate Multiplier,1,,,,,,,,,,,,

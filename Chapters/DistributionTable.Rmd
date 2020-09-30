@@ -1,0 +1,46 @@
+
+# Appendix D: Summary of Distributions {#C:SummaryDistributions}
+
+**User Notes**
+
+* The `R` functions are from the packages `actuar` and `invgamma`.
+* Tables appear when first loaded by the browser. To hide them, click on one of the distributions, e.g., *Poisson*, and then click on the *Hide* button.
+* More information on the `R` codes is available at the [R Codes for Loss Data Analytics](https://ewfrees.github.io/LDARcode/index.html) site.
+
+
+
+## Discrete Distributions {#S:DiscreteDistributions}
+
+**Overview.** This section summarizes selected discrete probability distributions used throughout *Loss Data Analytics*. Relevant functions and `R` code are provided.
+
+
+```{r child = 'Chapters/DistributionTableSections/Discrete.Rmd', eval = !DIST_TABLES_LATEX}
+```
+
+
+```{r child = 'Chapters/DistributionTableSections/DiscreteLatex.Rmd', eval = DIST_TABLES_LATEX}
+```
+
+## Continuous Distributions {#S:ContinuousDistributions}
+
+
+**Overview.** This section summarizes selected continuous probability distributions used throughout *Loss Data Analytics*. Relevant functions, `R` code, and illustrative graphs are provided.
+
+```{r child = 'Chapters/DistributionTableSections/Continuous.Rmd', eval = !DIST_TABLES_LATEX}
+```
+```{r child = 'Chapters/DistributionTableSections/ContinuousLatex.Rmd', eval = DIST_TABLES_LATEX}
+```
+
+
+
+## Limited Expected Values
+
+**Overview.** This section summarizes limited expected values for selected continuous distributions. 
+
+```{r child = 'Chapters/DistributionTableSections/LimitedExpValue.Rmd', eval = !DIST_TABLES_LATEX}
+```
+
+
+```{r child = 'Chapters/DistributionTableSections/LimitedExpValueLatex.Rmd', eval = DIST_TABLES_LATEX}
+```
+

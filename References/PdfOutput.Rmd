@@ -1,0 +1,35 @@
+
+```{r echo = FALSE, eval = FALSE}
+# Make eval = TRUE for pdf output
+# Make eval = FALSE for html output
+QUIZ = FALSE
+ANIMATION = FALSE 
+SHOW_PDF = FALSE
+ANIMATIONHOOK = NULL
+GLOSSARY = TRUE
+DIST_TABLES_LATEX = TRUE
+# Switches that control the number of animations in Chapter 6
+# Use these for pdf output - maybe later
+#numAnimation = 1
+#numAnimation2 = 2
+#numAnimation3 = 2
+
+#Only return argument for glossary function
+Gloss <- function(term, section){
+  return(term)
+}
+
+HideExample <- function(arg1,arg2){
+  return("")
+}
+
+HideRCode <- function(arg1,arg2){
+  return("")
+}
+
+HideProofTheory <- function(arg1,arg2){
+  return("")
+}
+
+```
+

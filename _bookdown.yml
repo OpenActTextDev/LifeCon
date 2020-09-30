@@ -1,0 +1,20 @@
+book_filename: "LifeCon"
+output_dir: "docs"
+rmd_files: ["index.Rmd", 
+           "References/Packages.Rmd",
+           "References/Glossary.Rmd",
+           "References/PdfOutput.Rmd",
+           "Chapters/Preface.Rmd", 
+#           "Chapters/Introduction.Rmd", 
+           "Chapters/Chap2Survival.Rmd",      
+           "Chapters/Chap3LifeConBenefits.Rmd",
+           "Chapters/Chap3ExamplePresValues.Rmd", 
+#           "Chapters/IteratedExpectations.Rmd", 
+#           "Chapters/MaximumLikeTheory.Rmd", 
+#           "Chapters/DistributionTable.Rmd",
+           "Chapters/NotationConventionsLC.Rmd",
+           "Chapters/Bibliography.Rmd"]
+           
+language:
+  ui:
+    chapter_name: "Chapter "

@@ -1,0 +1,923 @@
+
+# Modeling Life Contingent Benefits {#C:Benefit}
+
+`r chapnum = 3`
+
+This chapter introduces the modeling of life contingent benefits, integrating the material from the previous chapter with basic concepts from financial mathematics. In contrast to benefits that are certain to be paid at specified periods, life contingent benefits have the additional complexity that the payments are uncertain and contingent upon either the survival or mortality of one or more lives. In this chapter we introduce the calculations of the present values of these contingent benefits, along with associated notation.
+
+In this chapter we assume that all benefits are paid at annual times. Extensions to benefits paid in continuous or more frequently than annual time are considered in Chapter X.
+
+## Valuation of cash flows under uncertainty {#Sec:BenefitCFUnc}
+
+Imagine a financial system with a cash flow of known value $_tC$ occuring in $t$ years from now. If we assume the spot rate of interest is $i_t$ per annum effective, then we know from introductory financial mathematics that the present value ($PV$) of this cash flow is:
+
+$$
+PV = ~_tC (1+i_t)^{-t}=~_tCv^t
+(\#eq:Benefit1)
+$$
+
+<span style="color: green;"> Could include an example/exercise with a constant interest rate and an example with a yield curve. Probably not necessary depending on our assumptions about background of readership (i.e. have they done Financial Mathematics already). </span>
+
+Let us now introduce uncertainty into this system. Uncertainty might be in terms of the values of $_tC$, $t$ or $i_t$. For the moment we will assume $i_t$ is known and that $t$ can take discrete values $k \in \{0,1,2,3, \ldots\}$. The probability mass function of $_kC$ is defined as $\Pr(_kC)$.
+
+This system is illustrated on a timeline in Figure \@ref(fig:Benefit1).
+
+`r HideRCode('Benefit1',"R Code For Figure")`
+
+```{r  Benefit1, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,9,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(6,6.2,6,5.8,code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(6,7,"3")
+text(7.5,7,"...")
+text(1,5,"Cash Flow")
+text(3,5,TeX("_0C"))
+text(4,5,TeX("_1C"))
+text(5,5,TeX("_2C"))
+text(6,5,TeX("_3C"))
+text(7.5,5,"...")
+text(1,4,"Probability")
+text(3,4,TeX("Pr(_0C)"))
+text(4,4,TeX("Pr(_1C)"))
+text(5,4,TeX("Pr(_2C)"))
+text(6,4,TeX("Pr(_3C)"))
+text(7.5,4,"...")
+
+
+```
+
+</div>
+
+```{r Benefit1, ref.label = 'Benefit1', fig.cap = 'Timeline of cash flows with uncertainty', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+***
+
+<span style="color: green;"> It would be good to get the font in the figures consistent with the text - we can sort this out later. </span>
+
+$PV$ is now a discrete random variable. We can calculate the expected present value $\mu_{PV}$ and standard deviation of present value $\sigma_{PV}$ using standard statistical methods as follows:
+
+$$
+\begin{array}{l}
+\mu_{PV} = \sum_{k=0}^{\infty} ~_kC~ v^k ~\Pr(_kC)\\
+\sigma_{PV} = \sqrt{\sum_{k=0}^{\infty} ~_tC^2 ~v^{2k} ~\Pr(_kC) - \mu_{PV}^2 }\\
+\end{array}
+(\#eq:Benefit2)
+$$
+
+<span style="color: green;"> Include a simple Excel example here. </span>
+
+## Life insurance benefits and actuarial notation {#Sec:BenefitActNot}
+
+<span style="color: red;">
+**I’m not sure how much of these sorts of notation and probability calculations will be in Chapter 2 and whether we’ll need more basic probability calculations before this.  It may make sense to have another chapter between Chapter 2 and this that focussed on the life table and the various probability calculations coming from the life table – DHW do some of this in their Chapter 3.**
+</span>
+
+In this section we introduce some basic types of life insurance policies and find the expected present value and standard deviation of the present value of the benefit cash flows of these policies using Equation \@ref(eq:Benefit2). We also present standard notation that actuaries have developed for these calculations. This notation assumes that in Equation \@ref(eq:Benefit2) all cash flows $_kC$ are $1$. Also, unless otherwise noted, we assume that benefits are paid at the end of the year. (This assumption will be relaxed in Chaper X).
+
+### 	Whole of Life Insurance {#Sec:BenefitWL}
+
+Under a **whole of life** policy the insurer pays a benefit upon the death of the policyholder, with payment made at time $K_{\bf{x}}+1$. This system is illustrated on a timeline in Figure \@ref(fig:Benefit2), with the $PV$ of the benefit cash flows shown below.
+
+
+`r HideRCode('Benefit2',"R Code For Figure")`
+
+```{r  Benefit2, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,9,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(6,6.2,6,5.8,code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(6,7,"3")
+text(7.5,7,"...")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(4,8,"x+1")
+text(5,8,"x+2")
+text(6,8,"x+3")
+text(7.5,8,"...")
+text(1,5,"Cash Flow")
+text(4,5,"1")
+text(5,5,"1")
+text(6,5,"1")
+text(7.5,5,"...")
+text(1,4,"Probability")
+text(4,4,TeX("q_x"))
+text(5,4,TeX("_{1|}q_x"))
+text(6,4,TeX("_{2|}q_x"))
+text(7.5,4,"...")
+
+
+```
+
+</div>
+
+```{r Benefit2, ref.label = 'Benefit2', fig.cap = 'Timeline of benefit cash flows from a whole of life insurance policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+***
+
+$$
+\begin{array}{l}
+PV = v^{K_{\bf{x}}+1} \\
+\mu_{PV} = \sum_{k=0}^{\infty} v^{k+1} ~_{k|}q_{\bf{x}} = A_{\bf{x}}\\
+\sigma_{PV} = \sqrt{ \sum_{k=0}^{\infty} \left( v^{k+1} \right)^2 ~_{k-1|}q_{\bf{x}}  - \mu_{PV}^2 }= \sqrt{^2A_{\bf{x}}-A_{\bf{x}}^2}\\
+\end{array}
+(\#eq:Benefit3)
+$$
+
+***
+<span style="color: green;">
+The specifics of $A_x$ need to be fleshed out in more detail, with similar amendments made to later subsections. Dani, I notice that your LifeTableStuff file goes through this and adds to the life table as well which is a nice start.  My instinct is that we don't incorporate it until this chapter but I'm interested in everyone's feedback.
+</span>
+
+<span style="color: red;">
+Include Excel (and R?) example here or maybe all at the end of this subsection - need to show impact of C.
+</span>
+
+***
+
+### 	Term Insurance {#Sec:BenefitTI}
+
+Under a **term insurance** policy the insurer pays a benefit upon the death of the policyholder, with payment made at time $K_{\bf{x}}+1$, as long as death occurs within the $n$ year term of the policy. This system is illustrated on a timeline in Figure \@ref(fig:Benefit3), with the $PV$ of the benefit cash flows shown below. We introduce the Bernoulli random variable $I_Y$, which is equal to $1$ if event $Y$ occurs or $0$ otherwise.
+
+`r HideRCode('Benefit3',"R Code For Figure")`
+
+```{r  Benefit3, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(10,6.2,10,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(11,6.2,11,5.8, code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(7.5,7,"...")
+text(10,7,"n-1")
+text(11,7,"n")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(4,8,"x+1")
+text(5,8,"x+2")
+text(7.5,8,"...")
+text(10,8,"x+n-1")
+text(11,8,"x+n")
+text(1,5,"Cash Flow")
+text(4,5,"C")
+text(5,5,"C")
+text(7.5,5,"...")
+text(10,5,"C")
+text(11,5,"C")
+text(1,4,"Probability")
+text(4,4,TeX("q_x"))
+text(5,4,TeX("_{1|}q_x"))
+text(7.5,4,"...")
+text(10,4,TeX("_{n-2|}q_x"))
+text(11,4,TeX("_{n-1|}q_x"))
+
+
+```
+
+</div>
+
+```{r Benefit3, ref.label = 'Benefit3', fig.cap = 'Timeline of benefit cash flows from a term insurance policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+
+***
+
+$$
+\require{enclose}
+\begin{array}{l}
+PV = v^{K_{\bf{x}}+1} I_{K_{\bf{x}} \le n-1} = \left \{\begin{array}{cl}
+v^{K_{\bf{x}}+1} & \text{where }  K_{\bf{x}} \le n-1 \\
+0  & \text{where } K_{\bf{x}} > n-1 \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=0}^{n-1} v^{k+1} ~_{k|}q_{\bf{x}} = A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1}\\
+\sigma_{PV} = \sqrt{\sum_{k=0}^{n-1} \left( v^{k+1} \right)^2 ~_{k|}q_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{^2A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1}  - \left( A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} \right)^2 } \\
+\end{array}
+(\#eq:Benefit4)
+$$
+
+### 	Pure Endowment
+
+Under a **pure endowment** policy the insurer pays a benefit upon the survival of the policyholder for the $n$ year term of the policy. This system is illustrated on a timeline in Figure \@ref(fig:Benefit4), with the $PV$ of the benefit cash flows shown below.
+
+`r HideRCode('Benefit4',"R Code For Figure")`
+
+```{r  Benefit4, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(11,6.2,11,5.8, code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(11,7,"n")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(11,8,"x+n")
+text(1,5,"Cash Flow")
+text(11,5,"1")
+text(1,4,"Probability")
+text(11,4,TeX("_np_{\\textbf{x}}}"))
+
+
+```
+
+</div>
+
+```{r Benefit4, ref.label = 'Benefit4', fig.cap = 'Timeline of benefit cash flows from a pure endowment policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+$$
+\begin{array}{l}
+PV = v^n I_{T_{\bf{x}}>n} = \left \{\begin{array}{cl}
+0 & \text{where } T_{\bf{x}} \le n \\
+v^n & \text{where } T_{\bf{x}} > n \\
+\end{array} \right.
+\\
+\mu_{PV} = v^n {_np_{\bf{x}}} = A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {\space \space \space \space \space 1}
+\\
+\sigma_{PV} = v^n \sqrt{{_np_{\bf{x}}}(1-{_np_{\bf{x}}})}
+\end{array}
+(\#eq:Benefit5)
+$$
+
+### 	Endowment Insurance
+
+An **endowment insurance** is effectively a combination of a term insurance and pure endowment policy. The insurer pays a benefit at the end of the year of death if the policyholder's death occurs within the term $n$ of the policy, or at time $n$ if the policyholder survives until time $n$. This system can be illustrated on a timeline as can be seen in Figure \@ref(fig:Benefit5), with the $PV$ of the benefit cash flows shown below.
+
+
+`r HideRCode('Benefit5',"R Code For Figure")`
+
+```{r  Benefit5, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(10,6.2,10,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(11,6.2,11,5.8, code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(7.5,7,"...")
+text(10,7,"n-1")
+text(11,7,"n")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(4,8,"x+1")
+text(5,8,"x+2")
+text(7.5,8,"...")
+text(10,8,"x+n-1")
+text(11,8,"x+n")
+text(1,5,"Cash Flow")
+text(4,5,"1")
+text(5,5,"1")
+text(7.5,5,"...")
+text(10,5,"1")
+text(11,5,"1")
+text(1,3.5,"Probability")
+text(4,4,TeX("q_x"))
+text(5,4,TeX("_{1|}q_x"))
+text(7.5,4,"...")
+text(10,4,TeX("_{n-2|}q_x"))
+text(11,4,TeX("_{n-1|}q_x"))
+text(11,3,TeX("+_np_x"))
+
+```
+
+</div>
+
+```{r Benefit5, ref.label = 'Benefit5', fig.cap = 'Timeline of benefit cash flows from an endowment insurance policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+***
+
+$$
+\begin{array}{l}
+PV = v^{\text {min} \left[ K_{\bf{x}}+1 , n \right]}  = \left \{\begin{array}{cl}
+v^{K_{\bf{x}}+1} & \text{where }  K_{\bf{x}} \le n-1 \\
+v^n  & \text{where } K_{\bf{x}} > n-1 \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=0}^{n-1} v^{k+1} ~_{k|}q_{\bf{x}} + v^n ~_tp_n = A_{{\bf{x}}:\enclose{actuarial}{n}} \\
+\sigma_{PV} = \sqrt{\sum_{k=0}^{n-1} \left( v^{k+1} \right)^2 ~_{t-1|}q_{\bf{x}} + v^{2n} ~_tp_n - \mu_{PV}^2 } = \sqrt{^2A_{{\bf{x}}:\enclose{actuarial}{n}} - \left( A_{{\bf{x}}:\enclose{actuarial}{n}} \right)^2 } \\
+\end{array}
+(\#eq:Benefit6)
+$$
+
+### 	Life Annuity
+
+Under a **life annuity** policy the insurer pays regular benefits to policyholders whilst they are alive. An annuity payable **in advance** has benefits paid at the start of the year, while an annuity payable in arrears has benefits paid at the end of the year. This system is illustrated on a timeline in Figure \@ref(fig:Benefit6), with the $PV$ of the benefit cash flows shown below.
+
+
+`r HideRCode('Benefit6',"R Code For Figure")`
+
+```{r  Benefit6, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,9,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(6,6.2,6,5.8,code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(6,7,"3")
+text(7.5,7,"...")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(4,8,"x+1")
+text(5,8,"x+2")
+text(6,8,"x+3")
+text(7.5,8,"...")
+text(1,5,"Cash Flow")
+text(3,5,"1")
+text(4,5,"1")
+text(5,5,"1")
+text(6,5,"1")
+text(7.5,5,"...")
+text(1,4,"Prob (advance)")
+text(3,4,TeX("1"))
+text(4,4,TeX("_1p_x"))
+text(5,4,TeX("_2p_x"))
+text(6,4,TeX("_3p_x"))
+text(7.5,4,"...")
+text(1,3,"Prob (arrears)")
+text(4,3,TeX("_1p_x"))
+text(5,3,TeX("_2p_x"))
+text(6,3,TeX("_3p_x"))
+text(7.5,3,"...")
+
+
+```
+
+</div>
+
+```{r Benefit6, ref.label = 'Benefit6', fig.cap = 'Timeline of benefit cash flows from a life annuity policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+***
+
+In advance:
+
+$$
+\begin{array}{l}
+PV = 1+v^{1}+v^{2}+...+v^{K_{\bf{x}}} \space (\text{if} \space i_k=i) = \ddot{a}_{\enclose{actuarial}{K_{\bf{x}}+1}} = (1+i) \frac{1-v^{K_{\bf{x}}+1}}{i} \\
+\mu_{PV} = \sum_{k=0}^{\infty} v^{k} ~_kp_{\bf{x}} = \ddot{a}_{\bf{x}} \\
+\sigma_{PV} = \sqrt{\sum_{k=0}^{\infty}  \left( v^{k} \right)^2 ~_tp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{{^2}\ddot{a}_{\bf{x}}  - ( \ddot{a}_{\bf{x}} ) ^2 }\\
+\end{array}
+(\#eq:Benefit7)
+$$
+
+In arrears:
+
+$$
+\begin{array}{l}
+PV = v^{1}+v^{2}+...v^{K_{\bf{x}}} \space (\text{if} \space i_k=i) = a_{\enclose{actuarial}{K_{\bf{x}}}} =  \frac{1-v^{K_{\bf{x}}}}{i}
+\\
+\mu_{PV} = \sum_{k=1}^{\infty} v^k ~_kp_{\bf{x}} = {a}_{\bf{x}} = \ddot{a}_{\bf{x}} - 1 \\
+\sigma_{PV} = \sqrt{\sum_{k=1}^{\infty}  \left( v^{k} \right)^2 ~_tp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{{^2}{a}_{\bf{x}}  - ( {a}_{\bf{x}} ) ^2 }\\
+\end{array}
+(\#eq:Benefit8)
+$$
+
+<span style="color: green;">
+Need to tidy these equations (using amsmath package for alignment and also fixing notation for if component) but I'm aiming to allow for the formulae to be flexible in whether $i$ is constant or not.  This allows use more flexibility in examples and exercises.
+</span>
+
+### 	Term Life Annuity
+
+Under a **term life annuity** policy the insurer pays benefits to policyholders whilst they are alive, for a maximum of $n$ periods irrespective of the timing of death. For annuities in advance and in arrears, this system is illustrated on a timeline in Figure \@ref(fig:Benefit7), with the $PV$ of the benefit cash flows shown below.
+
+
+`r HideRCode('Benefit7',"R Code For Figure")`
+
+```{r  Benefit7, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(10,6.2,10,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(11,6.2,11,5.8, code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(7.5,7,"...")
+text(10,7,"n-1")
+text(11,7,"n")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(4,8,"x+1")
+text(5,8,"x+2")
+text(7.5,8,"...")
+text(10,8,"x+n-1")
+text(11,8,"x+n")
+text(1,5,"Cash Flow")
+text(3,5,"1")
+text(4,5,"1")
+text(5,5,"1")
+text(7.5,5,"...")
+text(10,5,"1")
+text(11,5,"1")
+text(1,4,"Prob (advance)")
+text(3,4,"1")
+text(4,4,TeX("_1p_x"))
+text(5,4,TeX("_2p_x"))
+text(7.5,4,"...")
+text(10,4,TeX("_{n-1}p_x"))
+text(1,3,"Prob (arrears)")
+text(4,3,TeX("_1p_x"))
+text(5,3,TeX("_2p_x"))
+text(7.5,3,"...")
+text(10,3,TeX("_{n-1}p_x"))
+text(11,3,TeX("_np_x"))
+
+
+```
+
+</div>
+
+```{r Benefit7, ref.label = 'Benefit7', fig.cap = 'Timeline of benefit cash flows from a term life annuity policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+***
+In advance:
+
+$$
+\begin{array}{l}
+PV = 1+v^{1}+v^{2}+...+v^{\text{min}[K_{\bf{x}},n-1]} \space (\text{if} \space i_k=i) = \ddot{a}_{\enclose{actuarial}{\text{min} [K_{\bf{x}}+1,n]}} = \left \{\begin{array}{cl}
+(1+i) \frac{1-v^{K_{\bf{x}}+1}}{i} & \text{where }  K_{\bf{x}} \le n-1 \\
+(1+i) \frac{1-v^{n}}{i}  & \text{where } K_{\bf{x}} > n-1 \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=0}^{n-1} v^k ~_kp_{\bf{x}} = \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} \\
+\sigma_{PV} = \sqrt{\sum_{k=0}^{n-1}  \left( v^{k} \right)^2 ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ {^2}\ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} - \left( \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} \right) ^2 }\\
+\end{array}
+(\#eq:Benefit9)
+$$
+
+In arrears:
+
+$$
+\begin{array}{l}
+PV = v^{1}+v^{2}+...+v^{\text{min}[K_{\bf{x}},n]} \space (\text{if} \space i_k=i) = {a}_{\enclose{actuarial}{\text{min} [K_{\bf{x}},n]}} = \left \{\begin{array}{cl}
+\frac{1-v^{K_{\bf{x}}}}{i} & \text{where }  K_{\bf{x}} \le n \\
+\frac{1-v^{n}}{i}  & \text{where } K_{\bf{x}} > n \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=1}^{n} v^k ~_kp_{\bf{x}} = {a}_{{\bf{x}}:\enclose{actuarial}{n}} = \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} - 1 \\
+\sigma_{PV} = \sqrt{\sum_{t=1}^{n}  \left( v^{k} \right)^2 ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ {^2}{a}_{{\bf{x}}:\enclose{actuarial}{n}} - \left( {a}_{{\bf{x}}:\enclose{actuarial}{n}} \right) ^2 }\\
+\end{array}
+(\#eq:Benefit10)
+$$
+
+### 	Deferred Life Annuity
+
+Under a **term life annuity** policy the insurer pays benefits to policyholders whilst they are alive, but only after a deferral period of $n$ periods. For annuities in advance and in arrears, this system is illustrated on a timeline in Figure \@ref(fig:Benefit8), with the $PV$ of the benefit cash flows shown below.
+
+
+`r HideRCode('Benefit8',"R Code For Figure")`
+
+```{r  Benefit8, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(10,6.2,10,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(11,6.2,11,5.8, code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(6.5,7,"...")
+text(8,7,"n-1")
+text(9,7,"n")
+text(10,7,"n+1")
+text(11,7,"n+2")
+text(12,7,"...")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(4,8,"x+1")
+text(5,8,"x+2")
+text(6.5,8,"...")
+text(8,8,"x+n-1")
+text(9,8,"x+n")
+text(10,8,"x+n+1")
+text(11,8,"x+n+2")
+text(12,8,"...")
+text(1,5,"Cash Flow")
+text(9,5,"1")
+text(10,5,"1")
+text(11,5,"1")
+text(12,5,"...")
+text(1,4,"Prob (advance)")
+text(9,4,TeX("_{n}p_x"))
+text(10,4,TeX("_{n+1}p_x"))
+text(11,4,TeX("_{n+2}p_x"))
+text(12,4,"...")
+text(1,3,"Prob (arrears)")
+text(10,3,TeX("_{n+1}p_x"))
+text(11,3,TeX("_{n+2}p_x"))
+text(12,3,"...")
+
+```
+
+</div>
+
+```{r Benefit8, ref.label = 'Benefit8', fig.cap = 'Timeline of benefit cash flows from a deferred life annuity policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+***
+
+In advance:
+
+$$
+\begin{array}{l}
+PV = \left \{\begin{array}{cl}
+0 & \text{where }  K_{\bf{x}} \le n-1 \\
+v^{n}+v^{n+1}+v^{n+2}+...+v^{K_{\bf{x}}} \space (\text{if} \space i_k=i) = v^n ~\ddot{a}_{\enclose{actuarial}{K_{\bf{x}}-n+1}} = v^n (1+i) \frac{1-v^{K_{\bf{x}}-n+1}}{i}  & \text{where } K_{\bf{x}} > n-1 \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=n}^{\infty} v^k ~_kp_{\bf{x}} = ~_{n|}\ddot{a}_{\bf{x}} = \ddot{a}_{\bf{x}} - \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} \\
+\sigma_{PV} = \sqrt{\sum_{k=n}^{\infty}  \left( v^{k} \right)^2 ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2_{n|}\ddot{a}_{\bf{x}} - \left( ~_{n|}\ddot{a}_{\bf{x}} \right) ^2 }\\
+\end{array}
+(\#eq:Benefit11)
+$$
+
+In arrears:
+
+$$
+\begin{array}{l}
+PV = \left \{\begin{array}{cl}
+0 & \text{where }  K_{\bf{x}} \le n-1 \\
+v^{n+1}+v^{n+2}+...+v^{K_{\bf{x}}} \space (\text{if} \space i_k=i) = v^n ~{a}_{\enclose{actuarial}{K_{\bf{x}}-n}} = v^n \frac{1-v^{K_{\bf{x}}-n}}{i}  & \text{where } K_{\bf{x}} > n-1 \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=n+1}^{\infty} v^k ~_kp_{\bf{x}} = ~_{n|}{a}_{\bf{x}} = {a}_{\bf{x}} - {a}_{{\bf{x}}:\enclose{actuarial}{n}} \\
+\sigma_{PV} = \sqrt{\sum_{k=n+1}^{\infty}  \left( v^{k} \right)^2 ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2_{n|}{a}_{\bf{x}} - \left( ~_{n|}{a}_{\bf{x}} \right) ^2 }\\
+\end{array}
+(\#eq:Benefit12)
+$$
+
+### 	Guaranteed Life Annuity
+
+A **guaranteed life annuity** policy is equivalent to a life annuity policy, although benefits are guaranteed to be paid for a minimum of $n$ periods. For annuities in advance and in arrears, this system is illustrated on a timeline in Figure \@ref(fig:Benefit9), with the $PV$ of the benefit cash flows shown below.
+
+
+`r HideRCode('Benefit9',"R Code For Figure")`
+
+```{r  Benefit9, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(0,10))
+
+arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(4,6.2,4,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(10,6.2,10,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(11,6.2,11,5.8, code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Contract Time")
+text(3,7,"0")
+text(4,7,"1")
+text(5,7,"2")
+text(6.5,7,"...")
+text(8,7,"n-1")
+text(9,7,"n")
+text(10,7,"n+1")
+text(11,7,"n+2")
+text(12,7,"...")
+text(1,8,"Insured Age")
+text(3,8,"x")
+text(4,8,"x+1")
+text(5,8,"x+2")
+text(6.5,8,"...")
+text(8,8,"x+n-1")
+text(9,8,"x+n")
+text(10,8,"x+n+1")
+text(11,8,"x+n+2")
+text(12,8,"...")
+text(1,5,"Cash Flow")
+text(3,5,"1")
+text(4,5,"1")
+text(5,5,"1")
+text(6.5,5,"...")
+text(8,5,"1")
+text(9,5,"1")
+text(10,5,"1")
+text(11,5,"1")
+text(12,5,"...")
+text(1,4,"Prob (advance)")
+text(3,4,"1")
+text(4,4,TeX("1"))
+text(5,4,TeX("1"))
+text(6.5,4,"...")
+text(8,4,TeX("1"))
+text(9,4,TeX("_{n}p_x"))
+text(10,4,TeX("_{n+1}p_x"))
+text(11,4,TeX("_{n+2}p_x"))
+text(12,4,"...")
+text(1,3,"Prob (arrears)")
+text(4,3,TeX("1"))
+text(5,3,TeX("1"))
+text(6.5,3,"...")
+text(8,3,TeX("1"))
+text(9,3,TeX("1"))
+text(10,3,TeX("_{n+1}p_x"))
+text(11,3,TeX("_{n+2}p_x"))
+text(12,3,"...")
+
+```
+
+</div>
+
+```{r Benefit9, ref.label = 'Benefit9', fig.cap = 'Timeline of benefit cash flows from a guaranteed life annuity policy', fig.align = 'center', fig.width=6, fig.height=2.5, echo = FALSE}
+```
+
+***
+
+In advance:
+
+$$
+\begin{array}{l}
+PV = 1+v^{1}+v^{2}+...+v^{\text{max}[K_{\bf{x}},n-1]} \space (\text{if} \space i_k=i) = \ddot{a}_{\enclose{actuarial}{\text{max} [K_{\bf{x}}+1,n]}} = \left \{\begin{array}{cl}
+(1+i) \frac{1-v^{n}}{i} & \text{where }  K_{\bf{x}} \le n-1 \\
+(1+i) \frac{1-v^{K_{\bf{x}}+1}}{i}  & \text{where } K_{\bf{x}} > n-1 \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=0}^{n-1} v^k + \sum_{k=n}^{\infty} v^k ~_kp_{\bf{x}} = \ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} = \ddot{a}_{\enclose{actuarial}{n}} + ~_{n|}\ddot{a}_{\bf{x}} \\
+\sigma_{PV} = \sqrt{\sum_{k=0}^{n-1} \left( v^{k} \right)^2 + \sum_{k=n}^{\infty} v^{2k} ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2\ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} - \left( \ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} \right)^2 }\\
+\end{array}
+(\#eq:Benefit13)
+$$
+
+In arrears:
+
+$$
+\begin{array}{l}
+PV = v^{1}+v^{2}+...+v^{\text{max}[K_{\bf{x}},n]} \space (\text{if} \space i_k=i) = ~a_{\enclose{actuarial}{\text{max} [K_{\bf{x}},n]}} = \left \{\begin{array}{cl}
+\frac{1-v^{n}}{i} & \text{where }  K_{\bf{x}} \le n \\
+\frac{1-v^{K_{\bf{x}}}}{i}  & \text{where } K_{\bf{x}} > n \\
+\end{array} \right.
+\\
+\mu_{PV} = \sum_{k=1}^{n} v^k + \sum_{k=n+1}^{\infty} v^k ~_kp_{x} = {a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} = {a}_{\enclose{actuarial}{n}} + ~_{n|}{a}_{\bf{x}} \\
+\sigma_{PV} = \sqrt{\sum_{k=1}^{n} \left( v^{k} \right)^2 + \sum_{k=n+1}^{\infty} v^{2k} ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} - \left( {a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} \right) ^2 }\\
+\end{array}
+(\#eq:Benefit14)
+$$
+
+<span style="color: green;">
+The UK syllabus has included the use of a book of life tables for as long as I can remember. Interestingly the new CM1 syllabus has removed the references to life insurance actuarial notation (it still has the probability notation), although it still exists in the questions in the specimen exams. My instinct is that we include the notation in our textbook but de-emphasise it, and that we base all calculations in our textbook on tables constructed from publicly available datasets rather than anything from the UK book.
+
+<span style="color: green;">
+We could show the relationship among the different policies, including recursion (see DHW Chapter 5), perhaps as exercises for students. Some of this might better fit a Chapter on reserves. Need to decide this.
+</span>
+
+
+##	Bringing actuarial notation to the Life Table {#Sec:BenefitLT}
+In Chapter 2 the Life Table was introduced. In this subsection we incorporate additional columns into the Life Table based on the notation introduced in Chapter \@ref(Sec:BenefitActNot). We also perform additional calculations using this additional information.
+
+<span style="color: green;">
+We can utilise Excel here to expand the Life Table and have a number of exercises and examples.  This would still involve using age as the only predictor, unless we want to move away from this concept.
+
+
+## Case Study: Valuing the benefits of a portfolio of term insurance policies {#Sec:BenefitCS}
+
+In this section we take what we have learned so far in this Chapter and apply it to a more detailed valuation of the benefits of an individual and porfolio of whole of life insurance policies.
+
+### An individual policy {#Sec:BenefitCSInd}
+
+We showed how to value a single whole of life insurance policy in Chapter \@ref(Sec:BenefitWL). For example, consider a 40 year old individual ($=\bf{x}$) with sum insured \$400,000 ($=C$), and whose mortality probability is expected to follow the US 2010-14 female rates described in Chapter 2. Assuming an interest rate of 2% per annum effective (<span style="color: green;"> we might instead use the spot rate calculation from above</span>) ($=i_t$), the calculation of $\mu_{PV}$ and $\sigma_{PV}$ can be performed as follows, using either the **life table** structure from Chapter \@ref(Sec:BenefitWL) or from **first principles** as per Equation \@ref(eq:Benefit3):
+
+<span style="color: green;">
+This needs to be updated to change from term insurance to whole of life, and to include calculation using a life table and from first principles (two separate tabs). I'll also update this to value a policy from the data - most likely one sold recently.
+
+***
+
+<iframe width="900" height="500" frameborder="0" scrolling="yes" src="https://anu365-my.sharepoint.com/personal/u4233932_anu_edu_au/_layouts/15/Doc.aspx?sourcedoc={71b9edf0-7c05-4478-b42c-fb297860e866}&action=embedview&wdAllowInteractivity=False&AllowTyping=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+
+***
+
+<span style="color: red;">
+**We'll need to make some decisions here about how to structure examples (this will affect Chapter 2 as well). Key issues are as follows:**
+
+<span style="color: red;">
+**1. I think it makes sense to use Excel for simple calculations of single EPVs using age-based life tables.  Otherwise R should be used. Assuming we agree with this we'll need to think about the best way of incorporating.  The above is just an iFrame of a quick Excel document I created and am storing on my ANU OneDrive account.  It can be viewed and edited if you are are signed into a Microsoft account, but works with the free version.  The downside of this is that it is reliant on the file sitting on the same account for it to load (although I guess this could be in the same location as the book itself).  If we're not willing to go with an account option, there are other options such as the excelR package which I have played around a little bit with, which has the advantage of keeping all the code in R Markdown (we could provide a download link to the spreadsheet too). The disadvantage of this is that it would not be as easy to manipulate for users.  A lower rent alternative would be to provide images of Excel files with a link to download.  We’ll need to think about how this would work for those only able to access the pdf version of the textbook.**
+
+<span style="color: red;">
+**2. One idea Jed mentioned to me would be include R examples of everything, and where we wanted to use Excel as well we could provide a toggle for students to show the equivalent R calculation.**
+</span>
+
+
+Another way of analysing $PV$ is to plot its probability mass function. We know that the probability mass function of $K_{\bf{x}}$ is $\Pr(K_{\bf{x}}=k) = ~_{k|}q_{\bf{x}}$. Hence the probability mass function of $PV$ is $P \left( PV=Cv^{k+1} \right) = ~_{k|}q_{\bf{x}}$.
+
+<span style="color: green;">Include pmf plot.</span>
+
+###	A portfolio of policies {#Sec:BenefitCSPort}
+
+Now let us consider a portfolio of $J$ independent $n$-year term insurance policies on individuals ${\bf{x}}_j$ where $j = 1,2,...,J$. <span style="color: green;">Describe the portfolio from Chapter 2 and the mortality assumptions. Use a single month or year of sales for consistent valuation.</span>
+
+Using Equation \@ref(eq:Benefit4) and incorporating the sum insureds $C_j$, we can describe the aggregated present value of this portfolio $PV_{agg}$ as as:
+
+$$
+\begin{array}{l}
+PV_{agg} =  \sum_{j=1}^J C_j v^{K_{{\bf{x}}_j}+1}
+\\
+\mu_{PV_{agg}} = \sum_{j=1}^J C_j \sum_{k=0}^{\infty} v^{k+1} ~_k|q_{{\bf{x}}_j}
+\\
+\sigma_{PV_{agg}} = \sqrt{\sum_{j=1}^J \Big( \sum_{k=0}^{\infty} \left( C_j v^{k+1} \right)^2 ~_{k|}q_{{\bf{x}}_j} - \left( C_j \sum_{k=0}^{\infty} v^{k+1} ~_{k|}q_{{\bf{x}}_j} \right)^2} \Big)
+\end{array}
+(#eq:Benefit15)
+$$
+
+Even if the the insured policyholders are independent across all $j$, and the distribution of $K_{{\bf{x}}_j}$ is mathematically simple, we cannot determine the exact distribution of $PV_{agg}$. Further, the complication of the formulae of $\mu_{PV_{agg}}$ and $\sigma_{PV_{agg}}$ mean they are easy to miscalculate and are hence of questionable usefulness. Instead we use simulations to gain a greater understanding of the distribution of $PV_{agg}$. Whilst we do not go into detail on the mechanics of simulation in this text, in this context simulation involves repeatedly drawing random observations of $K_{{\bf{x}}_j}$ from the distributions of $K_{{\bf{x}}_j}$, and calculating equivalent observations of $PV_{agg}$ from Equation \@ref(eq:Benefit15).
+
+<span style="color: red;">
+**The concept of simulation will likely not be familiar to readers. We’ll need to think about how to present this to students and how much detail we wish to go into. Are we comfortable with the level of detail in the paragraph above? What about issues around standard error of estimates? I don’t believe simulation of life contingencies is a part of any actuarial syllabus, and this would be a way of differentiating ourselves from previous textbooks. We’ll also need to think about how this would work for those only able to access the pdf version of the textbook.**
+</span>
+
+<span style="color: green;">
+Below is Jed's placeholder of a simulation example. I haven't yet had time to update it for the whole of life insurance portfolio but will do so in future.
+</span>
+
+**Example `r chapnum`.1.1. Example - Indonesian Mortality.** (<span style="color: green;">Adam, Emil. I assume that you will want to use one of Dani's mortality data sets going forward. This is a placeolder</span>) We consider mortality from Indonesia. Like many countries throughout the world, these are typically tabulated on an annual basis. To give you a feel for the data, we first convert these annual survival proabilities to ten year survival probability, assuming that a female live has survived to age 25.
+
+`r HideRCode('Simulation.1',"R Code To Construct Survival Probabilities")`
+
+```{r FirstSimulation1, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+library(knitr)
+fem.Qx <- read.csv(file = "Data/IndonesianMortality.csv", header = TRUE)[,3]
+numAge <- length(fem.Qx)
+SurvProb <- rep(1, numAge)
+for (x in 1:(numAge-1)) {SurvProb[x+1] <- SurvProb[x]*(1-fem.Qx[x])}
+TenYearSurvProb25 <- c(SurvProb[25], SurvProb[35],SurvProb[45],SurvProb[55],SurvProb[65],SurvProb[75],SurvProb[85],SurvProb[95], 0)/SurvProb[25]
+TenYearProbs <- TenYearSurvProb25[1:8]-TenYearSurvProb25[2:9] 
+```
+
+</div>
+
+```{r FirstSimulation1a, ref.label = 'FirstSimulation1', echo = FALSE}
+```
+
+The ten year discounted values and probabilities are
+
+`r HideRCode('Simulation.2',"R Code To Construct Discounted Values and Associated Probabilities")`
+
+```{r FirstSimulation2, eval = FALSE}
+i = 0.05
+Probsout <- round(TenYearProbs,digits = 4)
+# xout <- (1:length(Probsout))*10
+# xout <- round(xout,digits=0)
+TenYearPV = (1/(1+i)^10)^(1:length(TenYearProbs))
+ProbsoutMat <- t(cbind(TenYearPV, Probsout))
+ProbsoutMat <- round(ProbsoutMat,digits=4)
+rownames(ProbsoutMat) <- c("Discounted Value", "Probs")
+colnames(ProbsoutMat) <- c("10","20","30","40","50","60","70","80")
+knitr::kable(ProbsoutMat)
+
+```
+</div>
+
+```{r FirstSimulation2a, ref.label = 'FirstSimulation2', echo = FALSE}
+```
+
+We can simulate from these.
+
+
+`r HideRCode('Simulation.3',"R Code For Simulation")`
+
+```{r FirstSimulation, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+nsim = 500
+# probs = c( 0.1, 0.3, 0.3, 0.2, 0.1)
+# PV = (1/(1+i))^(1:length(probs))
+# raws = sample(PV , size = nsim, replace = TRUE, prob = probs)
+# head(raws)
+# hist(raws)
+# mean(raws)
+
+TenYearSample = sample(TenYearPV, size = nsim, replace = TRUE, prob = TenYearProbs)
+OneYearProbs <- SurvProb[25:(numAge-1)]-SurvProb[26:numAge] 
+OneYearPV = (1/(1+i))^(1:length(OneYearProbs))
+OneYearSample = sample(OneYearPV, size = nsim, replace = TRUE, prob = OneYearProbs)
+
+par(mfrow=c(1,2))
+hist(TenYearSample, main="") 
+hist(OneYearSample, main="") 
+```
+
+
+</div>
+
+```{r FirstSimulationa, ref.label = 'FirstSimulation', fig.cap = 'Present Value Distribution. The left-hand panel summarizes a simulated distribution based on ten-year outcomes. The right-hand panel displays the corresponding information based on annual outcomes.', fig.align = 'center', out.width = '55%', echo = FALSE}
+```
+
+Now, we can ask the student to do a number of things (and give the answers). Based on ten-year outcomes, one can do hand calculations. With a computer, you can do the same calculations but for the more realistic annual data.
+
+***
+
+<span style="color: green;">
+Other important concepts to address in this or another chapter:
+
+<span style="color: green;">
+-	 The relationship between life insurance and life annuities. The two are perfect natural hedge provided mortality is the same. If life policies mortality are different from annuitant mortality, the relationship breaks down. My instinct is that this goes in a later chapter.
+-	The concept of discounting with life using pure endowment.
+-	The recursive formula for the value from year to year - probably later as part of policy values.
+-	Consistency of terminology: do we use actuarial present value or expected present value? Is it necessary to emphasize distinction?
+</span>
+
+
+<span style="color: green;">
+It is recommended to include the following material in a separate chapter.  We could also include things like increasing annuities/insurance but I'm not really convinced about the benefits of these.
+</span>
+
+## The impact of self selection
+
+<span style="color: green;">
+I have not yet included anything about selection effects, although this can be added to this section fairly easily. DHW don’t have anything different in Chapter 4 for selection effects, but instead just have a short subsection nothing that the calculations are the same for selection but just use the select life table.
+</span>
+
+## Modelling contingent cash flows more frequently than annually
+
+<span style="color: green;"> This would reflect the 1/mthly case from DHW Chapter 4. Due to the length of this chapter we will need to consider if/how to split it up into additional chapters.  It is traditional to split life insurance and annuity chapters.  I’m not a big fan of this personally as in my opinion this splits concepts of valuation up were it really is not necessary.  An alternative option would be to have the material from here and continuous time be its own Chapter; i.e. we would generally focus on yearly payments only and this extra chapter would act as an aside to cover the 1/mthy and continuous structures.  We might also include in this additional chapter material on approximation (e.g. annual payments but made at exact time of death) and other adjustments such as indexation of payments. </span>
+
+
+##	Modelling contingent cash flows in continuous time
+
+<span style="color: green;"> See above. This could be expressed as when $m \rightarrow \infty$. We could provide examples from earlier in this Chapter as our starting point. We can also link this to the continuous models from Chapter 2 – see for example how Makeham’s rule is used in DHW Chapter 4. </span>
+
+
+</span>

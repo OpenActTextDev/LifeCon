@@ -1,0 +1,20 @@
+Time ( \( T \) ),1,2,3,4,5,6,7,8,9,10,11,12,
+Flat Payments,11,11,11,11,11,11,11,11,11,11,11,11,
+Increasing Payments,0,2,4,6,8,10,12,14,16,18,20,22,
+Flat Interest Rate,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,=0.055*B20,
+Increasing Interest Rate,=0*B20,=0.01*B20,=0.02*B20,=0.03*B20,=0.04*B20,=0.05*B20,=0.06*B20,=0.07*B20,=0.08*B20,=0.09*B20,=0.1*B20,=0.11*B20,
+Discounted Value - Flat,=1/(1+B4),=B6/(1+C4),=C6/(1+D4),=D6/(1+E4),=E6/(1+F4),=F6/(1+G4),=G6/(1+H4),=H6/(1+I4),=I6/(1+J4),=J6/(1+K4),=K6/(1+L4),=L6/(1+M4),
+Discounted Value - Increasing,=1/(1+B5),=B7/(1+C5),=C7/(1+D5),=D7/(1+E5),=E7/(1+F5),=F7/(1+G5),=G7/(1+H5),=H7/(1+I5),=I7/(1+J5),=J7/(1+K5),=K7/(1+L5),=L7/(1+M5),
+Flat Probabilities,=1/12,=1/12,=1/12,=1/12,=1/12,=1/12,=1/12,=1/12,=1/12,=1/12,=1/12,=1/12,
+Increasing Probabilities,=B3/11*B8,=C3/11*C8,=D3/11*D8,=E3/11*E8,=F3/11*F8,=G3/11*G8,=H3/11*H8,=I3/11*I8,=J3/11*J8,=K3/11*K8,=L3/11*L8,=M3/11*M8,
+Discounted Payments - Flat Probabilities,,,,,,,,,,,,,Sum
+"Flat Payments, Flat Interest",=B2*B6*B8,=C2*C6*C8,=D2*D6*D8,=E2*E6*E8,=F2*F6*F8,=G2*G6*G8,=H2*H6*H8,=I2*I6*I8,=J2*J6*J8,=K2*K6*K8,=L2*L6*L8,=M2*M6*M8,=SUM(B11:M11)
+"Flat Payments, Increasing Interest",=B2*B7*B8,=C2*C7*C8,=D2*D7*D8,=E2*E7*E8,=F2*F7*F8,=G2*G7*G8,=H2*H7*H8,=I2*I7*I8,=J2*J7*J8,=K2*K7*K8,=L2*L7*L8,=M2*M7*M8,=SUM(B12:M12)
+"Increasing Payments, Flat Interest",=B3*B6*B8,=C3*C6*C8,=D3*D6*D8,=E3*E6*E8,=F3*F6*F8,=G3*G6*G8,=H3*H6*H8,=I3*I6*I8,=J3*J6*J8,=K3*K6*K8,=L3*L6*L8,=M3*M6*M8,=SUM(B13:M13)
+"Increasing Payments, Increasing Interest",=B3*B7*B8,=C3*C7*C8,=D3*D7*D8,=E3*E7*E8,=F3*F7*F8,=G3*G7*G8,=H3*H7*H8,=I3*I7*I8,=J3*J7*J8,=K3*K7*K8,=L3*L7*L8,=M3*M7*M8,=SUM(B14:M14)
+Discounted Payments - Increasing Probabilities,,,,,,,,,,,,,Sum
+"Flat Payments, Flat Interest",=B2*B6*B9,=C2*C6*C9,=D2*D6*D9,=E2*E6*E9,=F2*F6*F9,=G2*G6*G9,=H2*H6*H9,=I2*I6*I9,=J2*J6*J9,=K2*K6*K9,=L2*L6*L9,=M2*M6*M9,=SUM(B16:M16)
+"Flat Payments, Increasing Interest",=B2*B7*B9,=C2*C7*C9,=D2*D7*D9,=E2*E7*E9,=F2*F7*F9,=G2*G7*G9,=H2*H7*H9,=I2*I7*I9,=J2*J7*J9,=K2*K7*K9,=L2*L7*L9,=M2*M7*M9,=SUM(B17:M17)
+"Increasing Payments, Flat Interest",=B3*B6*B9,=C3*C6*C9,=D3*D6*D9,=E3*E6*E9,=F3*F6*F9,=G3*G6*G9,=H3*H6*H9,=I3*I6*I9,=J3*J6*J9,=K3*K6*K9,=L3*L6*L9,=M3*M6*M9,=SUM(B18:M18)
+"Increasing Payments, Increasing Interest",=B3*B7*B9,=C3*C7*C9,=D3*D7*D9,=E3*E7*E9,=F3*F7*F9,=G3*G7*G9,=H3*H7*H9,=I3*I7*I9,=J3*J7*J9,=K3*K7*K9,=L3*L7*L9,=M3*M7*M9,=SUM(B19:M19)
+Interest Rate Multiplier,1,,,,,,,,,,,,

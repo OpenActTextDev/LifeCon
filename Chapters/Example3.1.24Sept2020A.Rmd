@@ -1,0 +1,423 @@
+---
+title:  "The Mathematics, Statistics, and Economics of Life Contingencies: Experiments with jExcel"
+author: "An open text authored by the Actuarial Community"
+output:
+  bookdown::html_document2:
+    self_contained: true
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    fig_width: 6
+    fig_height: 4
+   # code_folding: hide
+    css: WritingSupportFiles/style.css
+    includes:
+      in_header: WritingSupportFiles/ShowHideLC.js
+  # bookdown::pdf_book:     
+  #   number_sections: yes
+  #   toc: yes
+  #   toc_depth: '3'
+  #   template: [WritingSupportFiles\EWF-latex-ms.tex]
+  #   keep_tex: true
+  #   fig_caption: true
+  #   latex_engine: pdflatex
+#bibliography: ["WritingSupportFiles/LDAReferenceC.bib","WritingSupportFiles/articles.bib","WritingSupportFiles/books.bib","WritingSupportFiles/packagesA.bib","WritingSupportFiles/packagesB.bib"]
+#biblio-style: WritingSupportFiles\econPeriod
+keywords: "Keywords here"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontsize: 12pt
+spacing: onehalf
+---
+
+`r ECHOCODE=FALSE`
+
+```{r echo = FALSE, child='WritingSupportFiles/PdfOutput.Rmd', warning=FALSE,message=FALSE}
+```
+
+```{r echo = FALSE, child='WritingSupportFiles/GlossaryA.Rmd', warning=FALSE,message=FALSE}
+```
+
+<script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" type="text/css" />
+<script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jsuites/v3/jsuites.css" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+# Examples -- Valuation of cash flows under uncertainty
+
+<span style="font-size: small; color: green;"> Editorial Note: These are the results of experimentation with the ["jExcel"](https://bossanova.uk/jexcel/v4/)  javascript package for dynamic spreadsheets that utilizes the ["Highcharts"](https://www.highcharts.com/) package for dynamic graphs.</span>
+
+
+#### Example 3.1.1. Varying Payments and Rates of Interest {-}
+
+Let us review some basic concepts regarding present value of payments made with certainty (no randomness) of payments under potentially varying rates of interest. The first basic concept is that payments made in the near future have greater present value than those made in the distant future. The second basic concept is that interest rates in the near future have greater effect on present values than those in the distant future. To illustrate, we consider $T=12$ payments at times $1, 2, \ldots, 12$. Payment may be constant (or "flat") at 11 in this example, or varying. For the varying payments, this example uses increasing payments, $0, 2, \ldots, 22$ so the average of increasing payments is 11. For interest rates, we consider a flat rate $i= 0.055$ with varying (increasing) rates $0, 0.01, \ldots, 0.11$, so the average interest rate is 0.055. If you want to think about these as monthly rates, you may use the `Interest Rate Multiplier` cell in [Table 3.1] to change the rates. For example, if you make the cell `B12` equal to 0.1, then flat rate changes to $i= 0.0055$ that may be more suitable for a monthly rate.
+
+<span style="font-size: small; color: green;"> Editorial Note: As coded now, the 'Interest Rate Multiplier' works but takes a couple of minutes. Get some coffee if you change this cell. Changing other parts of the spreadsheet is quick. You can double-click on a cell to see how it is coded. You can drag a column separator to widen the cell to see the coding.</span>
+
+[Table 3.1] shows the patterns of varying the payments and the rates of interest supported by a graphical display in [Figure 3.1]. Here, we see that, for both flat and varying payments, the present values for increasing interest rates are greater than those for the flat ones. This underscores the second concept, that present values in the near term are more important than those in the future. We can also see the sums of present values in column `N` of [Table 3.1]. This shows that, for both flat and increasing interest rates, that flat payments have a larger present value than increasing payments. This underscores the second concept, that payments made in the near future have a greater impact than those in the distant future.
+
+**On Your Own.** You can download the spreadsheet data with the `Export this spreadsheet as CSV` button and manipulate it using as spreadsheet program, such as Excel. Alternatively, you can create the data using the code provided in the `R Code For VaryingPayments` segment that follows. Using either, or both, approaches, experiment with alternative patterns of varying payments and interest rates to enhance your appreciation for the nuances of present values of varying payments.
+
+
+[Table 3.1]:\#tab:31
+
+<a id=tab:31></a>
+
+Table 3.1. **Varying Payments and Rates of Interest**
+
+<div id="spreadsheetLC311"></div>
+<p><button id='downloadLC311'>Export this spreadsheet as CSV</button></p>
+
+[Figure 3.1]:\#fig:31
+
+<a id=fig:31></a>
+
+<div id="containerLC311"></div>
+
+```{r echo=ECHOCODE}
+# Import data from CSV file, then convert so it can be used in Javascript
+data311 <- read.csv("LC_Example_3.1.csv", header = F)
+
+df_to_js <- function(x, var_name = "data311", ...){
+            json_data <- jsonlite::toJSON(x, ...)
+            htmltools::tags$script(paste0("var ",var_name," = ", json_data, ";"))
+            }
+df_to_js(data311)
+# See https://www.aliciaschep.com/blog/js-rmarkdown/
+#  and https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/
+# To save formulas in Excel, go to Formulas ==> Show Formulas. Then save as .csv file
+```
+
+
+```{js echo=ECHOCODE}
+// Functions for Updating Graph Dynamically
+// Series to be plotted are in columns 2 through 12 (B-M), inclusive
+function myPlotSeries(z){
+  var plotseries = [
+      parseFloat(z[2].innerHTML),parseFloat(z[3].innerHTML),parseFloat(z[4].innerHTML),
+      parseFloat(z[5].innerHTML),parseFloat(z[6].innerHTML),parseFloat(z[7].innerHTML),
+      parseFloat(z[8].innerHTML),parseFloat(z[9].innerHTML),parseFloat(z[10].innerHTML),
+      parseFloat(z[11].innerHTML),parseFloat(z[12].innerHTML),parseFloat(z[13].innerHTML)
+      ];
+  return plotseries;
+  };
+var update311 = function (instance, cell, x, y, value) {
+  z = mySpreadsheet311.tbody.rows.item(y).cells; var plotseries = myPlotSeries(z); 
+// The first series to be plotted is in row 9.   
+if (y >= 8 && y < 12 ) {
+      if (x == 0) {
+            // Update legend
+            chart311.series[y-8].update({ name:value });
+            } else if (x < plotseries.length+1) {
+            // Update chart data
+            chart311.series[y-8].data[x-1].update({ y:plotseries[x-1] });
+            }
+        }     
+    };
+  
+```
+
+
+```{js echo=ECHOCODE}
+data311[7]["V14"]="Sum";
+// Spreadsheet Defined
+var mySpreadsheet311 = jexcel(document.getElementById('spreadsheetLC311'), {
+    data: data311,
+    columns: [
+       { type: 'text', width:'280', 'align': 'left' },
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+        ],
+        onchange:update311,
+            style: {
+        A13:'background-color: yellow;',
+        B13:'background-color: yellow;',
+        A8: 'font-weight: bold;',
+        N8: 'font-weight: bold;',        
+    },
+});
+
+```
+
+
+```{js echo=ECHOCODE}
+// Make a Download Button
+document.getElementById("downloadLC311").addEventListener("click", myFunctionDownload);
+function myFunctionDownload() {mySpreadsheet311.download();};
+
+```
+
+```{js echo=ECHOCODE  }
+// Define Plot Series
+z = mySpreadsheet311.tbody.rows.item(0).cells;var plotseries0 = myPlotSeries(z);
+z = mySpreadsheet311.tbody.rows.item(8).cells;var plotseries1 = myPlotSeries(z);
+z = mySpreadsheet311.tbody.rows.item(9).cells;var plotseries2 = myPlotSeries(z);
+z = mySpreadsheet311.tbody.rows.item(10).cells;var plotseries3 = myPlotSeries(z);
+z = mySpreadsheet311.tbody.rows.item(11).cells;var plotseries4 = myPlotSeries(z);
+// Define the Graph
+var chart311 = null;
+chart311 = Highcharts.chart('containerLC311', {
+    title: { text: 'Figure 3.1 Present Value of Varying Payments',
+             x:    -20 //center
+    },
+    <!-- subtitle: {text: 'Source: Actuarial Community', x: -20 }, -->
+    xAxis: {title: {text: 'Time'}, categories: plotseries0 },
+    yAxis: {title: {text: 'Present Value' },
+            plotLines: [{
+              value: 0,
+              width: 1,
+              color: '#808080'
+            }]
+    },
+    tooltip: {valueSuffix: '$'},
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+    },  
+    series: [{name: data311[8]["V1"],  data: plotseries1}, 
+             {name: data311[9]["V1"],  data: plotseries2},
+             {name: data311[10]["V1"], data: plotseries3},
+             {name: data311[11]["V1"], data: plotseries4}  
+             ]
+    });
+    
+```
+
+`r HideRCode('VaryingPayments',"R Code For Varying Payments")`
+
+```{r  VaryingPayments, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+Time <- 1:12
+#Payments
+FlatPay <- rep(11, 12)
+IncPay <- seq(from=0, to=22, by=2)
+#Interest Rates
+FlatInt <- rep(0.055, 12)
+IncInt <- seq(from=0, to=0.11, by=0.01)
+#Discount Values
+DV.Flat <- 1/(1+FlatInt[1])
+for(i in 2:12) {DV.Flat[i] <- DV.Flat[i-1]/(1+FlatInt[i])
+               }
+DV.Inc <- 1/(1+IncInt[1])
+for(i in 2:12) {DV.Inc[i] <- DV.Inc[i-1]/(1+IncInt[i])
+}
+#Present Value of Payments
+FlatPay.FlatInt <- FlatPay*DV.Flat
+FlatPay.IncInt  <- FlatPay*DV.Inc
+IncPay.FlatInt <- IncPay*DV.Flat
+IncPay.IncInt  <- IncPay*DV.Inc
+#Plot Present Value of Payments
+plot(Time, FlatPay.FlatInt, type = "b", ylim = c(0,14), ylab = "Present Value", xlab = "Time")
+  lines(Time, FlatPay.IncInt, type = "b")
+  lines(Time, IncPay.FlatInt, type = "b")
+  lines(Time, IncPay.IncInt, type = "b")
+
+```
+
+</div>
+
+<br>
+
+#### Example 3.1.2. Varying Payments and Rates of Interest With Uncertainty {-}
+
+We now revisit Example 3.1.1 but assume that payments are uncertain, that is, random with a given probability distribution. In Chapter 2 we learned how to develop complex probability distributions that will be useful in our study of contingent life events. For this example, we make some simple assumptions to get started.
+
+Specifically, we assume a constant probability (uniform) distribution; with $T=12$ periods, this means that there is a $\frac{1}{12} \approx 0.0833$ probability of a payment at any specific time period. To vary this, we follow Example 3.1.1 and assume probabilities that are linear increasing, as shown in [Table 3.2]. From [Table 3.2], we can see that we now have 8 different scenarios based on 2 for payments, 2 for interest rates, and 2 for probabilities, in each case flat versus increasing. Discounted values weighted by probabilities appear in rows 11-14 and 16-19. A plot corresponding to increasing probabilities (rows 16-19) appears in [Figure 3.2]. Note that a plot using constant probabilities would be exactly as in [Figure 3.1] except for the constant probability weight  $\frac{1}{12}$.
+
+
+**On Your Own.** Download the spreadsheet data with the `Export this spreadsheet as CSV` button or access the `R` code with the segment `R Code For VaryingPayments with Uncertainty`. Compare the means values (column `N` of the spreadsheet) among the 8 scenarios and interpret them, as you might for a client. Further, you will get a greater appreciation of the uncertainty by calculating the corresponding standard deviations.
+
+
+[Table 3.2]:\#tab:32
+
+<a id=tab:32></a>
+
+Table 3.2. **Varying Payments and Rates of Interest With Uncertainty**
+
+<div id="spreadsheetLC312"></div>
+<div id="spreadsheetLC312int" class="hidden"></div>
+<p><button id='downloadLC312'>Export this spreadsheet as CSV</button></p>
+
+[Figure 3.2]:\#fig:32
+
+<a id=fig:32></a>
+
+<div id="containerLC312"></div>
+
+
+```{r echo=ECHOCODE}
+# Import data from CSV file, then convert so it can be used in Javascript
+data312 <- read.csv("LC_Example_3.2.csv", header = F)
+
+df_to_js <- function(x, var_name = "data312", ...){
+            json_data <- jsonlite::toJSON(x, ...)
+            htmltools::tags$script(paste0("var ",var_name," = ", json_data, ";"))
+            }
+df_to_js(data312)
+
+```
+
+```{js echo=ECHOCODE}
+data312[9]["V14"]="Sum";
+// Spreadsheet Defined
+var mySpreadsheet312int = jexcel(document.getElementById('spreadsheetLC312int'), {
+    data: data312,
+    columns: [
+       { type: 'text', width:'280', 'align': 'left' },
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.00', decimal:'.'},
+        ],
+            style: {
+        A20:'background-color: yellow;',
+        B20:'background-color: yellow;',
+        A10: 'font-weight: bold;',
+        A15: 'font-weight: bold;',
+    },
+});
+
+var mySpreadsheet312 = jexcel(document.getElementById('spreadsheetLC312'), {
+    data: data312,
+    columns: [
+       { type: 'text', width:'280', 'align': 'left' },
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'numeric',  mask:'#.000', decimal:'.'},
+        ],
+            style: {
+        A20:'background-color: yellow;',
+        B20:'background-color: yellow;',
+        A10: 'font-weight: bold;',
+        A15: 'font-weight: bold;',
+        N10: 'font-weight: bold;',
+    },
+     pagination:10
+});
+
+
+```
+
+
+```{js echo=ECHOCODE}
+// Make a Download Button
+document.getElementById("downloadLC312").addEventListener("click", myFunctionDownload);
+function myFunctionDownload() {mySpreadsheet312.download();};
+
+```
+
+
+
+```{js echo=ECHOCODE}
+// Define Plot Series
+
+z = mySpreadsheet312int.tbody.rows.item(0).cells;var plotseries0 = myPlotSeries(z);
+z = mySpreadsheet312int.tbody.rows.item(15).cells;var plotseries1 = myPlotSeries(z);
+z = mySpreadsheet312int.tbody.rows.item(16).cells;var plotseries2 = myPlotSeries(z);
+z = mySpreadsheet312int.tbody.rows.item(17).cells;var plotseries3 = myPlotSeries(z);
+z = mySpreadsheet312int.tbody.rows.item(18).cells;var plotseries4 = myPlotSeries(z);
+
+// Define the Graph
+var chart312 = null;
+chart312 = Highcharts.chart('containerLC312', {
+    title: { text: 'Figure 3.2 Present Value of Varying Payments With Uncertainty',
+             x:    -20 }, //center
+   subtitle: {text: 'With Varying Interest Rates', x: -20 },
+    xAxis: {title: {text: 'Time'}, categories: plotseries0 },
+    yAxis: {title: {text: 'Present Value' },
+            plotLines: [{
+              value: 0,
+              width: 1,
+              color: '#808080'
+            }]
+    },
+    tooltip: {valueSuffix: '$'},
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        borderWidth: 0
+    },  
+    series: [{name: data312[15]["V1"],  data: plotseries1}, 
+             {name: data312[16]["V1"],  data: plotseries2},
+             {name: data312[17]["V1"], data: plotseries3},
+             {name: data312[18]["V1"], data: plotseries4}  
+             ]
+    });
+
+```
+
+
+`r HideRCode('VaryingPaymentsUncertain',"R Code For VaryingPayments with Uncertainty")`
+
+```{r  VaryingPaymentsUncertain, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
+Time <- 1:12
+#Payments
+FlatPay <- rep(11, 12)
+IncPay <- seq(from=0, to=22, by=2)
+#Interest Rates
+FlatInt <- rep(0.055, 12)
+IncInt <- seq(from=0, to=0.11, by=0.01)
+#Probabilities
+FlatProb <- rep(1/12, 12)
+IncProb  <- IncPay/11*FlatProb
+#Discounted Values
+DV.Flat <- 1/(1+FlatInt[1])
+for(i in 2:12) {DV.Flat[i] <- DV.Flat[i-1]/(1+FlatInt[i])
+               }
+DV.Inc <- 1/(1+IncInt[1])
+for(i in 2:12) {DV.Inc[i] <- DV.Inc[i-1]/(1+IncInt[i])
+}
+#Present Value of Payments - Flat Probs
+FlatPay.FlatInt.FlatProb <- FlatPay*DV.Flat*FlatProb
+FlatPay.IncInt.FlatProb  <- FlatPay*DV.Inc*FlatProb
+IncPay.FlatInt.FlatProb <- IncPay*DV.Flat*FlatProb
+IncPay.IncInt.FlatProb  <- IncPay*DV.Inc*FlatProb
+#Present Value of Payments - Increasing Probs
+FlatPay.FlatInt.IncProb <- FlatPay*DV.Flat*IncProb
+FlatPay.IncInt.IncProb  <- FlatPay*DV.Inc*IncProb
+IncPay.FlatInt.IncProb <- IncPay*DV.Flat*IncProb
+IncPay.IncInt.IncProb  <- IncPay*DV.Inc*IncProb
+#Plot Present Value of Payments
+plot(Time, FlatPay.FlatInt.IncProb, type = "b", ylim = c(0,2.5), ylab = "Present Value", xlab = "Time")
+  lines(Time, FlatPay.IncInt.IncProb, type = "b")
+  lines(Time, IncPay.FlatInt.IncProb, type = "b")
+  lines(Time, IncPay.IncInt.IncProb, type = "b")
+
+```
+
+</div>
+
+<span style="font-size: small; color: green;"> Editorial Note: As of now, I (Jed) do not know how to make two graphs on the same page update dynamically. Further, when we use the "pagination" option to reduce the size of a table, dynamic graphs becomes hard (although the dynamic tables are still really easy).</span>
+
