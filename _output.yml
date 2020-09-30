@@ -18,7 +18,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Life Contingencies</a></li>
       after: |
-        <li><a href="https://github.com/OpenActTextDev" target="blank">Life Contingencies on GitHub</a></li>
+        <li><a href="https://github.com/OpenActTextDev/LifeCon" target="blank">Life Contingencies on GitHub</a></li>
   toc_depth: 3
   edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
   download: null

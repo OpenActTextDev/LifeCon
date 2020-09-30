@@ -716,7 +716,7 @@ sum(kP50_i) - 0.5
 
 ## Non-parametric survival estimation
 
-Kaplan-Meier and Nelson-Aalen
+Kaplan-Meier and Nelson-Aalen. Please check out the [Loss Data Analysis descriptions](https://ewfrees.github.io/Loss-Data-Analytics/C-ModelSelection.html#nonparametric-estimation-using-modified-data) of these topics.
 
 ##	Conditional models: Survival regression
 
