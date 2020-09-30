@@ -12,7 +12,7 @@ rmd_files: ["index.Rmd",
 #           "Chapters/IteratedExpectations.Rmd", 
 #           "Chapters/MaximumLikeTheory.Rmd", 
 #           "Chapters/DistributionTable.Rmd",
-#           "Chapters/NotationConventionsLC.Rmd",
+           "Chapters/NotationConventionsLC.Rmd",
            "Chapters/Bibliography.Rmd"]
            
 language:

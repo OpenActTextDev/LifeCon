@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
+  <title>Chapter 4 Appendix: Conventions for Notation | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
   <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta property="og:title" content="Chapter 4 Appendix: Conventions for Notation | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/OpenActTextDev" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta name="twitter:title" content="Chapter 4 Appendix: Conventions for Notation | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
   
   <meta name="twitter:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="chapter-3-examples-present-values.html"/>
+<link rel="next" href="bibliography.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -337,93 +337,215 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</h1>
-<p class="author"><em>An open text authored by the Actuarial Community</em></p>
+<div id="C:NotationConventionLC" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Appendix: Conventions for Notation</h1>
+<p><em>Chapter Preview</em>. <em>Life Contingencies</em> employs widely accepted statistical concepts and tools. Thus, the notation should be consistent with standard usage employed in probability and mathematical statistics. See, for example, <span class="citation">[@halperin1965recommended]</span> for a description of one standard.</p>
+<div id="S:NC:General" class="section level2">
+<h2><span class="header-section-number">4.1</span> General Conventions</h2>
+<ul>
+<li>Random variables are denoted by upper-case italicized Roman letters, with <span class="math inline">\(X\)</span> or <span class="math inline">\(Y\)</span> denoting a claim size variable, <span class="math inline">\(N\)</span> a claim count variable, and <span class="math inline">\(S\)</span> an aggregate loss variable. Realizations of random variables are denoted by corresponding lower-case italicized Roman letters, with <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> for claim sizes, <span class="math inline">\(n\)</span> for a claim count, and <span class="math inline">\(s\)</span> for an aggregate loss.</li>
+<li>Probability events are denoted by upper-case Roman letters, such as <span class="math inline">\(\Pr(\mathrm{A})\)</span> for the probability that an outcome in the event ‘’A’’ occurs.</li>
+<li>Cumulative probability functions are denoted by <span class="math inline">\(F(z)\)</span> and probability density functions by the associated lower-case Roman letter: <span class="math inline">\(f(z)\)</span>.</li>
+<li>For distributions, parameters are denoted by lower-case Greek letters. A caret or ‘’hat’’ indicates a sample estimate of the corresponding population parameter. For example, <span class="math inline">\(\hat{\beta}\)</span> is an estimate of <span class="math inline">\(\beta\)</span> .</li>
+<li>The arithmetic mean of a set of numbers, say, <span class="math inline">\(x_1, \ldots, x_n\)</span>, is usually denoted by <span class="math inline">\(\bar{x}\)</span>; the use of <span class="math inline">\(x\)</span>, of course, is optional.</li>
+<li>Use upper-case boldface Roman letters to denote a matrix other than a vector. Use lower-case boldface Roman letters to denote a (column) vector. Use a superscript prime ’‘<span class="math inline">\(\prime\)</span>’’ for transpose. For example, <span class="math inline">\(\mathbf{x}^{\prime} \mathbf{A} \mathbf{x}\)</span> is a quadratic form.</li>
+<li>Acronyms are to be used sparingly, given the international focus of our audience. Introduce acronyms commonly used in statistical nomenclature but limit the number of acronyms introduced. For example, <em>pdf</em> for probability density function is useful but <em>GS</em> for Gini statistic is not.</li>
+</ul>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p style="text-align:right;">
-<em>Date: 30 September 2020</em>
+<div id="S:NC:Abbreviations" class="section level2">
+<h2><span class="header-section-number">4.2</span> Abbreviations</h2>
+<p>Here is a list of abbreviations that we adopt. We italicize these acronyms. For example, we can discuss the goodness of fit in terms of the <em>AIC</em> criterion.</p>
+<p><span class="math display">\[
+\begin{array}{ll} \hline
+\textbf{Symbol} &amp; \textbf{Description} \\
+\hline
+AIC &amp; \text{Akaike information criterion} \\
+BIC &amp; \text{(Schwarz) Bayesian information criterion} \\
+cdf &amp; \text{cumulative distribution function} \\
+df &amp; \text{degrees of freedom} \\
+iid &amp; \text{independent and identically distributed} \\
+GLM &amp; \text{generalized linear model} \\
+mle &amp; \text{maximum likelihood estimate/estimator}\\
+ols &amp; \text{ordinary least squares} \\
+pdf &amp; \text{probability density function} \\
+pmf &amp; \text{probability mass function} \\ \hline
+\end{array}
+\]</span></p>
+</div>
+<div id="S:NC:StatSymbols" class="section level2">
+<h2><span class="header-section-number">4.3</span> Common Statistical Symbols and Operators</h2>
+<p>Here is a list of commonly used statistical symbols and operators, including the latex code that we use to generate them (in the parens).</p>
+<p><span class="math display">\[
+\begin{array}{cl}  \hline
+\textbf{Symbol} &amp; \textbf{Description} \\
+\hline
+I(\cdot) &amp; \text{binary indicator function (}I\text{). For example, }I(A) \text{ is one if an outcome in event} \\
+&amp; \ \ \ \ \  A \text{ occurs and is 0 otherwise.} \\
+\Pr(\cdot) &amp; \text{probability }(\backslash{\tt{Pr}}) \\
+\mathrm{E}(\cdot)  &amp; {\text{expectation operator }} (\backslash{\tt{mathrm\{E\}}}). {\text{ For example, }} \mathrm{E}(X)=\mathrm{E}~X {\text{ is the }} \\
+&amp; \ \ \ \ \ {\text{expected value of the random variable }}X,{\text{ commonly denoted by }}\mu. \\
+\mathrm{Var}(\cdot)  &amp; \text{variance operator }(\backslash{\tt{mathrm\{Var\}}}). \text{ For example, } \mathrm{Var}(X)=\mathrm{Var}~X\text{ is the} \\
+&amp; \ \ \ \ \  \text{ variance of the random variable } X, \text{commonly denoted by } \sigma^2. \\
+\mu_k = \mathrm{E}~X^k &amp; \text{kth moment of the random variable X. For }k\text{=1, use }\mu = \mu_1. \\
+\mathrm{Cov}(\cdot,\cdot)  &amp; \text{covariance operator } (\backslash{\tt{mathrm\{Cov\}}}).\text{ For example, } \\
+&amp; \ \ \ \ \ \mathrm{Cov}(X,Y)=\mathrm{E}\left\{(X -\mathrm{E}~X)(Y-\mathrm{E}~Y)\right\}  =\mathrm{E}(XY) -(\mathrm{E}~X)(\mathrm{E}~Y)\\
+&amp; \ \ \ \ \  \text{ is the covariance between random variables }X\text{ and }Y. \\
+\mathrm{E}(X | \cdot)  &amp; \text{conditional expectation operator. For example, }\mathrm{E}(X |Y=y) \text{ is the}\\
+&amp; \ \ \ \ \   \text{ conditional expected value of a random variable }X\text{ given that }\\
+&amp; \ \ \ \ \   \text{ the random variable }Y\text{ equals y. }\\
+\Phi(\cdot) &amp; \text{standard normal cumulative distribution function }(\backslash{\tt{Phi}})\\
+\phi(\cdot) &amp; \text{standard normal probability density function }(\backslash{\tt{phi}})\\
+\sim &amp; \text{means is distributed as }(\backslash{\tt{sim}}). \text{ For example, }X\sim F \text{ means that the } \\
+&amp; \ \ \ \ \  \text{random variable } X \text{ has distribution function }F. \\
+se(\hat{\beta}) &amp; \text{standard error of the parameter estimate }\hat{\beta} ~ (\backslash{\tt{hat\{}}\backslash{\tt{beta\}}}), \text{ usually }\\
+&amp; \ \ \ \ \  \text{ an estimate of the standard deviation of }\hat{\beta},\text{ which is }\sqrt{Var(\hat{\beta})}. \\
+H_0 &amp;  \text{null hypothesis} \\
+H_a \text{ or }H_1 &amp; \text{alternative hypothesis} \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<div id="S:NC:Symbols" class="section level2">
+<h2><span class="header-section-number">4.4</span> Common Mathematical Symbols and Functions</h2>
+<p>Here is a list of commonly used mathematical symbols and functions, including the latex code that we use to generate them (in the parens).</p>
+<p><span class="math display">\[
+\begin{array}{cll}
+\hline
+\textbf{Symbol} &amp; \textbf{Latex code} &amp; \textbf{Description} \\
+\hline
+\equiv &amp; \backslash\tt{equiv} &amp; \text{identity, equivalence} \\
+\implies  &amp; \backslash\tt{implies} &amp; \text{implies} \\
+\iff  &amp; \backslash\tt{iff} &amp; \text{if and only if} \\
+\to, \longrightarrow &amp; \backslash\tt{to}, \backslash\tt{longrightarrow} &amp; \text{converges to} \\
+\mathbb{N} &amp; \backslash\tt{mathbb\{N\}} &amp; \text{natural numbers }1,2,\ldots \\
+\mathbb{R} &amp; \backslash\tt{mathbb\{R\}} &amp; \text{real numbers} \\
+\in        &amp; \backslash\tt{in} &amp; \text{belongs to} \\
+\notin     &amp; \backslash\tt{notin} &amp; \text{does not belong to} \\
+\subseteq  &amp; \backslash\tt{subseteq} &amp; \text{is a subset of} \\
+\subset    &amp; \backslash\tt{subset} &amp; \text{is a proper subset of} \\
+\cup       &amp; \backslash\tt{cup} &amp; \text{union} \\
+\cap       &amp; \backslash\tt{cap} &amp; \text{intersection} \\
+\emptyset  &amp; \backslash\tt{emptyset} &amp; \text{empty set} \\
+A^{c}      &amp;  &amp; \text{complement of }A   \\
+g*f        &amp;  &amp; \text{convolution }(g*f)(x)=\int_{-\infty}^{\infty}g(y)f(x-y)dy \\
+\exp       &amp; \backslash\tt{exp} &amp; \text{exponential} \\
+\log       &amp; \backslash\tt{log} &amp; \text{natural logarithm }\\
+\log_a     &amp;  &amp; \text{logarithm to the base }a \\
+!          &amp;  &amp; \text{factorial} \\
+\text{sgn}(x) &amp; \backslash\tt{sgn} &amp; \text{sign of x} \\
+\lfloor x\rfloor &amp; \backslash\tt{lfloor}, \backslash\tt{rfloor} &amp; \text{integer part of x, that is, largest integer }\leq x \\
+|x|        &amp;  &amp; \text{absolute value of scalar }x \\
+\varGamma(x) &amp; \backslash\tt{varGamma} &amp; \text{gamma (generalized factorial) function},\\
+           &amp;  &amp; \text{satisfying }\varGamma(x+1)=x\varGamma(x) \\
+B(x,y)     &amp;  &amp; \text{beta function, }\varGamma(x)\varGamma(y)/\varGamma(x+y) \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<div id="S:NC:ActSymbols" class="section level2">
+<h2><span class="header-section-number">4.5</span> Actuarial Notation</h2>
+<p>Here is a list of commonly used actuarial symbols and functions, including the latex code that we use to generate them.</p>
+<div id="life-table-notation" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Life Table Notation</h3>
+<p><span class="math display">\[
+\require{enclose}
+\begin{array}{cll}  \hline
+\textbf{Symbol} &amp; \textbf{Latex code} &amp; \textbf{Description} \\
+\hline
+\ell_{x} &amp; \verb|\| \tt{ell}\_\{\tt{x}\} &amp; \text{Expected number of lives at age } x \\
+\ell_{[x]} &amp; \backslash\tt{ell}\_\{ [\tt{x}]\} &amp; \text{Expected number of lives at select age } x \\
+_{t}p_{x} &amp;    ~ \_\{ \tt{t} \} \tt{p} \_ \{\tt{x}\} &amp; \text{Probability that a life aged } x \text{ survives }t \text{ years} \\
+_{t}p_{[x]} &amp;    ~ \_\{ \tt{t} \} \tt{p} \_ \{ [\tt{x}]\}\} &amp; \text{Probability that a select life aged } x \text{ survives }t \text{ years} \\
+\mathring{e}_{x} &amp; \backslash\tt{mathring\{e\}} \_ \{ x\} &amp; \text{Complete expectation of life at age } x \\
+\mathring{e}_{x:{\enclose{actuarial}{n}}} &amp; \backslash\tt{mathring\{e\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} &amp; \text{Complete expectation of life at age } x \text{ for the next } n \text{ years} \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<div id="annuity-certain-and-life-annuity-notation" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Annuity Certain and Life Annuity Notation</h3>
+<p>Not sure if necessary to say APV (actuarial present value)</p>
+<p><span class="math display">\[
+\begin{array}{cll}  \hline
+\textbf{Symbol} &amp; \textbf{Latex code} &amp; \textbf{Description} \\
+\hline
+a_{\enclose{actuarial}{n}} &amp; \tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} &amp; n\text{-year annuity certain-immediate} \\
+\ddot{a}_{\enclose{actuarial}{n}} &amp; \backslash\tt{ddot}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} &amp; n\text{-year annuity certain-due} \\
+\ddot{a}^{(m)}_{\enclose{actuarial}{n}} &amp; \backslash\tt{ddot} \verb|^| \tt{\{(m)\}}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} &amp; n\text{-year annuity certain-due payable } m\text{-thly}  \\
+_{m|}\ddot{a}_{\enclose{actuarial}{n}} &amp; ~ \_\{ \tt{m|} \} \backslash\tt{ddot}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} &amp; m\text{-year deferred } n\text{-year annuity certain-due} \\
+a_{x} &amp; \tt{a}\_\{x\} &amp; \text{APV of a whole life annuity immediate to } (x) \\
+\ddot{a}_{x} &amp; \backslash\tt{ddot}\{\tt{a}\}\_\{x\} &amp; \text{APV of a whole life annuity due to } (x) \\
+a^{(m)}_{x} &amp; \tt{a} \verb|^| \tt{\{(m)\}}\_\{x\} &amp; \text{APV of a life annuity immediate to } (x) \text{ payable } m\text{-thly} \\
+\ddot{a}^{(m)}_{x} &amp; \backslash\tt{ddot}\{\tt{a}\} \verb|^| \tt{\{(m)\}}\_\{x\} &amp; \text{APV of a life annuity due to } (x) \text{ payable } m\text{-thly} \\
+_{n|}\ddot{a}_{x} &amp; ~ \_\{ \tt{n|} \} \backslash\tt{ddot}\_\{\tt{a}\_\{x\}\} &amp; \text{APV of an } n\text{-year deferred life annuity due to } (x) \\
+\ddot{a}_{x:{\enclose{actuarial}{n}}} &amp; \backslash\tt{ddot\{a\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} &amp; \text{APV of an } n\text{-year life annuity due to } (x) \\
+\ddot{a}^{(m)}_{x:{\enclose{actuarial}{n}}} &amp; \backslash\tt{ddot\{a\}} \verb|^| \tt{\{(m)\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} &amp; \text{APV of an } n\text{-year life annuity due to } (x) \text{ payable } m\text{-thly} \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+<div id="life-insurance-notation" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> Life Insurance Notation</h3>
+<p>Not sure if necessary to say APV (actuarial present value).</p>
+<p><span class="math display">\[
+\begin{array}{cll}  \hline
+\textbf{Symbol} &amp; \textbf{Latex code} &amp; \textbf{Description} \\
+\hline
+A_{x} &amp;    \tt{A} \_ \{\tt{x}\} &amp; \text{APV of a discrete whole life insurance to } (x) \\
+\bar{A}_{x} &amp;    \backslash \tt{bar} \{\tt{A}\} \_ \{\tt{x}\} &amp; \text{APV of a continuous whole life insurance to } (x) \\
+A^{(m)}_{x} &amp;    \tt{A} \verb|^| \tt{\{(m)\}}\_ \{\tt{x}\} &amp; \text{APV of a whole life insurance payable at end of } m\text{-th of the year of death of } (x) \\
+_{n}E_{x} &amp;    ~ \_\{ \tt{n} \} \tt{E} \_ \{\tt{x}\} &amp; \text{APV of an } n\text{-year pure endowment to } (x) \\
+{A}_{x:\enclose{actuarial}{n}}^{\quad 1} &amp; \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} \verb|^| \{\backslash \tt{quad} \ 1\} &amp; \text{APV of an } n\text{-year term insurance to } (x)  \\
+{A}_{x:{\enclose{actuarial}{n}}} &amp; \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} &amp; \text{APV of an } n\text{-year endowment insurance to } (x) \\
+_{n|}{A}_{x} &amp; ~ \_\{ \tt{n|} \} \{\tt{A}\_\{x\}\} &amp; \text{APV of an } n\text{-year deferred life insurance to } (x) \\
+{A}_{x:\enclose{actuarial}{n}}^{\space 1} &amp; \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} \verb|^| \{\backslash \tt{space} \ 1\} &amp; \text{APV of an } n\text{-year term insurance to } (x)  \\
+\hline
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="C:NotConv:Halo" class="section level2">
+<h2><span class="header-section-number">4.6</span> Halo System</h2>
+</div>
+
+<div class="figure" style="text-align: center"><span id="fig:Halo1a"></span>
+<img src="LifeCon_files/figure-html/Halo1a-1.png" alt="Halo System: Example of an Actuarial Symbol. Source: This is adapted from the Wikipedia page Actuarial Notation." width="50%" />
+<p class="caption">
+Figure 4.1: <strong>Halo System: Example of an Actuarial Symbol</strong>. <em>Source</em>: This is adapted from the <em>Wikipedia</em> page <a href="https://en.wikipedia.org/wiki/Actuarial_notation">Actuarial Notation</a>.
 </p>
-<p><span class="math inline">\(\require{enclose}\)</span></p>
-
-
-
-
-<!-- # Preface {-} -->
-<div id="book-description" class="section level4 unnumbered">
-<h4>Book Description</h4>
-<p>This is an interactive, online, freely available text.</p>
+</div>
+<hr />
+<div style="page-break-after: always;"></div>
+<p><strong>Legend:</strong></p>
 <ul>
-<li>The online version contains many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote <em>deeper learning</em>.</li>
-<li>A subset of the book is available for <em>offline reading</em> in pdf and EPUB formats.</li>
-<li>The online text will be available in multiple languages to promote access to a <em>worldwide audience</em>.</li>
+<li>1 - the “2” means double the force of interest</li>
+<li>2 - the bar implies continuous, or payments at the moment of death. No bar, or blank, signifies payment at the end of the year.
+For annuities, could use a double dot that signifies payments at the beginning of the year.</li>
+<li>3 - the “1” denotes a temporary, or term, payment. Paid if <span class="math inline">\(x\)</span> within <span class="math inline">\(n\)</span> years</li>
+<li>4 - contract issued to a life aged <span class="math inline">\(x\)</span> and lasts for at most <span class="math inline">\(n\)</span> years.</li>
+<li>5 - the “A” signifies it is an insurance (“assurance”) contract. Could also be a lower case <span class="math inline">\(a\)</span> that would signify an annuity contract.</li>
+<li>6 - deferred <em>m</em> years</li>
 </ul>
-</div>
-<div id="what-will-success-look-like" class="section level4 unnumbered">
-<h4>What will success look like?</h4>
-<p>The online text will be freely available to a worldwide audience. The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. Moreover, a subset of the book will be available in pdf format for low-cost printing. The online text will be available in multiple languages to promote access to a worldwide audience.</p>
-</div>
-<div id="how-will-the-text-be-used" class="section level4 unnumbered">
-<h4>How will the text be used?</h4>
-<p>This book will be useful in actuarial curricula worldwide. It will cover the loss data learning objectives of the major actuarial organizations. Thus, it will be suitable for classroom use at universities as well as for use by independent learners seeking to pass professional actuarial examinations. Moreover, the text will also be useful for the continuing professional development of actuaries and other professionals in insurance and related financial risk management industries.</p>
-</div>
-<div id="why-is-this-good-for-the-profession" class="section level4 unnumbered">
-<h4>Why is this good for the profession?</h4>
-<p>An online text is a type of open educational resource (OER). One important benefit of an OER is that it equalizes access to knowledge, thus permitting a broader community to learn about the actuarial profession. Moreover, it has the capacity to engage viewers through active learning that deepens the learning process, producing analysts more capable of solid actuarial work.</p>
-<p>Why is this good for students and teachers and others involved in the learning process? Cost is often cited as an important factor for students and teachers in textbook selection (see a recent post on the <a href="https://www.aei.org/publication/the-new-era-of-the-400-college-textbook-which-is-part-of-the-unsustainable-higher-education-bubble/">$400 textbook</a>). Students will also appreciate the ability to “carry the book around” on their mobile devices.</p>
-</div>
-<div id="project-goal" class="section level4 unnumbered">
-<h4>Project Goal</h4>
-<p>The project goal is to have the actuarial community author our textbooks in a collaborative fashion. To get involved, please visit our
-<a href="https://sites.google.com/a/wisc.edu/loss-data-analytics/">Open Actuarial Textbooks Project Site</a>.</p>
-</div>
-<div id="acknowledgements" class="section level2 unnumbered">
-<h2>Acknowledgements</h2>
-<p>Edward Frees acknowledges the John and Anne Oros Distinguished Chair for Inspired Learning in Business which provided seed money to support the project. Frees and his Wisconsin colleagues also acknowledge a Society of Actuaries Center of Excellence Grant that provided funding to support work in dependence modeling and health initiatives. Wisconsin also provided an education innovation grant that provided partial support for the many students who have worked on this project.</p>
-<p>We acknowledge the Society of Actuaries for permission to use problems from their examinations.</p>
-<p>We thank Rob Hyndman, Monash University, for allowing us to use his excellent style files to produce the online version of the book.</p>
-<p>We thank Yihui Xie and his colleagues at <a href="https://www.rstudio.com/">Rstudio</a> for the <a href="https://bookdown.org/yihui/bookdown/">R bookdown</a> package that allows us to produce this book.</p>
-<p>We also wish to acknowledge the support and sponsorship of the <a href="http://www.blackactuaries.org/">International Association of Black Actuaries</a> in our joint efforts to provide actuarial educational content to all.</p>
-<center>
-<img src="Figures/IABA.png" style="width:25.0%" />
-</center>
-</div>
-<div id="contributors" class="section level2 unnumbered">
-<h2>Contributors</h2>
-<p>The project goal is to have the actuarial community author our textbooks in a collaborative fashion. The following contributors have taken a leadership role in developing <em>Life Contingencies</em>.</p>
+<p><strong>Note:</strong> It is sometimes helpful to put a space before the pre-subscript like <span class="math inline">\(\frac{\ell_{[x]+t}}{\ell_{[x]}} = ~_{t}p_{[x]}\)</span>. Else you get this awkward <span class="math inline">\(\frac{\ell_{[x]+t}}{\ell_{[x]}} = _{t}p_{[x]}\)</span>.</p>
+<p><span class="math display">\[
+Y =
+ \begin{cases}
+ 1 + v + v^2 + \cdots + v^K = \ddot{a}_{\enclose{actuarial}{K+1}}, K=0,1,\ldots,n-1 \\
+ 1 + v + v^2 + \cdots + v^{n-1} = \ddot{a}_{\enclose{actuarial}{n}}, K \ge n
+ \end{cases}
+\]</span>
+<strong>Note.</strong></p>
 <ul>
-<li><p><strong>Vali Asimit</strong></p></li>
-<li><p><strong>Dani Bauer</strong></p></li>
-<li><p><strong>Adam Butt</strong></p></li>
-<li><p><strong>Emiliano Valdez</strong></p></li>
+<li>For the <code>html</code> version of the text, we are using the <a href="">STACK</a> system; in particular, see their <a href="https://stack-demo.maths.ed.ac.uk/demo/question/type/stack/doc/doc.php/Authoring/Actuarial.md">actuarial notation</a> page.</li>
+<li>This does not appear to work for the <code>pdf</code> version, at least with R-Studio. The latex package <a href="https://ctan.org/pkg/actuarialsymbol?lang=en">actuarialangle</a> provides a substitute. To make this happen, in our latex header .tex page, we have the following bit of code</li>
 </ul>
-<p><img src = "ContributorPics/Frees_Jed2018_150x188.jpg" width = "150" height = "180" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
-<ul>
-<li><strong>Edward W. (Jed) Frees</strong> is an emeritus professor, formerly the Hickman-Larson Chair of Actuarial Science at the University of Wisconsin-Madison. He is a Fellow of both the Society of Actuaries and the American Statistical Association. He has published extensively (a four-time winner of the Halmstad and Prize for best paper published in the actuarial literature) and has written three books. He also is a co-editor of the two-volume series <em>Predictive Modeling Applications in Actuarial Science</em> published by Cambridge University Press.</li>
-</ul>
+<pre><code>%  Something for the Actuarial Angle package
+\usepackage{actuarialangle}
+\newcommand{\enclose}[1]{\actuarialangle} </code></pre>
 </div>
-<div id="reviewers" class="section level2 unnumbered">
-<h2>Reviewers</h2>
-<p>Our goal is to have the actuarial community author our textbooks in a collaborative fashion. Part of the writing process will involve many reviewers to help make this book better.</p>
-</div>
-<div id="for-our-readers" class="section level2 unnumbered">
-<h2>For our Readers</h2>
-<p>We hope that you find this book worthwhile and even enjoyable. For your convenience, at our <a href="https://openacttexts.github.io/">Github Landing site</a> (<a href="https://openacttexts.github.io/" class="uri">https://openacttexts.github.io/</a>),</p>
-<p>In developing this book, we are emphasizing the <a href="https://openacttexts.github.io/Loss-Data-Analytics/index.html">online version</a> that has lots of great features such as a glossary, code and solutions to examples that you can be revealed interactively. For example, you will find that the statistical code is hidden and can only be seen by clicking on terms such as</p>
-<h5 style="text-align: center;">
-<a id="displayCode.SeverityFig.1Intro" href="javascript:togglecode('toggleCode.SeverityFig.1Intro','displayCode.SeverityFig.1Intro');"><i><strong>R Code for Frequency Table</strong></i></a>
-</h5>
-<div id="toggleCode.SeverityFig.1Intro" style="display: none">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Insample.csv&quot;</span>, <span class="dt">header=</span>T,  <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), </a>
-<a class="sourceLine" id="cb1-2" title="2">                      <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3">Insample2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample, Year<span class="op">==</span><span class="dv">2010</span>)</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">table</span>(Insample2010<span class="op">$</span>Freq)</a></code></pre></div>
-</div>
-<p>We hide the code because we don’t want to insist that you use the <code>R</code> statistical software (although we like it). Still, we encourage you to try some statistical code as you read the book – we have opted to make it easy to learn <code>R</code> as you go. We have set up a separate <a href="https://openacttexts.github.io/LDARcode">R Code for Loss Data Analytics</a> site to explain more of the details of the code.</p>
-<p>Like any book, we have a set of notations and conventions. It will probably save you time if you regularly visit our Appendix Chapter <a href="C-NotationConventionLC.html#C:NotationConventionLC">4</a> to get used to ours.</p>
-<p>Freely available, interactive textbooks represent a new venture in actuarial education and we need your input. Although a lot of effort has gone into the development, we expect hiccoughs. Please let your instructor know about opportunities for improvement, write us through our project site, or contact chapter contributors directly with suggested improvements.</p>
+<div id="further-readings" class="section level2">
+<h2><span class="header-section-number">4.7</span> Further Readings</h2>
+<p>To make connections to other literatures, see <span class="citation">[@abadir2002notation]</span>  for a summary of notation from the econometrics perspective. This reference has a terrific feature that many latex symbols are defined in the article. Further, there is a long history of discussion and debate surrounding actuarial notation; see <span class="citation">[@boehm1975thoughts]</span> for one contribution.</p>
 
 </div>
 </div>
@@ -432,8 +554,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chapter-3-examples-present-values.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliography.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

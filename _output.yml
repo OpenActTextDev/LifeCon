@@ -16,9 +16,9 @@ bookdown::gitbook:
     toc:
       collapse: subsection
       before: |
-        <li><a href="./">The Mathematics, Statistics, and Economics of Life Insurance</a></li>
+        <li><a href="./">Life Contingencies</a></li>
       after: |
-        <li><a href="https://github.com/OpenActTexts/Loss-Data-Analytics" target="blank">Life Contingencies on GitHub</a></li>
+        <li><a href="https://github.com/OpenActTextDev" target="blank">Life Contingencies on GitHub</a></li>
   toc_depth: 3
   edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
   download: null

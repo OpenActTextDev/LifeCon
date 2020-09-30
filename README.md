@@ -1,11 +1,18 @@
 
 # Open Actuarial Textbooks Project Goal
 
-The goal is to have the actuarial community author our textbooks in a collaborative fashion. The text *Loss Data Analytics* represents our first book.  
+The goal is to have the actuarial community author our textbooks in a collaborative fashion. The text *Loss Data Analytics* represents our first book. 
+
+## Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance
+
+This respository is focused on a new text, currently titled *Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance*. A summary of the book is available [online](https://openacttextdev.github.io/LifeCon/index.html), code for the book is available above. One way to get a working copy of the code is to hit the green "Code button" and then "Download ZIP".
+
+More to come later.
 
 ## Loss Data Analytics
 
 ### Book Description
+
 *Loss Data Analytics* is be an interactive, online, freely available text.
 
 * The online version contains many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning.
@@ -19,7 +26,8 @@ To see our progress, a current version of the book is available at [Online Versi
 *GitHub* provides a natural development environment to achieve this goal.
 
 *  The more stable version is available through the ["Production" Github Landing Site](https://OpenActTexts.github.io) - designed for students and classes. 
-*  The more frequently updated  version is available through the ["Development" Github Landing Site](https://ewfrees.github.io) - designed for instructors and developers.
+*  The more frequently updated  version is available through the first ["Development" Github Landing Site](https://ewfrees.github.io) - designed for instructors and developers.
+*  We are now porting resources to a newer, second ["Development" Github](https://github.com/OpenActTextDev/LifeCon) center - designed for instructors and developers.
 
 Code, data, offline versions and more are available through these portals.
 
