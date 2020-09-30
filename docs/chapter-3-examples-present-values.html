@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Examples – Present Values | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
-  <meta name="description" content="Thisis an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Examples – Present Values | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Thisis an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta property="og:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   <meta name="github-repo" content="https://github.com/OpenActTextDev" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 3 Examples – Present Values | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
   
-  <meta name="twitter:description" content="Thisis an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="twitter:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
 
 <meta name="author" content="An open text authored by the Actuarial Community" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="C-Benefit.html"/>
-<link rel="next" href="C-NotationConvention.html"/>
+<link rel="next" href="bibliography.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -57,235 +57,6 @@
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-
-
-<!-- Mathjax -->
-<script type='text/x-mathjax-config'>
-		MathJax.Hub.Config({
-			extensions: ['tex2jax.js'],
-			jax: ['input/TeX', 'output/HTML-CSS'],
-			tex2jax: {
-				inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-				displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-				processEscapes: true
-			},
-			'HTML-CSS': { availableFonts: ['TeX'] }
-		});
-</script>
-
-<!-- The following code is for the quizzes -->
-<script src="https://surveyjs.azureedge.net/1.0.50/survey.jquery.js"></script>
-<link href="https://surveyjs.azureedge.net/1.0.50/survey.css" type="text/css" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>  
-
-<script>
-function markdownConverterEWF() {  
-//Create showdown markdown converter
-var converter = new showdown.Converter();
-converter.setOption('ghCompatibleHeaderId', true);
-survey
-    .onTextMarkdown
-    .add(function (survey, options) {
-        //convert the mardown text to html
-        var str = converter.makeHtml(options.text);
-        //remove root paragraphs <p></p>
-        str = str.substring(3);
-        str = str.substring(0, str.length - 4);
-        //set html
-        options.html = str;
-         MathJax.Hub.Queue(['Typeset',MathJax.Hub, 'options']);
-    });  
-};
-// Quiz Header info
-const jsonHeader = { 
-    showProgressBar: "bottom",
-    showTimerPanel: "none",
-    maxTimeToFinishPage: 10000,
-    maxTimeToFinish: 25000,
-    firstPageIsStarted: true,
-    startSurveyText: "Start Quiz" //,
-//    title: "Does This Make Sense?"
-}
-// One and Two question quizzes
-function jsonSummary1EWF(json) {  
-let jsonEnd1 = { 
-completedHtml: 
-json["pages"][1]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
-};  
-return jsonEnd1;
-};
-
-
-function jsonSummary2EWF(json) {  
-let jsonEnd2 = { 
-completedHtml: 
-json["pages"][1]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
-+"<br>"+
-json["pages"][2]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
-};  
-return jsonEnd2;
-};
-
-// Three, four, and five question quizzes
-function jsonSummary3EWF(json) {  
-let jsonEnd3 = { 
-completedHtml: 
-json["pages"][1]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][1]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][1]["questions"][0]["correctAnswer"]
-+"<br>"+
-json["pages"][2]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][2]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][2]["questions"][0]["correctAnswer"]
-+"<br>"+
-json["pages"][3]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][3]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][3]["questions"][0]["correctAnswer"]
-};  
-return jsonEnd3;
-};
-
-function jsonSummary4EWF(json) {  
-jsonEnd4 = jsonSummary3EWF(json);
-jsonEnd4.completedHtml = jsonEnd4.completedHtml +  
-"<br>"+
-json["pages"][4]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][4]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][4]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd4;
-};
-
-function jsonSummary5EWF(json) {  
-jsonEnd5 = jsonSummary4EWF(json);
-jsonEnd5.completedHtml = jsonEnd5.completedHtml +  
-"<br>"+
-json["pages"][5]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][5]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][5]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd5;
-};
-
-function jsonSummary6EWF(json) {  
-jsonEnd6 = jsonSummary5EWF(json);
-jsonEnd6.completedHtml = jsonEnd6.completedHtml +  
-"<br>"+
-json["pages"][6]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][6]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][6]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd6;
-};
-
-function jsonSummary7EWF(json) {  
-jsonEnd7 = jsonSummary6EWF(json);
-jsonEnd7.completedHtml = jsonEnd7.completedHtml +  
-"<br>"+
-json["pages"][7]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][7]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][7]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd7;
-};
-
-function jsonSummary8EWF(json) {  
-jsonEnd8 = jsonSummary7EWF(json);
-jsonEnd8.completedHtml = jsonEnd8.completedHtml +  
-"<br>"+
-json["pages"][8]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][8]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][8]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd8;
-};
-
-function jsonSummary9EWF(json) {  
-jsonEnd9 = jsonSummary8EWF(json);
-jsonEnd9.completedHtml = jsonEnd9.completedHtml +  
-"<br>"+
-json["pages"][9]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][9]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][9]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd9;
-};
-
-
-function jsonSummary10EWF(json) {  
-jsonEnd10 = jsonSummary9EWF(json);
-jsonEnd10.completedHtml = jsonEnd10.completedHtml +  
-"<br>"+
-json["pages"][10]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][10]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][10]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd10;
-};
-
-
-function jsonSummary11EWF(json) {  
-jsonEnd11 = jsonSummary10EWF(json);
-jsonEnd11.completedHtml = jsonEnd11.completedHtml +  
-"<br>"+
-json["pages"][11]["questions"][0]["name"]+ "<br>"+
-"<i>Question: </i>"+json["pages"][11]["questions"][0]["title"]+"<br>"+
-"<i>Answer: </i>"+json["pages"][11]["questions"][0]["correctAnswer"]
-;  
-return jsonEnd11;
-};
-
-
-
-</script>  
-<!-- This completes the code for the quizzes -->
-
-
-<!-- Various toggle functions used throughout --> 
-<script language="javascript">
-function toggle(id1,id2) {
-	var ele = document.getElementById(id1); var text = document.getElementById(id2);
-	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
-		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
-function togglecode(id1,id2) {
-   var ele = document.getElementById(id1); var text = document.getElementById(id2);
-   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
-      else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
-function toggleEX(id1,id2) {
-   var ele = document.getElementById(id1); var text = document.getElementById(id2);
-   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
-      else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
-function toggleTheory(id1,id2) {
-   var ele = document.getElementById(id1); var text = document.getElementById(id2);
-   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
-      else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
-function toggleQuiz(id1,id2) {
-   var ele = document.getElementById(id1); var text = document.getElementById(id2);
-   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Quiz Solution";}
-      else {ele.style.display = "block"; text.innerHTML = "Hide Quiz Solution";}}      
-</script>
-
-<!-- A few functions for revealing definitions -->
-<script language="javascript">
-<!--   $( function() {
-    $("#tabs").tabs();
-  } ); -->
-
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
-});
-</script>
-
 <script language="javascript">
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
@@ -304,6 +75,92 @@ function openTab(evt, tabName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
+
+<script language="javascript">
+function toggle(id1,id2) {
+	var ele = document.getElementById(id1); var text = document.getElementById(id2);
+	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
+		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
+</script>
+
+<script language="javascript">
+function togglecode(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
+</script>
+<script language="javascript">
+function toggleEX(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
+</script>
+<script language="javascript">
+function toggleTheory(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+</script>
+
+<script language="javascript">
+function toggleDet(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Details";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide  Details";}}
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
+
+<style>
+/* Rearrange console label */
+.datacamp-exercise ol li, .datacamp-exercise ul li {
+  margin-bottom: 0em !important;
+}
+
+/* Remove bullet marker */
+.datacamp-exercise ol li::before, .datacamp-exercise ul li::before {
+  content: '' !important;
+}
+</style>
+
+
+<script language="javascript">
+var submitAnswer = function() {
+
+  var radios = document.getElementsByName('choice');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+    alert('please select choice answer');
+  } else if ( val == "Correct" ) {
+    alert('Answer is correct !');
+  } else {
+    alert('Answer is wrong');
+  }
+};
+</script>
+
+
+
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -446,19 +303,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html"><i class="fa fa-check"></i>Chapter 3 Examples – Present Values</a><ul>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html#examples-valuation-of-cash-flows-under-uncertainty"><i class="fa fa-check"></i>Examples – Valuation of cash flows under uncertainty</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html"><i class="fa fa-check"></i><b>4</b> Appendix E: Conventions for Notation</a><ul>
-<li class="chapter" data-level="4.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:NC:General"><i class="fa fa-check"></i><b>4.1</b> General Conventions</a></li>
-<li class="chapter" data-level="4.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:NC:Abbreviations"><i class="fa fa-check"></i><b>4.2</b> Abbreviations</a></li>
-<li class="chapter" data-level="4.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:NC:StatSymbols"><i class="fa fa-check"></i><b>4.3</b> Common Statistical Symbols and Operators</a></li>
-<li class="chapter" data-level="4.4" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:NC:Symbols"><i class="fa fa-check"></i><b>4.4</b> Common Mathematical Symbols and Functions</a></li>
-<li class="chapter" data-level="4.5" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#S:NC:ActSymbols"><i class="fa fa-check"></i><b>4.5</b> Actuarial Notation</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#life-table-notation"><i class="fa fa-check"></i><b>4.5.1</b> Life Table Notation</a></li>
-<li class="chapter" data-level="4.5.2" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#annuity-certain-and-life-annuity-notation"><i class="fa fa-check"></i><b>4.5.2</b> Annuity Certain and Life Annuity Notation</a></li>
-<li class="chapter" data-level="4.5.3" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#life-insurance-notation"><i class="fa fa-check"></i><b>4.5.3</b> Life Insurance Notation</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#C:NotConv:Halo"><i class="fa fa-check"></i><b>4.6</b> Halo System</a></li>
-<li class="chapter" data-level="4.7" data-path="C-NotationConvention.html"><a href="C-NotationConvention.html#further-readings"><i class="fa fa-check"></i><b>4.7</b> Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -642,6 +486,9 @@ chart311 = Highcharts.chart('containerLC311', {
 <a class="sourceLine" id="cb69-23" title="23">  <span class="kw">lines</span>(Time, IncPay.FlatInt, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a>
 <a class="sourceLine" id="cb69-24" title="24">  <span class="kw">lines</span>(Time, IncPay.IncInt, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a></code></pre></div>
 </div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIDE6MTJcbiNQYXltZW50c1xuRmxhdFBheSA8LSByZXAoMTEsIDEyKVxuSW5jUGF5IDwtIHNlcShmcm9tPTAsIHRvPTIyLCBieT0yKVxuI0ludGVyZXN0IFJhdGVzXG5GbGF0SW50IDwtIHJlcCgwLjA1NSwgMTIpXG5JbmNJbnQgPC0gc2VxKGZyb209MCwgdG89MC4xMSwgYnk9MC4wMSlcbiNEaXNjb3VudCBWYWx1ZXNcbkRWLkZsYXQgPC0gMS8oMStGbGF0SW50WzFdKVxuZm9yKGkgaW4gMjoxMikge0RWLkZsYXRbaV0gPC0gRFYuRmxhdFtpLTFdLygxK0ZsYXRJbnRbaV0pXG4gICAgICAgICAgICAgICB9XG5EVi5JbmMgPC0gMS8oMStJbmNJbnRbMV0pXG5mb3IoaSBpbiAyOjEyKSB7RFYuSW5jW2ldIDwtIERWLkluY1tpLTFdLygxK0luY0ludFtpXSlcbn1cbiNQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5GbGF0UGF5LkZsYXRJbnQgPC0gRmxhdFBheSpEVi5GbGF0XG5GbGF0UGF5LkluY0ludCAgPC0gRmxhdFBheSpEVi5JbmNcbkluY1BheS5GbGF0SW50IDwtIEluY1BheSpEVi5GbGF0XG5JbmNQYXkuSW5jSW50ICA8LSBJbmNQYXkqRFYuSW5jXG4jUGxvdCBQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5wbG90KFRpbWUsIEZsYXRQYXkuRmxhdEludCwgdHlwZSA9IFwiYlwiLCB5bGltID0gYygwLDE0KSwgeWxhYiA9IFwiUHJlc2VudCBWYWx1ZVwiLCB4bGFiID0gXCJUaW1lXCIpXG4gIGxpbmVzKFRpbWUsIEZsYXRQYXkuSW5jSW50LCB0eXBlID0gXCJiXCIpXG4gIGxpbmVzKFRpbWUsIEluY1BheS5GbGF0SW50LCB0eXBlID0gXCJiXCIpXG4gIGxpbmVzKFRpbWUsIEluY1BheS5JbmNJbnQsIHR5cGUgPSBcImJcIikifQ==
+</div>
 <p><br></p>
 </div>
 <div id="example-3.1.2.-varying-payments-and-rates-of-interest-with-uncertainty" class="section level4 unnumbered">
@@ -807,6 +654,9 @@ chart312 = Highcharts.chart('containerLC312', {
 <a class="sourceLine" id="cb70-32" title="32">  <span class="kw">lines</span>(Time, IncPay.IncInt.IncProb, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a></code></pre></div>
 </div>
 <p><span style="font-size: small; color: green;"> Editorial Note: As of now, I (Jed) do not know how to make two graphs on the same page update dynamically. Further, when we use the “pagination” option to reduce the size of a table, dynamic graphs becomes hard (although the dynamic tables are still really easy).</span></p>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIDE6MTJcbiNQYXltZW50c1xuRmxhdFBheSA8LSByZXAoMTEsIDEyKVxuSW5jUGF5IDwtIHNlcShmcm9tPTAsIHRvPTIyLCBieT0yKVxuI0ludGVyZXN0IFJhdGVzXG5GbGF0SW50IDwtIHJlcCgwLjA1NSwgMTIpXG5JbmNJbnQgPC0gc2VxKGZyb209MCwgdG89MC4xMSwgYnk9MC4wMSlcbiNQcm9iYWJpbGl0aWVzXG5GbGF0UHJvYiA8LSByZXAoMS8xMiwgMTIpXG5JbmNQcm9iICA8LSBJbmNQYXkvMTEqRmxhdFByb2JcbiNEaXNjb3VudGVkIFZhbHVlc1xuRFYuRmxhdCA8LSAxLygxK0ZsYXRJbnRbMV0pXG5mb3IoaSBpbiAyOjEyKSB7RFYuRmxhdFtpXSA8LSBEVi5GbGF0W2ktMV0vKDErRmxhdEludFtpXSlcbiAgICAgICAgICAgICAgIH1cbkRWLkluYyA8LSAxLygxK0luY0ludFsxXSlcbmZvcihpIGluIDI6MTIpIHtEVi5JbmNbaV0gPC0gRFYuSW5jW2ktMV0vKDErSW5jSW50W2ldKVxufVxuI1ByZXNlbnQgVmFsdWUgb2YgUGF5bWVudHMgLSBGbGF0IFByb2JzXG5GbGF0UGF5LkZsYXRJbnQuRmxhdFByb2IgPC0gRmxhdFBheSpEVi5GbGF0KkZsYXRQcm9iXG5GbGF0UGF5LkluY0ludC5GbGF0UHJvYiAgPC0gRmxhdFBheSpEVi5JbmMqRmxhdFByb2JcbkluY1BheS5GbGF0SW50LkZsYXRQcm9iIDwtIEluY1BheSpEVi5GbGF0KkZsYXRQcm9iXG5JbmNQYXkuSW5jSW50LkZsYXRQcm9iICA8LSBJbmNQYXkqRFYuSW5jKkZsYXRQcm9iXG4jUHJlc2VudCBWYWx1ZSBvZiBQYXltZW50cyAtIEluY3JlYXNpbmcgUHJvYnNcbkZsYXRQYXkuRmxhdEludC5JbmNQcm9iIDwtIEZsYXRQYXkqRFYuRmxhdCpJbmNQcm9iXG5GbGF0UGF5LkluY0ludC5JbmNQcm9iICA8LSBGbGF0UGF5KkRWLkluYypJbmNQcm9iXG5JbmNQYXkuRmxhdEludC5JbmNQcm9iIDwtIEluY1BheSpEVi5GbGF0KkluY1Byb2JcbkluY1BheS5JbmNJbnQuSW5jUHJvYiAgPC0gSW5jUGF5KkRWLkluYypJbmNQcm9iXG4jUGxvdCBQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5wbG90KFRpbWUsIEZsYXRQYXkuRmxhdEludC5JbmNQcm9iLCB0eXBlID0gXCJiXCIsIHlsaW0gPSBjKDAsMi41KSwgeWxhYiA9IFwiUHJlc2VudCBWYWx1ZVwiLCB4bGFiID0gXCJUaW1lXCIpXG4gIGxpbmVzKFRpbWUsIEZsYXRQYXkuSW5jSW50LkluY1Byb2IsIHR5cGUgPSBcImJcIilcbiAgbGluZXMoVGltZSwgSW5jUGF5LkZsYXRJbnQuSW5jUHJvYiwgdHlwZSA9IFwiYlwiKVxuICBsaW5lcyhUaW1lLCBJbmNQYXkuSW5jSW50LkluY1Byb2IsIHR5cGUgPSBcImJcIikifQ==
+</div>
 
 </div>
 </div>
@@ -817,7 +667,7 @@ chart312 = Highcharts.chart('containerLC312', {
         </div>
       </div>
 <a href="C-Benefit.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="C-NotationConvention.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bibliography.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

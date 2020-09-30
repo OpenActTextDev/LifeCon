@@ -1,6 +1,13 @@
 
 `r ECHOCODE = FALSE`
 
+
+```{r include = FALSE}
+knitr::opts_chunk$set(results = "hold")
+tutorial::go_interactive(greedy = FALSE)
+```
+
+
 # Chapter 3 Examples  -- Present Values {-}
 
 <script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
@@ -194,6 +201,35 @@ plot(Time, FlatPay.FlatInt, type = "b", ylim = c(0,14), ylab = "Present Value", 
 
 </div>
 
+
+```{r ex="PresentValueDemo1.1", type="sample-code", tut=TRUE}
+Time <- 1:12
+#Payments
+FlatPay <- rep(11, 12)
+IncPay <- seq(from=0, to=22, by=2)
+#Interest Rates
+FlatInt <- rep(0.055, 12)
+IncInt <- seq(from=0, to=0.11, by=0.01)
+#Discount Values
+DV.Flat <- 1/(1+FlatInt[1])
+for(i in 2:12) {DV.Flat[i] <- DV.Flat[i-1]/(1+FlatInt[i])
+               }
+DV.Inc <- 1/(1+IncInt[1])
+for(i in 2:12) {DV.Inc[i] <- DV.Inc[i-1]/(1+IncInt[i])
+}
+#Present Value of Payments
+FlatPay.FlatInt <- FlatPay*DV.Flat
+FlatPay.IncInt  <- FlatPay*DV.Inc
+IncPay.FlatInt <- IncPay*DV.Flat
+IncPay.IncInt  <- IncPay*DV.Inc
+#Plot Present Value of Payments
+plot(Time, FlatPay.FlatInt, type = "b", ylim = c(0,14), ylab = "Present Value", xlab = "Time")
+  lines(Time, FlatPay.IncInt, type = "b")
+  lines(Time, IncPay.FlatInt, type = "b")
+  lines(Time, IncPay.IncInt, type = "b")
+```
+
+
 <br>
 
 #### Example 3.1.2. Varying Payments and Rates of Interest With Uncertainty {-}
@@ -385,4 +421,40 @@ plot(Time, FlatPay.FlatInt.IncProb, type = "b", ylim = c(0,2.5), ylab = "Present
 </div>
 
 <span style="font-size: small; color: green;"> Editorial Note: As of now, I (Jed) do not know how to make two graphs on the same page update dynamically. Further, when we use the "pagination" option to reduce the size of a table, dynamic graphs becomes hard (although the dynamic tables are still really easy).</span>
+
+
+```{r ex="PresentValueDemo1.2", type="sample-code", tut=TRUE}
+Time <- 1:12
+#Payments
+FlatPay <- rep(11, 12)
+IncPay <- seq(from=0, to=22, by=2)
+#Interest Rates
+FlatInt <- rep(0.055, 12)
+IncInt <- seq(from=0, to=0.11, by=0.01)
+#Probabilities
+FlatProb <- rep(1/12, 12)
+IncProb  <- IncPay/11*FlatProb
+#Discounted Values
+DV.Flat <- 1/(1+FlatInt[1])
+for(i in 2:12) {DV.Flat[i] <- DV.Flat[i-1]/(1+FlatInt[i])
+               }
+DV.Inc <- 1/(1+IncInt[1])
+for(i in 2:12) {DV.Inc[i] <- DV.Inc[i-1]/(1+IncInt[i])
+}
+#Present Value of Payments - Flat Probs
+FlatPay.FlatInt.FlatProb <- FlatPay*DV.Flat*FlatProb
+FlatPay.IncInt.FlatProb  <- FlatPay*DV.Inc*FlatProb
+IncPay.FlatInt.FlatProb <- IncPay*DV.Flat*FlatProb
+IncPay.IncInt.FlatProb  <- IncPay*DV.Inc*FlatProb
+#Present Value of Payments - Increasing Probs
+FlatPay.FlatInt.IncProb <- FlatPay*DV.Flat*IncProb
+FlatPay.IncInt.IncProb  <- FlatPay*DV.Inc*IncProb
+IncPay.FlatInt.IncProb <- IncPay*DV.Flat*IncProb
+IncPay.IncInt.IncProb  <- IncPay*DV.Inc*IncProb
+#Plot Present Value of Payments
+plot(Time, FlatPay.FlatInt.IncProb, type = "b", ylim = c(0,2.5), ylab = "Present Value", xlab = "Time")
+  lines(Time, FlatPay.IncInt.IncProb, type = "b")
+  lines(Time, IncPay.FlatInt.IncProb, type = "b")
+  lines(Time, IncPay.IncInt.IncProb, type = "b")
+```
 
