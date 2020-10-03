@@ -428,7 +428,7 @@ plot(Time, FlatPay.FlatInt.IncProb, type = "b", ylim = c(0,2.5), ylab = "Present
 
 </div>
 
-<span style="font-size: small; color: green;"> Editorial Note: As of now, I (Jed) do not know how to make two graphs on the same page update dynamically. Further, when we use the "pagination" option to reduce the size of a table, dynamic graphs becomes hard (although the dynamic tables are still really easy).</span>
+<span style="font-size: small; color: green;"> Editorial Note: As of now, I (Jed) do not know how to make two graphs on the same page update dynamically. </span>
 
 
 ```{r ex="PresentValueDemo1.2", type="sample-code", tut=TRUE}
