@@ -403,20 +403,25 @@ data311[7]["V14"]="Sum";
 var mySpreadsheet311 = jexcel(document.getElementById('spreadsheetLC311'), {
     data: data311,
     columns: [
-       { type: 'text', width:'280', 'align': 'left' },
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
+       { type: 'text', width:'320', 'align': 'left' },
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
         ],
+    minDimensions: [15,13],
+    tableOverflow: true,
+    tableWidth: '800px',
+    tableHeight: '8000px',
+    freezeColumns: 1,
         onchange:update311,
             style: {
         A13:'background-color: yellow;',
@@ -532,22 +537,26 @@ data312[9]["V14"]="Sum";
 // Spreadsheet Defined
 var mySpreadsheet312int = jexcel(document.getElementById('spreadsheetLC312int'), {
     data: data312,
-    columns: [
-       { type: 'text', width:'280', 'align': 'left' },
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.00', decimal:'.'},
+      columns: [
+       { type: 'text', width:'320', 'align': 'left' },
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
+       { type: 'numeric',  width:'60', mask:'#.000', decimal:'.'},
         ],
+    minDimensions: [12,15],
+    tableOverflow: true,
+    tableWidth: '800px',
+    tableHeight: '300px',
+    freezeColumns: 1,
             style: {
         A20:'background-color: yellow;',
         B20:'background-color: yellow;',
@@ -559,7 +568,7 @@ var mySpreadsheet312int = jexcel(document.getElementById('spreadsheetLC312int'),
 <script type="text/javascript">
 // Make a Download Button
 document.getElementById("downloadLC312").addEventListener("click", myFunctionDownload);
-function myFunctionDownload() {mySpreadsheet312.download();};
+function myFunctionDownload() {mySpreadsheet312int.download();};
 
 </script>
 <script type="text/javascript">
