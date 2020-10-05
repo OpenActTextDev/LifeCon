@@ -1,0 +1,135 @@
+
+`r ECHOCODE = FALSE`
+
+
+
+```{r include = FALSE}
+knitr::opts_chunk$set(results = "hold")
+tutorial::go_interactive(greedy = FALSE)
+```
+
+
+## Appendix 2A. Life Table: Recursive Calculations {-}
+
+Actuaries and other analysts have found *life tables* to be useful in interpreting mortality patterns for many years. Origins of life tables can be traced back to Edmund Halley's paper entitled, "An estimate of the degrees of the mortality of mankind, drawn from various tables of births and funerals in the city of Breslau," published in 1693. Some scholars attribute this paper as marking the birth of actuarial science.
+
+As introduced in *Section 2.4*, a life table is based on the quantities $l_x = radix \times S_a(x)$ where $S_a(\cdot)$ is the survival function for a life aged $a$. In this expression, $a$ is the starting age of the table and $radix$ is a constant generally taken so that $l_a$  is a large round number. With this choice, we interpret $l_x$ to be the "number living" at age $x$.
+
+[Table 2A.1] shows life tables for female and male Indonesians. Here, each radix, one for females and one for males, is chosen so that there are 100,000 people alive at age $a=20$. Also from [Table 2A.1], you will see that the mortality distribution is given in terms of (integral) values of $x$; such a choice is common in life tables as is other regular successive values, e.g., quinquennial for five year values. 
+
+With a table of successive values, many interesting recursive expressions are available. To begin, we can define the change $d_x = l_x - l_{x+1}$ that we interpret as the "number dying" between ages $x$ and $x+1$. These changes allow us to express life table quantities $l_x$ and $d_x$ in terms of one-year death rates, $q_x$, as follows. Recall that $q_x = 1 - S_0(x+1)/S_0(x) = 1 - S_a(x+1)/S_a(x)$ and so
+
+$$
+\frac{d_x}{l_x} = \frac{l_x - l_{x+1}}{l_x} = \frac{radix}{radix}\frac{S_a(x) - S_a(x+1)}{S_a(x)} = q_x .
+$$
+
+From this we can use life table quantities $l_x$ and $d_x$ to calculate one-year death rates, $q_x$. We can also reverse the process. That is, 
+starting with one-year death rates as inputs, we can calculate life table entries recursively using $l_{x+1} = l_x - l_x q_x = l_x p_x$ for $x=a, a+1, \ldots$. Thus, for example, in [Table 2A.1], with $x=20$, we have $l_{21} = l_{20} - l_{20} q_{20} = (100000)(1 - 0.000340) = 99966$. For readers familiar with spreadsheet methods, click on a few cells in [Table 2A.1] to see the recursive definition of table entries.
+
+Later chapters on life contingent benefits will highlight recursive calculations. To foreshadow this, consider the curtate life expectancy introduced in *Section 2.4*. An easy calculation (that the reader should verify) shows the recursive expression 
+
+$$
+e_x = \sum_{k=1}^{\infty} ~ {~}_k p_x 
+= p_x (1 + e_{x+1}) .
+$$
+
+The $e_x$ columns in [Table 2A.1] utilize this relationship. To visualize these entries, Figure \@ref(fig:IndonesianLifeTablePlot) compares female to male life expectancies for the Indonesian data. Here, we see that females have a higher life expectancy at each age. The difference is greatest at the first age of the table $a=20$ which is 61.06 - 55.46 = 5.60.
+
+**On Your Own.** The Indonesian mortality data were retrieved from the [Mortality and Other Rate Tables](https://mort.soa.org) database sponsored by the Society of Actuaries. This database contains mortality (and other) rates from scores of countries. You will enjoy downloading them and comparing mortality experiences across the globe.
+
+
+[Table 2A.1]:\#tab:2A1
+
+<a id=tab:2A1></a>
+
+Table 2A.1. **Indonesian Life Table**
+
+<div id="spreadsheetLC2A1"></div>
+<p><button id='downloadLC2A1'>Export this spreadsheet as CSV</button></p>
+
+
+```{r echo=ECHOCODE}
+# Import data from CSV file, then convert so it can be used in Javascript
+data2A1 <- read.csv("Data/IndonesianLifeTable.csv", header = F)
+
+df_to_js <- function(x, var_name = "data2A1", ...){
+            json_data <- jsonlite::toJSON(x, digits = 8, ...)
+            htmltools::tags$script(paste0("var ",var_name," = ", json_data, ";"))
+            }
+df_to_js(data2A1)
+# See https://www.aliciaschep.com/blog/js-rmarkdown/
+#  and https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/
+# To save formulas in Excel, go to Formulas ==> Show Formulas. Then save as .csv file
+
+```
+
+
+```{js echo=ECHOCODE}
+// Spreadsheet Defined
+var mySpreadsheet2A1 = jexcel(document.getElementById('spreadsheetLC2A1'), {
+    data: data2A1,
+    columns: [
+       { type: 'text', width:'60', title: 'Age' },
+       { type: 'numeric',  width:'140', mask: '#.000000', decimal:'.', title: 'Female \\(q\_x\\)'},
+       { type: 'numeric',  width:'120', mask:'#.00', decimal:'.', title: 'Female \\(l\_x\\)'},
+       { type: 'numeric',  width:'120', mask:'#.00', decimal:'.', title: 'Female \\(d\_x\\)'},
+       { type: 'numeric',  width:'120', mask:'#.00', decimal:'.', title: 'Female \\(e\_x\\)'},
+       { type: 'numeric',  width:'140', mask:' #.000000', decimal:'.', title: 'Male \\(q\_x\\)'},
+       { type: 'numeric',  width:'120', mask:'#.00', decimal:'.', title: 'Male \\(l\_x\\)'},
+       { type: 'numeric',  width:'120', mask:'#.00', decimal:'.', title: 'Male \\(d\_x\\)'},
+       { type: 'numeric',  width:'120', mask:'#.00', decimal:'.', title: 'Male \\(e\_x\\)'},
+        ],
+    minDimensions: [9,13],
+    tableOverflow: true,
+    tableWidth: '800px',
+    tableHeight: '400px',
+    freezeColumns: 1,
+    updateTable:function(instance, cell, col, row, val, label, cellName) {
+         if (col == 1) {
+             cell.innerHTML = Number.parseFloat(val).toFixed(6);
+         }
+     }
+});
+
+```
+
+
+```{js echo=ECHOCODE}
+// Make a Download Button
+document.getElementById("downloadLC2A1").addEventListener("click", myFunctionDownload);
+function myFunctionDownload() {mySpreadsheet2A1.download();};
+
+```
+
+(ref:IndonesianLifeTablePlot) **Indonesian Life Expectancies.** Female life expectancies are given in the red open symbols, males are represented with the blue solid line.
+
+```{r IndonesianLifeTablePlot, fig.cap='(ref:IndonesianLifeTablePlot)', out.width='75%', fig.asp=.75, fig.align='center', echo=FALSE}
+IndLifeTable <- read.csv("Data/IndonesianLifeTableNoFormula.csv", header = F)
+colnames(IndLifeTable) <- c("Age","Female.qx","Female.lx","Female.dx","Female.ex","Male.qx","Male.lx","Male.dx","Male.ex")
+#summary(IndLifeTable)
+plot(IndLifeTable$Age,IndLifeTable$Female.ex, xlab="Age",ylab="Life Expectancy", col="red")
+lines(IndLifeTable$Age,IndLifeTable$Male.ex, col="blue")
+```
+
+<br>
+
+
+**On Your Own.** Try a few interactive calculations using `R`.
+
+<br>
+
+```{r include = FALSE}
+knitr::opts_chunk$set(results = "hold")
+tutorial::go_interactive(greedy = FALSE)
+```
+
+
+```{r ex="IndonesiaDemo1.1", type="sample-code", tut=TRUE}
+IndLifeTable <- read.csv("https://raw.githubusercontent.com/OpenActTextDev/LifeCon/master/Data/IndonesianLifeTableNoFormula.csv", header = F)
+colnames(IndLifeTable) <- c("Age","Female.qx","Female.lx","Female.dx","Female.ex","Male.qx","Male.lx","Male.dx","Male.ex")
+summary(IndLifeTable)
+plot(IndLifeTable$Age,IndLifeTable$Female.ex, xlab="Age",ylab="Life Expectancy", col="red")
+lines(IndLifeTable$Age,IndLifeTable$Male.ex, col="blue")
+```
+
+
