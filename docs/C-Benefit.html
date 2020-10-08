@@ -454,46 +454,19 @@ The approach to doing this is outlined at <a href="https://support.microsoft.com
 <p><span style="color: red;">
 Option 2
 </span></p>
-<div id="spreadsheetCPE">
+<div id="spreadsheetCPEOLD">
 
 </div>
-<div id="containerCPE">
+<div id="containerCPEOLD">
 
 </div>
-<script>var dataCPE = [{"V1":"ï»¿Time","V2":"Cash Flow","V3":"Spot rate","V4":"","V5":"Probability","V6":"","V7":""},{"V1":"k","V2":"kC","V3":" ik","V4":"vk","V5":"Pr(kC)","V6":"kC x vk x Pr(kC)","V7":"kC2 x v2k x Pr(kC)"},{"V1":"0","V2":"250","V3":"","V4":"=(1+C3)^-A3","V5":"0.2","V6":"=B3*D3*E3","V7":"=B3^2*D3^2*E3"},{"V1":"=A3+1","V2":"800","V3":"0.005","V4":"=(1+C4)^(-A4)","V5":"0.06","V6":"=B4*D4*E4","V7":"=B4^2*D4^2*E4"},{"V1":"=A4+1","V2":"500","V3":"0.008","V4":"=(1+C5)^(-A5)","V5":"0.09","V6":"=B5*D5*E5","V7":"=B5^2*D5^2*E5"},{"V1":"=A5+1","V2":"1200","V3":"0.012","V4":"=(1+C6)^(-A6)","V5":"0.17","V6":"=B6*D6*E6","V7":"=B6^2*D6^2*E6"},{"V1":"=A6+1","V2":"300","V3":"0.017","V4":"=(1+C7)^(-A7)","V5":"0.11","V6":"=B7*D7*E7","V7":"=B7^2*D7^2*E7"},{"V1":"=A7+1","V2":"750","V3":"0.023","V4":"=(1+C8)^(-A8)","V5":"0.1","V6":"=B8*D8*E8","V7":"=B8^2*D8^2*E8"},{"V1":"=A8+1","V2":"400","V3":"0.03","V4":"=(1+C9)^(-A9)","V5":"0.02","V6":"=B9*D9*E9","V7":"=B9^2*D9^2*E9"},{"V1":"=A9+1","V2":"450","V3":"0.03","V4":"=(1+C10)^(-A10)","V5":"0.09","V6":"=B10*D10*E10","V7":"=B10^2*D10^2*E10"},{"V1":"=A10+1","V2":"850","V3":"0.03","V4":"=(1+C11)^(-A11)","V5":"0","V6":"=B11*D11*E11","V7":"=B11^2*D11^2*E11"},{"V1":"=A11+1","V2":"1500","V3":"0.03","V4":"=(1+C12)^(-A12)","V5":"0.25","V6":"=B12*D12*E12","V7":"=B12^2*D12^2*E12"},{"V1":"=A12+1","V2":"100","V3":"0.03","V4":"=(1+C13)^(-A13)","V5":"0.2","V6":"=B13*D13*E13","V7":"=B13^2*D13^2*E13"},{"V1":"","V2":"","V3":"","V4":"","V5":"","V6":"","V7":""},{"V1":"","V2":"","V3":"","V4":"","V5":"E(PV)","V6":"=SUM(F3:F13)","V7":""},{"V1":"","V2":"","V3":"","V4":"","V5":"","V6":"Ïƒ(PV)","V7":"=SQRT(SUM(G3:G13)-F15^2)"}];</script>
+<script>var dataCPEOLD = [{"V1":"ï»¿Time","V2":"Cash Flow","V3":"Spot rate","V4":"","V5":"Probability","V6":"","V7":""},{"V1":"k","V2":"kC","V3":" ik","V4":"vk","V5":"Pr(kC)","V6":"kC x vk x Pr(kC)","V7":"kC2 x v2k x Pr(kC)"},{"V1":"0","V2":"250","V3":"","V4":"=(1+C3)^-A3","V5":"0.2","V6":"=B3*D3*E3","V7":"=B3^2*D3^2*E3"},{"V1":"=A3+1","V2":"800","V3":"0.005","V4":"=(1+C4)^(-A4)","V5":"0.06","V6":"=B4*D4*E4","V7":"=B4^2*D4^2*E4"},{"V1":"=A4+1","V2":"500","V3":"0.008","V4":"=(1+C5)^(-A5)","V5":"0.09","V6":"=B5*D5*E5","V7":"=B5^2*D5^2*E5"},{"V1":"=A5+1","V2":"1200","V3":"0.012","V4":"=(1+C6)^(-A6)","V5":"0.17","V6":"=B6*D6*E6","V7":"=B6^2*D6^2*E6"},{"V1":"=A6+1","V2":"300","V3":"0.017","V4":"=(1+C7)^(-A7)","V5":"0.11","V6":"=B7*D7*E7","V7":"=B7^2*D7^2*E7"},{"V1":"=A7+1","V2":"750","V3":"0.023","V4":"=(1+C8)^(-A8)","V5":"0.1","V6":"=B8*D8*E8","V7":"=B8^2*D8^2*E8"},{"V1":"=A8+1","V2":"400","V3":"0.03","V4":"=(1+C9)^(-A9)","V5":"0.02","V6":"=B9*D9*E9","V7":"=B9^2*D9^2*E9"},{"V1":"=A9+1","V2":"450","V3":"0.03","V4":"=(1+C10)^(-A10)","V5":"0.09","V6":"=B10*D10*E10","V7":"=B10^2*D10^2*E10"},{"V1":"=A10+1","V2":"850","V3":"0.03","V4":"=(1+C11)^(-A11)","V5":"0","V6":"=B11*D11*E11","V7":"=B11^2*D11^2*E11"},{"V1":"=A11+1","V2":"1500","V3":"0.03","V4":"=(1+C12)^(-A12)","V5":"0.25","V6":"=B12*D12*E12","V7":"=B12^2*D12^2*E12"},{"V1":"=A12+1","V2":"100","V3":"0.03","V4":"=(1+C13)^(-A13)","V5":"0.2","V6":"=B13*D13*E13","V7":"=B13^2*D13^2*E13"},{"V1":"","V2":"","V3":"","V4":"","V5":"","V6":"","V7":""},{"V1":"","V2":"","V3":"","V4":"","V5":"E(PV)","V6":"=SUM(F3:F13)","V7":""},{"V1":"","V2":"","V3":"","V4":"","V5":"","V6":"Ïƒ(PV)","V7":"=SQRT(SUM(G3:G13)-F15^2)"}];</script>
 <!-- The table disappears if the below code not included - I'm not sure why as it appears to be related to the plot rather than the table (AB) -->
 <script type="text/javascript">
-// Functions for Updating Graph Dynamically
-// Series to be plotted are in columns 2 through 12 (B-M), inclusive
-function myPlotSeries(z){
-  var plotseries = [
-      parseFloat(z[2].innerHTML),parseFloat(z[3].innerHTML),parseFloat(z[4].innerHTML),
-      parseFloat(z[5].innerHTML),parseFloat(z[6].innerHTML),parseFloat(z[7].innerHTML),
-      parseFloat(z[8].innerHTML),parseFloat(z[9].innerHTML),parseFloat(z[10].innerHTML),
-      parseFloat(z[11].innerHTML),parseFloat(z[12].innerHTML),parseFloat(z[13].innerHTML)
-      ];
-  return plotseries;
-  };
-var updateCPE = function (instance, cell, x, y, value) {
-  z = mySpreadsheetCPE.tbody.rows.item(y).cells; var plotseries = myPlotSeries(z); 
-// The first series to be plotted is in row 9.   
-if (y >= 8 && y < 12 ) {
-      if (x == 0) {
-            // Update legend
-            chartCPE.series[y-8].update({ name:value });
-            } else if (x < plotseries.length+1) {
-            // Update chart data
-            chartCPE.series[y-8].data[x-1].update({ y:plotseries[x-1] });
-            }
-        }     
-    };
-  
-</script>
-<script type="text/javascript">
-dataCPE[7]["V14"]="Sum"; // AB - I'm not sure what this line of code does
+dataCPEOLD[7]["V14"]="Sum"; // AB - I'm not sure what this line of code does
 // Spreadsheet Defined
-var mySpreadsheetCPE = jexcel(document.getElementById('spreadsheetCPE'), {
-    data: dataCPE,
+var mySpreadsheetCPEOLD = jexcel(document.getElementById('spreadsheetCPEOLD'), {
+    data: dataCPEOLD,
     columns: [
        { type: 'text', width:'80', 'align': 'left' },
        { type: 'numeric',  mask:'#.000', decimal:'.'},
@@ -509,7 +482,7 @@ var mySpreadsheetCPE = jexcel(document.getElementById('spreadsheetCPE'), {
        { type: 'numeric',  mask:'#.000', decimal:'.'},
        { type: 'numeric',  mask:'#.000', decimal:'.'},
         ],
-        onchange:updateCPE,
+        onchange:updateCPEOLD,
             style: {
         B3:'background-color: yellow;', // AB - hopefully there is a quicker way of getting the formatting I'd like
         F15: 'font-weight: bold;',
@@ -527,6 +500,50 @@ The downloadable option below would be provided for either of the options chosen
 </span></p>
 <p><a href="https://anu365-my.sharepoint.com/:x:/g/personal/u4233932_anu_edu_au/EXVFCyHdyt9BvQYsUzLlr4kBaty-CQJ6cdk50zY57tlH_Q?e=C1kGba&amp;download=1">Click here for a downloadable version of the file</a></p>
 <hr />
+<div id="spreadsheetCPE">
+
+</div>
+<p>
+<button id="downloadLCCPE">
+Export this spreadsheet as CSV
+</button>
+</p>
+<script>var dataCPE = [{"V1":"0","V2":250,"V3":0,"V4":"=POWER(1+C1,-A1)","V5":"0.2","V6":"=B1*D1*E1","V7":"=B1^2*D1^2*E1"},{"V1":"=A1+1","V2":800,"V3":0.005,"V4":"=POWER(1+C2,-A2)","V5":"0.06","V6":"=B2*D2*E2","V7":"=B2^2*D2^2*E2"},{"V1":"=A2+1","V2":500,"V3":0.008,"V4":"=POWER(1+C3,-A3)","V5":"0.09","V6":"=B3*D3*E3","V7":"=B3^2*D3^2*E3"},{"V1":"=A3+1","V2":1200,"V3":0.012,"V4":"=POWER(1+C4,-A4)","V5":"0.17","V6":"=B4*D4*E4","V7":"=B4^2*D4^2*E4"},{"V1":"=A4+1","V2":300,"V3":0.017,"V4":"=POWER(1+C5,-A5)","V5":"0.11","V6":"=B5*D5*E5","V7":"=B5^2*D5^2*E5"},{"V1":"=A5+1","V2":750,"V3":0.023,"V4":"=POWER(1+C6,-A6)","V5":"0.1","V6":"=B6*D6*E6","V7":"=B6^2*D6^2*E6"},{"V1":"=A6+1","V2":400,"V3":0.03,"V4":"=POWER(1+C7,-A7)","V5":"0.02","V6":"=B7*D7*E7","V7":"=B7^2*D7^2*E7"},{"V1":"=A7+1","V2":450,"V3":0.03,"V4":"=POWER(1+C8,-A8)","V5":"0.09","V6":"=B8*D8*E8","V7":"=B8^2*D8^2*E8"},{"V1":"=A8+1","V2":850,"V3":0.03,"V4":"=POWER(1+C9,-A9)","V5":"0","V6":"=B9*D9*E9","V7":"=B9^2*D9^2*E9"},{"V1":"=A9+1","V2":1500,"V3":0.03,"V4":"=POWER(1+C10,-A10)","V5":"0.25","V6":"=B10*D10*E10","V7":"=B10^2*D10^2*E10"},{"V1":"=A10+1","V2":100,"V3":0.03,"V4":"=POWER(1+C11,-A11)","V5":"0.2","V6":"=B11*D11*E11","V7":"=B11^2*D11^2*E11"},{"V1":"","V4":"","V5":"E(PV)","V6":"=SUM(F1:F11)","V7":""},{"V1":"","V4":"","V5":"","V6":"?(PV)","V7":"=SQRT(SUM(G1:G11)-F12^2)"}];</script>
+<script type="text/javascript">
+dataCPE[11]["V1"]="E(PV)";
+dataCPE[12]["V1"]="sigma (PV)";
+// Spreadsheet Defined
+var mySpreadsheetCPE = jexcel(document.getElementById('spreadsheetCPE'), {
+    data: dataCPE,
+    columns: [
+       { type: 'numeric', width:'80', 'align': 'center' , title: 'Time \n \\(k\\)' },
+       { type: 'numeric',  width:'110', mask:'#.000', decimal:'.', title: 'Cash Flow \n \\( ~_k C\\)'},
+       { type: 'numeric',  width:'110', mask:'#.000', decimal:'.', title: 'Spot Rate \n \\(i_k\\)' },
+       { type: 'numeric',  width:'110', mask:'#.0000', decimal:'.', title: ' \\( v^k \\)' },
+       { type: 'numeric',  width:'120', mask:'#.000', decimal:'.', title: 'Probability \n \\(\Pr( _kC)\\)' },
+       { type: 'text',  width:'160', mask:'#.000', decimal:'.', title: ' \\( ~_k C \\times v^k \\times \Pr( _kC)\\)' },
+       { type: 'text',  width:'160', mask:'#.000', decimal:'.', title: ' \\( ~_k C \\times v^{2k} \\times \Pr( _kC)\\)' },
+        ],
+    minDimensions: [12,6],
+    tableOverflow: true,
+    tableWidth: '800px',
+    tableHeight: '600px',
+    freezeColumns: 1,
+        style: {
+        F12:'background-color: yellow;', // AB - hopefully there is a quicker way of getting the formatting I'd like
+        G13:'background-color: yellow;', 
+        A12: 'font-weight: bold;',
+        A13: 'font-weight: bold;',        
+    },
+});
+
+</script>
+<script type="text/javascript">
+// Make a Download Button
+document.getElementById("downloadLCCPE").addEventListener("click", myFunctionDownload);
+function myFunctionDownload() {mySpreadsheetCPE.download();};
+
+</script>
 <p>The following R code can be used to perform the same calculations as the spreadsheet above.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.ContingentPaymentExample" href="javascript:togglecode('toggleCode.ContingentPaymentExample','displayCode.ContingentPaymentExample');"><i><strong>R Code For Contingent Payment Example</strong></i></a>

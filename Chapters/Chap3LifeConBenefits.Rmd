@@ -144,18 +144,18 @@ The approach to doing this is outlined at https://support.microsoft.com/en-us/of
 Option 2
 </span>
 
-<div id="spreadsheetCPE"></div>
-<div id="containerCPE"></div>
+<div id="spreadsheetCPEOLD"></div>
+<div id="containerCPEOLD"></div>
 
 ```{r echo=ECHOCODE}
 # Import data from CSV file, then convert so it can be used in Javascript
-dataCPE <- read.csv("Data/ContingentPaymentExample.csv", header = F)
+dataCPEOLD <- read.csv("Data/ContingentPaymentExample.csv", header = F)
 
-df_to_js <- function(x, var_name = "dataCPE", ...){
+df_to_js <- function(x, var_name = "dataCPEOLD", ...){
             json_data <- jsonlite::toJSON(x, ...)
             htmltools::tags$script(paste0("var ",var_name," = ", json_data, ";"))
             }
-df_to_js(dataCPE)
+df_to_js(dataCPEOLD)
 # See https://www.aliciaschep.com/blog/js-rmarkdown/
 #  and https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/
 # To save formulas in Excel, go to Formulas ==> Show Formulas. Then save as .csv file
@@ -164,38 +164,10 @@ df_to_js(dataCPE)
 <!-- The table disappears if the below code not included - I'm not sure why as it appears to be related to the plot rather than the table (AB) -->
 
 ```{js echo=ECHOCODE}
-// Functions for Updating Graph Dynamically
-// Series to be plotted are in columns 2 through 12 (B-M), inclusive
-function myPlotSeries(z){
-  var plotseries = [
-      parseFloat(z[2].innerHTML),parseFloat(z[3].innerHTML),parseFloat(z[4].innerHTML),
-      parseFloat(z[5].innerHTML),parseFloat(z[6].innerHTML),parseFloat(z[7].innerHTML),
-      parseFloat(z[8].innerHTML),parseFloat(z[9].innerHTML),parseFloat(z[10].innerHTML),
-      parseFloat(z[11].innerHTML),parseFloat(z[12].innerHTML),parseFloat(z[13].innerHTML)
-      ];
-  return plotseries;
-  };
-var updateCPE = function (instance, cell, x, y, value) {
-  z = mySpreadsheetCPE.tbody.rows.item(y).cells; var plotseries = myPlotSeries(z); 
-// The first series to be plotted is in row 9.   
-if (y >= 8 && y < 12 ) {
-      if (x == 0) {
-            // Update legend
-            chartCPE.series[y-8].update({ name:value });
-            } else if (x < plotseries.length+1) {
-            // Update chart data
-            chartCPE.series[y-8].data[x-1].update({ y:plotseries[x-1] });
-            }
-        }     
-    };
-  
-```
-
-```{js echo=ECHOCODE}
-dataCPE[7]["V14"]="Sum"; // AB - I'm not sure what this line of code does
+dataCPEOLD[7]["V14"]="Sum"; // AB - I'm not sure what this line of code does
 // Spreadsheet Defined
-var mySpreadsheetCPE = jexcel(document.getElementById('spreadsheetCPE'), {
-    data: dataCPE,
+var mySpreadsheetCPEOLD = jexcel(document.getElementById('spreadsheetCPEOLD'), {
+    data: dataCPEOLD,
     columns: [
        { type: 'text', width:'80', 'align': 'left' },
        { type: 'numeric',  mask:'#.000', decimal:'.'},
@@ -211,7 +183,7 @@ var mySpreadsheetCPE = jexcel(document.getElementById('spreadsheetCPE'), {
        { type: 'numeric',  mask:'#.000', decimal:'.'},
        { type: 'numeric',  mask:'#.000', decimal:'.'},
         ],
-        onchange:updateCPE,
+        onchange:updateCPEOLD,
             style: {
         B3:'background-color: yellow;', // AB - hopefully there is a quicker way of getting the formatting I'd like
         F15: 'font-weight: bold;',
@@ -234,6 +206,65 @@ The downloadable option below would be provided for either of the options chosen
 [Click here for a downloadable version of the file](https://anu365-my.sharepoint.com/:x:/g/personal/u4233932_anu_edu_au/EXVFCyHdyt9BvQYsUzLlr4kBaty-CQJ6cdk50zY57tlH_Q?e=C1kGba&download=1)
 
 ***
+
+
+
+<div id="spreadsheetCPE"></div>
+<p><button id='downloadLCCPE'>Export this spreadsheet as CSV</button></p>
+
+```{r echo=ECHOCODE}
+# Import data from CSV file, then convert so it can be used in Javascript
+dataCPE <- read.csv("Data/ContingentPaymentExampleA.csv", header = F)
+
+df_to_js <- function(x, var_name = "dataCPE", ...){
+            json_data <- jsonlite::toJSON(x, ...)
+            htmltools::tags$script(paste0("var ",var_name," = ", json_data, ";"))
+            }
+df_to_js(dataCPE)
+# See https://www.aliciaschep.com/blog/js-rmarkdown/
+#  and https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/
+# To save formulas in Excel, go to Formulas ==> Show Formulas. Then save as .csv file
+```
+
+
+```{js echo=ECHOCODE}
+dataCPE[11]["V1"]="E(PV)";
+dataCPE[12]["V1"]="sigma (PV)";
+// Spreadsheet Defined
+var mySpreadsheetCPE = jexcel(document.getElementById('spreadsheetCPE'), {
+    data: dataCPE,
+    columns: [
+       { type: 'numeric', width:'80', 'align': 'center' , title: 'Time \n \\(k\\)' },
+       { type: 'numeric',  width:'110', mask:'#.000', decimal:'.', title: 'Cash Flow \n \\( ~_k C\\)'},
+       { type: 'numeric',  width:'110', mask:'#.000', decimal:'.', title: 'Spot Rate \n \\(i_k\\)' },
+       { type: 'numeric',  width:'110', mask:'#.0000', decimal:'.', title: ' \\( v^k \\)' },
+       { type: 'numeric',  width:'120', mask:'#.000', decimal:'.', title: 'Probability \n \\(\Pr( _kC)\\)' },
+       { type: 'text',  width:'160', mask:'#.000', decimal:'.', title: ' \\( ~_k C \\times v^k \\times \Pr( _kC)\\)' },
+       { type: 'text',  width:'160', mask:'#.000', decimal:'.', title: ' \\( ~_k C \\times v^{2k} \\times \Pr( _kC)\\)' },
+        ],
+    minDimensions: [12,6],
+    tableOverflow: true,
+    tableWidth: '800px',
+    tableHeight: '600px',
+    freezeColumns: 1,
+        style: {
+        F12:'background-color: yellow;', // AB - hopefully there is a quicker way of getting the formatting I'd like
+        G13:'background-color: yellow;', 
+        A12: 'font-weight: bold;',
+        A13: 'font-weight: bold;',        
+    },
+});
+
+```
+
+
+```{js echo=ECHOCODE}
+// Make a Download Button
+document.getElementById("downloadLCCPE").addEventListener("click", myFunctionDownload);
+function myFunctionDownload() {mySpreadsheetCPE.download();};
+
+```
+
 
 The following R code can be used to perform the same calculations as the spreadsheet above.
 
