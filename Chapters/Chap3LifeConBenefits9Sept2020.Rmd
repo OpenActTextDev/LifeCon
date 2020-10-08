@@ -1,15 +1,11 @@
 
-$\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
-
-`r ECHOCODE=FALSE`
-
-# Chapter 3 Modeling Life Contingent Benefits {#C:Benefit}
+# Modeling Life Contingent Benefits {#C:Benefit}
 
 `r chapnum = 3`
 
 This chapter introduces the modeling of life contingent benefits, integrating the material from the previous chapter with basic concepts from financial mathematics. In contrast to benefits that are certain to be paid at specified periods, life contingent benefits have the additional complexity that the payments are uncertain and contingent upon either the survival or mortality of one or more lives. In this chapter we introduce the calculations of the present values of these contingent benefits, along with associated notation.
 
-We assume that all benefits are paid at annual times. Extensions to benefits paid in continuous or more frequently than annual time are considered in Chapter X.
+In this chapter we assume that all benefits are paid at annual times. Extensions to benefits paid in continuous or more frequently than annual time are considered in Chapter X.
 
 ## Valuation of cash flows under uncertainty {#Sec:BenefitCFUnc}
 
@@ -20,25 +16,7 @@ PV = ~_tC (1+i_t)^{-t}=~_tCv^t
 (\#eq:Benefit1)
 $$
 
-<span style="color: red;">
-**Structure discussion.** We'll need to make a decision on how much basic interest theory we need to incorporate here or in an appendix - I believe Emil is currently working on this. Looking at prior textbooks we can see something equivalent in Chapter 2 of Promislow (2015) but nothing in DHW (2019). Deciding this will also determine whether we need to include an example here, which could a constant interest rate and/or a yield curve.
-</span>
-
-<span style="color: green;">
-**Notation discussion.** There are a number of decisions to make here.
-
-<span style="color: green;">
-I'd like to keep $PV$ as we can use it for all types of present value calculations (insurance benefits, annuity benefits, premiums, etc.). I'd like to keep $V$ for reserves. We also need to think about consistency of terminology: do we use actuarial present value or expected present value? Is it necessary to emphasize distinction? (I deliberately haven't).
-
-<span style="color: green;">
-Jed's initial principles suggest uppercase italics for random variables. That's OK as long as we are recognising that sometimes the values won't be random if all elements of the RHS of the equation are deterministic. Further, elements such as $C$ might be random variables in some types of policies (e.g. unit linked) but not others.
-
-<span style="color: green;">
-Keeping benefit cashflows as $C$ works and we can use $P$ for premium cash flows.
-
-<span style="color: green;">
-Having $t$ be a left subscript ensures that right subscripts are reserved for individual characteristics $\bf{x}$ leaving open the possibility of $_tC_{\bf{x}}$ where relevant for a policy. This means we should likely change $i_t$ to $_ti$ for consistency. To make clear the PV is on an individual policy we should use the subscript $j$ to give us $PV_{j}$ - a further benefit is that we wouldn't need the $PV_{agg}$ later in the Chapter. I don't think $PV_{{\bf{x}}_j}$ is necessary as the $\bf{x}$ is reserved only for survival calculations.
-</span>
+<span style="color: green;"> Could include an example/exercise with a constant interest rate and an example with a yield curve. Probably not necessary depending on our assumptions about background of readership (i.e. have they done Financial Mathematics already). </span>
 
 Let us now introduce uncertainty into this system. Uncertainty might be in terms of the values of $_tC$, $t$ or $i_t$. For the moment we will assume $i_t$ is known and that $t$ can take discrete values $k \in \{0,1,2,3, \ldots\}$. The probability mass function of $_kC$ is defined as $\Pr(_kC)$.
 
@@ -88,7 +66,7 @@ text(7.5,4,"...")
 
 ***
 
-<span style="color: purple;"> **To be resolved later.** It would be good to get the font in the figures consistent with the text. </span>
+<span style="color: green;"> It would be good to get the font in the figures consistent with the text - we can sort this out later. </span>
 
 $PV$ is now a discrete random variable. We can calculate the expected present value $\mu_{PV}$ and standard deviation of present value $\sigma_{PV}$ using standard statistical methods as follows:
 
@@ -100,170 +78,12 @@ $$
 (\#eq:Benefit2)
 $$
 
-<span style="color: green;">
-**Notation discussion.** To be consistent with Jed's notation guide I'm comfortable with replacing $\mu_{PV}$ with $\mathrm{E}(PV)$. Would we be happy with $\sigma (PV)$ as well?
-</span>
-
-It is often efficient and convenient to analyse such cash flow systems using a spreadsheet package such as Excel or equivalent.
-
-<span style="color: red;">
-**Structure discussion.**A key decision we need to make here is how we want to present these examples. For any simple calculations I think we should be providing spreadsheet as well as R examples. There are two different ways we can present the spreadsheet examples.  I have presented both in the example below. The R code at the end can be used after either.
-
-<span style="color: red;">
-Option 1 is just an iFrame of an Excel document I created and am storing on my ANU OneDrive account.  I have fixed it so that it can be viewed and edited without having to login to a Microsoft account. The upside of this approach is the easy manipulation of the file by readers in a format they are likely familar with.  The downside is that it is at the whim of any changes Microsoft might choose to make to Excel Online. I have provided the downloadable option so that students can still access the files even if they cannot see the iFrame.
-
-<span style="color: red;">
-Option 2 is to use the jExcel javascript approach as previously recommended by Jed. Graphs to be analysed are created separately in R, although I haven't done that below. If doing this I'd recommend having a downloadable Excel rather than CSV file so as to maintain formatting. The upside of this option is that it requires no account to view the material, which is all embedded in R Bookdown. The main downside is difficulty in coding for writers, particularly with plots.
-
-<span style="color: red;">
-My personal preference is the first approach as I think this will be easier for writers to deal with, although I don't feel particularly strongly about it.
-
-<span style="color: red;">
-We’ll also need to think about how this would work for those only able to access the pdf version of the textbook.
-</span>
-
-***
-
-The embedded file below (<span style="color: blue;">I'll fix up Figure labels later</span>) shows the calculation of $\mathrm{E}(PV)$ and $\sigma (PV)$ for a general cash flow model of the style shown in Equation \@ref(eq:Benefit2). To keep the example simple we assume that $k \in {0,1,2,...,10}$.  Cells highlighted in yellow correspond to the cash flow ($_kC$), spot rate ($i_k$) and probability ($\Pr(_kC)$) components of the calculation. These can be changed to see the impact on the $\mathrm{E}(PV)$ and $\sigma (PV)$ output, which are highlighted in orange. The component calculations of the summations in $\mathrm{E}(PV)$ and $\sigma (PV)$ can be found in Cells F3-F13 and G3-G13 respectively. To see the formulae for these cells just double click on the cell.
-
-***
-
-<span style="color: red;">
-Option 1
-</span>
-
-<iframe width="600" height="750" frameborder="0" scrolling="no" src="https://anu365-my.sharepoint.com/:x:/g/personal/u4233932_anu_edu_au/EXVFCyHdyt9BvQYsUzLlr4kBaty-CQJ6cdk50zY57tlH_Q?e=C1kGba&action=embedview&wdAllowInteractivity=False&AllowTyping=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
-
-<span style="color: red;">
-The approach to doing this is outlined at https://support.microsoft.com/en-us/office/embed-your-excel-workbook-on-your-web-page-or-blog-from-sharepoint-or-onedrive-for-business-7af74ce6-e8a0-48ac-ba3b-a1dd627b7773. While this link does show the ability to embed a chart item specifically I tested this and couldn't get it to work. In any case I don't think that would be that useful here as I suspect that having separate iFrames for the calculations and plot means the plot would not automatically update when the data is changed. Hence I think the above approach with data, calculations and plot in the same iFrame would be best. The plot is just for show at the moment - I don't think this example needs a plot. I have had some problems with getting the plot to display but have been able to get around this by clicking into one of the cells and pressing Enter. I'd be curious to know about your experience.
-</span>
-
-***
-
-<span style="color: red;">
-Option 2
-</span>
-
-<div id="spreadsheetCPE"></div>
-<div id="containerCPE"></div>
-
-```{r echo=ECHOCODE}
-# Import data from CSV file, then convert so it can be used in Javascript
-dataCPE <- read.csv("Data/ContingentPaymentExample.csv", header = F)
-
-df_to_js <- function(x, var_name = "dataCPE", ...){
-            json_data <- jsonlite::toJSON(x, ...)
-            htmltools::tags$script(paste0("var ",var_name," = ", json_data, ";"))
-            }
-df_to_js(dataCPE)
-# See https://www.aliciaschep.com/blog/js-rmarkdown/
-#  and https://livefreeordichotomize.com/2017/01/24/custom-javascript-visualizations-in-rmarkdown/
-# To save formulas in Excel, go to Formulas ==> Show Formulas. Then save as .csv file
-```
-
-<!-- The table disappears if the below code not included - I'm not sure why as it appears to be related to the plot rather than the table (AB) -->
-
-```{js echo=ECHOCODE}
-// Functions for Updating Graph Dynamically
-// Series to be plotted are in columns 2 through 12 (B-M), inclusive
-function myPlotSeries(z){
-  var plotseries = [
-      parseFloat(z[2].innerHTML),parseFloat(z[3].innerHTML),parseFloat(z[4].innerHTML),
-      parseFloat(z[5].innerHTML),parseFloat(z[6].innerHTML),parseFloat(z[7].innerHTML),
-      parseFloat(z[8].innerHTML),parseFloat(z[9].innerHTML),parseFloat(z[10].innerHTML),
-      parseFloat(z[11].innerHTML),parseFloat(z[12].innerHTML),parseFloat(z[13].innerHTML)
-      ];
-  return plotseries;
-  };
-var updateCPE = function (instance, cell, x, y, value) {
-  z = mySpreadsheetCPE.tbody.rows.item(y).cells; var plotseries = myPlotSeries(z); 
-// The first series to be plotted is in row 9.   
-if (y >= 8 && y < 12 ) {
-      if (x == 0) {
-            // Update legend
-            chartCPE.series[y-8].update({ name:value });
-            } else if (x < plotseries.length+1) {
-            // Update chart data
-            chartCPE.series[y-8].data[x-1].update({ y:plotseries[x-1] });
-            }
-        }     
-    };
-  
-```
-
-```{js echo=ECHOCODE}
-dataCPE[7]["V14"]="Sum"; // AB - I'm not sure what this line of code does
-// Spreadsheet Defined
-var mySpreadsheetCPE = jexcel(document.getElementById('spreadsheetCPE'), {
-    data: dataCPE,
-    columns: [
-       { type: 'text', width:'80', 'align': 'left' },
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-       { type: 'numeric',  mask:'#.000', decimal:'.'},
-        ],
-        onchange:updateCPE,
-            style: {
-        B3:'background-color: yellow;', // AB - hopefully there is a quicker way of getting the formatting I'd like
-        F15: 'font-weight: bold;',
-        G16: 'font-weight: bold;',        
-    },
-});
-
-```
-
-<span style="color: red;">
-I would be aiming to make this look as close as possible to the embedded Excel spreadsheet above, but there are a number of issues that I think I'll need Jed's help to resolve. Firstly the formulae for $v^k$ in column D are not working for some reason, I'm not sure why. There are also lots of formatting elements I don't understand as yet.  I have not included a plot, but this would be similar to the examples previously provided by Jed.
-</span>
-
-***
-
-<span style="color: red;">
-The downloadable option below would be provided for either of the options chosen.  Whichever option we choose it is my preference to use Excel rather than csv files as this way the formatting can be maintained.
-</span>
-
-[Click here for a downloadable version of the file](https://anu365-my.sharepoint.com/:x:/g/personal/u4233932_anu_edu_au/EXVFCyHdyt9BvQYsUzLlr4kBaty-CQJ6cdk50zY57tlH_Q?e=C1kGba&download=1)
-
-***
-
-The following R code can be used to perform the same calculations as the spreadsheet above.
-
-`r HideRCode('ContingentPaymentExample',"R Code For Contingent Payment Example")`
-
-```{r  ContingentPaymentExample, warning=FALSE,message=FALSE, comment=NA, eval=TRUE}
-Time <- c(0:10)
-CashFlow <- c(250,800,500,1200,300,750,400,450,850,1500,100)
-SpotRate <- c(0,0.005,0.008,0.012,0.017,0.023,0.03,0.03,0.03,0.03,0.03)
-vk <- (1+SpotRate)^(-Time)
-Prob <- c(0.2,0.06,0.09,0.17,0.11,0.1,0.02,0.09,0,0.25,0.2)
-# Expected Present Value calculation
-EPV <- sum(CashFlow*vk*Prob)
-EPV
-# Standard Deviation of Present Value calculation
-CashFlowSq <- CashFlow^2
-vkSq <- vk^2
-StDevPV <- sqrt(sum(CashFlowSq*vkSq*Prob)-EPV^2)
-StDevPV
-
-```
-
-</div>
-
-<br>
+<span style="color: green;"> Include a simple Excel example here. </span>
 
 ## Life insurance benefits and actuarial notation {#Sec:BenefitActNot}
 
 <span style="color: red;">
-**Structure discussion.**I’m not sure how much of these sorts of notation and probability calculations will be in Chapter 2 and whether we’ll need more basic probability calculations before this.  It may make sense to have another chapter between Chapter 2 and this that focussed on the life table and the various probability calculations coming from the life table – DHW do some of this in their Chapter 3 and incorporate things like mortality improvement and selection there as well. Promislow also does it in his Chapter 3.
+**I’m not sure how much of these sorts of notation and probability calculations will be in Chapter 2 and whether we’ll need more basic probability calculations before this.  It may make sense to have another chapter between Chapter 2 and this that focussed on the life table and the various probability calculations coming from the life table – DHW do some of this in their Chapter 3.**
 </span>
 
 In this section we introduce some basic types of life insurance policies and find the expected present value and standard deviation of the present value of the benefit cash flows of these policies using Equation \@ref(eq:Benefit2). We also present standard notation that actuaries have developed for these calculations. This notation assumes that in Equation \@ref(eq:Benefit2) all cash flows $_kC$ are $1$. Also, unless otherwise noted, we assume that benefits are paid at the end of the year. (This assumption will be relaxed in Chaper X).
@@ -331,12 +151,12 @@ PV = v^{K_{\bf{x}}+1} \\
 $$
 
 ***
-<span style="color: blue;">
-**Note for author to complete.** The specifics of $A_{\bf{x}}$ need to be fleshed out in more detail, with similar amendments made to later subsections.
+<span style="color: green;">
+The specifics of $A_x$ need to be fleshed out in more detail, with similar amendments made to later subsections. Dani, I notice that your LifeTableStuff file goes through this and adds to the life table as well which is a nice start.  My instinct is that we don't incorporate it until this chapter but I'm interested in everyone's feedback.
 </span>
 
 <span style="color: red;">
-**Structure discussion.** Dani, I notice that your LifeTableStuff file goes through this and adds to the life table as well which is a nice start.  My instinct is that we don't incorporate it until this chapter but I'm interested in everyone's feedback.
+Include Excel (and R?) example here or maybe all at the end of this subsection - need to show impact of C.
 </span>
 
 ***
@@ -617,8 +437,8 @@ PV = v^{1}+v^{2}+...v^{K_{\bf{x}}} \space (\text{if} \space i_k=i) = a_{\enclose
 (\#eq:Benefit8)
 $$
 
-<span style="color: blue;">
-**Note for author to complete.** Need to tidy these equations (using amsmath package for alignment and also fixing notation for if component) but I'm aiming to allow for the formulae to be flexible in whether $i$ is constant or not.  This allows use more flexibility in examples and exercises.
+<span style="color: green;">
+Need to tidy these equations (using amsmath package for alignment and also fixing notation for if component) but I'm aiming to allow for the formulae to be flexible in whether $i$ is constant or not.  This allows use more flexibility in examples and exercises.
 </span>
 
 ### 	Term Life Annuity
@@ -900,7 +720,7 @@ PV = 1+v^{1}+v^{2}+...+v^{\text{max}[K_{\bf{x}},n-1]} \space (\text{if} \space i
 \end{array} \right.
 \\
 \mu_{PV} = \sum_{k=0}^{n-1} v^k + \sum_{k=n}^{\infty} v^k ~_kp_{\bf{x}} = \ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} = \ddot{a}_{\enclose{actuarial}{n}} + ~_{n|}\ddot{a}_{\bf{x}} \\
-\sigma_{PV} = \sqrt{\sum_{k=0}^{n-1} \left( v^{k} \right)^2 + \sum_{k=n}^{\infty} \left( v^{k} \right)^2 ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2\ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} - \left( \ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} \right)^2 }\\
+\sigma_{PV} = \sqrt{\sum_{k=0}^{n-1} \left( v^{k} \right)^2 + \sum_{k=n}^{\infty} v^{2k} ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2\ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} - \left( \ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} \right)^2 }\\
 \end{array}
 (\#eq:Benefit13)
 $$
@@ -915,24 +735,24 @@ PV = v^{1}+v^{2}+...+v^{\text{max}[K_{\bf{x}},n]} \space (\text{if} \space i_k=i
 \end{array} \right.
 \\
 \mu_{PV} = \sum_{k=1}^{n} v^k + \sum_{k=n+1}^{\infty} v^k ~_kp_{x} = {a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} = {a}_{\enclose{actuarial}{n}} + ~_{n|}{a}_{\bf{x}} \\
-\sigma_{PV} = \sqrt{\sum_{k=1}^{n} \left( v^{k} \right)^2 + \sum_{k=n+1}^{\infty} \left( v^{k} \right)^2 ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} - \left( {a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} \right) ^2 }\\
+\sigma_{PV} = \sqrt{\sum_{k=1}^{n} \left( v^{k} \right)^2 + \sum_{k=n+1}^{\infty} v^{2k} ~_kp_{\bf{x}}  - \mu_{PV}^2 } = \sqrt{ ~^2{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} - \left( {a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}} \right) ^2 }\\
 \end{array}
 (\#eq:Benefit14)
 $$
 
-<span style="color: red;">
-**Structure discussion.** The UK syllabus has included the use of a book of life tables for as long as I can remember. Interestingly the new CM1 syllabus has removed the references to life insurance actuarial notation (it still has the probability notation), although it still exists in the questions in the specimen exams. My instinct is that, as per the above, we include the notation in our textbook but de-emphasise it, and that we base all calculations in our textbook on tables constructed from publicly available datasets rather than anything from the UK book.
+<span style="color: green;">
+The UK syllabus has included the use of a book of life tables for as long as I can remember. Interestingly the new CM1 syllabus has removed the references to life insurance actuarial notation (it still has the probability notation), although it still exists in the questions in the specimen exams. My instinct is that we include the notation in our textbook but de-emphasise it, and that we base all calculations in our textbook on tables constructed from publicly available datasets rather than anything from the UK book.
 
-<span style="color: blue;">
-**Note for author to complete.** We could show the relationship among the different policies, including recursion (see DHW Chapter 5), perhaps as exercises for students. Some of this might better fit a Chapter on reserves. Need to decide this.
+<span style="color: green;">
+We could show the relationship among the different policies, including recursion (see DHW Chapter 5), perhaps as exercises for students. Some of this might better fit a Chapter on reserves. Need to decide this.
 </span>
 
 
 ##	Bringing actuarial notation to the Life Table {#Sec:BenefitLT}
 In Chapter 2 the Life Table was introduced. In this subsection we incorporate additional columns into the Life Table based on the notation introduced in Chapter \@ref(Sec:BenefitActNot). We also perform additional calculations using this additional information.
 
-<span style="color: blue;">
-**Note for author to complete.** We can utilise Excel here to expand the Life Table and have a number of exercises and examples.  This would still involve using age as the only predictor, unless we want to move away from this concept.
+<span style="color: green;">
+We can utilise Excel here to expand the Life Table and have a number of exercises and examples.  This would still involve using age as the only predictor, unless we want to move away from this concept.
 
 
 ## Case Study: Valuing the benefits of a portfolio of term insurance policies {#Sec:BenefitCS}
@@ -941,10 +761,10 @@ In this section we take what we have learned so far in this Chapter and apply it
 
 ### An individual policy {#Sec:BenefitCSInd}
 
-We showed how to value a single whole of life insurance policy in Chapter \@ref(Sec:BenefitWL). For example, consider a 40 year old individual ($=\bf{x}$) with sum insured \$400,000 ($=C$), and whose mortality probability is expected to follow the US 2010-14 female rates described in Chapter 2. Assuming an interest rate of 2% per annum effective (<span style="color: blue;"> we might instead use the spot rate calculation from above</span>) ($=i_t$), the calculation of $\mu_{PV}$ and $\sigma_{PV}$ can be performed as follows, using either the **life table** structure from Chapter \@ref(Sec:BenefitWL) or from **first principles** as per Equation \@ref(eq:Benefit3):
+We showed how to value a single whole of life insurance policy in Chapter \@ref(Sec:BenefitWL). For example, consider a 40 year old individual ($=\bf{x}$) with sum insured \$400,000 ($=C$), and whose mortality probability is expected to follow the US 2010-14 female rates described in Chapter 2. Assuming an interest rate of 2% per annum effective (<span style="color: green;"> we might instead use the spot rate calculation from above</span>) ($=i_t$), the calculation of $\mu_{PV}$ and $\sigma_{PV}$ can be performed as follows, using either the **life table** structure from Chapter \@ref(Sec:BenefitWL) or from **first principles** as per Equation \@ref(eq:Benefit3):
 
-<span style="color: blue;">
-**Note for author to complete.** This needs to be updated to change from term insurance to whole of life, and to include calculation using a life table and from first principles (two separate tabs). I'll also update this to value a policy from the data - most likely one sold recently.
+<span style="color: green;">
+This needs to be updated to change from term insurance to whole of life, and to include calculation using a life table and from first principles (two separate tabs). I'll also update this to value a policy from the data - most likely one sold recently.
 
 ***
 
@@ -952,13 +772,24 @@ We showed how to value a single whole of life insurance policy in Chapter \@ref(
 
 ***
 
+<span style="color: red;">
+**We'll need to make some decisions here about how to structure examples (this will affect Chapter 2 as well). Key issues are as follows:**
+
+<span style="color: red;">
+**1. I think it makes sense to use Excel for simple calculations of single EPVs using age-based life tables.  Otherwise R should be used. Assuming we agree with this we'll need to think about the best way of incorporating.  The above is just an iFrame of a quick Excel document I created and am storing on my ANU OneDrive account.  It can be viewed and edited if you are are signed into a Microsoft account, but works with the free version.  The downside of this is that it is reliant on the file sitting on the same account for it to load (although I guess this could be in the same location as the book itself).  If we're not willing to go with an account option, there are other options such as the excelR package which I have played around a little bit with, which has the advantage of keeping all the code in R Markdown (we could provide a download link to the spreadsheet too). The disadvantage of this is that it would not be as easy to manipulate for users.  A lower rent alternative would be to provide images of Excel files with a link to download.  We’ll need to think about how this would work for those only able to access the pdf version of the textbook.**
+
+<span style="color: red;">
+**2. One idea Jed mentioned to me would be include R examples of everything, and where we wanted to use Excel as well we could provide a toggle for students to show the equivalent R calculation.**
+</span>
+
+
 Another way of analysing $PV$ is to plot its probability mass function. We know that the probability mass function of $K_{\bf{x}}$ is $\Pr(K_{\bf{x}}=k) = ~_{k|}q_{\bf{x}}$. Hence the probability mass function of $PV$ is $P \left( PV=Cv^{k+1} \right) = ~_{k|}q_{\bf{x}}$.
 
-<span style="color: blue;">Include pmf plot.</span>
+<span style="color: green;">Include pmf plot.</span>
 
 ###	A portfolio of policies {#Sec:BenefitCSPort}
 
-Now let us consider a portfolio of $J$ independent $n$-year term insurance policies on individuals ${\bf{x}}_j$ where $j = 1,2,...,J$. <span style="color: blue;">Describe the portfolio from Chapter 2 and the mortality assumptions. Use a single month or year of sales for consistent valuation.</span>
+Now let us consider a portfolio of $J$ independent $n$-year term insurance policies on individuals ${\bf{x}}_j$ where $j = 1,2,...,J$. <span style="color: green;">Describe the portfolio from Chapter 2 and the mortality assumptions. Use a single month or year of sales for consistent valuation.</span>
 
 Using Equation \@ref(eq:Benefit4) and incorporating the sum insureds $C_j$, we can describe the aggregated present value of this portfolio $PV_{agg}$ as as:
 
@@ -976,14 +807,14 @@ $$
 Even if the the insured policyholders are independent across all $j$, and the distribution of $K_{{\bf{x}}_j}$ is mathematically simple, we cannot determine the exact distribution of $PV_{agg}$. Further, the complication of the formulae of $\mu_{PV_{agg}}$ and $\sigma_{PV_{agg}}$ mean they are easy to miscalculate and are hence of questionable usefulness. Instead we use simulations to gain a greater understanding of the distribution of $PV_{agg}$. Whilst we do not go into detail on the mechanics of simulation in this text, in this context simulation involves repeatedly drawing random observations of $K_{{\bf{x}}_j}$ from the distributions of $K_{{\bf{x}}_j}$, and calculating equivalent observations of $PV_{agg}$ from Equation \@ref(eq:Benefit15).
 
 <span style="color: red;">
-**Structure discussion.**The concept of simulation will likely not be familiar to readers. We’ll need to think about how to present this to students and how much detail we wish to go into. DHW have an appendix on Monte Carlo simulation, although simulation is not widely used in the book. We’ll also need to think about how this would work for those only able to access the pdf version of the textbook.
+**The concept of simulation will likely not be familiar to readers. We’ll need to think about how to present this to students and how much detail we wish to go into. Are we comfortable with the level of detail in the paragraph above? What about issues around standard error of estimates? I don’t believe simulation of life contingencies is a part of any actuarial syllabus, and this would be a way of differentiating ourselves from previous textbooks. We’ll also need to think about how this would work for those only able to access the pdf version of the textbook.**
 </span>
 
-<span style="color: blue;">
-**Note for author to complete.** Below is Jed's placeholder of a simulation example. I haven't yet had time to update it for the whole of life insurance portfolio but will do so in future.
+<span style="color: green;">
+Below is Jed's placeholder of a simulation example. I haven't yet had time to update it for the whole of life insurance portfolio but will do so in future.
 </span>
 
-**Example `r chapnum`.1.1. Example - Indonesian Mortality.** (<span style="color: blue;">Adam, Emil. I assume that you will want to use one of Dani's mortality data sets going forward. This is a placeolder</span>) We consider mortality from Indonesia. Like many countries throughout the world, these are typically tabulated on an annual basis. To give you a feel for the data, we first convert these annual survival proabilities to ten year survival probability, assuming that a female live has survived to age 25.
+**Example `r chapnum`.1.1. Example - Indonesian Mortality.** (<span style="color: green;">Adam, Emil. I assume that you will want to use one of Dani's mortality data sets going forward. This is a placeolder</span>) We consider mortality from Indonesia. Like many countries throughout the world, these are typically tabulated on an annual basis. To give you a feel for the data, we first convert these annual survival proabilities to ten year survival probability, assuming that a female live has survived to age 25.
 
 `r HideRCode('Simulation.1',"R Code To Construct Survival Probabilities")`
 
@@ -1058,29 +889,30 @@ Now, we can ask the student to do a number of things (and give the answers). Bas
 
 ***
 
-<span style="color: purple;">
-**To be resolved later.** Other important concepts to address in this or another chapter:
+<span style="color: green;">
+Other important concepts to address in this or another chapter:
 
-<span style="color: purple;">
+<span style="color: green;">
 -	 The relationship between life insurance and life annuities. The two are perfect natural hedge provided mortality is the same. If life policies mortality are different from annuitant mortality, the relationship breaks down. My instinct is that this goes in a later chapter.
 -	The concept of discounting with life using pure endowment.
 -	The recursive formula for the value from year to year - probably later as part of policy values.
+-	Consistency of terminology: do we use actuarial present value or expected present value? Is it necessary to emphasize distinction?
 </span>
 
 
-<span style="color: purple;">
-**To be resolved later.** It is recommended to include the following material in a separate chapter.  We could also include things like increasing annuities/insurance but I'm not really convinced about the benefits of these.
+<span style="color: green;">
+It is recommended to include the following material in a separate chapter.  We could also include things like increasing annuities/insurance but I'm not really convinced about the benefits of these.
 </span>
 
 ## The impact of self selection
 
-<span style="color: purple;">
+<span style="color: green;">
 I have not yet included anything about selection effects, although this can be added to this section fairly easily. DHW don’t have anything different in Chapter 4 for selection effects, but instead just have a short subsection nothing that the calculations are the same for selection but just use the select life table.
 </span>
 
 ## Modelling contingent cash flows more frequently than annually
 
-<span style="color: purple;"> This would reflect the 1/mthly case from DHW Chapter 4. Due to the length of this chapter we will need to consider if/how to split it up into additional chapters.  It is traditional to split life insurance and annuity chapters.  I’m not a big fan of this personally as in my opinion this splits concepts of valuation up were it really is not necessary.  An alternative option would be to have the material from here and continuous time be its own Chapter; i.e. we would generally focus on yearly payments only and this extra chapter would act as an aside to cover the 1/mthy and continuous structures.  We might also include in this additional chapter material on approximation (e.g. annual payments but made at exact time of death) and other adjustments such as indexation of payments. </span>
+<span style="color: green;"> This would reflect the 1/mthly case from DHW Chapter 4. Due to the length of this chapter we will need to consider if/how to split it up into additional chapters.  It is traditional to split life insurance and annuity chapters.  I’m not a big fan of this personally as in my opinion this splits concepts of valuation up were it really is not necessary.  An alternative option would be to have the material from here and continuous time be its own Chapter; i.e. we would generally focus on yearly payments only and this extra chapter would act as an aside to cover the 1/mthy and continuous structures.  We might also include in this additional chapter material on approximation (e.g. annual payments but made at exact time of death) and other adjustments such as indexation of payments. </span>
 
 
 ##	Modelling contingent cash flows in continuous time
@@ -1088,39 +920,4 @@ I have not yet included anything about selection effects, although this can be a
 <span style="color: green;"> See above. This could be expressed as when $m \rightarrow \infty$. We could provide examples from earlier in this Chapter as our starting point. We can also link this to the continuous models from Chapter 2 – see for example how Makeham’s rule is used in DHW Chapter 4. </span>
 
 
-# Actuarial Symbols {-}
-
-<span style="color: green;">
-This is for practicing how to write actuarial symbols with R bookdown/markdown such as $_{t}p_{[x]}$.
-
-<span style="color: green;">
-It is sometimes helpful to put a space before the pre-subscript like $\frac{\ell_{[x]+t}}{\ell_{[x]}} = ~_{t}p_{[x]}$. Else you get this awkward $\frac{\ell_{[x]+t}}{\ell_{[x]}} = _{t}p_{[x]}$.
-
-<span style="color: green;">
-Try this
-
-<span style="color: green;">
-$$
-\require{enclose} EPV = a _{[25]+5:\enclose{actuarial}{30}} ^ {\space 1}
-$$
-<span style="color: green;">
-and this $\require{enclose} a_{\enclose{actuarial}{K}}$ and this
-$\require{enclose} \ddot{a}_{x}^{\{m\}}$ 
-and
-$\require{enclose} \ddot{a}_{x:\enclose{actuarial}{n}}^{(m)}$
-and
-$\require{enclose} {}^{2}\bar{A}_{x:\enclose{actuarial}{n}}$
-,
-$\require{enclose} {}^{2}\ddot{a}_{xy:\enclose{actuarial}{n}}$
-and
-$\require{enclose} \mathring{a}_{x:\enclose{actuarial}{n}}^{(m)}$
-and
-$$
-\require{enclose} 
-Y = 
- \begin{cases}
- 1 + v + v^2 + \cdots + v^K = \ddot{a}_{\enclose{actuarial}{K+1}}, K=0,1,\ldots,n-1 \\
- 1 + v + v^2 + \cdots + v^{n-1} = \ddot{a}_{\enclose{actuarial}{n}}, K \ge n
- \end{cases}
-$$
 </span>

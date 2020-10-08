@@ -1,8 +1,57 @@
+---
+title:  "The Mathematics, Statistics, and Economics of Life Contingencies"
+author: "An open text authored by the Actuarial Community"
+output:
+  bookdown::html_document2:
+    self_contained: false
+    toc: yes
+    toc_depth: '3'
+    number_sections: yes
+    fig_width: 6
+    fig_height: 4
+  # bookdown::pdf_book:
+  #  code_folding: hide
+    css: WritingSupportFiles/style.css
+    includes:
+      in_header: WritingSupportFiles/ShowHide.js
+  #   number_sections: yes
+  #   toc: yes
+  #   toc_depth: '3'
+  #   template: [WritingSupportFiles\EWF-latex-ms.tex]
+  #   keep_tex: true
+  #   fig_caption: true
+  #   latex_engine: pdflatex
+bibliography: ["WritingSupportFiles/LDAReferenceC.bib","WritingSupportFiles/articles.bib","WritingSupportFiles/books.bib","WritingSupportFiles/packagesA.bib","WritingSupportFiles/packagesB.bib"]
+biblio-style: WritingSupportFiles\econPeriod
+keywords: "Keywords here"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontsize: 12pt
+spacing: onehalf
+---
 
 $\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
 
+<!-- ```{r echo = FALSE, child="WritingSupportFiles\\Packages.Rmd", warning=FALSE,message=FALSE} -->
+<!-- ``` -->
+
 `r ECHOCODE=FALSE`
 
+```{r echo = FALSE, child='WritingSupportFiles/PdfOutput.Rmd', warning=FALSE,message=FALSE}
+```
+
+```{r echo = FALSE, child='WritingSupportFiles/Glossary.Rmd', warning=FALSE,message=FALSE}
+```
+
+<script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" type="text/css" />
+<script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jsuites/v3/jsuites.css" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+# Chapter 1 Introduction
+# Chapter 2 A Primer on Survival Analysis
 # Chapter 3 Modeling Life Contingent Benefits {#C:Benefit}
 
 `r chapnum = 3`
@@ -149,7 +198,7 @@ Option 2
 
 ```{r echo=ECHOCODE}
 # Import data from CSV file, then convert so it can be used in Javascript
-dataCPE <- read.csv("Data/ContingentPaymentExample.csv", header = F)
+dataCPE <- read.csv("ContingentPaymentExample.csv", header = F)
 
 df_to_js <- function(x, var_name = "dataCPE", ...){
             json_data <- jsonlite::toJSON(x, ...)
@@ -400,7 +449,6 @@ text(11,4,TeX("_{n-1|}q_x"))
 ***
 
 $$
-\require{enclose}
 \begin{array}{l}
 PV = v^{K_{\bf{x}}+1} I_{K_{\bf{x}} \le n-1} = \left \{\begin{array}{cl}
 v^{K_{\bf{x}}+1} & \text{where }  K_{\bf{x}} \le n-1 \\
@@ -989,7 +1037,7 @@ Even if the the insured policyholders are independent across all $j$, and the di
 
 ```{r FirstSimulation1, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 library(knitr)
-fem.Qx <- read.csv(file = "Data/IndonesianMortality.csv", header = TRUE)[,3]
+fem.Qx <- read.csv(file = "IndonesianMortality.csv", header = TRUE)[,3]
 numAge <- length(fem.Qx)
 SurvProb <- rep(1, numAge)
 for (x in 1:(numAge-1)) {SurvProb[x+1] <- SurvProb[x]*(1-fem.Qx[x])}

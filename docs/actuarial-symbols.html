@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
+  <title>Actuarial Symbols | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
   <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta property="og:title" content="Actuarial Symbols | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="https://github.com/OpenActTextDev" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta name="twitter:title" content="Actuarial Symbols | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
   
   <meta name="twitter:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introduction.html"/>
+<link rel="prev" href="C-Benefit.html"/>
+<link rel="next" href="chapter-3-examples-present-values.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -346,103 +346,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</h1>
-<p class="author"><em>An open text authored by the Actuarial Community</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p style="text-align:right;">
-<em>Date: 08 October 2020</em>
-</p>
-<p><span class="math inline">\(\require{enclose}\)</span></p>
+<div id="actuarial-symbols" class="section level1 unnumbered">
+<h1>Actuarial Symbols</h1>
+<p><span style="color: green;">
+This is for practicing how to write actuarial symbols with R bookdown/markdown such as <span class="math inline">\(_{t}p_{[x]}\)</span>.</p>
+<p><span style="color: green;">
+It is sometimes helpful to put a space before the pre-subscript like <span class="math inline">\(\frac{\ell_{[x]+t}}{\ell_{[x]}} = ~_{t}p_{[x]}\)</span>. Else you get this awkward <span class="math inline">\(\frac{\ell_{[x]+t}}{\ell_{[x]}} = _{t}p_{[x]}\)</span>.</p>
+<p><span style="color: green;">
+Try this</p>
+<p><span style="color: green;">
+<span class="math display">\[
+\require{enclose} EPV = a _{[25]+5:\enclose{actuarial}{30}} ^ {\space 1}
+\]</span>
+<span style="color: green;">
+and this <span class="math inline">\(\require{enclose} a_{\enclose{actuarial}{K}}\)</span> and this
+<span class="math inline">\(\require{enclose} \ddot{a}_{x}^{\{m\}}\)</span>
+and
+<span class="math inline">\(\require{enclose} \ddot{a}_{x:\enclose{actuarial}{n}}^{(m)}\)</span>
+and
+<span class="math inline">\(\require{enclose} {}^{2}\bar{A}_{x:\enclose{actuarial}{n}}\)</span>
+,
+<span class="math inline">\(\require{enclose} {}^{2}\ddot{a}_{xy:\enclose{actuarial}{n}}\)</span>
+and
+<span class="math inline">\(\require{enclose} \mathring{a}_{x:\enclose{actuarial}{n}}^{(m)}\)</span>
+and
+<span class="math display">\[
+\require{enclose} 
+Y = 
+ \begin{cases}
+ 1 + v + v^2 + \cdots + v^K = \ddot{a}_{\enclose{actuarial}{K+1}}, K=0,1,\ldots,n-1 \\
+ 1 + v + v^2 + \cdots + v^{n-1} = \ddot{a}_{\enclose{actuarial}{n}}, K \ge n
+ \end{cases}
+\]</span>
+</span></p>
 
-
-
-
-<!-- # Preface {-} -->
-<div id="book-description" class="section level4 unnumbered">
-<h4>Book Description</h4>
-<p>This is an interactive, online, freely available text.</p>
-<ul>
-<li>The online version contains many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote <em>deeper learning</em>.</li>
-<li>A subset of the book is available for <em>offline reading</em> in pdf and EPUB formats.</li>
-<li>The online text will be available in multiple languages to promote access to a <em>worldwide audience</em>.</li>
-</ul>
-</div>
-<div id="what-will-success-look-like" class="section level4 unnumbered">
-<h4>What will success look like?</h4>
-<p>The online text will be freely available to a worldwide audience. The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. Moreover, a subset of the book will be available in pdf format for low-cost printing. The online text will be available in multiple languages to promote access to a worldwide audience.</p>
-</div>
-<div id="how-will-the-text-be-used" class="section level4 unnumbered">
-<h4>How will the text be used?</h4>
-<p>This book will be useful in actuarial curricula worldwide. It will cover the loss data learning objectives of the major actuarial organizations. Thus, it will be suitable for classroom use at universities as well as for use by independent learners seeking to pass professional actuarial examinations. Moreover, the text will also be useful for the continuing professional development of actuaries and other professionals in insurance and related financial risk management industries.</p>
-</div>
-<div id="why-is-this-good-for-the-profession" class="section level4 unnumbered">
-<h4>Why is this good for the profession?</h4>
-<p>An online text is a type of open educational resource (OER). One important benefit of an OER is that it equalizes access to knowledge, thus permitting a broader community to learn about the actuarial profession. Moreover, it has the capacity to engage viewers through active learning that deepens the learning process, producing analysts more capable of solid actuarial work.</p>
-<p>Why is this good for students and teachers and others involved in the learning process? Cost is often cited as an important factor for students and teachers in textbook selection (see a recent post on the <a href="https://www.aei.org/publication/the-new-era-of-the-400-college-textbook-which-is-part-of-the-unsustainable-higher-education-bubble/">$400 textbook</a>). Students will also appreciate the ability to “carry the book around” on their mobile devices.</p>
-</div>
-<div id="project-goal" class="section level4 unnumbered">
-<h4>Project Goal</h4>
-<p>The project goal is to have the actuarial community author our textbooks in a collaborative fashion. To get involved, please visit our
-<a href="https://sites.google.com/a/wisc.edu/loss-data-analytics/">Open Actuarial Textbooks Project Site</a>.</p>
-</div>
-<div id="acknowledgements" class="section level2 unnumbered">
-<h2>Acknowledgements</h2>
-<p>Edward Frees acknowledges the John and Anne Oros Distinguished Chair for Inspired Learning in Business which provided seed money to support the project. Frees and his Wisconsin colleagues also acknowledge a Society of Actuaries Center of Excellence Grant that provided funding to support work in dependence modeling and health initiatives. Wisconsin also provided an education innovation grant that provided partial support for the many students who have worked on this project.</p>
-<p>We acknowledge the Society of Actuaries for permission to use problems from their examinations.</p>
-<p>We thank Rob Hyndman, Monash University, for allowing us to use his excellent style files to produce the online version of the book.</p>
-<p>We thank Yihui Xie and his colleagues at <a href="https://www.rstudio.com/">Rstudio</a> for the <a href="https://bookdown.org/yihui/bookdown/">R bookdown</a> package that allows us to produce this book.</p>
-<p>We also wish to acknowledge the support and sponsorship of the <a href="http://www.blackactuaries.org/">International Association of Black Actuaries</a> in our joint efforts to provide actuarial educational content to all.</p>
-<center>
-<img src="Figures/IABA.png" style="width:25.0%" />
-</center>
-</div>
-<div id="contributors" class="section level2 unnumbered">
-<h2>Contributors</h2>
-<p>The project goal is to have the actuarial community author our textbooks in a collaborative fashion. The following contributors have taken a leadership role in developing <em>Life Contingencies</em>.</p>
-<ul>
-<li><p><strong>Vali Asimit</strong></p></li>
-<li><p><strong>Dani Bauer</strong></p></li>
-<li><p><strong>Adam Butt</strong></p></li>
-<li><p><strong>Emiliano Valdez</strong></p></li>
-</ul>
-<p><img src = "ContributorPics/Frees_Jed2018_150x188.jpg" width = "150" height = "180" style = "float:right; margin-left: 10px; margin-top: 7px" /></p>
-<ul>
-<li><strong>Edward W. (Jed) Frees</strong> is an emeritus professor, formerly the Hickman-Larson Chair of Actuarial Science at the University of Wisconsin-Madison. He is a Fellow of both the Society of Actuaries and the American Statistical Association. He has published extensively (a four-time winner of the Halmstad and Prize for best paper published in the actuarial literature) and has written three books. He also is a co-editor of the two-volume series <em>Predictive Modeling Applications in Actuarial Science</em> published by Cambridge University Press.</li>
-</ul>
-</div>
-<div id="reviewers" class="section level2 unnumbered">
-<h2>Reviewers</h2>
-<p>Our goal is to have the actuarial community author our textbooks in a collaborative fashion. Part of the writing process will involve many reviewers to help make this book better.</p>
-</div>
-<div id="for-our-readers" class="section level2 unnumbered">
-<h2>For our Readers</h2>
-<p>We hope that you find this book worthwhile and even enjoyable. For your convenience, at our <a href="https://openacttexts.github.io/">Github Landing site</a> (<a href="https://openacttexts.github.io/" class="uri">https://openacttexts.github.io/</a>),</p>
-<p>In developing this book, we are emphasizing the <a href="https://openacttexts.github.io/Loss-Data-Analytics/index.html">online version</a> that has lots of great features such as a glossary, code and solutions to examples that you can be revealed interactively. For example, you will find that the statistical code is hidden and can only be seen by clicking on terms such as</p>
-<h5 style="text-align: center;">
-<a id="displayCode.SeverityFig.1Intro" href="javascript:togglecode('toggleCode.SeverityFig.1Intro','displayCode.SeverityFig.1Intro');"><i><strong>R Code for Frequency Table</strong></i></a>
-</h5>
-<div id="toggleCode.SeverityFig.1Intro" style="display: none">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">Insample &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Insample.csv&quot;</span>, <span class="dt">header=</span>T,  <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;.&quot;</span>), </a>
-<a class="sourceLine" id="cb1-2" title="2">                      <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb1-3" title="3">Insample2010 &lt;-<span class="st"> </span><span class="kw">subset</span>(Insample, Year<span class="op">==</span><span class="dv">2010</span>)</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">table</span>(Insample2010<span class="op">$</span>Freq)</a></code></pre></div>
-</div>
-<p>We hide the code because we don’t want to insist that you use the <code>R</code> statistical software (although we like it). Still, we encourage you to try some statistical code as you read the book – we have opted to make it easy to learn <code>R</code> as you go. We have set up a separate <a href="https://openacttexts.github.io/LDARcode">R Code for Loss Data Analytics</a> site to explain more of the details of the code.</p>
-<p>Like any book, we have a set of notations and conventions. It will probably save you time if you regularly visit our Appendix Chapter <a href="C-NotationConventionLC.html#C:NotationConventionLC">4</a> to get used to ours.</p>
-<p>Freely available, interactive textbooks represent a new venture in actuarial education and we need your input. Although a lot of effort has gone into the development, we expect hiccoughs. Please let your instructor know about opportunities for improvement, write us through our project site, or contact chapter contributors directly with suggested improvements.</p>
-
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="C-Benefit.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-3-examples-present-values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
