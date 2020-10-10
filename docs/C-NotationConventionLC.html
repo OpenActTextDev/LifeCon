@@ -115,15 +115,13 @@ $(document).ready(function(){
 });
 </script>
 
-
 <script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
 
 <script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
 <link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" type="text/css" />
 <script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
 <link rel="stylesheet" href="https://bossanova.uk/jsuites/v3/jsuites.css" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 <script>
 $(document).ready(function(){
@@ -308,7 +306,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.6" data-path="C-Benefit.html"><a href="C-Benefit.html#modelling-contingent-cash-flows-more-frequently-than-annually"><i class="fa fa-check"></i><b>3.6</b> Modelling contingent cash flows more frequently than annually</a></li>
 <li class="chapter" data-level="3.7" data-path="C-Benefit.html"><a href="C-Benefit.html#modelling-contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>3.7</b> Modelling contingent cash flows in continuous time</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="actuarial-symbols.html"><a href="actuarial-symbols.html"><i class="fa fa-check"></i>Actuarial Symbols</a></li>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html"><i class="fa fa-check"></i>Chapter 3 Examples – Present Values</a><ul>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html#examples-valuation-of-cash-flows-under-uncertainty"><i class="fa fa-check"></i>Examples – Valuation of cash flows under uncertainty</a></li>
 </ul></li>
@@ -348,7 +345,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="C:NotationConventionLC" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Appendix: Conventions for Notation</h1>
-<p><em>Chapter Preview</em>. <em>Life Contingencies</em> employs widely accepted statistical concepts and tools. Thus, the notation should be consistent with standard usage employed in probability and mathematical statistics. See, for example, <span class="citation">[@halperin1965recommended]</span> for a description of one standard.</p>
+<p><em>Chapter Preview</em>. <em>Life Contingencies</em> employs widely accepted statistical concepts and tools. Thus, the notation should be consistent with standard usage employed in probability and mathematical statistics. See, for example, <span class="citation">(Halperin, Hartley, and Hoel <a href="#ref-halperin1965recommended" role="doc-biblioref">1965</a>)</span> for a description of one standard.</p>
 <div id="S:NC:General" class="section level2">
 <h2><span class="header-section-number">4.1</span> General Conventions</h2>
 <ul>
@@ -457,6 +454,7 @@ B(x,y)     &amp;  &amp; \text{beta function, }\varGamma(x)\varGamma(y)/\varGamma
 <div id="life-table-notation" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Life Table Notation</h3>
 <p><span class="math display">\[
+{\small
 \require{enclose}
 \begin{array}{cll}  \hline
 \textbf{Symbol} &amp; \textbf{Latex code} &amp; \textbf{Description} \\
@@ -469,12 +467,13 @@ _{t}p_{[x]} &amp;    ~ \_\{ \tt{t} \} \tt{p} \_ \{ [\tt{x}]\}\} &amp; \text{Prob
 \mathring{e}_{x:{\enclose{actuarial}{n}}} &amp; \backslash\tt{mathring\{e\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} &amp; \text{Complete expectation of life at age } x \text{ for the next } n \text{ years} \\
 \hline
 \end{array}
+}
 \]</span></p>
 </div>
 <div id="annuity-certain-and-life-annuity-notation" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> Annuity Certain and Life Annuity Notation</h3>
-<p>Not sure if necessary to say APV (actuarial present value)</p>
 <p><span class="math display">\[
+{\small
 \begin{array}{cll}  \hline
 \textbf{Symbol} &amp; \textbf{Latex code} &amp; \textbf{Description} \\
 \hline
@@ -491,12 +490,14 @@ _{n|}\ddot{a}_{x} &amp; ~ \_\{ \tt{n|} \} \backslash\tt{ddot}\_\{\tt{a}\_\{x\}\}
 \ddot{a}^{(m)}_{x:{\enclose{actuarial}{n}}} &amp; \backslash\tt{ddot\{a\}} \verb|^| \tt{\{(m)\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} &amp; \text{APV of an } n\text{-year life annuity due to } (x) \text{ payable } m\text{-thly} \\
 \hline
 \end{array}
+}
 \]</span></p>
+<p>Not sure if necessary to say APV (actuarial present value)</p>
 </div>
 <div id="life-insurance-notation" class="section level3">
 <h3><span class="header-section-number">4.5.3</span> Life Insurance Notation</h3>
-<p>Not sure if necessary to say APV (actuarial present value).</p>
 <p><span class="math display">\[
+{\small
 \begin{array}{cll}  \hline
 \textbf{Symbol} &amp; \textbf{Latex code} &amp; \textbf{Description} \\
 \hline
@@ -510,6 +511,7 @@ _{n|}{A}_{x} &amp; ~ \_\{ \tt{n|} \} \{\tt{A}\_\{x\}\} &amp; \text{APV of an } n
 {A}_{x:\enclose{actuarial}{n}}^{\space 1} &amp; \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} \verb|^| \{\backslash \tt{space} \ 1\} &amp; \text{APV of an } n\text{-year term insurance to } (x)  \\
 \hline
 \end{array}
+}
 \]</span></p>
 </div>
 </div>
@@ -554,8 +556,20 @@ Y =
 </div>
 <div id="further-readings" class="section level2">
 <h2><span class="header-section-number">4.7</span> Further Readings</h2>
-<p>To make connections to other literatures, see <span class="citation">[@abadir2002notation]</span>  for a summary of notation from the econometrics perspective. This reference has a terrific feature that many latex symbols are defined in the article. Further, there is a long history of discussion and debate surrounding actuarial notation; see <span class="citation">[@boehm1975thoughts]</span> for one contribution.</p>
+<p>To make connections to other literatures, see <span class="citation">(Abadir and Magnus <a href="#ref-abadir2002notation" role="doc-biblioref">2002</a>)</span>  for a summary of notation from the econometrics perspective. This reference has a terrific feature that many latex symbols are defined in the article. Further, there is a long history of discussion and debate surrounding actuarial notation; see <span class="citation">(Boehm et al. <a href="#ref-boehm1975thoughts" role="doc-biblioref">1975</a>)</span> for one contribution.</p>
 
+</div>
+</div>
+<h3>Bibliography</h3>
+<div id="refs" class="references">
+<div id="ref-abadir2002notation">
+<p>Abadir, Karim, and Jan Magnus. 2002. “Notation in Econometrics: A Proposal for a Standard.” <em>The Econometrics Journal</em> 5 (1): 76–90.</p>
+</div>
+<div id="ref-boehm1975thoughts">
+<p>Boehm, C, J Engelfriet, M Helbig, A IM Kool, P Leepin, E Neuburger, and AD Wilkie. 1975. “Thoughts on the Harmonization of Some Proposals for a New International Actuarial Notation.” <em>Blätter Der DGVFM</em> 12 (2): 99–129.</p>
+</div>
+<div id="ref-halperin1965recommended">
+<p>Halperin, Max, Herman O Hartley, and Paul G Hoel. 1965. “Recommended Standards for Statistical Symbols and Notation: Copss Committee on Symbols and Notation.” <em>The American Statistician</em> 19 (3): 12–14.</p>
 </div>
 </div>
             </section>

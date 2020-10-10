@@ -4,11 +4,14 @@
 
 ```{r include = FALSE}
 knitr::opts_chunk$set(results = "hold")
-tutorial::go_interactive(greedy = FALSE)
+#tutorial::go_interactive(greedy = FALSE)
 ```
 
 
 # Chapter 3 Examples  -- Present Values {-}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
 
 
@@ -465,4 +468,7 @@ plot(Time, FlatPay.FlatInt.IncProb, type = "b", ylim = c(0,2.5), ylab = "Present
   lines(Time, IncPay.FlatInt.IncProb, type = "b")
   lines(Time, IncPay.IncInt.IncProb, type = "b")
 ```
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 

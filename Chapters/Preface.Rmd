@@ -95,3 +95,5 @@ Like any book, we have a set of notations and conventions. It will probably save
 
 Freely available, interactive textbooks represent a new venture in actuarial education and we need your input. Although a lot of effort has gone into the development, we expect hiccoughs. Please let your instructor know about opportunities for improvement, write us through our project site, or contact chapter contributors directly with suggested improvements.
 
+[@abadir2002notation]
+

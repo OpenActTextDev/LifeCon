@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="modeling-lifetimes.html"/>
-<link rel="next" href="actuarial-symbols.html"/>
+<link rel="next" href="chapter-3-examples-present-values.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -115,15 +115,13 @@ $(document).ready(function(){
 });
 </script>
 
-
 <script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
 
 <script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
 <link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" type="text/css" />
 <script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
 <link rel="stylesheet" href="https://bossanova.uk/jsuites/v3/jsuites.css" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 <script>
 $(document).ready(function(){
@@ -308,7 +306,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.6" data-path="C-Benefit.html"><a href="C-Benefit.html#modelling-contingent-cash-flows-more-frequently-than-annually"><i class="fa fa-check"></i><b>3.6</b> Modelling contingent cash flows more frequently than annually</a></li>
 <li class="chapter" data-level="3.7" data-path="C-Benefit.html"><a href="C-Benefit.html#modelling-contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>3.7</b> Modelling contingent cash flows in continuous time</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="actuarial-symbols.html"><a href="actuarial-symbols.html"><i class="fa fa-check"></i>Actuarial Symbols</a></li>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html"><i class="fa fa-check"></i>Chapter 3 Examples – Present Values</a><ul>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html#examples-valuation-of-cash-flows-under-uncertainty"><i class="fa fa-check"></i>Examples – Valuation of cash flows under uncertainty</a></li>
 </ul></li>
@@ -377,36 +374,9 @@ Having <span class="math inline">\(t\)</span> be a left subscript ensures that r
 <a id="displayCode.Benefit1" href="javascript:togglecode('toggleCode.Benefit1','displayCode.Benefit1');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit1" style="display: none">
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb57-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb57-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb57-4" title="4"></a>
-<a class="sourceLine" id="cb57-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb57-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb57-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb57-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb57-9" title="9"><span class="kw">arrows</span>(<span class="dv">6</span>,<span class="fl">6.2</span>,<span class="dv">6</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb57-10" title="10"></a>
-<a class="sourceLine" id="cb57-11" title="11"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb57-12" title="12"></a>
-<a class="sourceLine" id="cb57-13" title="13"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Time&quot;</span>)</a>
-<a class="sourceLine" id="cb57-14" title="14"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb57-15" title="15"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb57-16" title="16"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb57-17" title="17"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="st">&quot;3&quot;</span>)</a>
-<a class="sourceLine" id="cb57-18" title="18"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb57-19" title="19"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb57-20" title="20"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="kw">TeX</span>(<span class="st">&quot;_0C&quot;</span>))</a>
-<a class="sourceLine" id="cb57-21" title="21"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="kw">TeX</span>(<span class="st">&quot;_1C&quot;</span>))</a>
-<a class="sourceLine" id="cb57-22" title="22"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="kw">TeX</span>(<span class="st">&quot;_2C&quot;</span>))</a>
-<a class="sourceLine" id="cb57-23" title="23"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">5</span>,<span class="kw">TeX</span>(<span class="st">&quot;_3C&quot;</span>))</a>
-<a class="sourceLine" id="cb57-24" title="24"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb57-25" title="25"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Probability&quot;</span>)</a>
-<a class="sourceLine" id="cb57-26" title="26"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;Pr(_0C)&quot;</span>))</a>
-<a class="sourceLine" id="cb57-27" title="27"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;Pr(_1C)&quot;</span>))</a>
-<a class="sourceLine" id="cb57-28" title="28"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;Pr(_2C)&quot;</span>))</a>
-<a class="sourceLine" id="cb57-29" title="29"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;Pr(_3C)&quot;</span>))</a>
-<a class="sourceLine" id="cb57-30" title="30"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsOSw2LGNvZGU9Mixsd2Q9MixhbmdsZT00NSxsZW5ndGg9MC4xMClcbmFycm93cygzLDYuMiwzLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg0LDYuMiw0LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg1LDYuMiw1LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg2LDYuMiw2LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg2LDcsXCIzXCIpXG50ZXh0KDcuNSw3LFwiLi4uXCIpXG50ZXh0KDEsNSxcIkNhc2ggRmxvd1wiKVxudGV4dCgzLDUsVGVYKFwiXzBDXCIpKVxudGV4dCg0LDUsVGVYKFwiXzFDXCIpKVxudGV4dCg1LDUsVGVYKFwiXzJDXCIpKVxudGV4dCg2LDUsVGVYKFwiXzNDXCIpKVxudGV4dCg3LjUsNSxcIi4uLlwiKVxudGV4dCgxLDQsXCJQcm9iYWJpbGl0eVwiKVxudGV4dCgzLDQsVGVYKFwiUHIoXzBDKVwiKSlcbnRleHQoNCw0LFRlWChcIlByKF8xQylcIikpXG50ZXh0KDUsNCxUZVgoXCJQcihfMkMpXCIpKVxudGV4dCg2LDQsVGVYKFwiUHIoXzNDKVwiKSlcbnRleHQoNy41LDQsXCIuLi5cIikifQ==
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit1"></span>
 <img src="LifeCon_files/figure-html/Benefit1-1.png" alt="Timeline of cash flows with uncertainty" width="576" />
@@ -549,21 +519,9 @@ function myFunctionDownload() {mySpreadsheetCPE.download();};
 <a id="displayCode.ContingentPaymentExample" href="javascript:togglecode('toggleCode.ContingentPaymentExample','displayCode.ContingentPaymentExample');"><i><strong>R Code For Contingent Payment Example</strong></i></a>
 </h5>
 <div id="toggleCode.ContingentPaymentExample" style="display: none">
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">Time &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb58-2" title="2">CashFlow &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">250</span>,<span class="dv">800</span>,<span class="dv">500</span>,<span class="dv">1200</span>,<span class="dv">300</span>,<span class="dv">750</span>,<span class="dv">400</span>,<span class="dv">450</span>,<span class="dv">850</span>,<span class="dv">1500</span>,<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb58-3" title="3">SpotRate &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.005</span>,<span class="fl">0.008</span>,<span class="fl">0.012</span>,<span class="fl">0.017</span>,<span class="fl">0.023</span>,<span class="fl">0.03</span>,<span class="fl">0.03</span>,<span class="fl">0.03</span>,<span class="fl">0.03</span>,<span class="fl">0.03</span>)</a>
-<a class="sourceLine" id="cb58-4" title="4">vk &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">+</span>SpotRate)<span class="op">^</span>(<span class="op">-</span>Time)</a>
-<a class="sourceLine" id="cb58-5" title="5">Prob &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.2</span>,<span class="fl">0.06</span>,<span class="fl">0.09</span>,<span class="fl">0.17</span>,<span class="fl">0.11</span>,<span class="fl">0.1</span>,<span class="fl">0.02</span>,<span class="fl">0.09</span>,<span class="dv">0</span>,<span class="fl">0.25</span>,<span class="fl">0.2</span>)</a>
-<a class="sourceLine" id="cb58-6" title="6"><span class="co"># Expected Present Value calculation</span></a>
-<a class="sourceLine" id="cb58-7" title="7">EPV &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">*</span>vk<span class="op">*</span>Prob)</a>
-<a class="sourceLine" id="cb58-8" title="8">EPV</a>
-<a class="sourceLine" id="cb58-9" title="9"><span class="co"># Standard Deviation of Present Value calculation</span></a>
-<a class="sourceLine" id="cb58-10" title="10">CashFlowSq &lt;-<span class="st"> </span>CashFlow<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb58-11" title="11">vkSq &lt;-<span class="st"> </span>vk<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb58-12" title="12">StDevPV &lt;-<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">sum</span>(CashFlowSq<span class="op">*</span>vkSq<span class="op">*</span>Prob)<span class="op">-</span>EPV<span class="op">^</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb58-13" title="13">StDevPV</a></code></pre></div>
-<pre><code>[1] 778.584588
-[1] 305.41924</code></pre>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIGMoMDoxMClcbkNhc2hGbG93IDwtIGMoMjUwLDgwMCw1MDAsMTIwMCwzMDAsNzUwLDQwMCw0NTAsODUwLDE1MDAsMTAwKVxuU3BvdFJhdGUgPC0gYygwLDAuMDA1LDAuMDA4LDAuMDEyLDAuMDE3LDAuMDIzLDAuMDMsMC4wMywwLjAzLDAuMDMsMC4wMylcbnZrIDwtICgxK1Nwb3RSYXRlKV4oLVRpbWUpXG5Qcm9iIDwtIGMoMC4yLDAuMDYsMC4wOSwwLjE3LDAuMTEsMC4xLDAuMDIsMC4wOSwwLDAuMjUsMC4yKVxuIyBFeHBlY3RlZCBQcmVzZW50IFZhbHVlIGNhbGN1bGF0aW9uXG5FUFYgPC0gc3VtKENhc2hGbG93KnZrKlByb2IpXG5FUFZcbiMgU3RhbmRhcmQgRGV2aWF0aW9uIG9mIFByZXNlbnQgVmFsdWUgY2FsY3VsYXRpb25cbkNhc2hGbG93U3EgPC0gQ2FzaEZsb3deMlxudmtTcSA8LSB2a14yXG5TdERldlBWIDwtIHNxcnQoc3VtKENhc2hGbG93U3EqdmtTcSpQcm9iKS1FUFZeMilcblN0RGV2UFYifQ==
+</div>
 </div>
 <p><br></p>
 </div>
@@ -580,40 +538,9 @@ function myFunctionDownload() {mySpreadsheetCPE.download();};
 <a id="displayCode.Benefit2" href="javascript:togglecode('toggleCode.Benefit2','displayCode.Benefit2');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit2" style="display: none">
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb60-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb60-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb60-4" title="4"></a>
-<a class="sourceLine" id="cb60-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb60-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb60-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb60-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb60-9" title="9"><span class="kw">arrows</span>(<span class="dv">6</span>,<span class="fl">6.2</span>,<span class="dv">6</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb60-10" title="10"></a>
-<a class="sourceLine" id="cb60-11" title="11"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb60-12" title="12"></a>
-<a class="sourceLine" id="cb60-13" title="13"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb60-14" title="14"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb60-15" title="15"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb60-16" title="16"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb60-17" title="17"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="st">&quot;3&quot;</span>)</a>
-<a class="sourceLine" id="cb60-18" title="18"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb60-19" title="19"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb60-20" title="20"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb60-21" title="21"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="st">&quot;x+1&quot;</span>)</a>
-<a class="sourceLine" id="cb60-22" title="22"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="st">&quot;x+2&quot;</span>)</a>
-<a class="sourceLine" id="cb60-23" title="23"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">8</span>,<span class="st">&quot;x+3&quot;</span>)</a>
-<a class="sourceLine" id="cb60-24" title="24"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb60-25" title="25"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb60-26" title="26"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb60-27" title="27"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb60-28" title="28"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb60-29" title="29"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb60-30" title="30"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Probability&quot;</span>)</a>
-<a class="sourceLine" id="cb60-31" title="31"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb60-32" title="32"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{1|}q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb60-33" title="33"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{2|}q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb60-34" title="34"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsOSw2LGNvZGU9Mixsd2Q9MixhbmdsZT00NSxsZW5ndGg9MC4xMClcbmFycm93cygzLDYuMiwzLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg0LDYuMiw0LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg1LDYuMiw1LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg2LDYuMiw2LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiQ29udHJhY3QgVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg2LDcsXCIzXCIpXG50ZXh0KDcuNSw3LFwiLi4uXCIpXG50ZXh0KDEsOCxcIkluc3VyZWQgQWdlXCIpXG50ZXh0KDMsOCxcInhcIilcbnRleHQoNCw4LFwieCsxXCIpXG50ZXh0KDUsOCxcIngrMlwiKVxudGV4dCg2LDgsXCJ4KzNcIilcbnRleHQoNy41LDgsXCIuLi5cIilcbnRleHQoMSw1LFwiQ2FzaCBGbG93XCIpXG50ZXh0KDQsNSxcIjFcIilcbnRleHQoNSw1LFwiMVwiKVxudGV4dCg2LDUsXCIxXCIpXG50ZXh0KDcuNSw1LFwiLi4uXCIpXG50ZXh0KDEsNCxcIlByb2JhYmlsaXR5XCIpXG50ZXh0KDQsNCxUZVgoXCJxX3hcIikpXG50ZXh0KDUsNCxUZVgoXCJfezF8fXFfeFwiKSlcbnRleHQoNiw0LFRlWChcIl97Mnx9cV94XCIpKVxudGV4dCg3LjUsNCxcIi4uLlwiKSJ9
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit2"></span>
 <img src="LifeCon_files/figure-html/Benefit2-1.png" alt="Timeline of benefit cash flows from a whole of life insurance policy" width="576" />
@@ -646,45 +573,9 @@ PV = v^{K_{\bf{x}}+1} \\
 <a id="displayCode.Benefit3" href="javascript:togglecode('toggleCode.Benefit3','displayCode.Benefit3');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit3" style="display: none">
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb61-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb61-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb61-4" title="4"></a>
-<a class="sourceLine" id="cb61-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">13</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb61-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb61-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb61-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb61-9" title="9"><span class="kw">arrows</span>(<span class="dv">10</span>,<span class="fl">6.2</span>,<span class="dv">10</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb61-10" title="10"><span class="kw">arrows</span>(<span class="dv">11</span>,<span class="fl">6.2</span>,<span class="dv">11</span>,<span class="fl">5.8</span>, <span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb61-11" title="11"></a>
-<a class="sourceLine" id="cb61-12" title="12"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb61-13" title="13"></a>
-<a class="sourceLine" id="cb61-14" title="14"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb61-15" title="15"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb61-16" title="16"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb61-17" title="17"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb61-18" title="18"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb61-19" title="19"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">7</span>,<span class="st">&quot;n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb61-20" title="20"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">7</span>,<span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb61-21" title="21"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb61-22" title="22"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb61-23" title="23"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="st">&quot;x+1&quot;</span>)</a>
-<a class="sourceLine" id="cb61-24" title="24"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="st">&quot;x+2&quot;</span>)</a>
-<a class="sourceLine" id="cb61-25" title="25"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb61-26" title="26"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">8</span>,<span class="st">&quot;x+n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb61-27" title="27"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">8</span>,<span class="st">&quot;x+n&quot;</span>)</a>
-<a class="sourceLine" id="cb61-28" title="28"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb61-29" title="29"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="st">&quot;C&quot;</span>)</a>
-<a class="sourceLine" id="cb61-30" title="30"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="st">&quot;C&quot;</span>)</a>
-<a class="sourceLine" id="cb61-31" title="31"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb61-32" title="32"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="st">&quot;C&quot;</span>)</a>
-<a class="sourceLine" id="cb61-33" title="33"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">5</span>,<span class="st">&quot;C&quot;</span>)</a>
-<a class="sourceLine" id="cb61-34" title="34"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Probability&quot;</span>)</a>
-<a class="sourceLine" id="cb61-35" title="35"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb61-36" title="36"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{1|}q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb61-37" title="37"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb61-38" title="38"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n-2|}q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb61-39" title="39"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n-1|}q_x&quot;</span>))</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsMTMsNixjb2RlPTIsbHdkPTIsYW5nbGU9NDUsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMyw2LjIsMyw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNCw2LjIsNCw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNSw2LjIsNSw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMTAsNi4yLDEwLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cygxMSw2LjIsMTEsNS44LCBjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiQ29udHJhY3QgVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg3LjUsNyxcIi4uLlwiKVxudGV4dCgxMCw3LFwibi0xXCIpXG50ZXh0KDExLDcsXCJuXCIpXG50ZXh0KDEsOCxcIkluc3VyZWQgQWdlXCIpXG50ZXh0KDMsOCxcInhcIilcbnRleHQoNCw4LFwieCsxXCIpXG50ZXh0KDUsOCxcIngrMlwiKVxudGV4dCg3LjUsOCxcIi4uLlwiKVxudGV4dCgxMCw4LFwieCtuLTFcIilcbnRleHQoMTEsOCxcIngrblwiKVxudGV4dCgxLDUsXCJDYXNoIEZsb3dcIilcbnRleHQoNCw1LFwiQ1wiKVxudGV4dCg1LDUsXCJDXCIpXG50ZXh0KDcuNSw1LFwiLi4uXCIpXG50ZXh0KDEwLDUsXCJDXCIpXG50ZXh0KDExLDUsXCJDXCIpXG50ZXh0KDEsNCxcIlByb2JhYmlsaXR5XCIpXG50ZXh0KDQsNCxUZVgoXCJxX3hcIikpXG50ZXh0KDUsNCxUZVgoXCJfezF8fXFfeFwiKSlcbnRleHQoNy41LDQsXCIuLi5cIilcbnRleHQoMTAsNCxUZVgoXCJfe24tMnx9cV94XCIpKVxudGV4dCgxMSw0LFRlWChcIl97bi0xfH1xX3hcIikpIn0=
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit3"></span>
 <img src="LifeCon_files/figure-html/Benefit3-1.png" alt="Timeline of benefit cash flows from a term insurance policy" width="576" />
@@ -714,26 +605,9 @@ v^{K_{\bf{x}}+1} &amp; \text{where }  K_{\bf{x}} \le n-1 \\
 <a id="displayCode.Benefit4" href="javascript:togglecode('toggleCode.Benefit4','displayCode.Benefit4');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit4" style="display: none">
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb62-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb62-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb62-4" title="4"></a>
-<a class="sourceLine" id="cb62-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">13</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb62-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb62-7" title="7"><span class="kw">arrows</span>(<span class="dv">11</span>,<span class="fl">6.2</span>,<span class="dv">11</span>,<span class="fl">5.8</span>, <span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb62-8" title="8"></a>
-<a class="sourceLine" id="cb62-9" title="9"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb62-10" title="10"></a>
-<a class="sourceLine" id="cb62-11" title="11"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb62-12" title="12"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb62-13" title="13"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">7</span>,<span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb62-14" title="14"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb62-15" title="15"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb62-16" title="16"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">8</span>,<span class="st">&quot;x+n&quot;</span>)</a>
-<a class="sourceLine" id="cb62-17" title="17"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb62-18" title="18"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb62-19" title="19"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Probability&quot;</span>)</a>
-<a class="sourceLine" id="cb62-20" title="20"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_np_{</span><span class="ch">\\</span><span class="st">textbf{x}}}&quot;</span>))</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsMTMsNixjb2RlPTIsbHdkPTIsYW5nbGU9NDUsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMyw2LjIsMyw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMTEsNi4yLDExLDUuOCwgY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5cbmxpYnJhcnkobGF0ZXgyZXhwKVxuXG50ZXh0KDEsNyxcIkNvbnRyYWN0IFRpbWVcIilcbnRleHQoMyw3LFwiMFwiKVxudGV4dCgxMSw3LFwiblwiKVxudGV4dCgxLDgsXCJJbnN1cmVkIEFnZVwiKVxudGV4dCgzLDgsXCJ4XCIpXG50ZXh0KDExLDgsXCJ4K25cIilcbnRleHQoMSw1LFwiQ2FzaCBGbG93XCIpXG50ZXh0KDExLDUsXCIxXCIpXG50ZXh0KDEsNCxcIlByb2JhYmlsaXR5XCIpXG50ZXh0KDExLDQsVGVYKFwiX25wX3tcXFxcdGV4dGJme3h9fX1cIikpIn0=
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit4"></span>
 <img src="LifeCon_files/figure-html/Benefit4-1.png" alt="Timeline of benefit cash flows from a pure endowment policy" width="576" />
@@ -762,46 +636,9 @@ v^n &amp; \text{where } T_{\bf{x}} &gt; n \\
 <a id="displayCode.Benefit5" href="javascript:togglecode('toggleCode.Benefit5','displayCode.Benefit5');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit5" style="display: none">
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb63-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb63-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb63-4" title="4"></a>
-<a class="sourceLine" id="cb63-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">13</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb63-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb63-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb63-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb63-9" title="9"><span class="kw">arrows</span>(<span class="dv">10</span>,<span class="fl">6.2</span>,<span class="dv">10</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb63-10" title="10"><span class="kw">arrows</span>(<span class="dv">11</span>,<span class="fl">6.2</span>,<span class="dv">11</span>,<span class="fl">5.8</span>, <span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb63-11" title="11"></a>
-<a class="sourceLine" id="cb63-12" title="12"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb63-13" title="13"></a>
-<a class="sourceLine" id="cb63-14" title="14"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb63-15" title="15"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb63-16" title="16"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-17" title="17"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb63-18" title="18"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb63-19" title="19"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">7</span>,<span class="st">&quot;n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-20" title="20"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">7</span>,<span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb63-21" title="21"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb63-22" title="22"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb63-23" title="23"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="st">&quot;x+1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-24" title="24"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="st">&quot;x+2&quot;</span>)</a>
-<a class="sourceLine" id="cb63-25" title="25"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb63-26" title="26"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">8</span>,<span class="st">&quot;x+n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-27" title="27"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">8</span>,<span class="st">&quot;x+n&quot;</span>)</a>
-<a class="sourceLine" id="cb63-28" title="28"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb63-29" title="29"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-30" title="30"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-31" title="31"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb63-32" title="32"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-33" title="33"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb63-34" title="34"><span class="kw">text</span>(<span class="dv">1</span>,<span class="fl">3.5</span>,<span class="st">&quot;Probability&quot;</span>)</a>
-<a class="sourceLine" id="cb63-35" title="35"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb63-36" title="36"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{1|}q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb63-37" title="37"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb63-38" title="38"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n-2|}q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb63-39" title="39"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n-1|}q_x&quot;</span>))</a>
-<a class="sourceLine" id="cb63-40" title="40"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;+_np_x&quot;</span>))</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsMTMsNixjb2RlPTIsbHdkPTIsYW5nbGU9NDUsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMyw2LjIsMyw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNCw2LjIsNCw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNSw2LjIsNSw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMTAsNi4yLDEwLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cygxMSw2LjIsMTEsNS44LCBjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiQ29udHJhY3QgVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg3LjUsNyxcIi4uLlwiKVxudGV4dCgxMCw3LFwibi0xXCIpXG50ZXh0KDExLDcsXCJuXCIpXG50ZXh0KDEsOCxcIkluc3VyZWQgQWdlXCIpXG50ZXh0KDMsOCxcInhcIilcbnRleHQoNCw4LFwieCsxXCIpXG50ZXh0KDUsOCxcIngrMlwiKVxudGV4dCg3LjUsOCxcIi4uLlwiKVxudGV4dCgxMCw4LFwieCtuLTFcIilcbnRleHQoMTEsOCxcIngrblwiKVxudGV4dCgxLDUsXCJDYXNoIEZsb3dcIilcbnRleHQoNCw1LFwiMVwiKVxudGV4dCg1LDUsXCIxXCIpXG50ZXh0KDcuNSw1LFwiLi4uXCIpXG50ZXh0KDEwLDUsXCIxXCIpXG50ZXh0KDExLDUsXCIxXCIpXG50ZXh0KDEsMy41LFwiUHJvYmFiaWxpdHlcIilcbnRleHQoNCw0LFRlWChcInFfeFwiKSlcbnRleHQoNSw0LFRlWChcIl97MXx9cV94XCIpKVxudGV4dCg3LjUsNCxcIi4uLlwiKVxudGV4dCgxMCw0LFRlWChcIl97bi0yfH1xX3hcIikpXG50ZXh0KDExLDQsVGVYKFwiX3tuLTF8fXFfeFwiKSlcbnRleHQoMTEsMyxUZVgoXCIrX25wX3hcIikpIn0=
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit5"></span>
 <img src="LifeCon_files/figure-html/Benefit5-1.png" alt="Timeline of benefit cash flows from an endowment insurance policy" width="576" />
@@ -830,47 +667,9 @@ v^n  &amp; \text{where } K_{\bf{x}} &gt; n-1 \\
 <a id="displayCode.Benefit6" href="javascript:togglecode('toggleCode.Benefit6','displayCode.Benefit6');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit6" style="display: none">
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb64-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb64-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb64-4" title="4"></a>
-<a class="sourceLine" id="cb64-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb64-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb64-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb64-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb64-9" title="9"><span class="kw">arrows</span>(<span class="dv">6</span>,<span class="fl">6.2</span>,<span class="dv">6</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb64-10" title="10"></a>
-<a class="sourceLine" id="cb64-11" title="11"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb64-12" title="12"></a>
-<a class="sourceLine" id="cb64-13" title="13"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb64-14" title="14"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb64-15" title="15"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb64-16" title="16"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb64-17" title="17"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="st">&quot;3&quot;</span>)</a>
-<a class="sourceLine" id="cb64-18" title="18"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb64-19" title="19"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb64-20" title="20"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb64-21" title="21"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="st">&quot;x+1&quot;</span>)</a>
-<a class="sourceLine" id="cb64-22" title="22"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="st">&quot;x+2&quot;</span>)</a>
-<a class="sourceLine" id="cb64-23" title="23"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">8</span>,<span class="st">&quot;x+3&quot;</span>)</a>
-<a class="sourceLine" id="cb64-24" title="24"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb64-25" title="25"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb64-26" title="26"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb64-27" title="27"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb64-28" title="28"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb64-29" title="29"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb64-30" title="30"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb64-31" title="31"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Prob (advance)&quot;</span>)</a>
-<a class="sourceLine" id="cb64-32" title="32"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb64-33" title="33"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_1p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb64-34" title="34"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_2p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb64-35" title="35"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_3p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb64-36" title="36"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb64-37" title="37"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="st">&quot;Prob (arrears)&quot;</span>)</a>
-<a class="sourceLine" id="cb64-38" title="38"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_1p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb64-39" title="39"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_2p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb64-40" title="40"><span class="kw">text</span>(<span class="dv">6</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_3p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb64-41" title="41"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">3</span>,<span class="st">&quot;...&quot;</span>)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsOSw2LGNvZGU9Mixsd2Q9MixhbmdsZT00NSxsZW5ndGg9MC4xMClcbmFycm93cygzLDYuMiwzLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg0LDYuMiw0LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg1LDYuMiw1LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cyg2LDYuMiw2LDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiQ29udHJhY3QgVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg2LDcsXCIzXCIpXG50ZXh0KDcuNSw3LFwiLi4uXCIpXG50ZXh0KDEsOCxcIkluc3VyZWQgQWdlXCIpXG50ZXh0KDMsOCxcInhcIilcbnRleHQoNCw4LFwieCsxXCIpXG50ZXh0KDUsOCxcIngrMlwiKVxudGV4dCg2LDgsXCJ4KzNcIilcbnRleHQoNy41LDgsXCIuLi5cIilcbnRleHQoMSw1LFwiQ2FzaCBGbG93XCIpXG50ZXh0KDMsNSxcIjFcIilcbnRleHQoNCw1LFwiMVwiKVxudGV4dCg1LDUsXCIxXCIpXG50ZXh0KDYsNSxcIjFcIilcbnRleHQoNy41LDUsXCIuLi5cIilcbnRleHQoMSw0LFwiUHJvYiAoYWR2YW5jZSlcIilcbnRleHQoMyw0LFRlWChcIjFcIikpXG50ZXh0KDQsNCxUZVgoXCJfMXBfeFwiKSlcbnRleHQoNSw0LFRlWChcIl8ycF94XCIpKVxudGV4dCg2LDQsVGVYKFwiXzNwX3hcIikpXG50ZXh0KDcuNSw0LFwiLi4uXCIpXG50ZXh0KDEsMyxcIlByb2IgKGFycmVhcnMpXCIpXG50ZXh0KDQsMyxUZVgoXCJfMXBfeFwiKSlcbnRleHQoNSwzLFRlWChcIl8ycF94XCIpKVxudGV4dCg2LDMsVGVYKFwiXzNwX3hcIikpXG50ZXh0KDcuNSwzLFwiLi4uXCIpIn0=
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit6"></span>
 <img src="LifeCon_files/figure-html/Benefit6-1.png" alt="Timeline of benefit cash flows from a life annuity policy" width="576" />
@@ -909,52 +708,9 @@ PV = v^{1}+v^{2}+...v^{K_{\bf{x}}} \space (\text{if} \space i_k=i) = a_{\enclose
 <a id="displayCode.Benefit7" href="javascript:togglecode('toggleCode.Benefit7','displayCode.Benefit7');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit7" style="display: none">
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb65-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb65-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb65-4" title="4"></a>
-<a class="sourceLine" id="cb65-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">13</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb65-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb65-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb65-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb65-9" title="9"><span class="kw">arrows</span>(<span class="dv">10</span>,<span class="fl">6.2</span>,<span class="dv">10</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb65-10" title="10"><span class="kw">arrows</span>(<span class="dv">11</span>,<span class="fl">6.2</span>,<span class="dv">11</span>,<span class="fl">5.8</span>, <span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb65-11" title="11"></a>
-<a class="sourceLine" id="cb65-12" title="12"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb65-13" title="13"></a>
-<a class="sourceLine" id="cb65-14" title="14"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb65-15" title="15"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb65-16" title="16"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-17" title="17"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb65-18" title="18"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb65-19" title="19"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">7</span>,<span class="st">&quot;n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-20" title="20"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">7</span>,<span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb65-21" title="21"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb65-22" title="22"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb65-23" title="23"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="st">&quot;x+1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-24" title="24"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="st">&quot;x+2&quot;</span>)</a>
-<a class="sourceLine" id="cb65-25" title="25"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb65-26" title="26"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">8</span>,<span class="st">&quot;x+n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-27" title="27"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">8</span>,<span class="st">&quot;x+n&quot;</span>)</a>
-<a class="sourceLine" id="cb65-28" title="28"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb65-29" title="29"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-30" title="30"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-31" title="31"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-32" title="32"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb65-33" title="33"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-34" title="34"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-35" title="35"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Prob (advance)&quot;</span>)</a>
-<a class="sourceLine" id="cb65-36" title="36"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb65-37" title="37"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_1p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb65-38" title="38"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_2p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb65-39" title="39"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb65-40" title="40"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n-1}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb65-41" title="41"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="st">&quot;Prob (arrears)&quot;</span>)</a>
-<a class="sourceLine" id="cb65-42" title="42"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_1p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb65-43" title="43"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_2p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb65-44" title="44"><span class="kw">text</span>(<span class="fl">7.5</span>,<span class="dv">3</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb65-45" title="45"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n-1}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb65-46" title="46"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_np_x&quot;</span>))</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsMTMsNixjb2RlPTIsbHdkPTIsYW5nbGU9NDUsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMyw2LjIsMyw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNCw2LjIsNCw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNSw2LjIsNSw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMTAsNi4yLDEwLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cygxMSw2LjIsMTEsNS44LCBjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiQ29udHJhY3QgVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg3LjUsNyxcIi4uLlwiKVxudGV4dCgxMCw3LFwibi0xXCIpXG50ZXh0KDExLDcsXCJuXCIpXG50ZXh0KDEsOCxcIkluc3VyZWQgQWdlXCIpXG50ZXh0KDMsOCxcInhcIilcbnRleHQoNCw4LFwieCsxXCIpXG50ZXh0KDUsOCxcIngrMlwiKVxudGV4dCg3LjUsOCxcIi4uLlwiKVxudGV4dCgxMCw4LFwieCtuLTFcIilcbnRleHQoMTEsOCxcIngrblwiKVxudGV4dCgxLDUsXCJDYXNoIEZsb3dcIilcbnRleHQoMyw1LFwiMVwiKVxudGV4dCg0LDUsXCIxXCIpXG50ZXh0KDUsNSxcIjFcIilcbnRleHQoNy41LDUsXCIuLi5cIilcbnRleHQoMTAsNSxcIjFcIilcbnRleHQoMTEsNSxcIjFcIilcbnRleHQoMSw0LFwiUHJvYiAoYWR2YW5jZSlcIilcbnRleHQoMyw0LFwiMVwiKVxudGV4dCg0LDQsVGVYKFwiXzFwX3hcIikpXG50ZXh0KDUsNCxUZVgoXCJfMnBfeFwiKSlcbnRleHQoNy41LDQsXCIuLi5cIilcbnRleHQoMTAsNCxUZVgoXCJfe24tMX1wX3hcIikpXG50ZXh0KDEsMyxcIlByb2IgKGFycmVhcnMpXCIpXG50ZXh0KDQsMyxUZVgoXCJfMXBfeFwiKSlcbnRleHQoNSwzLFRlWChcIl8ycF94XCIpKVxudGV4dCg3LjUsMyxcIi4uLlwiKVxudGV4dCgxMCwzLFRlWChcIl97bi0xfXBfeFwiKSlcbnRleHQoMTEsMyxUZVgoXCJfbnBfeFwiKSkifQ==
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit7"></span>
 <img src="LifeCon_files/figure-html/Benefit7-1.png" alt="Timeline of benefit cash flows from a term life annuity policy" width="576" />
@@ -997,53 +753,9 @@ PV = v^{1}+v^{2}+...+v^{\text{min}[K_{\bf{x}},n]} \space (\text{if} \space i_k=i
 <a id="displayCode.Benefit8" href="javascript:togglecode('toggleCode.Benefit8','displayCode.Benefit8');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit8" style="display: none">
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb66-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb66-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb66-4" title="4"></a>
-<a class="sourceLine" id="cb66-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">13</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb66-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb66-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb66-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb66-9" title="9"><span class="kw">arrows</span>(<span class="dv">10</span>,<span class="fl">6.2</span>,<span class="dv">10</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb66-10" title="10"><span class="kw">arrows</span>(<span class="dv">11</span>,<span class="fl">6.2</span>,<span class="dv">11</span>,<span class="fl">5.8</span>, <span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb66-11" title="11"></a>
-<a class="sourceLine" id="cb66-12" title="12"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb66-13" title="13"></a>
-<a class="sourceLine" id="cb66-14" title="14"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb66-15" title="15"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb66-16" title="16"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-17" title="17"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb66-18" title="18"><span class="kw">text</span>(<span class="fl">6.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb66-19" title="19"><span class="kw">text</span>(<span class="dv">8</span>,<span class="dv">7</span>,<span class="st">&quot;n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-20" title="20"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">7</span>,<span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb66-21" title="21"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">7</span>,<span class="st">&quot;n+1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-22" title="22"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">7</span>,<span class="st">&quot;n+2&quot;</span>)</a>
-<a class="sourceLine" id="cb66-23" title="23"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb66-24" title="24"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb66-25" title="25"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb66-26" title="26"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="st">&quot;x+1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-27" title="27"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="st">&quot;x+2&quot;</span>)</a>
-<a class="sourceLine" id="cb66-28" title="28"><span class="kw">text</span>(<span class="fl">6.5</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb66-29" title="29"><span class="kw">text</span>(<span class="dv">8</span>,<span class="dv">8</span>,<span class="st">&quot;x+n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-30" title="30"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">8</span>,<span class="st">&quot;x+n&quot;</span>)</a>
-<a class="sourceLine" id="cb66-31" title="31"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">8</span>,<span class="st">&quot;x+n+1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-32" title="32"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">8</span>,<span class="st">&quot;x+n+2&quot;</span>)</a>
-<a class="sourceLine" id="cb66-33" title="33"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb66-34" title="34"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb66-35" title="35"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-36" title="36"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-37" title="37"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb66-38" title="38"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb66-39" title="39"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Prob (advance)&quot;</span>)</a>
-<a class="sourceLine" id="cb66-40" title="40"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb66-41" title="41"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+1}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb66-42" title="42"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+2}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb66-43" title="43"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb66-44" title="44"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="st">&quot;Prob (arrears)&quot;</span>)</a>
-<a class="sourceLine" id="cb66-45" title="45"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+1}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb66-46" title="46"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+2}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb66-47" title="47"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">3</span>,<span class="st">&quot;...&quot;</span>)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsMTMsNixjb2RlPTIsbHdkPTIsYW5nbGU9NDUsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMyw2LjIsMyw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNCw2LjIsNCw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNSw2LjIsNSw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMTAsNi4yLDEwLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cygxMSw2LjIsMTEsNS44LCBjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiQ29udHJhY3QgVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg2LjUsNyxcIi4uLlwiKVxudGV4dCg4LDcsXCJuLTFcIilcbnRleHQoOSw3LFwiblwiKVxudGV4dCgxMCw3LFwibisxXCIpXG50ZXh0KDExLDcsXCJuKzJcIilcbnRleHQoMTIsNyxcIi4uLlwiKVxudGV4dCgxLDgsXCJJbnN1cmVkIEFnZVwiKVxudGV4dCgzLDgsXCJ4XCIpXG50ZXh0KDQsOCxcIngrMVwiKVxudGV4dCg1LDgsXCJ4KzJcIilcbnRleHQoNi41LDgsXCIuLi5cIilcbnRleHQoOCw4LFwieCtuLTFcIilcbnRleHQoOSw4LFwieCtuXCIpXG50ZXh0KDEwLDgsXCJ4K24rMVwiKVxudGV4dCgxMSw4LFwieCtuKzJcIilcbnRleHQoMTIsOCxcIi4uLlwiKVxudGV4dCgxLDUsXCJDYXNoIEZsb3dcIilcbnRleHQoOSw1LFwiMVwiKVxudGV4dCgxMCw1LFwiMVwiKVxudGV4dCgxMSw1LFwiMVwiKVxudGV4dCgxMiw1LFwiLi4uXCIpXG50ZXh0KDEsNCxcIlByb2IgKGFkdmFuY2UpXCIpXG50ZXh0KDksNCxUZVgoXCJfe259cF94XCIpKVxudGV4dCgxMCw0LFRlWChcIl97bisxfXBfeFwiKSlcbnRleHQoMTEsNCxUZVgoXCJfe24rMn1wX3hcIikpXG50ZXh0KDEyLDQsXCIuLi5cIilcbnRleHQoMSwzLFwiUHJvYiAoYXJyZWFycylcIilcbnRleHQoMTAsMyxUZVgoXCJfe24rMX1wX3hcIikpXG50ZXh0KDExLDMsVGVYKFwiX3tuKzJ9cF94XCIpKVxudGV4dCgxMiwzLFwiLi4uXCIpIn0=
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit8"></span>
 <img src="LifeCon_files/figure-html/Benefit8-1.png" alt="Timeline of benefit cash flows from a deferred life annuity policy" width="576" />
@@ -1086,68 +798,9 @@ v^{n+1}+v^{n+2}+...+v^{K_{\bf{x}}} \space (\text{if} \space i_k=i) = v^n ~{a}_{\
 <a id="displayCode.Benefit9" href="javascript:togglecode('toggleCode.Benefit9','displayCode.Benefit9');"><i><strong>R Code For Figure</strong></i></a>
 </h5>
 <div id="toggleCode.Benefit9" style="display: none">
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1"><span class="kw">plot.new</span>()</a>
-<a class="sourceLine" id="cb67-2" title="2"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span>)</a>
-<a class="sourceLine" id="cb67-3" title="3"><span class="kw">plot.window</span>(<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</a>
-<a class="sourceLine" id="cb67-4" title="4"></a>
-<a class="sourceLine" id="cb67-5" title="5"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">13</span>,<span class="dv">6</span>,<span class="dt">code=</span><span class="dv">2</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">45</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb67-6" title="6"><span class="kw">arrows</span>(<span class="dv">3</span>,<span class="fl">6.2</span>,<span class="dv">3</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb67-7" title="7"><span class="kw">arrows</span>(<span class="dv">4</span>,<span class="fl">6.2</span>,<span class="dv">4</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb67-8" title="8"><span class="kw">arrows</span>(<span class="dv">5</span>,<span class="fl">6.2</span>,<span class="dv">5</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb67-9" title="9"><span class="kw">arrows</span>(<span class="dv">10</span>,<span class="fl">6.2</span>,<span class="dv">10</span>,<span class="fl">5.8</span>,<span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb67-10" title="10"><span class="kw">arrows</span>(<span class="dv">11</span>,<span class="fl">6.2</span>,<span class="dv">11</span>,<span class="fl">5.8</span>, <span class="dt">code=</span><span class="dv">0</span>,<span class="dt">lwd=</span><span class="dv">2</span>,<span class="dt">angle=</span><span class="dv">0</span>,<span class="dt">length=</span><span class="fl">0.10</span>)</a>
-<a class="sourceLine" id="cb67-11" title="11"></a>
-<a class="sourceLine" id="cb67-12" title="12"><span class="kw">library</span>(latex2exp)</a>
-<a class="sourceLine" id="cb67-13" title="13"></a>
-<a class="sourceLine" id="cb67-14" title="14"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="st">&quot;Contract Time&quot;</span>)</a>
-<a class="sourceLine" id="cb67-15" title="15"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="st">&quot;0&quot;</span>)</a>
-<a class="sourceLine" id="cb67-16" title="16"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-17" title="17"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="st">&quot;2&quot;</span>)</a>
-<a class="sourceLine" id="cb67-18" title="18"><span class="kw">text</span>(<span class="fl">6.5</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-19" title="19"><span class="kw">text</span>(<span class="dv">8</span>,<span class="dv">7</span>,<span class="st">&quot;n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-20" title="20"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">7</span>,<span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb67-21" title="21"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">7</span>,<span class="st">&quot;n+1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-22" title="22"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">7</span>,<span class="st">&quot;n+2&quot;</span>)</a>
-<a class="sourceLine" id="cb67-23" title="23"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">7</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-24" title="24"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="st">&quot;Insured Age&quot;</span>)</a>
-<a class="sourceLine" id="cb67-25" title="25"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">8</span>,<span class="st">&quot;x&quot;</span>)</a>
-<a class="sourceLine" id="cb67-26" title="26"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="st">&quot;x+1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-27" title="27"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="st">&quot;x+2&quot;</span>)</a>
-<a class="sourceLine" id="cb67-28" title="28"><span class="kw">text</span>(<span class="fl">6.5</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-29" title="29"><span class="kw">text</span>(<span class="dv">8</span>,<span class="dv">8</span>,<span class="st">&quot;x+n-1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-30" title="30"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">8</span>,<span class="st">&quot;x+n&quot;</span>)</a>
-<a class="sourceLine" id="cb67-31" title="31"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">8</span>,<span class="st">&quot;x+n+1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-32" title="32"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">8</span>,<span class="st">&quot;x+n+2&quot;</span>)</a>
-<a class="sourceLine" id="cb67-33" title="33"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">8</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-34" title="34"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="st">&quot;Cash Flow&quot;</span>)</a>
-<a class="sourceLine" id="cb67-35" title="35"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-36" title="36"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-37" title="37"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-38" title="38"><span class="kw">text</span>(<span class="fl">6.5</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-39" title="39"><span class="kw">text</span>(<span class="dv">8</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-40" title="40"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-41" title="41"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-42" title="42"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">5</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-43" title="43"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">5</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-44" title="44"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="st">&quot;Prob (advance)&quot;</span>)</a>
-<a class="sourceLine" id="cb67-45" title="45"><span class="kw">text</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="st">&quot;1&quot;</span>)</a>
-<a class="sourceLine" id="cb67-46" title="46"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb67-47" title="47"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb67-48" title="48"><span class="kw">text</span>(<span class="fl">6.5</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-49" title="49"><span class="kw">text</span>(<span class="dv">8</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb67-50" title="50"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb67-51" title="51"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+1}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb67-52" title="52"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">4</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+2}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb67-53" title="53"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">4</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-54" title="54"><span class="kw">text</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="st">&quot;Prob (arrears)&quot;</span>)</a>
-<a class="sourceLine" id="cb67-55" title="55"><span class="kw">text</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb67-56" title="56"><span class="kw">text</span>(<span class="dv">5</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb67-57" title="57"><span class="kw">text</span>(<span class="fl">6.5</span>,<span class="dv">3</span>,<span class="st">&quot;...&quot;</span>)</a>
-<a class="sourceLine" id="cb67-58" title="58"><span class="kw">text</span>(<span class="dv">8</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb67-59" title="59"><span class="kw">text</span>(<span class="dv">9</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;1&quot;</span>))</a>
-<a class="sourceLine" id="cb67-60" title="60"><span class="kw">text</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+1}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb67-61" title="61"><span class="kw">text</span>(<span class="dv">11</span>,<span class="dv">3</span>,<span class="kw">TeX</span>(<span class="st">&quot;_{n+2}p_x&quot;</span>))</a>
-<a class="sourceLine" id="cb67-62" title="62"><span class="kw">text</span>(<span class="dv">12</span>,<span class="dv">3</span>,<span class="st">&quot;...&quot;</span>)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwbG90Lm5ldygpXG5wYXIobWFyID0gYygwLDAsMCwwKSArIDAuMSlcbnBsb3Qud2luZG93KHhsaW09YygwLDE0KSx5bGltPWMoMCwxMCkpXG5cbmFycm93cygzLDYsMTMsNixjb2RlPTIsbHdkPTIsYW5nbGU9NDUsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMyw2LjIsMyw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNCw2LjIsNCw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoNSw2LjIsNSw1LjgsY29kZT0wLGx3ZD0yLGFuZ2xlPTAsbGVuZ3RoPTAuMTApXG5hcnJvd3MoMTAsNi4yLDEwLDUuOCxjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcbmFycm93cygxMSw2LjIsMTEsNS44LCBjb2RlPTAsbHdkPTIsYW5nbGU9MCxsZW5ndGg9MC4xMClcblxubGlicmFyeShsYXRleDJleHApXG5cbnRleHQoMSw3LFwiQ29udHJhY3QgVGltZVwiKVxudGV4dCgzLDcsXCIwXCIpXG50ZXh0KDQsNyxcIjFcIilcbnRleHQoNSw3LFwiMlwiKVxudGV4dCg2LjUsNyxcIi4uLlwiKVxudGV4dCg4LDcsXCJuLTFcIilcbnRleHQoOSw3LFwiblwiKVxudGV4dCgxMCw3LFwibisxXCIpXG50ZXh0KDExLDcsXCJuKzJcIilcbnRleHQoMTIsNyxcIi4uLlwiKVxudGV4dCgxLDgsXCJJbnN1cmVkIEFnZVwiKVxudGV4dCgzLDgsXCJ4XCIpXG50ZXh0KDQsOCxcIngrMVwiKVxudGV4dCg1LDgsXCJ4KzJcIilcbnRleHQoNi41LDgsXCIuLi5cIilcbnRleHQoOCw4LFwieCtuLTFcIilcbnRleHQoOSw4LFwieCtuXCIpXG50ZXh0KDEwLDgsXCJ4K24rMVwiKVxudGV4dCgxMSw4LFwieCtuKzJcIilcbnRleHQoMTIsOCxcIi4uLlwiKVxudGV4dCgxLDUsXCJDYXNoIEZsb3dcIilcbnRleHQoMyw1LFwiMVwiKVxudGV4dCg0LDUsXCIxXCIpXG50ZXh0KDUsNSxcIjFcIilcbnRleHQoNi41LDUsXCIuLi5cIilcbnRleHQoOCw1LFwiMVwiKVxudGV4dCg5LDUsXCIxXCIpXG50ZXh0KDEwLDUsXCIxXCIpXG50ZXh0KDExLDUsXCIxXCIpXG50ZXh0KDEyLDUsXCIuLi5cIilcbnRleHQoMSw0LFwiUHJvYiAoYWR2YW5jZSlcIilcbnRleHQoMyw0LFwiMVwiKVxudGV4dCg0LDQsVGVYKFwiMVwiKSlcbnRleHQoNSw0LFRlWChcIjFcIikpXG50ZXh0KDYuNSw0LFwiLi4uXCIpXG50ZXh0KDgsNCxUZVgoXCIxXCIpKVxudGV4dCg5LDQsVGVYKFwiX3tufXBfeFwiKSlcbnRleHQoMTAsNCxUZVgoXCJfe24rMX1wX3hcIikpXG50ZXh0KDExLDQsVGVYKFwiX3tuKzJ9cF94XCIpKVxudGV4dCgxMiw0LFwiLi4uXCIpXG50ZXh0KDEsMyxcIlByb2IgKGFycmVhcnMpXCIpXG50ZXh0KDQsMyxUZVgoXCIxXCIpKVxudGV4dCg1LDMsVGVYKFwiMVwiKSlcbnRleHQoNi41LDMsXCIuLi5cIilcbnRleHQoOCwzLFRlWChcIjFcIikpXG50ZXh0KDksMyxUZVgoXCIxXCIpKVxudGV4dCgxMCwzLFRlWChcIl97bisxfXBfeFwiKSlcbnRleHQoMTEsMyxUZVgoXCJfe24rMn1wX3hcIikpXG50ZXh0KDEyLDMsXCIuLi5cIikifQ==
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:Benefit9"></span>
 <img src="LifeCon_files/figure-html/Benefit9-1.png" alt="Timeline of benefit cash flows from a guaranteed life annuity policy" width="576" />
@@ -1236,119 +889,55 @@ PV_{agg} =  \sum_{j=1}^J C_j v^{K_{{\bf{x}}_j}+1}
 <a id="displayCode.Simulation.1" href="javascript:togglecode('toggleCode.Simulation.1','displayCode.Simulation.1');"><i><strong>R Code To Construct Survival Probabilities</strong></i></a>
 </h5>
 <div id="toggleCode.Simulation.1" style="display: none">
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb68-2" title="2">fem.Qx &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Data/IndonesianMortality.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)[,<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb68-3" title="3">numAge &lt;-<span class="st"> </span><span class="kw">length</span>(fem.Qx)</a>
-<a class="sourceLine" id="cb68-4" title="4">SurvProb &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>, numAge)</a>
-<a class="sourceLine" id="cb68-5" title="5"><span class="cf">for</span> (x <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>(numAge<span class="dv">-1</span>)) {SurvProb[x<span class="op">+</span><span class="dv">1</span>] &lt;-<span class="st"> </span>SurvProb[x]<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>fem.Qx[x])}</a>
-<a class="sourceLine" id="cb68-6" title="6">TenYearSurvProb25 &lt;-<span class="st"> </span><span class="kw">c</span>(SurvProb[<span class="dv">25</span>], SurvProb[<span class="dv">35</span>],SurvProb[<span class="dv">45</span>],SurvProb[<span class="dv">55</span>],SurvProb[<span class="dv">65</span>],SurvProb[<span class="dv">75</span>],SurvProb[<span class="dv">85</span>],SurvProb[<span class="dv">95</span>], <span class="dv">0</span>)<span class="op">/</span>SurvProb[<span class="dv">25</span>]</a>
-<a class="sourceLine" id="cb68-7" title="7">TenYearProbs &lt;-<span class="st"> </span>TenYearSurvProb25[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>]<span class="op">-</span>TenYearSurvProb25[<span class="dv">2</span><span class="op">:</span><span class="dv">9</span>] </a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KGtuaXRyKVxuZmVtLlF4IDwtIHJlYWQuY3N2KGZpbGUgPSBcIkRhdGEvSW5kb25lc2lhbk1vcnRhbGl0eS5jc3ZcIiwgaGVhZGVyID0gVFJVRSlbLDNdXG5udW1BZ2UgPC0gbGVuZ3RoKGZlbS5ReClcblN1cnZQcm9iIDwtIHJlcCgxLCBudW1BZ2UpXG5mb3IgKHggaW4gMToobnVtQWdlLTEpKSB7U3VydlByb2JbeCsxXSA8LSBTdXJ2UHJvYlt4XSooMS1mZW0uUXhbeF0pfVxuVGVuWWVhclN1cnZQcm9iMjUgPC0gYyhTdXJ2UHJvYlsyNV0sIFN1cnZQcm9iWzM1XSxTdXJ2UHJvYls0NV0sU3VydlByb2JbNTVdLFN1cnZQcm9iWzY1XSxTdXJ2UHJvYls3NV0sU3VydlByb2JbODVdLFN1cnZQcm9iWzk1XSwgMCkvU3VydlByb2JbMjVdXG5UZW5ZZWFyUHJvYnMgPC0gVGVuWWVhclN1cnZQcm9iMjVbMTo4XS1UZW5ZZWFyU3VydlByb2IyNVsyOjldICJ9
+</div>
 </div>
 <p>The ten year discounted values and probabilities are</p>
 <h5 style="text-align: center;">
 <a id="displayCode.Simulation.2" href="javascript:togglecode('toggleCode.Simulation.2','displayCode.Simulation.2');"><i><strong>R Code To Construct Discounted Values and Associated Probabilities</strong></i></a>
 </h5>
 <div id="toggleCode.Simulation.2" style="display: none">
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1">i =<span class="st"> </span><span class="fl">0.05</span></a>
-<a class="sourceLine" id="cb69-2" title="2">Probsout &lt;-<span class="st"> </span><span class="kw">round</span>(TenYearProbs,<span class="dt">digits =</span> <span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb69-3" title="3"><span class="co"># xout &lt;- (1:length(Probsout))*10</span></a>
-<a class="sourceLine" id="cb69-4" title="4"><span class="co"># xout &lt;- round(xout,digits=0)</span></a>
-<a class="sourceLine" id="cb69-5" title="5">TenYearPV =<span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>i)<span class="op">^</span><span class="dv">10</span>)<span class="op">^</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(TenYearProbs))</a>
-<a class="sourceLine" id="cb69-6" title="6">ProbsoutMat &lt;-<span class="st"> </span><span class="kw">t</span>(<span class="kw">cbind</span>(TenYearPV, Probsout))</a>
-<a class="sourceLine" id="cb69-7" title="7">ProbsoutMat &lt;-<span class="st"> </span><span class="kw">round</span>(ProbsoutMat,<span class="dt">digits=</span><span class="dv">4</span>)</a>
-<a class="sourceLine" id="cb69-8" title="8"><span class="kw">rownames</span>(ProbsoutMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Discounted Value&quot;</span>, <span class="st">&quot;Probs&quot;</span>)</a>
-<a class="sourceLine" id="cb69-9" title="9"><span class="kw">colnames</span>(ProbsoutMat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;10&quot;</span>,<span class="st">&quot;20&quot;</span>,<span class="st">&quot;30&quot;</span>,<span class="st">&quot;40&quot;</span>,<span class="st">&quot;50&quot;</span>,<span class="st">&quot;60&quot;</span>,<span class="st">&quot;70&quot;</span>,<span class="st">&quot;80&quot;</span>)</a>
-<a class="sourceLine" id="cb69-10" title="10">knitr<span class="op">::</span><span class="kw">kable</span>(ProbsoutMat)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpID0gMC4wNVxuUHJvYnNvdXQgPC0gcm91bmQoVGVuWWVhclByb2JzLGRpZ2l0cyA9IDQpXG4jIHhvdXQgPC0gKDE6bGVuZ3RoKFByb2Jzb3V0KSkqMTBcbiMgeG91dCA8LSByb3VuZCh4b3V0LGRpZ2l0cz0wKVxuVGVuWWVhclBWID0gKDEvKDEraSleMTApXigxOmxlbmd0aChUZW5ZZWFyUHJvYnMpKVxuUHJvYnNvdXRNYXQgPC0gdChjYmluZChUZW5ZZWFyUFYsIFByb2Jzb3V0KSlcblByb2Jzb3V0TWF0IDwtIHJvdW5kKFByb2Jzb3V0TWF0LGRpZ2l0cz00KVxucm93bmFtZXMoUHJvYnNvdXRNYXQpIDwtIGMoXCJEaXNjb3VudGVkIFZhbHVlXCIsIFwiUHJvYnNcIilcbmNvbG5hbWVzKFByb2Jzb3V0TWF0KSA8LSBjKFwiMTBcIixcIjIwXCIsXCIzMFwiLFwiNDBcIixcIjUwXCIsXCI2MFwiLFwiNzBcIixcIjgwXCIpXG5rbml0cjo6a2FibGUoUHJvYnNvdXRNYXQpIn0=
+</div>
 </div>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-10
-</th>
-<th style="text-align:right;">
-20
-</th>
-<th style="text-align:right;">
-30
-</th>
-<th style="text-align:right;">
-40
-</th>
-<th style="text-align:right;">
-50
-</th>
-<th style="text-align:right;">
-60
-</th>
-<th style="text-align:right;">
-70
-</th>
-<th style="text-align:right;">
-80
-</th>
+<tr class="header">
+<th align="left"></th>
+<th align="right">10</th>
+<th align="right">20</th>
+<th align="right">30</th>
+<th align="right">40</th>
+<th align="right">50</th>
+<th align="right">60</th>
+<th align="right">70</th>
+<th align="right">80</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Discounted Value
-</td>
-<td style="text-align:right;">
-0.6139
-</td>
-<td style="text-align:right;">
-0.3769
-</td>
-<td style="text-align:right;">
-0.2314
-</td>
-<td style="text-align:right;">
-0.1420
-</td>
-<td style="text-align:right;">
-0.0872
-</td>
-<td style="text-align:right;">
-0.0535
-</td>
-<td style="text-align:right;">
-0.0329
-</td>
-<td style="text-align:right;">
-0.0202
-</td>
+<tr class="odd">
+<td align="left">Discounted Value</td>
+<td align="right">0.6139</td>
+<td align="right">0.3769</td>
+<td align="right">0.2314</td>
+<td align="right">0.1420</td>
+<td align="right">0.0872</td>
+<td align="right">0.0535</td>
+<td align="right">0.0329</td>
+<td align="right">0.0202</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-Probs
-</td>
-<td style="text-align:right;">
-0.0104
-</td>
-<td style="text-align:right;">
-0.0151
-</td>
-<td style="text-align:right;">
-0.0334
-</td>
-<td style="text-align:right;">
-0.0796
-</td>
-<td style="text-align:right;">
-0.1794
-</td>
-<td style="text-align:right;">
-0.3159
-</td>
-<td style="text-align:right;">
-0.2971
-</td>
-<td style="text-align:right;">
-0.0693
-</td>
+<tr class="even">
+<td align="left">Probs</td>
+<td align="right">0.0104</td>
+<td align="right">0.0151</td>
+<td align="right">0.0334</td>
+<td align="right">0.0796</td>
+<td align="right">0.1794</td>
+<td align="right">0.3159</td>
+<td align="right">0.2971</td>
+<td align="right">0.0693</td>
 </tr>
 </tbody>
 </table>
@@ -1357,22 +946,9 @@ Probs
 <a id="displayCode.Simulation.3" href="javascript:togglecode('toggleCode.Simulation.3','displayCode.Simulation.3');"><i><strong>R Code For Simulation</strong></i></a>
 </h5>
 <div id="toggleCode.Simulation.3" style="display: none">
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">nsim =<span class="st"> </span><span class="dv">500</span></a>
-<a class="sourceLine" id="cb70-2" title="2"><span class="co"># probs = c( 0.1, 0.3, 0.3, 0.2, 0.1)</span></a>
-<a class="sourceLine" id="cb70-3" title="3"><span class="co"># PV = (1/(1+i))^(1:length(probs))</span></a>
-<a class="sourceLine" id="cb70-4" title="4"><span class="co"># raws = sample(PV , size = nsim, replace = TRUE, prob = probs)</span></a>
-<a class="sourceLine" id="cb70-5" title="5"><span class="co"># head(raws)</span></a>
-<a class="sourceLine" id="cb70-6" title="6"><span class="co"># hist(raws)</span></a>
-<a class="sourceLine" id="cb70-7" title="7"><span class="co"># mean(raws)</span></a>
-<a class="sourceLine" id="cb70-8" title="8"></a>
-<a class="sourceLine" id="cb70-9" title="9">TenYearSample =<span class="st"> </span><span class="kw">sample</span>(TenYearPV, <span class="dt">size =</span> nsim, <span class="dt">replace =</span> <span class="ot">TRUE</span>, <span class="dt">prob =</span> TenYearProbs)</a>
-<a class="sourceLine" id="cb70-10" title="10">OneYearProbs &lt;-<span class="st"> </span>SurvProb[<span class="dv">25</span><span class="op">:</span>(numAge<span class="dv">-1</span>)]<span class="op">-</span>SurvProb[<span class="dv">26</span><span class="op">:</span>numAge] </a>
-<a class="sourceLine" id="cb70-11" title="11">OneYearPV =<span class="st"> </span>(<span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>i))<span class="op">^</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(OneYearProbs))</a>
-<a class="sourceLine" id="cb70-12" title="12">OneYearSample =<span class="st"> </span><span class="kw">sample</span>(OneYearPV, <span class="dt">size =</span> nsim, <span class="dt">replace =</span> <span class="ot">TRUE</span>, <span class="dt">prob =</span> OneYearProbs)</a>
-<a class="sourceLine" id="cb70-13" title="13"></a>
-<a class="sourceLine" id="cb70-14" title="14"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb70-15" title="15"><span class="kw">hist</span>(TenYearSample, <span class="dt">main=</span><span class="st">&quot;&quot;</span>) </a>
-<a class="sourceLine" id="cb70-16" title="16"><span class="kw">hist</span>(OneYearSample, <span class="dt">main=</span><span class="st">&quot;&quot;</span>) </a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJuc2ltID0gNTAwXG4jIHByb2JzID0gYyggMC4xLCAwLjMsIDAuMywgMC4yLCAwLjEpXG4jIFBWID0gKDEvKDEraSkpXigxOmxlbmd0aChwcm9icykpXG4jIHJhd3MgPSBzYW1wbGUoUFYgLCBzaXplID0gbnNpbSwgcmVwbGFjZSA9IFRSVUUsIHByb2IgPSBwcm9icylcbiMgaGVhZChyYXdzKVxuIyBoaXN0KHJhd3MpXG4jIG1lYW4ocmF3cylcblxuVGVuWWVhclNhbXBsZSA9IHNhbXBsZShUZW5ZZWFyUFYsIHNpemUgPSBuc2ltLCByZXBsYWNlID0gVFJVRSwgcHJvYiA9IFRlblllYXJQcm9icylcbk9uZVllYXJQcm9icyA8LSBTdXJ2UHJvYlsyNToobnVtQWdlLTEpXS1TdXJ2UHJvYlsyNjpudW1BZ2VdIFxuT25lWWVhclBWID0gKDEvKDEraSkpXigxOmxlbmd0aChPbmVZZWFyUHJvYnMpKVxuT25lWWVhclNhbXBsZSA9IHNhbXBsZShPbmVZZWFyUFYsIHNpemUgPSBuc2ltLCByZXBsYWNlID0gVFJVRSwgcHJvYiA9IE9uZVllYXJQcm9icylcblxucGFyKG1mcm93PWMoMSwyKSlcbmhpc3QoVGVuWWVhclNhbXBsZSwgbWFpbj1cIlwiKSBcbmhpc3QoT25lWWVhclNhbXBsZSwgbWFpbj1cIlwiKSAifQ==
+</div>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:FirstSimulationa"></span>
 <img src="LifeCon_files/figure-html/FirstSimulationa-1.png" alt="Present Value Distribution. The left-hand panel summarizes a simulated distribution based on ten-year outcomes. The right-hand panel displays the corresponding information based on annual outcomes." width="55%" />
@@ -1407,6 +983,7 @@ I have not yet included anything about selection effects, although this can be a
 <div id="modelling-contingent-cash-flows-in-continuous-time" class="section level2">
 <h2><span class="header-section-number">3.7</span> Modelling contingent cash flows in continuous time</h2>
 <p><span style="color: green;"> See above. This could be expressed as when <span class="math inline">\(m \rightarrow \infty\)</span>. We could provide examples from earlier in this Chapter as our starting point. We can also link this to the continuous models from Chapter 2 – see for example how Makeham’s rule is used in DHW Chapter 4. </span></p>
+
 </div>
 </div>
             </section>
@@ -1415,7 +992,7 @@ I have not yet included anything about selection effects, although this can be a
         </div>
       </div>
 <a href="modeling-lifetimes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="actuarial-symbols.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chapter-3-examples-present-values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

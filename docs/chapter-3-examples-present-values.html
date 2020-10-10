@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="actuarial-symbols.html"/>
+<link rel="prev" href="C-Benefit.html"/>
 <link rel="next" href="C-NotationConventionLC.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -115,15 +115,13 @@ $(document).ready(function(){
 });
 </script>
 
-
 <script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
 
 <script src="https://bossanova.uk/jexcel/v4/jexcel.js"></script>
 <link rel="stylesheet" href="https://bossanova.uk/jexcel/v4/jexcel.css" type="text/css" />
 <script src="https://bossanova.uk/jsuites/v3/jsuites.js"></script>
 <link rel="stylesheet" href="https://bossanova.uk/jsuites/v3/jsuites.css" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 <script>
 $(document).ready(function(){
@@ -308,7 +306,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.6" data-path="C-Benefit.html"><a href="C-Benefit.html#modelling-contingent-cash-flows-more-frequently-than-annually"><i class="fa fa-check"></i><b>3.6</b> Modelling contingent cash flows more frequently than annually</a></li>
 <li class="chapter" data-level="3.7" data-path="C-Benefit.html"><a href="C-Benefit.html#modelling-contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>3.7</b> Modelling contingent cash flows in continuous time</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="actuarial-symbols.html"><a href="actuarial-symbols.html"><i class="fa fa-check"></i>Actuarial Symbols</a></li>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html"><i class="fa fa-check"></i>Chapter 3 Examples – Present Values</a><ul>
 <li class="chapter" data-level="" data-path="chapter-3-examples-present-values.html"><a href="chapter-3-examples-present-values.html#examples-valuation-of-cash-flows-under-uncertainty"><i class="fa fa-check"></i>Examples – Valuation of cash flows under uncertainty</a></li>
 </ul></li>
@@ -348,6 +345,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="chapter-3-examples-present-values" class="section level1 unnumbered">
 <h1>Chapter 3 Examples – Present Values</h1>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <div id="examples-valuation-of-cash-flows-under-uncertainty" class="section level2 unnumbered">
 <h2>Examples – Valuation of cash flows under uncertainty</h2>
 <p><span style="font-size: small; color: green;"> Editorial Note: These are the results of experimentation with the <a href="https://bossanova.uk/jexcel/v4/">“jExcel”</a> javascript package for dynamic spreadsheets that utilizes the <a href="https://www.highcharts.com/">“Highcharts”</a> package for dynamic graphs.</span></p>
@@ -481,30 +480,9 @@ chart311 = Highcharts.chart('containerLC311', {
 <a id="displayCode.VaryingPayments" href="javascript:togglecode('toggleCode.VaryingPayments','displayCode.VaryingPayments');"><i><strong>R Code For Varying Payments</strong></i></a>
 </h5>
 <div id="toggleCode.VaryingPayments" style="display: none">
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1">Time &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">12</span></a>
-<a class="sourceLine" id="cb71-2" title="2"><span class="co">#Payments</span></a>
-<a class="sourceLine" id="cb71-3" title="3">FlatPay &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">11</span>, <span class="dv">12</span>)</a>
-<a class="sourceLine" id="cb71-4" title="4">IncPay &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>, <span class="dt">to=</span><span class="dv">22</span>, <span class="dt">by=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb71-5" title="5"><span class="co">#Interest Rates</span></a>
-<a class="sourceLine" id="cb71-6" title="6">FlatInt &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="fl">0.055</span>, <span class="dv">12</span>)</a>
-<a class="sourceLine" id="cb71-7" title="7">IncInt &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>, <span class="dt">to=</span><span class="fl">0.11</span>, <span class="dt">by=</span><span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb71-8" title="8"><span class="co">#Discount Values</span></a>
-<a class="sourceLine" id="cb71-9" title="9">DV.Flat &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>FlatInt[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb71-10" title="10"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">12</span>) {DV.Flat[i] &lt;-<span class="st"> </span>DV.Flat[i<span class="dv">-1</span>]<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>FlatInt[i])</a>
-<a class="sourceLine" id="cb71-11" title="11">               }</a>
-<a class="sourceLine" id="cb71-12" title="12">DV.Inc &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>IncInt[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb71-13" title="13"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">12</span>) {DV.Inc[i] &lt;-<span class="st"> </span>DV.Inc[i<span class="dv">-1</span>]<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>IncInt[i])</a>
-<a class="sourceLine" id="cb71-14" title="14">}</a>
-<a class="sourceLine" id="cb71-15" title="15"><span class="co">#Present Value of Payments</span></a>
-<a class="sourceLine" id="cb71-16" title="16">FlatPay.FlatInt &lt;-<span class="st"> </span>FlatPay<span class="op">*</span>DV.Flat</a>
-<a class="sourceLine" id="cb71-17" title="17">FlatPay.IncInt  &lt;-<span class="st"> </span>FlatPay<span class="op">*</span>DV.Inc</a>
-<a class="sourceLine" id="cb71-18" title="18">IncPay.FlatInt &lt;-<span class="st"> </span>IncPay<span class="op">*</span>DV.Flat</a>
-<a class="sourceLine" id="cb71-19" title="19">IncPay.IncInt  &lt;-<span class="st"> </span>IncPay<span class="op">*</span>DV.Inc</a>
-<a class="sourceLine" id="cb71-20" title="20"><span class="co">#Plot Present Value of Payments</span></a>
-<a class="sourceLine" id="cb71-21" title="21"><span class="kw">plot</span>(Time, FlatPay.FlatInt, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">14</span>), <span class="dt">ylab =</span> <span class="st">&quot;Present Value&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Time&quot;</span>)</a>
-<a class="sourceLine" id="cb71-22" title="22">  <span class="kw">lines</span>(Time, FlatPay.IncInt, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a>
-<a class="sourceLine" id="cb71-23" title="23">  <span class="kw">lines</span>(Time, IncPay.FlatInt, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a>
-<a class="sourceLine" id="cb71-24" title="24">  <span class="kw">lines</span>(Time, IncPay.IncInt, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIDE6MTJcbiNQYXltZW50c1xuRmxhdFBheSA8LSByZXAoMTEsIDEyKVxuSW5jUGF5IDwtIHNlcShmcm9tPTAsIHRvPTIyLCBieT0yKVxuI0ludGVyZXN0IFJhdGVzXG5GbGF0SW50IDwtIHJlcCgwLjA1NSwgMTIpXG5JbmNJbnQgPC0gc2VxKGZyb209MCwgdG89MC4xMSwgYnk9MC4wMSlcbiNEaXNjb3VudCBWYWx1ZXNcbkRWLkZsYXQgPC0gMS8oMStGbGF0SW50WzFdKVxuZm9yKGkgaW4gMjoxMikge0RWLkZsYXRbaV0gPC0gRFYuRmxhdFtpLTFdLygxK0ZsYXRJbnRbaV0pXG4gICAgICAgICAgICAgICB9XG5EVi5JbmMgPC0gMS8oMStJbmNJbnRbMV0pXG5mb3IoaSBpbiAyOjEyKSB7RFYuSW5jW2ldIDwtIERWLkluY1tpLTFdLygxK0luY0ludFtpXSlcbn1cbiNQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5GbGF0UGF5LkZsYXRJbnQgPC0gRmxhdFBheSpEVi5GbGF0XG5GbGF0UGF5LkluY0ludCAgPC0gRmxhdFBheSpEVi5JbmNcbkluY1BheS5GbGF0SW50IDwtIEluY1BheSpEVi5GbGF0XG5JbmNQYXkuSW5jSW50ICA8LSBJbmNQYXkqRFYuSW5jXG4jUGxvdCBQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5wbG90KFRpbWUsIEZsYXRQYXkuRmxhdEludCwgdHlwZSA9IFwiYlwiLCB5bGltID0gYygwLDE0KSwgeWxhYiA9IFwiUHJlc2VudCBWYWx1ZVwiLCB4bGFiID0gXCJUaW1lXCIpXG4gIGxpbmVzKFRpbWUsIEZsYXRQYXkuSW5jSW50LCB0eXBlID0gXCJiXCIpXG4gIGxpbmVzKFRpbWUsIEluY1BheS5GbGF0SW50LCB0eXBlID0gXCJiXCIpXG4gIGxpbmVzKFRpbWUsIEluY1BheS5JbmNJbnQsIHR5cGUgPSBcImJcIikifQ==
+</div>
 </div>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIDE6MTJcbiNQYXltZW50c1xuRmxhdFBheSA8LSByZXAoMTEsIDEyKVxuSW5jUGF5IDwtIHNlcShmcm9tPTAsIHRvPTIyLCBieT0yKVxuI0ludGVyZXN0IFJhdGVzXG5GbGF0SW50IDwtIHJlcCgwLjA1NSwgMTIpXG5JbmNJbnQgPC0gc2VxKGZyb209MCwgdG89MC4xMSwgYnk9MC4wMSlcbiNEaXNjb3VudCBWYWx1ZXNcbkRWLkZsYXQgPC0gMS8oMStGbGF0SW50WzFdKVxuZm9yKGkgaW4gMjoxMikge0RWLkZsYXRbaV0gPC0gRFYuRmxhdFtpLTFdLygxK0ZsYXRJbnRbaV0pXG4gICAgICAgICAgICAgICB9XG5EVi5JbmMgPC0gMS8oMStJbmNJbnRbMV0pXG5mb3IoaSBpbiAyOjEyKSB7RFYuSW5jW2ldIDwtIERWLkluY1tpLTFdLygxK0luY0ludFtpXSlcbn1cbiNQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5GbGF0UGF5LkZsYXRJbnQgPC0gRmxhdFBheSpEVi5GbGF0XG5GbGF0UGF5LkluY0ludCAgPC0gRmxhdFBheSpEVi5JbmNcbkluY1BheS5GbGF0SW50IDwtIEluY1BheSpEVi5GbGF0XG5JbmNQYXkuSW5jSW50ICA8LSBJbmNQYXkqRFYuSW5jXG4jUGxvdCBQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5wbG90KFRpbWUsIEZsYXRQYXkuRmxhdEludCwgdHlwZSA9IFwiYlwiLCB5bGltID0gYygwLDE0KSwgeWxhYiA9IFwiUHJlc2VudCBWYWx1ZVwiLCB4bGFiID0gXCJUaW1lXCIpXG4gIGxpbmVzKFRpbWUsIEZsYXRQYXkuSW5jSW50LCB0eXBlID0gXCJiXCIpXG4gIGxpbmVzKFRpbWUsIEluY1BheS5GbGF0SW50LCB0eXBlID0gXCJiXCIpXG4gIGxpbmVzKFRpbWUsIEluY1BheS5JbmNJbnQsIHR5cGUgPSBcImJcIikifQ==
@@ -615,43 +593,16 @@ chart312 = Highcharts.chart('containerLC312', {
 <a id="displayCode.VaryingPaymentsUncertain" href="javascript:togglecode('toggleCode.VaryingPaymentsUncertain','displayCode.VaryingPaymentsUncertain');"><i><strong>R Code For VaryingPayments with Uncertainty</strong></i></a>
 </h5>
 <div id="toggleCode.VaryingPaymentsUncertain" style="display: none">
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1">Time &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">12</span></a>
-<a class="sourceLine" id="cb72-2" title="2"><span class="co">#Payments</span></a>
-<a class="sourceLine" id="cb72-3" title="3">FlatPay &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">11</span>, <span class="dv">12</span>)</a>
-<a class="sourceLine" id="cb72-4" title="4">IncPay &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>, <span class="dt">to=</span><span class="dv">22</span>, <span class="dt">by=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb72-5" title="5"><span class="co">#Interest Rates</span></a>
-<a class="sourceLine" id="cb72-6" title="6">FlatInt &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="fl">0.055</span>, <span class="dv">12</span>)</a>
-<a class="sourceLine" id="cb72-7" title="7">IncInt &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>, <span class="dt">to=</span><span class="fl">0.11</span>, <span class="dt">by=</span><span class="fl">0.01</span>)</a>
-<a class="sourceLine" id="cb72-8" title="8"><span class="co">#Probabilities</span></a>
-<a class="sourceLine" id="cb72-9" title="9">FlatProb &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">12</span>, <span class="dv">12</span>)</a>
-<a class="sourceLine" id="cb72-10" title="10">IncProb  &lt;-<span class="st"> </span>IncPay<span class="op">/</span><span class="dv">11</span><span class="op">*</span>FlatProb</a>
-<a class="sourceLine" id="cb72-11" title="11"><span class="co">#Discounted Values</span></a>
-<a class="sourceLine" id="cb72-12" title="12">DV.Flat &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>FlatInt[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb72-13" title="13"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">12</span>) {DV.Flat[i] &lt;-<span class="st"> </span>DV.Flat[i<span class="dv">-1</span>]<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>FlatInt[i])</a>
-<a class="sourceLine" id="cb72-14" title="14">               }</a>
-<a class="sourceLine" id="cb72-15" title="15">DV.Inc &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>IncInt[<span class="dv">1</span>])</a>
-<a class="sourceLine" id="cb72-16" title="16"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">12</span>) {DV.Inc[i] &lt;-<span class="st"> </span>DV.Inc[i<span class="dv">-1</span>]<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>IncInt[i])</a>
-<a class="sourceLine" id="cb72-17" title="17">}</a>
-<a class="sourceLine" id="cb72-18" title="18"><span class="co">#Present Value of Payments - Flat Probs</span></a>
-<a class="sourceLine" id="cb72-19" title="19">FlatPay.FlatInt.FlatProb &lt;-<span class="st"> </span>FlatPay<span class="op">*</span>DV.Flat<span class="op">*</span>FlatProb</a>
-<a class="sourceLine" id="cb72-20" title="20">FlatPay.IncInt.FlatProb  &lt;-<span class="st"> </span>FlatPay<span class="op">*</span>DV.Inc<span class="op">*</span>FlatProb</a>
-<a class="sourceLine" id="cb72-21" title="21">IncPay.FlatInt.FlatProb &lt;-<span class="st"> </span>IncPay<span class="op">*</span>DV.Flat<span class="op">*</span>FlatProb</a>
-<a class="sourceLine" id="cb72-22" title="22">IncPay.IncInt.FlatProb  &lt;-<span class="st"> </span>IncPay<span class="op">*</span>DV.Inc<span class="op">*</span>FlatProb</a>
-<a class="sourceLine" id="cb72-23" title="23"><span class="co">#Present Value of Payments - Increasing Probs</span></a>
-<a class="sourceLine" id="cb72-24" title="24">FlatPay.FlatInt.IncProb &lt;-<span class="st"> </span>FlatPay<span class="op">*</span>DV.Flat<span class="op">*</span>IncProb</a>
-<a class="sourceLine" id="cb72-25" title="25">FlatPay.IncInt.IncProb  &lt;-<span class="st"> </span>FlatPay<span class="op">*</span>DV.Inc<span class="op">*</span>IncProb</a>
-<a class="sourceLine" id="cb72-26" title="26">IncPay.FlatInt.IncProb &lt;-<span class="st"> </span>IncPay<span class="op">*</span>DV.Flat<span class="op">*</span>IncProb</a>
-<a class="sourceLine" id="cb72-27" title="27">IncPay.IncInt.IncProb  &lt;-<span class="st"> </span>IncPay<span class="op">*</span>DV.Inc<span class="op">*</span>IncProb</a>
-<a class="sourceLine" id="cb72-28" title="28"><span class="co">#Plot Present Value of Payments</span></a>
-<a class="sourceLine" id="cb72-29" title="29"><span class="kw">plot</span>(Time, FlatPay.FlatInt.IncProb, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">2.5</span>), <span class="dt">ylab =</span> <span class="st">&quot;Present Value&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;Time&quot;</span>)</a>
-<a class="sourceLine" id="cb72-30" title="30">  <span class="kw">lines</span>(Time, FlatPay.IncInt.IncProb, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a>
-<a class="sourceLine" id="cb72-31" title="31">  <span class="kw">lines</span>(Time, IncPay.FlatInt.IncProb, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a>
-<a class="sourceLine" id="cb72-32" title="32">  <span class="kw">lines</span>(Time, IncPay.IncInt.IncProb, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>)</a></code></pre></div>
+<div data-datacamp-exercise="" data-height="300" data-encoded="true">
+eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIDE6MTJcbiNQYXltZW50c1xuRmxhdFBheSA8LSByZXAoMTEsIDEyKVxuSW5jUGF5IDwtIHNlcShmcm9tPTAsIHRvPTIyLCBieT0yKVxuI0ludGVyZXN0IFJhdGVzXG5GbGF0SW50IDwtIHJlcCgwLjA1NSwgMTIpXG5JbmNJbnQgPC0gc2VxKGZyb209MCwgdG89MC4xMSwgYnk9MC4wMSlcbiNQcm9iYWJpbGl0aWVzXG5GbGF0UHJvYiA8LSByZXAoMS8xMiwgMTIpXG5JbmNQcm9iICA8LSBJbmNQYXkvMTEqRmxhdFByb2JcbiNEaXNjb3VudGVkIFZhbHVlc1xuRFYuRmxhdCA8LSAxLygxK0ZsYXRJbnRbMV0pXG5mb3IoaSBpbiAyOjEyKSB7RFYuRmxhdFtpXSA8LSBEVi5GbGF0W2ktMV0vKDErRmxhdEludFtpXSlcbiAgICAgICAgICAgICAgIH1cbkRWLkluYyA8LSAxLygxK0luY0ludFsxXSlcbmZvcihpIGluIDI6MTIpIHtEVi5JbmNbaV0gPC0gRFYuSW5jW2ktMV0vKDErSW5jSW50W2ldKVxufVxuI1ByZXNlbnQgVmFsdWUgb2YgUGF5bWVudHMgLSBGbGF0IFByb2JzXG5GbGF0UGF5LkZsYXRJbnQuRmxhdFByb2IgPC0gRmxhdFBheSpEVi5GbGF0KkZsYXRQcm9iXG5GbGF0UGF5LkluY0ludC5GbGF0UHJvYiAgPC0gRmxhdFBheSpEVi5JbmMqRmxhdFByb2JcbkluY1BheS5GbGF0SW50LkZsYXRQcm9iIDwtIEluY1BheSpEVi5GbGF0KkZsYXRQcm9iXG5JbmNQYXkuSW5jSW50LkZsYXRQcm9iICA8LSBJbmNQYXkqRFYuSW5jKkZsYXRQcm9iXG4jUHJlc2VudCBWYWx1ZSBvZiBQYXltZW50cyAtIEluY3JlYXNpbmcgUHJvYnNcbkZsYXRQYXkuRmxhdEludC5JbmNQcm9iIDwtIEZsYXRQYXkqRFYuRmxhdCpJbmNQcm9iXG5GbGF0UGF5LkluY0ludC5JbmNQcm9iICA8LSBGbGF0UGF5KkRWLkluYypJbmNQcm9iXG5JbmNQYXkuRmxhdEludC5JbmNQcm9iIDwtIEluY1BheSpEVi5GbGF0KkluY1Byb2JcbkluY1BheS5JbmNJbnQuSW5jUHJvYiAgPC0gSW5jUGF5KkRWLkluYypJbmNQcm9iXG4jUGxvdCBQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5wbG90KFRpbWUsIEZsYXRQYXkuRmxhdEludC5JbmNQcm9iLCB0eXBlID0gXCJiXCIsIHlsaW0gPSBjKDAsMi41KSwgeWxhYiA9IFwiUHJlc2VudCBWYWx1ZVwiLCB4bGFiID0gXCJUaW1lXCIpXG4gIGxpbmVzKFRpbWUsIEZsYXRQYXkuSW5jSW50LkluY1Byb2IsIHR5cGUgPSBcImJcIilcbiAgbGluZXMoVGltZSwgSW5jUGF5LkZsYXRJbnQuSW5jUHJvYiwgdHlwZSA9IFwiYlwiKVxuICBsaW5lcyhUaW1lLCBJbmNQYXkuSW5jSW50LkluY1Byb2IsIHR5cGUgPSBcImJcIikifQ==
+</div>
 </div>
 <p><span style="font-size: small; color: green;"> Editorial Note: As of now, I (Jed) do not know how to make two graphs on the same page update dynamically. </span></p>
 <div data-datacamp-exercise="" data-height="300" data-encoded="true">
 eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIDE6MTJcbiNQYXltZW50c1xuRmxhdFBheSA8LSByZXAoMTEsIDEyKVxuSW5jUGF5IDwtIHNlcShmcm9tPTAsIHRvPTIyLCBieT0yKVxuI0ludGVyZXN0IFJhdGVzXG5GbGF0SW50IDwtIHJlcCgwLjA1NSwgMTIpXG5JbmNJbnQgPC0gc2VxKGZyb209MCwgdG89MC4xMSwgYnk9MC4wMSlcbiNQcm9iYWJpbGl0aWVzXG5GbGF0UHJvYiA8LSByZXAoMS8xMiwgMTIpXG5JbmNQcm9iICA8LSBJbmNQYXkvMTEqRmxhdFByb2JcbiNEaXNjb3VudGVkIFZhbHVlc1xuRFYuRmxhdCA8LSAxLygxK0ZsYXRJbnRbMV0pXG5mb3IoaSBpbiAyOjEyKSB7RFYuRmxhdFtpXSA8LSBEVi5GbGF0W2ktMV0vKDErRmxhdEludFtpXSlcbiAgICAgICAgICAgICAgIH1cbkRWLkluYyA8LSAxLygxK0luY0ludFsxXSlcbmZvcihpIGluIDI6MTIpIHtEVi5JbmNbaV0gPC0gRFYuSW5jW2ktMV0vKDErSW5jSW50W2ldKVxufVxuI1ByZXNlbnQgVmFsdWUgb2YgUGF5bWVudHMgLSBGbGF0IFByb2JzXG5GbGF0UGF5LkZsYXRJbnQuRmxhdFByb2IgPC0gRmxhdFBheSpEVi5GbGF0KkZsYXRQcm9iXG5GbGF0UGF5LkluY0ludC5GbGF0UHJvYiAgPC0gRmxhdFBheSpEVi5JbmMqRmxhdFByb2JcbkluY1BheS5GbGF0SW50LkZsYXRQcm9iIDwtIEluY1BheSpEVi5GbGF0KkZsYXRQcm9iXG5JbmNQYXkuSW5jSW50LkZsYXRQcm9iICA8LSBJbmNQYXkqRFYuSW5jKkZsYXRQcm9iXG4jUHJlc2VudCBWYWx1ZSBvZiBQYXltZW50cyAtIEluY3JlYXNpbmcgUHJvYnNcbkZsYXRQYXkuRmxhdEludC5JbmNQcm9iIDwtIEZsYXRQYXkqRFYuRmxhdCpJbmNQcm9iXG5GbGF0UGF5LkluY0ludC5JbmNQcm9iICA8LSBGbGF0UGF5KkRWLkluYypJbmNQcm9iXG5JbmNQYXkuRmxhdEludC5JbmNQcm9iIDwtIEluY1BheSpEVi5GbGF0KkluY1Byb2JcbkluY1BheS5JbmNJbnQuSW5jUHJvYiAgPC0gSW5jUGF5KkRWLkluYypJbmNQcm9iXG4jUGxvdCBQcmVzZW50IFZhbHVlIG9mIFBheW1lbnRzXG5wbG90KFRpbWUsIEZsYXRQYXkuRmxhdEludC5JbmNQcm9iLCB0eXBlID0gXCJiXCIsIHlsaW0gPSBjKDAsMi41KSwgeWxhYiA9IFwiUHJlc2VudCBWYWx1ZVwiLCB4bGFiID0gXCJUaW1lXCIpXG4gIGxpbmVzKFRpbWUsIEZsYXRQYXkuSW5jSW50LkluY1Byb2IsIHR5cGUgPSBcImJcIilcbiAgbGluZXMoVGltZSwgSW5jUGF5LkZsYXRJbnQuSW5jUHJvYiwgdHlwZSA9IFwiYlwiKVxuICBsaW5lcyhUaW1lLCBJbmNQYXkuSW5jSW50LkluY1Byb2IsIHR5cGUgPSBcImJcIikifQ==
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
 </div>
 </div>
@@ -661,7 +612,7 @@ eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJUaW1lIDwtIDE6MTJcbiNQYXltZW50c1xuRmxhdFBheSA8
           </div>
         </div>
       </div>
-<a href="actuarial-symbols.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="C-Benefit.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="C-NotationConventionLC.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

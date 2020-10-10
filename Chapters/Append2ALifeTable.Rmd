@@ -1,14 +1,6 @@
 
 `r ECHOCODE = FALSE`
 
-
-
-```{r include = FALSE}
-knitr::opts_chunk$set(results = "hold")
-tutorial::go_interactive(greedy = FALSE)
-```
-
-
 ## Appendix 2A. Life Table: Recursive Calculations {-}
 
 Actuaries and other analysts have found *life tables* to be useful in interpreting mortality patterns for many years. Origins of life tables can be traced back to Edmund Halley's paper entitled, "An estimate of the degrees of the mortality of mankind, drawn from various tables of births and funerals in the city of Breslau," published in 1693. Some scholars attribute this paper as marking the birth of actuarial science.
@@ -120,7 +112,7 @@ lines(IndLifeTable$Age,IndLifeTable$Male.ex, col="blue")
 
 ```{r include = FALSE}
 knitr::opts_chunk$set(results = "hold")
-tutorial::go_interactive(greedy = FALSE)
+tutorial::go_interactive()
 ```
 
 

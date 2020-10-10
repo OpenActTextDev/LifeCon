@@ -6,12 +6,9 @@ rmd_files: ["index.Rmd",
            "References/PdfOutput.Rmd",
            "Chapters/Preface.Rmd", 
            "Chapters/Chap2Survival.Rmd",   
-           "Chapters/App2ALifeTable.Rmd",
+           "Chapters/Append2ALifeTable.Rmd",
            "Chapters/Chap3LifeConBenefits.Rmd",
            "Chapters/Chap3ExamplePresValues.Rmd", 
-#           "Chapters/IteratedExpectations.Rmd", 
-#           "Chapters/MaximumLikeTheory.Rmd", 
-#           "Chapters/DistributionTable.Rmd",
            "Chapters/NotationConventionsLC.Rmd",
            "Chapters/Bibliography.Rmd"]
            
