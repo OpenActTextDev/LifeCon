@@ -1,0 +1,24 @@
+
+
+# Extensions to Modeling Basic Life Contingent Benefits {#C:BenefitExt}
+
+`r chapnum = 4`
+
+## The impact of self selection
+
+<span style="color: purple;">
+I have not yet included anything about selection effects, although this can be added to this section fairly easily. DHW don’t have anything different in Chapter 4 for selection effects, but instead just have a short subsection nothing that the calculations are the same for selection but just use the select life table.
+</span>
+
+## Modelling contingent cash flows more frequently than annually
+
+<span style="color: purple;"> This would reflect the 1/mthly case from DHW Chapter 4. Due to the length of this chapter we will need to consider if/how to split it up into additional chapters.  It is traditional to split life insurance and annuity chapters.  I’m not a big fan of this personally as in my opinion this splits concepts of valuation up were it really is not necessary.  An alternative option would be to have the material from here and continuous time be its own Chapter; i.e. we would generally focus on yearly payments only and this extra chapter would act as an aside to cover the 1/mthy and continuous structures.  We might also include in this additional chapter material on approximation (e.g. annual payments but made at exact time of death) and other adjustments such as indexation of payments. </span>
+
+
+##	Modelling contingent cash flows in continuous time
+
+<span style="color: green;"> See above. This could be expressed as when $m \rightarrow \infty$. We could provide examples from earlier in this Chapter as our starting point. We can also link this to the continuous models from Chapter 2 – see for example how Makeham’s rule is used in DHW Chapter 4. </span>
+
+
+
+# Going Forward {#C:Forward}

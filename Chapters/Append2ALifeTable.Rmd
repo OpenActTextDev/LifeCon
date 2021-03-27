@@ -112,7 +112,7 @@ lines(IndLifeTable$Age,IndLifeTable$Male.ex, col="blue")
 
 ```{r include = FALSE}
 knitr::opts_chunk$set(results = "hold")
-tutorial::go_interactive()
+#tutorial::go_interactive()
 ```
 
 

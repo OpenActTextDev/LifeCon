@@ -6,6 +6,152 @@
 *Chapter Preview*. *Life Contingencies* employs widely accepted statistical concepts and tools. Thus, the notation should be consistent with standard usage employed in probability and mathematical statistics. See, for example, [@halperin1965recommended] for a description of one standard.
 
 
+## Actuarial Notation  {#S:NC:ActSymbols}
+
+Here is a list of commonly used actuarial symbols and functions, including the latex code that we use to generate them.
+
+### Life Table Symbols
+
+$$
+{\small
+\require{enclose}
+\begin{array}{cll}  \hline
+\textbf{Symbol} & \textbf{Latex code} & \textbf{Description} \\
+\hline
+\ell_{x} & \verb|\| \tt{ell}\_\{\tt{x}\} & \text{Expected number of lives at age } x \\
+\ell_{[x]} & \backslash\tt{ell}\_\{ [\tt{x}]\} & \text{Expected number of lives at select age } x \\
+_{t}p_{x} &    ~ \_\{ \tt{t} \} \tt{p} \_ \{\tt{x}\} & \text{Probability that a life aged } x \text{ survives }t \text{ years} \\
+_{t}p_{[x]} &    ~ \_\{ \tt{t} \} \tt{p} \_ \{ [\tt{x}]\}\} & \text{Probability that a select life aged } x \text{ survives }t \text{ years} \\
+\mathring{e}_{x} & \backslash\tt{mathring\{e\}} \_ \{ x\} & \text{Complete expectation of life at age } x \\
+\mathring{e}_{x:{\enclose{actuarial}{n}}} & \backslash\tt{mathring\{e\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{Complete expectation of life at age } x \text{ for the next } n \text{ years} \\
+\hline
+\end{array}
+}
+$$
+
+
+
+### Life Insurance Symbols {#Sec:LifeInsSymbols}
+
+
+$$
+{\small
+\begin{array}{cll}  \hline
+\textbf{Symbol} & \textbf{Latex code} & \textbf{Description} \\
+\hline
+A_{x} &    \tt{A} \_ \{\tt{x}\} & \text{APV of a discrete whole life insurance to } (x) \\
+\bar{A}_{x} &    \backslash \tt{bar} \{\tt{A}\} \_ \{\tt{x}\} & \text{APV of a continuous whole life insurance to } (x) \\
+A^{(m)}_{x} &    \tt{A} \verb|^| \tt{\{(m)\}}\_ \{\tt{x}\} & \text{APV of a whole life insurance payable at end of } m\text{-th of the year of death of } (x) \\
+_{n}E_{x} &    ~ \_\{ \tt{n} \} \tt{E} \_ \{\tt{x}\} & \text{APV of an } n\text{-year pure endowment to } (x) \\
+{A}_{x:\enclose{actuarial}{n}}^{\quad 1} & \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} \verb|^| \{\backslash \tt{quad} \ 1\} & \text{APV of an } n\text{-year term insurance to } (x)  \\
+{A}_{x:{\enclose{actuarial}{n}}} & \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{APV of an } n\text{-year endowment insurance to } (x) \\
+_{n|}{A}_{x} & ~ \_\{ \tt{n|} \} \{\tt{A}\_\{x\}\} & \text{APV of an } n\text{-year deferred life insurance to } (x) \\
+{A}_{x:\enclose{actuarial}{n}}^{\space 1} & \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} \verb|^| \{\backslash \tt{space} \ 1\} & \text{APV of an } n\text{-year term insurance to } (x)  \\
+\hline
+\end{array}
+}
+$$
+
+
+### Annuity Certain and Life Annuity Symbols  {#Sec:LifeAnnSymbols}
+
+$$
+{\small
+\begin{array}{cll}  \hline
+\textbf{Symbol} & \textbf{Latex code} & \textbf{Description} \\
+\hline
+a_{\enclose{actuarial}{n}} & \tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & n\text{-year annuity certain-immediate} \\
+\ddot{a}_{\enclose{actuarial}{n}} & \backslash\tt{ddot}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & n\text{-year annuity certain-due} \\
+\ddot{a}^{(m)}_{\enclose{actuarial}{n}} & \backslash\tt{ddot} \verb|^| \tt{\{(m)\}}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & n\text{-year annuity certain-due payable } m\text{-thly}  \\
+_{m|}\ddot{a}_{\enclose{actuarial}{n}} & ~ \_\{ \tt{m|} \} \backslash\tt{ddot}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & m\text{-year deferred } n\text{-year annuity certain-due} \\
+a_{x} & \tt{a}\_\{x\} & \text{APV of a whole life annuity immediate to } (x) \\
+\ddot{a}_{x} & \backslash\tt{ddot}\{\tt{a}\}\_\{x\} & \text{APV of a whole life annuity due to } (x) \\
+a^{(m)}_{x} & \tt{a} \verb|^| \tt{\{(m)\}}\_\{x\} & \text{APV of a life annuity immediate to } (x) \text{ payable } m\text{-thly} \\
+\ddot{a}^{(m)}_{x} & \backslash\tt{ddot}\{\tt{a}\} \verb|^| \tt{\{(m)\}}\_\{x\} & \text{APV of a life annuity due to } (x) \text{ payable } m\text{-thly} \\
+_{n|}\ddot{a}_{x} & ~ \_\{ \tt{n|} \} \backslash\tt{ddot}\_\{\tt{a}\_\{x\}\} & \text{APV of an } n\text{-year deferred life annuity due to } (x) \\
+\ddot{a}_{x:{\enclose{actuarial}{n}}} & \backslash\tt{ddot\{a\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{APV of an } n\text{-year life annuity due to } (x) \\
+\ddot{a}^{(m)}_{x:{\enclose{actuarial}{n}}} & \backslash\tt{ddot\{a\}} \verb|^| \tt{\{(m)\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{APV of an } n\text{-year life annuity due to } (x) \text{ payable } m\text{-thly} \\
+\hline
+\end{array}
+}
+$$
+
+Not sure if necessary to say $APV$ (actuarial present value)
+
+
+## Halo System  {#C:NotConv:Halo}
+
+
+```{r  Halo1, warning=FALSE,message=FALSE, comment=NA, eval=FALSE, echo = FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,10),ylim=c(0,10))
+
+# library(latex2exp)
+
+text(0,10,1, cex = 1.5)
+arrows(0.5,9.5,4,6,code=2,lwd=2,angle=45,length=0.10)
+text(5,10,2, cex = 1.5)
+arrows(  5,9.5,5,6,code=2,lwd=2,angle=45,length=0.10)
+text(10,10,3, cex = 1.5)
+arrows(9.5,9.5,6,6,code=2,lwd=2,angle=45,length=0.10)
+text(10,0,4, cex = 1.5)
+arrows(9.5,0.5,6.8,3.8,code=2,lwd=2,angle=45,length=0.10)
+text(5,0,5, cex = 1.5)
+arrows(  5,0.5,5,4,code=2,lwd=2,angle=45,length=0.10)
+text(0,0,6, cex = 1.5)
+arrows(0.5,0.5,4,4,code=2,lwd=2,angle=45,length=0.10)
+
+text(5,5,expression(paste(symbol("\040")[paste(italic(m),"|")]^{~2},scriptstyle(symbol("\040")),bar(italic(A))[paste(italic(x),":",bar(italic(n)),"|")]^{scriptscriptstyle(1)})), cex=3)
+ 
+```
+
+</div>
+
+(ref:Halo1a) **Halo System: Example of an Actuarial Symbol**. *Source*: This is adapted from the *Wikipedia* page [Actuarial Notation](https://en.wikipedia.org/wiki/Actuarial_notation).
+
+
+```{r Halo1a, ref.label = 'Halo1', fig.cap = '(ref:Halo1a)', fig.align = 'center', out.width='50%', echo = FALSE}
+```
+
+***
+
+\newpage
+
+**Legend:**
+
+*  1 - the "2" means double the force of interest
+*  2 - the bar implies continuous, or payments at the moment of death. No bar, or blank, signifies payment at the end of the year.
+For annuities, could use a double dot that signifies payments at the beginning of the year.
+*  3 - the "1" denotes a temporary, or term, payment. Paid if $x$ within $n$ years
+*  4 - contract issued to a life aged $x$ and lasts for at most $n$ years.
+*  5 - the "A" signifies it is an insurance ("assurance") contract. Could also be a lower case $a$ that would signify an annuity contract.
+*  6 - deferred *m* years
+
+
+
+**Note:** It is sometimes helpful to put a space before the pre-subscript like $\frac{\ell_{[x]+t}}{\ell_{[x]}} = ~_{t}p_{[x]}$. Else you get this awkward $\frac{\ell_{[x]+t}}{\ell_{[x]}} = _{t}p_{[x]}$.
+
+
+$$
+Y =
+ \begin{cases}
+ 1 + v + v^2 + \cdots + v^K = \ddot{a}_{\enclose{actuarial}{K+1}}, K=0,1,\ldots,n-1 \\
+ 1 + v + v^2 + \cdots + v^{n-1} = \ddot{a}_{\enclose{actuarial}{n}}, K \ge n
+ \end{cases}
+$$
+**Note.**
+
+*  For the `html` version of the text, we are using the [STACK]() system; in particular, see their [actuarial notation](https://stack-demo.maths.ed.ac.uk/demo/question/type/stack/doc/doc.php/Authoring/Actuarial.md) page.
+*  This does not appear to work for the `pdf` version, at least with R-Studio. The latex package [actuarialangle](https://ctan.org/pkg/actuarialsymbol?lang=en) provides a substitute. To make this happen, in our latex header .tex page, we have the following bit of code
+
+```
+%  Something for the Actuarial Angle package
+\usepackage{actuarialangle}
+\newcommand{\enclose}[1]{\actuarialangle} 
+```
+
+
 ## General Conventions {#S:NC:General}
 
 
@@ -114,147 +260,6 @@ B(x,y)     &  & \text{beta function, }\varGamma(x)\varGamma(y)/\varGamma(x+y) \\
 \hline
 \end{array}
 $$
-
-## Actuarial Notation  {#S:NC:ActSymbols}
-
-Here is a list of commonly used actuarial symbols and functions, including the latex code that we use to generate them.
-
-### Life Table Notation 
-
-$$
-{\small
-\require{enclose}
-\begin{array}{cll}  \hline
-\textbf{Symbol} & \textbf{Latex code} & \textbf{Description} \\
-\hline
-\ell_{x} & \verb|\| \tt{ell}\_\{\tt{x}\} & \text{Expected number of lives at age } x \\
-\ell_{[x]} & \backslash\tt{ell}\_\{ [\tt{x}]\} & \text{Expected number of lives at select age } x \\
-_{t}p_{x} &    ~ \_\{ \tt{t} \} \tt{p} \_ \{\tt{x}\} & \text{Probability that a life aged } x \text{ survives }t \text{ years} \\
-_{t}p_{[x]} &    ~ \_\{ \tt{t} \} \tt{p} \_ \{ [\tt{x}]\}\} & \text{Probability that a select life aged } x \text{ survives }t \text{ years} \\
-\mathring{e}_{x} & \backslash\tt{mathring\{e\}} \_ \{ x\} & \text{Complete expectation of life at age } x \\
-\mathring{e}_{x:{\enclose{actuarial}{n}}} & \backslash\tt{mathring\{e\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{Complete expectation of life at age } x \text{ for the next } n \text{ years} \\
-\hline
-\end{array}
-}
-$$
-
-### Annuity Certain and Life Annuity Notation 
-
-$$
-{\small
-\begin{array}{cll}  \hline
-\textbf{Symbol} & \textbf{Latex code} & \textbf{Description} \\
-\hline
-a_{\enclose{actuarial}{n}} & \tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & n\text{-year annuity certain-immediate} \\
-\ddot{a}_{\enclose{actuarial}{n}} & \backslash\tt{ddot}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & n\text{-year annuity certain-due} \\
-\ddot{a}^{(m)}_{\enclose{actuarial}{n}} & \backslash\tt{ddot} \verb|^| \tt{\{(m)\}}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & n\text{-year annuity certain-due payable } m\text{-thly}  \\
-_{m|}\ddot{a}_{\enclose{actuarial}{n}} & ~ \_\{ \tt{m|} \} \backslash\tt{ddot}\_\{\tt{a}\_\{\backslash \tt{enclose}\{actuarial\}\{\tt{n}\}\} & m\text{-year deferred } n\text{-year annuity certain-due} \\
-a_{x} & \tt{a}\_\{x\} & \text{APV of a whole life annuity immediate to } (x) \\
-\ddot{a}_{x} & \backslash\tt{ddot}\{\tt{a}\}\_\{x\} & \text{APV of a whole life annuity due to } (x) \\
-a^{(m)}_{x} & \tt{a} \verb|^| \tt{\{(m)\}}\_\{x\} & \text{APV of a life annuity immediate to } (x) \text{ payable } m\text{-thly} \\
-\ddot{a}^{(m)}_{x} & \backslash\tt{ddot}\{\tt{a}\} \verb|^| \tt{\{(m)\}}\_\{x\} & \text{APV of a life annuity due to } (x) \text{ payable } m\text{-thly} \\
-_{n|}\ddot{a}_{x} & ~ \_\{ \tt{n|} \} \backslash\tt{ddot}\_\{\tt{a}\_\{x\}\} & \text{APV of an } n\text{-year deferred life annuity due to } (x) \\
-\ddot{a}_{x:{\enclose{actuarial}{n}}} & \backslash\tt{ddot\{a\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{APV of an } n\text{-year life annuity due to } (x) \\
-\ddot{a}^{(m)}_{x:{\enclose{actuarial}{n}}} & \backslash\tt{ddot\{a\}} \verb|^| \tt{\{(m)\}} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{APV of an } n\text{-year life annuity due to } (x) \text{ payable } m\text{-thly} \\
-\hline
-\end{array}
-}
-$$
-
-Not sure if necessary to say APV (actuarial present value)
-
-### Life Insurance Notation 
-
-
-$$
-{\small
-\begin{array}{cll}  \hline
-\textbf{Symbol} & \textbf{Latex code} & \textbf{Description} \\
-\hline
-A_{x} &    \tt{A} \_ \{\tt{x}\} & \text{APV of a discrete whole life insurance to } (x) \\
-\bar{A}_{x} &    \backslash \tt{bar} \{\tt{A}\} \_ \{\tt{x}\} & \text{APV of a continuous whole life insurance to } (x) \\
-A^{(m)}_{x} &    \tt{A} \verb|^| \tt{\{(m)\}}\_ \{\tt{x}\} & \text{APV of a whole life insurance payable at end of } m\text{-th of the year of death of } (x) \\
-_{n}E_{x} &    ~ \_\{ \tt{n} \} \tt{E} \_ \{\tt{x}\} & \text{APV of an } n\text{-year pure endowment to } (x) \\
-{A}_{x:\enclose{actuarial}{n}}^{\quad 1} & \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} \verb|^| \{\backslash \tt{quad} \ 1\} & \text{APV of an } n\text{-year term insurance to } (x)  \\
-{A}_{x:{\enclose{actuarial}{n}}} & \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} & \text{APV of an } n\text{-year endowment insurance to } (x) \\
-_{n|}{A}_{x} & ~ \_\{ \tt{n|} \} \{\tt{A}\_\{x\}\} & \text{APV of an } n\text{-year deferred life insurance to } (x) \\
-{A}_{x:\enclose{actuarial}{n}}^{\space 1} & \{\tt{A}\} \_ \{ x:\{\backslash enclose\{actuarial\}\{n\}\}\} \verb|^| \{\backslash \tt{space} \ 1\} & \text{APV of an } n\text{-year term insurance to } (x)  \\
-\hline
-\end{array}
-}
-$$
-
-## Halo System  {#C:NotConv:Halo}
-
-
-```{r  Halo1, warning=FALSE,message=FALSE, comment=NA, eval=FALSE, echo = FALSE}
-plot.new()
-par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,10),ylim=c(0,10))
-
-# library(latex2exp)
-
-text(0,10,1, cex = 1.5)
-arrows(0.5,9.5,4,6,code=2,lwd=2,angle=45,length=0.10)
-text(5,10,2, cex = 1.5)
-arrows(  5,9.5,5,6,code=2,lwd=2,angle=45,length=0.10)
-text(10,10,3, cex = 1.5)
-arrows(9.5,9.5,6,6,code=2,lwd=2,angle=45,length=0.10)
-text(10,0,4, cex = 1.5)
-arrows(9.5,0.5,6.8,3.8,code=2,lwd=2,angle=45,length=0.10)
-text(5,0,5, cex = 1.5)
-arrows(  5,0.5,5,4,code=2,lwd=2,angle=45,length=0.10)
-text(0,0,6, cex = 1.5)
-arrows(0.5,0.5,4,4,code=2,lwd=2,angle=45,length=0.10)
-
-text(5,5,expression(paste(symbol("\040")[paste(italic(m),"|")]^{~2},scriptstyle(symbol("\040")),bar(italic(A))[paste(italic(x),":",bar(italic(n)),"|")]^{scriptscriptstyle(1)})), cex=3)
- 
-```
-
-</div>
-
-(ref:Halo1a) **Halo System: Example of an Actuarial Symbol**. *Source*: This is adapted from the *Wikipedia* page [Actuarial Notation](https://en.wikipedia.org/wiki/Actuarial_notation).
-
-
-```{r Halo1a, ref.label = 'Halo1', fig.cap = '(ref:Halo1a)', fig.align = 'center', out.width='50%', echo = FALSE}
-```
-
-***
-
-\newpage
-
-**Legend:**
-
-*  1 - the "2" means double the force of interest
-*  2 - the bar implies continuous, or payments at the moment of death. No bar, or blank, signifies payment at the end of the year.
-For annuities, could use a double dot that signifies payments at the beginning of the year.
-*  3 - the "1" denotes a temporary, or term, payment. Paid if $x$ within $n$ years
-*  4 - contract issued to a life aged $x$ and lasts for at most $n$ years.
-*  5 - the "A" signifies it is an insurance ("assurance") contract. Could also be a lower case $a$ that would signify an annuity contract.
-*  6 - deferred *m* years
-
-
-
-**Note:** It is sometimes helpful to put a space before the pre-subscript like $\frac{\ell_{[x]+t}}{\ell_{[x]}} = ~_{t}p_{[x]}$. Else you get this awkward $\frac{\ell_{[x]+t}}{\ell_{[x]}} = _{t}p_{[x]}$.
-
-
-$$
-Y =
- \begin{cases}
- 1 + v + v^2 + \cdots + v^K = \ddot{a}_{\enclose{actuarial}{K+1}}, K=0,1,\ldots,n-1 \\
- 1 + v + v^2 + \cdots + v^{n-1} = \ddot{a}_{\enclose{actuarial}{n}}, K \ge n
- \end{cases}
-$$
-**Note.**
-
-*  For the `html` version of the text, we are using the [STACK]() system; in particular, see their [actuarial notation](https://stack-demo.maths.ed.ac.uk/demo/question/type/stack/doc/doc.php/Authoring/Actuarial.md) page.
-*  This does not appear to work for the `pdf` version, at least with R-Studio. The latex package [actuarialangle](https://ctan.org/pkg/actuarialsymbol?lang=en) provides a substitute. To make this happen, in our latex header .tex page, we have the following bit of code
-
-```
-%  Something for the Actuarial Angle package
-\usepackage{actuarialangle}
-\newcommand{\enclose}[1]{\actuarialangle} 
-```
 
 
 ## Further Readings

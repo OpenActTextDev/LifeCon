@@ -2,29 +2,30 @@
 `r ECHOCODE = FALSE`
 
 
-```{r include = FALSE}
-knitr::opts_chunk$set(results = "hold")
-#tutorial::go_interactive(greedy = FALSE)
-```
-
-
-# Chapter 3 Examples  -- Present Values {-}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
 
 
-## Examples -- Valuation of cash flows under uncertainty {-}
+## Appendix 3A. Examples of valuation of general cash flows  {#Sec:ExamplesValCash}
+
+`r HideExample('FreesNotes.1',"Chapter Structure Discussion")`
 
 <span style="font-size: small; color: green;"> Editorial Note: These are the results of experimentation with the ["jExcel"](https://bossanova.uk/jexcel/v4/)  javascript package for dynamic spreadsheets that utilizes the ["Highcharts"](https://www.highcharts.com/) package for dynamic graphs.</span>
+
+</div>
 
 
 #### Example 3.1.1. Varying Payments and Rates of Interest {-}
 
 Let us review some basic concepts regarding present value of payments made with certainty (no randomness) of payments under potentially varying rates of interest. The first basic concept is that payments made in the near future have greater present value than those made in the distant future. The second basic concept is that interest rates in the near future have greater effect on present values than those in the distant future. To illustrate, we consider $T=12$ payments at times $1, 2, \ldots, 12$. Payment may be constant (or "flat") at 11 in this example, or varying. For the varying payments, this example uses increasing payments, $0, 2, \ldots, 22$ so the average of increasing payments is 11. For interest rates, we consider a flat rate $i= 0.055$ with varying (increasing) rates $0, 0.01, \ldots, 0.11$, so the average interest rate is 0.055. If you want to think about these as monthly rates, you may use the `Interest Rate Multiplier` cell in [Table 3.1] to change the rates. For example, if you make the cell `B12` equal to 0.1, then flat rate changes to $i= 0.0055$ that may be more suitable for a monthly rate.
 
+`r HideExample('FreesNotes.2',"Chapter Structure Discussion")`
+
 <span style="font-size: small; color: green;"> Editorial Note: As coded now, the 'Interest Rate Multiplier' works but takes a couple of minutes. Get some coffee if you change this cell. Changing other parts of the spreadsheet is quick. You can double-click on a cell to see how it is coded. You can drag a column separator to widen the cell to see the coding.</span>
+
+</div>
 
 [Table 3.1] shows the patterns of varying the payments and the rates of interest supported by a graphical display in [Figure 3.1]. Here, we see that, for both flat and varying payments, the present values for increasing interest rates are greater than those for the flat ones. This underscores the second concept, that present values in the near term are more important than those in the future. We can also see the sums of present values in column `N` of [Table 3.1]. This shows that, for both flat and increasing interest rates, that flat payments have a larger present value than increasing payments. This underscores the second concept, that payments made in the near future have a greater impact than those in the distant future.
 
@@ -431,7 +432,11 @@ plot(Time, FlatPay.FlatInt.IncProb, type = "b", ylim = c(0,2.5), ylab = "Present
 
 </div>
 
+`r HideExample('FreesNotes.3',"Chapter Structure Discussion")`
+
 <span style="font-size: small; color: green;"> Editorial Note: As of now, I (Jed) do not know how to make two graphs on the same page update dynamically. </span>
+
+</div>
 
 
 ```{r ex="PresentValueDemo1.2", type="sample-code", tut=TRUE}

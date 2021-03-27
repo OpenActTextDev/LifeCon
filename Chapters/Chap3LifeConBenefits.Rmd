@@ -212,6 +212,8 @@ The downloadable option below would be provided for either of the options chosen
 <div id="spreadsheetCPE"></div>
 <p><button id='downloadLCCPE'>Export this spreadsheet as CSV</button></p>
 
+
+
 ```{r echo=ECHOCODE}
 # Import data from CSV file, then convert so it can be used in Javascript
 dataCPE <- read.csv("Data/ContingentPaymentExampleA.csv", header = F)
