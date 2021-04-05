@@ -138,3 +138,13 @@ a.tooltip:hover span {
 .twoC .table {max-width: 50%; float: left}
 .twoC img {max-width: 50%; float: right}
 
+
+.iframe {
+       margin-left: auto;   /* Automatic margin from left */ 
+       margin-right: auto; /* Automatic margin from right */ 
+  }
+  
+iframe { 
+       margin-left: auto;   /* Automatic margin from left */ 
+       margin-right: auto; /* Automatic margin from right */ 
+      }    

@@ -1,1 +1,6 @@
 `r if (knitr:::is_html_output()) '# Bibliography {-}'`
+
+Time taken for this draft of the book: `r round(difftime(Sys.time(), timeDraft, units='mins'), digits=2)` minutes. 
+
+
+

@@ -33,6 +33,10 @@ tutorial::go_interactive(greedy = FALSE)
 <p style="text-align:right;">
 *Date: `r format(Sys.Date(), "%d %B %Y")`*</p>
 
+```{r echo = FALSE}
+timeDraft <- Sys.time()
+```
+
 <!-- `r if (knitr:::is_html_output()) '$\\require{enclose}$'` -->
 
 
