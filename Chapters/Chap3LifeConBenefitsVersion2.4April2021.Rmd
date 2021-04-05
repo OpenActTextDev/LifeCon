@@ -61,7 +61,7 @@ This system is illustrated on a timeline in Figure \@ref(fig:Benefit1a).
 ```{r  Benefit1, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(3,8))
+plot.window(xlim=c(0,14),ylim=c(2.5,7.5))
 
 arrows(5,6,13,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -83,12 +83,18 @@ text(7,5,TeX("_1C"))
 text(9,5,TeX("_2C"))
 text(11,5,TeX("_3C"))
 text(13.5,5,"...")
-text(1,4,"Probability")
-text(5,4,TeX("Pr(_0B=1)"))
-text(7,4,TeX("Pr(_1B=1)"))
-text(9,4,TeX("Pr(_2B=1)"))
-text(11,4,TeX("Pr(_3B=1)"))
+text(1,4,"      Cash Flow Indicator")
+text(5,4,TeX("_0B"))
+text(7,4,TeX("_1B"))
+text(9,4,TeX("_2B"))
+text(11,4,TeX("_3B"))
 text(13.5,4,"...")
+text(1,3,"Probability")
+text(5,3,TeX("Pr(_0B=1)"))
+text(7,3,TeX("Pr(_1B=1)"))
+text(9,3,TeX("Pr(_2B=1)"))
+text(11,3,TeX("Pr(_3B=1)"))
+text(13.5,3,"...")
 box(col = 'lightblue')
 
 ```
@@ -173,7 +179,9 @@ Input cells can be changed to see the impact on the $\mathrm{E}(PV)$ and $\mathr
 
 Display 3.1. **Ten Year Cash Flow Spreadsheet**
 
-<iframe width="650" height="520" frameborder="1" scrolling="no"  align="middle" src="https://onedrive.live.com/embed?resid=9F1B70CE7B0595D1%211721&authkey=%21AKZxnb5t3WqUBGM&em=2&AllowTyping=True&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+<center>
+<iframe width="650" height="520" frameborder="1" scrolling="no"  src="https://onedrive.live.com/embed?resid=9F1B70CE7B0595D1%211721&authkey=%21AKZxnb5t3WqUBGM&em=2&AllowTyping=True&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+</center>
 
 ***
 
@@ -215,7 +223,7 @@ StDevPV
 
 You may notice from this example that the sum of the $\Pr(_kB=1)$ is 0.97 and not 1. For life contingent benefits, the probabilities typically come from a survival model as described in Chapter 2.  The unaccounted for 0.03 probability simply represents the event that person has lived beyond the ten year period of this illustration; as there is no cash flow being made, there is no impact on the $PV$ random variable.
 
-Appendix Section \@ref(Sec:ExamplesValCash) provides additional examples of  Valuation of general cash flows under uncertainty. In the following, we focus on cash flows from life contingent contracts where the uncertainty of cash flows are governed by probabilities derived from the Chapter 2 lifetime models.
+Appendix Section \@ref(Sec:ExamplesValCash) provides additional examples of valuation of general cash flows under uncertainty. In the following, we focus on cash flows from life contingent contracts -- here, the uncertainty of cash flows are governed by probabilities derived from the Chapter 2 lifetime models.
 
 ## Life insurance benefits {#Sec:BenefitActNot}
 
@@ -227,7 +235,7 @@ Appendix Section \@ref(Sec:ExamplesValCash) provides additional examples of  Val
 
 </div>
 
-In this section we introduce some basic types of life insurance policies that have single cash payments triggered by the death of the insured. In Chapter 2 we defined the random variable $K_{\bf{x}}$ as being the curtate death time (measured in years from the current time) of $\bf{x}$. Instead of the Bernoulli random variable $_{k+1}B$, we now use $I_{K_{\bf{x}}=k}$ to indicate payment in the $k+1$th period. That is, the time of benefit payment is $K_{\bf{x}}+1$. The probability of this occurring is denoted as
+This section introduces some basic types of life insurance policies that have single cash payments triggered by the death of the insured. In Chapter 2 we defined the random variable $K_{\bf{x}}$ as being the curtate death time (measured in years from the current time) of $\bf{x}$. Instead of the Bernoulli random variable $_{k+1}B$, we now use $I_{K_{\bf{x}}=k}$ to indicate payment in the $k+1$th period. That is, the time of benefit payment is $K_{\bf{x}}+1$. The probability of this occurring is denoted as
 
 $$
 ~_{k|}q_{\bf{x}} = \Pr(K_{\bf{x}}=k) 
@@ -247,7 +255,7 @@ Under a **whole of life** policy the insurer pays a benefit because of the death
 ```{r  Benefit2, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(3,9))
 
 arrows(3,6,9,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -338,7 +346,7 @@ Under a **term insurance** policy the insurer pays a benefit because of the deat
 ```{r  Benefit3, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(3,9))
 
 arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -414,7 +422,7 @@ Under a **pure endowment** policy the insurer pays a benefit because of the surv
 ```{r  Benefit4, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(3,9))
 
 arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -439,7 +447,7 @@ box(col = 'lightblue')
 
 (ref:Benefit4) **Timeline of benefit cash flows from a pure endowment policy** 
 
-```{r Benefit4a, ref.label = 'Benefit4', fig.cap = '(ref:Benefit4)',  fig.width=6, fig.height=2.5, echo = FALSE}
+```{r Benefit4a, ref.label = 'Benefit4', fig.cap = '(ref:Benefit4)',  fig.width=6, fig.height=2, echo = FALSE}
 ```
 
 $$
@@ -473,7 +481,7 @@ An **endowment insurance** policy is effectively a combination of a term insuran
 ```{r  Benefit5, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(2.5,9))
 
 arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -519,7 +527,7 @@ box(col = 'lightblue')
 
 (ref:Benefit5) **Timeline of benefit cash flows from an endowment insurance policy** 
 
-```{r Benefit5a, ref.label = 'Benefit5', fig.cap = '(ref:Benefit5)', fig.width=6, fig.height=2.5, echo = FALSE}
+```{r Benefit5a, ref.label = 'Benefit5', fig.cap = '(ref:Benefit5)', fig.width=6, fig.height=2.25, echo = FALSE}
 ```
 
 ***
@@ -559,7 +567,7 @@ Under a **life annuity** policy the insurer pays regular benefits to policyholde
 ```{r  Benefit6, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(2,9))
 
 arrows(3,6,9,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -606,7 +614,7 @@ box(col = 'lightblue')
 
 (ref:Benefit6) **Timeline of benefit cash flows from a life annuity policy** 
 
-```{r Benefit6a, ref.label = 'Benefit6', fig.cap = '(ref:Benefit6)', fig.width=6, fig.height=2.5, echo = FALSE}
+```{r Benefit6a, ref.label = 'Benefit6', fig.cap = '(ref:Benefit6)', fig.width=6, fig.height=2.25, echo = FALSE}
 ```
 
 
@@ -666,6 +674,85 @@ $$
 The relationships in equations \@ref(eq:Benefit11) and \@ref(eq:Benefit12) hold only when $_ki = i$, but do allow us to calculate the variance of the present value of a life annuity. However, the restrictive assumption of a flat yield curve makes this relationship less useful in practice, and so we will not consider it in further detail.
 
 
+(ref:IndonesianLifeAnn) **Life Annuities by Age, Interest Rate, and Gender**. Male annuities are in the left-hand panel, those for females are in the right. For both panels, each line corresponds to an interest rates with the top line being $i=0$ and the bottom line being $i=0.06$.
+
+**Example 3.3. Life Annuities by Age, Interest Rate, and Gender**. To illustrate, we return to the Indonesian insurance mortality used in Example 3.2. Figure \@ref(fig:IndonesianLifeAnnPlot) summarizes the expected presented values $\ddot{a}_x$ by age, interest rate, and gender. 
+As with insurances, for many ages, there are important differences between male and female values. Because women tend to enjoy lower mortality rates, they have higher values of $\ddot{a}_x$. Not surprisingly, values of $\ddot{a}_x$ vary by age $x$ and interest rate $i$. The figure emphasizes that the interest rate produces greater differences in $\ddot{a}_x$ for younger ages than older ages.
+
+
+```{r IndonesianLifeAnnPlot, fig.cap='(ref:IndonesianLifeAnn)', echo=FALSE, fig.width=6, fig.height=4, fig.align = 'center'}
+IndLifeTable <- read.csv("Data/IndonesianLifeTableNoFormula.csv", header = F)
+colnames(IndLifeTable) <- c("Age","Female.qx","Female.lx","Female.dx","Female.ex","Male.qx","Male.lx","Male.dx","Male.ex")
+
+annuityfct <- function(i,qx){
+  v = 1/(1+i)
+  addx <- qx*0;addx[length(addx)]<- 1 
+for (ij in seq(length(qx)-1,1,by=-1)){ 
+  addx[ij] <- 1 + v*(1-qx[ij])*addx[ij+1]   
+  }
+  return(addx)
+  }
+# addx.m <- annuityfct(IndLifeTable$Male.qx[1:83])
+# addx.f <- annuityfct(IndLifeTable$Female.qx[1:83])
+Age <- IndLifeTable$Age[1:83]
+qx.m <- IndLifeTable$Male.qx[1:83]
+qx.f <- IndLifeTable$Female.qx[1:83]
+# Perspective
+int.Vec <- seq(0.00,0.06, length.out = 7)
+AnnuityMat.m <- array(0,dim=c(length(int.Vec),length(qx.m),1))
+AnnuityMat.f <- array(0,dim=c(length(int.Vec),length(qx.f),1))
+for (ij in 1:length(int.Vec)){
+  AnnuityMat.m[ij,,1] <- annuityfct(i=int.Vec[ij],qx.m )
+  AnnuityMat.f[ij,,1] <- annuityfct(i=int.Vec[ij],qx.f )  
+}
+par(mfrow=c(1,2))
+plot(Age,AnnuityMat.m[1,,1], xlab="Age",ylab=expression(paste("male ",ä[x])), col="grey", type = "l", ylim = c(0,65))
+for (ij in 2:length(int.Vec)){
+lines(Age,AnnuityMat.m[ij,,1], col="grey")
+}
+plot(Age,AnnuityMat.f[1,,1], xlab="Age",ylab=expression(paste("female ",ä[x])), col="grey", type = "l",ylim = c(0,65))
+for (ij in 2:length(int.Vec)){
+lines(Age,AnnuityMat.f[ij,,1], col="grey")
+}
+
+```
+
+```{r echo = FALSE, eval = FALSE}
+library(rgl)
+knitr::knit_hooks$set(webgl = rgl::hook_webgl)
+options(rgl.useNULL=TRUE)
+options(digits = 5)
+options(scipen = 5)
+
+```
+
+***
+
+**Figure 3.8a. Interactive Version of Figure 3.8.** Use the mouse to rotate the figure to see different perspectives. One can use this plot to motivate a type of *multiplicative* effect that an interest rate and age has on an annuity value.
+
+
+```{r webgl = TRUE, echo = FALSE}
+library(rgl)
+knitr::knit_hooks$set(webgl = rgl::hook_webgl)
+options(rgl.useNULL=TRUE)
+options(digits = 5)
+options(scipen = 5)
+
+clear3d()
+#par3d(mouseMode="trackball")
+bg3d("lightgray", alpha = 0.85)
+intplot = 100*int.Vec
+mfrow3d(1, 2, sharedMouse = TRUE)
+persp3d(intplot, Age, AnnuityMat.m[,,1], theta = 30, phi = 00, col = "green",
+      xlab = "i (%)", ylab = "Age", zlab = expression(paste("male ",ä[x])), zlim = c(0,65) )
+next3d()
+persp3d(intplot, Age, AnnuityMat.f[,,1], theta = 180, phi = 00, col = "red",
+      xlab = "i (%)", ylab = "Age", zlab = expression(paste("female ",ä[x])), zlim = c(0,65) ) 
+```
+
+***
+
+
 ### 	Term life annuity
 
 Under a **term life annuity** policy the insurer pays benefits to policyholders whilst they are alive, for a maximum of $n$ periods. For annuities in advance and in arrears, this system is illustrated on a timeline in Figure \@ref(fig:Benefit7a), with the $PV$ and $\mathrm{E}(PV)$ of the benefit cash flows shown below.
@@ -676,7 +763,7 @@ Under a **term life annuity** policy the insurer pays benefits to policyholders 
 ```{r  Benefit7, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(2,9))
 
 arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -728,7 +815,7 @@ box(col = 'lightblue')
 
 (ref:Benefit7) **Timeline of benefit cash flows from a term life annuity policy** 
 
-```{r Benefit7a, ref.label = 'Benefit7', fig.cap = '(ref:Benefit7)', fig.width=6, fig.height=2.5, echo = FALSE}
+```{r Benefit7a, ref.label = 'Benefit7', fig.cap = '(ref:Benefit7)', fig.width=6, fig.height=2.25, echo = FALSE}
 ```
 
 In advance:
@@ -772,7 +859,7 @@ Under a **deferred life annuity** policy the insurer pays benefits to policyhold
 ```{r  Benefit8, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(2,9))
 
 arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -875,7 +962,7 @@ A **guaranteed life annuity** policy is the same as a life annuity policy, excep
 ```{r  Benefit9, warning=FALSE,message=FALSE, comment=NA, eval=FALSE}
 plot.new()
 par(mar = c(0,0,0,0) + 0.1)
-plot.window(xlim=c(0,14),ylim=c(0,10))
+plot.window(xlim=c(0,14),ylim=c(2,9))
 
 arrows(3,6,13,6,code=2,lwd=2,angle=45,length=0.10)
 arrows(3,6.2,3,5.8,code=0,lwd=2,angle=0,length=0.10)
@@ -904,8 +991,8 @@ text(6.5,8,"...")
 text(8,8,"x+n-1")
 text(9,8,"x+n")
 text(10,8,"x+n+1")
-text(11,8,"x+n+2")
-text(12,8,"...")
+text(11.25,8,"x+n+2")
+text(12.3,8,"...")
 text(1,5,"Cash Flow")
 text(3,5,"1")
 text(4,5,"1")
@@ -978,7 +1065,7 @@ These displays introduce the actuarial symbols $\ddot{a}_{\overline{{\bf{x}}:\en
 
 ##	Bringing actuarial notation to the Life Table {#Sec:BenefitLT}
 
-In this subsection we use the notation introduced in Chapter \@ref(Sec:BenefitActNot) to value the benefits described in Chapter \@ref(Sec:BenefitActNot), using the Life Table introduced in Chapter 2. We ignore all other predictors of mortality apart from age. These calculations are performed in Excel in such a way to allow flexibility to adjust age ($x$), term ($n$), cash flows ($_kC$), interest rates ($_ki$) and life table mortality rates ($q_x$). [Display 3.2] shows a workbook that can be viewed and downloaded.
+In this subsection we use the notation introduced in Chapter \@ref(Sec:BenefitActNot) to value the benefits described in Chapter \@ref(Sec:BenefitActNot), using the Life Table introduced in Chapter 2. We ignore all other predictors of mortality apart from age. These calculations are performed in a spreadsheet in such a way to allow flexibility to adjust age ($x$), term ($n$), cash flows ($_kC$), interest rates ($_ki$) and life table mortality rates ($q_x$). [Display 3.2] shows a workbook that can be viewed and downloaded.
 
 ***
 
@@ -988,15 +1075,15 @@ In this subsection we use the notation introduced in Chapter \@ref(Sec:BenefitAc
 
 Display 3.2. **Life Table**
 
-<iframe width="900" height="750" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=22D545F33DAA9426%21385&authkey=%21AGhkHMkS6Q_AxAQ&em=2&wdAllowInteractivity=False&AllowTyping=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+<iframe width="800" height="750" frameborder="1" scrolling="no" src="https://onedrive.live.com/embed?resid=22D545F33DAA9426%21385&authkey=%21AGhkHMkS6Q_AxAQ&em=2&wdAllowInteractivity=False&AllowTyping=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
 
 ***
 
-The [Display 3.2] worksheet contains the underlying Life Table used. The yellow highlighted $q_x$ cells can be adjusted as desired.
+The [Display 3.2] worksheet contains the underlying Life Table used in the first tab. The yellow highlighted $q_x$ cells can be adjusted as desired.
 
-The "Assum & Outp - fixed C" worksheet contains calculations and results, assuming that $_kC$ equals a fixed $C$. This allows the use of the notation introduced in Chapter \@ref(Sec:BenefitActNot). Cells highlighted in yellow can be changed to adjust $x$, $n$, $C$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Chapter \@ref(Sec:BenefitActNot). In this and the next worksheet a column "Year" is introduced which is equal to $k+1$. The column is introduced so that we may think of the cash flows as related to a profit year for an insurer, which we will introduce in Chapter X. Various calculation columns for both $k$ and $k+1$ are calculated, to account for cash flows occuring at the beginning of the year (e.g. life annuities in advance) and cash flows occuring at the end of a year (e.g. life annuities in arrears) whilst still allocating these cash flows to the same year.
+The *Assum & Outp - fixed C* tab contains calculations and results, assuming that $_kC$ equals a fixed $C$. This allows the use of the notation introduced in Chapter \@ref(Sec:BenefitActNot). Cells highlighted in yellow can be changed to adjust $x$, $n$, $C$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Chapter \@ref(Sec:BenefitActNot). In this and the next worksheet a column "Year" is introduced which is equal to $k+1$. The column is introduced so that we may think of the cash flows as related to a profit year for an insurer, which we will introduce in Chapter X. Various calculation columns for both $k$ and $k+1$ are calculated, to account for cash flows occuring at the beginning of the year (e.g. life annuities in advance) and cash flows occuring at the end of a year (e.g. life annuities in arrears) whilst still allocating these cash flows to the same year.
 
-The "Assum & Outp - var C" worksheet contains calculations and results, allowing for a variable $_kC$. The calculations are performed using the first principles of equations \@ref(eq:Benefit2), \@ref(eq:Benefit3) and \@ref(eq:Benefit4). Cells highlighted in yellow can be changed to adjust $x$, $n$, $_kC$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Chapter \@ref(Sec:BenefitActNot). Similar timing conventions are adopted to that of the previous worksheet, with the cash flows occuring at the beginning ($k$) or end ($k+1$) of the year.
+The "Assum & Outp - var C" tab contains calculations and results, allowing for a variable $_kC$. The calculations are performed using the first principles of equations \@ref(eq:Benefit2), \@ref(eq:Benefit3) and \@ref(eq:Benefit4). Cells highlighted in yellow can be changed to adjust $x$, $n$, $_kC$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Chapter \@ref(Sec:BenefitActNot). Similar timing conventions are adopted to that of the previous worksheet, with the cash flows occuring at the beginning ($k$) or end ($k+1$) of the year.
 
 You are recommended to review the formulae in the workbook against those found in Chapters \@ref(Sec:BenefitCFunc) and \@ref(Sec:BenefitActNot), to confirm your understanding of how to perform the calculations in a spreadsheet package. The calculations are not performed in R, although a case study using `R` will be provided in Chapter \@ref(Sec:BenefitCS).
 
@@ -1004,7 +1091,7 @@ You are recommended to review the formulae in the workbook against those found i
 `r HideExample('AdamButtDiscussion.5',"Chapter Structure Discussion")`
 
 <span style="color: blue;">
-**Note for author to complete.** There are many exercises and examples that could follow on from this which will need to be considered.  I also need to update the actuarial notation in the Excel workbook (the cells highlighted green)
+**Note for author to complete.** There are many exercises and examples that could follow on from this which will need to be considered.  I also need to update the actuarial notation in a spreadsheet  (the cells highlighted green)
 
 </div>
 
@@ -1021,6 +1108,7 @@ We showed how to value a single term insurance policy in Chapter \@ref(Sec:Benef
 
 $$
 \boxed{
+{\small
 \begin{array}{rl}
 PV &= 400,000v^{K_{49}+1} I_{K_{49}+1 \le 10} = \left \{\begin{array}{cl}
 v^{K_{49}+1} & \text{where }  K_{49}+1 \le 10 \\
@@ -1031,10 +1119,11 @@ v^{K_{49}+1} & \text{where }  K_{49}+1 \le 10 \\
 \mathrm{Var}(PV) &= \sum_{k=0}^{9} \left( 400,000v^{k+1} \right)^2 ~_{k|}q_{49}  - [\mathrm{E}(PV)]^2 .\\
 \end{array}
 }
+}
 (\#eq:Benefit19)
 $$
 
-Like we did in Chapter \@ref(Sec:BenefitCFunc) we can calculate $\mathrm{E}(PV)$ and $\mathrm{Var}(PV)$using Excel or equivalent:
+Like we did in Chapter \@ref(Sec:BenefitCFunc) we can calculate $\mathrm{E}(PV)$ and $\mathrm{Var}(PV)$using a spreadsheet:
 
 ***
 

@@ -57,6 +57,22 @@
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/rglWebGL-binding-0.105.22/rglWebGL.js"></script>
+<link href="libs/rglwidgetClass-0.105.22/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-0.105.22/rglClass.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/utils.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/subscenes.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/shaders.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/textures.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/projection.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/mouse.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/init.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/pieces.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/draw.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/controls.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/selection.src.js"></script>
+<script src="libs/rglwidgetClass-0.105.22/rglTimer.src.js"></script>
+<script src="libs/CanvasMatrix4-0.105.22/CanvasMatrix.src.js"></script>
 <script language="javascript">
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
@@ -364,10 +380,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- # Preface {-} -->
 <div id="book-description" class="section level4 unnumbered">
 <h4>Book Description</h4>
-<p>This is an interactive, online, freely available text.</p>
+<p>This will be an interactive, online, freely available text.</p>
 <ul>
 <li>The online version contains many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote <em>deeper learning</em>.</li>
-<li>A subset of the book is available for <em>offline reading</em> in pdf and EPUB formats.</li>
+<li>A subset of the book will be available for <em>offline reading</em> in pdf and EPUB formats.</li>
 <li>The online text will be available in multiple languages to promote access to a <em>worldwide audience</em>.</li>
 </ul>
 </div>
@@ -377,12 +393,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="how-will-the-text-be-used" class="section level4 unnumbered">
 <h4>How will the text be used?</h4>
-<p>This book will be useful in actuarial curricula worldwide. It will cover the loss data learning objectives of the major actuarial organizations. Thus, it will be suitable for classroom use at universities as well as for use by independent learners seeking to pass professional actuarial examinations. Moreover, the text will also be useful for the continuing professional development of actuaries and other professionals in insurance and related financial risk management industries.</p>
+<p>This book will be useful in actuarial curricula worldwide. It will cover the earning objectives of the major actuarial organizations. Thus, it will be suitable for classroom use at universities as well as for use by independent learners seeking to pass professional actuarial examinations. Moreover, the text will also be useful for the continuing professional development of actuaries and other professionals in insurance and related financial risk management industries.</p>
 </div>
 <div id="why-is-this-good-for-the-profession" class="section level4 unnumbered">
 <h4>Why is this good for the profession?</h4>
 <p>An online text is a type of open educational resource (OER). One important benefit of an OER is that it equalizes access to knowledge, thus permitting a broader community to learn about the actuarial profession. Moreover, it has the capacity to engage viewers through active learning that deepens the learning process, producing analysts more capable of solid actuarial work.</p>
 <p>Why is this good for students and teachers and others involved in the learning process? Cost is often cited as an important factor for students and teachers in textbook selection (see a recent post on the <a href="https://www.aei.org/publication/the-new-era-of-the-400-college-textbook-which-is-part-of-the-unsustainable-higher-education-bubble/">$400 textbook</a>). Students will also appreciate the ability to “carry the book around” on their mobile devices.</p>
+</div>
+<div id="life-contingent-calculations" class="section level4 unnumbered">
+<h4>Life Contingent Calculations</h4>
+<p>Life contingences is a quantitative discipline, enjoying the rigor and discipline of mathematics. Like any mathematical discipline, one traditionally learns about it through the development of formulaic expressions, that is, their proofs, special cases, analysis of special features, and so on. Users of this text find that we do not shy away from presenting summaries of main conclusions using formulaic expressions. Nonetheless, rather than developing insights from mathematical proofs of the primary findings, we demonstrate their impact through short illustrative examples and links to practical applications.</p>
+<p>As with other sources that introduce life contingencies, we utilize spreadsheets extensively. In our teaching, we find that spreadsheets are useful for communication and dynamically visualizing results as they evolve over time. However, unlike other sources, we supplement this with approaches that emphasize programming; in this text, we use <code>R</code>. Programming methods such as through <code>R</code> (and Python, another good candidate) easily accommodate more complex situations that require more computing and, moreover, are built to graphically portray results in an attractive fashion. Analytics, the process of using data to make decisions, is enjoying tremendous attention from many industries; this is certainly true of in data-driven fields that use life contingent methods. By working with data and using programming methods such as <code>R</code> in the study of life contingences, users see the connections within many fields that support the actuarial science discpline. Instruction may emphasize any one of the three approaches, traditional mathematical development, spreadsheets, or a computing approach. However, this text contains all three as we believe that future generations of actuaries need to be familiar with all of these different ways to analyze, and communicate, problems that can be solved using life contingent methods.</p>
 </div>
 <div id="project-goal" class="section level4 unnumbered">
 <h4>Project Goal</h4>
@@ -391,7 +412,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="acknowledgements" class="section level2 unnumbered">
 <h2>Acknowledgements</h2>
-<p>Edward Frees acknowledges the John and Anne Oros Distinguished Chair for Inspired Learning in Business which provided seed money to support the project. Frees and his Wisconsin colleagues also acknowledge a Society of Actuaries Center of Excellence Grant that provided funding to support work in dependence modeling and health initiatives. Wisconsin also provided an education innovation grant that provided partial support for the many students who have worked on this project.</p>
 <p>We acknowledge the Society of Actuaries for permission to use problems from their examinations.</p>
 <p>We thank Rob Hyndman, Monash University, for allowing us to use his excellent style files to produce the online version of the book.</p>
 <p>We thank Yihui Xie and his colleagues at <a href="https://www.rstudio.com/">Rstudio</a> for the <a href="https://bookdown.org/yihui/bookdown/">R bookdown</a> package that allows us to produce this book.</p>
