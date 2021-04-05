@@ -14,7 +14,7 @@ In this chapter we assume that all benefits are paid at annual times. Benefits p
 
 ## Valuation of cash flows under uncertainty {#Sec:BenefitCFunc}
 
-Imagine a financial system with a cash flow of known value $_tC$ occuring in $t$ years from now. If we assume the spot rate of interest is $_ti$ per annum effective, then the present value ($PV$) of this cash flow is:
+Imagine a financial system with a cash flow of known value $_tC$ occurring in $t$ years from now. If we assume the spot rate of interest is $_ti$ per annum effective, then the present value ($PV$) of this cash flow is:
 
 $$
 PV = ~_tC  ~(1+{_ti})^{-t}=~_tC ~ v^t .
@@ -230,7 +230,7 @@ Appendix Section \@ref(Sec:ExamplesValCash) provides additional examples of valu
 `r HideExample('AdamButtDiscussion.3',"Chapter Structure Discussion")`
 
 <span style="color: red;">
-**Structure discussion.**I’m not sure how much of these sorts of notation and probability calculations will be in Chapter 2 and whether we’ll need more basic probability calculations before this.  It may make sense to have another chapter between Chapter 2 and this that focussed on the life table and the various probability calculations coming from the life table – DHW do some of this in their Chapter 3 and incorporate things like mortality improvement and selection there as well. Promislow also does it in his Chapter 3.
+**Structure discussion.**I’m not sure how much of these sorts of notation and probability calculations will be in Chapter 2 and whether we’ll need more basic probability calculations before this.  It may make sense to have another chapter between Chapter 2 and this that focused on the life table and the various probability calculations coming from the life table – DHW do some of this in their Chapter 3 and incorporate things like mortality improvement and selection there as well. Promislow also does it in his Chapter 3.
 </span>
 
 </div>
@@ -468,7 +468,7 @@ $$
 
 
 
-This display introduces the actuarial symbol $A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {\space \space \space \space \space 1}$. Here, $A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {\space \space \space \space \space 1}$ represents the expected present value of the benefits from a pure endowment policy on $\bf{x}$ of term $n$ years. Unlike whole of life and term insurance we do not define notation for the expected squared present value of the benefits from the same pure endowment policy as the variance of the present value is simple to express without it, since the $PV$ is effectively $v^n$ mulitplied by a Bernoulli random variable with parameter ${_np_{\bf{x}}}$.
+This display introduces the actuarial symbol $A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {\space \space \space \space \space 1}$. Here, $A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {\space \space \space \space \space 1}$ represents the expected present value of the benefits from a pure endowment policy on $\bf{x}$ of term $n$ years. Unlike whole of life and term insurance we do not define notation for the expected squared present value of the benefits from the same pure endowment policy as the variance of the present value is simple to express without it, since the $PV$ is effectively $v^n$ multiplied by a Bernoulli random variable with parameter ${_np_{\bf{x}}}$.
 
 
 ### 	Endowment insurance
@@ -1063,9 +1063,11 @@ $$
 These displays introduce the actuarial symbols $\ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}}$ and ${a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}}$. Here, $\ddot{a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}}$ and ${a}_{\overline{{\bf{x}}:\enclose{actuarial}{n}}}$ represent the expected present value of the benefits from a deferred life annuity policy on $\bf{x}$, in advance and in arrears respectively. Since this policy makes multiple payments, and the payments are conditional on being alive (i.e. they are not independent), it is not possible to calculate $\mathrm{Var}(PV)$ in the same way as done in equation \@ref(eq:Benefit4).
 
 
-##	Bringing actuarial notation to the Life Table {#Sec:BenefitLT}
+##	Valuing life contingent benefits using a spreadsheet {#Sec:BenefitLT}
 
-In this subsection we use the notation introduced in Chapter \@ref(Sec:BenefitActNot) to value the benefits described in Chapter \@ref(Sec:BenefitActNot), using the Life Table introduced in Chapter 2. We ignore all other predictors of mortality apart from age. These calculations are performed in a spreadsheet in such a way to allow flexibility to adjust age ($x$), term ($n$), cash flows ($_kC$), interest rates ($_ki$) and life table mortality rates ($q_x$). [Display 3.2] shows a workbook that can be viewed and downloaded.
+Traditional approaches to valuing life insurances and life annuities, presented in Sections \@ref(Sec:BenefitActNot) and \@ref(Sec:BenefitAnnuity) respectively, emphasize constant cash amounts (taken to be one without loss of generality) and constant rates of interest. Although important, there are also many instances where cash benefits and interest rates can vary over time. An advantage of a spreadsheet or a flexible programming approach is that there are no important restrictions on the cash flows nor interest rates, as long as they are known in advance.
+
+The structure presented in Section \@ref(Sec:BenefitCFunc) readily accommodates these extensions. So, to see how they might work in practice, in this section we show the important calculations using a spreadsheet approach. That is, the calculations are performed in a spreadsheet in such a way to allow flexibility to adjust age ($x$), term ($n$), cash flows ($_kC$), interest rates ($_ki$) and life table mortality rates ($q_x$). [Display 3.2] shows a workbook that can be viewed and downloaded.
 
 ***
 
@@ -1073,19 +1075,21 @@ In this subsection we use the notation introduced in Chapter \@ref(Sec:BenefitAc
 
 [Display 3.2]: ../docs/C-SimpleBenefit.html#tab:3.2
 
-Display 3.2. **Life Table**
+Display 3.2. **Spreadsheet Calculations of Life Contingent Benefits**
 
-<iframe width="800" height="750" frameborder="1" scrolling="no" src="https://onedrive.live.com/embed?resid=22D545F33DAA9426%21385&authkey=%21AGhkHMkS6Q_AxAQ&em=2&wdAllowInteractivity=False&AllowTyping=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+<center>
+<iframe width="750" height="750" frameborder="1" scrolling="no" src="https://onedrive.live.com/embed?resid=9F1B70CE7B0595D1%211727&authkey=%21AG_7HHLF6EoUACc&em=2&AllowTyping=True&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+</center>
 
 ***
 
-The [Display 3.2] worksheet contains the underlying Life Table used in the first tab. The yellow highlighted $q_x$ cells can be adjusted as desired.
+There are three tables in the [Display 3.2] worksheet. Initially appearing is the third tab called *Assum & Outp - var C* that contains calculations and results, allowing for a variable $_kC$. The calculations are performed using the first principles of equations \@ref(eq:Benefit2), \@ref(eq:Benefit3) and \@ref(eq:Benefit4). Cells highlighted in yellow can be changed to adjust $x$, $n$, $_kC$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Section \@ref(Sec:BenefitActNot). Similar timing conventions are adopted to that of the previous worksheet, with the cash flows occurring at the beginning ($k$) or end ($k+1$) of the year.
 
-The *Assum & Outp - fixed C* tab contains calculations and results, assuming that $_kC$ equals a fixed $C$. This allows the use of the notation introduced in Chapter \@ref(Sec:BenefitActNot). Cells highlighted in yellow can be changed to adjust $x$, $n$, $C$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Chapter \@ref(Sec:BenefitActNot). In this and the next worksheet a column "Year" is introduced which is equal to $k+1$. The column is introduced so that we may think of the cash flows as related to a profit year for an insurer, which we will introduce in Chapter X. Various calculation columns for both $k$ and $k+1$ are calculated, to account for cash flows occuring at the beginning of the year (e.g. life annuities in advance) and cash flows occuring at the end of a year (e.g. life annuities in arrears) whilst still allocating these cash flows to the same year.
+The first tab, denoted as *Life Table*, contains yellow highlighted $q_x$ cells can be adjusted as desired.
 
-The "Assum & Outp - var C" tab contains calculations and results, allowing for a variable $_kC$. The calculations are performed using the first principles of equations \@ref(eq:Benefit2), \@ref(eq:Benefit3) and \@ref(eq:Benefit4). Cells highlighted in yellow can be changed to adjust $x$, $n$, $_kC$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Chapter \@ref(Sec:BenefitActNot). Similar timing conventions are adopted to that of the previous worksheet, with the cash flows occuring at the beginning ($k$) or end ($k+1$) of the year.
+The second tab, denoted as*Assum & Outp - fixed C*, contains calculations and results, assuming that $_kC$ equals a fixed $C$. This allows the use of the notation introduced in Section \@ref(Sec:BenefitActNot). Cells highlighted in yellow can be changed to adjust $x$, $n$, $C$ and $_ki$. Cells highlighted in orange provide the output calculations for the benefits described in Section \@ref(Sec:BenefitActNot). In this and the next worksheet a column "Year" is introduced which is equal to $k+1$. The column is introduced so that we may think of the cash flows as related to a profit year for an insurer, which we will introduce in Chapter X. Various calculation columns for both $k$ and $k+1$ are calculated, to account for cash flows occurring at the beginning of the year (e.g. life annuities in advance) and cash flows occurring at the end of a year (e.g. life annuities in arrears) whilst still allocating these cash flows to the same year.
 
-You are recommended to review the formulae in the workbook against those found in Chapters \@ref(Sec:BenefitCFunc) and \@ref(Sec:BenefitActNot), to confirm your understanding of how to perform the calculations in a spreadsheet package. The calculations are not performed in R, although a case study using `R` will be provided in Chapter \@ref(Sec:BenefitCS).
+You are recommended to review the formulae in the workbook against those found in Section \@ref(Sec:BenefitCFunc) and \@ref(Sec:BenefitActNot), to confirm your understanding of how to perform the calculations in a spreadsheet package. The calculations are not performed in `R`, although a case study using `R` will be provided in Section \@ref(Sec:BenefitCS).
 
 
 `r HideExample('AdamButtDiscussion.5',"Chapter Structure Discussion")`
@@ -1098,11 +1102,11 @@ You are recommended to review the formulae in the workbook against those found i
 
 ## Case Study: Valuing the benefits of a portfolio of term insurance policies {#Sec:BenefitCS}
 
-In this section we take what we have learned so far in this chapter and apply it to a more detailed valuation of the benefits of an individual and porfolio of term insurance policies.
+In this section we take what we have learned so far in this chapter and apply it to a more detailed valuation of the benefits of an individual and portfolio of term insurance policies.
 
 ### An individual policy {#Sec:BenefitCSInd}
 
-We showed how to value a single term insurance policy in Chapter \@ref(Sec:BenefitTI). We will now consider a specfic example of policyholder ID 160781 from the  simulated data described in <span style="color: red;">to be completed</span>. Imagine that this individual has purchased a term insurance policy with term 10 years, and that we wish to value the benefits under the policy immediately after purchase. The individual is male and aged 49 at the purchase of the policy. For the purpose of this example we will ignore all other predictors of mortality from the dataset. Hence ${\bf{x}} = x = 49$. Further we assume a sum insured of \$400,000 ($=~_kC$), and that mortality probability is expected to follow the US 2010-14 female rates described in Chapter 2. Assuming an interest rate of 2% per annum effective (<span style="color: red;">we could instead use a spot rate calculation from a primer done before this chapter</span>) ($=i_t$), the calculation of $\mathrm{E}(PV)$ and $\mathrm{Var}(PV)$ can be performed as follows, using the results from equation \@ref(eq:Benefit6) (note that to maintain flexibility the notation from Chapter \@ref(Sec:BenefitActNot) is not used):
+We showed how to value a single term insurance policy in Chapter \@ref(Sec:BenefitTI). We will now consider a specific example of policyholder ID 160781 from the  simulated data described in <span style="color: red;">to be completed</span>. Imagine that this individual has purchased a term insurance policy with term 10 years, and that we wish to value the benefits under the policy immediately after purchase. The individual is male and aged 49 at the purchase of the policy. For the purpose of this example we will ignore all other predictors of mortality from the dataset. Hence ${\bf{x}} = x = 49$. Further we assume a sum insured of \$400,000 ($=~_kC$), and that mortality probability is expected to follow the US 2010-14 female rates described in Chapter 2. Assuming an interest rate of 2% per annum effective (<span style="color: red;">we could instead use a spot rate calculation from a primer done before this chapter</span>) ($=i_t$), the calculation of $\mathrm{E}(PV)$ and $\mathrm{Var}(PV)$ can be performed as follows, using the results from equation \@ref(eq:Benefit6) (note that to maintain flexibility the notation from Chapter \@ref(Sec:BenefitActNot) is not used):
 
 ***
 
@@ -1127,7 +1131,9 @@ Like we did in Chapter \@ref(Sec:BenefitCFunc) we can calculate $\mathrm{E}(PV)$
 
 ***
 
+<center>
 <iframe width="800" height="450" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=22D545F33DAA9426%21359&authkey=%21AP81G6JRw10MSgg&em=2&wdAllowInteractivity=False&AllowTyping=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+</center>
 
 ***
 
@@ -1336,7 +1342,7 @@ hist(SumPV, main="Distribution of PV of a portfolio of policyholders", xlab="PV 
 
 </div>
 
-Two things are immediately apparent from the simulated observations of $PV$ from the porfolio of policies.  First, is that despite the extreme skewness of the $PV$ outcomes for an individual policyholder, the distribution of the $PV$ of the portfolio of policies is remarkably bell shaped. This is evidence of the Central Limit Theorem in action. Secondly, whilst the standard deviation of the $PV$ of an individual policy is multiple times larger than the $E(PV)$, the standard deviation of the $PV$ of a portfolio of policies is multiple times smaller than the $E(PV)$. This is an example of law of large numbers in action.
+Two things are immediately apparent from the simulated observations of $PV$ from the portfolio of policies.  First, is that despite the extreme skewness of the $PV$ outcomes for an individual policyholder, the distribution of the $PV$ of the portfolio of policies is remarkably bell shaped. This is evidence of the Central Limit Theorem in action. Secondly, whilst the standard deviation of the $PV$ of an individual policy is multiple times larger than the $E(PV)$, the standard deviation of the $PV$ of a portfolio of policies is multiple times smaller than the $E(PV)$. This is an example of law of large numbers in action.
 
 These are both important results that we will return to in later chapters when investigating the financial condition of a life insurer.
 
