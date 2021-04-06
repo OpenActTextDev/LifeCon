@@ -44,8 +44,9 @@ eq:Benefit16
 fig:Benefit9a
 eq:Benefit17
 eq:Benefit18
-eq:Benefit19
+fig:TermInsPorta
 eq:Benefit20
+fig:TermInsPortExampleSimsa
 fig:Halo1a
 introduction
 modeling-lifetimes
@@ -76,11 +77,10 @@ life-annuity
 term-life-annuity
 deferred-life-annuity
 guaranteed-life-annuity
-Sec:BenefitLT
+Sec:BenefitSpread
 Sec:BenefitCS
 Sec:BenefitCSInd
 Sec:BenefitCSPort
-valuing-benefits-using-actuarial-notation
 Sec:ExamplesValCash
 C:BenefitExt
 the-impact-of-self-selection
