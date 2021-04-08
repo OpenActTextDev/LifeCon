@@ -14,6 +14,7 @@ fig:QxUSMalDataFigs
 fig:QxUSFemMalDataFigs
 fig:LxMalFemDataFigs
 fig:P0USFemMalDataFigs
+fig:KMFigs
 fig:IndonesianLifeTablePlot
 eq:Benefit1
 fig:Benefit1a
@@ -53,8 +54,8 @@ modeling-lifetimes
 S:MortData
 life-expectancies
 population-mortality-counts
-individual-mortality-data
-S:
+S:IndivMortData
+Sec:ModelingDeaths
 lifetime-random-variable-and-its-distribution
 survival-and-mortality-probabilities
 S:LifeExp
@@ -62,7 +63,7 @@ S:AnalMortLaws
 S:LifeTab
 S:LifeTabBasic
 S:LifeTabMImpr
-non-parametric-survival-estimation
+S:NonParamSurv
 conditional-models-survival-regression
 Sec:LifeTableRecursive
 C:SimpleBenefit
