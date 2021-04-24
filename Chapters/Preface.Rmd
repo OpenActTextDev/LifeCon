@@ -3,19 +3,22 @@
 
 #### Book Description {-}
 
-This will be an interactive, online, freely available text.
+Like the companion book [Loss Data Analytics](https://openacttexts.github.io/Loss-Data-Analytics/index.html), this book on life contingencies will be an interactive, online, freely available text.
 
-- The online version contains many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote *deeper learning*.
-- A subset of the book will be available for *offline reading* in pdf and EPUB formats.
-- The online text will be available in multiple languages to promote access to a *worldwide audience*.
+- 	The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote *deeper learning*. A subset of the book will be available for *offline* reading in pdf and EPUB formats.
+- 	Will focus on data and statistical aspects of life contingente events
+- 	Will emphasize cash flow fundamentals, an approach that allows users to easily adapt approaches to handle complex products
+- 	This modular approach emphasizing data and cash flow fundamentals has additional advantages:
+    -  computational aspects become practically relevant through spreadsheet (e.g., `Microsoft Excel`) and numerical (`R`) examples, and
+    -  an emphasis on the foundations provides an easy entry point for learners who wish an introduction to the field.
 
-####  What will success look like? {-}
-
-The online text will be freely available to a worldwide audience. The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. Moreover, a subset of the book will be available in pdf format for low-cost printing. The online text will be available in multiple languages to promote access to a worldwide audience.
 
 ####  How will the text be used? {-}
 
-This book will be useful in actuarial curricula worldwide. It will cover the earning objectives of the major actuarial organizations. Thus, it will be suitable for classroom use at universities as well as for use by independent learners seeking to pass professional actuarial examinations. Moreover, the text will also be useful for the continuing professional development of actuaries and other professionals in insurance and related financial risk management industries.
+This book will be useful in actuarial curricula worldwide. Our primary **target audience** is second or third year undergraduates with little to no experience in insurance. Learners may be international; although the book will be in English, we do not expect knowledge of native idiosyncrasies that might be used in the classroom. It will cover the learning objectives of the major actuarial organizations. Thus, it will be suitable for classroom use at universities as well as for use by independent learners seeking to pass professional actuarial examinations.
+
+A secondary audience is the actuarial practitioner (perhaps international) who wishes to retool and learn about modern approaches in the risk management of life contingent events. Thus, the text will also be useful for the continuing professional development of actuaries and other professionals in insurance and related financial risk management industries.
+
 
 #### Why is this good for the profession?  {-}
 
@@ -55,50 +58,16 @@ We also wish to acknowledge the support and sponsorship of the [International As
 
 The project goal is to have the actuarial community author our textbooks in a collaborative fashion. The following contributors have taken a leadership role in developing *Life Contingencies*.
 
-
-
 - **Vali Asimit**
-
 - **Dani Bauer**
-
 - **Adam Butt**
-
-
+- **Edward (Jed) Frees** 
 - **Emiliano Valdez**
 
-
-
-
-<img src = "ContributorPics\Frees_Jed2018_150x188.jpg" width = "150" height = "180" style = "float:right; margin-left: 10px; margin-top: 7px" />
-
-- **Edward W. (Jed) Frees** is an emeritus professor, formerly the Hickman-Larson Chair of Actuarial Science at the University of Wisconsin-Madison. He is a Fellow of both the Society of Actuaries and the American Statistical Association. He has published extensively (a four-time winner of the Halmstad and Prize for best paper published in the actuarial literature) and has written three books. He also is a co-editor of the two-volume series *Predictive Modeling Applications in Actuarial Science* published by Cambridge University Press.
-
-
-## Reviewers  {-}
-
-Our goal is to have the actuarial community author our textbooks in a collaborative fashion. Part of the writing process will involve many reviewers to help make this book better. 
-
 ## For our Readers  {-}
-
-We hope that you find this book worthwhile and even enjoyable. For your convenience, at our [Github Landing site](https://openacttexts.github.io/) (https://openacttexts.github.io/), 
-
-In developing this book, we are emphasizing the [online version](https://openacttexts.github.io/Loss-Data-Analytics/index.html) that has lots of great features such as a glossary, code and solutions to examples that you can be revealed interactively. For example, you will find that the statistical code is hidden and can only be seen by clicking on terms such as 
-
-`r HideRCode('SeverityFig.1Intro',"R Code for Frequency Table")`
-
-```{r, echo=SHOW_PDF, eval=FALSE}
-Insample <- read.csv("Insample.csv", header=T,  na.strings=c("."), 
-                      stringsAsFactors=FALSE)
-Insample2010 <- subset(Insample, Year==2010)
-table(Insample2010$Freq)
-```
-</div>
-  
-We hide the code because we don't want to insist that you use the `R` statistical software (although we like it). Still, we encourage you to try some statistical code as you read the book -- we have opted to make it easy to learn `R` as you go. We have set up a separate [R Code for Loss Data Analytics](https://openacttexts.github.io/LDARcode) site to explain more of the details of the code.
 
 Like any book, we have a set of notations and conventions. It will probably save you time if you regularly visit our Appendix Chapter \@ref(C:NotationConventionLC) to get used to ours.
 
 Freely available, interactive textbooks represent a new venture in actuarial education and we need your input. Although a lot of effort has gone into the development, we expect hiccoughs. Please let your instructor know about opportunities for improvement, write us through our project site, or contact chapter contributors directly with suggested improvements.
 
-[@abadir2002notation]
 

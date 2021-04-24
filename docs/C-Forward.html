@@ -277,7 +277,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#reviewers"><i class="fa fa-check"></i>Reviewers</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
@@ -327,7 +326,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#modelling-contingent-cash-flows-more-frequently-than-annually"><i class="fa fa-check"></i><b>4.2</b> Modelling contingent cash flows more frequently than annually</a></li>
 <li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#modelling-contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.3</b> Modelling contingent cash flows in continuous time</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a></li>
+<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a><ul>
+<li class="chapter" data-level="5.1" data-path="C-Forward.html"><a href="C-Forward.html#table-of-contents"><i class="fa fa-check"></i><b>5.1</b> Table of Contents</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>6</b> Appendix: Conventions for Notation</a><ul>
 <li class="chapter" data-level="6.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#S:NC:ActSymbols"><i class="fa fa-check"></i><b>6.1</b> Actuarial Notation</a><ul>
 <li class="chapter" data-level="6.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>6.1.1</b> Life Table Symbols</a></li>
@@ -364,7 +365,130 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="C:Forward" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Going Forward</h1>
+<p>Here are some alternative titles under consideration. Help us pick one by giving feedback. Suggest others.</p>
+<ul>
+<li>The Mathematics, Statistics, and Economics of Life Contingencies</li>
+<li>Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</li>
+<li>Life Contingencies Analytics</li>
+<li>Life Contingent Analytics</li>
+<li>Analytics of Life Contingencies</li>
+</ul>
+<p>The book is intended to cover the learning objectives of the major actuarial organizations. You can view this <a href="https://1drv.ms/x/s!AtGVBXvOcBufjUWoOzL7nob2cOl4?e=E4mUMR">spreadsheet</a> that summarizes their requirements.</p>
+<div id="table-of-contents" class="section level2">
+<h2><span class="header-section-number">5.1</span> Table of Contents</h2>
+<p><em>Chapter 1. Introduction</em></p>
+<p>Include a motivating example on “Saving by yourself vs. sharing mortality risk”</p>
+<p><strong>Part I. Foundations</strong></p>
+<p><em>Chapter 2. Modeling Lifetimes</em><br>
+<em>Chapter 3. Basic Life Contingent Benefits</em><br>
+<em>Chapter 4. Other Life Contingent Benefits</em></p>
+<p><strong>Part II. Core Material</strong></p>
+<p><em>Chapter 5. Premiums</em></p>
+<ul>
+<li>5.1 Diversification and the Equivalence Principle</li>
+<li>5.2 Portfolio Percentile Premiums</li>
+<li>5.3 Net Premiums
+<ul>
+<li><code>R</code> and <code>Excel</code> tutorial – determining premiums, compare simulations to normal distributions</li>
+</ul></li>
+</ul>
+<p><em>Chapter 6. Reserves and Capital</em></p>
+<ul>
+<li>6.1 Policy values, retrospective and prospective reserves; statutory reserves</li>
+<li>6.2 Policy recursions; Thiele’s differential equation</li>
+<li>6.3 Expenses, gross premiums and reserves</li>
+<li>6.4 Capital requirements</li>
+</ul>
+<p><em>Chapter 7. Multi-State Modeling</em></p>
+<ul>
+<li>7.1. Models with Multiple States, Markov chains</li>
+<li>7.2. Modeling state-contingent cash flows; distribution of portfolio values; determining expected values and variances</li>
+<li>7.3. Expected values; Kolmogorov equations; general premiums and reserves
+<ul>
+<li><code>R</code> and <code>Excel</code> tutorial – implement Kolmogorov equation, Euler scheme</li>
+</ul></li>
+<li>7.4. Multiple life functions; joint survival and last survivor status; independence and common shock model
+<ul>
+<li><code>R</code> and <code>Excel</code> tutorial – determine premiums and reserves for multiple life policies</li>
+</ul></li>
+<li>7.5. Multiple decrement models and tables; estimation and associated life tables; applications
+<ul>
+<li><code>R</code> and <code>Excel</code> tutorial – determine premiums and reserves in multiple decrement models</li>
+</ul></li>
+<li>7.6. Estimation of (conditional) intensities; relationship between two state and multiple state models
+<ul>
+<li><code>R</code> tutorial – estimate pension models, simulate, use for pension projections</li>
+</ul></li>
+</ul>
+<p><strong>Part III. Dynamic Models</strong></p>
+<p><em>Chapter 8. A Primer on Financial Modeling</em></p>
+<ul>
+<li>8.1. Securities and yields: Government bonds and yields; real vs. nominal yields; TIPS; corporate bonds; credit spreads; mortgage rates</li>
+<li>8.2. Yield curves: discounting cash flows; spot and forward rates
+<ul>
+<li><code>R</code> and <code>Excel</code> tutorial – US yield curve data; yields over time; changes in the yield curve</li>
+<li>Investment yields; Typical life insurance asset portfolios; cost of capital; taxes; pricing fixed term annuities</li>
+<li>Excel tutorial: Pricing fixed term annuities via a company investment module</li>
+</ul></li>
+<li>8.3. Stochastic modeling:
+<ul>
+<li>Stochastic yield curve models (Affine VAR models), risky returns</li>
+<li><code>R</code> tutorial – Calculating capital based on a stochastic asset model</li>
+</ul></li>
+</ul>
+<p><em>Chapter 9. Stochastic Mortality Modeling</em></p>
+<ul>
+<li>9.1. Lee Carter, CBD
+<ul>
+<li><code>R</code> tutorial – Calculating capital based on a stochastic asset and liability model</li>
+</ul></li>
+<li>9.2. Models with stochastic Health (Future Elderly Model)</li>
+</ul>
+<p><strong>Part IV. Industry Perspectives</strong></p>
+<p><em>Chapter 10. Industry Perspective: Life insurance</em></p>
+<ul>
+<li>Contracts, pricing, profits, etc.</li>
+<li>Some examples of topics here relate to Universal Life, Equity-Linked Life Insurance, Long Term Care, Effects of a Pandemic to the Industry, Micro Insurance, Other International Perspectives</li>
+</ul>
+<p><em>Chapter 11. Industry Perspective: Annuities</em></p>
+<ul>
+<li>Contracts, pricing, profits, etc.</li>
+<li>Modern annuity products such as variable annuities, Why annuity market is thin?, The selection issue in the annuity market, Life insurance vs annuity mortality, Hedging and other risk management related topics</li>
+</ul>
+<p><em>Chapter 12. Industry Perspective: Pensions</em></p>
+<ul>
+<li>Contracts, pricing, profits, etc.</li>
+<li>Funding approaches, regulations of pension plans</li>
+</ul>
+<p><em>Chapter 13. Industry Perspective: Long Term Care</em></p>
+<ul>
+<li>Contracts, pricing, profits, etc.</li>
+<li>Retirement health insurance products</li>
+</ul>
+<p><em>Chapter 14. Public Policy Applications</em></p>
+<ul>
+<li>14.1. Social Security projections</li>
+<li>14.2. Willingness-to-pay, Value of Statistical Life</li>
+</ul>
+<p><strong>Appendices</strong></p>
+<p><em>A Primer on Insurance Economics</em></p>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li>Demand, supply, and equilibrium</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li>Price competition, Bertrand equilibrium</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-alpha">
+<li>Risk sharing 101, utility functions</li>
+</ol></li>
+</ul>
+<p><em>Conventions for Notation</em></p>
+<p><strong>Book Prerequisites</strong>: One term in calculus based probability (e.g., SOA P exam level) and an introduction to interest theory (e.g., SOA FM exam level).</p>
+<p><strong>Note</strong>: Requiring only probability, and not mathematical statistics, is the approach used in <em>Loss Data Analytics</em>. In these online resources, we have a few appendices that give an introduction to math stat needed for empirical work. The idea is that an instructor could enforce a co-requisite of math stat while teaching or ask students to read the appendices on their own. This is a little klunky but we want to this book to be available to students early in their careers and not force them to wait until they have completed math stats.</p>
+<p>We can discuss whether this is appropriate for life contingencies, or further improve on the explanation/motivation.</p>
 
+</div>
 </div>
             </section>
 

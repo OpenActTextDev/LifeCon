@@ -88,6 +88,7 @@ the-impact-of-self-selection
 modelling-contingent-cash-flows-more-frequently-than-annually
 modelling-contingent-cash-flows-in-continuous-time
 C:Forward
+table-of-contents
 C:NotationConventionLC
 S:NC:ActSymbols
 life-table-symbols
