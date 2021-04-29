@@ -21,6 +21,8 @@ fig:Benefit1a
 eq:Benefit2
 eq:Benefit3
 eq:Benefit4
+eq:AnnBenefit4
+eq:AnnBenefit5
 fig:Benefit2a
 eq:Benefit5
 fig:IndonesianLifeInsPlot
@@ -68,6 +70,8 @@ conditional-models-survival-regression
 Sec:LifeTableRecursive
 C:SimpleBenefit
 Sec:BenefitCFunc
+moment-calculations
+illustrative-moments-of-cash-flows
 Sec:BenefitActNot
 Sec:BenefitWL
 Sec:BenefitTI
