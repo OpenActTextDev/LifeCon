@@ -86,6 +86,7 @@ Sec:BenefitSpread
 Sec:BenefitCS
 Sec:BenefitCSInd
 Sec:BenefitCSPort
+further-resources-and-contributors
 Sec:ExamplesValCash
 C:BenefitExt
 the-impact-of-self-selection
