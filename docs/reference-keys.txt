@@ -25,9 +25,11 @@ eq:AnnBenefit4
 eq:AnnBenefit5
 fig:Benefit2a
 eq:Benefit5
-fig:IndonesianLifeInsPlot
+fig:BaseLifeInsPlot
+fig:BPInsPlot
 fig:Benefit3a
 eq:Benefit6
+fig:TermInsPlot
 fig:Benefit4a
 eq:Benefit7
 fig:Benefit5a

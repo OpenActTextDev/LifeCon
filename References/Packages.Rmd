@@ -27,6 +27,9 @@ library("gifski")
 library("invgamma")
 library("ChainLadder")
 library("knitr")
+library(ggplot2)
+library(gridExtra)
+
 #library("kableExtra")
 
 # Install as needed
