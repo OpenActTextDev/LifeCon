@@ -8,7 +8,7 @@
 
 
 
-## Appendix 3A. Examples of valuation of general cash flows  {#Sec:ExamplesValCash}
+## Appendix 3A. Examples of Valuation of General Cash Flows  {#Sec:ExamplesValCash}
 
 `r HideExample('FreesNotes.1',"Chapter Structure Discussion")`
 

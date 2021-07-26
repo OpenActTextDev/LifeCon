@@ -54,7 +54,7 @@ eq:Benefit17
 eq:Benefit18
 fig:TermInsPorta
 eq:Benefit20
-fig:TermInsPortExampleSimsa
+fig:TermInsPortSima
 fig:Halo1a
 introduction
 modeling-lifetimes
@@ -97,6 +97,7 @@ Sec:BenefitSpread
 Sec:BenefitCS
 Sec:BenefitCSInd
 Sec:BenefitCSPort
+simulated-distribution-of-a-portfolio-of-policies
 further-resources-and-contributors
 Sec:ExamplesValCash
 C:BenefitExt
