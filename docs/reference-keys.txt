@@ -17,9 +17,10 @@ fig:exFemFiga
 fig:MortImpHeatFiga
 fig:MortImpFacsa
 fig:CohortvsPeriodqxa
-fig:KMFigs
-fig:NAFigs
-fig:IndonesianLifeTablePlot
+fig:KaplanMeierPlotsa
+fig:NelsonAalenPlotsa
+fig:CoxPHPlotsa
+fig:NewlyUnderwrittenLifeQxa
 eq:Benefit1
 fig:Benefit1a
 eq:Benefit2
@@ -82,8 +83,9 @@ kaplan-meier-estimate
 nelson-aalen
 S:SurvReg
 the-cox-proportional-hazard-model
-parametric-models
-Sec:LifeTableRecursive
+cox-models-based-on-life-insurer-data
+conditional-life-tables
+notes-and-comments
 C:SimpleBenefit
 Sec:BenefitCFunc
 moment-calculations
