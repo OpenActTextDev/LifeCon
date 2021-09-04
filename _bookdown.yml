@@ -1,14 +1,13 @@
 book_filename: "LifeCon"
 output_dir: "docs"
 rmd_files: ["index.Rmd", 
-           "References/Packages.Rmd",
-           "References/Glossary.Rmd",
-           "References/PdfOutput.Rmd",
+           "References/PackagesLifecon.Rmd",
+           "References/HideShowHelper.Rmd",
            "Chapters/Preface.Rmd", 
            "Chapters/Chap2Survival3Sept2021.Rmd",
 #           "Chapters/Append2ALifeTable.Rmd",
            "Chapters/Chap3LifeConBenefits2.14.Rmd",
-           "Chapters/Chap3ExamplePresValues.Rmd", 
+           "Chapters/Chap3ExamplePresValuesA.Rmd", 
             "Chapters/Chap4Forward.Rmd", 
            "Chapters/NotationConventionsLC.Rmd",
            "Chapters/Bibliography.Rmd"]
