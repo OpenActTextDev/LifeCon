@@ -46,8 +46,7 @@ This respository is focused on a new text, currently titled *Life Contingencies:
 https://stackoverflow.com/questions/38004148/another-git-process-seems-to-be-running-in-this-repository)
 7.  Now, we can leave the shell
     *  Git tab ==> Commit ==>Provide a short descriptive name
-    *  Then hit the push (up arrow)
-Hopefully everything goes up to Github.
+    *  Then hit the push (up arrow). When it asks for authentication, put in your Github name. Use the personal access token instead of the Github password. Hopefully everything goes up to Github.
 8.  Finally to get the world to see your page:
     *  Settings ==> GitHub pages ==>Check it out here! ==> 
     *  Source Change "None" to "main". Change "/root" to "/docs" . Then save.
