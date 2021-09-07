@@ -27,7 +27,11 @@ library("Hmisc")
 library("knitr")
 library(ggplot2)
 library(gridExtra)
-
+library(tutorial)
+library(corrplot)
+library(DT)
+library(latex2exp)
+library(rgl)
 
 
 
