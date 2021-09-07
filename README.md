@@ -23,7 +23,9 @@ This respository is focused on a new text, currently titled *Life Contingencies:
 
 ### UPLOAD YOUR BOOK VERSION TO GITHUB
 
-1.  Start by getting a (free) Github account.
+1a.  Start by getting a (free) Github account.
+1b.  Install Git on your local machine (https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+1c.  Get a personal access token that you will need when you communicate between Rstudio and Github. (https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 2.  We are going to follow the process documented at https://happygitwithr.com/existing-github-first.html, so you might want to look over this excellent resource before beginning.
 3.  16.1 Make a repo on GitHub
     *  Go to https://github.com and make sure you are logged in.
