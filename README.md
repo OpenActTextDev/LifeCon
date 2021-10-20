@@ -75,7 +75,7 @@ To see our progress, a current version of the book is available at [Online Versi
 *  The more frequently updated  version is available through the first ["Development" Github Landing Site](https://ewfrees.github.io) - designed for instructors and developers.
 *  We are now porting resources to a newer, second ["Development" Github](https://github.com/OpenActTextDev/LifeCon) center - designed for instructors and developers.
 
-Code, data, offline versions and more are available through these portals..
+Code, data, offline versions and more are available through these portals.
 
 ## Other Resources
 

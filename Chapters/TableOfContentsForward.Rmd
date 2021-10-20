@@ -1,0 +1,121 @@
+
+
+
+# Going Forward {#C:Forward}
+
+Here are some alternative titles under consideration. Help us pick one by giving feedback. Suggest others.
+
+-  The Mathematics, Statistics, and Economics of Life Contingencies
+-  Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance
+-  Life Contingencies Analytics
+-  Life Contingent Analytics
+-  Analytics of Life Contingencies
+
+The book is intended to cover the learning objectives of the major actuarial organizations. You can view this [spreadsheet](https://1drv.ms/x/s!AtGVBXvOcBufjUWoOzL7nob2cOl4?e=E4mUMR) that summarizes their requirements.
+
+
+## Table of Contents
+
+*Chapter 1. Introduction*
+
+Include a motivating example on “Saving by yourself vs. sharing mortality risk"
+
+**Part I. Foundations**
+
+*Chapter 2. Modeling Lifetimes*<br>
+*Chapter 3. Basic Life Contingent Benefits*<br>
+*Chapter 4. Contingent Payment Techniques*
+
+**Part II. Core Material**
+
+*Chapter 5. Premiums* 
+
+-  5.1  Diversification and the Equivalence Principle
+-  5.2  Portfolio Percentile Premiums
+-  5.3  Net Premiums
+    -  `R` and `Excel` tutorial – determining premiums, compare simulations to normal distributions
+
+*Chapter 6. Reserves and Capital*
+
+-  6.1 Policy values, retrospective and prospective reserves; statutory reserves
+-  6.2 Policy recursions; Thiele’s differential equation
+-  6.3 Expenses, gross premiums and reserves
+-  6.4 Capital requirements
+
+*Chapter 7. Multi-State Modeling*
+
+-  7.1. Models with Multiple States, Markov chains
+-  7.2. Modeling state-contingent cash flows; distribution of portfolio values; determining expected values and variances
+-  7.3. Expected values; Kolmogorov equations; general premiums and reserves
+    -  `R` and `Excel` tutorial – implement Kolmogorov equation, Euler scheme
+-  7.4. Multiple life functions; joint survival and last survivor status; independence and common shock model
+    -  `R` and `Excel` tutorial – determine premiums and reserves for multiple life policies
+-  7.5. Multiple decrement models and tables; estimation and associated life tables; applications
+    -  `R` and `Excel` tutorial – determine premiums and reserves in multiple decrement models
+-  7.6. Estimation of (conditional) intensities; relationship between two state and multiple state models
+    -  `R` tutorial – estimate pension models, simulate, use for pension projections
+
+**Part III. Dynamic Models**
+
+*Chapter 8. A Primer on Financial Modeling*
+
+-  8.1. Securities and yields: Government bonds and yields; real vs. nominal yields; TIPS; corporate bonds; credit spreads; mortgage rates
+-  8.2. Yield curves: discounting cash flows; spot and forward rates
+    -  `R` and `Excel` tutorial – US yield curve data; yields over time; changes in the yield curve
+    -  Investment yields; Typical life insurance asset portfolios; cost of capital; taxes; pricing fixed term annuities 
+    -  Excel tutorial: Pricing fixed term annuities via a company investment module
+-  8.3. Stochastic modeling:
+    -  Stochastic yield curve models (Affine VAR models), risky returns
+    -  `R` tutorial – Calculating capital based on a stochastic asset model
+
+*Chapter 9. Stochastic Mortality Modeling*
+
+-  9.1. Lee Carter, CBD
+    -  `R` tutorial – Calculating capital based on a stochastic asset and liability model
+-  9.2. Models with stochastic Health (Future Elderly Model)
+
+**Part IV. Industry Perspectives**
+
+*Chapter 10. Industry Perspective: Life insurance*
+
+-  Contracts, pricing, profits, etc.
+-  Some examples of topics here relate to Universal Life, Equity-Linked Life Insurance, Long Term Care, Effects of a Pandemic to the Industry, Micro Insurance, Other International Perspectives
+
+*Chapter 11. Industry Perspective: Annuities*
+
+-  Contracts, pricing, profits, etc.
+-  Modern annuity products such as variable annuities, Why annuity market is thin?, The selection issue in the annuity market, Life insurance vs annuity mortality, Hedging and other risk management related topics
+
+*Chapter 12. Industry Perspective: Pensions*
+
+-  Contracts, pricing, profits, etc.
+-  Funding approaches, regulations of pension plans
+
+*Chapter 13. Industry Perspective: Long Term Care*
+
+-  Contracts, pricing, profits, etc.
+-  Retirement health insurance products
+
+*Chapter 14. Public Policy Applications*
+
+-  14.1. Social Security projections
+-  14.2. Willingness-to-pay, Value of Statistical Life
+
+**Appendices**
+
+*A Primer on Insurance Economics*
+
+-  a.	Demand, supply, and equilibrium
+-  b.	Price competition, Bertrand equilibrium
+-  c.	Risk sharing 101, utility functions
+
+*Conventions for Notation*
+
+**Book Prerequisites**: One term in calculus based probability (e.g., SOA P exam level) and an introduction to interest theory (e.g., SOA FM exam level).
+
+**Note**: Requiring only probability, and not mathematical statistics, is the approach used in *Loss Data Analytics*. In these online resources, we have a few appendices that give an introduction to math stat needed for empirical work. The idea is that an instructor could enforce a co-requisite of math stat while teaching or ask students to read the appendices on their own. This is a little klunky but we want to this book to be available to students early in their careers and not force them to wait until they have completed math stats. 
+
+We can discuss whether this is appropriate for life contingencies, or further improve on the explanation/motivation.
+
+
+
