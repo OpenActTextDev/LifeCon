@@ -1,0 +1,771 @@
+# Contingent Payment Techniques {#C:BenefitExt}
+
+
+$\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
+
+`r chapnum = 4`
+
+We have now learned the foundations of life contingencies through Chapter \@ref(C:ModelingLifeTimes)  survival modeling and Chapter \@ref(C:SimpleBenefit) discounting of contingent cash flows. This chapter provide extensions and variations to exhibit the richness of applications.
+
+Specifically, Section \@ref(Sec:mthlyFlows) presents a relatively minor extension theoretically, allowing for $m^{th}$ly cash flows, that has extensive practical ramifications for retirement benefits, other life contingent annuities, and premium payment plans. Section \@ref(Sec:SamplingBias) sharpens our intuition about survival modeling by linking the choice of a survival dataset to an application under consideration. Section \@ref(Sec:EconomicMotivation) provides economic motivation for some of the measures summarizing insurance features introduced in Chapter \@ref(C:SimpleBenefit); this motivation provides insights as why some of these are so important in practice. Through a variety of examples, Section \@ref(Sec:ApplicationsContingent) shows that the framework for life contingent benefits applies to contingent payment problems that go beyond applications in only the life insurance industry.
+
+
+## Contingent Cash Flows Occurring $m^{th}$ly {#Sec:mthlyFlows}
+
+This section extends Chapter \@ref(C:SimpleBenefit) by considering cases where cash flows occur more frequently than once a year. For example, it is common for retirement benefits to be paid on a monthly basis while a person is alive. As another example, premiums might be paid twice a year, as long as the policyholder is alive and the contract is in force. We use $m$ to denote the number of payments per year. For the retirement benefits example, we would use $m=12$ and for premiums, $m=2$. Other common examples are $m=4$ for quarterly cash flows, $m=52$ for weekly, and so forth. We will even consider the case where the number of payments becomes arbitrarily large, $m \to \infty$, corresponding to a cash flow at the moment an event such as death occurs.
+
+When describing benefits paid discretely, we started in Chapter \@ref(C:SimpleBenefit) with annual payments because mortality tables have traditionally been presented on an integer age basis. In addition, business requirements such as insurance company financial reporting is done routinely on an annual basis. Nonetheless, as described above, there are also important situations where payments occur than annually (typically more frequently, although payments once every, e.g., two years are certainly plausible).
+
+### Basic Concepts
+
+
+To appreciate the concerns when transiting from an annual to an $m^{th}$ly basis, here is a modified version of Figure \@ref(fig:Benefit1a). 
+
+(ref:Benefitm1) **Timeline of $m^{th}$ly cash flows with uncertainty** 
+
+```{r Benefitm1a, fig.cap='(ref:Benefitm1)', fig.width=6, fig.height=2.0, echo = FALSE}
+plot.new()
+par(mar = c(0,0,0,0) + 0.1)
+plot.window(xlim=c(0,14),ylim=c(2.5,7.5))
+
+arrows(5,6,13,6,code=2,lwd=2,angle=45,length=0.10)
+arrows(5,6.2,5,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(7,6.2,7,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(9,6.2,9,5.8,code=0,lwd=2,angle=0,length=0.10)
+arrows(11,6.2,11,5.8,code=0,lwd=2,angle=0,length=0.10)
+
+library(latex2exp)
+
+text(1,7,"Time")
+text(5,7,"0/m")
+text(7,7,"1/m")
+text(9,7,"2/m")
+text(11,7,"3/m")
+text(13.5,7,"...")
+text(1,5,"Discount")
+text(5,5,1)
+text(7,5,TeX("v^{1/m}"))
+text(9,5,TeX("v^{2/m}"))
+text(11,5,TeX("v^{3/m}"))
+text(13.5,5,"...")
+text(1,4,"      Potential Cash Flow")
+text(5,4,TeX("_{0/m}C"))
+text(7,4,TeX("_{1/m}C"))
+text(9,4,TeX("_{2/m}C"))
+text(11,4,TeX("_{3/m}C"))
+text(13.5,4,"...")
+text(1,3,"      Cash Flow Indicator")
+text(5,3,TeX("_{0/m}B"))
+text(7,3,TeX("_{1/m}B"))
+text(9,3,TeX("_{2/m}B"))
+text(11,3,TeX("_{3/m}B"))
+text(13.5,3,"...")
+box(col = 'lightblue')
+
+```
+
+Similar to equation \@ref(eq:Benefit2), the present value $PV$ random variable can be summarized as
+
+$$
+\begin{array}{l}
+PV = \sum_{r=0}^{\infty} v^{r/m} ~_{r/m}C~_{r/m}B~   ~,\\
+\end{array}
+(\#eq:Benefitm2)
+$$
+
+using $r$ is a counter for the number of $m^{th}$ly units. For probabilities associated with the cash flow indicator, as we saw in Chapter 3, we are concerned with payments either at the death or the survival of a policyholder age $x$. That is,
+
+$$
+\mathrm{E} \left(_{r/m}B\right) = \left\{\begin{array}{ccc}
+\Pr\left(\frac{r-1}{m} < T_x \le \frac{r}{m}\right) & = & ~_{(r-1)/m} p_x - ~_{r/m} p_x& {\small \text{ prob of death}} \\
+\Pr\left(T_x \ge \frac{r}{m}\right) & =& ~_{r/m} p_x & {\small \text{ prob of survival} }.\\
+\end{array}
+\right.
+(\#eq:ExpBenefitm2)
+$$
+As many readers will recall from their study of interest theory, if we think of a discount factor $v^t = (1 + ~_t i)^{-t}$ in terms of a spot rate of interest $~_t i$, then there is no difficulty at all in discounting at non-integer times. In addition, suppose that the survival model can be expressed in terms of continuous time, such as the analytic laws of mortality in Section \@ref(S:AnalMortLaws) or their extended versions in Section \@ref(S:SurvReg). In these cases, thinking of the unit of time as a year is a mere convenience and no additional theoretical extensions are required for handling $m^{th}$ly cash flows. 
+
+**Uniform Distribution of Deaths.** Only in the case where we have annual mortality with $m^{th}$ly cash flows are some extensions required. And we already started on this in Section \@ref(S:LifeTabFrac) where fractional year assumptions were introduced. To see how this works with $m^{th}$ly cash flows, we use the uniform distribution of death (*UDD*) assumption so that we can express $~_t p_x = 1 - t \times q_x$, for $0 \le t \le 1$. Thus, using $j$ is a counter for the number of $m^{th}$ly units within a year, we have
+
+$$
+~_{j/m} p_x = 1- \frac{j}{m} \times q_x, \ \ \text{for } j= 0, 1, \ldots, m-1.
+$$
+For integer $k=0, 1, \dots$
+
+$$
+~_{k+j/m} p_x =  ~_k p_x \times ~_{j/m} p_{x+k}= ~_k p_x  \times \left(1- \frac{j}{m} \times q_{x+k}\right).
+$$
+Here, to calculate the probability of a life aged $x$ surviving $k+j/m$ years, we first calculated the probability of surviving $k$ (integer) years and then, conditional on having attained age $x+k$, applied the *UDD* assumption to calculate the probability of surviving an additional $j/m$ fraction of a year. These expressions, together with equations \@ref(eq:Benefitm2) and \@ref(eq:ExpBenefitm2), are enough to compute an expected present value for an $m^{th}$ly version of any of the Chapter \@ref(C:SimpleBenefit) cash flows.
+
+
+### Illustrative Cash Flows
+
+Let us see how these ideas work with a few illustrative examples. To begin, we start by assuming that we have a continuous time probability model and so no simplifying assumptions are needed.
+
+<a id=tab:Ex4.1></a> 
+
+[Example 4.1]: ../docs/C-BenefitExt.html##tab:Ex4.1
+
+**Example 4.1. Whole Life Insurance with $m^{th}$ly Payments with Continuous Time Mortality**. For this contract, the benefit is paid at the end of the $m^{th}$ly period in which death occurs. Let us return to the familiar [Example 3.2] that used the Section \@ref(S:SurvReg) mortality. We consider the baseline case in [Example 3.2] that you will recall is  a healthy female who is not a smoker, not obese, and has an average blood pressure level equal to 114, as well as an interest rate of 4%.
+
+To calculate the expected value of this policy, we may use equations \@ref(eq:Benefitm2) and \@ref(eq:ExpBenefitm2) directly with the potential cash flows identically equal to one $~_{k/m}C \equiv 1$. The resulting expected present value is
+
+$$
+\begin{array}{rl}
+ A_{{\bf{x}}}^{(m)} &= \sum_{r=0}^{\infty} ~v^{(r+1)/m} \{ ~_{r/m} p_x - ~_{(r+1)/m} p_x \} ,\\
+\end{array}
+$$
+
+an expression that introduces the common actuarial notation for the expected present value of this contract. Figure \@ref(fig:MBaseLifeInsPlot) summarizes the expected presented values by age $x$ over choices of $m=1,2,4, 12$. As is evident from the plot, these values are close and in fact ordered as
+
+$$
+A_x = A_x^{(1)} \le A_x^{(2)} \le A_x^{(4)} \le A_x^{(12)} ~.
+$$
+
+The annual expected presented value, $A_x = A_x^{(1)}$, is the smallest because it is the contract with payments potentially farthest in the future. For example, if a person dies just before one month into a contract year, then the payment is 11 months after death. In contrast, it is five months after death when $m=2$, two months later for $m=4$ and virtually instantaneous for $m=12$. So, the very largest the separation that could be in Figure \@ref(fig:MBaseLifeInsPlot) is $1/(1+i) = 1/1.04$, for this example.
+
+
+```{r echo = FALSE}
+#  Mortality Calculations
+cons         <-  1e-6
+time_fac     <-  -0.013078529
+coeff_age    <-  0.11691 
+coeff_male   <-  0.40359
+coeff_bpress <-  0.01645
+coeff_smok   <-  0.76798
+coeff_obese  <-  0.24944 #BMI beyond 30
+
+m.q.x.function <- function(time=65,m=2, male=0, bpress=114.06, smoke=0, obese=0){
+  xage1 <- seq(from = 0, to = 120, by = 1/m)
+  c.rate <- coeff_age+time_fac
+  c.rate <- c.rate + (c.rate==0)*1e-12
+  c.x <- cons*exp( coeff_male * male + coeff_bpress * bpress + 
+                   coeff_smok * smoke + coeff_obese * obese +
+                   time_fac * time + coeff_age * xage1 )
+  m.q.x <- 1-exp(-c.x*((exp(c.rate/m)-1)/c.rate) )
+  return(m.q.x)
+}
+
+#  Actuarial Present Value Calculations
+numInt <- 0:(120-1)
+int = 0.04
+spotrate <- (1+int)^(-numInt)
+APV <- function(m=2, m.q.x=m.q.x.female.2, spotrate=spotrate, int=0.04){
+  xage2 <- seq(from = 0, to = 120, by = 1/m)
+  #spot rate not used so far...
+  v = 1/(1+int)
+  vm = v^(1/m)
+  num = length(xage2)
+  A.x.m <- rep(0,num) -> add.x.m
+  A.x.m[num] = vm * m.q.x[num]
+  add.x.m[num] = 1 + (1- m.q.x[num])/(int + 1e-12)
+  for (i in 1:(num-1)){
+    A.x.m[num-i] = vm * m.q.x[num-i] + vm*(1-m.q.x[num-i])*A.x.m[num-i+1]
+    add.x.m[num-i] = 1 + vm*(1-m.q.x[num-i])*add.x.m[num-i+1] 
+  }
+  tablelife.m <- cbind(xage2, m.q.x, A.x.m, add.x.m)
+  tablelife.m.int <- subset(tablelife.m, xage2 == floor(xage2))
+  return(tablelife.m.int)
+}
+```
+
+(ref:MBaseLifeIns) **Life Insurance by $m^{th}$ly Payments**. The dark red dashed represents expected present values based on annual cash flows with $m=1$. The other lines are for $m=2, 4, 12$, increasing in that order.
+
+
+```{r MBaseLifeInsPlot, fig.cap='(ref:MBaseLifeIns)', fig.width=6, fig.height=2.25, echo=FALSE}
+# Male vs Female
+m.q.x.female.1 <-  m.q.x.function(male=0,  m=1)
+A.x.m.female.1 <-  APV(m.q.x=m.q.x.female.1, m=1)[,3]
+m.q.x.female.2 <-  m.q.x.function(male=0,  m=2)
+A.x.m.female.2 <-  APV(m.q.x=m.q.x.female.2, m=2)[,3]
+m.q.x.female.4 <-  m.q.x.function(male=0,  m=4)
+A.x.m.female.4 <-  APV(m.q.x=m.q.x.female.4, m=4)[,3]
+m.q.x.female.12 <- m.q.x.function(male=0,  m=12)
+A.x.m.female.12 <- APV(m.q.x=m.q.x.female.12, m=12)[,3]
+xage.int <- seq(from = 0, to = 120)
+dataf <- data.frame(cbind(xage.int, A.x.m.female.1, A.x.m.female.2,
+                                    A.x.m.female.4, A.x.m.female.12))
+p1 <- ggplot(dataf,aes(x=xage.int, y=A.x.m.female.1)) + theme_bw() +
+  geom_line(aes(y = A.x.m.female.1),  color = "darkred", linetype="twodash") +
+  geom_line(aes(y = A.x.m.female.2),  color = "darkblue") +
+  geom_line(aes(y = A.x.m.female.4),  color = "green") +
+  geom_line(aes(y = A.x.m.female.12), color = "pink") +
+  #ggtitle("Males vs Females") +
+  xlab("Age") + ylab(expression(A[x]))+
+  coord_cartesian(xlim =c(60,70), ylim =c(0.35,0.52)) #+
+  # scale_y_continuous(trans='log10')
+
+p1
+
+```
+
+
+
+<a id=tab:Ex4.2></a> 
+
+[Example 4.2]: ../docs/C-BenefitExt.html##tab:Ex4.2
+
+**Example 4.2. Whole Life Insurance with $m^{th}$ly Payments with Annual Mortality**. Continuing [Example 4.1], we no longer assume that a continuous time mortality model is available but we have only traditional life table mortality at integer (or annual) ages. 
+
+To calculate the expected value of the policy, we follow the procedure of splitting up the payment stream into yearly intervals and then applying the *UDD* assumption within each year. The details follow.
+
+$$
+\begin{array}{rl}
+ A_{{\bf{x}}}^{(m)} &= \sum_{r=0}^{\infty} ~v^{(r+1)/m} \{ ~_{r/m} p_x - ~_{(r+1)/m} p_x \} \\
+ &= \ \sum_{k=0}^{\infty} \sum_{j=0}^{m-1} v^{k+(j+1)/m} \{ ~_{k+j/m} p_x - ~_{k+(j+1)/m} p_x \} \\
+ &=_{UDD} \sum_{k=0}^{\infty}  ~_k p_x \left\{\sum_{j=0}^{m-1} v^{k+(j+1)/m}  \left( \frac{1}{m} \times q_{x+k}\right) \right\} \\
+  &= \sum_{k=0}^{\infty}  ~_k p_x ~q_{x+k} \left\{\frac{1}{m} \sum_{j=0}^{m-1} v^{k+(j+1)/m}  \right\} ~.\\
+\end{array}
+$$
+
+To simplify the presentation, we further assume a constant spot rate $i$ so that $v^t =(1+i)^{-t}$. With this, we can employ standard geometric sums that many readers will recall from interest theory,
+
+$$
+\frac{1+i}{m} v^{1/m}\sum_{j=0}^{m-1} v^{j/m} = \frac{1+i}{m}v^{1/m}\frac{1-v}{1-v^{1/m}} = \frac{i}{i^{(m)}} ~, \\
+$$
+
+where $i^{(m)} = m\left[(1+i)^{1/m}-1\right]$ is the actuarial symbol for a $m^{th}$ly interest rate. 
+This yields
+
+$$
+ A_{{\bf{x}}}^{(m)} = \frac{i}{i^{(m)}} A_x ~.
+$$
+
+This equation exhibits a constant relationship between the annual expected value of a whole life insurance and one on an $m^{th}$ly basis.
+
+
+
+<a id=tab:Ex4.3></a> 
+
+[Example 4.3]: ../docs/C-BenefitExt.html##tab:Ex4.3
+
+
+**Example 4.3. Term Life Annuity with $m^{th}$ly Payments**. For a more complex example, we now consider the case of an $n$ year term life annuity with $m^{th}$ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be $~_{r/m}C \equiv 1/m$, not 1. This is so that we can readily compare, for example, annuities based on quarterly to monthly payments because they both pay a sum of 1 over the year if the policyholder survives.
+
+Based on equation \@ref(eq:Benefitm2), and similar to equation \@ref(eq:Benefit13), the random present value of payments is $PV  =  \frac{1}{m} \sum_{r=0}^{nm-1} v^{r/m} ~I(T_{\bf{x}} \ge r/m)$. With this and equation \@ref(eq:ExpBenefitm2), the expected present value is
+
+$$
+\begin{array}{rl}
+ \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}}^{(m)} 
+ &= \frac{1}{m} \sum_{k=0}^{n-1} \left\{\sum_{j=0}^{m-1} v^{k+j/m} ~_{k+j/m}p_{\bf{x}}\right\} \\
+ &=_{UDD} \frac{1}{m} \sum_{k=0}^{n-1}  ~_k p_x \left\{\sum_{j=0}^{m-1} v^{k+j/m}  \left(1- \frac{j}{m} \times q_{x+k}\right) \right\} ~.\\
+\end{array}
+$$
+
+To simplify the presentation, we again assume a constant spot rate $i$ so that $v^t =(1+i)^{-t}$. 
+
+
+$$
+\begin{array}{rl}
+\ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}}^{(m)} 
+ &=_{UDD}  \frac{d}{d^{(m)}}  \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} -
+v ~\beta(m) A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} ~,\\
+\end{array}
+$$
+where $d^{(m)} = m\left[1- v^{1/m}\right]$ is an $m^{th}$ly discount factor and $\beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}}$ is another factor.
+
+
+`r HideProofTheory('MthlyPaym.1',"Verify Development of EPV for Term Life Annuity with mthly Payments")`
+
+First recall some standard notation from interest theory:
+
+$$
+\begin{array}{cccccc}
+i^{(m)} = m\left[(1+i)^{1/m}-1\right] & & d^{(m)} = m\left[1- v^{1/m}\right] \\
+\alpha(m) = \frac{i}{i^{(m)}}\frac{d}{d^{(m)}}  & & \beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}} \\
+\end{array}
+$$
+
+Next, from standard geometric sums employed in interest theory, we have
+
+$$
+\begin{array}{cccccc}
+\frac{1}{m}\sum_{j=0}^{m-1} v^{j/m} &=& \frac{1}{m}\frac{1-v}{1-v^{1/m}} & = \frac{d}{d^{(m)}} \\
+\end{array}
+$$
+
+and
+$$
+\begin{array}{cccccc}
+\frac{1}{m}\sum_{j=0}^{m-1} j~v^{j/m} &=& \frac{v^{1/m}}{m} \frac{1-v}{(1-v^{1/m})^2} - \frac{v}{1-v^{1/m}} \\
+&=& \frac{v^{1/m}}{(1-v^{1/m})} \frac{d}{d^{(m)}} - \frac{mv}{d^{(m)}} \\
+&=& \frac{m}{i^{(m)}} \frac{d}{d^{(m)}} - \frac{mv}{d^{(m)}} \\
+&=& mv \left(  \frac{i}{i^{(m)}d^{(m)}} - \frac{1}{d^{(m)}} \right) \\
+&=& mv ~\beta(m) \\
+\end{array}
+$$
+
+```{r echo = FALSE, eval = FALSE}
+#check these expressions
+m=12
+i = 0.04
+v = 1/(1+i)
+Time = 0:(m-1)
+vj = v^(Time/m)
+sum(vj)/m
+sum(Time*vj)/m
+(1-v)/m/(1-v^(1/m))
+(v^(1/m)/m*(1-v))/(1-v^(1/m))^2 - v/(1-v^(1/m))
+
+```
+
+This yields
+
+
+$$
+\begin{array}{rl}
+\ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}}^{(m)} 
+ &=_{UDD} \frac{d}{d^{(m)}}  \sum_{k=0}^{n-1}  v^{k} ~_k p_x -
+ mv ~\beta(m) \frac{1}{m} \sum_{k=0}^{n-1}  ~_k p_x q_{x+k} \\
+ &= \frac{d}{d^{(m)}}  \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} -
+v ~\beta(m) A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} \\
+  &\approx \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} -  \frac{m-1}{2m} . \\
+\end{array}
+$$
+
+
+</div>
+
+### Contingent Cash Flows in Continuous Time
+
+By cash flows in "continuous time," we are thinking of a situation where $m$ becomes arbitrarily large. So, we could start with monthly ($m=12$), go to weekly ($m=52$), proceed to daily ($m=365$), and so forth. As we will see, there is little difference between a contract with daily payments versus instantaneous payments. However, the model with instantaneous payments ($m=\infty$) is actually easier because we do not have to distinguish between payments at the beginning versus the end of the period.
+
+Models with instantaneous payments are easier to interpret and analyze in life insurance in contrast to life annuities. Because insurers typically pay benefits quickly upon the death of a policyholder, a model with payments at the moment of death is a better approximation than one that pays at the end of the year ($m=1$). Theoretically, one can think of a continuous life annuity as an approximation to a life annuity that pays 1/365 on a daily basis. However, given that life annuities are predominantly employed on a monthly ($m=12$) and quarterly ($m=4$) basis, we focus our attention on life insurance products in continuous time.
+
+It is possible to express present value random variables using a limit of equation \@ref(eq:Benefitm2) but it is much cleaner to simply utilize the moment of death random variable $T_x$ with basic contract definitions, as follows:
+
+$$
+PV = \left\{
+\begin{array}{cc}
+v^{T_{\bf x}} & {\text{whole life}} \\
+v^{T_{\bf x}}I(T_{\bf x} \le n) & {n\text{ year term}} \\
+v^n I(T_{\bf x} >n) & {n\text{ year pure endowment}} \\
+v^{T_{\bf x}}I(T_{\bf x} +v^n I(T_{\bf x} >n) & {n\text{ year  endowment}}.\\
+\end{array}
+\right.
+$$
+
+Expected present values can be readily determined using first principles. To illustrate, for a whole life insurance that pays at the moment of death, we have
+
+$$
+E(PV) = \int_0^{\infty} ~ v^t ~_t p_x \mu_{x+t} dt = \bar{A}_x .
+$$
+
+Similarly for an $n$ year endowment, we have 
+
+$$
+\begin{array}{ll}
+E(PV) 
+&= \int_0^n ~ v^t ~_t p_x \mu_{x+t} dt  + \int_n^{\infty} ~ v^n ~_t p_x \mu_{x+t} dt  \\
+&= \int_0^n ~ v^t ~_t p_x \mu_{x+t} dt  +  v^n ~_n p_x   \\
+& = \bar{A}_{{\bf{x}}:\enclose{actuarial}{n}} .
+\end{array}
+$$
+When a continuous time probability model is available, then these integrals can be computed directly (although sometimes require numerical integration software). An alternative approach is to the approximation based on $m^{th}$ly payments introduced in the prior section and let $m \to \infty$. For example, for the whole life assuming *UDD*, we have
+
+$$
+\bar{A}_x = \lim_{m \to \infty} A_x^{(m)} = \lim_{m \to \infty} \frac{i}{i^{(m)}} A_x = \frac{i}{\delta} A_x ,
+$$
+
+where $\delta = \ln(1+i) = \lim_{m \to \infty}i^{(m)}$ is the force of interest, from interest theory.
+
+
+`r HideExample('JedDiscussion.1',"Section Structure Discussions")`
+
+<span style="color: blue;">
+**Structure discussion.** 
+
+This section is general in the sense that it:
+
+*  integrates both life and annuity contracts under one umbrella
+*  readily allows variable interest rates and continuous time mortality without making assumptions such as UDD
+
+**However**. It does not relate insurance to annuity coverages. It only does second moments indirectly. It does not provide details for many contracts.
+
+At this stage, not sure how far to push this because I don't know how important the topic is relative to the other material...
+
+Probably could use **lots** of exercises.
+
+***
+
+*  Introduce classical actuarial PV symbols, variance calculations
+*  Calculation approaches
+   *  Start with continuous time hazard survival models 
+   *  Describe approximations based on life table functions
+   *  Differential equations? Continuous analog to the recursive formulas of insurances/annuities. (Develop this in the problem set).
+
+***
+
+*  Use life annuities to motivate why it matters to account for more frequent premium and benefit payments
+*  Use life insurance to motivate why it a continuous payment model is a useful approximation (e.g., contractually obligated to settle payment immediately, subject to death confirmation)
+
+***
+
+
+*  Review the present value random variable and moments. Draw timeline with more frequent payments.
+*  Introduce mthly insurances and annuities, as well as their relationship 
+*  Introduce classical actuarial PV symbols, variance calculations
+*  Why is the frequency important? Demonstrate magnitude of difference in expected present values of payments (e.g., make a table of EPV vs various m) (without showing how calculations are done)
+
+***
+
+*  Describe implementation using the continuous time Cox hazard model 
+*  When life table is used, interim timing can be approximated via UDD, exponential. Possible extensions (or in appendices, problem sets):
+   *  Does UDD work for all ages or covariates? Is there need to empirically investigate using our available data?
+   *  Should we further explore other approximations using the model T_x = K_x +R_x, where R_x is the fractional term?
+   *  Approximations of life annuities based on Woolhouse. Derivation is via Taylor’s expansion. (might also be an exercise)
+
+</div>
+
+##  Sampling Bias {#Sec:SamplingBias}
+
+In Chapter 2 we saw that survival distributions, expressed as mortality rates, can vary not only by age and sex but also by other attributes such as smoking status, systolic blood pressure, and so forth. This naturally raises the question as whether these attributes are important in actuarial practice. To frame this question, this section reviews the statistical concept of sampling bias in the context of actuarial applications.
+
+###  Population Subsets and Sampling Bias
+
+To illustrate differences among different samples, or subsets of a population, we consider three samples commonly used in actuarial practice:
+
+*  insured lives, individuals who have purchased life insurance,
+*  annuitant or pensioner lives, individuals who have either purchased an annuity or are a pensioner and so enjoy an annuity by participating in a retirement system, and a
+*  general population, where there is no requirement for insurance/annuity participation.
+
+To compare these three samples, we examine a specific case.
+
+**Example 4.2.1. Korean Mortality by Insured Status.** Here, we consider female mortality from South Korea for year 2007. The insured lives and annuitant rates were drawn from a database organized by the Society of Actuaries, [https://mort.soa.org/](https://mort.soa.org/).
+The general population data are drawn from the [Human Mortality Database](http://www.mortality.org/).
+
+
+```{r  echo=FALSE}
+KoreaInsuredFemale <- read.csv("../MortalityData/SKoreaInsuredLives2007Female.csv")
+KoreaPensionFemale <- read.csv("../MortalityData/SKoreaPensions2007Female.csv")
+KoreaPop <- read.csv("../MortalityData/Mx_1x1.csv")
+KoreaPop2007 <- subset(KoreaPop, Year == 2007)
+
+KoreaInsuredFemale45.110  <- subset(KoreaInsuredFemale, Age > 44 & Age < 111) 
+KoreaPensionFemale45.110  <- subset(KoreaPensionFemale, Age > 44 & Age < 111) 
+KoreaPop45.110  <- subset(KoreaPop2007, Age > 44 & Age < 111) 
+KoreaPopFemaleqx <- KoreaPop45.110$Female/(1 + KoreaPop45.110$Female/2)
+
+KoreaMort <- data.frame(cbind(KoreaInsuredFemale45.110$Age, KoreaInsuredFemale45.110$qx, KoreaPensionFemale45.110$qx, KoreaPopFemaleqx))
+names(KoreaMort) <- c("Age", "qx_Female_Insured", "qx_Female_Pension", "qx_Female_Pop")
+#  Actuarial Present Value Calculations
+APV.K <- function(xage, q.x, int=0.00){
+  v = 1/(1+int)
+  num = length(xage)
+  A.x <- 0*xage -> add.x -> e.x
+  A.x[num] = v*q.x[num]
+  add.x[num] = 1 + (1-q.x[num])/(int + 1e-12)
+  e.x[num] = 1-q.x[num]
+  for (i in 1:(num-1)){
+    A.x[num-i] = v*q.x[num-i] + v*(1-q.x[num-i])*A.x[num-i+1]
+    add.x[num-i] = 1 + v*(1-q.x[num-i])*add.x[num-i+1] 
+    e.x[num-i] =  (1-q.x[num-i])*(1+e.x[num-i+1])
+    }
+  tablelife <- cbind(xage,q.x,A.x,add.x,e.x)
+  return(tablelife)
+}
+KoreaMort$ex_Female_Insured <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Insured)[,5]
+KoreaMort$ex_Female_Pension <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Pension)[,5]
+KoreaMort$ex_Female_Pop     <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Pop)[,5]
+
+```
+
+
+
+(ref:SampBiasCompare) **Mortality by Insured Status**. The left-hand panel summarizes mortality by one year rates $q_x$ by age $x$, the right-hand panel shows it by expectation of life $e_x$. Both panels show three sampling frames: the solid black line is for insured lives, the dark-red dashed lines is for pension (annuitant) lives, and the dotted blue line represents the general population.
+
+(ref:SampBiasCompare1) testy
+
+
+```{r SampBiasComparePlot, fig.cap=c('(ref:SampBiasCompare)','(ref:SampBiasCompare1)'), fig.align = "center", echo=FALSE, warning = FALSE}
+library(ggplot2)
+library(gridExtra)
+#  One year Mortality
+p1 <- ggplot(KoreaMort,aes(x=Age, y=KoreaMort$qx_Female_Insured)) + theme_bw() +
+    geom_line(aes(y = qx_Female_Insured), color = "black") +
+  geom_line(aes(y = qx_Female_Pension), color = "darkred", linetype="twodash") +
+  geom_line(aes(y = qx_Female_Pop), color = "darkblue", linetype="dotted") +
+  ggtitle("One Year Mortality Rates") +
+  xlab("Age") + ylab(expression(q[x]))+
+  coord_cartesian(xlim =c(40,110)) +
+   scale_y_continuous(trans='log10')
+
+# Expectations
+p2 <-  ggplot(KoreaMort,aes(x=Age, y=KoreaMort$ex_Female_Insured)) + theme_bw() +
+    geom_line(aes(y = ex_Female_Insured), color = "black") +
+  geom_line(aes(y = ex_Female_Pension), color = "darkred", linetype="twodash") +
+  geom_line(aes(y = ex_Female_Pop), color = "darkblue", linetype="dotted") +
+  ggtitle("Expectation of Life") +
+  xlab("Age") + ylab(expression(e[x]))+
+   coord_cartesian(xlim =c(40,110)) #+
+   #scale_y_continuous(trans='log10')
+
+grid.arrange(p1,p2,nrow=1)
+
+```
+
+
+Figure \@ref(fig:SampBiasComparePlot) compares these three samples using one year mortality rates $q_x$ and expectation of life $e_x$. Except for the highest ages where data are less reliable, the left-hand panel shows that pensioner (annuitant) mortality is the lowest among the three, followed by insured lives, and then the general population. The right-hand panel shows the same pattern, with pensioners enjoying the longest life expectancy and the general population showing the lowest. 
+
+These patterns are commonly observed in actuarial practice. Individuals electing to purchase an annuity, or choosing an annuity option at retirement, generally consider themselves to be in good health. If they are in poor health, then they would not take on a contract that pays as long as they live. One might also elect to apply that same logic to the purchase of life insurance; that is, reason that only those who are in poor health purchase life insurance. However, insurers typically require individuals applying for life insurance to take a medical examination. So, by this selection mechanism, mortality for insured lives is also better than the general population.
+
+***
+
+
+In the language of statistics, a sampling error occurs when the sampling frame, the list from which the sample is drawn, is not an adequate approximation of the population of interest. A sample must be a representative subset of a population, or universe, of interest. An example of a representative subset is a sample drawn at random. With substantial sample errors, the summary measure of the sample, the statistic, is not an adequate approximation of the corresponding summary measure of the population, the difference defined as a **bias**. If the sample is not representative, taking a larger sample does not eliminate bias, as the same mistake is repeated over again and again.
+
+So, using data from a sample that is not representative of a population of interest can result in **sampling bias**. For example, an analyst investigating an insurance product might use (typically convenient) population mortality instead of a more appropriate insured lives mortality; this mismatch results in sampling bias. As an another example, one might use insured lives mortality in lieu of pensioner mortality when valuing a retirement option for an insurance product. It is also common to use experience from one country to approximate outcomes in another. To illustrate, the following example compares experience among Poland, Japan, and the United States.
+
+**Example 4.2.2. Mortality by Country (Japan, Poland, and the United States).** This example focuses on population mortality and so recent 2019 experience is available from the [Human Mortality Database](http://www.mortality.org/). In addition to classification by country, we also look at experience by sex and age as these distinctions are well known.
+
+Figure \@ref(fig:SampIntlCompare) compares one year mortality rates among the three countries; the left-hand panel is for female experience and the right-hand is for males. Both panels demonstrate that Japan has the lowest mortality rates. The relationship between the United States and Poland is more complicated. For females, experience is roughly the same for ages above 50 although Poland has lower mortality rates for younger females. Younger polish men also have lower mortality rates than men in the US but the reverse is true for those older (than approximately 45).
+
+
+```{r  echo=FALSE}
+JapanPop <- read.csv("../MortalityData/JapanPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+PolandPop <- read.csv("../MortalityData/PolandPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+USAPop <- read.csv("../MortalityData/USAPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+JapanPop2019 <- subset(JapanPop, Year == 2019)
+PolandPop2019 <- subset(PolandPop, Year == 2019)
+USAPop2019 <- subset(USAPop, Year == 2019)
+
+JapanPopFemaleqx  <- as.numeric(JapanPop2019$Female) /(1 + as.numeric(JapanPop2019$Female) /2)
+JapanPopMaleqx    <- as.numeric(JapanPop2019$Male)   /(1 + as.numeric(JapanPop2019$Male)   /2)
+PolandPopFemaleqx <- as.numeric(PolandPop2019$Female)/(1 + as.numeric(PolandPop2019$Female)/2)
+PolandPopMaleqx   <- as.numeric(PolandPop2019$Male)  /(1 + as.numeric(PolandPop2019$Male)  /2)
+USAPopFemaleqx    <- as.numeric(USAPop2019$Female)   /(1 + as.numeric(USAPop2019$Female)   /2)
+USAPopMaleqx      <- as.numeric(USAPop2019$Male)     /(1 + as.numeric(USAPop2019$Male)     /2)
+
+PolandPopMaleqx[110] <- 1 -> PolandPopMaleqx[111]
+
+IntlMort <- data.frame(cbind(JapanPop2019$Age, JapanPopFemaleqx, JapanPopMaleqx, PolandPopFemaleqx,
+                             PolandPopMaleqx, USAPopFemaleqx, USAPopMaleqx))
+names(IntlMort) <- c("Age", "qx_Female_Japan", "qx_Male_Japan", "qx_Female_Poland", 
+                            "qx_Male_Poland",  "qx_Female_USA", "qx_Male_USA")
+#str(IntlMort)
+
+```
+
+
+(ref:SampIntlCompare) **2019 Mortality Rates by Country**. Both panels show three countries that represent different sampling frames: the solid black line is for Japan, the dark-red dashed line is for Poland, and the dark-blue dotted line represents the United States. The left-hand panel summarizes female mortality, the right-hand panel represents males. 
+
+(ref:SampIntlCompare1) testy
+
+```{r SampIntlCompare, fig.cap=c('(ref:SampIntlCompare)','(ref:SampIntlCompare1)'), fig.align = "center", echo=FALSE}
+library(ggplot2)
+library(gridExtra)
+p1 <- ggplot(IntlMort,aes(x=Age, y=qx_Female_Japan)) + theme_bw() +
+  geom_line(aes(y = qx_Female_Japan), color = "black") +
+  geom_line(aes(y = PolandPopFemaleqx), color = "darkred", linetype="twodash") +
+  geom_line(aes(y = USAPopFemaleqx), color = "darkblue", linetype="dotted") +
+  ggtitle("Female Mortality Rates") +
+  xlab("Age") + ylab(expression(q[x]))+
+  coord_cartesian(xlim =c(10,100)) +
+   scale_y_continuous(trans='log10')
+
+p2 <- ggplot(IntlMort,aes(x=Age, y=qx_Male_Japan)) + theme_bw() +
+  geom_line(aes(y = qx_Male_Japan), color = "black") +
+  geom_line(aes(y = PolandPopMaleqx), color = "darkred", linetype="twodash") +
+  geom_line(aes(y = USAPopMaleqx), color = "darkblue", linetype="dotted") +
+  ggtitle("Male Mortality Rates") +
+  xlab("Age") + ylab(expression(q[x]))+
+  coord_cartesian(xlim =c(10,100)) +
+   scale_y_continuous(trans='log10')
+
+grid.arrange(p1,p2,nrow=1)
+
+```
+
+***
+
+Although we did not explicitly mention the sample sizes in Examples 4.2.1 and 4.2.2, they are large, and so do not confuse the issue of sampling bias with the uncertainty that arises from small data sets. The relationships observed among annuitants, insured lives, and general population as well as among countries demonstrated in these examples are commonly observed.  To substantiate this claim, mortality rates from around the world are readily available at [https://mort.soa.org/](https://mort.soa.org/) and [Human Mortality Database](http://www.mortality.org/). Readers are encouraged to visit these primary sources and follow up with their own analyses.
+
+
+ 
+
+### Sampling Bias in Actuarial Practice
+
+In the prior subsection, we defined the concept of sampling bias and established that it could be a real concern in commonly encountered applications. However, you might have noticed that the vertical axes in the one year mortality rate graphs in Examples 4.2.1 and 4.2.2 are on a logarithmic scale. So the discrepancies among sampling bases seem real but how important are they in actuarial applications?
+
+To get insights into this question, we can use the different mortality distributions and, with the tools we learned in Chapter 3, express them in terms of expected present values.
+
+**Example 4.2.1. Mortality by Insured Status - Continued.** We use the female South Korean mortality experience introduced in Example 4.2.1 and, for illustration purposes, assume $i=4$%. For many new products or regions in the world with less detailed mortality data, it is common to use population mortality data in lieu of more appropriate insured lives or annuitant data. So, using population data, we first compute expected present values for a whole life insurance ($A_x^{pop}$) and for a life annuity due ($\ddot{a}_x^{pop}$). Next, with the insured lives data, we compute the expected present values for a whole life insurance ($A_x^{ins}$). Lastly, with the annuitant lives data, we compute the expected present values for a life annuity due ($\ddot{a}_x^{ann}$).
+
+Figure \@ref(fig:SampPopCompare) summarizes the discrepancies by reporting the ratios. The left-hand panel shows the ratio $A_x^{ins}/A_x^{pop}$. Except for the very high ages, we see that the ratio is considerably less than one. This is consistent with our earlier observations that population mortality is higher than insured lives mortality. If we think of the expected present values as representing prices (as developed in the next section), then the ratio also provides a basis for the analyst to decide whether the difference is important. Many insurance markets are competitive and one calculation basis being 90% of the other represents an important financial difference.
+
+The right-hand panel is the ratio $\ddot{a}_x^{ann}/\ddot{a}_x^{pop}$. Here, the value of annuity under annuitant lives mortality is higher than that under general population mortality. This is consistent with our earlier observations that population mortality is higher than annuitant lives mortality. As with the insurance ratio, for many marketplaces this difference is financially meaningful.
+
+
+```{r echo = FALSE}
+
+KoreaMort$ex_Female_Insured <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Insured)[,5]
+KoreaMort$ex_Female_Pension <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Pension)[,5]
+KoreaMort$ex_Female_Pop     <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Pop)[,5]
+
+ratioIns <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Insured, int=0.04)[,3] / 
+            APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Pop, int=0.04)[,3]
+ratioAnn <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Insured, int=0.04)[,4] / 
+            APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Pop, int=0.04)[,4]
+IdentOne <- APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Insured, int=0.04)[,3] + (0.04/1.04) *APV.K(xage= KoreaMort$Age, q.x=KoreaMort$qx_Female_Pension, int=0.04)[,4] 
+
+```
+
+(ref:SampPopCompare) **Dependence of Expected Present Values on Insured Status**. The left-hand panel provides a ratio of $A_x$ computed using insured lives mortality to that computed using general population mortality. The right-hand panel provides a ratio of $\ddot{a}_x$ computed using annuitant lives mortality to that computed using general population mortality. 
+
+(ref:SampPopCompare1) testy
+
+```{r SampPopCompare, fig.cap=c('(ref:SampPopCompare)','(ref:SampPopCompare1)'), fig.align = "center", echo=FALSE}
+library(ggplot2)
+library(gridExtra)
+p1 <- ggplot(KoreaMort,aes(x=Age, y=ratioIns)) + theme_bw() +
+    geom_line(aes(y = ratioIns), color = "black") +
+  ggtitle("Insurance Ratio") +
+  xlab("Age") + ylab("ratio")+
+  coord_cartesian(xlim =c(45,100),ylim=c(0.7,1.2)) 
+
+p2 <- ggplot(KoreaMort,aes(x=Age, y=ratioAnn)) + theme_bw() +
+    geom_line(aes(y = ratioAnn), color = "black") +
+  ggtitle("Annuity Ratio") +
+  xlab("Age") + ylab("ratio")+
+  coord_cartesian(xlim =c(45,100), ylim=c(0.7,1.2)) 
+
+grid.arrange(p1,p2,nrow=1)
+
+```
+
+***
+
+An annuity product pays benefits while an individual is alive whereas an insurance product pays benefits upon the death of an insured. So, to a certain extent, these two products offset one another. In financial terms, you can think about an annuity (based on an individual's survival) as a hedge for insurance (based on an individual's mortality). In the following Chapter 5 on premiums, we will take advantage of relationships of the form:
+
+$$
+A_x + d \ddot{a}_x = 1.
+(#eq:EqSum)
+$$
+
+This is an exact relationship between the expected present values. However, this relationship holds under the assumption that the insurance and annuity expected present values use the same mortality. To dispel the notion that this holds more generally, Figure \@ref(fig:SampIdentical) shows the sum $A_x^{ins} + d \ddot{a}_x^{ann}$, computed using the mortality and interest assumptions in Example 4.2.1.
+
+
+(ref:SampIdentical) **The Sum $A_x^{ins} + d \ddot{a}_x^{ann}$**. This sum is plotted versus age $x$ and is clearly not identical to one, as suggested by equation \@ref(eq:EqSum).
+
+```{r SampIdentical, fig.cap='(ref:SampIdentical)', fig.align = "center", out.width = '30%', echo=FALSE}
+library(ggplot2)
+
+ggplot(KoreaMort,aes(x=Age, y=IdentOne)) + theme_bw() +
+    geom_line(aes(y = IdentOne), color = "black") +
+  # ggtitle(expression(A[x] + d a[x] = 1)) +
+  xlab("Age") + ylab("Identically One")+
+  coord_cartesian(xlim =c(45,100),ylim=c(0.95,1.15)) 
+
+```
+
+
+**Exercise** Quantify the use of annuity mortality applied to life insurance, and vice-versa, as examples.
+
+$\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
+
+***
+
+We motivated this section  by questioning whether attributes such as smoking status and systolic blood pressure are important in actuarial practice. In the exercises, readers have the opportunity to determine expected present values of life contingent benefits that vary by these attributes. In this section, we learned we can attribute these discrepancies to differences among population subsets. In the next section, we frame the question of importance in terms of economic interpretations of the expected present values.
+
+
+**Exercises** Quantify expected present values of life contingent benefits that vary by smoking status and systolic blood pressure.
+
+
+## Using Economics to Motivate Insurance Features {#Sec:EconomicMotivation}
+
+### Actuarially Fair Prices and Risk Classification {#Sec:ActuarialFairRiskClass}
+
+You may have noticed in Chapter 3 that we paid special attention to the expected present values  associated with random life contingent benefits and even gave them special symbols such as $A_x$ and $\ddot{a}_x$. This is because insurance prices are based on these expectation of losses, a concept known as an **actuarially fair price**. 
+
+In a simple model, an actuarially fair price is the result of an assumption of zero profits. Specifically, imagine a homogeneous population where all potential insureds have the same distribution of losses.
+
+*  If an insurer charges the expected loss to each insured, then the average profit over many such contracts would be zero by the law of large numbers. If there is only one insurer, then the company has a monopoly and so would charge more than this. It would charge the maximum that consumers are willing to pay (known as first degree price discrimination). 
+*  If another company wishes to enter the marketplace, then it would charge something less than that maximum. With this price, it would take business away from the original insurer but still make a long-run profit if the price exceeds the expectation. 
+*  However, competition in the marketplace will lead the original company to undercut, and so on.
+*  In the end, all profits will be competed away and – because of price competition – the companies will offer products at their expected value. 
+
+
+One can also interpret fairness from a social justice perspective. One can imagine a group of individuals forming a risk class pooling their losses. Through the pooling mechanism, each person is no longer responsible for their individual loss but rather for their share of the pool's combined loss. From a moral perspective, the responsibility for the loss can now be thought of as not due to the behavior of the faulty individual but rather attributed to the collective; in this sense, pooling socializes responsibility and  creates a sense of shared responsibility among a group of people. 
+
+This, combined with a certain understanding of equality and justice, creates a type of insurance solidarity. It is not the same type of solidarity that one thinks of in political movements, which embody a conscious identification with the group, emotional bonds, shared values and beliefs, and so forth. It is solidarity that emphasizes mutual responsibility, reciprocity, and a particular shared understanding of fairness. From this understanding of fairness comes the observation that if members of the pool have the same risk distribution when entering the pool, then they should have the same responsibility for the pool losses. As with economic reasoning, the law of large numbers implies that this share is the expectation of losses.
+
+Actuarially fair pricing is a foundation of insurance pricing. Combining a probabilistic viewpoint of an expected value and an interpretation of fairness, oftentimes the expectation of a present value of a random loss is known as an **actuarial present value.**
+
+
+Another foundation of insurance pricing is **risk classification**, defined to be the grouping of insureds into homogeneous classes. As mentioned above, by "homogeneous" we mean that each insured within a group has the same distribution of potential losses. Even within a homogeneous class of insureds, there clearly will be stark differences *after* observing their mortality. But, *before* experience is observed, everyone has the same chance (or distribution of outcomes) in a homogeneous class.
+
+Combining these ideas, one can see how insurance prices in competitive marketplaces are based on an actuarial present value for each risk class. Thus, development of distinct risk classes is a critical to fair insurance pricing.
+
+
+###  Selection and Adverse Selection {#Sec:SelectionAdverse}
+
+To develop distinct risk classes, insurers can use their underwriting processes to select subsets of a population. For example, as described in Example 4.2.1, when an individual applies for life insurance, it is common for insurers to require a medical examination. Insurers only issue their so-called "standard" policies to individuals who have passed the medical exam. By this mechanism, they are effectively *selecting* a subset of the population that is healthier than the general population. (Insurers also issue "substandard" policies, at a higher  cost, to those with complicated health histories, like diabetes or heart disease, as well as drug, alcohol, or tobacco abuse.)
+
+However, it is known that these selection effects do not continue indefinitely. For example, Table \@ref(tab:CanadianSelect) shows an excerpt from individual insurance mortality tables for females from Canada. To help read this table, consider a woman who became insured at age $x=50$ who initially has a mortality rate of 0.00047; one year later (at age 51) she has a mortality rate of 0.00072. This second rate is higher than 0.00053, the mortality rate for a woman who became insured at age $x=51$. This suggests that the selection effect is becoming less important. Further, from the table we see that selection effects last for 15 years; thereafter, rates are blended into an "ultimate" column. So for example, consider two females currently age 66 where one purchased insurance 16 years ago at age 50 and the other purchased insurance 15 years ago at age 51. Both have the same ultimate rate, $q_{66} = 0.01209$. 
+
+
+```{r CanadianSelect, echo = FALSE}
+scipen=99
+CanadianSelect <- read.csv("../MortalityData/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
+CanadianSelect1 <- subset(CanadianSelect, Age >= 50 & Age <= 69)
+CanadianSelect2 <- CanadianSelect1[2:6,c(1:6,12,16)]
+CanadianSelect3 <- CanadianSelect1[37:41,1:2]
+CanadianSelect4 <- cbind(CanadianSelect2,CanadianSelect3[,2],CanadianSelect3[,1])
+colnames(CanadianSelect4) <- c("Age", "Select=0","Select=1","Select=2","Select=3","Select=4","Select=10","Select=14", "Ultimate Mortality","Ultimate Age" )
+rownames(CanadianSelect4) <- NULL
+knitr::kable(CanadianSelect4, align = "r", caption="Select and Ultimate Female Canadian Mortality Rates")
+```
+
+*  Individual Life Experience Subcommittee, “Construction of CIA9704 Mortality Tables for Canadian Individual Insurance based on data from 1997 to 2004”, Canadian Institute of Actuaries (2010).
+*  Accessed: October, 2021 from http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf
+*  Data retrieved from https://mort.soa.org/ (Table 1458)
+
+
+Why do insurers bother with the cost and other administrative expenses of requiring a medical exam? They do so because they are concerned with 
+a problem known as **adverse selection**, defined as a situation when consumers know more about their own risk characteristics than insurers. Specifically, without a medical exam, applicants have more knowledge of their medical history and general health status than the insurer. The problem arises because, without a medical exam requirement, it is more likely that people in poor health would apply for life insurance. People in poor health tend to have higher mortality rates that, as we have seen, results in higher actuarial present values for life insurance products.
+ 
+Abstracting from this a bit, you can think of the insurance pool as being comprised of two groups, those in good health and those in poor health. Providing a single insurance price for both groups violates the fundamental principle of risk classification. As we did in Section \@ref(Sec:ActuarialFairRiskClass), it is easy to construct scenarios based on two insurers, one recognizing health differences and the other not doing so. In the long-run, the latter company becomes priced out of the marketplace. Insurers argue that by knowing about risk factors such as health status, the entire marketplace is better. Indeed, the entire purpose of risk classification is to mitigate the problem of adverse selection. 
+
+In this section, we have seen the selection consequences of introducing, or not, a medical exam. As demonstrated in Table \@ref(tab:CanadianSelect), when a medical exam is introduced, we are essentially fine-tuning our definition of homogeneous classes by including not only factors such as sex and age but also time since a medical exam was taken. By not requiring a medical exam, we introduce heterogeneity into our risk groups and so lose the advantages associated with risk classification. In the following subsection, we introduce other problem situations that result in heterogeneous risk groups.
+
+
+###  Asymmetric Information
+
+
+Adverse selection occurs when the additional information that the insured has is important and not revealed to the insurers, such as a poor health history. Adverse selection is a type of unequal access to information, known as **information asymmetry.**
+
+Another type of information asymmetry is **moral hazard.** In moral hazard, the insurance contract itself changes the distribution of risks. To illustrate, by purchasing insurance, insureds have the incentive to take on more risks (thus increasing the probability of a risky event). For example, after purchasing life insurance, the insured may become decide to take up sky-diving, high-speed race car driving, or a life of crime. If the insurer knows about the risky activity in advance, then appropriate adjustments to the price may be made (or the contract simply not issued). The problem arises if the risky activity is taken on after the contract is issued; prices are based on one set of circumstances, losses based on another. Typically this mismatch results in a loss for the insurer. To mitigate this type of problem, insurers may introduce coverage restrictions. For example, life insurance contracts often do not pay benefits for deaths incurred while committing a crime or participating in an illegal activity.
+
+
+***
+
+*This bit on genetic testing may go into an Appendix or sidebar.*
+
+Consumers often purchase life insurance to provide benefits for their loved ones in the event of their untimely demise and thus provide a bit of peace of mind. Moreover, there are other, more subtle, ways that the introduction of an insurance contract can change the behavior of consumers, not all in positive ways. One example is genetic testing.  Genetic testing involves a type of medical test that examines chromosomes, genes, or proteins. The results of a genetic test can confirm or rule out a suspected genetic condition or help determine a person's chance of developing or passing on a genetic disorder. There are many different purposes for testing, including medical (such as diagnosing a genetic disease or predicting disease risk) and non-medical (such as confirming parentage or forensic investigation).
+
+Insurers worry about genetic testing information because of information asymmetry concerns. Like the purchase of life insurance, the decision to undergo genetic testing is voluntary. When a potential policyholder has information about his or her health that is not shared with the insurance company, this could lead to anti-selection where poorer risks purchase more insurance and better risks purchase little or no insurance. From an insurer’s viewpoint, one solution would be to allow insurers to require genetic testing, just as they are allowed to evaluate other aspects (e.g., weight, hypertension, and so forth) of a person's health. 
+
+One way that genetic testing differs from, e.g., blood pressure, is through the impact that it has on a person's willingness to undergo the testing for fear of being denied life insurance. As summarized by Prince (2019), “Empirical evidence shows that fear of genetic discrimination has led individuals across the globe to refuse to participate in genetic research projects or to fail to undergo recommended clinical testing.” In this way, genetic testing also represents a type of moral hazard in the sense that the presence of an insurance contract can change a person's behavior.
+
+***
+
+Another implication of moral hazard is that people tend to increase their risk unless given incentives not to. Conversely, people may also reduce their risks when given incentives to do so. Indeed, much of modern risk management is predicated on introducing risk mitigation tools to reduce the impact of insured events. A classic example is the nonsmoker discounts in life insurance.
+
+Another type of information asymmetry can occur when an insurer has less information than other competing insurance companies about the risk levels of its customers (cf. Cather 2018). This can result in **cream skimming**, because the innovative insurer targets the best risks who, like cream in a container of fresh milk, rise, to the top of a pool of policyholders. To illustrate, consider the Section \@ref(Sec:SelectionAdverse) that we discussed where one insurer has knowledge of an insured's health status and another does not. The insurer with this knowledge would target risks in good health because these are the ones, other things being equal, would enjoy a lower present value of benefits paid resulting in greater profits for the insurer.
+
+*Later, we may wish to gently insert a bit about discrimination/algorithmic bias.*
+
+## Applications of Contingent Payment Techniques {#Sec:ApplicationsContingent}
+
+This section emphasizes that “life contingent” techniques apply more broadly to contingent payment techniques. In particular, we would like examples that would appeal to general insurance actuaries, to convince this arm of the profession that they should also at least study the fundamentals of life contingencies.  **This section is only in outline form.**
+
+The unifying theme of a “contingent payment” technique, defined so far, is that we study a time to event and are interested in financial outcomes that depend on this time to event. Chapter 3 focuses on the death of an individual as the time to event. Moreover, this event time could also be the death of a pet, time to divorce, time to the first of recovery from an accident or retirement, time to failure of the first of two people, and other applications that we should describe.
+
+a.	Consider workers’ compensation where a benefit is paid when a worker gets into an accident (at work) and receives benefit payments for many years. The event time is the sooner of recovery or retirement. General insurance actuaries often don’t worry about time value of money but they should.
+b.	Time to divorce is a good example used in labor economics extensively. Might use the 2014 paper (https://link.springer.com/content/pdf/10.1007/s13524-013-0278-1.pdf) that has a fitted Cox regression model. (Pension valuation would be an actuarial application.) Other labor economic examples include time in and out of employment, time until first child, and many others. 
+c.	Disability income is not in our current syllabus so this might be a good place to at least mention it.
+d.	Time to failure of the first of two lives is another example. Now, we think about “x” as a general status as a function of multiple lives, not just a single life. As an example, we could use this joint-life framework to foreshadow the introduction of multi-state modeling in Chapter 7.
+e.	Pet Insurance. Students might enjoy this. Here are a couple of URLs to explore, https://content.naic.org/sites/default/files/publication-pin-op-pet-insurance.pdf and https://contingencies.org/a-policy-for-fluffy-pet-insurance-is-a-small-industry-but-its-poised-for-big-growth-in-the-u-s-%E2%80%83/ . May be more short term than long term but we can look it over. Sadly, more like health rather than life insurance. However, great examples of adverse selection (for pre-existing conditions) and moral hazard (electing treatments after purchasing insurance). So, maybe still good to have.
+f.	Real Estate Valuation. This is an old, old topic. Shaun Wang did something on it that we can check out, https://www.casact.org/sites/default/files/database/forum_14wforum_wang.pdf. A good possibility.
+g.	Warranty analysis. This is mentioned in Bowers et al, if I recall. We can check it out.
+h.	Applications addressing long-term social needs such as climate change. How about long-term costs to society for flood insurance/costs? Related to this, how about long-term expenditures for landfills for when determining the cost of a car?

@@ -348,7 +348,7 @@ This display introduces the actuarial symbols $A_{\bf{x}}$ and $^2A_{\bf{x}}$. H
 
 [Example 3.2]: ../docs/C-SimpleBenefit.html#tab:Ex3.2
 
-**Example 3.2. Life Insurance by Selected Attributes**. To illustrate, consider the Section 2.7 mortality. As a baseline, we consider a healthy female that is not a smoker, not obese, and has an average blood pressure level equal to 114 as well as an interest rate of 4%.
+**Example 3.2. Life Insurance by Selected Attributes**. To illustrate, consider the Section 2.6 mortality. As a baseline, we consider a healthy female that is not a smoker, not obese, and has an average blood pressure level equal to 114 as well as an interest rate of 4%.
 
 Figure \@ref(fig:BaseLifeInsPlot) summarizes the expected presented values $A_x$ by age $x$. The left-hand panel shows expected presented values $A_x$ by age and gender where the blue solid line represents males and the dark red dashed line represents females. Not surprisingly, values of $A_x$ vary by age $x$. Also, for many ages, there are important differences between male and female values. Women tend to enjoy lower mortality rates and so have lower values of $A_x$.
 

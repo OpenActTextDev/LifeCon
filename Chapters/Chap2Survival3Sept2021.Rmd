@@ -3,7 +3,7 @@
 
 **Placeholder**
 
-# Modeling Lifetimes
+# Modeling Lifetimes {#C:ModelingLifeTimes}
 
 The analysis of life contingent exposures such as insurer's liability when selling a life insurance contract or a pension fund's obligations when offering a new pension scheme starts with modeling individual *lifetime* and *death*.  These models, in turn, have to be calibrated in the context of relevant (mortality) data.  
 

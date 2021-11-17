@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Contingent Payment Techniques | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
   <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Contingent Payment Techniques | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,8 @@
   
 <link rel="prev" href="C-SimpleBenefit.html"/>
 <link rel="next" href="C-Forward.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +50,11 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.19/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -261,6 +263,29 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -284,46 +309,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a>
+<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a>
+<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:DataLifeExp"><i class="fa fa-check"></i><b>2.1.1</b> Life Expectancies</a></li>
-<li class="chapter" data-level="2.1.2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:HMDData"><i class="fa fa-check"></i><b>2.1.2</b> Population Mortality Counts</a></li>
-<li class="chapter" data-level="2.1.3" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:IndivMortData"><i class="fa fa-check"></i><b>2.1.3</b> Individual Mortality Data</a></li>
+<li class="chapter" data-level="2.1.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:DataLifeExp"><i class="fa fa-check"></i><b>2.1.1</b> Life Expectancies</a></li>
+<li class="chapter" data-level="2.1.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:HMDData"><i class="fa fa-check"></i><b>2.1.2</b> Population Mortality Counts</a></li>
+<li class="chapter" data-level="2.1.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:IndivMortData"><i class="fa fa-check"></i><b>2.1.3</b> Individual Mortality Data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a>
+<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#lifetime-random-variable-and-its-distribution"><i class="fa fa-check"></i><b>2.2.1</b> Lifetime Random Variable and its Distribution</a></li>
-<li class="chapter" data-level="2.2.2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#standard-actuarial-notation-q_bfx-_tp_bfx-and-all-that"><i class="fa fa-check"></i><b>2.2.2</b> Standard Actuarial Notation: <span class="math inline">\(q_{\bf{x}}\)</span>, <span class="math inline">\(_tp_{\bf{x}}\)</span>, and All That</a></li>
-<li class="chapter" data-level="2.2.3" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:ModelOnlyAge"><i class="fa fa-check"></i><b>2.2.3</b> The Classical Case: Age-Only Model</a></li>
+<li class="chapter" data-level="2.2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#lifetime-random-variable-and-its-distribution"><i class="fa fa-check"></i><b>2.2.1</b> Lifetime Random Variable and its Distribution</a></li>
+<li class="chapter" data-level="2.2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#standard-actuarial-notation-q_bfx-_tp_bfx-and-all-that"><i class="fa fa-check"></i><b>2.2.2</b> Standard Actuarial Notation: <span class="math inline">\(q_{\bf{x}}\)</span>, <span class="math inline">\(_tp_{\bf{x}}\)</span>, and All That</a></li>
+<li class="chapter" data-level="2.2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:ModelOnlyAge"><i class="fa fa-check"></i><b>2.2.3</b> The Classical Case: Age-Only Model</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical laws of mortality</a>
+<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical laws of mortality</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#de-moivre-and-constant-force-models"><i class="fa fa-check"></i><b>2.3.1</b> De Moivre and Constant Force Models</a></li>
-<li class="chapter" data-level="2.3.2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#gompertz-and-makeham-laws"><i class="fa fa-check"></i><b>2.3.2</b> Gompertz and Makeham Laws</a></li>
-<li class="chapter" data-level="2.3.3" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#makeham-law-based-on-life-expectancies-data"><i class="fa fa-check"></i><b>2.3.3</b> Makeham Law based on Life Expectancies Data</a></li>
+<li class="chapter" data-level="2.3.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#de-moivre-and-constant-force-models"><i class="fa fa-check"></i><b>2.3.1</b> De Moivre and Constant Force Models</a></li>
+<li class="chapter" data-level="2.3.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#gompertz-and-makeham-laws"><i class="fa fa-check"></i><b>2.3.2</b> Gompertz and Makeham Laws</a></li>
+<li class="chapter" data-level="2.3.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#makeham-law-based-on-life-expectancies-data"><i class="fa fa-check"></i><b>2.3.3</b> Makeham Law based on Life Expectancies Data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a>
+<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:LifeTabBasics"><i class="fa fa-check"></i><b>2.4.1</b> Life Table Basics</a></li>
-<li class="chapter" data-level="2.4.2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:LifeTabEst"><i class="fa fa-check"></i><b>2.4.2</b> Life Table based on U.S. Population Data</a></li>
-<li class="chapter" data-level="2.4.3" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:LifeTabRec"><i class="fa fa-check"></i><b>2.4.3</b> Curtate Quantities and Recursive Relationships</a></li>
-<li class="chapter" data-level="2.4.4" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional year assumptions</a></li>
-<li class="chapter" data-level="2.4.5" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:LifeTabMImpr"><i class="fa fa-check"></i><b>2.4.5</b> Cohort Life Tables and Mortality Improvement Modeling</a></li>
+<li class="chapter" data-level="2.4.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabBasics"><i class="fa fa-check"></i><b>2.4.1</b> Life Table Basics</a></li>
+<li class="chapter" data-level="2.4.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabEst"><i class="fa fa-check"></i><b>2.4.2</b> Life Table based on U.S. Population Data</a></li>
+<li class="chapter" data-level="2.4.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabRec"><i class="fa fa-check"></i><b>2.4.3</b> Curtate Quantities and Recursive Relationships</a></li>
+<li class="chapter" data-level="2.4.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional year assumptions</a></li>
+<li class="chapter" data-level="2.4.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabMImpr"><i class="fa fa-check"></i><b>2.4.5</b> Cohort Life Tables and Mortality Improvement Modeling</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric survival estimation</a>
+<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric survival estimation</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#kaplan-meier-estimate"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimate</a></li>
-<li class="chapter" data-level="2.5.2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#nelson-aalen"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen</a></li>
+<li class="chapter" data-level="2.5.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#kaplan-meier-estimate"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimate</a></li>
+<li class="chapter" data-level="2.5.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#nelson-aalen"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional models: Survival regression</a>
+<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional models: Survival regression</a>
 <ul>
-<li class="chapter" data-level="2.6.1" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#the-cox-proportional-hazard-model"><i class="fa fa-check"></i><b>2.6.1</b> The Cox Proportional Hazard Model</a></li>
-<li class="chapter" data-level="2.6.2" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#cox-models-based-on-life-insurer-data"><i class="fa fa-check"></i><b>2.6.2</b> Cox Models Based on Life Insurer Data</a></li>
-<li class="chapter" data-level="2.6.3" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#conditional-life-tables"><i class="fa fa-check"></i><b>2.6.3</b> Conditional Life Tables</a></li>
+<li class="chapter" data-level="2.6.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#the-cox-proportional-hazard-model"><i class="fa fa-check"></i><b>2.6.1</b> The Cox Proportional Hazard Model</a></li>
+<li class="chapter" data-level="2.6.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#cox-models-based-on-life-insurer-data"><i class="fa fa-check"></i><b>2.6.2</b> Cox Models Based on Life Insurer Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#conditional-life-tables"><i class="fa fa-check"></i><b>2.6.3</b> Conditional Life Tables</a></li>
 </ul></li>
-<li class="chapter" data-level="2.7" data-path="modeling-lifetimes.html"><a href="modeling-lifetimes.html#notes-and-comments"><i class="fa fa-check"></i><b>2.7</b> Notes and Comments</a></li>
+<li class="chapter" data-level="2.7" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#notes-and-comments"><i class="fa fa-check"></i><b>2.7</b> Notes and Comments</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a>
 <ul>
@@ -354,29 +379,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.5.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#simulated-distribution-of-a-portfolio-of-policies"><i class="fa fa-check"></i><b>3.5.3</b> Simulated distribution of a portfolio of policies</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>3.6</b> Further Resources and Contributors</a></li>
-<li class="chapter" data-level="3.7" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:ExamplesValCash"><i class="fa fa-check"></i><b>3.7</b> Appendix 3A. Examples of Valuation of General Cash Flows</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-occurring-more-frequently-than-annually"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring more Frequently than Annually</a>
+<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#motivation-why-it-matters"><i class="fa fa-check"></i><b>4.1.1</b> Motivation – why it matters</a></li>
-<li class="chapter" data-level="4.1.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#basic-concepts"><i class="fa fa-check"></i><b>4.1.2</b> Basic Concepts</a></li>
-<li class="chapter" data-level="4.1.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#calculation-approaches"><i class="fa fa-check"></i><b>4.1.3</b> Calculation Approaches</a></li>
-<li class="chapter" data-level="4.1.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.1.4</b> Contingent Cash Flows in Continuous Time</a></li>
+<li class="chapter" data-level="4.1.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#basic-concepts"><i class="fa fa-check"></i><b>4.1.1</b> Basic Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#illustrative-cash-flows"><i class="fa fa-check"></i><b>4.1.2</b> Illustrative Cash Flows</a></li>
+<li class="chapter" data-level="4.1.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.1.3</b> Contingent Cash Flows in Continuous Time</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#sampling-bias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a>
+<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#population-subsets-and-sampling-bias"><i class="fa fa-check"></i><b>4.2.1</b> Population Subsets and Sampling Bias</a></li>
 <li class="chapter" data-level="4.2.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#sampling-bias-in-actuarial-practice"><i class="fa fa-check"></i><b>4.2.2</b> Sampling Bias in Actuarial Practice</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#using-economics-to-motivate-insurance-features"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a>
+<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a>
 <ul>
 <li class="chapter" data-level="4.3.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ActuarialFairRiskClass"><i class="fa fa-check"></i><b>4.3.1</b> Actuarially Fair Prices and Risk Classification</a></li>
 <li class="chapter" data-level="4.3.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SelectionAdverse"><i class="fa fa-check"></i><b>4.3.2</b> Selection and Adverse Selection</a></li>
 <li class="chapter" data-level="4.3.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#asymmetric-information"><i class="fa fa-check"></i><b>4.3.3</b> Asymmetric Information</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#applications-of-contingent-payment-techniques"><i class="fa fa-check"></i><b>4.4</b> Applications of Contingent Payment Techniques</a></li>
+<li class="chapter" data-level="4.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ApplicationsContingent"><i class="fa fa-check"></i><b>4.4</b> Applications of Contingent Payment Techniques</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a>
 <ul>
@@ -420,28 +443,223 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="C:BenefitExt" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Contingent Payment Techniques</h1>
-<div id="contingent-cash-flows-occurring-more-frequently-than-annually" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Contingent Cash Flows Occurring more Frequently than Annually</h2>
-<p>This section extends Chapter 3 present value concepts to the case where cash flows are made more frequently than once a year (e.g., monthly, semi-annually). <strong>This section is only in outline form.</strong></p>
-<div id="motivation-why-it-matters" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Motivation – why it matters</h3>
+<p><span class="math inline">\(\require{enclose}\)</span> <!-- Later equations only properly knit if this is beforehand once in the code --></p>
+<p>We have now learned the foundations of life contingencies through Chapter <a href="C-ModelingLifeTimes.html#C:ModelingLifeTimes">2</a> survival modeling and Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> discounting of contingent cash flows. This chapter provide extensions and variations to exhibit the richness of applications.</p>
+<p>Specifically, Section <a href="C-BenefitExt.html#Sec:mthlyFlows">4.1</a> presents a relatively minor extension theoretically, allowing for <span class="math inline">\(m^{th}\)</span>ly cash flows, that has extensive practical ramifications for retirement benefits, other life contingent annuities, and premium payment plans. Section <a href="C-BenefitExt.html#Sec:SamplingBias">4.2</a> sharpens our intuition about survival modeling by linking the choice of a survival dataset to an application under consideration. Section <a href="C-BenefitExt.html#Sec:EconomicMotivation">4.3</a> provides economic motivation for some of the measures summarizing insurance features introduced in Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a>; this motivation provides insights as why some of these are so important in practice. Through a variety of examples, Section <a href="C-BenefitExt.html#Sec:ApplicationsContingent">4.4</a> shows that the framework for life contingent benefits applies to contingent payment problems that go beyond applications in only the life insurance industry.</p>
+<div id="Sec:mthlyFlows" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</h2>
+<p>This section extends Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> by considering cases where cash flows occur more frequently than once a year. For example, it is common for retirement benefits to be paid on a monthly basis while a person is alive. As another example, premiums might be paid twice a year, as long as the policyholder is alive and the contract is in force. We use <span class="math inline">\(m\)</span> to denote the number of payments per year. For the retirement benefits example, we would use <span class="math inline">\(m=12\)</span> and for premiums, <span class="math inline">\(m=2\)</span>. Other common examples are <span class="math inline">\(m=4\)</span> for quarterly cash flows, <span class="math inline">\(m=52\)</span> for weekly, and so forth. We will even consider the case where the number of payments becomes arbitrarily large, <span class="math inline">\(m \to \infty\)</span>, corresponding to a cash flow at the moment an event such as death occurs.</p>
+<p>When describing benefits paid discretely, we started in Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> with annual payments because mortality tables have traditionally been presented on an integer age basis. In addition, business requirements such as insurance company financial reporting is done routinely on an annual basis. Nonetheless, as described above, there are also important situations where payments occur than annually (typically more frequently, although payments once every, e.g., two years are certainly plausible).</p>
+<div id="basic-concepts" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Basic Concepts</h3>
+<p>To appreciate the concerns when transiting from an annual to an <span class="math inline">\(m^{th}\)</span>ly basis, here is a modified version of Figure <a href="C-SimpleBenefit.html#fig:Benefit1a">3.1</a>.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:Benefitm1a"></span>
+<img src="LifeCon_files/figure-html/Benefitm1a-1.png" alt="Timeline of \(m^{th}\)ly cash flows with uncertainty" width="576" />
+<p class="caption">
+Figure 4.1: <strong>Timeline of <span class="math inline">\(m^{th}\)</span>ly cash flows with uncertainty</strong>
+</p>
+</div>
+<p>Similar to equation <a href="C-SimpleBenefit.html#eq:Benefit2">(3.2)</a>, the present value <span class="math inline">\(PV\)</span> random variable can be summarized as</p>
+<p><span class="math display" id="eq:Benefitm2">\[
+\begin{array}{l}
+PV = \sum_{r=0}^{\infty} v^{r/m} ~_{r/m}C~_{r/m}B~   ~,\\
+\end{array}
+\tag{4.1}
+\]</span></p>
+<p>using <span class="math inline">\(r\)</span> is a counter for the number of <span class="math inline">\(m^{th}\)</span>ly units. For probabilities associated with the cash flow indicator, as we saw in Chapter 3, we are concerned with payments either at the death or the survival of a policyholder age <span class="math inline">\(x\)</span>. That is,</p>
+<p><span class="math display" id="eq:ExpBenefitm2">\[
+\mathrm{E} \left(_{r/m}B\right) = \left\{\begin{array}{ccc}
+\Pr\left(\frac{r-1}{m} &lt; T_x \le \frac{r}{m}\right) &amp; = &amp; ~_{(r-1)/m} p_x - ~_{r/m} p_x&amp; {\small \text{ prob of death}} \\
+\Pr\left(T_x \ge \frac{r}{m}\right) &amp; =&amp; ~_{r/m} p_x &amp; {\small \text{ prob of survival} }.\\
+\end{array}
+\right.
+\tag{4.2}
+\]</span>
+As many readers will recall from their study of interest theory, if we think of a discount factor <span class="math inline">\(v^t = (1 + ~_t i)^{-t}\)</span> in terms of a spot rate of interest <span class="math inline">\(~_t i\)</span>, then there is no difficulty at all in discounting at non-integer times. In addition, suppose that the survival model can be expressed in terms of continuous time, such as the analytic laws of mortality in Section <a href="C-ModelingLifeTimes.html#S:AnalMortLaws">2.3</a> or their extended versions in Section <a href="C-ModelingLifeTimes.html#S:SurvReg">2.6</a>. In these cases, thinking of the unit of time as a year is a mere convenience and no additional theoretical extensions are required for handling <span class="math inline">\(m^{th}\)</span>ly cash flows.</p>
+<p><strong>Uniform Distribution of Deaths.</strong> Only in the case where we have annual mortality with <span class="math inline">\(m^{th}\)</span>ly cash flows are some extensions required. And we already started on this in Section <a href="C-ModelingLifeTimes.html#S:LifeTabFrac">2.4.4</a> where fractional year assumptions were introduced. To see how this works with <span class="math inline">\(m^{th}\)</span>ly cash flows, we use the uniform distribution of death (<em>UDD</em>) assumption so that we can express <span class="math inline">\(~_t p_x = 1 - t \times q_x\)</span>, for <span class="math inline">\(0 \le t \le 1\)</span>. Thus, using <span class="math inline">\(j\)</span> is a counter for the number of <span class="math inline">\(m^{th}\)</span>ly units within a year, we have</p>
+<p><span class="math display">\[
+~_{j/m} p_x = 1- \frac{j}{m} \times q_x, \ \ \text{for } j= 0, 1, \ldots, m-1.
+\]</span>
+For integer <span class="math inline">\(k=0, 1, \dots\)</span></p>
+<p><span class="math display">\[
+~_{k+j/m} p_x =  ~_k p_x \times ~_{j/m} p_{x+k}= ~_k p_x  \times \left(1- \frac{j}{m} \times q_{x+k}\right).
+\]</span>
+Here, to calculate the probability of a life aged <span class="math inline">\(x\)</span> surviving <span class="math inline">\(k+j/m\)</span> years, we first calculated the probability of surviving <span class="math inline">\(k\)</span> (integer) years and then, conditional on having attained age <span class="math inline">\(x+k\)</span>, applied the <em>UDD</em> assumption to calculate the probability of surviving an additional <span class="math inline">\(j/m\)</span> fraction of a year. These expressions, together with equations <a href="C-BenefitExt.html#eq:Benefitm2">(4.1)</a> and <a href="C-BenefitExt.html#eq:ExpBenefitm2">(4.2)</a>, are enough to compute an expected present value for an <span class="math inline">\(m^{th}\)</span>ly version of any of the Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> cash flows.</p>
+</div>
+<div id="illustrative-cash-flows" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Illustrative Cash Flows</h3>
+<p>Let us see how these ideas work with a few illustrative examples. To begin, we start by assuming that we have a continuous time probability model and so no simplifying assumptions are needed.</p>
+<p><a id=tab:Ex4.1></a></p>
+<p><strong>Example 4.1. Whole Life Insurance with <span class="math inline">\(m^{th}\)</span>ly Payments with Continuous Time Mortality</strong>. For this contract, the benefit is paid at the end of the <span class="math inline">\(m^{th}\)</span>ly period in which death occurs. Let us return to the familiar <a href="../docs/C-SimpleBenefit.html#tab:Ex3.2">Example 3.2</a> that used the Section <a href="C-ModelingLifeTimes.html#S:SurvReg">2.6</a> mortality. We consider the baseline case in <a href="../docs/C-SimpleBenefit.html#tab:Ex3.2">Example 3.2</a> that you will recall is a healthy female who is not a smoker, not obese, and has an average blood pressure level equal to 114, as well as an interest rate of 4%.</p>
+<p>To calculate the expected value of this policy, we may use equations <a href="C-BenefitExt.html#eq:Benefitm2">(4.1)</a> and <a href="C-BenefitExt.html#eq:ExpBenefitm2">(4.2)</a> directly with the potential cash flows identically equal to one <span class="math inline">\(~_{k/m}C \equiv 1\)</span>. The resulting expected present value is</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+ A_{{\bf{x}}}^{(m)} &amp;= \sum_{r=0}^{\infty} ~v^{(r+1)/m} \{ ~_{r/m} p_x - ~_{(r+1)/m} p_x \} ,\\
+\end{array}
+\]</span></p>
+<p>an expression that introduces the common actuarial notation for the expected present value of this contract. Figure <a href="C-BenefitExt.html#fig:MBaseLifeInsPlot">4.2</a> summarizes the expected presented values by age <span class="math inline">\(x\)</span> over choices of <span class="math inline">\(m=1,2,4, 12\)</span>. As is evident from the plot, these values are close and in fact ordered as</p>
+<p><span class="math display">\[
+A_x = A_x^{(1)} \le A_x^{(2)} \le A_x^{(4)} \le A_x^{(12)} ~.
+\]</span></p>
+<p>The annual expected presented value, <span class="math inline">\(A_x = A_x^{(1)}\)</span>, is the smallest because it is the contract with payments potentially farthest in the future. For example, if a person dies just before one month into a contract year, then the payment is 11 months after death. In contrast, it is five months after death when <span class="math inline">\(m=2\)</span>, two months later for <span class="math inline">\(m=4\)</span> and virtually instantaneous for <span class="math inline">\(m=12\)</span>. So, the very largest the separation that could be in Figure <a href="C-BenefitExt.html#fig:MBaseLifeInsPlot">4.2</a> is <span class="math inline">\(1/(1+i) = 1/1.04\)</span>, for this example.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:MBaseLifeInsPlot"></span>
+<img src="LifeCon_files/figure-html/MBaseLifeInsPlot-1.png" alt="Life Insurance by \(m^{th}\)ly Payments. The dark red dashed represents expected present values based on annual cash flows with \(m=1\). The other lines are for \(m=2, 4, 12\), increasing in that order." width="576" />
+<p class="caption">
+Figure 4.2: <strong>Life Insurance by <span class="math inline">\(m^{th}\)</span>ly Payments</strong>. The dark red dashed represents expected present values based on annual cash flows with <span class="math inline">\(m=1\)</span>. The other lines are for <span class="math inline">\(m=2, 4, 12\)</span>, increasing in that order.
+</p>
+</div>
+<p><a id=tab:Ex4.2></a></p>
+<p><strong>Example 4.2. Whole Life Insurance with <span class="math inline">\(m^{th}\)</span>ly Payments with Annual Mortality</strong>. Continuing <a href="../docs/C-BenefitExt.html##tab:Ex4.1">Example 4.1</a>, we no longer assume that a continuous time mortality model is available but we have only traditional life table mortality at integer (or annual) ages.</p>
+<p>To calculate the expected value of the policy, we follow the procedure of splitting up the payment stream into yearly intervals and then applying the <em>UDD</em> assumption within each year. The details follow.</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+ A_{{\bf{x}}}^{(m)} &amp;= \sum_{r=0}^{\infty} ~v^{(r+1)/m} \{ ~_{r/m} p_x - ~_{(r+1)/m} p_x \} \\
+ &amp;= \ \sum_{k=0}^{\infty} \sum_{j=0}^{m-1} v^{k+(j+1)/m} \{ ~_{k+j/m} p_x - ~_{k+(j+1)/m} p_x \} \\
+ &amp;=_{UDD} \sum_{k=0}^{\infty}  ~_k p_x \left\{\sum_{j=0}^{m-1} v^{k+(j+1)/m}  \left( \frac{1}{m} \times q_{x+k}\right) \right\} \\
+  &amp;= \sum_{k=0}^{\infty}  ~_k p_x ~q_{x+k} \left\{\frac{1}{m} \sum_{j=0}^{m-1} v^{k+(j+1)/m}  \right\} ~.\\
+\end{array}
+\]</span></p>
+<p>To simplify the presentation, we further assume a constant spot rate <span class="math inline">\(i\)</span> so that <span class="math inline">\(v^t =(1+i)^{-t}\)</span>. With this, we can employ standard geometric sums that many readers will recall from interest theory,</p>
+<p><span class="math display">\[
+\frac{1+i}{m} v^{1/m}\sum_{j=0}^{m-1} v^{j/m} = \frac{1+i}{m}v^{1/m}\frac{1-v}{1-v^{1/m}} = \frac{i}{i^{(m)}} ~, \\
+\]</span></p>
+<p>where <span class="math inline">\(i^{(m)} = m\left[(1+i)^{1/m}-1\right]\)</span> is the actuarial symbol for a <span class="math inline">\(m^{th}\)</span>ly interest rate.
+This yields</p>
+<p><span class="math display">\[
+ A_{{\bf{x}}}^{(m)} = \frac{i}{i^{(m)}} A_x ~.
+\]</span></p>
+<p>This equation exhibits a constant relationship between the annual expected value of a whole life insurance and one on an <span class="math inline">\(m^{th}\)</span>ly basis.</p>
+<p><a id=tab:Ex4.3></a></p>
+<p><strong>Example 4.3. Term Life Annuity with <span class="math inline">\(m^{th}\)</span>ly Payments</strong>. For a more complex example, we now consider the case of an <span class="math inline">\(n\)</span> year term life annuity with <span class="math inline">\(m^{th}\)</span>ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be <span class="math inline">\(~_{r/m}C \equiv 1/m\)</span>, not 1. This is so that we can readily compare, for example, annuities based on quarterly to monthly payments because they both pay a sum of 1 over the year if the policyholder survives.</p>
+<p>Based on equation <a href="C-BenefitExt.html#eq:Benefitm2">(4.1)</a>, and similar to equation <a href="C-SimpleBenefit.html#eq:Benefit13">(3.15)</a>, the random present value of payments is <span class="math inline">\(PV = \frac{1}{m} \sum_{r=0}^{nm-1} v^{r/m} ~I(T_{\bf{x}} \ge r/m)\)</span>. With this and equation <a href="C-BenefitExt.html#eq:ExpBenefitm2">(4.2)</a>, the expected present value is</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+ \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}}^{(m)} 
+ &amp;= \frac{1}{m} \sum_{k=0}^{n-1} \left\{\sum_{j=0}^{m-1} v^{k+j/m} ~_{k+j/m}p_{\bf{x}}\right\} \\
+ &amp;=_{UDD} \frac{1}{m} \sum_{k=0}^{n-1}  ~_k p_x \left\{\sum_{j=0}^{m-1} v^{k+j/m}  \left(1- \frac{j}{m} \times q_{x+k}\right) \right\} ~.\\
+\end{array}
+\]</span></p>
+<p>To simplify the presentation, we again assume a constant spot rate <span class="math inline">\(i\)</span> so that <span class="math inline">\(v^t =(1+i)^{-t}\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+\ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}}^{(m)} 
+ &amp;=_{UDD}  \frac{d}{d^{(m)}}  \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} -
+v ~\beta(m) A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} ~,\\
+\end{array}
+\]</span>
+where <span class="math inline">\(d^{(m)} = m\left[1- v^{1/m}\right]\)</span> is an <span class="math inline">\(m^{th}\)</span>ly discount factor and <span class="math inline">\(\beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}}\)</span> is another factor.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MthlyPaym.1" href="javascript:toggleTheory('toggleTheory.MthlyPaym.1','displayCode.MthlyPaym.1');"><i><strong>Verify Development of EPV for Term Life Annuity with mthly Payments</strong></i></a>
+</h5>
+<div id="toggleTheory.MthlyPaym.1" style="display: none">
+<p>First recall some standard notation from interest theory:</p>
+<p><span class="math display">\[
+\begin{array}{cccccc}
+i^{(m)} = m\left[(1+i)^{1/m}-1\right] &amp; &amp; d^{(m)} = m\left[1- v^{1/m}\right] \\
+\alpha(m) = \frac{i}{i^{(m)}}\frac{d}{d^{(m)}}  &amp; &amp; \beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}} \\
+\end{array}
+\]</span></p>
+<p>Next, from standard geometric sums employed in interest theory, we have</p>
+<p><span class="math display">\[
+\begin{array}{cccccc}
+\frac{1}{m}\sum_{j=0}^{m-1} v^{j/m} &amp;=&amp; \frac{1}{m}\frac{1-v}{1-v^{1/m}} &amp; = \frac{d}{d^{(m)}} \\
+\end{array}
+\]</span></p>
+<p>and
+<span class="math display">\[
+\begin{array}{cccccc}
+\frac{1}{m}\sum_{j=0}^{m-1} j~v^{j/m} &amp;=&amp; \frac{v^{1/m}}{m} \frac{1-v}{(1-v^{1/m})^2} - \frac{v}{1-v^{1/m}} \\
+&amp;=&amp; \frac{v^{1/m}}{(1-v^{1/m})} \frac{d}{d^{(m)}} - \frac{mv}{d^{(m)}} \\
+&amp;=&amp; \frac{m}{i^{(m)}} \frac{d}{d^{(m)}} - \frac{mv}{d^{(m)}} \\
+&amp;=&amp; mv \left(  \frac{i}{i^{(m)}d^{(m)}} - \frac{1}{d^{(m)}} \right) \\
+&amp;=&amp; mv ~\beta(m) \\
+\end{array}
+\]</span></p>
+<p>This yields</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+\ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}}^{(m)} 
+ &amp;=_{UDD} \frac{d}{d^{(m)}}  \sum_{k=0}^{n-1}  v^{k} ~_k p_x -
+ mv ~\beta(m) \frac{1}{m} \sum_{k=0}^{n-1}  ~_k p_x q_{x+k} \\
+ &amp;= \frac{d}{d^{(m)}}  \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} -
+v ~\beta(m) A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} \\
+  &amp;\approx \ddot{a}_{{\bf{x}}:\enclose{actuarial}{n}} -  \frac{m-1}{2m} . \\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="contingent-cash-flows-in-continuous-time" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Contingent Cash Flows in Continuous Time</h3>
+<p>By cash flows in “continuous time,” we are thinking of a situation where <span class="math inline">\(m\)</span> becomes arbitrarily large. So, we could start with monthly (<span class="math inline">\(m=12\)</span>), go to weekly (<span class="math inline">\(m=52\)</span>), proceed to daily (<span class="math inline">\(m=365\)</span>), and so forth. As we will see, there is little difference between a contract with daily payments versus instantaneous payments. However, the model with instantaneous payments (<span class="math inline">\(m=\infty\)</span>) is actually easier because we do not have to distinguish between payments at the beginning versus the end of the period.</p>
+<p>Models with instantaneous payments are easier to interpret and analyze in life insurance in contrast to life annuities. Because insurers typically pay benefits quickly upon the death of a policyholder, a model with payments at the moment of death is a better approximation than one that pays at the end of the year (<span class="math inline">\(m=1\)</span>). Theoretically, one can think of a continuous life annuity as an approximation to a life annuity that pays 1/365 on a daily basis. However, given that life annuities are predominantly employed on a monthly (<span class="math inline">\(m=12\)</span>) and quarterly (<span class="math inline">\(m=4\)</span>) basis, we focus our attention on life insurance products in continuous time.</p>
+<p>It is possible to express present value random variables using a limit of equation <a href="C-BenefitExt.html#eq:Benefitm2">(4.1)</a> but it is much cleaner to simply utilize the moment of death random variable <span class="math inline">\(T_x\)</span> with basic contract definitions, as follows:</p>
+<p><span class="math display">\[
+PV = \left\{
+\begin{array}{cc}
+v^{T_{\bf x}} &amp; {\text{whole life}} \\
+v^{T_{\bf x}}I(T_{\bf x} \le n) &amp; {n\text{ year term}} \\
+v^n I(T_{\bf x} &gt;n) &amp; {n\text{ year pure endowment}} \\
+v^{T_{\bf x}}I(T_{\bf x} +v^n I(T_{\bf x} &gt;n) &amp; {n\text{ year  endowment}}.\\
+\end{array}
+\right.
+\]</span></p>
+<p>Expected present values can be readily determined using first principles. To illustrate, for a whole life insurance that pays at the moment of death, we have</p>
+<p><span class="math display">\[
+E(PV) = \int_0^{\infty} ~ v^t ~_t p_x \mu_{x+t} dt = \bar{A}_x .
+\]</span></p>
+<p>Similarly for an <span class="math inline">\(n\)</span> year endowment, we have</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+E(PV) 
+&amp;= \int_0^n ~ v^t ~_t p_x \mu_{x+t} dt  + \int_n^{\infty} ~ v^n ~_t p_x \mu_{x+t} dt  \\
+&amp;= \int_0^n ~ v^t ~_t p_x \mu_{x+t} dt  +  v^n ~_n p_x   \\
+&amp; = \bar{A}_{{\bf{x}}:\enclose{actuarial}{n}} .
+\end{array}
+\]</span>
+When a continuous time probability model is available, then these integrals can be computed directly (although sometimes require numerical integration software). An alternative approach is to the approximation based on <span class="math inline">\(m^{th}\)</span>ly payments introduced in the prior section and let <span class="math inline">\(m \to \infty\)</span>. For example, for the whole life assuming <em>UDD</em>, we have</p>
+<p><span class="math display">\[
+\bar{A}_x = \lim_{m \to \infty} A_x^{(m)} = \lim_{m \to \infty} \frac{i}{i^{(m)}} A_x = \frac{i}{\delta} A_x ,
+\]</span></p>
+<p>where <span class="math inline">\(\delta = \ln(1+i) = \lim_{m \to \infty}i^{(m)}\)</span> is the force of interest, from interest theory.</p>
+<h5 style="text-align: center;">
+<a id="displayExample.JedDiscussion.1" href="javascript:toggleEX('toggleExample.JedDiscussion.1','displayExample.JedDiscussion.1');"><i><strong>Section Structure Discussions</strong></i></a>
+</h5>
+<div id="toggleExample.JedDiscussion.1" style="display: none">
+<p><span style="color: blue;">
+<strong>Structure discussion.</strong></p>
+<p>This section is general in the sense that it:</p>
 <ul>
-<li>Describe historical (annual) development (annual is important for government, e.g., census life tables??). Link annual mortality to current business needs, e.g., annual financial statements.</li>
+<li>integrates both life and annuity contracts under one umbrella</li>
+<li>readily allows variable interest rates and continuous time mortality without making assumptions such as UDD</li>
+</ul>
+<p><strong>However</strong>. It does not relate insurance to annuity coverages. It only does second moments indirectly. It does not provide details for many contracts.</p>
+<p>At this stage, not sure how far to push this because I don’t know how important the topic is relative to the other material…</p>
+<p>Probably could use <strong>lots</strong> of exercises.</p>
+<hr />
+<ul>
+<li>Introduce classical actuarial PV symbols, variance calculations</li>
+<li>Calculation approaches
+<ul>
+<li>Start with continuous time hazard survival models</li>
+<li>Describe approximations based on life table functions</li>
+<li>Differential equations? Continuous analog to the recursive formulas of insurances/annuities. (Develop this in the problem set).</li>
+</ul></li>
+</ul>
+<hr />
+<ul>
 <li>Use life annuities to motivate why it matters to account for more frequent premium and benefit payments</li>
 <li>Use life insurance to motivate why it a continuous payment model is a useful approximation (e.g., contractually obligated to settle payment immediately, subject to death confirmation)</li>
 </ul>
-</div>
-<div id="basic-concepts" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Basic Concepts</h3>
+<hr />
 <ul>
 <li>Review the present value random variable and moments. Draw timeline with more frequent payments.</li>
 <li>Introduce mthly insurances and annuities, as well as their relationship</li>
 <li>Introduce classical actuarial PV symbols, variance calculations</li>
 <li>Why is the frequency important? Demonstrate magnitude of difference in expected present values of payments (e.g., make a table of EPV vs various m) (without showing how calculations are done)</li>
 </ul>
-</div>
-<div id="calculation-approaches" class="section level3" number="4.1.3">
-<h3><span class="header-section-number">4.1.3</span> Calculation Approaches</h3>
+<hr />
 <ul>
 <li>Describe implementation using the continuous time Cox hazard model</li>
 <li>When life table is used, interim timing can be approximated via UDD, exponential. Possible extensions (or in appendices, problem sets):
@@ -451,27 +669,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Approximations of life annuities based on Woolhouse. Derivation is via Taylor’s expansion. (might also be an exercise)</li>
 </ul></li>
 </ul>
-<p>Section 4.1.4 Extension to portfolio calculations. Use life tables and case studies used in previous chapter. Omit this now. Handle as part of Section 4.4.</p>
-</div>
-<div id="contingent-cash-flows-in-continuous-time" class="section level3" number="4.1.4">
-<h3><span class="header-section-number">4.1.4</span> Contingent Cash Flows in Continuous Time</h3>
-<ul>
-<li>Formulaic development
-<ul>
-<li>easier, don’t have to worry about beginning/ending of the period)</li>
-<li>Base on the previous section (e.g., m =&gt; infinity)</li>
-</ul></li>
-<li>Introduce classical actuarial PV symbols, variance calculations</li>
-<li>Calculation approaches
-<ul>
-<li>Start with continuous time hazard survival models</li>
-<li>Describe approximations based on life table functions</li>
-<li>Differential equations? Continuous analog to the recursive formulas of insurances/annuities. (Develop this in the problem set).</li>
-</ul></li>
-</ul>
 </div>
 </div>
-<div id="sampling-bias" class="section level2" number="4.2">
+</div>
+<div id="Sec:SamplingBias" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Sampling Bias</h2>
 <p>In Chapter 2 we saw that survival distributions, expressed as mortality rates, can vary not only by age and sex but also by other attributes such as smoking status, systolic blood pressure, and so forth. This naturally raises the question as whether these attributes are important in actuarial practice. To frame this question, this section reviews the statistical concept of sampling bias in the context of actuarial applications.</p>
 <div id="population-subsets-and-sampling-bias" class="section level3" number="4.2.1">
@@ -490,22 +691,22 @@ The general population data are drawn from the <a href="http://www.mortality.org
 <div class="figure" style="text-align: center"><span id="fig:SampBiasComparePlot"></span>
 <img src="LifeCon_files/figure-html/SampBiasComparePlot-1.png" alt="Mortality by Insured Status. The left-hand panel summarizes mortality by one year rates \(q_x\) by age \(x\), the right-hand panel shows it by expectation of life \(e_x\). Both panels show three sampling frames: the solid black line is for insured lives, the dark-red dashed lines is for pension (annuitant) lives, and the dotted blue line represents the general population." width="672" />
 <p class="caption">
-Figure 4.1: <strong>Mortality by Insured Status</strong>. The left-hand panel summarizes mortality by one year rates <span class="math inline">\(q_x\)</span> by age <span class="math inline">\(x\)</span>, the right-hand panel shows it by expectation of life <span class="math inline">\(e_x\)</span>. Both panels show three sampling frames: the solid black line is for insured lives, the dark-red dashed lines is for pension (annuitant) lives, and the dotted blue line represents the general population.
+Figure 4.3: <strong>Mortality by Insured Status</strong>. The left-hand panel summarizes mortality by one year rates <span class="math inline">\(q_x\)</span> by age <span class="math inline">\(x\)</span>, the right-hand panel shows it by expectation of life <span class="math inline">\(e_x\)</span>. Both panels show three sampling frames: the solid black line is for insured lives, the dark-red dashed lines is for pension (annuitant) lives, and the dotted blue line represents the general population.
 </p>
 </div>
-<p>Figure <a href="C-BenefitExt.html#fig:SampBiasComparePlot">4.1</a> compares these three samples using one year mortality rates <span class="math inline">\(q_x\)</span> and expectation of life <span class="math inline">\(e_x\)</span>. Except for the highest ages where data are less reliable, the left-hand panel shows that pensioner (annuitant) mortality is the lowest among the three, followed by insured lives, and then the general population. The right-hand panel shows the same pattern, with pensioners enjoying the longest life expectancy and the general population showing the lowest.</p>
+<p>Figure <a href="C-BenefitExt.html#fig:SampBiasComparePlot">4.3</a> compares these three samples using one year mortality rates <span class="math inline">\(q_x\)</span> and expectation of life <span class="math inline">\(e_x\)</span>. Except for the highest ages where data are less reliable, the left-hand panel shows that pensioner (annuitant) mortality is the lowest among the three, followed by insured lives, and then the general population. The right-hand panel shows the same pattern, with pensioners enjoying the longest life expectancy and the general population showing the lowest.</p>
 <p>These patterns are commonly observed in actuarial practice. Individuals electing to purchase an annuity, or choosing an annuity option at retirement, generally consider themselves to be in good health. If they are in poor health, then they would not take on a contract that pays as long as they live. One might also elect to apply that same logic to the purchase of life insurance; that is, reason that only those who are in poor health purchase life insurance. However, insurers typically require individuals applying for life insurance to take a medical examination. So, by this selection mechanism, mortality for insured lives is also better than the general population.</p>
 <hr />
 <p>In the language of statistics, a sampling error occurs when the sampling frame, the list from which the sample is drawn, is not an adequate approximation of the population of interest. A sample must be a representative subset of a population, or universe, of interest. An example of a representative subset is a sample drawn at random. With substantial sample errors, the summary measure of the sample, the statistic, is not an adequate approximation of the corresponding summary measure of the population, the difference defined as a <strong>bias</strong>. If the sample is not representative, taking a larger sample does not eliminate bias, as the same mistake is repeated over again and again.</p>
 <p>So, using data from a sample that is not representative of a population of interest can result in <strong>sampling bias</strong>. For example, an analyst investigating an insurance product might use (typically convenient) population mortality instead of a more appropriate insured lives mortality; this mismatch results in sampling bias. As an another example, one might use insured lives mortality in lieu of pensioner mortality when valuing a retirement option for an insurance product. It is also common to use experience from one country to approximate outcomes in another. To illustrate, the following example compares experience among Poland, Japan, and the United States.</p>
 <p><strong>Example 4.2.2. Mortality by Country (Japan, Poland, and the United States).</strong> This example focuses on population mortality and so recent 2019 experience is available from the <a href="http://www.mortality.org/">Human Mortality Database</a>. In addition to classification by country, we also look at experience by sex and age as these distinctions are well known.</p>
-<p>Figure <a href="C-BenefitExt.html#fig:SampIntlCompare">4.2</a> compares one year mortality rates among the three countries; the left-hand panel is for female experience and the right-hand is for males. Both panels demonstrate that Japan has the lowest mortality rates. The relationship between the United States and Poland is more complicated. For females, experience is roughly the same for ages above 50 although Poland has lower mortality rates for younger females. Younger polish men also have lower mortality rates than men in the US but the reverse is true for those older (than approximately 45).</p>
+<p>Figure <a href="C-BenefitExt.html#fig:SampIntlCompare">4.4</a> compares one year mortality rates among the three countries; the left-hand panel is for female experience and the right-hand is for males. Both panels demonstrate that Japan has the lowest mortality rates. The relationship between the United States and Poland is more complicated. For females, experience is roughly the same for ages above 50 although Poland has lower mortality rates for younger females. Younger polish men also have lower mortality rates than men in the US but the reverse is true for those older (than approximately 45).</p>
 
 
 <div class="figure" style="text-align: center"><span id="fig:SampIntlCompare"></span>
 <img src="LifeCon_files/figure-html/SampIntlCompare-1.png" alt="2019 Mortality Rates by Country. Both panels show three countries that represent different sampling frames: the solid black line is for Japan, the dark-red dashed line is for Poland, and the dark-blue dotted line represents the United States. The left-hand panel summarizes female mortality, the right-hand panel represents males." width="672" />
 <p class="caption">
-Figure 4.2: <strong>2019 Mortality Rates by Country</strong>. Both panels show three countries that represent different sampling frames: the solid black line is for Japan, the dark-red dashed line is for Poland, and the dark-blue dotted line represents the United States. The left-hand panel summarizes female mortality, the right-hand panel represents males.
+Figure 4.4: <strong>2019 Mortality Rates by Country</strong>. Both panels show three countries that represent different sampling frames: the solid black line is for Japan, the dark-red dashed line is for Poland, and the dark-blue dotted line represents the United States. The left-hand panel summarizes female mortality, the right-hand panel represents males.
 </p>
 </div>
 <hr />
@@ -516,28 +717,28 @@ Figure 4.2: <strong>2019 Mortality Rates by Country</strong>. Both panels show t
 <p>In the prior subsection, we defined the concept of sampling bias and established that it could be a real concern in commonly encountered applications. However, you might have noticed that the vertical axes in the one year mortality rate graphs in Examples 4.2.1 and 4.2.2 are on a logarithmic scale. So the discrepancies among sampling bases seem real but how important are they in actuarial applications?</p>
 <p>To get insights into this question, we can use the different mortality distributions and, with the tools we learned in Chapter 3, express them in terms of expected present values.</p>
 <p><strong>Example 4.2.1. Mortality by Insured Status - Continued.</strong> We use the female South Korean mortality experience introduced in Example 4.2.1 and, for illustration purposes, assume <span class="math inline">\(i=4\)</span>%. For many new products or regions in the world with less detailed mortality data, it is common to use population mortality data in lieu of more appropriate insured lives or annuitant data. So, using population data, we first compute expected present values for a whole life insurance (<span class="math inline">\(A_x^{pop}\)</span>) and for a life annuity due (<span class="math inline">\(\ddot{a}_x^{pop}\)</span>). Next, with the insured lives data, we compute the expected present values for a whole life insurance (<span class="math inline">\(A_x^{ins}\)</span>). Lastly, with the annuitant lives data, we compute the expected present values for a life annuity due (<span class="math inline">\(\ddot{a}_x^{ann}\)</span>).</p>
-<p>Figure <a href="C-BenefitExt.html#fig:SampPopCompare">4.3</a> summarizes the discrepancies by reporting the ratios. The left-hand panel shows the ratio <span class="math inline">\(A_x^{ins}/A_x^{pop}\)</span>. Except for the very high ages, we see that the ratio is considerably less than one. This is consistent with our earlier observations that population mortality is higher than insured lives mortality. If we think of the expected present values as representing prices (as developed in the next section), then the ratio also provides a basis for the analyst to decide whether the difference is important. Many insurance markets are competitive and one calculation basis being 90% of the other represents an important financial difference.</p>
+<p>Figure <a href="C-BenefitExt.html#fig:SampPopCompare">4.5</a> summarizes the discrepancies by reporting the ratios. The left-hand panel shows the ratio <span class="math inline">\(A_x^{ins}/A_x^{pop}\)</span>. Except for the very high ages, we see that the ratio is considerably less than one. This is consistent with our earlier observations that population mortality is higher than insured lives mortality. If we think of the expected present values as representing prices (as developed in the next section), then the ratio also provides a basis for the analyst to decide whether the difference is important. Many insurance markets are competitive and one calculation basis being 90% of the other represents an important financial difference.</p>
 <p>The right-hand panel is the ratio <span class="math inline">\(\ddot{a}_x^{ann}/\ddot{a}_x^{pop}\)</span>. Here, the value of annuity under annuitant lives mortality is higher than that under general population mortality. This is consistent with our earlier observations that population mortality is higher than annuitant lives mortality. As with the insurance ratio, for many marketplaces this difference is financially meaningful.</p>
 
 
 <div class="figure" style="text-align: center"><span id="fig:SampPopCompare"></span>
 <img src="LifeCon_files/figure-html/SampPopCompare-1.png" alt="Dependence of Expected Present Values on Insured Status. The left-hand panel provides a ratio of \(A_x\) computed using insured lives mortality to that computed using general population mortality. The right-hand panel provides a ratio of \(\ddot{a}_x\) computed using annuitant lives mortality to that computed using general population mortality." width="672" />
 <p class="caption">
-Figure 4.3: <strong>Dependence of Expected Present Values on Insured Status</strong>. The left-hand panel provides a ratio of <span class="math inline">\(A_x\)</span> computed using insured lives mortality to that computed using general population mortality. The right-hand panel provides a ratio of <span class="math inline">\(\ddot{a}_x\)</span> computed using annuitant lives mortality to that computed using general population mortality.
+Figure 4.5: <strong>Dependence of Expected Present Values on Insured Status</strong>. The left-hand panel provides a ratio of <span class="math inline">\(A_x\)</span> computed using insured lives mortality to that computed using general population mortality. The right-hand panel provides a ratio of <span class="math inline">\(\ddot{a}_x\)</span> computed using annuitant lives mortality to that computed using general population mortality.
 </p>
 </div>
 <hr />
 <p>An annuity product pays benefits while an individual is alive whereas an insurance product pays benefits upon the death of an insured. So, to a certain extent, these two products offset one another. In financial terms, you can think about an annuity (based on an individual’s survival) as a hedge for insurance (based on an individual’s mortality). In the following Chapter 5 on premiums, we will take advantage of relationships of the form:</p>
 <p><span class="math display" id="eq:EqSum">\[
 A_x + d \ddot{a}_x = 1.
-\tag{4.1}
+\tag{4.3}
 \]</span></p>
-<p>This is an exact relationship between the expected present values. However, this relationship holds under the assumption that the insurance and annuity expected present values use the same mortality. To dispel the notion that this holds more generally, Figure <a href="C-BenefitExt.html#fig:SampIdentical">4.4</a> shows the sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x^{ann}\)</span>, computed using the mortality and interest assumptions in Example 4.2.1.</p>
+<p>This is an exact relationship between the expected present values. However, this relationship holds under the assumption that the insurance and annuity expected present values use the same mortality. To dispel the notion that this holds more generally, Figure <a href="C-BenefitExt.html#fig:SampIdentical">4.6</a> shows the sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x^{ann}\)</span>, computed using the mortality and interest assumptions in Example 4.2.1.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:SampIdentical"></span>
-<img src="LifeCon_files/figure-html/SampIdentical-1.png" alt="The Sum \(A_x^{ins} + d \ddot{a}_x^{ann}\). This sum is plotted versus age \(x\) and is clearly not identical to one, as suggested by equation (4.1)." width="30%" />
+<img src="LifeCon_files/figure-html/SampIdentical-1.png" alt="The Sum \(A_x^{ins} + d \ddot{a}_x^{ann}\). This sum is plotted versus age \(x\) and is clearly not identical to one, as suggested by equation (4.3)." width="30%" />
 <p class="caption">
-Figure 4.4: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x^{ann}\)</span></strong>. This sum is plotted versus age <span class="math inline">\(x\)</span> and is clearly not identical to one, as suggested by equation <a href="C-BenefitExt.html#eq:EqSum">(4.1)</a>.
+Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x^{ann}\)</span></strong>. This sum is plotted versus age <span class="math inline">\(x\)</span> and is clearly not identical to one, as suggested by equation <a href="C-BenefitExt.html#eq:EqSum">(4.3)</a>.
 </p>
 </div>
 <p><strong>Exercise</strong> Quantify the use of annuity mortality applied to life insurance, and vice-versa, as examples.</p>
@@ -547,7 +748,7 @@ Figure 4.4: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <p><strong>Exercises</strong> Quantify expected present values of life contingent benefits that vary by smoking status and systolic blood pressure.</p>
 </div>
 </div>
-<div id="using-economics-to-motivate-insurance-features" class="section level2" number="4.3">
+<div id="Sec:EconomicMotivation" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Using Economics to Motivate Insurance Features</h2>
 <div id="Sec:ActuarialFairRiskClass" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Actuarially Fair Prices and Risk Classification</h3>
@@ -685,7 +886,7 @@ a problem known as <strong>adverse selection</strong>, defined as a situation wh
 <p><em>Later, we may wish to gently insert a bit about discrimination/algorithmic bias.</em></p>
 </div>
 </div>
-<div id="applications-of-contingent-payment-techniques" class="section level2" number="4.4">
+<div id="Sec:ApplicationsContingent" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Applications of Contingent Payment Techniques</h2>
 <p>This section emphasizes that “life contingent” techniques apply more broadly to contingent payment techniques. In particular, we would like examples that would appeal to general insurance actuaries, to convince this arm of the profession that they should also at least study the fundamentals of life contingencies. <strong>This section is only in outline form.</strong></p>
 <p>The unifying theme of a “contingent payment” technique, defined so far, is that we study a time to event and are interested in financial outcomes that depend on this time to event. Chapter 3 focuses on the death of an individual as the time to event. Moreover, this event time could also be the death of a pet, time to divorce, time to the first of recovery from an accident or retirement, time to failure of the first of two people, and other applications that we should describe.</p>
@@ -731,6 +932,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
