@@ -238,7 +238,7 @@ This equation exhibits a constant relationship between the annual expected value
 [Example 4.3]: ../docs/C-BenefitExt.html##tab:Ex4.3
 
 
-**Example 4.3. Term Life Annuity with $m^{th}$ly Payments**. For a more complex example, we now consider the case of an $n$ year term life annuity with $m^{th}$ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be $~_{r/m}C \equiv 1/m$, not 1. This is so that we can readily compare annuities with different payment plans, for example,quarterly to monthly payments, because they both pay a sum of 1 over the year if the annuitant survives.
+**Example 4.3. Term Life Annuity with $m^{th}$ly Payments**. For a more complex example, we now consider the case of an $n$ year term life annuity with $m^{th}$ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be $~_{r/m}C \equiv 1/m$, not 1. This is so that we can readily compare annuities with different payment plans, for example, quarterly to monthly payments, because they both pay a sum of 1 over the year if the annuitant survives.
 
 Based on equation \@ref(eq:Benefitm2), and similar to equation \@ref(eq:Benefit13), the random present value of payments is $PV  =  \frac{1}{m} \sum_{r=0}^{nm-1} v^{r/m} ~I(T_{\bf{x}} \ge r/m)$. With this and equation \@ref(eq:ExpBenefitm2), the expected present value is
 
@@ -259,7 +259,7 @@ $$
 v ~\beta(m) A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} ~,\\
 \end{array}
 $$
-where $d^{(m)} = m\left[1- v^{1/m}\right]$ is an $m^{th}$ly discount factor and $\beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}}$ is another factor based only on the interest rate, not the survival model. You can check, either using Taylor series approximations or by calculating for various values of $m$ and $i$, that $\beta(m) \approx \frac{m-1}{2m}$, an approximation that is very useful for interpreting this expected present value.
+where $d^{(m)} = m\left[1- v^{1/m}\right]$ is an $m^{th}$ly discount factor and $\beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}}$ is another factor based only on the interest rate, not the survival model. You can check, either using Taylor series approximations or by calculating using several values of $m$ and $i$, that $\beta(m) \approx \frac{m-1}{2m}$, an approximation that is very useful for interpreting this expected present value.
 
 
 `r HideProofTheory('MthlyPaym.1',"Verify Development of EPV for Term Life Annuity with mthly Payments")`
