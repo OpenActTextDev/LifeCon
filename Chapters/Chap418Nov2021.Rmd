@@ -7,7 +7,7 @@ $\require{enclose}$ <!-- Later equations only properly knit if this is beforehan
 
 We have now learned the foundations of life contingencies through Chapter \@ref(C:ModelingLifeTimes)  survival modeling and Chapter \@ref(C:SimpleBenefit) discounting of contingent cash flows. This chapter provide extensions and variations to exhibit the richness of applications.
 
-Specifically, Section \@ref(Sec:mthlyFlows) presents a relatively minor extension theoretically, allowing for $m^{th}$ly cash flows, that has extensive practical ramifications for retirement benefits, other life contingent annuities, and premium payment plans. Section \@ref(Sec:SamplingBias) sharpens our intuition about survival modeling by linking the choice of a survival dataset to an application under consideration. Section \@ref(Sec:EconomicMotivation) provides economic motivation for some of the measures summarizing insurance features introduced in Chapter \@ref(C:SimpleBenefit); this motivation provides insights as why some of these are so important in practice. Through a variety of examples, Section \@ref(Sec:ApplicationsContingent) shows that the framework for life contingent benefits applies to contingent payment problems that go beyond applications in only the life insurance industry.
+Specifically, Section \@ref(Sec:mthlyFlows) presents a relatively minor extension theoretically, allowing for $m^{th}$ly cash flows, that has extensive practical ramifications for retirement benefits, other life contingent annuities, and premium payment plans. Section \@ref(Sec:SamplingBias) sharpens our intuition about survival modeling by linking the choice of a survival dataset to an application under consideration; when the link is not appropriate, important biases can arise. Section \@ref(Sec:EconomicMotivation) provides economic motivation for some of the measures summarizing insurance features introduced in Chapter \@ref(C:SimpleBenefit); this motivation provides insights as why some of these are so important in practice. Through a variety of examples, Section \@ref(Sec:ApplicationsContingent) shows that the framework for life contingent benefits applies to contingent payment problems that go beyond applications in only the life insurance industry.
 
 
 ## Contingent Cash Flows Occurring $m^{th}$ly {#Sec:mthlyFlows}
@@ -106,7 +106,7 @@ Let us see how these ideas work with a few illustrative examples. To begin, we s
 
 [Example 4.1]: ../docs/C-BenefitExt.html##tab:Ex4.1
 
-**Example 4.1. Whole Life Insurance with $m^{th}$ly Payments with Continuous Time Mortality**. For this contract, the benefit is paid at the end of the $m^{th}$ly period in which death occurs. Let us return to the familiar [Example 3.2] that used the Section \@ref(S:SurvReg) mortality. We consider the baseline case in [Example 3.2] that you will recall is  a healthy female who is not a smoker, not obese, and has an average blood pressure level equal to 114, as well as an interest rate of 4%.
+**Example 4.1. Whole Life Insurance with $m^{th}$ly Payments with Continuous Time Mortality**. For this contract, the benefit is paid at the end of the $m^{th}$ly period in which death occurs. Let us return to the familiar [Example 3.2] that used the Section \@ref(S:SurvReg) mortality. We consider the baseline case in [Example 3.2] that you will recall is  a healthy female who is not a smoker, not obese, and has an average blood pressure level equal to 114. The interest rate is a constant 4%.
 
 To calculate the expected value of this policy, we may use equations \@ref(eq:Benefitm2) and \@ref(eq:ExpBenefitm2) directly with the potential cash flows identically equal to one $~_{k/m}C \equiv 1$. The resulting expected present value is
 
@@ -116,13 +116,13 @@ $$
 \end{array}
 $$
 
-an expression that introduces the common actuarial notation for the expected present value of this contract. Figure \@ref(fig:MBaseLifeInsPlot) summarizes the expected presented values by age $x$ over choices of $m=1,2,4, 12$. As is evident from the plot, these values are close and in fact ordered as
+an expression that introduces the common actuarial notation for the expected present value of this contract. The superscript $~^{(m)}$ denotes $m^{th}$ly cash flows. Figure \@ref(fig:MBaseLifeInsPlot) summarizes the expected presented values by age $x$ over choices of $m=1,2,4, 12$. As is evident from the plot, these values are close and in fact ordered as
 
 $$
 A_x = A_x^{(1)} \le A_x^{(2)} \le A_x^{(4)} \le A_x^{(12)} ~.
 $$
 
-The annual expected presented value, $A_x = A_x^{(1)}$, is the smallest because it is the contract with payments potentially farthest in the future. For example, if a person dies just before one month into a contract year, then the payment is 11 months after death. In contrast, it is five months after death when $m=2$, two months later for $m=4$ and virtually instantaneous for $m=12$. So, the very largest the separation that could be in Figure \@ref(fig:MBaseLifeInsPlot) is $1/(1+i) = 1/1.04$, for this example.
+The annual expected presented value, $A_x = A_x^{(1)}$, is the smallest because it is the contract with payments potentially farthest in the future. For example, if a person dies just before one month into a contract year, then the payment is 11 months after death. In contrast, it is five months after death when $m=2$, two months later for $m=4$ and virtually instantaneous for $m=12$. So, the very largest the separation that could be in Figure \@ref(fig:MBaseLifeInsPlot) is $1/(1+i) = 1/1.04 \approx 0.96$, suggesting that these expected present values will be close to one another.
 
 
 ```{r echo = FALSE}
@@ -231,16 +231,14 @@ $$
  A_{{\bf{x}}}^{(m)} = \frac{i}{i^{(m)}} A_x ~.
 $$
 
-This equation exhibits a constant relationship between the annual expected value of a whole life insurance and one on an $m^{th}$ly basis.
-
-
+This equation exhibits a constant relationship between the annual expected value of a whole life insurance and one on an $m^{th}$ly basis. Also from interest theory, a simple (Taylor series) approximation shows that $\frac{i}{i^{(m)}} \approx 1 + \frac{i}{2}(1-\frac{1}{m})$, indicating the proximity between these expected present values.
 
 <a id=tab:Ex4.3></a> 
 
 [Example 4.3]: ../docs/C-BenefitExt.html##tab:Ex4.3
 
 
-**Example 4.3. Term Life Annuity with $m^{th}$ly Payments**. For a more complex example, we now consider the case of an $n$ year term life annuity with $m^{th}$ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be $~_{r/m}C \equiv 1/m$, not 1. This is so that we can readily compare, for example, annuities based on quarterly to monthly payments because they both pay a sum of 1 over the year if the policyholder survives.
+**Example 4.3. Term Life Annuity with $m^{th}$ly Payments**. For a more complex example, we now consider the case of an $n$ year term life annuity with $m^{th}$ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be $~_{r/m}C \equiv 1/m$, not 1. This is so that we can readily compare annuities with different payment plans, for example,quarterly to monthly payments, because they both pay a sum of 1 over the year if the annuitant survives.
 
 Based on equation \@ref(eq:Benefitm2), and similar to equation \@ref(eq:Benefit13), the random present value of payments is $PV  =  \frac{1}{m} \sum_{r=0}^{nm-1} v^{r/m} ~I(T_{\bf{x}} \ge r/m)$. With this and equation \@ref(eq:ExpBenefitm2), the expected present value is
 
@@ -252,8 +250,7 @@ $$
 \end{array}
 $$
 
-To simplify the presentation, we again assume a constant spot rate $i$ so that $v^t =(1+i)^{-t}$. 
-
+To simplify the presentation, we again assume a constant spot rate $i$ so that $v^t =(1+i)^{-t}$. After some pleasant algebra, one can show that
 
 $$
 \begin{array}{rl}
@@ -262,7 +259,7 @@ $$
 v ~\beta(m) A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} ~,\\
 \end{array}
 $$
-where $d^{(m)} = m\left[1- v^{1/m}\right]$ is an $m^{th}$ly discount factor and $\beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}}$ is another factor.
+where $d^{(m)} = m\left[1- v^{1/m}\right]$ is an $m^{th}$ly discount factor and $\beta(m) = \frac{i-i^{(m)}}{i^{(m)}d^{(m)}}$ is another factor based only on the interest rate, not the survival model. You can check, either using Taylor series approximations or by calculating for various values of $m$ and $i$, that $\beta(m) \approx \frac{m-1}{2m}$, an approximation that is very useful for interpreting this expected present value.
 
 
 `r HideProofTheory('MthlyPaym.1',"Verify Development of EPV for Term Life Annuity with mthly Payments")`
@@ -306,6 +303,15 @@ sum(vj)/m
 sum(Time*vj)/m
 (1-v)/m/(1-v^(1/m))
 (v^(1/m)/m*(1-v))/(1-v^(1/m))^2 - v/(1-v^(1/m))
+
+m.vec = c(1,2,4, 12, 52, 365)
+im.vec = m.vec*((1+i)^(1/m.vec)-1)
+i/im.vec
+1+(i/2)*(1-1/m.vec)
+dm.vec = m.vec*(1-v^(1/m.vec))
+betam.vec = (i-im.vec)/(im.vec*dm.vec)
+round(betam.vec, digits = 6)
+(m.vec-1)/(2*m.vec)
 
 ```
 
@@ -351,6 +357,8 @@ $$
 E(PV) = \int_0^{\infty} ~ v^t ~_t p_x \mu_{x+t} dt = \bar{A}_x .
 $$
 
+For notation, we could use $~^{(\infty)}$ to signify payments with an infinite number of payment periods. However, it is traditional and part of International Actuarial Notation to use a bar ($\bar{\cdot}$) to denote payments at the moment of death. See Appendix Section \@ref(Sec:NotConv:Halo) for more on actuarial notation.
+
 Similarly for an $n$ year endowment, we have 
 
 $$
@@ -361,7 +369,8 @@ E(PV)
 & = \bar{A}_{{\bf{x}}:\enclose{actuarial}{n}} .
 \end{array}
 $$
-When a continuous time probability model is available, then these integrals can be computed directly (although sometimes require numerical integration software). An alternative approach is to the approximation based on $m^{th}$ly payments introduced in the prior section and let $m \to \infty$. For example, for the whole life assuming *UDD*, we have
+
+When a continuous time probability model is available, then these integrals can be computed directly (although they sometimes require numerical integration software). An alternative approach is to use the approximations based on $m^{th}$ly payments introduced in the prior section and let $m \to \infty$. For example, for the whole life assuming *UDD*, we have
 
 $$
 \bar{A}_x = \lim_{m \to \infty} A_x^{(m)} = \lim_{m \to \infty} \frac{i}{i^{(m)}} A_x = \frac{i}{\delta} A_x ,
@@ -419,7 +428,7 @@ Probably could use **lots** of exercises.
 
 ##  Sampling Bias {#Sec:SamplingBias}
 
-In Chapter 2 we saw that survival distributions, expressed as mortality rates, can vary not only by age and sex but also by other attributes such as smoking status, systolic blood pressure, and so forth. This naturally raises the question as whether these attributes are important in actuarial practice. To frame this question, this section reviews the statistical concept of sampling bias in the context of actuarial applications.
+In Chapter \@ref(C:ModelingLifeTimes) we saw that survival distributions, expressed as mortality rates, can vary not only by age and sex but also by other attributes such as smoking status, systolic blood pressure, and so forth. This naturally raises the question as whether these attributes are important in actuarial practice. To frame this question, this section reviews the statistical concept of sampling bias in the context of actuarial applications.
 
 ###  Population Subsets and Sampling Bias
 

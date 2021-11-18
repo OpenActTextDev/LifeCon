@@ -6,7 +6,7 @@
 *Chapter Preview*. *Life Contingencies* employs widely accepted statistical concepts and tools. Thus, the notation should be consistent with standard usage employed in probability and mathematical statistics. See, for example, [@halperin1965recommended] for a description of one standard.
 
 
-## Actuarial Notation  {#S:NC:ActSymbols}
+## Actuarial Notation  {#Sec:NC:ActSymbols}
 
 Here is a list of commonly used actuarial symbols and functions, including the latex code that we use to generate them.
 
@@ -79,7 +79,7 @@ $$
 Not sure if necessary to say $APV$ (actuarial present value)
 
 
-## Halo System  {#C:NotConv:Halo}
+## Halo System  {#Sec:NotConv:Halo}
 
 
 ```{r  Halo1, warning=FALSE,message=FALSE, comment=NA, eval=FALSE, echo = FALSE}
@@ -152,7 +152,7 @@ $$
 ```
 
 
-## General Conventions {#S:NC:General}
+## General Conventions {#Sec:NC:General}
 
 
 - Random variables are denoted by upper-case italicized Roman letters, with $X$ or $Y$ denoting a claim size variable, $N$ a claim count variable, and $S$ an aggregate loss variable. Realizations of random variables are denoted by corresponding lower-case italicized Roman letters, with $x$ or $y$ for claim sizes, $n$ for a claim count, and $s$ for an aggregate loss.
@@ -165,7 +165,7 @@ $$
 
 
 
-## Abbreviations   {#S:NC:Abbreviations}
+## Abbreviations   {#Sec:NC:Abbreviations}
 
 Here is a list of abbreviations that we adopt. We italicize these acronyms. For example, we can discuss the goodness of fit in terms of the *AIC* criterion.
 
@@ -187,7 +187,7 @@ pmf & \text{probability mass function} \\ \hline
 $$
 
 
-## Common Statistical Symbols and Operators  {#S:NC:StatSymbols}
+## Common Statistical Symbols and Operators  {#Sec:NC:StatSymbols}
 
 Here is a list of commonly used statistical symbols and operators, including the latex code that we use to generate them (in the parens).
 
@@ -223,7 +223,7 @@ $$
 
   
   
-## Common Mathematical Symbols and Functions  {#S:NC:Symbols}
+## Common Mathematical Symbols and Functions  {#Sec:NC:Symbols}
 
 Here is a list of commonly used mathematical symbols and functions, including the latex code that we use to generate them (in the parens).
 
