@@ -67,6 +67,12 @@ fig:SampPopCompare
 eq:EqSum
 fig:SampIdentical
 tab:CanadianSelect
+tab:BreedCause
+fig:SurvSexNeut
+fig:SurvBreed
+tab:DogCoxPHa
+fig:OneYearCrossBreeda
+tab:OneYearCrossBreed1a
 fig:Halo1a
 introduction
 C:ModelingLifeTimes
@@ -129,6 +135,11 @@ Sec:ActuarialFairRiskClass
 Sec:SelectionAdverse
 asymmetric-information
 Sec:ApplicationsContingent
+pet-insurance
+Sec:IntroPet
+canine-mortality
+cost-of-care
+more-on-pet-insurance-markets
 C:Forward
 table-of-contents
 C:NotationConventionLC
