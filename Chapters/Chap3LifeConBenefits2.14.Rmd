@@ -910,7 +910,7 @@ persp3d(intplot, xage, AnnuityMat.f[,,1], theta = 180, phi = 00, col = "red", yl
 ***
 
 
-### 	Term life annuity
+### 	Term life annuity {#Sec:TermLifeAnnuity}
 
 Under a **term life annuity** policy the insurer pays benefits to policyholders whilst they are alive, for a maximum of $n$ periods. For annuities in advance and in arrears, this system is illustrated on a timeline in Figure \@ref(fig:Benefit7a), with the $PV$ and $\mathrm{E}(PV)$ of the benefit cash flows shown in displays \@ref(eq:Benefit13) and \@ref(eq:Benefit14).
 

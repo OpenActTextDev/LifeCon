@@ -73,6 +73,10 @@ fig:SurvBreed
 tab:DogCoxPHa
 fig:OneYearCrossBreeda
 tab:OneYearCrossBreed1a
+fig:DiRecRates1
+fig:DiRecRates2
+fig:DiRecRates3
+fig:DiRecRates4
 fig:Halo1a
 introduction
 C:ModelingLifeTimes
@@ -113,7 +117,7 @@ pure-endowment
 endowment-insurance
 Sec:BenefitAnnuity
 life-annuity
-term-life-annuity
+Sec:TermLifeAnnuity
 deferred-life-annuity
 guaranteed-life-annuity
 Sec:BenefitSpread
@@ -135,11 +139,16 @@ Sec:ActuarialFairRiskClass
 Sec:SelectionAdverse
 asymmetric-information
 Sec:ApplicationsContingent
-pet-insurance
+Sec:PetInsurance
 Sec:IntroPet
 canine-mortality
 cost-of-care
 more-on-pet-insurance-markets
+Sec:DisIncInsurance
+introduction-to-disability-income-insurance
+disability-recovery-rates
+actuarial-present-values-of-disability-income
+more-on-disability-income-insurance
 C:Forward
 table-of-contents
 C:NotationConventionLC

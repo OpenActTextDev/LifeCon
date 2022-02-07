@@ -1,0 +1,199 @@
+
+## Disability Income Insurance
+
+### Introduction to Disability Income Insurance
+
+Disability income insurance is a contract designed to provide a regular income, such as monthly, to an individual if he or she is prevented by sickness or injury from working. Policies are available on an individual basis, through membership in a group such as an employer, and through public (government sponsored) insurance. The data that we consider are from the U.S. Social Security Disability Income program, @zayatz2015social. Because disability provides benefits to those unable to work, it is not designed to be a substitute for a retirement benefit and so is usually available for a fixed term or age, such as ceasing at age 65 as in our illustrative example.
+
+Like annuity benefits introduced in Section \@ref(Sec:BenefitAnnuity), the benefit is paid periodically until a random **event time**. However, for a life annuity, the payment stops when the policyholder dies (a sad event). In contrast, for a disability income policy, the payment stops when someone recovers from disability (a happy event).
+
+"Life contingent" techniques can be employed for general event times that need not be tied to human mortality. Naturally, there are a few caveats to this important message. For example, both life annuities and disability income may be limited by a fixed term or age. Further, as we will see, disability income may cease upon the sooner of recovery or death, another type of event time.
+
+
+```{r echo = FALSE}
+RecoveryData       <- read.csv("Data/MaleRecovery.csv",       header=T)
+RecoveryFData      <- read.csv("Data/FemaleRecovery.csv",     header=T)
+RecoveryDeathData  <- read.csv("Data/MaleRecoveryDeath.csv",  header=T)
+RecoveryDeathFData <- read.csv("Data/FemaleRecoveryDeath.csv",header=T)
+
+```
+
+
+### Disability Recovery Rates
+
+To better appreciate how often policyholders recover from disability, Figure \@ref(fig:DiRecRates1) shows male rates ($q_x^r$) from the U.S. Social Security Disability Income program (@zayatz2015social, Table 14A). The solid black line, denoted as `Select=0` is for individuals who met program qualifications for disability benefits and then recovered from their disability within a year. As suggested in the figure, except for age less than about 22, this experience is very similar to individuals who had been in the program for two years, `Select=2`. The other four lines represent greater number of years of selection (4, 6, 8, and an "ultimate" column); visually, they seem similar to one another. This figure demonstrates the importance of the select effect and is consistent with medical selection in life insurance that we saw in Section \@ref(Sec:SelectionAdverse). In both cases, recent admission to a program or policy can influence the "event time" experience.
+
+
+(ref:DiRecRates1) **Disability Recovery Rates by Attained Age and Select Period**. A plot of recovery rates $q_x^r$ by attained age $x$. Each line represents a different select period. The lines for select 0 and 2 are similar, other lines are also similar, suggesting that selection effects have worn out beginning at select = 4. 
+
+
+```{r DiRecRates1, fig.cap='(ref:DiRecRates1)', out.width='50%', fig.asp=.80, echo=FALSE}
+library(ggplot2)
+library(gridExtra)
+
+dataf <- data.frame(RecoveryData)
+ggplot(dataf,aes(x=Entryx, y=Select.0)) + theme_bw() + 
+  geom_line(aes(y = Select.0), linetype = 1, col = 1) +
+  geom_line(aes(x=c(rep(NA,2),Entryx[3:49]), y = c(rep(NA,2),Select.2[1:47])), linetype = 11, col = 11) +
+  geom_line(aes(x=c(rep(NA,4),Entryx[5:49]), y = c(rep(NA,4),Select.4[1:45])), linetype = 2, col = 2) +
+  geom_line(aes(x=c(rep(NA,6),Entryx[7:49]), y = c(rep(NA,6),Select.6[1:43])), linetype = 3, col = 3) +
+  geom_line(aes(x=c(rep(NA,8),Entryx[9:49]), y = c(rep(NA,8),Select.8[1:41])), linetype = 4, col = 4) +
+  geom_line(aes(x=c(rep(NA,10),Entryx[11:49]), y = c(rep(NA,10),Ultimate[1:39])), linetype = 5, col = 5) +
+  xlab("Attained Age") + ylab("Recovery Rates") +
+  scale_y_continuous(trans='log10') +
+  annotate("text", x=17, y=0.003, size=3, label = "Select = 0") +
+  annotate("text", x=18, y=0.030, size=3, label = "Select = 2")
+
+```
+
+```{r echo = FALSE}
+# Convert to Cohort Format
+
+matRecoveryM <- data.matrix(RecoveryData)
+matRecoveryF <- data.matrix(RecoveryFData)
+matRecoveryDeathM <- data.matrix(RecoveryDeathData)
+matRecoveryDeathF <- data.matrix(RecoveryDeathFData)
+
+RecoveryCohortM <- matrix(NA, nrow = 64-16+1, ncol = 65-16+1)
+
+for (irow in 1:(64-16+1)){
+#xEntry = 15+irow
+for (icol in 2:(65-(15+irow)+2)){
+#xAttained
+    if (icol < 13){RecoveryCohortM[irow,icol+irow-1-1] = matRecoveryM[irow,icol]}
+             else {RecoveryCohortM[irow,icol+irow-1-1] = matRecoveryM[icol+irow-1 - 11,12]}
+}
+}
+
+```
+
+
+As we saw in Section \@ref(S:DataLifeExp), another way of looking at event times is by following **cohorts** of individuals. Figure \@ref(fig:DiRecRates2) follows recovery rates for several cohorts. The figure shows that annual probabilities of recovery decline with advancing  age. Further, in @zayatz2015social, the early year probability of recovery patterns are attributed to the scheduling of continuing disability reviews. For example, where medical improvement is expected, the review is scheduled for 6 to 24 months following the most recent disability decision. Where medical improvement is not expected, the review is scheduled between 5 and 7 years later. 
+
+These patterns are most evident in the cohort depicted by the bold solid black line that follows males who entered the disability program at age 16. This is the youngest cohort in the data set; it has the least amount of experience and so is the most uncertain. From Figure \@ref(fig:DiRecRates2), we see a very large spike in recovery rates after five or six years in the program. This spike is  also evident in cohorts that entered at ages 21 and 26 although on a smaller scale. The jump in recovery rates beginning at  `Cohort=31` and on is still evident but on a much lower scale.
+
+
+(ref:DiRecRates2) **Disability Recovery Rates by Attained Age and Cohort**. A plot of recovery rates $q_x^r$ by attained age $x$. Each line represents a different cohort. The cohort first receiving disability benefits at age 16 show a strong recovery rate about five years later. This effect is also evident, although not as pronounced, in cohorts 21 and 26. Recovery rates seem to dampen as age (both cohort and attained) increases.
+
+
+```{r DiRecRates2, fig.cap='(ref:DiRecRates2)', out.width='50%', fig.asp=.80, echo=FALSE}
+xAttained <- 16:65
+
+dataf <- data.frame(cbind(xAttained,t(RecoveryCohortM)))
+ggplot(dataf, aes(xAttained, y=V2)) + theme_bw() + 
+  geom_line(aes(y = V2), linetype = 1, col = 1, size=1.01) + 
+  geom_line(aes(y = V7), linetype = 2, col = 2) +
+  geom_line(aes(y = V12), linetype = 13, col = 13) +
+  geom_line(aes(y = V17), linetype = 4, col = 4) +
+  geom_line(aes(y = V22), linetype = 5, col = 5) +
+  geom_line(aes(y = V27), linetype = 6, col = 6) +
+  xlab("Attained Age") + ylab("Recovery Rates") +
+  annotate("text", x=17, y=0.1, size=3, label = "Cohort=16") +
+  annotate("text", x=20, y=0.0, size=3, label = "Cohort=21") +
+  annotate("text", x=27, y=0.0, size=3, label = "Cohort=26")
+
+```
+
+
+### Actuarial Present Values of Disability Income
+
+To get a sense of the benefit to an individual, and the cost to the program, we can compute actuarial present values. Calculation of the actuarial present value is that same as the term life annuity introduced in Section \@ref(Sec:TermLifeAnnuity) in that we assume the benefit terminates at age 65. Further, instead of probability of death we now use probability of recovery from disability (and hence exiting the program).
+
+Using an assumed $i=$ 4 percent interest rate, Figure \@ref(fig:DiRecRates3) summaries annuity calculations by attained age for several different cohorts. These annuity values assume a payment of 1 at the beginning of the year if one is in the program; for perspective, as reported in @zayatz2015social, in 2013 (the year of the study) disability income worker beneficiaries received approximately 14,000 USD per year.
+
+Although there are some differences at younger cohorts and attained ages, Figure \@ref(fig:DiRecRates3) shows remarkable agreement among cohorts beginning about age 30. In the figure, the thick dashed blue line marks annuity values for the `Cohort=31`; all annuity values are similar to this line. We can interpret this to mean that the actuarial present value depends on the attained age for 30 and above, not the cohort representing when an individual first entered the program.
+
+
+(ref:DiRecRates3) **Annuities by Attained Age and Cohort**. A plot of annuities $ä_x^r$ by attained age $x$. Each line represents a different cohort. The first two cohorts plotted first receiving disability benefits at age 16 and 21 differ in the early annuity values. Beginning at attained age 30, all annuity values appear to be qualitatively similar. The thick dashed blue line marks annuity values for the cohort=31.
+
+
+```{r DiRecRates3, fig.cap='(ref:DiRecRates3)', out.width='50%', fig.asp=.80, echo=FALSE}
+
+AddPV <- function(x, q.x, int=0.04){
+  v = 1/(1+int)
+  num = length(x)
+  0*x -> add.x
+  add.x[num] = 1 #+ (1-q.x[num])/(int + 1e-12)
+  for (i in 1:(num-1)){
+    add.x[num-i] = 1 + v*(1-q.x[num-i])*add.x[num-i+1] 
+  }
+    tablelife <- cbind(x,q.x,add.x)
+  return(tablelife)
+}
+
+add.x.16 <- AddPV(x=16:65, q.x=RecoveryCohortM[1,1:49])[,3]
+add.x.21 <- c(rep(NA,5), AddPV(x=21:65, q.x=RecoveryCohortM[6,6:49])[,3])
+add.x.26 <- c(rep(NA,10),AddPV(x=26:65, q.x=RecoveryCohortM[11,11:49])[,3])
+add.x.31 <- c(rep(NA,15),AddPV(x=31:65, q.x=RecoveryCohortM[16,16:49])[,3])
+add.x.36 <- c(rep(NA,20),AddPV(x=36:65, q.x=RecoveryCohortM[21,21:49])[,3])
+add.x.41 <- c(rep(NA,25),AddPV(x=41:65, q.x=RecoveryCohortM[26,26:49])[,3])
+
+dataf <- data.frame(cbind(xAttained,add.x.16, add.x.21,
+                          add.x.26, add.x.31, add.x.36, add.x.41 ))
+
+ggplot(dataf,aes(x=xAttained, y=add.x.16)) + theme_bw() +
+  geom_line(aes(y = add.x.16), color = 1, linetype=1) +
+  geom_line(aes(y = add.x.21), color = 2, linetype=2 ) + 
+  geom_line(aes(y = add.x.26), color = 3, linetype=3 ) + 
+  geom_line(aes(y = add.x.31), color = 4, linetype=4, size = 2  ) + 
+  geom_line(aes(y = add.x.36), color = 5, linetype=5 ) +  
+  geom_line(aes(y = add.x.41), color = 6, linetype=6) +   
+  xlab("Attained Age") + ylab(expression(ä[x]^r)) +
+  annotate("text", x=20, y=12, size=3, label = "Cohort=16") +
+  annotate("text", x=20, y=16, size=3, label = "Cohort=21") 
+
+```
+
+Figure \@ref(fig:DiRecRates4) supplements that actuarial present values by providing an analysis for female workers as well as computing actuarial present values for recovery and death. That is, a worker may leave the program due to recover from disability as well as death. So, the lower two lines in Figure \@ref(fig:DiRecRates4) consider the event time to be the sooner of recover and death for males and females, respectively. This figure is for `Cohort=31`.
+
+The top two lines of Figure \@ref(fig:DiRecRates4) show that male and female actuarial present values are virtually indistinguishable when the event time is recovery. The bottom two lines, when the event time is recovery or death, show that  female annuities are above male annuities; this is consistent with our prior observations that females generally live longer then males.
+
+
+(ref:DiRecRates4) **Annuities by Attained Age, Gender and Type of Departure**. A plot of annuities $ä_x^r$ by attained age $x$. The top two lines are represent departing from the disability program via recovery from disability. The two lines are for male and female and are virtually indistinguishable. The bottom two lines represent departing from the disability program via recovery from disability or by death. Female annuities are above male annuities (in that females generally live longer then males).
+
+
+
+```{r DiRecRates4, fig.cap='(ref:DiRecRates4)', out.width='50%', fig.asp=.80, echo=FALSE}
+
+CreateCohort <- function(matData){
+  CohortData <- matrix(NA, nrow = 64-16+1, ncol = 65-16+1)
+  for (irow in 1:(64-16+1)){
+  #xEntry = 15+irow
+  for (icol in 2:(65-(15+irow)+2)){
+  #xAttained
+    if (icol < 13){CohortData[irow,icol+irow-1-1] = matData[irow,icol]}
+             else {CohortData[irow,icol+irow-1-1] = matData[icol+irow-1 - 11,12]}
+  }}
+  return(CohortData)
+  }
+RecoveryCohortF      <- CreateCohort(matRecoveryF)
+RecoveryDeathCohortM <- CreateCohort(matRecoveryDeathM)
+RecoveryDeathCohortF <- CreateCohort(matRecoveryDeathF)
+
+add.x.31RF  <- c(rep(NA,15),AddPV(x=31:65, q.x=RecoveryCohortF[16,16:49])[,3])
+add.x.31RDM <- c(rep(NA,15),AddPV(x=31:65, q.x=RecoveryDeathCohortM[16,16:49])[,3])
+add.x.31RDF <- c(rep(NA,15),AddPV(x=31:65, q.x=RecoveryDeathCohortF[16,16:49])[,3])
+
+
+dataf <- data.frame(cbind(xAttained,add.x.31, add.x.31RF, add.x.31RDM,add.x.31RDF ))
+
+ggplot(dataf,aes(x=xAttained, y=add.x.31)) + theme_bw()+
+  geom_line(aes(y = add.x.31), color = 1, linetype=1) +
+  geom_line(aes(y = add.x.31RF), color = 2, linetype=2 ) + 
+  geom_line(aes(y = add.x.31RDM), color = 3, linetype=3, size=1 ) + 
+  geom_line(aes(y = add.x.31RDF), color = 4, linetype=4 ) +
+  xlab("Attained Age") + ylab(expression(ä[x]^r)) +
+  coord_cartesian(xlim =c(30,70)) +
+  annotate("text", x=50, y=15, size=3, label = "Recovery") +
+  annotate("text", x=35, y=12, size=3, label = "Recovery + Death") +
+  annotate("text", x=30, y=15, size=3, label = "Female") 
+
+```
+### More on Disability Income Insurance
+
+This brief introduction to disability income focused on demonstrating an important application where contingent payment methods need not be applied only to mortality. Because of its brevity, we have omitted many important attributes of disability income such as a waiting time for eligibility of the benefit, the role of monthly payments, differences among individual, group, and public programs, as well as the role of different international marketplaces. For a deeper dive into this fascinating topic, see 
+@haberman2018actuarial.
+
+In particular, we have not yet addressed the *cost of becoming disabled*. What we have done is provide actuarial present values of the benefit of a disability insurance program. However, for a worker, we have not yet described the probability of being disabled. More generally, thinking of a worker's lifetime, this person may be an active worker, and then become disabled. However, we have seen that the person may soon recover from the disability and then re-enter the work force. This pattern of switching statuses between between healthy and working and disabled and receiving benefits, and costs associated with each status, is the topic of Chapter 7 on **multiple state modeling.**
+
+
