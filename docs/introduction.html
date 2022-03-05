@@ -32,7 +32,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="C-ModelingLifeTimes.html"/>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,10 +50,9 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<script src="libs/datatables-binding-0.19/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -197,18 +197,18 @@ var submitAnswer = function() {
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -228,7 +228,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -277,94 +277,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Life Contingencies</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a><ul>
-<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a><ul>
+<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:DataLifeExp"><i class="fa fa-check"></i><b>2.1.1</b> Life Expectancies</a></li>
 <li class="chapter" data-level="2.1.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:HMDData"><i class="fa fa-check"></i><b>2.1.2</b> Population Mortality Counts</a></li>
 <li class="chapter" data-level="2.1.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:IndivMortData"><i class="fa fa-check"></i><b>2.1.3</b> Individual Mortality Data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a><ul>
+<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#lifetime-random-variable-and-its-distribution"><i class="fa fa-check"></i><b>2.2.1</b> Lifetime Random Variable and its Distribution</a></li>
 <li class="chapter" data-level="2.2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#standard-actuarial-notation-q_bfx-_tp_bfx-and-all-that"><i class="fa fa-check"></i><b>2.2.2</b> Standard Actuarial Notation: <span class="math inline">\(q_{\bf{x}}\)</span>, <span class="math inline">\(_tp_{\bf{x}}\)</span>, and All That</a></li>
 <li class="chapter" data-level="2.2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:ModelOnlyAge"><i class="fa fa-check"></i><b>2.2.3</b> The Classical Case: Age-Only Model</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical laws of mortality</a><ul>
+<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical laws of mortality</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#de-moivre-and-constant-force-models"><i class="fa fa-check"></i><b>2.3.1</b> De Moivre and Constant Force Models</a></li>
 <li class="chapter" data-level="2.3.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#gompertz-and-makeham-laws"><i class="fa fa-check"></i><b>2.3.2</b> Gompertz and Makeham Laws</a></li>
 <li class="chapter" data-level="2.3.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#makeham-law-based-on-life-expectancies-data"><i class="fa fa-check"></i><b>2.3.3</b> Makeham Law based on Life Expectancies Data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a><ul>
+<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabBasics"><i class="fa fa-check"></i><b>2.4.1</b> Life Table Basics</a></li>
 <li class="chapter" data-level="2.4.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabEst"><i class="fa fa-check"></i><b>2.4.2</b> Life Table based on U.S. Population Data</a></li>
 <li class="chapter" data-level="2.4.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabRec"><i class="fa fa-check"></i><b>2.4.3</b> Curtate Quantities and Recursive Relationships</a></li>
 <li class="chapter" data-level="2.4.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional year assumptions</a></li>
 <li class="chapter" data-level="2.4.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabMImpr"><i class="fa fa-check"></i><b>2.4.5</b> Cohort Life Tables and Mortality Improvement Modeling</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric survival estimation</a><ul>
+<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric survival estimation</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#kaplan-meier-estimate"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimate</a></li>
 <li class="chapter" data-level="2.5.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#nelson-aalen"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional models: Survival regression</a><ul>
+<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional models: Survival regression</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#the-cox-proportional-hazard-model"><i class="fa fa-check"></i><b>2.6.1</b> The Cox Proportional Hazard Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#cox-models-based-on-life-insurer-data"><i class="fa fa-check"></i><b>2.6.2</b> Cox Models Based on Life Insurer Data</a></li>
 <li class="chapter" data-level="2.6.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#conditional-life-tables"><i class="fa fa-check"></i><b>2.6.3</b> Conditional Life Tables</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#notes-and-comments"><i class="fa fa-check"></i><b>2.7</b> Notes and Comments</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a><ul>
-<li class="chapter" data-level="3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCFunc"><i class="fa fa-check"></i><b>3.1</b> Valuation of Cash Flows under Uncertainty</a><ul>
+<li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCFunc"><i class="fa fa-check"></i><b>3.1</b> Valuation of Cash Flows under Uncertainty</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#moment-calculations"><i class="fa fa-check"></i><b>3.1.1</b> Moment Calculations</a></li>
 <li class="chapter" data-level="3.1.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#illustrative-moments-of-cash-flows"><i class="fa fa-check"></i><b>3.1.2</b> Illustrative Moments of Cash Flows</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitActNot"><i class="fa fa-check"></i><b>3.2</b> Life Insurance Benefits</a><ul>
+<li class="chapter" data-level="3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitActNot"><i class="fa fa-check"></i><b>3.2</b> Life Insurance Benefits</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitWL"><i class="fa fa-check"></i><b>3.2.1</b> Whole of life insurance</a></li>
 <li class="chapter" data-level="3.2.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitTI"><i class="fa fa-check"></i><b>3.2.2</b> Term insurance</a></li>
 <li class="chapter" data-level="3.2.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#pure-endowment"><i class="fa fa-check"></i><b>3.2.3</b> Pure endowment</a></li>
 <li class="chapter" data-level="3.2.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#endowment-insurance"><i class="fa fa-check"></i><b>3.2.4</b> Endowment insurance</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitAnnuity"><i class="fa fa-check"></i><b>3.3</b> Life Annuity Benefits</a><ul>
+<li class="chapter" data-level="3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitAnnuity"><i class="fa fa-check"></i><b>3.3</b> Life Annuity Benefits</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#life-annuity"><i class="fa fa-check"></i><b>3.3.1</b> Life annuity</a></li>
 <li class="chapter" data-level="3.3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:TermLifeAnnuity"><i class="fa fa-check"></i><b>3.3.2</b> Term life annuity</a></li>
 <li class="chapter" data-level="3.3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#deferred-life-annuity"><i class="fa fa-check"></i><b>3.3.3</b> Deferred life annuity</a></li>
 <li class="chapter" data-level="3.3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#guaranteed-life-annuity"><i class="fa fa-check"></i><b>3.3.4</b> Guaranteed life annuity</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitSpread"><i class="fa fa-check"></i><b>3.4</b> Valuing Life Contingent Benefits using a Spreadsheet</a></li>
-<li class="chapter" data-level="3.5" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCS"><i class="fa fa-check"></i><b>3.5</b> Case Study: A Portfolio of Term Insurance Policies</a><ul>
+<li class="chapter" data-level="3.5" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCS"><i class="fa fa-check"></i><b>3.5</b> Case Study: A Portfolio of Term Insurance Policies</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSInd"><i class="fa fa-check"></i><b>3.5.1</b> An individual policy</a></li>
 <li class="chapter" data-level="3.5.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSPort"><i class="fa fa-check"></i><b>3.5.2</b> Moments of a portfolio of policies</a></li>
 <li class="chapter" data-level="3.5.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#simulated-distribution-of-a-portfolio-of-policies"><i class="fa fa-check"></i><b>3.5.3</b> Simulated distribution of a portfolio of policies</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>3.6</b> Further Resources and Contributors</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a><ul>
-<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a><ul>
+<li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:BasicConceptsmthly"><i class="fa fa-check"></i><b>4.1.1</b> Basic Concepts</a></li>
 <li class="chapter" data-level="4.1.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#illustrative-cash-flows"><i class="fa fa-check"></i><b>4.1.2</b> Illustrative Cash Flows</a></li>
 <li class="chapter" data-level="4.1.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.1.3</b> Contingent Cash Flows in Continuous Time</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a><ul>
+<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a>
+<ul>
 <li class="chapter" data-level="4.2.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#population-subsets-and-sampling-bias"><i class="fa fa-check"></i><b>4.2.1</b> Population Subsets and Sampling Bias</a></li>
 <li class="chapter" data-level="4.2.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#sampling-bias-in-actuarial-practice"><i class="fa fa-check"></i><b>4.2.2</b> Sampling Bias in Actuarial Practice</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a><ul>
+<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ActuarialFairRiskClass"><i class="fa fa-check"></i><b>4.3.1</b> Actuarially Fair Prices and Risk Classification</a></li>
 <li class="chapter" data-level="4.3.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SelectionAdverse"><i class="fa fa-check"></i><b>4.3.2</b> Selection and Adverse Selection</a></li>
-<li class="chapter" data-level="4.3.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#asymmetric-information"><i class="fa fa-check"></i><b>4.3.3</b> Asymmetric Information</a></li>
+<li class="chapter" data-level="4.3.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:AsymmericInfo"><i class="fa fa-check"></i><b>4.3.3</b> Asymmetric Information</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ApplicationsContingent"><i class="fa fa-check"></i><b>4.4</b> Contingent Payment Applications</a></li>
-<li class="chapter" data-level="4.5" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:PetInsurance"><i class="fa fa-check"></i><b>4.5</b> Pet Insurance</a><ul>
+<li class="chapter" data-level="4.5" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:PetInsurance"><i class="fa fa-check"></i><b>4.5</b> Pet Insurance</a>
+<ul>
 <li class="chapter" data-level="4.5.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:IntroPet"><i class="fa fa-check"></i><b>4.5.1</b> Introduction to Pet Health Insurance</a></li>
 <li class="chapter" data-level="4.5.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:CanineMort"><i class="fa fa-check"></i><b>4.5.2</b> Canine Mortality</a></li>
 <li class="chapter" data-level="4.5.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DogCostCare"><i class="fa fa-check"></i><b>4.5.3</b> Cost of Care</a></li>
 <li class="chapter" data-level="4.5.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-pet-insurance-markets"><i class="fa fa-check"></i><b>4.5.4</b> More on Pet Insurance Markets</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DisIncInsurance"><i class="fa fa-check"></i><b>4.6</b> Disability Income Insurance</a><ul>
+<li class="chapter" data-level="4.6" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DisIncInsurance"><i class="fa fa-check"></i><b>4.6</b> Disability Income Insurance</a>
+<ul>
 <li class="chapter" data-level="4.6.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#introduction-to-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.1</b> Introduction to Disability Income Insurance</a></li>
 <li class="chapter" data-level="4.6.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#disability-recovery-rates"><i class="fa fa-check"></i><b>4.6.2</b> Disability Recovery Rates</a></li>
 <li class="chapter" data-level="4.6.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#actuarial-present-values-of-disability-income"><i class="fa fa-check"></i><b>4.6.3</b> Actuarial Present Values of Disability Income</a></li>
@@ -372,12 +391,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.7" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#exercises"><i class="fa fa-check"></i><b>4.7</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a><ul>
+<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="C-Forward.html"><a href="C-Forward.html#table-of-contents"><i class="fa fa-check"></i><b>5.1</b> Table of Contents</a></li>
 <li class="chapter" data-level="5.2" data-path="C-Forward.html"><a href="C-Forward.html#usage-data"><i class="fa fa-check"></i><b>5.2</b> Usage Data</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>6</b> Appendix: Conventions for Notation</a><ul>
-<li class="chapter" data-level="6.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>6.1</b> Actuarial Notation</a><ul>
+<li class="chapter" data-level="6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>6</b> Appendix: Conventions for Notation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>6.1</b> Actuarial Notation</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>6.1.1</b> Life Table Symbols</a></li>
 <li class="chapter" data-level="6.1.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeInsSymbols"><i class="fa fa-check"></i><b>6.1.2</b> Life Insurance Symbols</a></li>
 <li class="chapter" data-level="6.1.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeAnnSymbols"><i class="fa fa-check"></i><b>6.1.3</b> Annuity Certain and Life Annuity Symbols</a></li>
@@ -410,7 +432,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
+<div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
 <p><strong>Placeholder</strong></p>
 </div>

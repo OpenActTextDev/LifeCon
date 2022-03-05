@@ -143,7 +143,7 @@ sampling-bias-in-actuarial-practice
 Sec:EconomicMotivation
 Sec:ActuarialFairRiskClass
 Sec:SelectionAdverse
-asymmetric-information
+Sec:AsymmericInfo
 Sec:ApplicationsContingent
 Sec:PetInsurance
 Sec:IntroPet

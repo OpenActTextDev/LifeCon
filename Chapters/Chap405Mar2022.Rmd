@@ -111,11 +111,11 @@ Here, to calculate the probability of a life aged $x$ surviving $k+j/m$ years, w
 
 Let us see how these ideas work with a few illustrative examples. To begin, we start by assuming that we have a continuous time probability model and so no simplifying assumptions are needed.
 
-<a id=tab:Ex4.1></a> 
+<a id=tab:Ex4.11></a> 
 
-[Example 4.1]: ../docs/C-BenefitExt.html##tab:Ex4.1
+[Example 4.1.1]: ../docs/C-BenefitExt.html##tab:Ex4.11
 
-**Example 4.1. Whole Life Insurance with $m^{th}$ly Payments with Continuous Time Mortality**. For this contract, the benefit is paid at the end of the $m^{th}$ly period in which death occurs. Let us return to the familiar [Example 3.2] that used the Section \@ref(S:SurvReg) mortality. We consider the baseline case in [Example 3.2] that you will recall is  a healthy female who is not a smoker, not obese, and has an average blood pressure level equal to 114. The interest rate is a constant 4%.
+**Example 4.1.1. Whole Life Insurance with $m^{th}$ly Payments with Continuous Time Mortality**. For this contract, the benefit is paid at the end of the $m^{th}$ly period in which death occurs. Let us return to the familiar [Example 3.2] that used the Section \@ref(S:SurvReg) mortality. We consider the baseline case in [Example 3.2] that you will recall is  a healthy female who is not a smoker, not obese, and has an average blood pressure level equal to 114. The interest rate is a constant 4%.
 
 To calculate the expected value of this policy, we may use equations \@ref(eq:Benefitm2) and \@ref(eq:ExpBenefitm2) directly with the potential cash flows identically equal to one $~_{k/m}C \equiv 1$. The resulting expected present value is
 
@@ -212,9 +212,9 @@ p1
 
 <a id=tab:Ex4.2></a> 
 
-[Example 4.2]: ../docs/C-BenefitExt.html##tab:Ex4.2
+[Example 4.1.2]: ../docs/C-BenefitExt.html##tab:Ex4.12
 
-**Example 4.2. Whole Life Insurance with $m^{th}$ly Payments with Annual Mortality**. Continuing [Example 4.1], we no longer assume that a continuous time mortality model is available but we have only traditional life table mortality at integer (or annual) ages. 
+**Example 4.1.2. Whole Life Insurance with $m^{th}$ly Payments with Annual Mortality**. Continuing [Example 4.1.1], we no longer assume that a continuous time mortality model is available but we have only traditional life table mortality at integer (or annual) ages. 
 
 To calculate the expected value of the policy, we follow the procedure of splitting up the payment stream into yearly intervals and then applying the *UDD* assumption within each year. The details follow.
 
@@ -242,12 +242,12 @@ $$
 
 This equation exhibits a constant relationship between the annual expected value of a whole life insurance and one on an $m^{th}$ly basis. Also from interest theory, a simple (Taylor series) approximation shows that $\frac{i}{i^{(m)}} \approx 1 + \frac{i}{2}(1-\frac{1}{m})$, indicating the proximity between these expected present values.
 
-<a id=tab:Ex4.3></a> 
 
-[Example 4.3]: ../docs/C-BenefitExt.html##tab:Ex4.3
+<a id=tab:Ex4.13></a> 
 
+[Example 4.1.3]: ../docs/C-BenefitExt.html##tab:Ex4.13
 
-**Example 4.3. Term Life Annuity with $m^{th}$ly Payments**. For a more complex example, we now consider the case of an $n$ year term life annuity with $m^{th}$ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be $~_{r/m}C \equiv 1/m$, not 1. This is so that we can readily compare annuities with different payment plans, for example, quarterly to monthly payments, because they both pay a sum of 1 over the year if the annuitant survives.
+**Example 4.1.3. Term Life Annuity with $m^{th}$ly Payments**. For a more complex example, we now consider the case of an $n$ year term life annuity with $m^{th}$ly payments in advance. By convention, when presenting actuarial annuity symbols, each payment (when the person is alive) is assumed to be $~_{r/m}C \equiv 1/m$, not 1. This is so that we can readily compare annuities with different payment plans, for example, quarterly to monthly payments, because they both pay a sum of 1 over the year if the annuitant survives.
 
 Based on equation \@ref(eq:Benefitm2), and similar to equation \@ref(eq:Benefit13), the random present value of payments is $PV  =  \frac{1}{m} \sum_{r=0}^{nm-1} v^{r/m} ~I(T_{\bf{x}} \ge r/m)$. With this and equation \@ref(eq:ExpBenefitm2), the expected present value is
 
@@ -461,6 +461,10 @@ To illustrate differences among different samples, or subsets of a population, w
 
 To compare these three samples, we examine a specific case.
 
+<a id=tab:Ex4.21></a> 
+
+[Example 4.2.1]: ../docs/C-BenefitExt.html##tab:Ex4.21
+
 **Example 4.2.1. Korean Mortality by Insured Status.** Here, we consider female mortality from South Korea for year 2007. The insured lives and annuitant rates were drawn from a database organized by the Society of Actuaries, [https://mort.soa.org/](https://mort.soa.org/).
 The general population data are drawn from the [Human Mortality Database](http://www.mortality.org/).
 
@@ -546,6 +550,10 @@ In the language of statistics, a sampling error occurs when the sampling frame, 
 
 So, using data from a sample that is not representative of a population of interest can result in **sampling bias**. For example, an analyst investigating an insurance product might use (typically convenient) population mortality instead of a more appropriate insured lives mortality; this mismatch results in sampling bias. As an another example, one might use insured lives mortality in lieu of pensioner mortality when valuing a retirement option for an insurance product. It is also common to use experience from one country to approximate outcomes in another. To illustrate, the following example compares experience among Poland, Japan, and the United States.
 
+<a id=tab:Ex4.22></a> 
+
+[Example 4.2.2]: ../docs/C-BenefitExt.html##tab:Ex4.22
+
 **Example 4.2.2. Mortality by Country (Japan, Poland, and the United States).** This example focuses on population mortality and so recent 2019 experience is available from the [Human Mortality Database](http://www.mortality.org/). In addition to classification by country, we also look at experience by sex and age as these distinctions are well known.
 
 Figure \@ref(fig:SampIntlCompare) compares one year mortality rates among the three countries; the left-hand panel is for female experience and the right-hand is for males. Both panels demonstrate that Japan has the lowest mortality rates. The relationship between the United States and Poland is more complicated. For females, experience is roughly the same for ages above 50 although Poland has lower mortality rates for younger females. Younger polish men also have lower mortality rates than men in the US but the reverse is true for those older (than approximately 45).
@@ -619,7 +627,7 @@ In the prior subsection, we defined the concept of sampling bias and established
 
 To get insights into this question, we can use the different mortality distributions and, with the tools we learned in Chapter 3, express them in terms of expected present values.
 
-**Example 4.2.1. Mortality by Insured Status - Continued.** We use the female South Korean mortality experience introduced in Example 4.2.1 and, for illustration purposes, assume $i=4$%. For many new products or regions in the world with less detailed mortality data, it is common to use population mortality data in lieu of more appropriate insured lives or annuitant data. So, using population data, we first compute expected present values for a whole life insurance ($A_x^{pop}$) and for a life annuity due ($\ddot{a}_x^{pop}$). Next, with the insured lives data, we compute the expected present values for a whole life insurance ($A_x^{ins}$). Lastly, with the annuitant lives data, we compute the expected present values for a life annuity due ($\ddot{a}_x^{ann}$).
+**Example 4.2.1. Mortality by Insured Status - Continued.** We use the female South Korean mortality experience introduced in [Example 4.2.1] and, for illustration purposes, assume $i=4$%. For many new products or regions in the world with less detailed mortality data, it is common to use population mortality data in lieu of more appropriate insured lives or annuitant data. So, using population data, we first compute expected present values for a whole life insurance ($A_x^{pop}$) and for a life annuity due ($\ddot{a}_x^{pop}$). Next, with the insured lives data, we compute the expected present values for a whole life insurance ($A_x^{ins}$). Lastly, with the annuitant lives data, we compute the expected present values for a life annuity due ($\ddot{a}_x^{ann}$).
 
 Figure \@ref(fig:SampPopCompare) summarizes the discrepancies by reporting the ratios. The left-hand panel shows the ratio $A_x^{ins}/A_x^{pop}$. Except for the very high ages, we see that the ratio is considerably less than one. This is consistent with our earlier observations that population mortality is higher than insured lives mortality. If we think of the expected present values as representing prices (as developed in the next section), then the ratio also provides a basis for the analyst to decide whether the difference is important. Many insurance markets are competitive and one calculation basis being 90% of the other represents an important financial difference.
 
@@ -672,7 +680,7 @@ A_x + d \ddot{a}_x = 1.
 (#eq:EqSum)
 $$
 
-This is an exact relationship between the expected present values. However, this relationship holds under the assumption that the insurance and annuity expected present values use the same mortality. To dispel the notion that this holds more generally, Figure \@ref(fig:SampIdentical) shows the sum $A_x^{ins} + d \ddot{a}_x^{ann}$, computed using the mortality and interest assumptions in Example 4.2.1.
+This is an exact relationship between the expected present values. However, this relationship holds under the assumption that the insurance and annuity expected present values use the same mortality. To dispel the notion that this holds more generally, Figure \@ref(fig:SampIdentical) shows the sum $A_x^{ins} + d \ddot{a}_x^{ann}$, computed using the mortality and interest assumptions in [Example 4.2.1].
 
 
 (ref:SampIdentical) **The Sum $A_x^{ins} + d \ddot{a}_x^{ann}$**. This sum is plotted versus age $x$ and is clearly not identical to one, as suggested by equation \@ref(eq:EqSum).
@@ -740,7 +748,7 @@ Combining these ideas, one can see how insurance prices in competitive marketpla
 
 ###  Selection and Adverse Selection {#Sec:SelectionAdverse}
 
-To develop distinct risk classes, insurers can use their underwriting processes to select subsets of a population. For example, as described in Example 4.2.1, when an individual applies for life insurance, it is common for insurers to require a medical examination. Insurers only issue their so-called "standard" policies to individuals who have passed the medical exam. By this mechanism, they are effectively *selecting* a subset of the population that is healthier than the general population. (Insurers also issue "substandard" policies, at a higher  cost, to those with complicated health histories, like diabetes or heart disease, as well as drug, alcohol, or tobacco abuse.)
+To develop distinct risk classes, insurers can use their underwriting processes to select subsets of a population. For example, as described in [Example 4.2.1], when an individual applies for life insurance, it is common for insurers to require a medical examination. Insurers only issue their so-called "standard" policies to individuals who have passed the medical exam. By this mechanism, they are effectively *selecting* a subset of the population that is healthier than the general population. (Insurers also issue "substandard" policies, at a higher  cost, to those with complicated health histories, like diabetes or heart disease, as well as drug, alcohol, or tobacco abuse.)
 
 However, it is known that these selection effects do not continue indefinitely. For example, Table \@ref(tab:CanadianSelect) shows an excerpt from individual insurance mortality tables for females from Canada. To help read this table, consider a woman who became insured at age $x=50$ who initially has a mortality rate of 0.00047; one year later (at age 51) she has a mortality rate of 0.00072. This second rate is higher than 0.00053, the mortality rate for a woman who became insured at age $x=51$. This suggests that the selection effect is becoming less important. Further, from the table we see that selection effects last for 15 years; thereafter, rates are blended into an "ultimate" column. So for example, consider two females currently age 66 where one purchased insurance 16 years ago at age 50 and the other purchased insurance 15 years ago at age 51. Both have the same ultimate rate, $q_{66} = 0.01209$. 
 
@@ -762,15 +770,14 @@ knitr::kable(CanadianSelect4, align = "r", caption="Select and Ultimate Female C
 *  Data retrieved from https://mort.soa.org/ (Table 1458)
 
 
-Why do insurers bother with the cost and other administrative expenses of requiring a medical exam? They do so because they are concerned with 
-a problem known as **adverse selection**, defined as a situation when consumers know more about their own risk characteristics than insurers. Specifically, without a medical exam, applicants have more knowledge of their medical history and general health status than the insurer. The problem arises because, without a medical exam requirement, it is more likely that people in poor health would apply for life insurance. People in poor health tend to have higher mortality rates that, as we have seen, results in higher actuarial present values for life insurance products.
+Why do insurers bother with the cost and other administrative expenses of requiring a medical exam? They do so because they are concerned with a problem known as **adverse selection**, defined as a situation when consumers know more about their own risk characteristics than insurers. Specifically, without a medical exam, applicants have more knowledge of their medical history and general health status than the insurer. The problem arises because, without a medical exam requirement, it is more likely that people in poor health would apply for life insurance. People in poor health tend to have higher mortality rates that, as we have seen, results in higher actuarial present values for life insurance products.
  
 Abstracting from this a bit, you can think of the insurance pool as being comprised of two groups, those in good health and those in poor health. Providing a single insurance price for both groups violates the fundamental principle of risk classification. As we did in Section \@ref(Sec:ActuarialFairRiskClass), it is easy to construct scenarios based on two insurers, one recognizing health differences and the other not doing so. In the long-run, the latter company becomes priced out of the marketplace. Insurers argue that by knowing about risk factors such as health status, the entire marketplace is better. Indeed, the entire purpose of risk classification is to mitigate the problem of adverse selection. 
 
 In this section, we have seen the selection consequences of introducing, or not, a medical exam. As demonstrated in Table \@ref(tab:CanadianSelect), when a medical exam is introduced, we are essentially fine-tuning our definition of homogeneous classes by including not only factors such as sex and age but also time since a medical exam was taken. By not requiring a medical exam, we introduce heterogeneity into our risk groups and so lose the advantages associated with risk classification. In the following subsection, we introduce other problem situations that result in heterogeneous risk groups.
 
 
-###  Asymmetric Information
+###  Asymmetric Information {#Sec:AsymmericInfo}
 
 
 Adverse selection occurs when the additional information that the insured has is important and not revealed to the insurers, such as a poor health history. Adverse selection is a type of unequal access to information, known as **information asymmetry.**
@@ -869,17 +876,17 @@ Unlike life, theft, and pet liability coverage, pet health insurance is a stand-
 
 **Factors**. What are the important risk factors in determining costs associated with pet insurance? In general, analysts look to an animal’s age, sex, breed, location, and other components. For example, as described in @wilson2020underwriting, it is known that :
 
-*  Mixed-breed dogs are generally less expensive to insure than purebred dogs. 
-*  Younger dogs are less expensive to insure than older dogs.
-*  Smaller dogs are generally less expensive to insure than larger dogs.
-*  Interestingly, female cats are less expensive to insure than male cats, but the opposite is true for dogs. 
+*  Mixed-breed dogs are generally less expensive to care for than purebred dogs. 
+*  Younger dogs are less expensive to  care for than older dogs.
+*  Smaller dogs are generally less expensive to care for than larger dogs.
+*  Interestingly, female cats are less expensive to care for than male cats, but the opposite is true for dogs. 
 
 
 ###  Canine Mortality {#Sec:CanineMort}
 
-Like humans, dogs become increasingly frail as they age and, not surprisingly, incur additional costs to maintain a healthy lifestyle. So, consistent with the survival models developed in Chapter 2, we emphasize mortality patterns of pets, focusing on dogs / canines.
+Like humans, dogs become increasingly frail as they age and, not surprisingly, incur additional costs to maintain a healthy lifestyle. So, consistent with the survival models developed in Chapter \@ref(C:ModelingLifeTimes), we emphasize mortality patterns of pets, focusing on dogs / canines.
 
-Due to the developing and yet still competitive marketplace, it is not surprising that detailed data on costs of pet insurance are not widely available. Fortunately, this is not true of pet survival data, in part because many researchers interested in veterinary topics are publicly funded and have incentives to share their data. In this section, we draw on @pegram2021proportion, a study of the factors that influence determinants of the choice to euthanize a pet dog.
+Due to the developing and yet still competitive marketplace, it is not surprising that detailed data on *costs* associated with pet insurance are not widely available. Fortunately, this is not true of pet survival data, in part because many researchers interested in veterinary topics are publicly funded and have incentives to share their data. In this section, we draw on @pegram2021proportion, a study of the factors that influence determinants of the choice to euthanize a pet dog.
 
 
 ```{r eval = FALSE, echo = FALSE}
@@ -959,7 +966,7 @@ legend(.5, .5, c("Entire", "Neutered"), col = 1:2, lty = 1:2, cex = 0.6)
 ```
 
 
-Figure \@ref(fig:SurvBreed) shows survival distributions by breed where we plot distributions for the six most common breed types from Table \@ref(tab:BreedCause), the remaining breeds are grouped into an "Other" category. The differences among survival distributions for different breeds is not surprising. Breeds may be a proxy for the size and weight of a dog; a larger dog like a Labrador has more risk than a smaller dog like a Jack Russell terrier, for example.  The debate about whether mixed-breed dogs are generally healthier than purebred dogs is still
+Figure \@ref(fig:SurvBreed) shows survival distributions by breed where we plot distributions for the six most common breed types from Table \@ref(tab:BreedCause), the remaining breeds are grouped into an "Other" category. The differences among survival distributions for different breeds are not surprising. Breeds may be a proxy for the size and weight of a dog; a larger dog like a Labrador has more risk than a smaller dog like a Jack Russell terrier, for example.  The debate about whether mixed-breed dogs are generally healthier than purebred dogs is still
 ongoing among veterinary professionals. On the one hand, mixed breed dogs may be carriers of genetic mutations that lead to health issues; on the other hand, they are less likely than purebreds to develop the disorders themselves.  As noted in @NAICPet, it is common for insurance carriers to group the breeds into 10 to 12 rating categories, with each category assigned a rating factor. 
 
 
@@ -1041,7 +1048,7 @@ plot(0:20,qx, xlab = "Age (x)", ylab = expression(q[x]), type = "both")
 
 From this estimated mortality, it straightforward to estimate financial costs, as illustrated in the following.
 
-**Example. Surgical Veterinary Care.**  Owning a pet can be expensive. According to the American Pet Products Association's 2021-2022 National Pet Owners Survey, the basic annual expenses for caring for a dog are 1480. This total cost consists of: Surgical vet (458), food (287), routine visit (242), kennel boarding (228), food treats (81), vitamins (81), toys 56), and groomer/grooming aids (47) (*Source: @IIIPet*).
+**Example. Surgical Veterinary Care.**  Owning a pet can be expensive. According to the American Pet Products Association's 2021-2022 National Pet Owners Survey, the basic annual expense for caring for a dog is 1480. This total cost consists of: Surgical vet (458), food (287), routine visit (242), kennel boarding (228), food treats (81), vitamins (81), toys 56), and groomer/grooming aids (47) (*Source: @IIIPet*).
 
 What about unanticipated costs? We estimate the actuarial present value associated with just one component, the surgical veterinary expenses, over a lifetime for a male dog aged $x$ that has been neutered. As our baseline initial cost, we use 458 USD per year. Now, we know that expenses increase as a dog ages and we assume an annual increase of 11%. This may seem high but we are assuming a 3% increase due to inflation and an 8% real growth rate. The real growth rate is based on the rating scale from a large carrier where the age rating factor starts at 1 for pets ages 2-11 months and increases to 4.5 for pets over 20 years old, see @wilson2020underwriting. 
 
@@ -1051,7 +1058,7 @@ $$
 APV = ({\text {Initial Ann Cost}}) \sum_{k=0}^{\omega - x - 1} v^k ~(1.11)^k ~_k p_x .
 $$
 
-This is based on equation (3.3) with the $k$-year survival probability $~_kp_x$ and  cost $~_kC = ({\text {Initial Ann Cost}})~(1.11)^k$ $= 458 ~(1.11)^k$. The discount factor is 3% for investments (so $v=1/1.03$) and the highest age is $\omega = 22$.  The calculations are summarized in Table \@ref(tab:OneYearCrossBreed1a). Not surprisingly, we see that older dogs (e.g., $x=12$) have a lower lifetime expectancy and thus a lower actuarial present value. In the same way, the German Shepard Dog has a high mortality than the Crossbreed, and so has a lower actuarial present value.
+This is based on equation (3.3) with the $k$-year survival probability $~_kp_x$ and  cost $~_kC = ({\text {Initial Ann Cost}})~(1.11)^k$ $= 458 ~(1.11)^k$. The discount factor is 3% for investments (so $v=1/1.03$) and the highest age is $\omega = 22$.  The calculations are summarized in Table \@ref(tab:OneYearCrossBreed1a). Not surprisingly, we see that older dogs (e.g., $x=12$) with a lower lifetime expectancy have a lower actuarial present value. In the same way, the German Shepard Dog has a higher mortality than the Crossbreed and so has a lower actuarial present value for the cost of care.
 
 
 `r HideRCode('PetInsureCoxPh.3',"R Code to Create APVs from One-Year Mortality Rates")`
@@ -1117,9 +1124,9 @@ Nonetheless, the pet insurance marketplace has been expanding rapidly in the U.S
 
 From a regulatory perspective, in the U.S. pet insurance falls under the property/casualty area of insurance because pets are, in effect, property. This places a bit of a burden on actuaries in that statutory reporting follows traditional property and casualty procedures whereas other aspects of pet insurance are more akin to (human) health practices; in the U.S., health insurance is regulated separately from property/casualty insurance.
 
-**Adverse selection**, introduced in Section 4.3.2, is an important aspect of health insurance. It is natural for those in poor health to seek health insurance because they can reasonably expect higher costs. This can be a problem for insurers if they are unaware of the poor health conditions (we called this "information asymmetry" in Section 4.3.3). In many jurisdictions such as the U.S., there are rules that prohibit insurers from denying coverage for pre-existing (typically poor health) conditions. In contrast, for pet insurance animals with pre-existing conditions are generally not eligible for coverage. This avoids, for example, a situation in which a pet owner could find out his or her dog has cancer or another condition requiring expensive treatment and then tries to buy insurance to cover it.
+**Adverse selection**, introduced in Section \@ref(Sec:SelectionAdverse), is an important aspect of health insurance. It is natural for those in poor health to seek health insurance because they can reasonably expect higher costs. This can be a problem for insurers if they are unaware of the poor health conditions (we called this "information asymmetry" in Section \@ref(Sec:AsymmericInfo)). In many jurisdictions such as the U.S., there are rules that prohibit insurers from denying coverage for pre-existing (typically poor health) conditions. In contrast, for pet insurance animals with pre-existing conditions are generally not eligible for coverage. This avoids, for example, a situation in which a pet owner could find out his or her dog has cancer or another condition requiring expensive treatment and then tries to buy insurance to cover it.
 
-Pet insurers also need to be aware of another type of information asymmetry, **moral hazard,** where the presence of the insurance cover alters survival probabilities (recall Section 4.3.3). Moral hazard is not necessarily bad. In fact, perhaps the primary reason that veterinarians promote pet health insurance is so that they may advise pet owners on appropriate medical treatments and not be hampered by cost concerns. For example, sometimes veterinarians feel they must offer euthanasia as an option because the animal may be suffering from a treatable condition but the client may be unable to afford the proposed treatment due to lack of pet insurance, a situation termed *economic euthanasia*. 
+Pet insurers also need to be aware of another type of information asymmetry, **moral hazard,** where the presence of the insurance cover alters survival probabilities (recall Section \ref(Sec:AsymmericInfo)). Moral hazard is not necessarily bad. In fact, perhaps the primary reason that veterinarians promote pet health insurance is so that they may advise pet owners on appropriate medical treatments and not be hampered by cost concerns. For example, sometimes veterinarians feel they must offer euthanasia as an option because the animal may be suffering from a treatable condition but the client may be unable to afford the proposed treatment due to lack of pet insurance, a situation termed *economic euthanasia*. 
 
 
 
@@ -1130,16 +1137,16 @@ Pet insurers also need to be aware of another type of information asymmetry, **m
 In this section, you learn how to:
 
 *  Describe disability income insurance.
-*  Analyze disability recovery rates, a contingent event that is not based on human mortality.
+*  Analyze disability recovery, a contingent event that is not based on human mortality.
 *  Demonstrate the impact of selection on actuarial present values of disability income insurance.
 
 ***
 
 ### Introduction to Disability Income Insurance
 
-Disability income insurance is a contract designed to provide a regular income, such as monthly, to an individual if he or she is prevented by sickness or injury from working. Policies are available on an individual basis, through membership in a group such as sponsored by an employer, and through public government sponsored insurance. The data that we consider are from the U.S. Social Security Disability Income program, @zayatz2015social. Because disability provides benefits to those unable to work, it is not designed to be a substitute for a retirement benefit and so is usually available for a fixed term or age, such as ceasing at age 65 as in our illustrative example.
+Disability income insurance is a contract designed to provide a regular income, such as monthly, to an individual if he or she is prevented by sickness or injury from working. Policies are available on an individual basis, through membership in a group such as sponsored by an employer, and through public government sponsored insurance. The data that we consider are from the U.S. Social Security Disability Income program, @zayatz2015social. Because disability income provides benefits to those unable to work, it is not designed to be a substitute for a retirement benefit and so is usually available up to a fixed term or age, such as ceasing at age 65 as in our illustrative example.
 
-Like annuity benefits introduced in Section \@ref(Sec:BenefitAnnuity), the benefit is paid periodically until a random **event time**. However, for a life annuity, the payment stops when the policyholder dies (a sad event). In contrast, for a disability income policy, the payment stops when someone recovers from disability (a happy event).
+Like annuity benefits introduced in Section \@ref(Sec:BenefitAnnuity), the benefit is paid periodically until a random **event time**. However, for a life annuity, the payment stops when the policyholder dies (a sad event). In contrast, for a disability income policy, we first focus on the payment stopping when someone recovers from disability (a happy event).
 
 Contingent payment techniques can be employed for general event times that need not be tied to human mortality. Naturally, there are a few caveats to this important message. For example, both life annuities and disability income may be limited by a fixed term or age. Further, as we will see, disability income may cease upon the sooner of recovery or death, another type of event time.
 
@@ -1155,7 +1162,7 @@ RecoveryDeathFData <- read.csv("Data/FemaleRecoveryDeath.csv",header=T)
 
 ### Disability Recovery Rates
 
-To better appreciate how often policyholders recover from disability, Figure \@ref(fig:DiRecRates1) shows male rates ($q_x^r$) from the U.S. Social Security Disability Income program (@zayatz2015social, Table 14A). The solid black line, denoted as `Select=0` is for individuals who met program qualifications for disability benefits and then recovered from their disability within a year. As suggested in the figure, except for age less than about 22, this experience is very similar to individuals who had been in the program for two years, `Select=2`. The other four lines represent greater number of years of selection (4, 6, 8, and an "ultimate" column); visually, they seem similar to one another. This figure demonstrates the importance of the select effect and is consistent with medical selection in life insurance that we saw in Section \@ref(Sec:SelectionAdverse). In both cases, recent admission to a program or policy can influence the "event time" experience.
+To better appreciate how often policyholders recover from disability, Figure \@ref(fig:DiRecRates1) shows male rates $q_x^r$ from the U.S. Social Security Disability Income program (@zayatz2015social, Table 14A). The $r$ superscript reminds us that these are recovery, not mortality, rates. The solid black line, denoted as `Select=0`, is for individuals who met program qualifications for disability benefits and then recovered from their disability within a year. As suggested in the figure, except for age less than about 22, this experience is very similar to individuals who had been in the program for two years, `Select=2`. The other four lines represent greater number of years of selection (4, 6, 8, and an "ultimate" column); visually, they seem similar to one another. This figure demonstrates the importance of the select effect and is consistent with medical selection in life insurance that we saw in Section \@ref(Sec:SelectionAdverse). In both cases, recent admission to a program or policy can influence the "event time" experience.
 
 
 (ref:DiRecRates1) **Disability Recovery Rates by Attained Age and Select Period**. A plot of recovery rates $q_x^r$ by attained age $x$. Each line represents a different select period. The lines for select 0 and 2 are similar, other lines are also similar, suggesting that selection effects have worn out beginning at select = 4. 
@@ -1202,7 +1209,7 @@ for (icol in 2:(65-(15+irow)+2)){
 ```
 
 
-As we saw in Section \@ref(S:DataLifeExp), another way of looking at event times is by following **cohorts** of individuals. Figure \@ref(fig:DiRecRates2) follows recovery rates for several cohorts. The figure shows that annual probabilities of recovery decline with advancing  age. Further, from @zayatz2015social, the early year probability of recovery patterns are attributed to the scheduling of continuing disability reviews. For example, where medical improvement is expected, the review is scheduled for 6 to 24 months following the most recent disability decision. Where medical improvement is not expected, the review is scheduled between 5 and 7 years later. 
+As in Section \@ref(S:DataLifeExp), another way of looking at event times is by following **cohorts** of individuals. Figure \@ref(fig:DiRecRates2) follows recovery rates for several cohorts; this figure emphasizes that annual probabilities of recovery decline with advancing  age. As noted in @zayatz2015social, the early year probability of recovery patterns are attributed to the scheduling of continuing disability reviews. For example, where medical improvement is expected, the review is scheduled for 6 to 24 months following the most recent disability decision. Where medical improvement is not expected, the review is scheduled between 5 and 7 years later. 
 
 These patterns are most evident in the cohort depicted by the bold solid black line that follows males who entered the disability program at age 16. This is the youngest cohort in the data set; it has the least amount of experience and so is the most uncertain. From Figure \@ref(fig:DiRecRates2), we see a very large spike in recovery rates after five or six years in the program. This spike is  also evident in cohorts that entered at ages 21 and 26 although on a smaller scale. The jump in recovery rates beginning at  `Cohort=31` and on is still evident but on a much lower scale.
 
@@ -1329,7 +1336,7 @@ ggplot(dataf,aes(x=xAttained, y=add.x.31)) + theme_bw()+
 This brief introduction to disability income focused on demonstrating an important application where contingent payment methods need not use mortality as the time to an event. Because of its brevity, we have omitted many important attributes of disability income such as a waiting time for benefit eligibility, the role of monthly payments, differences among individual, group, and public programs, as well as features of different international marketplaces. For a deeper dive into this fascinating topic, see 
 @haberman2018actuarial.
 
-In particular, we have not yet addressed the *cost of becoming disabled*. What we have done is provide actuarial present values of the benefit of a disability insurance program. However, for a worker, we have not yet described the probability of being disabled. More generally, in a worker's lifetime, someone start as an active worker, become disabled, and as we have seen, that the person may soon recover from the disability and then re-enter the work force. This pattern of switching statuses between between healthy and working and disabled and receiving benefits, and costs associated with each status, is the topic of Chapter 7 on **multiple state modeling.**
+In particular, we have not yet addressed the *cost of becoming disabled*. What we have done is provide actuarial present values of the benefit of a disability insurance program. However, for a worker, we have not yet described the probability of being disabled. More generally, in a worker's lifetime, someone can start as an active worker, become disabled, and as we have seen, that the person may quickly recover from the disability and then re-enter the work force. This pattern of switching statuses between between healthy and working and disabled and receiving benefits, and costs associated with each status, is the topic of Chapter 7 on **multiple state modeling.**
 
 
 `r HideExample('JedDiscussion.4',"Section Structure Discussions")`
