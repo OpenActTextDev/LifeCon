@@ -802,13 +802,13 @@ Another type of information asymmetry can occur when an insurer has less informa
 
 ***
 
-In this section, you learn how to interpret life contingent techniques as applicable to contingent payment problems.
+In this section, you learn how to interpret life contingent techniques as applicable more broadly to general contingent payment problems.
 
 ***
 
 Our work so far has focused on modeling financial implications of survival as the time to event. This is easy to justify; the life insurance industry represents a major piece of the world economy. For example, in 2019, this industry accounted for 2512 *trillions* of U.S. dollars in developed (OECD) countries, representing more than 3.9 percent of the global economy (@OECD2020global). 
 
-Nonetheless, "life contingent" techniques apply more broadly than only human mortality and so in this section we emphasize by referring to them as "contingent" techniques (omitting the life part). As our first example, Section \@ref(Sec:PetInsurance) describes a relatively small but quickly growing marketplace on pet insurance. As a second example, Section \@ref(Sec:DisIncInsurance) introduces disability income insurance. In this latter example, we present applications where the time to event is not the time to death but rather the time to recovery from disability.
+Nonetheless, "life contingent" techniques apply more broadly than only human mortality and so in this section we emphasize by referring to them as "contingent" techniques (omitting the life part). As our first example, Section \@ref(Sec:PetInsurance) describes a relatively small but quickly growing marketplace on pet insurance where time to survival of *pets* is the event of interest. As a second example, Section \@ref(Sec:DisIncInsurance) introduces disability income insurance. In this latter example, we present applications where the time to event is not the time to death but rather the time to *recovery* from disability.
 
 These examples illustrate that contingent payment techniques can be used to understand financial implications of a **time to event** and that event need not be human mortality. Another example that we will see later in the book is the time to death of the first of two people.
 
@@ -882,7 +882,7 @@ Like humans, dogs become increasingly frail as they age and, not surprisingly, i
 Due to the developing and yet still competitive marketplace, it is not surprising that detailed data on costs of pet insurance are not widely available. Fortunately, this is not true of pet survival data, in part because many researchers interested in veterinary topics are publicly funded and have incentives to share their data. In this section, we draw on @pegram2021proportion, a study of the factors that influence determinants of the choice to euthanize a pet dog.
 
 
-```{r eval = FALSE}
+```{r eval = FALSE, echo = FALSE}
 # Read in Data and Convert Date Variables, n= 29865
 DogMort1 <- read.csv("../../MortalityData/DogSurvivalData.csv",header = TRUE, stringsAsFactors=TRUE)
 #DogMort1 <- read.csv("../MortalityData/DogSurvivalData.csv",header = TRUE, stringsAsFactors=TRUE)
@@ -919,7 +919,7 @@ write.csv(DogMort,"../../MortalityData/DogSurvivalData1.csv")#,header = TRUE, st
 ```
 
 
-```{r BreedCause, comment=NA, echo = FALSE}
+```{r BreedCause, echo = FALSE}
 # Read in Revised Data
 #DogMortA <- read.csv("../../MortalityData/DogSurvivalData1.csv")
 DogMortA <- read.csv("../MortalityData/DogSurvivalData1.csv")
