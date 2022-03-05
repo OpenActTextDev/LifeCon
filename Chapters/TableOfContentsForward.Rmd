@@ -117,5 +117,11 @@ Include a motivating example on “Saving by yourself vs. sharing mortality risk
 
 We can discuss whether this is appropriate for life contingencies, or further improve on the explanation/motivation.
 
+## Usage Data
+
+We can use Google Analytics to see the number of visitors to the Life Contingencies website:
+
+
+[Usage Information on Life Contingencies](https://datastudio.google.com/s/lsDHPyhyFrI)
 
 

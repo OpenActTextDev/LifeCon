@@ -80,6 +80,9 @@ fig:DiRecRates4
 fig:SelUlt1
 tab:unnamed-chunk-50
 tab:unnamed-chunk-51
+fig:unnamed-chunk-54
+fig:unnamed-chunk-55
+fig:unnamed-chunk-56
 fig:Halo1a
 introduction
 C:ModelingLifeTimes
@@ -131,7 +134,7 @@ simulated-distribution-of-a-portfolio-of-policies
 further-resources-and-contributors
 C:BenefitExt
 Sec:mthlyFlows
-basic-concepts
+Sec:BasicConceptsmthly
 illustrative-cash-flows
 contingent-cash-flows-in-continuous-time
 Sec:SamplingBias
@@ -144,8 +147,8 @@ asymmetric-information
 Sec:ApplicationsContingent
 Sec:PetInsurance
 Sec:IntroPet
-canine-mortality
-cost-of-care
+Sec:CanineMort
+Sec:DogCostCare
 more-on-pet-insurance-markets
 Sec:DisIncInsurance
 introduction-to-disability-income-insurance
@@ -155,6 +158,7 @@ more-on-disability-income-insurance
 exercises
 C:Forward
 table-of-contents
+usage-data
 C:NotationConventionLC
 Sec:NC:ActSymbols
 life-table-symbols
