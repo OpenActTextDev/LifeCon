@@ -5,13 +5,14 @@ rmd_files: ["index.Rmd",
            "References/HideShowHelper.Rmd",
            "Chapters/Preface.Rmd", 
            "Chapters/Chap2Survival10Feb2022.Rmd",
-#           "Chapters/Append2ALifeTable.Rmd",
            "Chapters/Chap3LifeConBenefits2.14.Rmd",
-#           "Chapters/Chap3ExamplePresValuesA.Rmd", 
-            "Chapters/Chap405Mar2022.Rmd",
-           "Chapters/TableOfContentsForward.Rmd",           
+           "Chapters/Chap405Mar2022.Rmd",
+           "Chapters/TableOfContentsForward14April2022.Rmd",  
+           "Chapters/AppendData15April2022.Rmd",
            "Chapters/NotationConventionsLC.Rmd",
-           "Chapters/Bibliography.Rmd"]
+#           "Chapters/Append2ALifeTable.Rmd",
+#           "Chapters/Chap3ExamplePresValuesA.Rmd", 
+            "Chapters/Bibliography.Rmd"]
            
 language:
   ui:

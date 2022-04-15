@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Data Dictionary | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
+  <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Data Dictionary | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/OpenActTextDev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Data Dictionary | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  
+  <meta name="twitter:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  
+
+<meta name="author" content="An open text authored by the Actuarial Community" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="C-Forward.html"/>
+<link rel="next" href="C-NotationConventionLC.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script language="javascript">
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<script language="javascript">
+function toggle(id1,id2) {
+	var ele = document.getElementById(id1); var text = document.getElementById(id2);
+	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
+		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
+</script>
+
+<script language="javascript">
+function togglecode(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
+</script>
+<script language="javascript">
+function toggleEX(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
+</script>
+<script language="javascript">
+function toggleTheory(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+</script>
+
+<script language="javascript">
+function toggleDet(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Details";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide  Details";}}
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
+
+<style>
+/* Rearrange console label */
+.datacamp-exercise ol li, .datacamp-exercise ul li {
+  margin-bottom: 0em !important;
+}
+
+/* Remove bullet marker */
+.datacamp-exercise ol li::before, .datacamp-exercise ul li::before {
+  content: '' !important;
+}
+</style>
+
+
+<script language="javascript">
+var submitAnswer = function() {
+
+  var radios = document.getElementsByName('choice');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+    alert('please select choice answer');
+  } else if ( val == "Correct" ) {
+    alert('Answer is correct !');
+  } else {
+    alert('Answer is wrong');
+  }
+};
+</script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR3RQ92M9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HR3RQ92M9M');
+</script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Life Contingencies</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>1</b> Going Forward</a><ul>
+<li class="chapter" data-level="1.1" data-path="C-Forward.html"><a href="C-Forward.html#table-of-contents"><i class="fa fa-check"></i><b>1.1</b> Table of Contents</a></li>
+<li class="chapter" data-level="1.2" data-path="C-Forward.html"><a href="C-Forward.html#usage-data"><i class="fa fa-check"></i><b>1.2</b> Usage Data</a></li>
+<li class="chapter" data-level="1.3" data-path="C-Forward.html"><a href="C-Forward.html#exercises"><i class="fa fa-check"></i><b>1.3</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-dictionary.html"><a href="data-dictionary.html"><i class="fa fa-check"></i><b>2</b> Data Dictionary</a><ul>
+<li class="chapter" data-level="" data-path="data-dictionary.html"><a href="data-dictionary.html#canine-mortality"><i class="fa fa-check"></i>Canine Mortality</a></li>
+<li class="chapter" data-level="" data-path="data-dictionary.html"><a href="data-dictionary.html#canadian-select-and-ultimate-mortality-table"><i class="fa fa-check"></i>Canadian Select and Ultimate Mortality Table</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>3</b> Appendix: Conventions for Notation</a><ul>
+<li class="chapter" data-level="3.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>3.1</b> Actuarial Notation</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>3.1.1</b> Life Table Symbols</a></li>
+<li class="chapter" data-level="3.1.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeInsSymbols"><i class="fa fa-check"></i><b>3.1.2</b> Life Insurance Symbols</a></li>
+<li class="chapter" data-level="3.1.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeAnnSymbols"><i class="fa fa-check"></i><b>3.1.3</b> Annuity Certain and Life Annuity Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NotConv:Halo"><i class="fa fa-check"></i><b>3.2</b> Halo System</a></li>
+<li class="chapter" data-level="3.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:General"><i class="fa fa-check"></i><b>3.3</b> General Conventions</a></li>
+<li class="chapter" data-level="3.4" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Abbreviations"><i class="fa fa-check"></i><b>3.4</b> Abbreviations</a></li>
+<li class="chapter" data-level="3.5" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:StatSymbols"><i class="fa fa-check"></i><b>3.5</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="3.6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Symbols"><i class="fa fa-check"></i><b>3.6</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="3.7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#further-readings"><i class="fa fa-check"></i><b>3.7</b> Further Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/OpenActTextDev/LifeCon" target="blank">Life Contingencies on GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-dictionary" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Data Dictionary</h1>
+<div id="canine-mortality" class="section level2 unnumbered">
+<h2>Canine Mortality</h2>
+<p>Canine mortality data are publicly available at <span class="citation">Pegram et al. (<a href="#ref-pegram2021Data" role="doc-biblioref">2021</a>)</span>. In this dataset, there are 29865 observations used to study euthanasia. Our interest is in survival patterns by age and so we remove records where either the date of birth or death is missing or incorrect (we also removed 17 records with missing sex information); this results in 5933 records for analysis.</p>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211752&authkey=ALDTPrf5BIOX2Sg&em=2" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canine Mortality Data</button></a></p>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-5">Table 2.1: </span><strong>Canine Mortality Summary Statistics</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+animalid
+</th>
+<th style="text-align:left;">
+Sex
+</th>
+<th style="text-align:left;">
+Neutered
+</th>
+<th style="text-align:left;">
+Breed
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. : 881900
+</td>
+<td style="text-align:left;">
+Female:2841
+</td>
+<td style="text-align:left;">
+Entire :2529
+</td>
+<td style="text-align:left;">
+Crossbreed :1259
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.: 2401823
+</td>
+<td style="text-align:left;">
+Male :3092
+</td>
+<td style="text-align:left;">
+Neutered:3404
+</td>
+<td style="text-align:left;">
+Staffordshire Bull Terrier: 507
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median : 6846177
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Labrador Retriever : 481
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean : 6824982
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Jack Russell Terrier : 352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:11559402
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+German Shepherd Dog : 234
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :12493098
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Yorkshire Terrier : 192
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+(Other) :2908
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+CauseDeath
+</th>
+<th style="text-align:left;">
+Method.of.death
+</th>
+<th style="text-align:left;">
+dateBirth
+</th>
+<th style="text-align:left;">
+dateDeath
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Disorder not diagnsosed:1126
+</td>
+<td style="text-align:left;">
+Euthanasia:5325
+</td>
+<td style="text-align:left;">
+2005-01-03: 28
+</td>
+<td style="text-align:left;">
+2016-12-12: 41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Collapsed : 523
+</td>
+<td style="text-align:left;">
+Unassisted: 462
+</td>
+<td style="text-align:left;">
+2005-01-05: 26
+</td>
+<td style="text-align:left;">
+2016-10-07: 38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Neoplasia : 522
+</td>
+<td style="text-align:left;">
+Unrecorded: 146
+</td>
+<td style="text-align:left;">
+2004-01-01: 25
+</td>
+<td style="text-align:left;">
+2016-08-09: 37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mass : 375
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+2005-01-06: 25
+</td>
+<td style="text-align:left;">
+2016-09-12: 37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Brain disorder : 350
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+2003-01-05: 24
+</td>
+<td style="text-align:left;">
+2016-11-09: 37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Behaviour disorder : 341
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+2003-01-10: 24
+</td>
+<td style="text-align:left;">
+2016-04-04: 35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+(Other) :2696
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+(Other) :5781
+</td>
+<td style="text-align:left;">
+(Other) :5708
+</td>
+</tr>
+</tbody>
+</table>
+<h5 style="text-align: center;">
+<a id="displayCode.DataDict.1" href="javascript:togglecode('toggleCode.DataDict.1','displayCode.DataDict.1');"><i><strong>Show R Code to Pre-Process the Canine Mortality Data</strong></i></a>
+</h5>
+<div id="toggleCode.DataDict.1" style="display: none">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-dictionary.html#cb1-1"></a><span class="co"># Read in Revised Data</span></span>
+<span id="cb1-2"><a href="data-dictionary.html#cb1-2"></a><span class="co">#DogMortA &lt;- read.csv(&quot;../Data/DogSurvivalData1.csv&quot;)</span></span>
+<span id="cb1-3"><a href="data-dictionary.html#cb1-3"></a>DogMortA &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/DogSurvivalData1.csv&quot;</span>)</span>
+<span id="cb1-4"><a href="data-dictionary.html#cb1-4"></a>DogMort &lt;-<span class="st"> </span>DogMortA[,<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-5"><a href="data-dictionary.html#cb1-5"></a>DogMort<span class="op">$</span>dateBirth &lt;-<span class="st"> </span><span class="kw">as.Date</span>(DogMort<span class="op">$</span>dateBirth, <span class="st">&quot;%Y-%m-%d&quot;</span>) </span>
+<span id="cb1-6"><a href="data-dictionary.html#cb1-6"></a>DogMort<span class="op">$</span>dateDeath &lt;-<span class="st"> </span><span class="kw">as.Date</span>(DogMort<span class="op">$</span>dateDeath, <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb1-7"><a href="data-dictionary.html#cb1-7"></a>DogMort<span class="op">$</span>AgeAtDeath &lt;-<span class="st"> </span>(<span class="kw">as.numeric</span>(DogMort<span class="op">$</span>dateDeath) <span class="op">-</span><span class="st"> </span><span class="kw">as.numeric</span>(DogMort<span class="op">$</span>dateBirth))<span class="op">/</span><span class="fl">365.25</span></span>
+<span id="cb1-8"><a href="data-dictionary.html#cb1-8"></a>DogTerr &lt;-<span class="st"> </span><span class="kw">subset</span>(DogMort, Breed <span class="op">==</span><span class="st"> &quot;Jack Russell Terrier&quot;</span>)</span>
+<span id="cb1-9"><a href="data-dictionary.html#cb1-9"></a>DogGShep &lt;-<span class="st"> </span><span class="kw">subset</span>(DogMort, Breed <span class="op">==</span><span class="st"> &quot;German Shepherd Dog&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="canadian-select-and-ultimate-mortality-table" class="section level2 unnumbered">
+<h2>Canadian Select and Ultimate Mortality Table</h2>
+<ul>
+<li>Individual Life Experience Subcommittee, “Construction of CIA9704 Mortality Tables for Canadian Individual Insurance based on data from 1997 to 2004”, Canadian Institute of Actuaries (2010).</li>
+<li>Accessed: October, 2021 from <a href="http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf" class="uri">http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf</a></li>
+<li>Data retrieved from <a href="https://mort.soa.org/" class="uri">https://mort.soa.org/</a> (Table 1458)</li>
+</ul>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211749&authkey=AGnijC6ZUbgEnHs" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Female Canadian Select and Ultimate Mortality Table.</button></p>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-7">Table 2.2: </span><strong>Canadian Select and Ultimate Mortality Table Summary Statistics</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Age
+</th>
+<th style="text-align:left;">
+X0
+</th>
+<th style="text-align:left;">
+X1
+</th>
+<th style="text-align:left;">
+X2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Length:201
+</td>
+<td style="text-align:left;">
+Length:201
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Class :character
+</td>
+<td style="text-align:left;">
+Class :character
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00017
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00018
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mode :character
+</td>
+<td style="text-align:left;">
+Mode :character
+</td>
+<td style="text-align:left;">
+Median :0.00028
+</td>
+<td style="text-align:left;">
+Median :0.00035
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :0.00186
+</td>
+<td style="text-align:left;">
+Mean :0.00241
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.00233
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.00323
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :0.01043
+</td>
+<td style="text-align:left;">
+Max. :0.01513
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+X3
+</th>
+<th style="text-align:left;">
+X4
+</th>
+<th style="text-align:left;">
+X5
+</th>
+<th style="text-align:left;">
+X6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00020
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00021
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00022
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00023
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :0.00042
+</td>
+<td style="text-align:left;">
+Median :0.00051
+</td>
+<td style="text-align:left;">
+Median :0.00060
+</td>
+<td style="text-align:left;">
+Median :0.00072
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :0.00300
+</td>
+<td style="text-align:left;">
+Mean :0.00368
+</td>
+<td style="text-align:left;">
+Mean :0.00447
+</td>
+<td style="text-align:left;">
+Mean :0.00539
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.00420
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.00526
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.00640
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.00762
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :0.02049
+</td>
+<td style="text-align:left;">
+Max. :0.02702
+</td>
+<td style="text-align:left;">
+Max. :0.03486
+</td>
+<td style="text-align:left;">
+Max. :0.04415
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+X7
+</th>
+<th style="text-align:left;">
+X8
+</th>
+<th style="text-align:left;">
+X9
+</th>
+<th style="text-align:left;">
+X10
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+<td style="text-align:left;">
+Min. :0.00009
+</td>
+<td style="text-align:left;">
+Min. :0.00010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00025
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00026
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00028
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00031
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :0.00085
+</td>
+<td style="text-align:left;">
+Median :0.00100
+</td>
+<td style="text-align:left;">
+Median :0.00118
+</td>
+<td style="text-align:left;">
+Median :0.00139
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :0.00647
+</td>
+<td style="text-align:left;">
+Mean :0.00773
+</td>
+<td style="text-align:left;">
+Mean :0.00922
+</td>
+<td style="text-align:left;">
+Mean :0.01095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.00892
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.01031
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.01178
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.01333
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :0.05499
+</td>
+<td style="text-align:left;">
+Max. :0.06751
+</td>
+<td style="text-align:left;">
+Max. :0.08194
+</td>
+<td style="text-align:left;">
+Max. :0.09843
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+X11
+</th>
+<th style="text-align:left;">
+X12
+</th>
+<th style="text-align:left;">
+X13
+</th>
+<th style="text-align:left;">
+X14
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. :0.00010
+</td>
+<td style="text-align:left;">
+Min. :0.00011
+</td>
+<td style="text-align:left;">
+Min. :0.00012
+</td>
+<td style="text-align:left;">
+Min. :0.00014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00033
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00036
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00039
+</td>
+<td style="text-align:left;">
+1st Qu.:0.00043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :0.00164
+</td>
+<td style="text-align:left;">
+Median :0.00193
+</td>
+<td style="text-align:left;">
+Median :0.00226
+</td>
+<td style="text-align:left;">
+Median :0.00265
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :0.01294
+</td>
+<td style="text-align:left;">
+Mean :0.01519
+</td>
+<td style="text-align:left;">
+Mean :0.01773
+</td>
+<td style="text-align:left;">
+Mean :0.02060
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.01495
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.01666
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.01844
+</td>
+<td style="text-align:left;">
+3rd Qu.:0.02029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :0.11526
+</td>
+<td style="text-align:left;">
+Max. :0.13190
+</td>
+<td style="text-align:left;">
+Max. :0.15065
+</td>
+<td style="text-align:left;">
+Max. :0.17193
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+<td style="text-align:left;">
+NA’s :120
+</td>
+</tr>
+</tbody>
+</table>
+<h5 style="text-align: center;">
+<a id="displayCode.DataDict.2" href="javascript:togglecode('toggleCode.DataDict.2','displayCode.DataDict.2');"><i><strong>Show R Code to Pre-Process the Canadian Select and Ultimate Mortality Data</strong></i></a>
+</h5>
+<div id="toggleCode.DataDict.2" style="display: none">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-dictionary.html#cb2-1"></a>CanadianSelect &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../../MortalityData/CanadianFemaleSelectRead.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb2-2"><a href="data-dictionary.html#cb2-2"></a>CanadianSelect1 &lt;-<span class="st"> </span><span class="kw">subset</span>(CanadianSelect, Age <span class="op">&gt;=</span><span class="st"> </span><span class="dv">50</span> <span class="op">&amp;</span><span class="st"> </span>Age <span class="op">&lt;=</span><span class="st"> </span><span class="dv">69</span>)</span>
+<span id="cb2-3"><a href="data-dictionary.html#cb2-3"></a>CanadianSelect2 &lt;-<span class="st"> </span>CanadianSelect1[<span class="dv">2</span><span class="op">:</span><span class="dv">6</span>,<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">16</span>)]</span>
+<span id="cb2-4"><a href="data-dictionary.html#cb2-4"></a>CanadianSelect3 &lt;-<span class="st"> </span>CanadianSelect1[<span class="dv">37</span><span class="op">:</span><span class="dv">41</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb2-5"><a href="data-dictionary.html#cb2-5"></a>CanadianSelect4 &lt;-<span class="st"> </span><span class="kw">cbind</span>(CanadianSelect2,CanadianSelect3[,<span class="dv">2</span>],CanadianSelect3[,<span class="dv">1</span>])</span>
+<span id="cb2-6"><a href="data-dictionary.html#cb2-6"></a><span class="kw">colnames</span>(CanadianSelect4) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Select=0&quot;</span>,<span class="st">&quot;Select=1&quot;</span>,<span class="st">&quot;Select=2&quot;</span>,<span class="st">&quot;Select=3&quot;</span>,<span class="st">&quot;Select=4&quot;</span>,<span class="st">&quot;Select=10&quot;</span>,<span class="st">&quot;Select=14&quot;</span>, <span class="st">&quot;Ultimate Mortality&quot;</span>,<span class="st">&quot;Ultimate Age&quot;</span> )</span>
+<span id="cb2-7"><a href="data-dictionary.html#cb2-7"></a><span class="kw">rownames</span>(CanadianSelect4) &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb2-8"><a href="data-dictionary.html#cb2-8"></a>knitr<span class="op">::</span><span class="kw">kable</span>(CanadianSelect4, <span class="dt">align =</span> <span class="st">&quot;r&quot;</span>, <span class="dt">caption=</span><span class="st">&quot;Select and Ultimate Female Canadian Mortality Rates&quot;</span>)</span></code></pre></div>
+</div>
+<div id="test-a-few-things-1" class="section level4 unnumbered">
+<h4>Test a few things</h4>
+<p>download button <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211749&authkey=AGnijC6ZUbgEnHs" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Female Canadian Select and Ultimate Mortality Table.</button></p>
+<p>download button <a href="https://github.com/OpenActTextDev/LifeCon/raw/master/Data/DogSurvivalData.csv" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Female Canadian Select and Ultimate Mortality Table Github .</button></p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-pegram2021Data">
+<p>Pegram, Camilla, Carol Gray, Rowena MA Packer, Ysabelle Richards, David B Church, Dave C Brodbelt, and Dan G O’Neill. 2021. “Proportion and Risk Factors for Death by Euthanasia in Dogs in the Uk– Supporting Data.” <a href="https://researchonline.rvc.ac.uk/id/eprint/13486/">https://researchonline.rvc.ac.uk/id/eprint/13486/</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="C-Forward.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="C-NotationConventionLC.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

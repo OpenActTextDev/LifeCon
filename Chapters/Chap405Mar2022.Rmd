@@ -470,9 +470,9 @@ The general population data are drawn from the [Human Mortality Database](http:/
 
 
 ```{r  echo=FALSE}
-KoreaInsuredFemale <- read.csv("../MortalityData/SKoreaInsuredLives2007Female.csv")
-KoreaPensionFemale <- read.csv("../MortalityData/SKoreaPensions2007Female.csv")
-KoreaPop <- read.csv("../MortalityData/Mx_1x1.csv")
+KoreaInsuredFemale <- read.csv("Data/SKoreaInsuredLives2007Female.csv")
+KoreaPensionFemale <- read.csv("Data/SKoreaPensions2007Female.csv")
+KoreaPop <- read.csv("Data/KoreaMx_1x1.csv")
 KoreaPop2007 <- subset(KoreaPop, Year == 2007)
 
 KoreaInsuredFemale45.110  <- subset(KoreaInsuredFemale, Age > 44 & Age < 111) 
@@ -560,9 +560,9 @@ Figure \@ref(fig:SampIntlCompare) compares one year mortality rates among the th
 
 
 ```{r  echo=FALSE}
-JapanPop <- read.csv("../MortalityData/JapanPopulationMx_1x1.csv", stringsAsFactors=FALSE)
-PolandPop <- read.csv("../MortalityData/PolandPopulationMx_1x1.csv", stringsAsFactors=FALSE)
-USAPop <- read.csv("../MortalityData/USAPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+JapanPop <- read.csv("Data/JapanPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+PolandPop <- read.csv("Data/PolandPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+USAPop <- read.csv("Data/USAPopulationMx_1x1.csv", stringsAsFactors=FALSE)
 JapanPop2019 <- subset(JapanPop, Year == 2019)
 PolandPop2019 <- subset(PolandPop, Year == 2019)
 USAPop2019 <- subset(USAPop, Year == 2019)
@@ -755,7 +755,7 @@ However, it is known that these selection effects do not continue indefinitely. 
 
 ```{r CanadianSelect, echo = FALSE}
 scipen=99
-CanadianSelect <- read.csv("../MortalityData/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
+CanadianSelect <- read.csv("Data/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
 CanadianSelect1 <- subset(CanadianSelect, Age >= 50 & Age <= 69)
 CanadianSelect2 <- CanadianSelect1[2:6,c(1:6,12,16)]
 CanadianSelect3 <- CanadianSelect1[37:41,1:2]
@@ -891,8 +891,7 @@ Due to the developing and yet still competitive marketplace, it is not surprisin
 
 ```{r eval = FALSE, echo = FALSE}
 # Read in Data and Convert Date Variables, n= 29865
-DogMort1 <- read.csv("../../MortalityData/DogSurvivalData.csv",header = TRUE, stringsAsFactors=TRUE)
-#DogMort1 <- read.csv("../MortalityData/DogSurvivalData.csv",header = TRUE, stringsAsFactors=TRUE)
+DogMort1 <- read.csv("Data/DogSurvivalData.csv",header = TRUE, stringsAsFactors=TRUE)
 DogMort1$dateBirth <- as.Date(DogMort1$SourceBirthDate, "%m/%d/%Y") 
 DogMort1$dateDeath <- as.Date(DogMort1$Date.of.death, "%m/%d/%Y")
 DogMort1 <- DogMort1[-c(2,3)]
@@ -920,16 +919,15 @@ names(DogMort)[2] <- "Sex"
 names(DogMort)[3] <- "Neutered"
 names(DogMort)[4] <- "Breed"
 names(DogMort)[5] <- "CauseDeath"
-write.csv(DogMort,"../../MortalityData/DogSurvivalData1.csv")#,header = TRUE, stringsAsFactors=TRUE)
-#write..csv(DogMort,"../MortalityData/DogSurvivalData1.csv",header = TRUE, stringsAsFactors=TRUE)
+write.csv(DogMort,"Data/DogSurvivalData1.csv")#,header = TRUE, stringsAsFactors=TRUE)
+
 
 ```
 
 
 ```{r BreedCause, echo = FALSE}
 # Read in Revised Data
-#DogMortA <- read.csv("../../MortalityData/DogSurvivalData1.csv")
-DogMortA <- read.csv("../MortalityData/DogSurvivalData1.csv")
+DogMortA <- read.csv("Data/DogSurvivalData1.csv")
 DogMort <- DogMortA[,-1]
 DogMort$dateBirth <- as.Date(DogMort$dateBirth, "%Y-%m-%d") 
 DogMort$dateDeath <- as.Date(DogMort$dateDeath, "%Y-%m-%d")
@@ -1372,8 +1370,8 @@ To give you a feel for the results, Figure \@ref(fig:SelUlt1) summarizes the res
 
 ```{r CanadianSelectExer, echo = FALSE}
 
-CanadianSelUlt <- read.csv("../MortalityData/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
-#CanadianSelUlt <- read.csv("../../MortalityData/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
+CanadianSelUlt <- read.csv("Data/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
+
 temp <- CanadianSelUlt[131:201,1:2]
 temp1 <- as.matrix(temp)
 CanadianUlt50 <- matrix(as.numeric(temp1), ncol=2)
@@ -1545,8 +1543,7 @@ d.  To see how these rates might be used, you decide to repeat the analysis in S
 library(data.table)
 library(survival)
 # Read in Revised Data
-#DogMortA <- read.csv("../../MortalityData/DogSurvivalData1.csv")
-DogMortA <- read.csv("../MortalityData/DogSurvivalData1.csv")
+DogMortA <- read.csv("Data/DogSurvivalData1.csv")
 DogMort <- DogMortA[,-1]
 DogMort$dateBirth <- as.Date(DogMort$dateBirth, "%Y-%m-%d") 
 DogMort$dateDeath <- as.Date(DogMort$dateDeath, "%Y-%m-%d")

@@ -125,13 +125,4 @@ We can use Google Analytics to see the number of visitors to the Life Contingenc
 [Usage Information on Life Contingencies](https://datastudio.google.com/s/lsDHPyhyFrI)
 
 
-#### Test a few things {-}
-
-
-download button <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211749&authkey=AGnijC6ZUbgEnHs" download >
-<button type="button"  style="background-color:#008CBA;color:white">Download the Female Canadian Select and Ultimate Mortality Table.</button>
-
-
-download button <a href="https://github.com/OpenActTextDev/LifeCon/raw/master/Data/DogSurvivalData.csv" download >
-<button type="button"  style="background-color:#008CBA;color:white">Download the Female Canadian Select and Ultimate Mortality Table Github .</button>
 

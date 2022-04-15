@@ -1,0 +1,6219 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Appendix: Data Dictionary | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
+  <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Appendix: Data Dictionary | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/OpenActTextDev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Appendix: Data Dictionary | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  
+  <meta name="twitter:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  
+
+<meta name="author" content="An open text authored by the Actuarial Community" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="C-Forward.html"/>
+<link rel="next" href="C-NotationConventionLC.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.19/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/rglWebGL-binding-0.106.8/rglWebGL.js"></script>
+<link href="libs/rglwidgetClass-0.106.8/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-0.106.8/rglClass.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/utils.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/subscenes.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/shaders.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/textures.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/projection.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/mouse.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/init.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/pieces.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/draw.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/controls.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/selection.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/rglTimer.src.js"></script>
+<script src="libs/CanvasMatrix4-0.106.8/CanvasMatrix.src.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script language="javascript">
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<script language="javascript">
+function toggle(id1,id2) {
+	var ele = document.getElementById(id1); var text = document.getElementById(id2);
+	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
+		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
+</script>
+
+<script language="javascript">
+function togglecode(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
+</script>
+<script language="javascript">
+function toggleEX(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
+</script>
+<script language="javascript">
+function toggleTheory(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+</script>
+
+<script language="javascript">
+function toggleDet(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Details";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide  Details";}}
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
+
+<style>
+/* Rearrange console label */
+.datacamp-exercise ol li, .datacamp-exercise ul li {
+  margin-bottom: 0em !important;
+}
+
+/* Remove bullet marker */
+.datacamp-exercise ol li::before, .datacamp-exercise ul li::before {
+  content: '' !important;
+}
+</style>
+
+
+<script language="javascript">
+var submitAnswer = function() {
+
+  var radios = document.getElementsByName('choice');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+    alert('please select choice answer');
+  } else if ( val == "Correct" ) {
+    alert('Answer is correct !');
+  } else {
+    alert('Answer is wrong');
+  }
+};
+</script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR3RQ92M9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HR3RQ92M9M');
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Life Contingencies</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:DataLifeExp"><i class="fa fa-check"></i><b>2.1.1</b> Life Expectancies</a></li>
+<li class="chapter" data-level="2.1.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:HMDData"><i class="fa fa-check"></i><b>2.1.2</b> Population Mortality Counts</a></li>
+<li class="chapter" data-level="2.1.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:IndivMortData"><i class="fa fa-check"></i><b>2.1.3</b> Individual Mortality Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#lifetime-random-variable-and-its-distribution"><i class="fa fa-check"></i><b>2.2.1</b> Lifetime Random Variable and its Distribution</a></li>
+<li class="chapter" data-level="2.2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#standard-actuarial-notation-q_bfx-_tp_bfx-and-all-that"><i class="fa fa-check"></i><b>2.2.2</b> Standard Actuarial Notation: <span class="math inline">\(q_{\bf{x}}\)</span>, <span class="math inline">\(_tp_{\bf{x}}\)</span>, and All That</a></li>
+<li class="chapter" data-level="2.2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:ModelOnlyAge"><i class="fa fa-check"></i><b>2.2.3</b> The Classical Case: Age-Only Model</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical laws of mortality</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#de-moivre-and-constant-force-models"><i class="fa fa-check"></i><b>2.3.1</b> De Moivre and Constant Force Models</a></li>
+<li class="chapter" data-level="2.3.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#gompertz-and-makeham-laws"><i class="fa fa-check"></i><b>2.3.2</b> Gompertz and Makeham Laws</a></li>
+<li class="chapter" data-level="2.3.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#makeham-law-based-on-life-expectancies-data"><i class="fa fa-check"></i><b>2.3.3</b> Makeham Law based on Life Expectancies Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabBasics"><i class="fa fa-check"></i><b>2.4.1</b> Life Table Basics</a></li>
+<li class="chapter" data-level="2.4.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabEst"><i class="fa fa-check"></i><b>2.4.2</b> Life Table based on U.S. Population Data</a></li>
+<li class="chapter" data-level="2.4.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabRec"><i class="fa fa-check"></i><b>2.4.3</b> Curtate Quantities and Recursive Relationships</a></li>
+<li class="chapter" data-level="2.4.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional year assumptions</a></li>
+<li class="chapter" data-level="2.4.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabMImpr"><i class="fa fa-check"></i><b>2.4.5</b> Cohort Life Tables and Mortality Improvement Modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric survival estimation</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#kaplan-meier-estimate"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimate</a></li>
+<li class="chapter" data-level="2.5.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#nelson-aalen"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional models: Survival regression</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#the-cox-proportional-hazard-model"><i class="fa fa-check"></i><b>2.6.1</b> The Cox Proportional Hazard Model</a></li>
+<li class="chapter" data-level="2.6.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#cox-models-based-on-life-insurer-data"><i class="fa fa-check"></i><b>2.6.2</b> Cox Models Based on Life Insurer Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#conditional-life-tables"><i class="fa fa-check"></i><b>2.6.3</b> Conditional Life Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#notes-and-comments"><i class="fa fa-check"></i><b>2.7</b> Notes and Comments</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCFunc"><i class="fa fa-check"></i><b>3.1</b> Valuation of Cash Flows under Uncertainty</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#moment-calculations"><i class="fa fa-check"></i><b>3.1.1</b> Moment Calculations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#illustrative-moments-of-cash-flows"><i class="fa fa-check"></i><b>3.1.2</b> Illustrative Moments of Cash Flows</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitActNot"><i class="fa fa-check"></i><b>3.2</b> Life Insurance Benefits</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitWL"><i class="fa fa-check"></i><b>3.2.1</b> Whole of life insurance</a></li>
+<li class="chapter" data-level="3.2.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitTI"><i class="fa fa-check"></i><b>3.2.2</b> Term insurance</a></li>
+<li class="chapter" data-level="3.2.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#pure-endowment"><i class="fa fa-check"></i><b>3.2.3</b> Pure endowment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#endowment-insurance"><i class="fa fa-check"></i><b>3.2.4</b> Endowment insurance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitAnnuity"><i class="fa fa-check"></i><b>3.3</b> Life Annuity Benefits</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#life-annuity"><i class="fa fa-check"></i><b>3.3.1</b> Life annuity</a></li>
+<li class="chapter" data-level="3.3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:TermLifeAnnuity"><i class="fa fa-check"></i><b>3.3.2</b> Term life annuity</a></li>
+<li class="chapter" data-level="3.3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#deferred-life-annuity"><i class="fa fa-check"></i><b>3.3.3</b> Deferred life annuity</a></li>
+<li class="chapter" data-level="3.3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#guaranteed-life-annuity"><i class="fa fa-check"></i><b>3.3.4</b> Guaranteed life annuity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitSpread"><i class="fa fa-check"></i><b>3.4</b> Valuing Life Contingent Benefits using a Spreadsheet</a></li>
+<li class="chapter" data-level="3.5" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCS"><i class="fa fa-check"></i><b>3.5</b> Case Study: A Portfolio of Term Insurance Policies</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSInd"><i class="fa fa-check"></i><b>3.5.1</b> An individual policy</a></li>
+<li class="chapter" data-level="3.5.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSPort"><i class="fa fa-check"></i><b>3.5.2</b> Moments of a portfolio of policies</a></li>
+<li class="chapter" data-level="3.5.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#simulated-distribution-of-a-portfolio-of-policies"><i class="fa fa-check"></i><b>3.5.3</b> Simulated distribution of a portfolio of policies</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>3.6</b> Further Resources and Contributors</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:BasicConceptsmthly"><i class="fa fa-check"></i><b>4.1.1</b> Basic Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#illustrative-cash-flows"><i class="fa fa-check"></i><b>4.1.2</b> Illustrative Cash Flows</a></li>
+<li class="chapter" data-level="4.1.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.1.3</b> Contingent Cash Flows in Continuous Time</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#population-subsets-and-sampling-bias"><i class="fa fa-check"></i><b>4.2.1</b> Population Subsets and Sampling Bias</a></li>
+<li class="chapter" data-level="4.2.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#sampling-bias-in-actuarial-practice"><i class="fa fa-check"></i><b>4.2.2</b> Sampling Bias in Actuarial Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ActuarialFairRiskClass"><i class="fa fa-check"></i><b>4.3.1</b> Actuarially Fair Prices and Risk Classification</a></li>
+<li class="chapter" data-level="4.3.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SelectionAdverse"><i class="fa fa-check"></i><b>4.3.2</b> Selection and Adverse Selection</a></li>
+<li class="chapter" data-level="4.3.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:AsymmericInfo"><i class="fa fa-check"></i><b>4.3.3</b> Asymmetric Information</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ApplicationsContingent"><i class="fa fa-check"></i><b>4.4</b> Contingent Payment Applications</a></li>
+<li class="chapter" data-level="4.5" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:PetInsurance"><i class="fa fa-check"></i><b>4.5</b> Pet Insurance</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:IntroPet"><i class="fa fa-check"></i><b>4.5.1</b> Introduction to Pet Health Insurance</a></li>
+<li class="chapter" data-level="4.5.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:CanineMort"><i class="fa fa-check"></i><b>4.5.2</b> Canine Mortality</a></li>
+<li class="chapter" data-level="4.5.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DogCostCare"><i class="fa fa-check"></i><b>4.5.3</b> Cost of Care</a></li>
+<li class="chapter" data-level="4.5.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-pet-insurance-markets"><i class="fa fa-check"></i><b>4.5.4</b> More on Pet Insurance Markets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DisIncInsurance"><i class="fa fa-check"></i><b>4.6</b> Disability Income Insurance</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#introduction-to-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.1</b> Introduction to Disability Income Insurance</a></li>
+<li class="chapter" data-level="4.6.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#disability-recovery-rates"><i class="fa fa-check"></i><b>4.6.2</b> Disability Recovery Rates</a></li>
+<li class="chapter" data-level="4.6.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#actuarial-present-values-of-disability-income"><i class="fa fa-check"></i><b>4.6.3</b> Actuarial Present Values of Disability Income</a></li>
+<li class="chapter" data-level="4.6.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.4</b> More on Disability Income Insurance</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#exercises"><i class="fa fa-check"></i><b>4.7</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="C-Forward.html"><a href="C-Forward.html#table-of-contents"><i class="fa fa-check"></i><b>5.1</b> Table of Contents</a></li>
+<li class="chapter" data-level="5.2" data-path="C-Forward.html"><a href="C-Forward.html#usage-data"><i class="fa fa-check"></i><b>5.2</b> Usage Data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html"><i class="fa fa-check"></i><b>6</b> Appendix: Data Dictionary</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataUSPoPCounts"><i class="fa fa-check"></i><b>6.1</b> United States Population Mortality Counts</a></li>
+<li class="chapter" data-level="6.2" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:SyntheticInsData"><i class="fa fa-check"></i><b>6.2</b> Synthetic Insurer Data</a></li>
+<li class="chapter" data-level="6.3" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#canine-mortality"><i class="fa fa-check"></i><b>6.3</b> Canine Mortality</a></li>
+<li class="chapter" data-level="6.4" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#canadian-female-select-and-ultimate-mortality-table"><i class="fa fa-check"></i><b>6.4</b> Canadian Female Select and Ultimate Mortality Table</a></li>
+<li class="chapter" data-level="6.5" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality-by-insured-status"><i class="fa fa-check"></i><b>6.5</b> Korean Mortality by Insured Status</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---insured-lives"><i class="fa fa-check"></i>Korean Mortality - Insured Lives</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---annuitants"><i class="fa fa-check"></i>Korean Mortality - Annuitants</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---population"><i class="fa fa-check"></i>Korean Mortality - Population</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#mortality-by-country"><i class="fa fa-check"></i><b>6.6</b> Mortality by Country</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---japan"><i class="fa fa-check"></i>Population Mortality - Japan</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---poland"><i class="fa fa-check"></i>Population Mortality - Poland</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---united-states"><i class="fa fa-check"></i>Population Mortality - United States</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataDisIncome"><i class="fa fa-check"></i><b>6.7</b> Disability Income</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---male"><i class="fa fa-check"></i>Disability Recovery Rates - Male</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---female"><i class="fa fa-check"></i>Disability Recovery Rates - FeMale</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---male"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Male</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---female"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Female</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>7</b> Appendix: Conventions for Notation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>7.1</b> Actuarial Notation</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>7.1.1</b> Life Table Symbols</a></li>
+<li class="chapter" data-level="7.1.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeInsSymbols"><i class="fa fa-check"></i><b>7.1.2</b> Life Insurance Symbols</a></li>
+<li class="chapter" data-level="7.1.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeAnnSymbols"><i class="fa fa-check"></i><b>7.1.3</b> Annuity Certain and Life Annuity Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NotConv:Halo"><i class="fa fa-check"></i><b>7.2</b> Halo System</a></li>
+<li class="chapter" data-level="7.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:General"><i class="fa fa-check"></i><b>7.3</b> General Conventions</a></li>
+<li class="chapter" data-level="7.4" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Abbreviations"><i class="fa fa-check"></i><b>7.4</b> Abbreviations</a></li>
+<li class="chapter" data-level="7.5" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:StatSymbols"><i class="fa fa-check"></i><b>7.5</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="7.6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Symbols"><i class="fa fa-check"></i><b>7.6</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="7.7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#further-readings"><i class="fa fa-check"></i><b>7.7</b> Further Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/OpenActTextDev/LifeCon" target="blank">Life Contingencies on GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix-data-dictionary" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Appendix: Data Dictionary</h1>
+<p>This appendix describes the datasets used in this book.</p>
+<p>For each set of data, we provide download buttons so that you can easily access the data in standard .csv (comma separated value) format. This allows you replicate and experiment with the methods developed in the book as well as sharpen your understanding through exercises.</p>
+<p>We provide the source of each dataset. We also recommend, for deeper understanding, that you occasionally refer to these original sources to further develop your appreciation of the data underpinning the analytics developed in this book.</p>
+<div id="Sec:DataUSPoPCounts" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> United States Population Mortality Counts</h2>
+<p><strong>Source</strong>: The <a href="https://www.mortality.org">Human Mortality Database (HMD)</a>.</p>
+<p><strong>Description</strong>: We now bring into consideration <em>mortality experience</em> for populations that had been observed over time, which is available at the <a href="https://www.mortality.org">Human Mortality Database (HMD)</a> for a wide range of countries. The available data include <em>Exposures</em> by age, sex, and calender year period, i.e. how many people of a given age and sex lived in the country’s population during a given period of time, and corresponding <em>Deaths</em>, i.e. how many of these individuals had died.</p>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211777&authkey=AJ_GOM4lcDEjMa0&em=2" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the United States Population Mortality Counts Data</button></a></p>
+<table>
+<caption><span id="tab:unnamed-chunk-59">Table 6.1: </span><strong>US Population Mortality Counts First Five Rows</strong></caption>
+<thead>
+<tr class="header">
+<th align="center">Year_start</th>
+<th align="center">Year_end</th>
+<th align="center">Age</th>
+<th align="center">Female</th>
+<th align="center">Male</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1935</td>
+<td align="center">1939</td>
+<td align="center">0</td>
+<td align="center">4869267</td>
+<td align="center">5057569</td>
+<td align="center">9926836</td>
+</tr>
+<tr class="even">
+<td align="center">1935</td>
+<td align="center">1939</td>
+<td align="center">1</td>
+<td align="center">4802597</td>
+<td align="center">4936238</td>
+<td align="center">9738835</td>
+</tr>
+<tr class="odd">
+<td align="center">1935</td>
+<td align="center">1939</td>
+<td align="center">2</td>
+<td align="center">5119574</td>
+<td align="center">5244634</td>
+<td align="center">10364208</td>
+</tr>
+<tr class="even">
+<td align="center">1935</td>
+<td align="center">1939</td>
+<td align="center">3</td>
+<td align="center">5159494</td>
+<td align="center">5287402</td>
+<td align="center">10446896</td>
+</tr>
+<tr class="odd">
+<td align="center">1935</td>
+<td align="center">1939</td>
+<td align="center">4</td>
+<td align="center">5189350</td>
+<td align="center">5307754</td>
+<td align="center">10497104</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-59">Table 6.1: </span><strong>US Population Mortality Counts Last Five Rows</strong></caption>
+<thead>
+<tr class="header">
+<th align="center">Year_start</th>
+<th align="center">Year_end</th>
+<th align="center">Age</th>
+<th align="center">Female</th>
+<th align="center">Male</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">2010</td>
+<td align="center">2014</td>
+<td align="center">106</td>
+<td align="center">3853.91</td>
+<td align="center">415.44</td>
+<td align="center">4269.35</td>
+</tr>
+<tr class="even">
+<td align="center">2010</td>
+<td align="center">2014</td>
+<td align="center">107</td>
+<td align="center">2031.89</td>
+<td align="center">210.41</td>
+<td align="center">2242.30</td>
+</tr>
+<tr class="odd">
+<td align="center">2010</td>
+<td align="center">2014</td>
+<td align="center">108</td>
+<td align="center">1083.62</td>
+<td align="center">106.29</td>
+<td align="center">1189.91</td>
+</tr>
+<tr class="even">
+<td align="center">2010</td>
+<td align="center">2014</td>
+<td align="center">109</td>
+<td align="center">535.32</td>
+<td align="center">58.42</td>
+<td align="center">593.73</td>
+</tr>
+<tr class="odd">
+<td align="center">2010</td>
+<td align="center">2014</td>
+<td align="center">110</td>
+<td align="center">576.06</td>
+<td align="center">80.03</td>
+<td align="center">656.09</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-60">Table 6.2: </span><strong>US Population Mortality Counts Summary Statistics</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Year_start
+</th>
+<th style="text-align:left;">
+Year_end
+</th>
+<th style="text-align:left;">
+Age
+</th>
+<th style="text-align:left;">
+Female
+</th>
+<th style="text-align:left;">
+Male
+</th>
+<th style="text-align:left;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. :1935
+</td>
+<td style="text-align:left;">
+Min. :1939
+</td>
+<td style="text-align:left;">
+Min. : 0
+</td>
+<td style="text-align:left;">
+Min. : 56
+</td>
+<td style="text-align:left;">
+Min. : 21
+</td>
+<td style="text-align:left;">
+Min. : 80
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:1954
+</td>
+<td style="text-align:left;">
+1st Qu.:1958
+</td>
+<td style="text-align:left;">
+1st Qu.: 27
+</td>
+<td style="text-align:left;">
+1st Qu.: 1293833
+</td>
+<td style="text-align:left;">
+1st Qu.: 823082
+</td>
+<td style="text-align:left;">
+1st Qu.: 2130434
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :1972
+</td>
+<td style="text-align:left;">
+Median :1976
+</td>
+<td style="text-align:left;">
+Median : 55
+</td>
+<td style="text-align:left;">
+Median : 5263300
+</td>
+<td style="text-align:left;">
+Median : 4850955
+</td>
+<td style="text-align:left;">
+Median :10124747
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :1972
+</td>
+<td style="text-align:left;">
+Mean :1976
+</td>
+<td style="text-align:left;">
+Mean : 55
+</td>
+<td style="text-align:left;">
+Mean : 4946072
+</td>
+<td style="text-align:left;">
+Mean : 4758380
+</td>
+<td style="text-align:left;">
+Mean : 9704453
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:1991
+</td>
+<td style="text-align:left;">
+3rd Qu.:1995
+</td>
+<td style="text-align:left;">
+3rd Qu.: 83
+</td>
+<td style="text-align:left;">
+3rd Qu.: 8238099
+</td>
+<td style="text-align:left;">
+3rd Qu.: 8407376
+</td>
+<td style="text-align:left;">
+3rd Qu.:16678945
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :2010
+</td>
+<td style="text-align:left;">
+Max. :2014
+</td>
+<td style="text-align:left;">
+Max. :110
+</td>
+<td style="text-align:left;">
+Max. :11606030
+</td>
+<td style="text-align:left;">
+Max. :11674875
+</td>
+<td style="text-align:left;">
+Max. :23280905
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="Sec:SyntheticInsData" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Synthetic Insurer Data</h2>
+<p><strong>Description</strong>: We provide survival information for a hypothetical insurance company in <code>SyntheticInsurerData.csv</code>. The company has sold <em>whole life insurance policies</em>, i.e. policies that pay a <em>death benefit</em> upon the policyholder’s death, since 1955. Policyholders have to go through an underwriting examination, and in addition to policyholders’ age, sex (0 for female, 1 for male), smoking status (0 for non-smoker, 1 for smoker), and the month of sale, the company records the applicants body-mass index (BMI) and the systolic blood pressure at the time of underwriting. Finally, for those policyholders with a claim, i.e., for the policyholders that have died, the company records the time of death (relative to the month of underwriting). The data are organized in the order of sales, so that the oldest entries are at the top of the data and the newest entries are at the bottom:</p>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211778&authkey=ADl7Pocw6ENAOWk&em=2" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Synthetic Insurer Data</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-61">Table 6.3: </span><strong>Synthetic Insurer First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Month_of_Sale
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Sex
+</th>
+<th style="text-align:center;">
+Smoking
+</th>
+<th style="text-align:center;">
+BMI
+</th>
+<th style="text-align:center;">
+BloodPressure
+</th>
+<th style="text-align:center;">
+Claim
+</th>
+<th style="text-align:center;">
+Time_of_death
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+25.8
+</td>
+<td style="text-align:center;">
+117
+</td>
+<td style="text-align:center;">
+YES
+</td>
+<td style="text-align:center;">
+55.63
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+51
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+17.6
+</td>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+YES
+</td>
+<td style="text-align:center;">
+18.53
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+59
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+22.5
+</td>
+<td style="text-align:center;">
+132
+</td>
+<td style="text-align:center;">
+YES
+</td>
+<td style="text-align:center;">
+15.88
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+37
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+22.9
+</td>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+YES
+</td>
+<td style="text-align:center;">
+57.40
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+62
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+30.9
+</td>
+<td style="text-align:center;">
+147
+</td>
+<td style="text-align:center;">
+YES
+</td>
+<td style="text-align:center;">
+27.83
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-61">Table 6.3: </span><strong>Synthetic Insurer Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Month_of_Sale
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Sex
+</th>
+<th style="text-align:center;">
+Smoking
+</th>
+<th style="text-align:center;">
+BMI
+</th>
+<th style="text-align:center;">
+BloodPressure
+</th>
+<th style="text-align:center;">
+Claim
+</th>
+<th style="text-align:center;">
+Time_of_death
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+780
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+19.30
+</td>
+<td style="text-align:center;">
+118
+</td>
+<td style="text-align:center;">
+NO
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+780
+</td>
+<td style="text-align:center;">
+40
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+20.10
+</td>
+<td style="text-align:center;">
+117
+</td>
+<td style="text-align:center;">
+NO
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+780
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+20.60
+</td>
+<td style="text-align:center;">
+90
+</td>
+<td style="text-align:center;">
+NO
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+780
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+20.10
+</td>
+<td style="text-align:center;">
+118
+</td>
+<td style="text-align:center;">
+NO
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+780
+</td>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+19.03
+</td>
+<td style="text-align:center;">
+82
+</td>
+<td style="text-align:center;">
+NO
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-62">Table 6.4: </span><strong>Synthetic Insurer Summary Statistics</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Month_of_Sale
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Sex
+</th>
+<th style="text-align:center;">
+Smoking
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Min. : 1
+</td>
+<td style="text-align:center;">
+Min. :19
+</td>
+<td style="text-align:center;">
+Min. :0.000
+</td>
+<td style="text-align:center;">
+Min. :0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+1st Qu.:209
+</td>
+<td style="text-align:center;">
+1st Qu.:31
+</td>
+<td style="text-align:center;">
+1st Qu.:0.000
+</td>
+<td style="text-align:center;">
+1st Qu.:0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Median :382
+</td>
+<td style="text-align:center;">
+Median :39
+</td>
+<td style="text-align:center;">
+Median :1.000
+</td>
+<td style="text-align:center;">
+Median :0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Mean :395
+</td>
+<td style="text-align:center;">
+Mean :40
+</td>
+<td style="text-align:center;">
+Mean :0.699
+</td>
+<td style="text-align:center;">
+Mean :0.298
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+3rd Qu.:591
+</td>
+<td style="text-align:center;">
+3rd Qu.:48
+</td>
+<td style="text-align:center;">
+3rd Qu.:1.000
+</td>
+<td style="text-align:center;">
+3rd Qu.:1.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Max. :780
+</td>
+<td style="text-align:center;">
+Max. :65
+</td>
+<td style="text-align:center;">
+Max. :1.000
+</td>
+<td style="text-align:center;">
+Max. :1.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+BMI
+</th>
+<th style="text-align:center;">
+BloodPressure
+</th>
+<th style="text-align:center;">
+Claim
+</th>
+<th style="text-align:center;">
+Time_of_death
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Min. :16.1
+</td>
+<td style="text-align:center;">
+Min. : 57
+</td>
+<td style="text-align:center;">
+NO :101399
+</td>
+<td style="text-align:center;">
+Min. : 0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+1st Qu.:19.5
+</td>
+<td style="text-align:center;">
+1st Qu.:104
+</td>
+<td style="text-align:center;">
+YES: 59382
+</td>
+<td style="text-align:center;">
+1st Qu.:18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Median :21.7
+</td>
+<td style="text-align:center;">
+Median :114
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+Median :28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Mean :22.8
+</td>
+<td style="text-align:center;">
+Mean :115
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+Mean :28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+3rd Qu.:25.0
+</td>
+<td style="text-align:center;">
+3rd Qu.:125
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+3rd Qu.:39
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Max. :69.6
+</td>
+<td style="text-align:center;">
+Max. :208
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+Max. :64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+NA’s :101399
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="canine-mortality" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Canine Mortality</h2>
+<p><strong>Source</strong>: Canine mortality data are publicly available at <span class="citation"><a href="bibliography.html#ref-pegram2021Data" role="doc-biblioref">Pegram et al.</a> (<a href="bibliography.html#ref-pegram2021Data" role="doc-biblioref">2021b</a>)</span>. See <span class="citation"><a href="bibliography.html#ref-pegram2021proportion" role="doc-biblioref">Pegram et al.</a> (<a href="bibliography.html#ref-pegram2021proportion" role="doc-biblioref">2021a</a>)</span> for additional background.</p>
+<p><strong>Description</strong>: In this dataset, there are 29865 observations used to study euthanasia. Our interest is in survival patterns by age and so we remove records where either the date of birth or death is missing or incorrect (we also removed 17 records with missing sex information); this results in 5933 records for analysis.</p>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211752&authkey=ALDTPrf5BIOX2Sg&em=2" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canine Mortality Data</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-63">Table 6.5: </span><strong>Canine Mortality First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+animalid
+</th>
+<th style="text-align:center;">
+Sex
+</th>
+<th style="text-align:center;">
+Neutered
+</th>
+<th style="text-align:center;">
+Breed
+</th>
+<th style="text-align:center;">
+CauseDeath
+</th>
+<th style="text-align:center;">
+Method.of.death
+</th>
+<th style="text-align:center;">
+dateBirth
+</th>
+<th style="text-align:center;">
+dateDeath
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+3534394
+</td>
+<td style="text-align:center;">
+Female
+</td>
+<td style="text-align:center;">
+Entire
+</td>
+<td style="text-align:center;">
+Boston Terrier
+</td>
+<td style="text-align:center;">
+Disorder not diagnsosed
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+2016-02-02
+</td>
+<td style="text-align:center;">
+2016-02-02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11836307
+</td>
+<td style="text-align:center;">
+Female
+</td>
+<td style="text-align:center;">
+Entire
+</td>
+<td style="text-align:center;">
+Bulldog
+</td>
+<td style="text-align:center;">
+Behaviour disorder
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+2016-09-03
+</td>
+<td style="text-align:center;">
+2016-09-03
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12090746
+</td>
+<td style="text-align:center;">
+Male
+</td>
+<td style="text-align:center;">
+Entire
+</td>
+<td style="text-align:center;">
+Chinese Shar-Pei
+</td>
+<td style="text-align:center;">
+Disorder not diagnsosed
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+2016-03-01
+</td>
+<td style="text-align:center;">
+2016-03-01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12092145
+</td>
+<td style="text-align:center;">
+Female
+</td>
+<td style="text-align:center;">
+Neutered
+</td>
+<td style="text-align:center;">
+Crossbreed
+</td>
+<td style="text-align:center;">
+Collapsed
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+2016-01-03
+</td>
+<td style="text-align:center;">
+2016-01-03
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11739930
+</td>
+<td style="text-align:center;">
+Female
+</td>
+<td style="text-align:center;">
+Entire
+</td>
+<td style="text-align:center;">
+German Shepherd Dog
+</td>
+<td style="text-align:center;">
+Disorder not diagnsosed
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+2015-04-12
+</td>
+<td style="text-align:center;">
+2015-04-12
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-63">Table 6.5: </span><strong>Canine Mortality Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+animalid
+</th>
+<th style="text-align:center;">
+Sex
+</th>
+<th style="text-align:center;">
+Neutered
+</th>
+<th style="text-align:center;">
+Breed
+</th>
+<th style="text-align:center;">
+CauseDeath
+</th>
+<th style="text-align:center;">
+Method.of.death
+</th>
+<th style="text-align:center;">
+dateBirth
+</th>
+<th style="text-align:center;">
+dateDeath
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+11718193
+</td>
+<td style="text-align:center;">
+Female
+</td>
+<td style="text-align:center;">
+Entire
+</td>
+<td style="text-align:center;">
+Border Terrier
+</td>
+<td style="text-align:center;">
+Heart disease
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+1998-12-03
+</td>
+<td style="text-align:center;">
+2018-01-02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11514456
+</td>
+<td style="text-align:center;">
+Male
+</td>
+<td style="text-align:center;">
+Entire
+</td>
+<td style="text-align:center;">
+Jack Russell Terrier
+</td>
+<td style="text-align:center;">
+Musculoskeletal disorder
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+1996-10-02
+</td>
+<td style="text-align:center;">
+2016-10-02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6916114
+</td>
+<td style="text-align:center;">
+Female
+</td>
+<td style="text-align:center;">
+Entire
+</td>
+<td style="text-align:center;">
+Jack Russell Terrier
+</td>
+<td style="text-align:center;">
+Disorder not diagnsosed
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+1996-06-09
+</td>
+<td style="text-align:center;">
+2016-07-09
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11542454
+</td>
+<td style="text-align:center;">
+Male
+</td>
+<td style="text-align:center;">
+Neutered
+</td>
+<td style="text-align:center;">
+Crossbreed
+</td>
+<td style="text-align:center;">
+Disorder not diagnsosed
+</td>
+<td style="text-align:center;">
+Unassisted
+</td>
+<td style="text-align:center;">
+1997-01-09
+</td>
+<td style="text-align:center;">
+2017-02-12
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3963609
+</td>
+<td style="text-align:center;">
+Male
+</td>
+<td style="text-align:center;">
+Neutered
+</td>
+<td style="text-align:center;">
+Jack Russell Terrier
+</td>
+<td style="text-align:center;">
+Heart disease
+</td>
+<td style="text-align:center;">
+Euthanasia
+</td>
+<td style="text-align:center;">
+1996-01-05
+</td>
+<td style="text-align:center;">
+2017-01-09
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-64">Table 6.6: </span><strong>Canine Mortality Summary Statistics</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+animalid
+</th>
+<th style="text-align:center;">
+Sex
+</th>
+<th style="text-align:center;">
+Neutered
+</th>
+<th style="text-align:center;">
+Breed
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Min. : 881900
+</td>
+<td style="text-align:center;">
+Female:2841
+</td>
+<td style="text-align:center;">
+Entire :2529
+</td>
+<td style="text-align:center;">
+Crossbreed :1259
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+1st Qu.: 2401823
+</td>
+<td style="text-align:center;">
+Male :3092
+</td>
+<td style="text-align:center;">
+Neutered:3404
+</td>
+<td style="text-align:center;">
+Staffordshire Bull Terrier: 507
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Median : 6846177
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+Labrador Retriever : 481
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Mean : 6824982
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+Jack Russell Terrier : 352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+3rd Qu.:11559402
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+German Shepherd Dog : 234
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Max. :12493098
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+Yorkshire Terrier : 192
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(Other) :2908
+</td>
+</tr>
+</tbody>
+</table>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+CauseDeath
+</th>
+<th style="text-align:center;">
+Method.of.death
+</th>
+<th style="text-align:center;">
+dateBirth
+</th>
+<th style="text-align:center;">
+dateDeath
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Disorder not diagnsosed:1126
+</td>
+<td style="text-align:center;">
+Euthanasia:5325
+</td>
+<td style="text-align:center;">
+2005-01-03: 28
+</td>
+<td style="text-align:center;">
+2016-12-12: 41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Collapsed : 523
+</td>
+<td style="text-align:center;">
+Unassisted: 462
+</td>
+<td style="text-align:center;">
+2005-01-05: 26
+</td>
+<td style="text-align:center;">
+2016-10-07: 38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Neoplasia : 522
+</td>
+<td style="text-align:center;">
+Unrecorded: 146
+</td>
+<td style="text-align:center;">
+2004-01-01: 25
+</td>
+<td style="text-align:center;">
+2016-08-09: 37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Mass : 375
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+2005-01-06: 25
+</td>
+<td style="text-align:center;">
+2016-09-12: 37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Brain disorder : 350
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+2003-01-05: 24
+</td>
+<td style="text-align:center;">
+2016-11-09: 37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+Behaviour disorder : 341
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+2003-01-10: 24
+</td>
+<td style="text-align:center;">
+2016-04-04: 35
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(Other) :2696
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+(Other) :5781
+</td>
+<td style="text-align:center;">
+(Other) :5708
+</td>
+</tr>
+</tbody>
+</table>
+<h5 style="text-align: center;">
+<a id="displayCode.DataDict.1" href="javascript:togglecode('toggleCode.DataDict.1','displayCode.DataDict.1');"><i><strong>Show R Code to Pre-Process the Canine Mortality Data</strong></i></a>
+</h5>
+<div id="toggleCode.DataDict.1" style="display: none">
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="appendix-data-dictionary.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in Revised Data</span></span>
+<span id="cb77-2"><a href="appendix-data-dictionary.html#cb77-2" aria-hidden="true" tabindex="-1"></a>DogMortA <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Data/DogSurvivalData1.csv&quot;</span>)</span>
+<span id="cb77-3"><a href="appendix-data-dictionary.html#cb77-3" aria-hidden="true" tabindex="-1"></a>DogMort <span class="ot">&lt;-</span> DogMortA[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb77-4"><a href="appendix-data-dictionary.html#cb77-4" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>dateBirth <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(DogMort<span class="sc">$</span>dateBirth, <span class="st">&quot;%Y-%m-%d&quot;</span>) </span>
+<span id="cb77-5"><a href="appendix-data-dictionary.html#cb77-5" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>dateDeath <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(DogMort<span class="sc">$</span>dateDeath, <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb77-6"><a href="appendix-data-dictionary.html#cb77-6" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>AgeAtDeath <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(DogMort<span class="sc">$</span>dateDeath) <span class="sc">-</span> <span class="fu">as.numeric</span>(DogMort<span class="sc">$</span>dateBirth))<span class="sc">/</span><span class="fl">365.25</span></span>
+<span id="cb77-7"><a href="appendix-data-dictionary.html#cb77-7" aria-hidden="true" tabindex="-1"></a>DogTerr <span class="ot">&lt;-</span> <span class="fu">subset</span>(DogMort, Breed <span class="sc">==</span> <span class="st">&quot;Jack Russell Terrier&quot;</span>)</span>
+<span id="cb77-8"><a href="appendix-data-dictionary.html#cb77-8" aria-hidden="true" tabindex="-1"></a>DogGShep <span class="ot">&lt;-</span> <span class="fu">subset</span>(DogMort, Breed <span class="sc">==</span> <span class="st">&quot;German Shepherd Dog&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="canadian-female-select-and-ultimate-mortality-table" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Canadian Female Select and Ultimate Mortality Table</h2>
+<p><strong>Source</strong></p>
+<ul>
+<li>Individual Life Experience Subcommittee, “Construction of CIA9704 Mortality Tables for Canadian Individual Insurance based on data from 1997 to 2004,” Canadian Institute of Actuaries (2010).</li>
+<li>Accessed: October, 2021 from <a href="http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf" class="uri">http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf</a></li>
+<li>Data retrieved from <a href="https://mort.soa.org/" class="uri">https://mort.soa.org/</a> (Table 1458)</li>
+</ul>
+<p>Select data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211781&authkey=AOAbglJ4dJg-jWg" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canadian Female Select Mortality Table.</button></a></p>
+<p>Ultimate data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211782&authkey=ABfBp-Wrgah0kPc" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canadian Female Ultimate Mortality Table.</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-66">Table 6.7: </span><strong>Canadian Female Select Mortality First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Select0
+</th>
+<th style="text-align:center;">
+Select1
+</th>
+<th style="text-align:center;">
+Select2
+</th>
+<th style="text-align:center;">
+Select3
+</th>
+<th style="text-align:center;">
+Select4
+</th>
+<th style="text-align:center;">
+Select5
+</th>
+<th style="text-align:center;">
+Select6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.00035
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.00023
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select7
+</th>
+<th style="text-align:center;">
+Select8
+</th>
+<th style="text-align:center;">
+Select9
+</th>
+<th style="text-align:center;">
+Select10
+</th>
+<th style="text-align:center;">
+Select11
+</th>
+<th style="text-align:center;">
+Select12
+</th>
+<th style="text-align:center;">
+Select13
+</th>
+<th style="text-align:center;">
+Select14
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00012
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00012
+</td>
+<td style="text-align:center;">
+0.00013
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00012
+</td>
+<td style="text-align:center;">
+0.00013
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+<td style="text-align:center;">
+0.00016
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00012
+</td>
+<td style="text-align:center;">
+0.00013
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+<td style="text-align:center;">
+0.00016
+</td>
+<td style="text-align:center;">
+0.00017
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.00010
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00012
+</td>
+<td style="text-align:center;">
+0.00013
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+<td style="text-align:center;">
+0.00016
+</td>
+<td style="text-align:center;">
+0.00017
+</td>
+<td style="text-align:center;">
+0.00019
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-66">Table 6.7: </span><strong>Canadian Female Select Mortality Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Select0
+</th>
+<th style="text-align:center;">
+Select1
+</th>
+<th style="text-align:center;">
+Select2
+</th>
+<th style="text-align:center;">
+Select3
+</th>
+<th style="text-align:center;">
+Select4
+</th>
+<th style="text-align:center;">
+Select5
+</th>
+<th style="text-align:center;">
+Select6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+76
+</td>
+<td style="text-align:center;">
+0.00544
+</td>
+<td style="text-align:center;">
+0.00819
+</td>
+<td style="text-align:center;">
+0.01031
+</td>
+<td style="text-align:center;">
+0.01236
+</td>
+<td style="text-align:center;">
+0.01440
+</td>
+<td style="text-align:center;">
+0.01799
+</td>
+<td style="text-align:center;">
+0.02341
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+77
+</td>
+<td style="text-align:center;">
+0.00566
+</td>
+<td style="text-align:center;">
+0.00853
+</td>
+<td style="text-align:center;">
+0.01073
+</td>
+<td style="text-align:center;">
+0.01285
+</td>
+<td style="text-align:center;">
+0.01633
+</td>
+<td style="text-align:center;">
+0.02153
+</td>
+<td style="text-align:center;">
+0.02751
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+78
+</td>
+<td style="text-align:center;">
+0.00588
+</td>
+<td style="text-align:center;">
+0.00887
+</td>
+<td style="text-align:center;">
+0.01115
+</td>
+<td style="text-align:center;">
+0.01457
+</td>
+<td style="text-align:center;">
+0.01955
+</td>
+<td style="text-align:center;">
+0.02530
+</td>
+<td style="text-align:center;">
+0.03235
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+79
+</td>
+<td style="text-align:center;">
+0.00609
+</td>
+<td style="text-align:center;">
+0.00920
+</td>
+<td style="text-align:center;">
+0.01264
+</td>
+<td style="text-align:center;">
+0.01743
+</td>
+<td style="text-align:center;">
+0.02298
+</td>
+<td style="text-align:center;">
+0.02975
+</td>
+<td style="text-align:center;">
+0.03791
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+80
+</td>
+<td style="text-align:center;">
+0.00630
+</td>
+<td style="text-align:center;">
+0.01043
+</td>
+<td style="text-align:center;">
+0.01513
+</td>
+<td style="text-align:center;">
+0.02049
+</td>
+<td style="text-align:center;">
+0.02702
+</td>
+<td style="text-align:center;">
+0.03486
+</td>
+<td style="text-align:center;">
+0.04415
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select7
+</th>
+<th style="text-align:center;">
+Select8
+</th>
+<th style="text-align:center;">
+Select9
+</th>
+<th style="text-align:center;">
+Select10
+</th>
+<th style="text-align:center;">
+Select11
+</th>
+<th style="text-align:center;">
+Select12
+</th>
+<th style="text-align:center;">
+Select13
+</th>
+<th style="text-align:center;">
+Select14
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.02963
+</td>
+<td style="text-align:center;">
+0.03723
+</td>
+<td style="text-align:center;">
+0.04634
+</td>
+<td style="text-align:center;">
+0.05706
+</td>
+<td style="text-align:center;">
+0.06945
+</td>
+<td style="text-align:center;">
+0.08367
+</td>
+<td style="text-align:center;">
+0.09994
+</td>
+<td style="text-align:center;">
+0.11842
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.03484
+</td>
+<td style="text-align:center;">
+0.04363
+</td>
+<td style="text-align:center;">
+0.05398
+</td>
+<td style="text-align:center;">
+0.06599
+</td>
+<td style="text-align:center;">
+0.07978
+</td>
+<td style="text-align:center;">
+0.09560
+</td>
+<td style="text-align:center;">
+0.11358
+</td>
+<td style="text-align:center;">
+0.13176
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04082
+</td>
+<td style="text-align:center;">
+0.05082
+</td>
+<td style="text-align:center;">
+0.06243
+</td>
+<td style="text-align:center;">
+0.07580
+</td>
+<td style="text-align:center;">
+0.09115
+</td>
+<td style="text-align:center;">
+0.10864
+</td>
+<td style="text-align:center;">
+0.12638
+</td>
+<td style="text-align:center;">
+0.14378
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04755
+</td>
+<td style="text-align:center;">
+0.05877
+</td>
+<td style="text-align:center;">
+0.07172
+</td>
+<td style="text-align:center;">
+0.08661
+</td>
+<td style="text-align:center;">
+0.10359
+</td>
+<td style="text-align:center;">
+0.12088
+</td>
+<td style="text-align:center;">
+0.13790
+</td>
+<td style="text-align:center;">
+0.15707
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.05499
+</td>
+<td style="text-align:center;">
+0.06751
+</td>
+<td style="text-align:center;">
+0.08194
+</td>
+<td style="text-align:center;">
+0.09843
+</td>
+<td style="text-align:center;">
+0.11526
+</td>
+<td style="text-align:center;">
+0.13190
+</td>
+<td style="text-align:center;">
+0.15065
+</td>
+<td style="text-align:center;">
+0.17193
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-67">Table 6.8: </span><strong>Canadian Ultimate Mortality First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+qx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+0.00015
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+0.00016
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+0.00018
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+0.00019
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+0.00021
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-67">Table 6.8: </span><strong>Canadian Ultimate Mortality Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+qx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+116
+</td>
+<td style="text-align:center;">
+0.45
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+117
+</td>
+<td style="text-align:center;">
+0.45
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+118
+</td>
+<td style="text-align:center;">
+0.45
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+119
+</td>
+<td style="text-align:center;">
+0.45
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+120
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+<h5 style="text-align: center;">
+<a id="displayCode.DataDict.2" href="javascript:togglecode('toggleCode.DataDict.2','displayCode.DataDict.2');"><i><strong>Show R Code to Pre-Process the Canadian Female Select and Ultimate Mortality Data</strong></i></a>
+</h5>
+<div id="toggleCode.DataDict.2" style="display: none">
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="appendix-data-dictionary.html#cb78-1" aria-hidden="true" tabindex="-1"></a>CanadianSelect <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Data/CanadianFemaleSelectRead.csv&quot;</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb78-2"><a href="appendix-data-dictionary.html#cb78-2" aria-hidden="true" tabindex="-1"></a>CanadianSelect1 <span class="ot">&lt;-</span> <span class="fu">subset</span>(CanadianSelect, Age <span class="sc">&gt;=</span> <span class="dv">50</span> <span class="sc">&amp;</span> Age <span class="sc">&lt;=</span> <span class="dv">69</span>)</span>
+<span id="cb78-3"><a href="appendix-data-dictionary.html#cb78-3" aria-hidden="true" tabindex="-1"></a>CanadianSelect2 <span class="ot">&lt;-</span> CanadianSelect1[<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">16</span>)]</span>
+<span id="cb78-4"><a href="appendix-data-dictionary.html#cb78-4" aria-hidden="true" tabindex="-1"></a>CanadianSelect3 <span class="ot">&lt;-</span> CanadianSelect1[<span class="dv">37</span><span class="sc">:</span><span class="dv">41</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb78-5"><a href="appendix-data-dictionary.html#cb78-5" aria-hidden="true" tabindex="-1"></a>CanadianSelect4 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(CanadianSelect2,CanadianSelect3[,<span class="dv">2</span>],CanadianSelect3[,<span class="dv">1</span>])</span>
+<span id="cb78-6"><a href="appendix-data-dictionary.html#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(CanadianSelect4) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;Select=0&quot;</span>,<span class="st">&quot;Select=1&quot;</span>,<span class="st">&quot;Select=2&quot;</span>,<span class="st">&quot;Select=3&quot;</span>,<span class="st">&quot;Select=4&quot;</span>,<span class="st">&quot;Select=10&quot;</span>,<span class="st">&quot;Select=14&quot;</span>, <span class="st">&quot;Ultimate Mortality&quot;</span>,<span class="st">&quot;Ultimate Age&quot;</span> )</span>
+<span id="cb78-7"><a href="appendix-data-dictionary.html#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(CanadianSelect4) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb78-8"><a href="appendix-data-dictionary.html#cb78-8" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(CanadianSelect4, <span class="at">align =</span> <span class="st">&quot;r&quot;</span>, <span class="at">caption=</span><span class="st">&quot;Select and Ultimate Female Canadian Mortality Rates&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="korean-mortality-by-insured-status" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Korean Mortality by Insured Status</h2>
+<p><strong>Sources:</strong></p>
+<ul>
+<li>Insured lives and annuitant rates were drawn from a database organized by the Society of Actuaries, <a href="https://mort.soa.org/">https://mort.soa.org/</a>. These represent (beginning of the year) mortality rates (<span class="math inline">\(q_x\)</span>).</li>
+<li>The general population data are drawn from the <a href="http://www.mortality.org/">Human Mortality Database</a>. General population data are central death rates (<span class="math inline">\(m_x\)</span>).</li>
+</ul>
+<div id="korean-mortality---insured-lives" class="section level3 unnumbered">
+<h3>Korean Mortality - Insured Lives</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211745&authkey=ALym39X9Izxkahs&em=2" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the 2007 Korean Female Insured Lives Data.</button></a></p>
+<table class=" lightable-classic" style="font-family: Cambria; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-70">Table 6.9: </span><strong>Korean Female Insured Lives First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+qx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.00505
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.00044
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.00034
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0.00025
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.00019
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-70">Table 6.9: </span><strong>Korean Female Insured Lives Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+qx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+108
+</td>
+<td style="text-align:center;">
+0.76028
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+0.80509
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+110
+</td>
+<td style="text-align:center;">
+0.84620
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+111
+</td>
+<td style="text-align:center;">
+0.88274
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+112
+</td>
+<td style="text-align:center;">
+1.00000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="korean-mortality---annuitants" class="section level3 unnumbered">
+<h3>Korean Mortality - Annuitants</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211747&authkey=ALck3gQKe-xKhps&em=2" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the 2007 Korean Female Annuitants Data.</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-72">Table 6.10: </span><strong>Korean Female Annuitant First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+qx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+45
+</td>
+<td style="text-align:center;">
+0.00037
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+46
+</td>
+<td style="text-align:center;">
+0.00041
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+47
+</td>
+<td style="text-align:center;">
+0.00045
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+48
+</td>
+<td style="text-align:center;">
+0.00048
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+49
+</td>
+<td style="text-align:center;">
+0.00051
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-72">Table 6.10: </span><strong>Korean Female Annuitant Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+qx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+108
+</td>
+<td style="text-align:center;">
+0.66236
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+0.71596
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+110
+</td>
+<td style="text-align:center;">
+0.76430
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+111
+</td>
+<td style="text-align:center;">
+0.80563
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+112
+</td>
+<td style="text-align:center;">
+1.00000
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="korean-mortality---population" class="section level3 unnumbered">
+<h3>Korean Mortality - Population</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211793&authkey=AEdCktT83mJjsy8" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Korean Population Mortality Data.</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-74">Table 6.11: </span><strong>Korean Female Population First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2003
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.00485
+</td>
+<td style="text-align:center;">
+0.005998
+</td>
+<td style="text-align:center;">
+0.00545
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2003
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.00048
+</td>
+<td style="text-align:center;">
+0.000418
+</td>
+<td style="text-align:center;">
+0.00045
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2003
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.00029
+</td>
+<td style="text-align:center;">
+0.000409
+</td>
+<td style="text-align:center;">
+0.00035
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2003
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0.00029
+</td>
+<td style="text-align:center;">
+0.00031
+</td>
+<td style="text-align:center;">
+0.00030
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2003
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.00026
+</td>
+<td style="text-align:center;">
+0.000347
+</td>
+<td style="text-align:center;">
+0.00031
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-74">Table 6.11: </span><strong>Korean Female Population Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2018
+</td>
+<td style="text-align:center;">
+106
+</td>
+<td style="text-align:center;">
+0.55619
+</td>
+<td style="text-align:center;">
+0.667144
+</td>
+<td style="text-align:center;">
+0.57057
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2018
+</td>
+<td style="text-align:center;">
+107
+</td>
+<td style="text-align:center;">
+0.61531
+</td>
+<td style="text-align:center;">
+0.848961
+</td>
+<td style="text-align:center;">
+0.64287
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2018
+</td>
+<td style="text-align:center;">
+108
+</td>
+<td style="text-align:center;">
+0.69828
+</td>
+<td style="text-align:center;">
+1.426573
+</td>
+<td style="text-align:center;">
+0.76136
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2018
+</td>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+0.87470
+</td>
+<td style="text-align:center;">
+4.285714
+</td>
+<td style="text-align:center;">
+1.00386
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2018
+</td>
+<td style="text-align:center;">
+110
+</td>
+<td style="text-align:center;">
+1.80482
+</td>
+<td style="text-align:center;">
+.
+</td>
+<td style="text-align:center;">
+1.80482
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="mortality-by-country" class="section level2" number="6.6">
+<h2><span class="header-section-number">6.6</span> Mortality by Country</h2>
+<p><strong>Source:</strong> The <a href="http://www.mortality.org/">Human Mortality Database</a>. In addition to classification by country, we also look at experience by sex and age as these distinctions are well known. General population data are central death rates (<span class="math inline">\(m_x\)</span>).</p>
+<div id="population-mortality---japan" class="section level3 unnumbered">
+<h3>Population Mortality - Japan</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211789&authkey=AClNGsQ2kZ8-tEc" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Japan Population Mortality Data.</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-76">Table 6.12: </span><strong>Japan Population First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1947
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.083595
+</td>
+<td style="text-align:center;">
+0.095448
+</td>
+<td style="text-align:center;">
+0.089645
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1947
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.035643
+</td>
+<td style="text-align:center;">
+0.037017
+</td>
+<td style="text-align:center;">
+0.036341
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1947
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.017271
+</td>
+<td style="text-align:center;">
+0.017203
+</td>
+<td style="text-align:center;">
+0.017237
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1947
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0.011227
+</td>
+<td style="text-align:center;">
+0.01133
+</td>
+<td style="text-align:center;">
+0.011279
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1947
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.007023
+</td>
+<td style="text-align:center;">
+0.007468
+</td>
+<td style="text-align:center;">
+0.007248
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-76">Table 6.12: </span><strong>Japan Population Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+106
+</td>
+<td style="text-align:center;">
+0.522855
+</td>
+<td style="text-align:center;">
+0.69263
+</td>
+<td style="text-align:center;">
+0.537623
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+107
+</td>
+<td style="text-align:center;">
+0.534649
+</td>
+<td style="text-align:center;">
+0.66628
+</td>
+<td style="text-align:center;">
+0.544456
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+108
+</td>
+<td style="text-align:center;">
+0.569069
+</td>
+<td style="text-align:center;">
+0.607969
+</td>
+<td style="text-align:center;">
+0.571733
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+0.608248
+</td>
+<td style="text-align:center;">
+0.806337
+</td>
+<td style="text-align:center;">
+0.619736
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+110
+</td>
+<td style="text-align:center;">
+0.630664
+</td>
+<td style="text-align:center;">
+0.927907
+</td>
+<td style="text-align:center;">
+0.643787
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="population-mortality---poland" class="section level3 unnumbered">
+<h3>Population Mortality - Poland</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211743&authkey=AGvf2YmaAXg3Amc&em=2" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Poland Population Mortality Data.</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-78">Table 6.13: </span><strong>Poland Population First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1958
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.065617
+</td>
+<td style="text-align:center;">
+0.08371
+</td>
+<td style="text-align:center;">
+0.074886
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1958
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.004736
+</td>
+<td style="text-align:center;">
+0.005034
+</td>
+<td style="text-align:center;">
+0.004888
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1958
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.001734
+</td>
+<td style="text-align:center;">
+0.002034
+</td>
+<td style="text-align:center;">
+0.001888
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1958
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0.001191
+</td>
+<td style="text-align:center;">
+0.001463
+</td>
+<td style="text-align:center;">
+0.00133
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1958
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.000853
+</td>
+<td style="text-align:center;">
+0.001073
+</td>
+<td style="text-align:center;">
+0.000965
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-78">Table 6.13: </span><strong>Poland Population Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+106
+</td>
+<td style="text-align:center;">
+0.423814
+</td>
+<td style="text-align:center;">
+0.307903
+</td>
+<td style="text-align:center;">
+0.404767
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+107
+</td>
+<td style="text-align:center;">
+0.394572
+</td>
+<td style="text-align:center;">
+0.350672
+</td>
+<td style="text-align:center;">
+0.387116
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+108
+</td>
+<td style="text-align:center;">
+0.657174
+</td>
+<td style="text-align:center;">
+0.760938
+</td>
+<td style="text-align:center;">
+0.673882
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+0.529723
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.449214
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+110
+</td>
+<td style="text-align:center;">
+1.753104
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1.517067
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="population-mortality---united-states" class="section level3 unnumbered">
+<h3>Population Mortality - United States</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211788&authkey=ALkMSgJT7nuLfhU" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the USA Population Mortality Data.</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-80">Table 6.14: </span><strong>USA Population First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1933
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.05418
+</td>
+<td style="text-align:center;">
+0.06818
+</td>
+<td style="text-align:center;">
+0.06129
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1933
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.00887
+</td>
+<td style="text-align:center;">
+0.01004
+</td>
+<td style="text-align:center;">
+0.00946
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1933
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.00402
+</td>
+<td style="text-align:center;">
+0.00467
+</td>
+<td style="text-align:center;">
+0.00435
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1933
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0.00287
+</td>
+<td style="text-align:center;">
+0.00333
+</td>
+<td style="text-align:center;">
+0.00310
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1933
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.00223
+</td>
+<td style="text-align:center;">
+0.00254
+</td>
+<td style="text-align:center;">
+0.00239
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-80">Table 6.14: </span><strong>USA Population Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Year
+</th>
+<th style="text-align:center;">
+Age
+</th>
+<th style="text-align:center;">
+Female
+</th>
+<th style="text-align:center;">
+Male
+</th>
+<th style="text-align:center;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+106
+</td>
+<td style="text-align:center;">
+0.51709
+</td>
+<td style="text-align:center;">
+0.52166
+</td>
+<td style="text-align:center;">
+0.51764
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+107
+</td>
+<td style="text-align:center;">
+0.50964
+</td>
+<td style="text-align:center;">
+0.58639
+</td>
+<td style="text-align:center;">
+0.51840
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+108
+</td>
+<td style="text-align:center;">
+0.63771
+</td>
+<td style="text-align:center;">
+0.72411
+</td>
+<td style="text-align:center;">
+0.64703
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+109
+</td>
+<td style="text-align:center;">
+0.55038
+</td>
+<td style="text-align:center;">
+0.37360
+</td>
+<td style="text-align:center;">
+0.53175
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2019
+</td>
+<td style="text-align:center;">
+110
+</td>
+<td style="text-align:center;">
+0.59847
+</td>
+<td style="text-align:center;">
+0.50963
+</td>
+<td style="text-align:center;">
+0.58832
+</td>
+</tr>
+</tbody>
+</table>
+<h5 style="text-align: center;">
+<a id="displayCode.DataCountry.2" href="javascript:togglecode('toggleCode.DataCountry.2','displayCode.DataCountry.2');"><i><strong>Show R Code to Pre-Process the Mortality Data by Country</strong></i></a>
+</h5>
+<div id="toggleCode.DataCountry.2" style="display: none">
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="appendix-data-dictionary.html#cb79-1" aria-hidden="true" tabindex="-1"></a>JapanPopFemaleqx  <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(JapanPop2019<span class="sc">$</span>Female) <span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">as.numeric</span>(JapanPop2019<span class="sc">$</span>Female) <span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb79-2"><a href="appendix-data-dictionary.html#cb79-2" aria-hidden="true" tabindex="-1"></a>JapanPopMaleqx    <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(JapanPop2019<span class="sc">$</span>Male)   <span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">as.numeric</span>(JapanPop2019<span class="sc">$</span>Male)   <span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb79-3"><a href="appendix-data-dictionary.html#cb79-3" aria-hidden="true" tabindex="-1"></a>PolandPopFemaleqx <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(PolandPop2019<span class="sc">$</span>Female)<span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">as.numeric</span>(PolandPop2019<span class="sc">$</span>Female)<span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb79-4"><a href="appendix-data-dictionary.html#cb79-4" aria-hidden="true" tabindex="-1"></a>PolandPopMaleqx   <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(PolandPop2019<span class="sc">$</span>Male)  <span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">as.numeric</span>(PolandPop2019<span class="sc">$</span>Male)  <span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb79-5"><a href="appendix-data-dictionary.html#cb79-5" aria-hidden="true" tabindex="-1"></a>USAPopFemaleqx    <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(USAPop2019<span class="sc">$</span>Female)   <span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">as.numeric</span>(USAPop2019<span class="sc">$</span>Female)   <span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb79-6"><a href="appendix-data-dictionary.html#cb79-6" aria-hidden="true" tabindex="-1"></a>USAPopMaleqx      <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(USAPop2019<span class="sc">$</span>Male)     <span class="sc">/</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">as.numeric</span>(USAPop2019<span class="sc">$</span>Male)     <span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb79-7"><a href="appendix-data-dictionary.html#cb79-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-8"><a href="appendix-data-dictionary.html#cb79-8" aria-hidden="true" tabindex="-1"></a>PolandPopMaleqx[<span class="dv">110</span>] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="ot">-&gt;</span> PolandPopMaleqx[<span class="dv">111</span>]</span>
+<span id="cb79-9"><a href="appendix-data-dictionary.html#cb79-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-10"><a href="appendix-data-dictionary.html#cb79-10" aria-hidden="true" tabindex="-1"></a>IntlMort <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(JapanPop2019<span class="sc">$</span>Age, JapanPopFemaleqx, JapanPopMaleqx, PolandPopFemaleqx,</span>
+<span id="cb79-11"><a href="appendix-data-dictionary.html#cb79-11" aria-hidden="true" tabindex="-1"></a>                             PolandPopMaleqx, USAPopFemaleqx, USAPopMaleqx))</span>
+<span id="cb79-12"><a href="appendix-data-dictionary.html#cb79-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(IntlMort) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;qx_Female_Japan&quot;</span>, <span class="st">&quot;qx_Male_Japan&quot;</span>, <span class="st">&quot;qx_Female_Poland&quot;</span>, </span>
+<span id="cb79-13"><a href="appendix-data-dictionary.html#cb79-13" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;qx_Male_Poland&quot;</span>,  <span class="st">&quot;qx_Female_USA&quot;</span>, <span class="st">&quot;qx_Male_USA&quot;</span>)</span>
+<span id="cb79-14"><a href="appendix-data-dictionary.html#cb79-14" aria-hidden="true" tabindex="-1"></a><span class="co">#str(IntlMort)</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="Sec:DataDisIncome" class="section level2" number="6.7">
+<h2><span class="header-section-number">6.7</span> Disability Income</h2>
+<p><strong>Source:</strong> <span class="citation"><a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">Zayatz</a> (<a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>, Tables 14A, 14B, 21A, 21B</p>
+<p><strong>Description</strong>:</p>
+<ul>
+<li>Entitlement age <code>Entryx</code> denotes age last birthday at entitlement to disability benefits.</li>
+<li>The duration <code>Select.y</code> is measured in years since entitlement.</li>
+<li>Attained age <code>Attainedx</code> is calculated as sum of <code>Entryx</code> and duration.</li>
+<li>The select and ultimate table is read across the row for 0-10 years of entitlement, and down the last (ultimate) column for 10 or more years of entitlement.</li>
+</ul>
+<div id="disability-recovery-rates---male" class="section level3 unnumbered">
+<h3>Disability Recovery Rates - Male</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211785&authkey=AK6MFI4rf9VZp08" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Male Disability Recovery Rates Data</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-83">Table 6.15: </span><strong>Male Disability Recovery Rates First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+0.00946
+</td>
+<td style="text-align:center;">
+0.02160
+</td>
+<td style="text-align:center;">
+0.02233
+</td>
+<td style="text-align:center;">
+0.01267
+</td>
+<td style="text-align:center;">
+0.07644
+</td>
+<td style="text-align:center;">
+0.10214
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+0.00826
+</td>
+<td style="text-align:center;">
+0.01658
+</td>
+<td style="text-align:center;">
+0.01450
+</td>
+<td style="text-align:center;">
+0.01257
+</td>
+<td style="text-align:center;">
+0.06944
+</td>
+<td style="text-align:center;">
+0.08764
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+0.00670
+</td>
+<td style="text-align:center;">
+0.01218
+</td>
+<td style="text-align:center;">
+0.00836
+</td>
+<td style="text-align:center;">
+0.01350
+</td>
+<td style="text-align:center;">
+0.05874
+</td>
+<td style="text-align:center;">
+0.06920
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+0.00473
+</td>
+<td style="text-align:center;">
+0.00892
+</td>
+<td style="text-align:center;">
+0.00630
+</td>
+<td style="text-align:center;">
+0.01320
+</td>
+<td style="text-align:center;">
+0.04634
+</td>
+<td style="text-align:center;">
+0.05240
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+0.00380
+</td>
+<td style="text-align:center;">
+0.00731
+</td>
+<td style="text-align:center;">
+0.00554
+</td>
+<td style="text-align:center;">
+0.01249
+</td>
+<td style="text-align:center;">
+0.03792
+</td>
+<td style="text-align:center;">
+0.04318
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.11206
+</td>
+<td style="text-align:center;">
+0.07516
+</td>
+<td style="text-align:center;">
+0.05687
+</td>
+<td style="text-align:center;">
+0.05694
+</td>
+<td style="text-align:center;">
+0.04050
+</td>
+<td style="text-align:center;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.08750
+</td>
+<td style="text-align:center;">
+0.06374
+</td>
+<td style="text-align:center;">
+0.05063
+</td>
+<td style="text-align:center;">
+0.04880
+</td>
+<td style="text-align:center;">
+0.03568
+</td>
+<td style="text-align:center;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.06238
+</td>
+<td style="text-align:center;">
+0.05117
+</td>
+<td style="text-align:center;">
+0.04317
+</td>
+<td style="text-align:center;">
+0.03816
+</td>
+<td style="text-align:center;">
+0.03049
+</td>
+<td style="text-align:center;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04754
+</td>
+<td style="text-align:center;">
+0.04087
+</td>
+<td style="text-align:center;">
+0.03595
+</td>
+<td style="text-align:center;">
+0.03003
+</td>
+<td style="text-align:center;">
+0.02587
+</td>
+<td style="text-align:center;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.03896
+</td>
+<td style="text-align:center;">
+0.03292
+</td>
+<td style="text-align:center;">
+0.02919
+</td>
+<td style="text-align:center;">
+0.02251
+</td>
+<td style="text-align:center;">
+0.02053
+</td>
+<td style="text-align:center;">
+30
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-83">Table 6.15: </span><strong>Male Disability Recovery Rates Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+60
+</td>
+<td style="text-align:center;">
+0.00062
+</td>
+<td style="text-align:center;">
+0.00063
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+0.00079
+</td>
+<td style="text-align:center;">
+0.00162
+</td>
+<td style="text-align:center;">
+0.00117
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+61
+</td>
+<td style="text-align:center;">
+0.00048
+</td>
+<td style="text-align:center;">
+0.00023
+</td>
+<td style="text-align:center;">
+0.00009
+</td>
+<td style="text-align:center;">
+0.00062
+</td>
+<td style="text-align:center;">
+0.00139
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+62
+</td>
+<td style="text-align:center;">
+0.00026
+</td>
+<td style="text-align:center;">
+0.00016
+</td>
+<td style="text-align:center;">
+0.00007
+</td>
+<td style="text-align:center;">
+0.00026
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+63
+</td>
+<td style="text-align:center;">
+0.00025
+</td>
+<td style="text-align:center;">
+0.00024
+</td>
+<td style="text-align:center;">
+0.00011
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+64
+</td>
+<td style="text-align:center;">
+0.00026
+</td>
+<td style="text-align:center;">
+0.00030
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+70
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+71
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+72
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+73
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="disability-recovery-rates---female" class="section level3 unnumbered">
+<h3>Disability Recovery Rates - FeMale</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211784&authkey=AMdKHy42o2mEZYk" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Female Disability Recovery Rates Data</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-84">Table 6.16: </span><strong>Female Disability Recovery Rates First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+0.01215
+</td>
+<td style="text-align:center;">
+0.01899
+</td>
+<td style="text-align:center;">
+0.01408
+</td>
+<td style="text-align:center;">
+0.01206
+</td>
+<td style="text-align:center;">
+0.04706
+</td>
+<td style="text-align:center;">
+0.07218
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+0.00934
+</td>
+<td style="text-align:center;">
+0.01440
+</td>
+<td style="text-align:center;">
+0.00959
+</td>
+<td style="text-align:center;">
+0.01099
+</td>
+<td style="text-align:center;">
+0.04697
+</td>
+<td style="text-align:center;">
+0.06196
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+0.00609
+</td>
+<td style="text-align:center;">
+0.01058
+</td>
+<td style="text-align:center;">
+0.00715
+</td>
+<td style="text-align:center;">
+0.01107
+</td>
+<td style="text-align:center;">
+0.04464
+</td>
+<td style="text-align:center;">
+0.04965
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+0.00362
+</td>
+<td style="text-align:center;">
+0.00818
+</td>
+<td style="text-align:center;">
+0.00568
+</td>
+<td style="text-align:center;">
+0.01007
+</td>
+<td style="text-align:center;">
+0.03644
+</td>
+<td style="text-align:center;">
+0.03809
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+0.00329
+</td>
+<td style="text-align:center;">
+0.00661
+</td>
+<td style="text-align:center;">
+0.00566
+</td>
+<td style="text-align:center;">
+0.00979
+</td>
+<td style="text-align:center;">
+0.02933
+</td>
+<td style="text-align:center;">
+0.03575
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.07609
+</td>
+<td style="text-align:center;">
+0.06826
+</td>
+<td style="text-align:center;">
+0.07033
+</td>
+<td style="text-align:center;">
+0.06010
+</td>
+<td style="text-align:center;">
+0.04714
+</td>
+<td style="text-align:center;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.06484
+</td>
+<td style="text-align:center;">
+0.05891
+</td>
+<td style="text-align:center;">
+0.06032
+</td>
+<td style="text-align:center;">
+0.04966
+</td>
+<td style="text-align:center;">
+0.03823
+</td>
+<td style="text-align:center;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.05337
+</td>
+<td style="text-align:center;">
+0.04903
+</td>
+<td style="text-align:center;">
+0.04884
+</td>
+<td style="text-align:center;">
+0.03708
+</td>
+<td style="text-align:center;">
+0.03098
+</td>
+<td style="text-align:center;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04048
+</td>
+<td style="text-align:center;">
+0.03914
+</td>
+<td style="text-align:center;">
+0.03924
+</td>
+<td style="text-align:center;">
+0.02870
+</td>
+<td style="text-align:center;">
+0.02575
+</td>
+<td style="text-align:center;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.03482
+</td>
+<td style="text-align:center;">
+0.03085
+</td>
+<td style="text-align:center;">
+0.03089
+</td>
+<td style="text-align:center;">
+0.02314
+</td>
+<td style="text-align:center;">
+0.02075
+</td>
+<td style="text-align:center;">
+30
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-84">Table 6.16: </span><strong>Female Disability Recovery Rates Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+61
+</td>
+<td style="text-align:center;">
+0.00042
+</td>
+<td style="text-align:center;">
+0.00041
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+<td style="text-align:center;">
+0.00072
+</td>
+<td style="text-align:center;">
+0.00114
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+62
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+<td style="text-align:center;">
+0.00028
+</td>
+<td style="text-align:center;">
+0.00014
+</td>
+<td style="text-align:center;">
+0.00027
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+63
+</td>
+<td style="text-align:center;">
+0.00020
+</td>
+<td style="text-align:center;">
+0.00026
+</td>
+<td style="text-align:center;">
+0.00008
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+64
+</td>
+<td style="text-align:center;">
+0.00022
+</td>
+<td style="text-align:center;">
+0.00022
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+0.00021
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+71
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+72
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+73
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+74
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+NA
+</td>
+<td style="text-align:center;">
+75
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="death-and-disability-recovery-rates---male" class="section level3 unnumbered">
+<h3>Death and Disability Recovery Rates - Male</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211786&authkey=AKx4JeOWjOTN0zU" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Male Death and Disability Recovery Rates Data</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-85">Table 6.17: </span><strong>Male Death and Disability Recovery Rates First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+0.01346
+</td>
+<td style="text-align:center;">
+0.02872
+</td>
+<td style="text-align:center;">
+0.02758
+</td>
+<td style="text-align:center;">
+0.01848
+</td>
+<td style="text-align:center;">
+0.08046
+</td>
+<td style="text-align:center;">
+0.10458
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+0.01400
+</td>
+<td style="text-align:center;">
+0.02485
+</td>
+<td style="text-align:center;">
+0.02070
+</td>
+<td style="text-align:center;">
+0.01930
+</td>
+<td style="text-align:center;">
+0.07425
+</td>
+<td style="text-align:center;">
+0.09238
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+0.01401
+</td>
+<td style="text-align:center;">
+0.02107
+</td>
+<td style="text-align:center;">
+0.01529
+</td>
+<td style="text-align:center;">
+0.02065
+</td>
+<td style="text-align:center;">
+0.06494
+</td>
+<td style="text-align:center;">
+0.07627
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+0.01464
+</td>
+<td style="text-align:center;">
+0.01730
+</td>
+<td style="text-align:center;">
+0.01359
+</td>
+<td style="text-align:center;">
+0.02088
+</td>
+<td style="text-align:center;">
+0.05255
+</td>
+<td style="text-align:center;">
+0.05890
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+0.01395
+</td>
+<td style="text-align:center;">
+0.01596
+</td>
+<td style="text-align:center;">
+0.01244
+</td>
+<td style="text-align:center;">
+0.02044
+</td>
+<td style="text-align:center;">
+0.04439
+</td>
+<td style="text-align:center;">
+0.04934
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.12126
+</td>
+<td style="text-align:center;">
+0.08229
+</td>
+<td style="text-align:center;">
+0.06258
+</td>
+<td style="text-align:center;">
+0.06316
+</td>
+<td style="text-align:center;">
+0.04864
+</td>
+<td style="text-align:center;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.09451
+</td>
+<td style="text-align:center;">
+0.07086
+</td>
+<td style="text-align:center;">
+0.05702
+</td>
+<td style="text-align:center;">
+0.05431
+</td>
+<td style="text-align:center;">
+0.04258
+</td>
+<td style="text-align:center;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.06708
+</td>
+<td style="text-align:center;">
+0.05782
+</td>
+<td style="text-align:center;">
+0.04991
+</td>
+<td style="text-align:center;">
+0.04365
+</td>
+<td style="text-align:center;">
+0.03684
+</td>
+<td style="text-align:center;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.05211
+</td>
+<td style="text-align:center;">
+0.04633
+</td>
+<td style="text-align:center;">
+0.04320
+</td>
+<td style="text-align:center;">
+0.03540
+</td>
+<td style="text-align:center;">
+0.03175
+</td>
+<td style="text-align:center;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04340
+</td>
+<td style="text-align:center;">
+0.03904
+</td>
+<td style="text-align:center;">
+0.03687
+</td>
+<td style="text-align:center;">
+0.02785
+</td>
+<td style="text-align:center;">
+0.02664
+</td>
+<td style="text-align:center;">
+30
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-85">Table 6.17: </span><strong>Male Death and Disability Recovery Rates Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+61
+</td>
+<td style="text-align:center;">
+0.07463
+</td>
+<td style="text-align:center;">
+0.04978
+</td>
+<td style="text-align:center;">
+0.04177
+</td>
+<td style="text-align:center;">
+0.04009
+</td>
+<td style="text-align:center;">
+0.04029
+</td>
+<td style="text-align:center;">
+0.04387
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+62
+</td>
+<td style="text-align:center;">
+0.08180
+</td>
+<td style="text-align:center;">
+0.05426
+</td>
+<td style="text-align:center;">
+0.04426
+</td>
+<td style="text-align:center;">
+0.04303
+</td>
+<td style="text-align:center;">
+0.04556
+</td>
+<td style="text-align:center;">
+0.04598
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+63
+</td>
+<td style="text-align:center;">
+0.09568
+</td>
+<td style="text-align:center;">
+0.06421
+</td>
+<td style="text-align:center;">
+0.05185
+</td>
+<td style="text-align:center;">
+0.05028
+</td>
+<td style="text-align:center;">
+0.05032
+</td>
+<td style="text-align:center;">
+0.05444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+64
+</td>
+<td style="text-align:center;">
+0.11528
+</td>
+<td style="text-align:center;">
+0.07067
+</td>
+<td style="text-align:center;">
+0.05558
+</td>
+<td style="text-align:center;">
+0.05582
+</td>
+<td style="text-align:center;">
+0.05614
+</td>
+<td style="text-align:center;">
+0.06220
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+0.12402
+</td>
+<td style="text-align:center;">
+0.07477
+</td>
+<td style="text-align:center;">
+0.05577
+</td>
+<td style="text-align:center;">
+0.06081
+</td>
+<td style="text-align:center;">
+0.06072
+</td>
+<td style="text-align:center;">
+0.06201
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.04736
+</td>
+<td style="text-align:center;">
+0.04843
+</td>
+<td style="text-align:center;">
+0.05258
+</td>
+<td style="text-align:center;">
+0.05482
+</td>
+<td style="text-align:center;">
+0.06168
+</td>
+<td style="text-align:center;">
+71
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04972
+</td>
+<td style="text-align:center;">
+0.05281
+</td>
+<td style="text-align:center;">
+0.05587
+</td>
+<td style="text-align:center;">
+0.05792
+</td>
+<td style="text-align:center;">
+0.06546
+</td>
+<td style="text-align:center;">
+72
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.05605
+</td>
+<td style="text-align:center;">
+0.06006
+</td>
+<td style="text-align:center;">
+0.06522
+</td>
+<td style="text-align:center;">
+0.06520
+</td>
+<td style="text-align:center;">
+0.06913
+</td>
+<td style="text-align:center;">
+73
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.06177
+</td>
+<td style="text-align:center;">
+0.06450
+</td>
+<td style="text-align:center;">
+0.07336
+</td>
+<td style="text-align:center;">
+0.07356
+</td>
+<td style="text-align:center;">
+0.07384
+</td>
+<td style="text-align:center;">
+74
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.06473
+</td>
+<td style="text-align:center;">
+0.06626
+</td>
+<td style="text-align:center;">
+0.08112
+</td>
+<td style="text-align:center;">
+0.08198
+</td>
+<td style="text-align:center;">
+0.07921
+</td>
+<td style="text-align:center;">
+75
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="death-and-disability-recovery-rates---female" class="section level3 unnumbered">
+<h3>Death and Disability Recovery Rates - Female</h3>
+<p>The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211783&authkey=AIBj-bpQb9q0OYQ" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Female Death and Disability Recovery Rates Data</button></a></p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-86">Table 6.18: </span><strong>Female Death and Disability Recovery Rates First Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+0.01481
+</td>
+<td style="text-align:center;">
+0.02314
+</td>
+<td style="text-align:center;">
+0.01797
+</td>
+<td style="text-align:center;">
+0.01737
+</td>
+<td style="text-align:center;">
+0.04979
+</td>
+<td style="text-align:center;">
+0.07516
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+0.01449
+</td>
+<td style="text-align:center;">
+0.02075
+</td>
+<td style="text-align:center;">
+0.01430
+</td>
+<td style="text-align:center;">
+0.01620
+</td>
+<td style="text-align:center;">
+0.05078
+</td>
+<td style="text-align:center;">
+0.06603
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+0.01364
+</td>
+<td style="text-align:center;">
+0.01887
+</td>
+<td style="text-align:center;">
+0.01258
+</td>
+<td style="text-align:center;">
+0.01679
+</td>
+<td style="text-align:center;">
+0.04945
+</td>
+<td style="text-align:center;">
+0.05459
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+0.01337
+</td>
+<td style="text-align:center;">
+0.01690
+</td>
+<td style="text-align:center;">
+0.01172
+</td>
+<td style="text-align:center;">
+0.01595
+</td>
+<td style="text-align:center;">
+0.04237
+</td>
+<td style="text-align:center;">
+0.04229
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+0.01250
+</td>
+<td style="text-align:center;">
+0.01551
+</td>
+<td style="text-align:center;">
+0.01115
+</td>
+<td style="text-align:center;">
+0.01620
+</td>
+<td style="text-align:center;">
+0.03486
+</td>
+<td style="text-align:center;">
+0.04026
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.08078
+</td>
+<td style="text-align:center;">
+0.07706
+</td>
+<td style="text-align:center;">
+0.07673
+</td>
+<td style="text-align:center;">
+0.06399
+</td>
+<td style="text-align:center;">
+0.05316
+</td>
+<td style="text-align:center;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.07066
+</td>
+<td style="text-align:center;">
+0.06682
+</td>
+<td style="text-align:center;">
+0.06595
+</td>
+<td style="text-align:center;">
+0.05464
+</td>
+<td style="text-align:center;">
+0.04434
+</td>
+<td style="text-align:center;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.06011
+</td>
+<td style="text-align:center;">
+0.05638
+</td>
+<td style="text-align:center;">
+0.05342
+</td>
+<td style="text-align:center;">
+0.04309
+</td>
+<td style="text-align:center;">
+0.03694
+</td>
+<td style="text-align:center;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04734
+</td>
+<td style="text-align:center;">
+0.04622
+</td>
+<td style="text-align:center;">
+0.04415
+</td>
+<td style="text-align:center;">
+0.03550
+</td>
+<td style="text-align:center;">
+0.03215
+</td>
+<td style="text-align:center;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04152
+</td>
+<td style="text-align:center;">
+0.03665
+</td>
+<td style="text-align:center;">
+0.03668
+</td>
+<td style="text-align:center;">
+0.03017
+</td>
+<td style="text-align:center;">
+0.02811
+</td>
+<td style="text-align:center;">
+30
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-86">Table 6.18: </span><strong>Female Death and Disability Recovery Rates Last Five Rows</strong>
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Entryx
+</th>
+<th style="text-align:center;">
+Select.0
+</th>
+<th style="text-align:center;">
+Select.1
+</th>
+<th style="text-align:center;">
+Select.2
+</th>
+<th style="text-align:center;">
+Select.3
+</th>
+<th style="text-align:center;">
+Select.4
+</th>
+<th style="text-align:center;">
+Select.5
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+61
+</td>
+<td style="text-align:center;">
+0.06242
+</td>
+<td style="text-align:center;">
+0.04250
+</td>
+<td style="text-align:center;">
+0.03321
+</td>
+<td style="text-align:center;">
+0.03149
+</td>
+<td style="text-align:center;">
+0.02889
+</td>
+<td style="text-align:center;">
+0.03294
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+62
+</td>
+<td style="text-align:center;">
+0.06712
+</td>
+<td style="text-align:center;">
+0.04808
+</td>
+<td style="text-align:center;">
+0.03830
+</td>
+<td style="text-align:center;">
+0.03315
+</td>
+<td style="text-align:center;">
+0.03409
+</td>
+<td style="text-align:center;">
+0.03497
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+63
+</td>
+<td style="text-align:center;">
+0.07996
+</td>
+<td style="text-align:center;">
+0.05552
+</td>
+<td style="text-align:center;">
+0.04142
+</td>
+<td style="text-align:center;">
+0.04077
+</td>
+<td style="text-align:center;">
+0.03742
+</td>
+<td style="text-align:center;">
+0.04052
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+64
+</td>
+<td style="text-align:center;">
+0.10067
+</td>
+<td style="text-align:center;">
+0.06061
+</td>
+<td style="text-align:center;">
+0.04973
+</td>
+<td style="text-align:center;">
+0.04358
+</td>
+<td style="text-align:center;">
+0.04612
+</td>
+<td style="text-align:center;">
+0.04430
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+65
+</td>
+<td style="text-align:center;">
+0.10870
+</td>
+<td style="text-align:center;">
+0.06833
+</td>
+<td style="text-align:center;">
+0.05638
+</td>
+<td style="text-align:center;">
+0.04641
+</td>
+<td style="text-align:center;">
+0.05169
+</td>
+<td style="text-align:center;">
+0.04504
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">
+Select.6
+</th>
+<th style="text-align:center;">
+Select.7
+</th>
+<th style="text-align:center;">
+Select.8
+</th>
+<th style="text-align:center;">
+Select.9
+</th>
+<th style="text-align:center;">
+Ultimate
+</th>
+<th style="text-align:center;">
+Attainedx
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0.03299
+</td>
+<td style="text-align:center;">
+0.03625
+</td>
+<td style="text-align:center;">
+0.03931
+</td>
+<td style="text-align:center;">
+0.04157
+</td>
+<td style="text-align:center;">
+0.04377
+</td>
+<td style="text-align:center;">
+71
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.03673
+</td>
+<td style="text-align:center;">
+0.03888
+</td>
+<td style="text-align:center;">
+0.04240
+</td>
+<td style="text-align:center;">
+0.04548
+</td>
+<td style="text-align:center;">
+0.04678
+</td>
+<td style="text-align:center;">
+72
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04316
+</td>
+<td style="text-align:center;">
+0.04318
+</td>
+<td style="text-align:center;">
+0.04863
+</td>
+<td style="text-align:center;">
+0.04894
+</td>
+<td style="text-align:center;">
+0.05029
+</td>
+<td style="text-align:center;">
+73
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.04906
+</td>
+<td style="text-align:center;">
+0.04904
+</td>
+<td style="text-align:center;">
+0.05498
+</td>
+<td style="text-align:center;">
+0.05536
+</td>
+<td style="text-align:center;">
+0.05343
+</td>
+<td style="text-align:center;">
+74
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+0.05310
+</td>
+<td style="text-align:center;">
+0.05493
+</td>
+<td style="text-align:center;">
+0.06121
+</td>
+<td style="text-align:center;">
+0.06175
+</td>
+<td style="text-align:center;">
+0.05798
+</td>
+<td style="text-align:center;">
+75
+</td>
+</tr>
+</tbody>
+</table>
+<div id="test-a-few-things" class="section level4 unnumbered">
+<h4>Test a few things</h4>
+<p>Access from Github instead of OneDrive???</p>
+<p>Access button <a href="https://github.com/OpenActTextDev/LifeCon/raw/master/Data/DogSurvivalData.csv" download >
+<button type="button"  style="background-color:#008CBA;color:white">Access the Canadian Female Select and Ultimate Mortality Table Github .</button></a></p>
+<p>Then, do a “File==&gt; Save As” to download the data….</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="C-Forward.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="C-NotationConventionLC.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

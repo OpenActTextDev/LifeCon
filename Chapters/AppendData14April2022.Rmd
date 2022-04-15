@@ -1,0 +1,472 @@
+
+
+# Appendix: Data Dictionary
+
+This appendix describes the datasets used in this book.
+
+For each set of data, we provide download buttons so that you can easily access the data in standard .csv (comma separated value) format. This allows you replicate and experiment with the methods developed in the book as well as sharpen your understanding through exercises.
+
+We provide the source of each dataset. We also recommend, for deeper understanding, that you occasionally refer to these original sources to further develop your appreciation of the data underpinning the analytics developed in this book.
+
+
+
+```{r echo = FALSE}
+library(dplyr)
+printnum = 5 # Number to print in tables
+```
+
+##  United States Population Mortality Counts {#Sec:DataUSPoPCounts}
+
+**Source**: The [Human Mortality Database (HMD)](https://www.mortality.org).
+
+**Description**: We now bring into consideration *mortality experience* for populations that had been observed over time, which is available at the [Human Mortality Database (HMD)](https://www.mortality.org) for a wide range of countries.  The available data include *Exposures* by age, sex, and calender year period, i.e. how many people of a given age and sex lived in the country's population during a given period of time, and corresponding *Deaths*, i.e. how many of these individuals had died.
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211777&authkey=AJ_GOM4lcDEjMa0&em=2" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the United States Population Mortality Counts Data</button></a>
+
+
+
+```{r echo = FALSE}
+#us_exp <- read.csv("../Data/HMD_Expo.csv")
+us_exp <- read.csv("Data/HMD_Expo.csv")
+
+knitr::kable(head(us_exp, n=printnum), align = "cccccccc", caption = "**US Population Mortality Counts First Five Rows**")
+tmp_tail_data <- tail(us_exp, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**US Population Mortality Counts Last Five Rows**")
+```
+
+```{r echo = FALSE}
+Summary <- summary(us_exp)
+Summary[is.na(Summary)] <- ""
+
+knitr::kable(Summary, caption="**US Population Mortality Counts Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```    
+
+
+## Synthetic Insurer Data {#Sec:SyntheticInsData}
+
+
+
+**Description**: We provide survival information for a hypothetical insurance company in `SyntheticInsurerData.csv`.  The company has sold *whole life insurance policies*, i.e. policies that pay a *death benefit* upon the policyholder's death, since 1955.  Policyholders have to go through an underwriting examination, and in addition to policyholders' age, sex (0 for female, 1 for male), smoking status (0 for non-smoker, 1 for smoker), and the month of sale, the company records the applicants body-mass index (BMI) and the systolic blood pressure at the time of underwriting.  Finally, for those policyholders with a claim, i.e., for the policyholders that have died, the company records the time of death (relative to the month of underwriting).  The data are organized in the order of sales, so that the oldest entries are at the top of the data and the newest entries are at the bottom:
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211778&authkey=ADl7Pocw6ENAOWk&em=2" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Synthetic Insurer  Data</button></a>
+
+
+```{r echo = FALSE}
+ins_data <- read.csv("Data/SyntheticInsurerData.csv")
+#ins_data <- read.csv("../Data/SyntheticInsurerData.csv")
+
+knitr::kable(head(ins_data, n=printnum), align = "cccccccc",digits = 2, caption = "**Synthetic Insurer First Five Rows**")
+tmp_tail_ins_data <- tail(ins_data, n=printnum)
+rownames(tmp_tail_ins_data) <- NULL
+knitr::kable(tmp_tail_ins_data, align = "cccccccc",digits = 2, caption = "**Synthetic Insurer Last Five Rows**")
+```
+
+
+```{r echo = FALSE}
+Summary <- summary(ins_data)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary[,1:4], align = "cccccccc", caption="**Synthetic Insurer Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+knitr::kable(Summary[,5:8], align = "cccccccc") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```
+
+
+## Canine Mortality 
+
+**Source**: Canine mortality data are publicly available at @pegram2021Data. See @pegram2021proportion for additional background.
+
+**Description**: In this dataset, there are 29865 observations used to study euthanasia. Our interest is in survival patterns by age and so we remove records where either the date of birth or death is missing or incorrect (we also removed 17 records with missing sex information); this results in 5933 records for analysis. 
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211752&authkey=ALDTPrf5BIOX2Sg&em=2" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canine Mortality Data</button></a>
+
+
+```{r echo = FALSE}
+#DogMortA <- read.csv("../Data/DogSurvivalData1.csv")
+DogMortA <- read.csv("Data/DogSurvivalData1.csv")
+DogMort <- DogMortA[,-1]
+
+knitr::kable(head(DogMort, n=printnum), align = "cccccccc", caption = "**Canine Mortality First Five Rows**")
+tmp_tail_data <- tail(DogMort, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**Canine Mortality Last Five Rows**")
+```
+
+
+```{r echo = FALSE}
+Summary <- summary(DogMort)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary[,1:4], align = "cccccccc", caption="**Canine Mortality Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+knitr::kable(Summary[,5:8], align = "cccccccc") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```    
+
+
+`r HideRCode('DataDict.1',"Show R Code to Pre-Process the Canine Mortality Data")`
+
+```{r eval = FALSE}
+# Read in Revised Data
+DogMortA <- read.csv("Data/DogSurvivalData1.csv")
+DogMort <- DogMortA[,-1]
+DogMort$dateBirth <- as.Date(DogMort$dateBirth, "%Y-%m-%d") 
+DogMort$dateDeath <- as.Date(DogMort$dateDeath, "%Y-%m-%d")
+DogMort$AgeAtDeath <- (as.numeric(DogMort$dateDeath) - as.numeric(DogMort$dateBirth))/365.25
+DogTerr <- subset(DogMort, Breed == "Jack Russell Terrier")
+DogGShep <- subset(DogMort, Breed == "German Shepherd Dog")
+
+```
+
+</div>
+
+## Canadian Female Select and Ultimate Mortality Table
+
+**Source**
+
+*  Individual Life Experience Subcommittee, “Construction of CIA9704 Mortality Tables for Canadian Individual Insurance based on data from 1997 to 2004”, Canadian Institute of Actuaries (2010).
+*  Accessed: October, 2021 from http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf
+*  Data retrieved from https://mort.soa.org/ (Table 1458)
+
+Select data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211781&authkey=AOAbglJ4dJg-jWg" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canadian Female Select Mortality Table.</button></a>
+
+
+Ultimate data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211782&authkey=ABfBp-Wrgah0kPc" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canadian Female Ultimate Mortality Table.</button></a>
+
+
+```{r echo = FALSE}
+scipen=9
+#CanadianSelect <- read.csv("../../MortalityData/CanadianFemaleSelect.csv", stringsAsFactors = FALSE)
+CanadianSelect <- read.csv("../MortalityData/CanadianFemaleSelect.csv", stringsAsFactors = FALSE)
+knitr::kable(head(CanadianSelect[,1:8], n=printnum), align = "cccccccc", caption = "**Canadian Female Select Mortality First Five Rows**")
+knitr::kable(head(CanadianSelect[,9:16], n=printnum), align = "cccccccc")
+tmp_tail_data <- tail(CanadianSelect, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data[,1:8], align = "cccccccc", caption = "**Canadian Female Select Mortality Last Five Rows**")
+knitr::kable(tmp_tail_data[,9:16], align = "cccccccc")
+```
+
+
+```{r echo = FALSE}
+scipen=9
+#CanadianUlt<- read.csv("../../MortalityData/CanadianFemaleUltimate.csv", stringsAsFactors = FALSE)
+CanadianUlt <- read.csv("../MortalityData/CanadianFemaleUltimate.csv", stringsAsFactors = FALSE)
+knitr::kable(head(CanadianUlt, n=printnum), align = "cccccccc", caption = "**Canadian  Ultimate Mortality First Five Rows**")
+tmp_tail_data <- tail(CanadianUlt, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**Canadian Ultimate Mortality Last Five Rows**")
+```
+
+```{r echo = FALSE, eval = FALSE}
+Summary <- summary(CanadianSelect)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary[,1:4], caption="**Canadian Female Select and Ultimate Mortality Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+knitr::kable(Summary[,5:8]) %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+knitr::kable(Summary[,9:12]) %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+knitr::kable(Summary[,13:16]) %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+
+```
+
+
+`r HideRCode('DataDict.2',"Show R Code to Pre-Process the Canadian Female Select and Ultimate Mortality Data")`
+
+```{r  eval = FALSE}
+CanadianSelect <- read.csv("MortalityData/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
+CanadianSelect1 <- subset(CanadianSelect, Age >= 50 & Age <= 69)
+CanadianSelect2 <- CanadianSelect1[2:6,c(1:6,12,16)]
+CanadianSelect3 <- CanadianSelect1[37:41,1:2]
+CanadianSelect4 <- cbind(CanadianSelect2,CanadianSelect3[,2],CanadianSelect3[,1])
+colnames(CanadianSelect4) <- c("Age", "Select=0","Select=1","Select=2","Select=3","Select=4","Select=10","Select=14", "Ultimate Mortality","Ultimate Age" )
+rownames(CanadianSelect4) <- NULL
+knitr::kable(CanadianSelect4, align = "r", caption="Select and Ultimate Female Canadian Mortality Rates")
+```
+
+</div>
+
+
+## Korean Mortality by Insured Status 
+
+**Sources:**
+
+*  Insured lives and annuitant rates were drawn from a database organized by the Society of Actuaries, [https://mort.soa.org/](https://mort.soa.org/). These represent (beginning of the year) mortality rates ($q_x$).
+*  The general population data are drawn from the [Human Mortality Database](http://www.mortality.org/). General population data are central death rates ($m_x$).
+
+### Korean Mortality - Insured Lives {-}
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211745&authkey=ALym39X9Izxkahs&em=2" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the 2007 Korean Female Insured Lives Data.</button></a>
+
+
+
+```{r echo = FALSE}
+KoreaInsuredFemale <- read.csv("../MortalityData/SKoreaInsuredLives2007Female.csv")
+#KoreaInsuredFemale <- read.csv("../../MortalityData/SKoreaInsuredLives2007Female.csv")
+knitr::kable(head(KoreaInsuredFemale, n=printnum), align = "cccccccc", caption = "**Korean Female Insured Lives First Five Rows**")  %>%
+        kableExtra::kable_classic(html_font = "Cambria")
+tmp_tail_data <- tail(KoreaInsuredFemale, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**Korean Female Insured Lives Last Five Rows**")
+```
+
+
+```{r  echo=FALSE, eval = FALSE}
+Summary <- summary(KoreaInsuredFemale)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary, caption="**Korean Female Insured Lives Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```
+
+### Korean Mortality - Annuitants {-}
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211747&authkey=ALck3gQKe-xKhps&em=2" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the 2007 Korean Female Annuitants Data.</button></a>
+
+
+```{r echo = FALSE}
+KoreaPensionFemale <- read.csv("../MortalityData/SKoreaPensions2007Female.csv")
+#KoreaPensionFemale <- read.csv("../../MortalityData/SKoreaPensions2007Female.csv")
+knitr::kable(head(KoreaPensionFemale, n=printnum), align = "cccccccc", caption = "**Korean Female Annuitant First Five Rows**")
+tmp_tail_data <- tail(KoreaPensionFemale, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**Korean Female Annuitant Last Five Rows**")
+```
+
+```{r  echo=FALSE, eval = FALSE}
+Summary <- summary(KoreaPensionFemale)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary, caption="**Korean Female Annuitant Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```
+
+
+### Korean Mortality - Population {-}
+
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211793&authkey=AEdCktT83mJjsy8" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Korean  Population Mortality Data.</button></a>
+
+
+```{r echo = FALSE}
+KoreaPop <- read.csv("../MortalityData/KoreaMx_1x1.csv")
+#KoreaPop <- read.csv("../../MortalityData/KoreaMx_1x1.csv")
+rownames(KoreaPop) <- NULL
+knitr::kable(head(KoreaPop, n=printnum), align = "cccccccc", caption = "**Korean Female Population First Five Rows**")
+tmp_tail_data <- tail(KoreaPop, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**Korean Female Population Last Five Rows**")
+```
+
+```{r  echo=FALSE, eval = FALSE}
+Summary <- summary(KoreaPop2007)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary, caption="**Korean Female Population Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```
+
+## Mortality by Country 
+
+**Source:** The [Human Mortality Database](http://www.mortality.org/). In addition to classification by country, we also look at experience by sex and age as these distinctions are well known. General population data are central death rates ($m_x$).
+
+
+### Population Mortality - Japan {-}
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211789&authkey=AClNGsQ2kZ8-tEc" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Japan Population Mortality Data.</button></a>
+
+
+
+
+```{r echo = FALSE}
+JapanPop <- read.csv("../MortalityData/JapanPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+#JapanPop <- read.csv("../../MortalityData/JapanPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+rownames(JapanPop) <- NULL
+knitr::kable(head(JapanPop, n=printnum), align = "cccccccc", caption = "**Japan Population  First Five Rows**")
+tmp_tail_data <- tail(JapanPop, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**Japan Population  Last Five Rows**")
+```
+
+
+```{r  echo=FALSE, eval = FALSE}
+Summary <- summary(JapanPop)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary, caption="**Japan Population Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```
+
+### Population Mortality - Poland {-}
+
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211743&authkey=AGvf2YmaAXg3Amc&em=2" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Poland Population Mortality Data.</button></a>
+
+
+
+```{r echo = FALSE}
+PolandPop <- read.csv("../MortalityData/PolandPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+#PolandPop <- read.csv("../../MortalityData/PolandPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+rownames(PolandPop) <- NULL
+knitr::kable(head(PolandPop, n=printnum), align = "cccccccc", caption = "**Poland  Population  First Five Rows**")
+tmp_tail_data <- tail(PolandPop, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**Poland  Population  Last Five Rows**")
+```
+
+
+
+```{r  echo=FALSE, eval = FALSE}
+Summary <- summary(PolandPop)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary, caption="**Poland Population Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+
+```
+
+
+### Population Mortality - United States {-}
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211788&authkey=ALkMSgJT7nuLfhU" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the USA Population Mortality Data.</button></a>
+
+
+
+```{r echo = FALSE}
+USAPop <- read.csv("../MortalityData/USAPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+#USAPop <- read.csv("../../MortalityData/USAPopulationMx_1x1.csv", stringsAsFactors=FALSE)
+rownames(USAPop) <- NULL
+knitr::kable(head(USAPop, n=printnum), align = "cccccccc", caption = "**USA Population  First Five Rows**")
+tmp_tail_data <- tail(USAPop, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data, align = "cccccccc", caption = "**USA Population Last Five Rows**")
+```
+
+
+
+
+```{r  echo=FALSE, eval = FALSE}
+Summary <- summary(USAPop2019)
+Summary[is.na(Summary)] <- ""
+knitr::kable(Summary, caption="**USA Population Summary Statistics**") %>%
+    kableExtra::kable_classic(html_font = "Cambria")
+```
+
+
+
+`r HideRCode('DataCountry.2',"Show R Code to Pre-Process the Mortality Data by Country")`
+
+```{r  eval = FALSE}
+JapanPopFemaleqx  <- as.numeric(JapanPop2019$Female) /(1 + as.numeric(JapanPop2019$Female) /2)
+JapanPopMaleqx    <- as.numeric(JapanPop2019$Male)   /(1 + as.numeric(JapanPop2019$Male)   /2)
+PolandPopFemaleqx <- as.numeric(PolandPop2019$Female)/(1 + as.numeric(PolandPop2019$Female)/2)
+PolandPopMaleqx   <- as.numeric(PolandPop2019$Male)  /(1 + as.numeric(PolandPop2019$Male)  /2)
+USAPopFemaleqx    <- as.numeric(USAPop2019$Female)   /(1 + as.numeric(USAPop2019$Female)   /2)
+USAPopMaleqx      <- as.numeric(USAPop2019$Male)     /(1 + as.numeric(USAPop2019$Male)     /2)
+
+PolandPopMaleqx[110] <- 1 -> PolandPopMaleqx[111]
+
+IntlMort <- data.frame(cbind(JapanPop2019$Age, JapanPopFemaleqx, JapanPopMaleqx, PolandPopFemaleqx,
+                             PolandPopMaleqx, USAPopFemaleqx, USAPopMaleqx))
+names(IntlMort) <- c("Age", "qx_Female_Japan", "qx_Male_Japan", "qx_Female_Poland", 
+                            "qx_Male_Poland",  "qx_Female_USA", "qx_Male_USA")
+#str(IntlMort)
+
+```
+
+</div>
+
+## Disability Income {#Sec:DataDisIncome}
+
+**Source:** @zayatz2015social, Tables 14A, 14B, 21A, 21B
+
+**Description**:
+
+*  Entitlement age `Entryx` denotes age last birthday at entitlement to disability benefits. 
+*  The duration `Select.y` is measured in years since entitlement. 
+*  Attained age `Attainedx ` is calculated as sum of `Entryx` and duration. 
+*  The select and ultimate table is read across the row for 0-10 years of entitlement, and down the last (ultimate) column for 10 or more years of entitlement.
+
+
+### Disability Recovery Rates - Male {-}
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211785&authkey=AK6MFI4rf9VZp08" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Male Disability Recovery Rates Data</button></a>
+
+```{r echo = FALSE}
+RecoveryData       <- read.csv("Data/MaleRecovery.csv",       header=T)
+knitr::kable(head(RecoveryData[,1:7], n=printnum), align = "cccccccc", caption = "**Male Disability Recovery Rates First Five Rows**")
+knitr::kable(head(RecoveryData[,8:13], n=printnum), align = "cccccccc")
+tmp_tail_data <- tail(RecoveryData, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data[,1:7], align = "cccccccc", caption = "**Male Disability Recovery Rates Last Five Rows**")
+knitr::kable(tmp_tail_data[,8:13], align = "cccccccc")
+```
+
+
+### Disability Recovery Rates - FeMale {-}
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211784&authkey=AMdKHy42o2mEZYk" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Female Disability Recovery Rates Data</button></a>
+
+
+```{r echo = FALSE}
+RecoveryFData      <- read.csv("Data/FemaleRecovery.csv",     header=T)
+knitr::kable(head(RecoveryFData[,1:7], n=printnum), align = "cccccccc", caption = "**Female Disability Recovery Rates First Five Rows**")
+knitr::kable(head(RecoveryFData[,8:13], n=printnum), align = "cccccccc")
+tmp_tail_data <- tail(RecoveryFData, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data[,1:7], align = "cccccccc", caption = "**Female Disability Recovery Rates Last Five Rows**")
+knitr::kable(tmp_tail_data[,8:13], align = "cccccccc")
+```
+
+### Death and Disability Recovery Rates - Male {-}
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211786&authkey=AKx4JeOWjOTN0zU" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Male Death and Disability Recovery Rates Data</button></a>
+
+```{r echo = FALSE}
+RecoveryDeathData  <- read.csv("Data/MaleRecoveryDeath.csv",  header=T)
+knitr::kable(head(RecoveryDeathData[,1:7], n=printnum), align = "cccccccc", caption = "**Male Death and Disability Recovery Rates First Five Rows**")
+knitr::kable(head(RecoveryDeathData[,8:13], n=printnum), align = "cccccccc")
+tmp_tail_data <- tail(RecoveryDeathData, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data[,1:7], align = "cccccccc", caption = "**Male Death and Disability Recovery Rates Last Five Rows**")
+knitr::kable(tmp_tail_data[,8:13], align = "cccccccc")
+```
+
+### Death and Disability Recovery Rates - Female {-}
+
+
+The data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211783&authkey=AIBj-bpQb9q0OYQ" download>
+<button type="button"  style="background-color:#008CBA;color:white">Download the Female Death and Disability Recovery Rates Data</button></a>
+
+
+```{r echo = FALSE}
+RecoveryDeathFData <- read.csv("Data/FemaleRecoveryDeath.csv",header=T)
+knitr::kable(head(RecoveryDeathFData[,1:7], n=printnum), align = "cccccccc", caption = "**Female Death and Disability Recovery Rates First Five Rows**")
+knitr::kable(head(RecoveryDeathFData[,8:13], n=printnum), align = "cccccccc")
+tmp_tail_data <- tail(RecoveryDeathFData, n=printnum)
+rownames(tmp_tail_data) <- NULL
+knitr::kable(tmp_tail_data[,1:7], align = "cccccccc", caption = "**Female Death and Disability Recovery Rates Last Five Rows**")
+knitr::kable(tmp_tail_data[,8:13], align = "cccccccc")
+```
+
+#### Test a few things {-}
+
+Access from Github instead of OneDrive???
+
+Access button <a href="https://github.com/OpenActTextDev/LifeCon/raw/master/Data/DogSurvivalData.csv" download >
+<button type="button"  style="background-color:#008CBA;color:white">Access the Canadian Female Select and Ultimate Mortality Table Github .</button></a>
+
+Then, do a "File==> Save As" to download the data....
+
+
