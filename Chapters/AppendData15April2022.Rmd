@@ -136,10 +136,6 @@ Select data are available using this download button: <a href="https://onedrive.
 <button type="button"  style="background-color:#008CBA;color:white">Download the Canadian Female Select Mortality Table.</button></a>
 
 
-Ultimate data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211782&authkey=ABfBp-Wrgah0kPc" download >
-<button type="button"  style="background-color:#008CBA;color:white">Download the Canadian Female Ultimate Mortality Table.</button></a>
-
-
 ```{r echo = FALSE}
 CanadianSelect <- read.csv("Data/CanadianFemaleSelect.csv", stringsAsFactors = FALSE)
 knitr::kable(head(CanadianSelect[,1:8], n=printnum), align = "cccccccc", caption = "**Canadian Female Select Mortality First Five Rows**")
@@ -149,6 +145,10 @@ rownames(tmp_tail_data) <- NULL
 knitr::kable(tmp_tail_data[,1:8], align = "cccccccc", caption = "**Canadian Female Select Mortality Last Five Rows**")
 knitr::kable(tmp_tail_data[,9:16], align = "cccccccc")
 ```
+
+
+Ultimate data are available using this download button: <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211782&authkey=ABfBp-Wrgah0kPc" download >
+<button type="button"  style="background-color:#008CBA;color:white">Download the Canadian Female Ultimate Mortality Table.</button></a>
 
 
 ```{r echo = FALSE}
