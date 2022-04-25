@@ -1,0 +1,273 @@
+# Exercises
+
+$\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
+
+## Chapter 4 Exercises
+
+
+
+#### Section 4.3 Exercises {-}
+
+**Exercise 4.3.1. Actuarial Present Values for Select and Ultimate Tables**. The select and ultimate tables introduced in Section \@ref(Sec:SelectionAdverse) are complicated -- is such complexity is warranted in practice? To get insights into this question, in this exercise you will compare actuarial present values derived from select and ultimate mortality to those from only ultimate mortality. To be specific, we focus consider whole life insurance for using the female Canadian experience introduced in Section \@ref(Sec:SelectionAdverse); the data are available in Appendix Section \@ref(Sec:CanadianSelect).
+
+For these data,
+
+a.  produce $A_x$ for $x=50, \ldots, 65$ using an interest rate of $i=0.04$ based on
+    i.  select and ultimate mortality
+    ii. ultimate mortality
+b.  compare these two sequences of actuarial present values by calculating their ratio.
+c.  repeat parts (a) and (b) using an interest rate $i=0.02$.
+
+To give you a feel for the results, Figure \@ref(fig:SelUlt1) summarizes the results.
+
+
+```{r CanadianSelectExer, echo = FALSE}
+
+CanadianSelUlt <- read.csv("Data/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
+
+temp <- CanadianSelUlt[131:201,1:2]
+temp1 <- as.matrix(temp)
+CanadianUlt50 <- matrix(as.numeric(temp1), ncol=2)
+colnames(CanadianUlt50) <- c("Age", "qx_Ult")
+rownames(CanadianUlt50) <- NULL
+
+tempSel <- CanadianSelUlt[51:81,]
+tempSel1 <- as.matrix(tempSel)
+
+CanadianSel50 <- matrix(as.numeric(tempSel1), ncol=ncol(tempSel))
+rownames(CanadianSel50) <- NULL
+
+CanadianSel50.toUlt <- matrix(1, nrow = nrow(CanadianSel50), ncol = 120-50+1)
+CanadianSel50.toUlt[1:nrow(CanadianSel50),1:ncol(CanadianSel50)] <- CanadianSel50
+
+for (irow in (1:nrow(CanadianSel50)) ){
+for (icol in (1: (120-50-15-irow)) ){
+  CanadianSel50.toUlt[irow,1+15+icol ] <- CanadianUlt50[irow+14+icol,2]
+   }
+}
+
+#  Actuarial Present Value Calculations
+APV.Ult <- function(xage, q.x, int=0.00){
+  v = 1/(1+int)
+  num = length(xage)
+  A.x <- 0*xage -> add.x -> e.x
+  A.x[num] = v*q.x[num]
+  add.x[num] = 1 + (1-q.x[num])/(int + 1e-12)
+  e.x[num] = 1-q.x[num]
+  for (i in 1:(num-1)){
+    A.x[num-i] = v*q.x[num-i] + v*(1-q.x[num-i])*A.x[num-i+1]
+    add.x[num-i] = 1 + v*(1-q.x[num-i])*add.x[num-i+1] 
+    e.x[num-i] =  (1-q.x[num-i])*(1+e.x[num-i+1])
+    }
+  tablelife <- cbind(xage,q.x,A.x,add.x,e.x)
+  return(tablelife)
+}
+AxUlt04 <- APV.Ult(xage= CanadianUlt50[,1], q.x=CanadianUlt50[,2], int=0.04)[,3]
+AxUlt04.5065 <- AxUlt04[1:16]
+AxUlt02 <- APV.Ult(xage= CanadianUlt50[,1], q.x=CanadianUlt50[,2], int=0.02)[,3]
+AxUlt02.5065 <- AxUlt02[1:16]
+
+#  Actuarial Present Value Calculations
+
+APV.Sel <- function(int=0.00){
+AxSel04 <- rep(0, 16)
+  v = 1/(1+int)
+for (iage in 1:16){
+#iage =2
+  AxSel04[iage] =  v*CanadianSel50.toUlt[iage, 2]
+kpx = 1
+  for (k in 1:(ncol(CanadianSel50.toUlt)-2)) {
+    kpx = kpx*(1-CanadianSel50.toUlt[iage, k+1])
+   AxSel04[iage] =  AxSel04[iage] + v**(k+1)*kpx*CanadianSel50.toUlt[iage, k+2]
+  }
+}
+return(AxSel04)
+}
+AxSel04 <- APV.Sel(int=0.04)
+AxSel02 <- APV.Sel(int=0.02)
+
+Age1 <- c("50", "51", "52", "53", "54", "55", "56", "57")
+Age2 <- c("58", "59", "60", "61", "62", "63", "64", "65")
+
+Ratio04Sel.Ult <- AxSel04/AxUlt04.5065
+OutPartA <- rbind(50:57, AxSel04[1:8],  AxUlt04.5065[1:8],  Ratio04Sel.Ult[1:8], 
+                  58:65, AxSel04[9:16], AxUlt04.5065[9:16], Ratio04Sel.Ult[9:16] )
+OutPartA1 <- round(OutPartA, digits = 4)
+OutPartA1[1,] <- Age1
+OutPartA1[5,] <- Age2
+rownames(OutPartA1) <- c(
+  "Age",  "Select2 and Ultimate, i=4%", "Ultimate, i=4%","Ratio", 
+  "Age",  "Select and Ultimate, i=4%", "Ultimate, i=4%", "Ratio")
+#knitr::kable(OutPartA1, align = "r", caption="Select and Ultimate Female Canadian APVs")
+
+Ratio02Sel.Ult <- AxSel02/AxUlt02.5065
+OutPartB <- rbind(50:57, AxSel02[1:8],  AxUlt02.5065[1:8],  Ratio02Sel.Ult[1:8], 
+                  58:65, AxSel02[9:16], AxUlt02.5065[9:16], Ratio02Sel.Ult[9:16] )
+OutPartB1 <- round(OutPartB, digits = 4)
+OutPartB1[1,] <- Age1
+OutPartB1[5,] <- Age2
+rownames(OutPartB1) <- c(
+  "Age",  "Select and Ultimate, i=2%", "Ultimate, i=2%","Ratio", 
+  "Age",  "Select and Ultimate, i=2%", "Ultimate, i=2%", "Ratio")
+#knitr::kable(OutPartB1, align = "r", caption="Select and Ultimate Female Canadian APVs")
+
+
+```
+
+
+(ref:SelUlt1) **Life Insurance APV by Age, Interest, and Mortality Type**. A plot of life insurance actuarial present value $A_x$ by age $x$. The top two lines are based on $i=0.02$, the bottom two based on $i=0.04$. For each pair, the top line uses ultimate mortality, the bottom line is based on select and ultimate mortality
+
+
+```{r SelUlt1, fig.cap='(ref:SelUlt1)', out.width='60%', fig.asp=.80, echo=FALSE}
+
+Age <- 50:65
+dataf <- data.frame(cbind(Age , AxSel04,AxSel02, AxUlt04.5065, AxUlt02.5065 ))
+
+ggplot(dataf,aes(x=Age, y=AxSel04)) + theme_bw() +
+  geom_line(aes(y = AxSel04), color = 1, linetype=4, size = 2) +
+  geom_line(aes(y = AxSel02), color = 1, linetype=1, size = 2) +
+  geom_line(aes(y = AxUlt04.5065), color = 2, linetype=2, size = 2 ) + 
+  geom_line(aes(y = AxUlt02.5065), color = 3, linetype=3 , size = 2) + 
+  xlab("Age") + ylab(expression(A[x])) +
+  annotate("text", x=55, y=0.36, size=4, label = "Interest = 4%") +
+  annotate("text", x=55, y=0.6, size=4, label = "Interest = 2%") 
+
+```
+
+
+
+`r HideProofTheory('Exer4.3.1',"Exercise 4.3.1 Answer")`
+
+```{r echo = FALSE}
+knitr::kable(OutPartA1, align = "r", caption="Comparison of Life Insurance APVs, Interest is 4%")
+```
+
+
+```{r echo = FALSE}
+knitr::kable(OutPartB1, align = "r", caption="Comparison of Life Insurance APVs, Interest is 2%")
+```
+
+`r HideRCode('Exer4.3.1A',"Exercise 4.3.1 Solution using R Code")`
+
+```{r ref.label = 'CanadianSelectExer', eval=FALSE}
+```
+
+</div>
+
+</div>
+
+
+#### Section 4.5 Exercises {-}
+
+**Exercise 4.5.1. Dog Survival Distributions and Actuarial Present Values.** The analysis in Section \@ref(Sec:CanineMort) suggests that breed is an important factor for dog survival. To underscore this point for a broader audience, let us look at survival for a type of small dog, a "Jack Russell Terrier", and a large dog, a "German Shepherd Dog". We can make differences in survival distributions between small and large dogs even more meaningful by also computing selected actuarial present values that summarize future expected costs.
+
+You should begin your analysis by downloading the data, available in Appendix Section \@ref(Sec:CanineMortality).
+        
+The data have been re-worked so that they can be used for your analysis. Here is a bit more code needed to convert data fields appropriately and to separate the file into two subsets, one for Terriers and one for German Shepherds.  
+
+`r HideRCode('Exer4.5.1A',"Show R Code to Pre-Process the Data")`
+
+```{r eval = FALSE}
+# Read in Revised Data
+DogMortA <- read.csv("DogSurvivalData1.csv")
+DogMort <- DogMortA[,-1]
+DogMort$dateBirth <- as.Date(DogMort$dateBirth, "%Y-%m-%d") 
+DogMort$dateDeath <- as.Date(DogMort$dateDeath, "%Y-%m-%d")
+DogMort$AgeAtDeath <- (as.numeric(DogMort$dateDeath) - as.numeric(DogMort$dateBirth))/365.25
+DogTerr <- subset(DogMort, Breed == "Jack Russell Terrier")
+DogGShep <- subset(DogMort, Breed == "German Shepherd Dog")
+
+```
+
+</div>
+         
+For these data:
+
+a.  Compute one-year mortality rates for both Terriers and German Shepherds. Do this over $x=0, \ldots, 20$. Graph the results.
+b.  Because you may be working with products with events occurring more frequently than once a year, you decide to follow the strategy introduced in Section \@ref(Sec:BasicConceptsmthly) and look at mortality rates occurring on a quarterly basis. Repeat the analysis from part (a) using quarterly rates.
+c.  The results of earlier analyses indicate substantial volatility in the both quarterly rates and annual rates at later ages. One approach to mitigate this volatility is to smooth the rates. A simpler approach is to use longer periods (hence increasing exposure and reducing volatility). Repeat the analysis in part (a) using rates on a once every two year basis.
+d.  To see how these rates might be used, you decide to repeat the analysis in Section \@ref(Sec:DogCostCare) and compute an actuarial present value of the lifetime cost of surgical vet care. Use the same assumptions as in that section with the initial annual cost as 458, $i=0.03$ interest rate and a 11 percent annual growth in surgical care costs. However, use the dog mortality from part (a). Do this for $x=2, 5, 12$, for both breeds. You will see that that your results on German Shepherds differ slightly from those presented in Section \@ref(Sec:DogCostCare); comment on why this is so.
+
+
+`r HideProofTheory('Exer4.5.1',"Exercise 4.5.1 Answers")`
+
+```{r DogDataExer}
+library(data.table)
+library(survival)
+# Read in Revised Data
+DogMortA <- read.csv("Data/DogSurvivalData1.csv")
+DogMort <- DogMortA[,-1]
+DogMort$dateBirth <- as.Date(DogMort$dateBirth, "%Y-%m-%d") 
+DogMort$dateDeath <- as.Date(DogMort$dateDeath, "%Y-%m-%d")
+DogMort$AgeAtDeath <- (as.numeric(DogMort$dateDeath) - as.numeric(DogMort$dateBirth))/365.25
+DogTerr <- subset(DogMort, Breed == "Jack Russell Terrier")
+DogGShep <- subset(DogMort, Breed == "German Shepherd Dog")
+
+fitTerr <- survfit(Surv(AgeAtDeath) ~ 1, data=DogTerr)
+fitGShep <- survfit(Surv(AgeAtDeath) ~ 1, data=DogGShep)
+```
+
+**Part A**
+
+```{r fig.width=6, fig.height=4.0, fig.cap = "One-year Dog Mortality Rates, Blue Solid Line is for German Shepherds"}
+seqA1 <- 0:20
+seqA2 <- seqA1 + 1
+qxTerrA  <- (summary(fitTerr,  time = seqA1)$surv -   summary(fitTerr,  time = seqA2)$surv)   /summary(fitTerr,  time = seqA1)$surv
+qxGShepA <- (summary(fitGShep, time = seqA1)$surv - c(summary(fitGShep, time = seqA2)$surv,0))/summary(fitGShep, time = seqA1)$surv
+plot(seqA1,qxTerrA, xlab = "Age", ylab = expression(q[x]))
+lines(0:16, qxGShepA, col = "blue")
+```
+
+**Part B**
+
+```{r fig.width=6, fig.height=4.0, fig.cap = "Quarterly Dog Mortality Rates, Blue Solid Line is for German Shepherds"}
+seqB1 <- seq(from = 0, to = 20, by = 0.25)
+seqB2 <- seqB1 + 0.25
+qxTerrB  <- (summary(fitTerr,  time = seqB1)$surv -   summary(fitTerr,  time = seqB2)$surv)   /summary(fitTerr,  time = seqB1)$surv
+qxGShepB <- (summary(fitGShep, time = seqB1)$surv - c(summary(fitGShep, time = seqB2)$surv,0))/summary(fitGShep, time = seqB1)$surv
+plot(seqB1,qxTerrB, xlab = "Age", ylab = expression(q[x]))
+lines(seqB1[1:67], qxGShepB, col = "blue")
+```
+
+**Part C**
+
+```{r fig.width=6, fig.height=4.0, fig.cap = "Two-year Dog Mortality Rates, Blue Solid Line is for German Shepherds"}
+seqC1 <- seq(from = 0, to = 20, by = 2)
+seqC2 <- seqC1 + 2
+qxTerrC  <- (summary(fitTerr,  time = seqC1)$surv - c(summary(fitTerr,  time = seqC2)$surv,0))/summary(fitTerr,  time = seqC1)$surv
+qxGShepC <- (summary(fitGShep, time = seqC1)$surv - c(summary(fitGShep, time = seqC2)$surv,0))/summary(fitGShep, time = seqC1)$surv
+plot(seqC1,qxTerrC, xlab = "Age", ylab = expression(q[x]))
+lines(seqC1[1:9], qxGShepC, col = "blue")
+```
+
+**Part D**
+
+```{r}
+DogAnn <- function(x=x, q.x=qx){
+  Term <- length(q.x) - (x+1)
+  kpx <- 1 
+  APV  <- 0 
+ if (Term>0){ for(k in 0:(Term-1)){ 
+    if (k>1) {kpx <- kpx*(1-q.x[x+1+k])}
+    APV  <- APV  + kpx *  (1/1.03)^k   *1.11^k *458
+    }}
+ return(APV)
+  }
+DogAnn(x=2, q.x=qxTerrA)
+DogAnn(x=5, q.x=qxTerrA)
+DogAnn(x=12, q.x=qxTerrA)
+DogAnn(x=2, q.x=qxGShepA)
+DogAnn(x=5, q.x=qxGShepA)
+DogAnn(x=12, q.x=qxGShepA)
+
+```
+
+Note that the mortality estimates in this exercise are based only on data for a specific breed. In contrast, the analysis in Section \@ref(Sec:DogCostCare) used a Cox proportional hazards to regression model to use data from all breeds to form mortality estimates.
+
+***
+
+</div>
+
+
+
+

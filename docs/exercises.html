@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Exercises | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
+  <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Exercises | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/OpenActTextDev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Exercises | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  
+  <meta name="twitter:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  
+
+<meta name="author" content="An open text authored by the Actuarial Community" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="C-Forward.html"/>
+<link rel="next" href="appendix-data-dictionary.html"/>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/rglWebGL-binding-0.106.8/rglWebGL.js"></script>
+<link href="libs/rglwidgetClass-0.106.8/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-0.106.8/rglClass.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/utils.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/subscenes.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/shaders.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/textures.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/projection.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/mouse.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/init.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/pieces.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/draw.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/controls.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/selection.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/rglTimer.src.js"></script>
+<script src="libs/CanvasMatrix4-0.106.8/CanvasMatrix.src.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script language="javascript">
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<script language="javascript">
+function toggle(id1,id2) {
+	var ele = document.getElementById(id1); var text = document.getElementById(id2);
+	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
+		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
+</script>
+
+<script language="javascript">
+function togglecode(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
+</script>
+<script language="javascript">
+function toggleEX(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
+</script>
+<script language="javascript">
+function toggleTheory(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+</script>
+
+<script language="javascript">
+function toggleDet(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Details";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide  Details";}}
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
+
+<style>
+/* Rearrange console label */
+.datacamp-exercise ol li, .datacamp-exercise ul li {
+  margin-bottom: 0em !important;
+}
+
+/* Remove bullet marker */
+.datacamp-exercise ol li::before, .datacamp-exercise ul li::before {
+  content: '' !important;
+}
+</style>
+
+
+<script language="javascript">
+var submitAnswer = function() {
+
+  var radios = document.getElementsByName('choice');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+    alert('please select choice answer');
+  } else if ( val == "Correct" ) {
+    alert('Answer is correct !');
+  } else {
+    alert('Answer is wrong');
+  }
+};
+</script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR3RQ92M9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HR3RQ92M9M');
+</script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Life Contingencies</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a><ul>
+<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:DataLifeExp"><i class="fa fa-check"></i><b>2.1.1</b> Life Expectancies</a></li>
+<li class="chapter" data-level="2.1.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:HMDData"><i class="fa fa-check"></i><b>2.1.2</b> Population Mortality Counts</a></li>
+<li class="chapter" data-level="2.1.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:IndivMortData"><i class="fa fa-check"></i><b>2.1.3</b> Individual Mortality Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#lifetime-random-variable-and-its-distribution"><i class="fa fa-check"></i><b>2.2.1</b> Lifetime Random Variable and its Distribution</a></li>
+<li class="chapter" data-level="2.2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#standard-actuarial-notation-q_bfx-_tp_bfx-and-all-that"><i class="fa fa-check"></i><b>2.2.2</b> Standard Actuarial Notation: <span class="math inline">\(q_{\bf{x}}\)</span>, <span class="math inline">\(_tp_{\bf{x}}\)</span>, and All That</a></li>
+<li class="chapter" data-level="2.2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:ModelOnlyAge"><i class="fa fa-check"></i><b>2.2.3</b> The Classical Case: Age-Only Model</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical Laws of Mortality</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#de-moivre-and-constant-force-models"><i class="fa fa-check"></i><b>2.3.1</b> De Moivre and Constant Force Models</a></li>
+<li class="chapter" data-level="2.3.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#gompertz-and-makeham-laws"><i class="fa fa-check"></i><b>2.3.2</b> Gompertz and Makeham Laws</a></li>
+<li class="chapter" data-level="2.3.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#makeham-law-based-on-life-expectancies-data"><i class="fa fa-check"></i><b>2.3.3</b> Makeham Law based on Life Expectancies Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabBasics"><i class="fa fa-check"></i><b>2.4.1</b> Life Table Basics</a></li>
+<li class="chapter" data-level="2.4.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabEst"><i class="fa fa-check"></i><b>2.4.2</b> Life Table based on U.S. Population Data</a></li>
+<li class="chapter" data-level="2.4.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabRec"><i class="fa fa-check"></i><b>2.4.3</b> Curtate Quantities and Recursive Relationships</a></li>
+<li class="chapter" data-level="2.4.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional Year Assumptions</a></li>
+<li class="chapter" data-level="2.4.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabMImpr"><i class="fa fa-check"></i><b>2.4.5</b> Cohort Life Tables and Mortality Improvement Modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric Survival Estimation</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#kaplan-meier-estimates"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimates</a></li>
+<li class="chapter" data-level="2.5.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#nelson-aalen-estimates"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen Estimates</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional Models: Survival regression</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#the-cox-proportional-hazard-model"><i class="fa fa-check"></i><b>2.6.1</b> The Cox Proportional Hazard Model</a></li>
+<li class="chapter" data-level="2.6.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#cox-models-based-on-life-insurer-data"><i class="fa fa-check"></i><b>2.6.2</b> Cox Models Based on Life Insurer Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#conditional-life-tables"><i class="fa fa-check"></i><b>2.6.3</b> Conditional Life Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#notes-and-comments"><i class="fa fa-check"></i><b>2.7</b> Notes and Comments</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a><ul>
+<li class="chapter" data-level="3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCFunc"><i class="fa fa-check"></i><b>3.1</b> Valuation of Cash Flows under Uncertainty</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#moment-calculations"><i class="fa fa-check"></i><b>3.1.1</b> Moment Calculations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#illustrative-moments-of-cash-flows"><i class="fa fa-check"></i><b>3.1.2</b> Illustrative Moments of Cash Flows</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitActNot"><i class="fa fa-check"></i><b>3.2</b> Life Insurance Benefits</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitWL"><i class="fa fa-check"></i><b>3.2.1</b> Whole of life insurance</a></li>
+<li class="chapter" data-level="3.2.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitTI"><i class="fa fa-check"></i><b>3.2.2</b> Term insurance</a></li>
+<li class="chapter" data-level="3.2.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#pure-endowment"><i class="fa fa-check"></i><b>3.2.3</b> Pure endowment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#endowment-insurance"><i class="fa fa-check"></i><b>3.2.4</b> Endowment insurance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitAnnuity"><i class="fa fa-check"></i><b>3.3</b> Life Annuity Benefits</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#life-annuity"><i class="fa fa-check"></i><b>3.3.1</b> Life annuity</a></li>
+<li class="chapter" data-level="3.3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:TermLifeAnnuity"><i class="fa fa-check"></i><b>3.3.2</b> Term life annuity</a></li>
+<li class="chapter" data-level="3.3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#deferred-life-annuity"><i class="fa fa-check"></i><b>3.3.3</b> Deferred life annuity</a></li>
+<li class="chapter" data-level="3.3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#guaranteed-life-annuity"><i class="fa fa-check"></i><b>3.3.4</b> Guaranteed life annuity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitSpread"><i class="fa fa-check"></i><b>3.4</b> Valuing Life Contingent Benefits using a Spreadsheet</a></li>
+<li class="chapter" data-level="3.5" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCS"><i class="fa fa-check"></i><b>3.5</b> Case Study: A Portfolio of Term Insurance Policies</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSInd"><i class="fa fa-check"></i><b>3.5.1</b> An individual policy</a></li>
+<li class="chapter" data-level="3.5.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSPort"><i class="fa fa-check"></i><b>3.5.2</b> Moments of a portfolio of policies</a></li>
+<li class="chapter" data-level="3.5.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#simulated-distribution-of-a-portfolio-of-policies"><i class="fa fa-check"></i><b>3.5.3</b> Simulated distribution of a portfolio of policies</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>3.6</b> Further Resources and Contributors</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a><ul>
+<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:BasicConceptsmthly"><i class="fa fa-check"></i><b>4.1.1</b> Basic Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#illustrative-cash-flows"><i class="fa fa-check"></i><b>4.1.2</b> Illustrative Cash Flows</a></li>
+<li class="chapter" data-level="4.1.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.1.3</b> Contingent Cash Flows in Continuous Time</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#population-subsets-and-sampling-bias"><i class="fa fa-check"></i><b>4.2.1</b> Population Subsets and Sampling Bias</a></li>
+<li class="chapter" data-level="4.2.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#sampling-bias-in-actuarial-practice"><i class="fa fa-check"></i><b>4.2.2</b> Sampling Bias in Actuarial Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ActuarialFairRiskClass"><i class="fa fa-check"></i><b>4.3.1</b> Actuarially Fair Prices and Risk Classification</a></li>
+<li class="chapter" data-level="4.3.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SelectionAdverse"><i class="fa fa-check"></i><b>4.3.2</b> Selection and Adverse Selection</a></li>
+<li class="chapter" data-level="4.3.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:AsymmericInfo"><i class="fa fa-check"></i><b>4.3.3</b> Asymmetric Information</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ApplicationsContingent"><i class="fa fa-check"></i><b>4.4</b> Contingent Payment Applications</a></li>
+<li class="chapter" data-level="4.5" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:PetInsurance"><i class="fa fa-check"></i><b>4.5</b> Pet Insurance</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:IntroPet"><i class="fa fa-check"></i><b>4.5.1</b> Introduction to Pet Health Insurance</a></li>
+<li class="chapter" data-level="4.5.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:CanineMort"><i class="fa fa-check"></i><b>4.5.2</b> Canine Mortality</a></li>
+<li class="chapter" data-level="4.5.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DogCostCare"><i class="fa fa-check"></i><b>4.5.3</b> Cost of Care</a></li>
+<li class="chapter" data-level="4.5.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-pet-insurance-markets"><i class="fa fa-check"></i><b>4.5.4</b> More on Pet Insurance Markets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DisIncInsurance"><i class="fa fa-check"></i><b>4.6</b> Disability Income Insurance</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#introduction-to-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.1</b> Introduction to Disability Income Insurance</a></li>
+<li class="chapter" data-level="4.6.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#disability-recovery-rates"><i class="fa fa-check"></i><b>4.6.2</b> Disability Recovery Rates</a></li>
+<li class="chapter" data-level="4.6.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#actuarial-present-values-of-disability-income"><i class="fa fa-check"></i><b>4.6.3</b> Actuarial Present Values of Disability Income</a></li>
+<li class="chapter" data-level="4.6.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.4</b> More on Disability Income Insurance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a><ul>
+<li class="chapter" data-level="5.1" data-path="C-Forward.html"><a href="C-Forward.html#table-of-contents"><i class="fa fa-check"></i><b>5.1</b> Table of Contents</a></li>
+<li class="chapter" data-level="5.2" data-path="C-Forward.html"><a href="C-Forward.html#usage-data"><i class="fa fa-check"></i><b>5.2</b> Usage Data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>6</b> Exercises</a><ul>
+<li class="chapter" data-level="6.1" data-path="exercises.html"><a href="exercises.html#chapter-4-exercises"><i class="fa fa-check"></i><b>6.1</b> Chapter 4 Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html"><i class="fa fa-check"></i><b>7</b> Appendix: Data Dictionary</a><ul>
+<li class="chapter" data-level="7.1" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataUSPoPCounts"><i class="fa fa-check"></i><b>7.1</b> United States Population Mortality Counts</a></li>
+<li class="chapter" data-level="7.2" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:SyntheticInsData"><i class="fa fa-check"></i><b>7.2</b> Synthetic Insurer Data</a></li>
+<li class="chapter" data-level="7.3" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:CanineMortality"><i class="fa fa-check"></i><b>7.3</b> Canine Mortality</a></li>
+<li class="chapter" data-level="7.4" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:CanadianSelect"><i class="fa fa-check"></i><b>7.4</b> Canadian Female Select and Ultimate Mortality Table</a></li>
+<li class="chapter" data-level="7.5" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:KoreanMortality"><i class="fa fa-check"></i><b>7.5</b> Korean Mortality by Insured Status</a><ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---insured-lives"><i class="fa fa-check"></i>Korean Mortality - Insured Lives</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---annuitants"><i class="fa fa-check"></i>Korean Mortality - Annuitants</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---population"><i class="fa fa-check"></i>Korean Mortality - Population</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:MortalityCountry"><i class="fa fa-check"></i><b>7.6</b> Mortality by Country</a><ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---japan"><i class="fa fa-check"></i>Population Mortality - Japan</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---poland"><i class="fa fa-check"></i>Population Mortality - Poland</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---united-states"><i class="fa fa-check"></i>Population Mortality - United States</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataDisIncome"><i class="fa fa-check"></i><b>7.7</b> Disability Income</a><ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---male"><i class="fa fa-check"></i>Disability Recovery Rates - Male</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---female"><i class="fa fa-check"></i>Disability Recovery Rates - FeMale</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---male"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Male</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---female"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Female</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>8</b> Appendix: Conventions for Notation</a><ul>
+<li class="chapter" data-level="8.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>8.1</b> Actuarial Notation</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>8.1.1</b> Life Table Symbols</a></li>
+<li class="chapter" data-level="8.1.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeInsSymbols"><i class="fa fa-check"></i><b>8.1.2</b> Life Insurance Symbols</a></li>
+<li class="chapter" data-level="8.1.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeAnnSymbols"><i class="fa fa-check"></i><b>8.1.3</b> Annuity Certain and Life Annuity Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NotConv:Halo"><i class="fa fa-check"></i><b>8.2</b> Halo System</a></li>
+<li class="chapter" data-level="8.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:General"><i class="fa fa-check"></i><b>8.3</b> General Conventions</a></li>
+<li class="chapter" data-level="8.4" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Abbreviations"><i class="fa fa-check"></i><b>8.4</b> Abbreviations</a></li>
+<li class="chapter" data-level="8.5" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:StatSymbols"><i class="fa fa-check"></i><b>8.5</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="8.6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Symbols"><i class="fa fa-check"></i><b>8.6</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="8.7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#further-readings"><i class="fa fa-check"></i><b>8.7</b> Further Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/OpenActTextDev/LifeCon" target="blank">Life Contingencies on GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exercises" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Exercises</h1>
+<p><span class="math inline">\(\require{enclose}\)</span> <!-- Later equations only properly knit if this is beforehand once in the code --></p>
+<div id="chapter-4-exercises" class="section level2">
+<h2><span class="header-section-number">6.1</span> Chapter 4 Exercises</h2>
+<div id="section-4.3-exercises" class="section level4 unnumbered">
+<h4>Section 4.3 Exercises</h4>
+<p><strong>Exercise 4.3.1. Actuarial Present Values for Select and Ultimate Tables</strong>. The select and ultimate tables introduced in Section <a href="C-BenefitExt.html#Sec:SelectionAdverse">4.3.2</a> are complicated – is such complexity is warranted in practice? To get insights into this question, in this exercise you will compare actuarial present values derived from select and ultimate mortality to those from only ultimate mortality. To be specific, we focus consider whole life insurance for using the female Canadian experience introduced in Section <a href="C-BenefitExt.html#Sec:SelectionAdverse">4.3.2</a>; the data are available in Appendix Section <a href="appendix-data-dictionary.html#Sec:CanadianSelect">7.4</a>.</p>
+<p>For these data,</p>
+<ol style="list-style-type: lower-alpha">
+<li>produce <span class="math inline">\(A_x\)</span> for <span class="math inline">\(x=50, \ldots, 65\)</span> using an interest rate of <span class="math inline">\(i=0.04\)</span> based on
+<ol style="list-style-type: lower-roman">
+<li>select and ultimate mortality</li>
+<li>ultimate mortality</li>
+</ol></li>
+<li>compare these two sequences of actuarial present values by calculating their ratio.</li>
+<li>repeat parts (a) and (b) using an interest rate <span class="math inline">\(i=0.02\)</span>.</li>
+</ol>
+<p>To give you a feel for the results, Figure <a href="exercises.html#fig:SelUlt1">6.1</a> summarizes the results.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:SelUlt1"></span>
+<img src="LifeCon_files/figure-html/SelUlt1-1.png" alt="Life Insurance APV by Age, Interest, and Mortality Type. A plot of life insurance actuarial present value \(A_x\) by age \(x\). The top two lines are based on \(i=0.02\), the bottom two based on \(i=0.04\). For each pair, the top line uses ultimate mortality, the bottom line is based on select and ultimate mortality" width="60%" />
+<p class="caption">
+Figure 6.1: <strong>Life Insurance APV by Age, Interest, and Mortality Type</strong>. A plot of life insurance actuarial present value <span class="math inline">\(A_x\)</span> by age <span class="math inline">\(x\)</span>. The top two lines are based on <span class="math inline">\(i=0.02\)</span>, the bottom two based on <span class="math inline">\(i=0.04\)</span>. For each pair, the top line uses ultimate mortality, the bottom line is based on select and ultimate mortality
+</p>
+</div>
+<h5 style="text-align: center;">
+<a id="displayTheory.Exer4.3.1" href="javascript:toggleTheory('toggleTheory.Exer4.3.1','displayCode.Exer4.3.1');"><i><strong>Exercise 4.3.1 Answer</strong></i></a>
+</h5>
+<div id="toggleTheory.Exer4.3.1" style="display: none">
+<table>
+<caption><span id="tab:unnamed-chunk-50">Table 6.1: </span>Comparison of Life Insurance APVs, Interest is 4%</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">50</td>
+<td align="right">51</td>
+<td align="right">52</td>
+<td align="right">53</td>
+<td align="right">54</td>
+<td align="right">55</td>
+<td align="right">56</td>
+<td align="right">57</td>
+</tr>
+<tr class="even">
+<td align="left">Select2 and Ultimate, i=4%</td>
+<td align="right">0.2729</td>
+<td align="right">0.282</td>
+<td align="right">0.2913</td>
+<td align="right">0.3007</td>
+<td align="right">0.3104</td>
+<td align="right">0.3201</td>
+<td align="right">0.33</td>
+<td align="right">0.3401</td>
+</tr>
+<tr class="odd">
+<td align="left">Ultimate, i=4%</td>
+<td align="right">0.2808</td>
+<td align="right">0.2908</td>
+<td align="right">0.3011</td>
+<td align="right">0.3117</td>
+<td align="right">0.3225</td>
+<td align="right">0.3336</td>
+<td align="right">0.3449</td>
+<td align="right">0.3564</td>
+</tr>
+<tr class="even">
+<td align="left">Ratio</td>
+<td align="right">0.9716</td>
+<td align="right">0.9695</td>
+<td align="right">0.9673</td>
+<td align="right">0.9649</td>
+<td align="right">0.9624</td>
+<td align="right">0.9598</td>
+<td align="right">0.957</td>
+<td align="right">0.9542</td>
+</tr>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">58</td>
+<td align="right">59</td>
+<td align="right">60</td>
+<td align="right">61</td>
+<td align="right">62</td>
+<td align="right">63</td>
+<td align="right">64</td>
+<td align="right">65</td>
+</tr>
+<tr class="even">
+<td align="left">Select and Ultimate, i=4%</td>
+<td align="right">0.3502</td>
+<td align="right">0.3605</td>
+<td align="right">0.3709</td>
+<td align="right">0.3814</td>
+<td align="right">0.3919</td>
+<td align="right">0.4025</td>
+<td align="right">0.4132</td>
+<td align="right">0.424</td>
+</tr>
+<tr class="odd">
+<td align="left">Ultimate, i=4%</td>
+<td align="right">0.3682</td>
+<td align="right">0.3801</td>
+<td align="right">0.3923</td>
+<td align="right">0.4046</td>
+<td align="right">0.417</td>
+<td align="right">0.4294</td>
+<td align="right">0.4417</td>
+<td align="right">0.454</td>
+</tr>
+<tr class="even">
+<td align="left">Ratio</td>
+<td align="right">0.9513</td>
+<td align="right">0.9484</td>
+<td align="right">0.9455</td>
+<td align="right">0.9425</td>
+<td align="right">0.9398</td>
+<td align="right">0.9375</td>
+<td align="right">0.9355</td>
+<td align="right">0.934</td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<caption><span id="tab:unnamed-chunk-51">Table 6.2: </span>Comparison of Life Insurance APVs, Interest is 2%</caption>
+<colgroup>
+<col width="31%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">50</td>
+<td align="right">51</td>
+<td align="right">52</td>
+<td align="right">53</td>
+<td align="right">54</td>
+<td align="right">55</td>
+<td align="right">56</td>
+<td align="right">57</td>
+</tr>
+<tr class="even">
+<td align="left">Select and Ultimate, i=2%</td>
+<td align="right">0.5063</td>
+<td align="right">0.5151</td>
+<td align="right">0.524</td>
+<td align="right">0.5329</td>
+<td align="right">0.5418</td>
+<td align="right">0.5507</td>
+<td align="right">0.5596</td>
+<td align="right">0.5686</td>
+</tr>
+<tr class="odd">
+<td align="left">Ultimate, i=2%</td>
+<td align="right">0.5122</td>
+<td align="right">0.5217</td>
+<td align="right">0.5312</td>
+<td align="right">0.5408</td>
+<td align="right">0.5506</td>
+<td align="right">0.5604</td>
+<td align="right">0.5702</td>
+<td align="right">0.5802</td>
+</tr>
+<tr class="even">
+<td align="left">Ratio</td>
+<td align="right">0.9885</td>
+<td align="right">0.9875</td>
+<td align="right">0.9864</td>
+<td align="right">0.9853</td>
+<td align="right">0.9841</td>
+<td align="right">0.9828</td>
+<td align="right">0.9814</td>
+<td align="right">0.98</td>
+</tr>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">58</td>
+<td align="right">59</td>
+<td align="right">60</td>
+<td align="right">61</td>
+<td align="right">62</td>
+<td align="right">63</td>
+<td align="right">64</td>
+<td align="right">65</td>
+</tr>
+<tr class="even">
+<td align="left">Select and Ultimate, i=2%</td>
+<td align="right">0.5775</td>
+<td align="right">0.5864</td>
+<td align="right">0.5953</td>
+<td align="right">0.6042</td>
+<td align="right">0.6131</td>
+<td align="right">0.6219</td>
+<td align="right">0.6307</td>
+<td align="right">0.6394</td>
+</tr>
+<tr class="odd">
+<td align="left">Ultimate, i=2%</td>
+<td align="right">0.5901</td>
+<td align="right">0.6002</td>
+<td align="right">0.6102</td>
+<td align="right">0.6203</td>
+<td align="right">0.6303</td>
+<td align="right">0.6402</td>
+<td align="right">0.6499</td>
+<td align="right">0.6595</td>
+</tr>
+<tr class="even">
+<td align="left">Ratio</td>
+<td align="right">0.9786</td>
+<td align="right">0.9771</td>
+<td align="right">0.9756</td>
+<td align="right">0.9741</td>
+<td align="right">0.9727</td>
+<td align="right">0.9715</td>
+<td align="right">0.9704</td>
+<td align="right">0.9695</td>
+</tr>
+</tbody>
+</table>
+<h5 style="text-align: center;">
+<a id="displayCode.Exer4.3.1A" href="javascript:togglecode('toggleCode.Exer4.3.1A','displayCode.Exer4.3.1A');"><i><strong>Exercise 4.3.1 Solution using R Code</strong></i></a>
+</h5>
+<div id="toggleCode.Exer4.3.1A" style="display: none">
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="exercises.html#cb69-1"></a>CanadianSelUlt &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/CanadianFemaleSelectRead.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb69-2"><a href="exercises.html#cb69-2"></a></span>
+<span id="cb69-3"><a href="exercises.html#cb69-3"></a>temp &lt;-<span class="st"> </span>CanadianSelUlt[<span class="dv">131</span><span class="op">:</span><span class="dv">201</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb69-4"><a href="exercises.html#cb69-4"></a>temp1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(temp)</span>
+<span id="cb69-5"><a href="exercises.html#cb69-5"></a>CanadianUlt50 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">as.numeric</span>(temp1), <span class="dt">ncol=</span><span class="dv">2</span>)</span>
+<span id="cb69-6"><a href="exercises.html#cb69-6"></a><span class="kw">colnames</span>(CanadianUlt50) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;qx_Ult&quot;</span>)</span>
+<span id="cb69-7"><a href="exercises.html#cb69-7"></a><span class="kw">rownames</span>(CanadianUlt50) &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb69-8"><a href="exercises.html#cb69-8"></a></span>
+<span id="cb69-9"><a href="exercises.html#cb69-9"></a>tempSel &lt;-<span class="st"> </span>CanadianSelUlt[<span class="dv">51</span><span class="op">:</span><span class="dv">81</span>,]</span>
+<span id="cb69-10"><a href="exercises.html#cb69-10"></a>tempSel1 &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(tempSel)</span>
+<span id="cb69-11"><a href="exercises.html#cb69-11"></a></span>
+<span id="cb69-12"><a href="exercises.html#cb69-12"></a>CanadianSel50 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">as.numeric</span>(tempSel1), <span class="dt">ncol=</span><span class="kw">ncol</span>(tempSel))</span>
+<span id="cb69-13"><a href="exercises.html#cb69-13"></a><span class="kw">rownames</span>(CanadianSel50) &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb69-14"><a href="exercises.html#cb69-14"></a></span>
+<span id="cb69-15"><a href="exercises.html#cb69-15"></a>CanadianSel50.toUlt &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>, <span class="dt">nrow =</span> <span class="kw">nrow</span>(CanadianSel50), <span class="dt">ncol =</span> <span class="dv">120-50</span><span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb69-16"><a href="exercises.html#cb69-16"></a>CanadianSel50.toUlt[<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(CanadianSel50),<span class="dv">1</span><span class="op">:</span><span class="kw">ncol</span>(CanadianSel50)] &lt;-<span class="st"> </span>CanadianSel50</span>
+<span id="cb69-17"><a href="exercises.html#cb69-17"></a></span>
+<span id="cb69-18"><a href="exercises.html#cb69-18"></a><span class="cf">for</span> (irow <span class="cf">in</span> (<span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(CanadianSel50)) ){</span>
+<span id="cb69-19"><a href="exercises.html#cb69-19"></a><span class="cf">for</span> (icol <span class="cf">in</span> (<span class="dv">1</span><span class="op">:</span><span class="st"> </span>(<span class="dv">120-50-15</span><span class="op">-</span>irow)) ){</span>
+<span id="cb69-20"><a href="exercises.html#cb69-20"></a>  CanadianSel50.toUlt[irow,<span class="dv">1</span><span class="op">+</span><span class="dv">15</span><span class="op">+</span>icol ] &lt;-<span class="st"> </span>CanadianUlt50[irow<span class="op">+</span><span class="dv">14</span><span class="op">+</span>icol,<span class="dv">2</span>]</span>
+<span id="cb69-21"><a href="exercises.html#cb69-21"></a>   }</span>
+<span id="cb69-22"><a href="exercises.html#cb69-22"></a>}</span>
+<span id="cb69-23"><a href="exercises.html#cb69-23"></a></span>
+<span id="cb69-24"><a href="exercises.html#cb69-24"></a><span class="co">#  Actuarial Present Value Calculations</span></span>
+<span id="cb69-25"><a href="exercises.html#cb69-25"></a>APV.Ult &lt;-<span class="st"> </span><span class="cf">function</span>(xage, q.x, <span class="dt">int=</span><span class="fl">0.00</span>){</span>
+<span id="cb69-26"><a href="exercises.html#cb69-26"></a>  v =<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>int)</span>
+<span id="cb69-27"><a href="exercises.html#cb69-27"></a>  num =<span class="st"> </span><span class="kw">length</span>(xage)</span>
+<span id="cb69-28"><a href="exercises.html#cb69-28"></a>  A.x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">*</span>xage -&gt;<span class="st"> </span>add.x -&gt;<span class="st"> </span>e.x</span>
+<span id="cb69-29"><a href="exercises.html#cb69-29"></a>  A.x[num] =<span class="st"> </span>v<span class="op">*</span>q.x[num]</span>
+<span id="cb69-30"><a href="exercises.html#cb69-30"></a>  add.x[num] =<span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>q.x[num])<span class="op">/</span>(int <span class="op">+</span><span class="st"> </span><span class="fl">1e-12</span>)</span>
+<span id="cb69-31"><a href="exercises.html#cb69-31"></a>  e.x[num] =<span class="st"> </span><span class="dv">1</span><span class="op">-</span>q.x[num]</span>
+<span id="cb69-32"><a href="exercises.html#cb69-32"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>(num<span class="dv">-1</span>)){</span>
+<span id="cb69-33"><a href="exercises.html#cb69-33"></a>    A.x[num<span class="op">-</span>i] =<span class="st"> </span>v<span class="op">*</span>q.x[num<span class="op">-</span>i] <span class="op">+</span><span class="st"> </span>v<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>q.x[num<span class="op">-</span>i])<span class="op">*</span>A.x[num<span class="op">-</span>i<span class="op">+</span><span class="dv">1</span>]</span>
+<span id="cb69-34"><a href="exercises.html#cb69-34"></a>    add.x[num<span class="op">-</span>i] =<span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>v<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>q.x[num<span class="op">-</span>i])<span class="op">*</span>add.x[num<span class="op">-</span>i<span class="op">+</span><span class="dv">1</span>] </span>
+<span id="cb69-35"><a href="exercises.html#cb69-35"></a>    e.x[num<span class="op">-</span>i] =<span class="st">  </span>(<span class="dv">1</span><span class="op">-</span>q.x[num<span class="op">-</span>i])<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>e.x[num<span class="op">-</span>i<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb69-36"><a href="exercises.html#cb69-36"></a>    }</span>
+<span id="cb69-37"><a href="exercises.html#cb69-37"></a>  tablelife &lt;-<span class="st"> </span><span class="kw">cbind</span>(xage,q.x,A.x,add.x,e.x)</span>
+<span id="cb69-38"><a href="exercises.html#cb69-38"></a>  <span class="kw">return</span>(tablelife)</span>
+<span id="cb69-39"><a href="exercises.html#cb69-39"></a>}</span>
+<span id="cb69-40"><a href="exercises.html#cb69-40"></a>AxUlt04 &lt;-<span class="st"> </span><span class="kw">APV.Ult</span>(<span class="dt">xage=</span> CanadianUlt50[,<span class="dv">1</span>], <span class="dt">q.x=</span>CanadianUlt50[,<span class="dv">2</span>], <span class="dt">int=</span><span class="fl">0.04</span>)[,<span class="dv">3</span>]</span>
+<span id="cb69-41"><a href="exercises.html#cb69-41"></a>AxUlt04<span class="fl">.5065</span> &lt;-<span class="st"> </span>AxUlt04[<span class="dv">1</span><span class="op">:</span><span class="dv">16</span>]</span>
+<span id="cb69-42"><a href="exercises.html#cb69-42"></a>AxUlt02 &lt;-<span class="st"> </span><span class="kw">APV.Ult</span>(<span class="dt">xage=</span> CanadianUlt50[,<span class="dv">1</span>], <span class="dt">q.x=</span>CanadianUlt50[,<span class="dv">2</span>], <span class="dt">int=</span><span class="fl">0.02</span>)[,<span class="dv">3</span>]</span>
+<span id="cb69-43"><a href="exercises.html#cb69-43"></a>AxUlt02<span class="fl">.5065</span> &lt;-<span class="st"> </span>AxUlt02[<span class="dv">1</span><span class="op">:</span><span class="dv">16</span>]</span>
+<span id="cb69-44"><a href="exercises.html#cb69-44"></a></span>
+<span id="cb69-45"><a href="exercises.html#cb69-45"></a><span class="co">#  Actuarial Present Value Calculations</span></span>
+<span id="cb69-46"><a href="exercises.html#cb69-46"></a></span>
+<span id="cb69-47"><a href="exercises.html#cb69-47"></a>APV.Sel &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">int=</span><span class="fl">0.00</span>){</span>
+<span id="cb69-48"><a href="exercises.html#cb69-48"></a>AxSel04 &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">0</span>, <span class="dv">16</span>)</span>
+<span id="cb69-49"><a href="exercises.html#cb69-49"></a>  v =<span class="st"> </span><span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>int)</span>
+<span id="cb69-50"><a href="exercises.html#cb69-50"></a><span class="cf">for</span> (iage <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">16</span>){</span>
+<span id="cb69-51"><a href="exercises.html#cb69-51"></a><span class="co">#iage =2</span></span>
+<span id="cb69-52"><a href="exercises.html#cb69-52"></a>  AxSel04[iage] =<span class="st">  </span>v<span class="op">*</span>CanadianSel50.toUlt[iage, <span class="dv">2</span>]</span>
+<span id="cb69-53"><a href="exercises.html#cb69-53"></a>kpx =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb69-54"><a href="exercises.html#cb69-54"></a>  <span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>(<span class="kw">ncol</span>(CanadianSel50.toUlt)<span class="op">-</span><span class="dv">2</span>)) {</span>
+<span id="cb69-55"><a href="exercises.html#cb69-55"></a>    kpx =<span class="st"> </span>kpx<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>CanadianSel50.toUlt[iage, k<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb69-56"><a href="exercises.html#cb69-56"></a>   AxSel04[iage] =<span class="st">  </span>AxSel04[iage] <span class="op">+</span><span class="st"> </span>v<span class="op">**</span>(k<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>kpx<span class="op">*</span>CanadianSel50.toUlt[iage, k<span class="op">+</span><span class="dv">2</span>]</span>
+<span id="cb69-57"><a href="exercises.html#cb69-57"></a>  }</span>
+<span id="cb69-58"><a href="exercises.html#cb69-58"></a>}</span>
+<span id="cb69-59"><a href="exercises.html#cb69-59"></a><span class="kw">return</span>(AxSel04)</span>
+<span id="cb69-60"><a href="exercises.html#cb69-60"></a>}</span>
+<span id="cb69-61"><a href="exercises.html#cb69-61"></a>AxSel04 &lt;-<span class="st"> </span><span class="kw">APV.Sel</span>(<span class="dt">int=</span><span class="fl">0.04</span>)</span>
+<span id="cb69-62"><a href="exercises.html#cb69-62"></a>AxSel02 &lt;-<span class="st"> </span><span class="kw">APV.Sel</span>(<span class="dt">int=</span><span class="fl">0.02</span>)</span>
+<span id="cb69-63"><a href="exercises.html#cb69-63"></a></span>
+<span id="cb69-64"><a href="exercises.html#cb69-64"></a>Age1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;50&quot;</span>, <span class="st">&quot;51&quot;</span>, <span class="st">&quot;52&quot;</span>, <span class="st">&quot;53&quot;</span>, <span class="st">&quot;54&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;56&quot;</span>, <span class="st">&quot;57&quot;</span>)</span>
+<span id="cb69-65"><a href="exercises.html#cb69-65"></a>Age2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;58&quot;</span>, <span class="st">&quot;59&quot;</span>, <span class="st">&quot;60&quot;</span>, <span class="st">&quot;61&quot;</span>, <span class="st">&quot;62&quot;</span>, <span class="st">&quot;63&quot;</span>, <span class="st">&quot;64&quot;</span>, <span class="st">&quot;65&quot;</span>)</span>
+<span id="cb69-66"><a href="exercises.html#cb69-66"></a></span>
+<span id="cb69-67"><a href="exercises.html#cb69-67"></a>Ratio04Sel.Ult &lt;-<span class="st"> </span>AxSel04<span class="op">/</span>AxUlt04<span class="fl">.5065</span></span>
+<span id="cb69-68"><a href="exercises.html#cb69-68"></a>OutPartA &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="dv">50</span><span class="op">:</span><span class="dv">57</span>, AxSel04[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>],  AxUlt04<span class="fl">.5065</span>[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>],  Ratio04Sel.Ult[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], </span>
+<span id="cb69-69"><a href="exercises.html#cb69-69"></a>                  <span class="dv">58</span><span class="op">:</span><span class="dv">65</span>, AxSel04[<span class="dv">9</span><span class="op">:</span><span class="dv">16</span>], AxUlt04<span class="fl">.5065</span>[<span class="dv">9</span><span class="op">:</span><span class="dv">16</span>], Ratio04Sel.Ult[<span class="dv">9</span><span class="op">:</span><span class="dv">16</span>] )</span>
+<span id="cb69-70"><a href="exercises.html#cb69-70"></a>OutPartA1 &lt;-<span class="st"> </span><span class="kw">round</span>(OutPartA, <span class="dt">digits =</span> <span class="dv">4</span>)</span>
+<span id="cb69-71"><a href="exercises.html#cb69-71"></a>OutPartA1[<span class="dv">1</span>,] &lt;-<span class="st"> </span>Age1</span>
+<span id="cb69-72"><a href="exercises.html#cb69-72"></a>OutPartA1[<span class="dv">5</span>,] &lt;-<span class="st"> </span>Age2</span>
+<span id="cb69-73"><a href="exercises.html#cb69-73"></a><span class="kw">rownames</span>(OutPartA1) &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
+<span id="cb69-74"><a href="exercises.html#cb69-74"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select2 and Ultimate, i=4%&quot;</span>, <span class="st">&quot;Ultimate, i=4%&quot;</span>,<span class="st">&quot;Ratio&quot;</span>, </span>
+<span id="cb69-75"><a href="exercises.html#cb69-75"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select and Ultimate, i=4%&quot;</span>, <span class="st">&quot;Ultimate, i=4%&quot;</span>, <span class="st">&quot;Ratio&quot;</span>)</span>
+<span id="cb69-76"><a href="exercises.html#cb69-76"></a><span class="co">#knitr::kable(OutPartA1, align = &quot;r&quot;, caption=&quot;Select and Ultimate Female Canadian APVs&quot;)</span></span>
+<span id="cb69-77"><a href="exercises.html#cb69-77"></a></span>
+<span id="cb69-78"><a href="exercises.html#cb69-78"></a>Ratio02Sel.Ult &lt;-<span class="st"> </span>AxSel02<span class="op">/</span>AxUlt02<span class="fl">.5065</span></span>
+<span id="cb69-79"><a href="exercises.html#cb69-79"></a>OutPartB &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="dv">50</span><span class="op">:</span><span class="dv">57</span>, AxSel02[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>],  AxUlt02<span class="fl">.5065</span>[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>],  Ratio02Sel.Ult[<span class="dv">1</span><span class="op">:</span><span class="dv">8</span>], </span>
+<span id="cb69-80"><a href="exercises.html#cb69-80"></a>                  <span class="dv">58</span><span class="op">:</span><span class="dv">65</span>, AxSel02[<span class="dv">9</span><span class="op">:</span><span class="dv">16</span>], AxUlt02<span class="fl">.5065</span>[<span class="dv">9</span><span class="op">:</span><span class="dv">16</span>], Ratio02Sel.Ult[<span class="dv">9</span><span class="op">:</span><span class="dv">16</span>] )</span>
+<span id="cb69-81"><a href="exercises.html#cb69-81"></a>OutPartB1 &lt;-<span class="st"> </span><span class="kw">round</span>(OutPartB, <span class="dt">digits =</span> <span class="dv">4</span>)</span>
+<span id="cb69-82"><a href="exercises.html#cb69-82"></a>OutPartB1[<span class="dv">1</span>,] &lt;-<span class="st"> </span>Age1</span>
+<span id="cb69-83"><a href="exercises.html#cb69-83"></a>OutPartB1[<span class="dv">5</span>,] &lt;-<span class="st"> </span>Age2</span>
+<span id="cb69-84"><a href="exercises.html#cb69-84"></a><span class="kw">rownames</span>(OutPartB1) &lt;-<span class="st"> </span><span class="kw">c</span>(</span>
+<span id="cb69-85"><a href="exercises.html#cb69-85"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select and Ultimate, i=2%&quot;</span>, <span class="st">&quot;Ultimate, i=2%&quot;</span>,<span class="st">&quot;Ratio&quot;</span>, </span>
+<span id="cb69-86"><a href="exercises.html#cb69-86"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select and Ultimate, i=2%&quot;</span>, <span class="st">&quot;Ultimate, i=2%&quot;</span>, <span class="st">&quot;Ratio&quot;</span>)</span>
+<span id="cb69-87"><a href="exercises.html#cb69-87"></a><span class="co">#knitr::kable(OutPartB1, align = &quot;r&quot;, caption=&quot;Select and Ultimate Female Canadian APVs&quot;)</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="section-4.5-exercises" class="section level4 unnumbered">
+<h4>Section 4.5 Exercises</h4>
+<p><strong>Exercise 4.5.1. Dog Survival Distributions and Actuarial Present Values.</strong> The analysis in Section <a href="C-BenefitExt.html#Sec:CanineMort">4.5.2</a> suggests that breed is an important factor for dog survival. To underscore this point for a broader audience, let us look at survival for a type of small dog, a “Jack Russell Terrier”, and a large dog, a “German Shepherd Dog”. We can make differences in survival distributions between small and large dogs even more meaningful by also computing selected actuarial present values that summarize future expected costs.</p>
+<p>You should begin your analysis by downloading the data, available in Appendix Section <a href="appendix-data-dictionary.html#Sec:CanineMortality">7.3</a>.</p>
+<p>The data have been re-worked so that they can be used for your analysis. Here is a bit more code needed to convert data fields appropriately and to separate the file into two subsets, one for Terriers and one for German Shepherds.</p>
+<h5 style="text-align: center;">
+<a id="displayCode.Exer4.5.1A" href="javascript:togglecode('toggleCode.Exer4.5.1A','displayCode.Exer4.5.1A');"><i><strong>Show R Code to Pre-Process the Data</strong></i></a>
+</h5>
+<div id="toggleCode.Exer4.5.1A" style="display: none">
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="exercises.html#cb70-1"></a><span class="co"># Read in Revised Data</span></span>
+<span id="cb70-2"><a href="exercises.html#cb70-2"></a>DogMortA &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;DogSurvivalData1.csv&quot;</span>)</span>
+<span id="cb70-3"><a href="exercises.html#cb70-3"></a>DogMort &lt;-<span class="st"> </span>DogMortA[,<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb70-4"><a href="exercises.html#cb70-4"></a>DogMort<span class="op">$</span>dateBirth &lt;-<span class="st"> </span><span class="kw">as.Date</span>(DogMort<span class="op">$</span>dateBirth, <span class="st">&quot;%Y-%m-%d&quot;</span>) </span>
+<span id="cb70-5"><a href="exercises.html#cb70-5"></a>DogMort<span class="op">$</span>dateDeath &lt;-<span class="st"> </span><span class="kw">as.Date</span>(DogMort<span class="op">$</span>dateDeath, <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb70-6"><a href="exercises.html#cb70-6"></a>DogMort<span class="op">$</span>AgeAtDeath &lt;-<span class="st"> </span>(<span class="kw">as.numeric</span>(DogMort<span class="op">$</span>dateDeath) <span class="op">-</span><span class="st"> </span><span class="kw">as.numeric</span>(DogMort<span class="op">$</span>dateBirth))<span class="op">/</span><span class="fl">365.25</span></span>
+<span id="cb70-7"><a href="exercises.html#cb70-7"></a>DogTerr &lt;-<span class="st"> </span><span class="kw">subset</span>(DogMort, Breed <span class="op">==</span><span class="st"> &quot;Jack Russell Terrier&quot;</span>)</span>
+<span id="cb70-8"><a href="exercises.html#cb70-8"></a>DogGShep &lt;-<span class="st"> </span><span class="kw">subset</span>(DogMort, Breed <span class="op">==</span><span class="st"> &quot;German Shepherd Dog&quot;</span>)</span></code></pre></div>
+</div>
+<p>For these data:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute one-year mortality rates for both Terriers and German Shepherds. Do this over <span class="math inline">\(x=0, \ldots, 20\)</span>. Graph the results.</li>
+<li>Because you may be working with products with events occurring more frequently than once a year, you decide to follow the strategy introduced in Section <a href="C-BenefitExt.html#Sec:BasicConceptsmthly">4.1.1</a> and look at mortality rates occurring on a quarterly basis. Repeat the analysis from part (a) using quarterly rates.</li>
+<li>The results of earlier analyses indicate substantial volatility in the both quarterly rates and annual rates at later ages. One approach to mitigate this volatility is to smooth the rates. A simpler approach is to use longer periods (hence increasing exposure and reducing volatility). Repeat the analysis in part (a) using rates on a once every two year basis.</li>
+<li>To see how these rates might be used, you decide to repeat the analysis in Section <a href="C-BenefitExt.html#Sec:DogCostCare">4.5.3</a> and compute an actuarial present value of the lifetime cost of surgical vet care. Use the same assumptions as in that section with the initial annual cost as 458, <span class="math inline">\(i=0.03\)</span> interest rate and a 11 percent annual growth in surgical care costs. However, use the dog mortality from part (a). Do this for <span class="math inline">\(x=2, 5, 12\)</span>, for both breeds. You will see that that your results on German Shepherds differ slightly from those presented in Section <a href="C-BenefitExt.html#Sec:DogCostCare">4.5.3</a>; comment on why this is so.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.Exer4.5.1" href="javascript:toggleTheory('toggleTheory.Exer4.5.1','displayCode.Exer4.5.1');"><i><strong>Exercise 4.5.1 Answers</strong></i></a>
+</h5>
+<div id="toggleTheory.Exer4.5.1" style="display: none">
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="exercises.html#cb71-1"></a><span class="kw">library</span>(data.table)</span>
+<span id="cb71-2"><a href="exercises.html#cb71-2"></a><span class="kw">library</span>(survival)</span>
+<span id="cb71-3"><a href="exercises.html#cb71-3"></a><span class="co"># Read in Revised Data</span></span>
+<span id="cb71-4"><a href="exercises.html#cb71-4"></a>DogMortA &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;Data/DogSurvivalData1.csv&quot;</span>)</span>
+<span id="cb71-5"><a href="exercises.html#cb71-5"></a>DogMort &lt;-<span class="st"> </span>DogMortA[,<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb71-6"><a href="exercises.html#cb71-6"></a>DogMort<span class="op">$</span>dateBirth &lt;-<span class="st"> </span><span class="kw">as.Date</span>(DogMort<span class="op">$</span>dateBirth, <span class="st">&quot;%Y-%m-%d&quot;</span>) </span>
+<span id="cb71-7"><a href="exercises.html#cb71-7"></a>DogMort<span class="op">$</span>dateDeath &lt;-<span class="st"> </span><span class="kw">as.Date</span>(DogMort<span class="op">$</span>dateDeath, <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
+<span id="cb71-8"><a href="exercises.html#cb71-8"></a>DogMort<span class="op">$</span>AgeAtDeath &lt;-<span class="st"> </span>(<span class="kw">as.numeric</span>(DogMort<span class="op">$</span>dateDeath) <span class="op">-</span><span class="st"> </span><span class="kw">as.numeric</span>(DogMort<span class="op">$</span>dateBirth))<span class="op">/</span><span class="fl">365.25</span></span>
+<span id="cb71-9"><a href="exercises.html#cb71-9"></a>DogTerr &lt;-<span class="st"> </span><span class="kw">subset</span>(DogMort, Breed <span class="op">==</span><span class="st"> &quot;Jack Russell Terrier&quot;</span>)</span>
+<span id="cb71-10"><a href="exercises.html#cb71-10"></a>DogGShep &lt;-<span class="st"> </span><span class="kw">subset</span>(DogMort, Breed <span class="op">==</span><span class="st"> &quot;German Shepherd Dog&quot;</span>)</span>
+<span id="cb71-11"><a href="exercises.html#cb71-11"></a></span>
+<span id="cb71-12"><a href="exercises.html#cb71-12"></a>fitTerr &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AgeAtDeath) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data=</span>DogTerr)</span>
+<span id="cb71-13"><a href="exercises.html#cb71-13"></a>fitGShep &lt;-<span class="st"> </span><span class="kw">survfit</span>(<span class="kw">Surv</span>(AgeAtDeath) <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">data=</span>DogGShep)</span></code></pre></div>
+<p><strong>Part A</strong></p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="exercises.html#cb72-1"></a>seqA1 &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">20</span></span>
+<span id="cb72-2"><a href="exercises.html#cb72-2"></a>seqA2 &lt;-<span class="st"> </span>seqA1 <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb72-3"><a href="exercises.html#cb72-3"></a>qxTerrA  &lt;-<span class="st"> </span>(<span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqA1)<span class="op">$</span>surv <span class="op">-</span><span class="st">   </span><span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqA2)<span class="op">$</span>surv)   <span class="op">/</span><span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqA1)<span class="op">$</span>surv</span>
+<span id="cb72-4"><a href="exercises.html#cb72-4"></a>qxGShepA &lt;-<span class="st"> </span>(<span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqA1)<span class="op">$</span>surv <span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqA2)<span class="op">$</span>surv,<span class="dv">0</span>))<span class="op">/</span><span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqA1)<span class="op">$</span>surv</span>
+<span id="cb72-5"><a href="exercises.html#cb72-5"></a><span class="kw">plot</span>(seqA1,qxTerrA, <span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(q[x]))</span>
+<span id="cb72-6"><a href="exercises.html#cb72-6"></a><span class="kw">lines</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">16</span>, qxGShepA, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-54"></span>
+<img src="LifeCon_files/figure-html/unnamed-chunk-54-1.png" alt="One-year Dog Mortality Rates, Blue Solid Line is for German Shepherds" width="576" />
+<p class="caption">
+Figure 6.2: One-year Dog Mortality Rates, Blue Solid Line is for German Shepherds
+</p>
+</div>
+<p><strong>Part B</strong></p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="exercises.html#cb73-1"></a>seqB1 &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">20</span>, <span class="dt">by =</span> <span class="fl">0.25</span>)</span>
+<span id="cb73-2"><a href="exercises.html#cb73-2"></a>seqB2 &lt;-<span class="st"> </span>seqB1 <span class="op">+</span><span class="st"> </span><span class="fl">0.25</span></span>
+<span id="cb73-3"><a href="exercises.html#cb73-3"></a>qxTerrB  &lt;-<span class="st"> </span>(<span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqB1)<span class="op">$</span>surv <span class="op">-</span><span class="st">   </span><span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqB2)<span class="op">$</span>surv)   <span class="op">/</span><span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqB1)<span class="op">$</span>surv</span>
+<span id="cb73-4"><a href="exercises.html#cb73-4"></a>qxGShepB &lt;-<span class="st"> </span>(<span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqB1)<span class="op">$</span>surv <span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqB2)<span class="op">$</span>surv,<span class="dv">0</span>))<span class="op">/</span><span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqB1)<span class="op">$</span>surv</span>
+<span id="cb73-5"><a href="exercises.html#cb73-5"></a><span class="kw">plot</span>(seqB1,qxTerrB, <span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(q[x]))</span>
+<span id="cb73-6"><a href="exercises.html#cb73-6"></a><span class="kw">lines</span>(seqB1[<span class="dv">1</span><span class="op">:</span><span class="dv">67</span>], qxGShepB, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-55"></span>
+<img src="LifeCon_files/figure-html/unnamed-chunk-55-1.png" alt="Quarterly Dog Mortality Rates, Blue Solid Line is for German Shepherds" width="576" />
+<p class="caption">
+Figure 6.3: Quarterly Dog Mortality Rates, Blue Solid Line is for German Shepherds
+</p>
+</div>
+<p><strong>Part C</strong></p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="exercises.html#cb74-1"></a>seqC1 &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">20</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb74-2"><a href="exercises.html#cb74-2"></a>seqC2 &lt;-<span class="st"> </span>seqC1 <span class="op">+</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb74-3"><a href="exercises.html#cb74-3"></a>qxTerrC  &lt;-<span class="st"> </span>(<span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqC1)<span class="op">$</span>surv <span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqC2)<span class="op">$</span>surv,<span class="dv">0</span>))<span class="op">/</span><span class="kw">summary</span>(fitTerr,  <span class="dt">time =</span> seqC1)<span class="op">$</span>surv</span>
+<span id="cb74-4"><a href="exercises.html#cb74-4"></a>qxGShepC &lt;-<span class="st"> </span>(<span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqC1)<span class="op">$</span>surv <span class="op">-</span><span class="st"> </span><span class="kw">c</span>(<span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqC2)<span class="op">$</span>surv,<span class="dv">0</span>))<span class="op">/</span><span class="kw">summary</span>(fitGShep, <span class="dt">time =</span> seqC1)<span class="op">$</span>surv</span>
+<span id="cb74-5"><a href="exercises.html#cb74-5"></a><span class="kw">plot</span>(seqC1,qxTerrC, <span class="dt">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(q[x]))</span>
+<span id="cb74-6"><a href="exercises.html#cb74-6"></a><span class="kw">lines</span>(seqC1[<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>], qxGShepC, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-56"></span>
+<img src="LifeCon_files/figure-html/unnamed-chunk-56-1.png" alt="Two-year Dog Mortality Rates, Blue Solid Line is for German Shepherds" width="576" />
+<p class="caption">
+Figure 6.4: Two-year Dog Mortality Rates, Blue Solid Line is for German Shepherds
+</p>
+</div>
+<p><strong>Part D</strong></p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="exercises.html#cb75-1"></a>DogAnn &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x=</span>x, <span class="dt">q.x=</span>qx){</span>
+<span id="cb75-2"><a href="exercises.html#cb75-2"></a>  Term &lt;-<span class="st"> </span><span class="kw">length</span>(q.x) <span class="op">-</span><span class="st"> </span>(x<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb75-3"><a href="exercises.html#cb75-3"></a>  kpx &lt;-<span class="st"> </span><span class="dv">1</span> </span>
+<span id="cb75-4"><a href="exercises.html#cb75-4"></a>  APV  &lt;-<span class="st"> </span><span class="dv">0</span> </span>
+<span id="cb75-5"><a href="exercises.html#cb75-5"></a> <span class="cf">if</span> (Term<span class="op">&gt;</span><span class="dv">0</span>){ <span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">0</span><span class="op">:</span>(Term<span class="dv">-1</span>)){ </span>
+<span id="cb75-6"><a href="exercises.html#cb75-6"></a>    <span class="cf">if</span> (k<span class="op">&gt;</span><span class="dv">1</span>) {kpx &lt;-<span class="st"> </span>kpx<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>q.x[x<span class="op">+</span><span class="dv">1</span><span class="op">+</span>k])}</span>
+<span id="cb75-7"><a href="exercises.html#cb75-7"></a>    APV  &lt;-<span class="st"> </span>APV  <span class="op">+</span><span class="st"> </span>kpx <span class="op">*</span><span class="st">  </span>(<span class="dv">1</span><span class="op">/</span><span class="fl">1.03</span>)<span class="op">^</span>k   <span class="op">*</span><span class="fl">1.11</span><span class="op">^</span>k <span class="op">*</span><span class="dv">458</span></span>
+<span id="cb75-8"><a href="exercises.html#cb75-8"></a>    }}</span>
+<span id="cb75-9"><a href="exercises.html#cb75-9"></a> <span class="kw">return</span>(APV)</span>
+<span id="cb75-10"><a href="exercises.html#cb75-10"></a>  }</span>
+<span id="cb75-11"><a href="exercises.html#cb75-11"></a><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">2</span>, <span class="dt">q.x=</span>qxTerrA)</span>
+<span id="cb75-12"><a href="exercises.html#cb75-12"></a><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">5</span>, <span class="dt">q.x=</span>qxTerrA)</span>
+<span id="cb75-13"><a href="exercises.html#cb75-13"></a><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">12</span>, <span class="dt">q.x=</span>qxTerrA)</span>
+<span id="cb75-14"><a href="exercises.html#cb75-14"></a><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">2</span>, <span class="dt">q.x=</span>qxGShepA)</span>
+<span id="cb75-15"><a href="exercises.html#cb75-15"></a><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">5</span>, <span class="dt">q.x=</span>qxGShepA)</span>
+<span id="cb75-16"><a href="exercises.html#cb75-16"></a><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">12</span>, <span class="dt">q.x=</span>qxGShepA)</span></code></pre></div>
+<pre><code>[1] 7605.3
+[1] 5111.7
+[1] 1795.3
+[1] 5444.1
+[1] 3420.2
+[1] 1184.6</code></pre>
+<p>Note that the mortality estimates in this exercise are based only on data for a specific breed. In contrast, the analysis in Section <a href="C-BenefitExt.html#Sec:DogCostCare">4.5.3</a> used a Cox proportional hazards to regression model to use data from all breeds to form mortality estimates.</p>
+<hr />
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="C-Forward.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-data-dictionary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -32,8 +32,7 @@
   
 <link rel="prev" href="C-SimpleBenefit.html"/>
 <link rel="next" href="C-Forward.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,10 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.19/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -201,18 +201,18 @@ var submitAnswer = function() {
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -232,7 +232,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -281,165 +281,141 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Life Contingencies</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a>
-<ul>
+<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a><ul>
+<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:DataLifeExp"><i class="fa fa-check"></i><b>2.1.1</b> Life Expectancies</a></li>
 <li class="chapter" data-level="2.1.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:HMDData"><i class="fa fa-check"></i><b>2.1.2</b> Population Mortality Counts</a></li>
 <li class="chapter" data-level="2.1.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:IndivMortData"><i class="fa fa-check"></i><b>2.1.3</b> Individual Mortality Data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a>
-<ul>
+<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#lifetime-random-variable-and-its-distribution"><i class="fa fa-check"></i><b>2.2.1</b> Lifetime Random Variable and its Distribution</a></li>
 <li class="chapter" data-level="2.2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#standard-actuarial-notation-q_bfx-_tp_bfx-and-all-that"><i class="fa fa-check"></i><b>2.2.2</b> Standard Actuarial Notation: <span class="math inline">\(q_{\bf{x}}\)</span>, <span class="math inline">\(_tp_{\bf{x}}\)</span>, and All That</a></li>
 <li class="chapter" data-level="2.2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:ModelOnlyAge"><i class="fa fa-check"></i><b>2.2.3</b> The Classical Case: Age-Only Model</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical laws of mortality</a>
-<ul>
+<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical Laws of Mortality</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#de-moivre-and-constant-force-models"><i class="fa fa-check"></i><b>2.3.1</b> De Moivre and Constant Force Models</a></li>
 <li class="chapter" data-level="2.3.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#gompertz-and-makeham-laws"><i class="fa fa-check"></i><b>2.3.2</b> Gompertz and Makeham Laws</a></li>
 <li class="chapter" data-level="2.3.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#makeham-law-based-on-life-expectancies-data"><i class="fa fa-check"></i><b>2.3.3</b> Makeham Law based on Life Expectancies Data</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a>
-<ul>
+<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabBasics"><i class="fa fa-check"></i><b>2.4.1</b> Life Table Basics</a></li>
 <li class="chapter" data-level="2.4.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabEst"><i class="fa fa-check"></i><b>2.4.2</b> Life Table based on U.S. Population Data</a></li>
 <li class="chapter" data-level="2.4.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabRec"><i class="fa fa-check"></i><b>2.4.3</b> Curtate Quantities and Recursive Relationships</a></li>
-<li class="chapter" data-level="2.4.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional year assumptions</a></li>
+<li class="chapter" data-level="2.4.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional Year Assumptions</a></li>
 <li class="chapter" data-level="2.4.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabMImpr"><i class="fa fa-check"></i><b>2.4.5</b> Cohort Life Tables and Mortality Improvement Modeling</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric survival estimation</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#kaplan-meier-estimate"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimate</a></li>
-<li class="chapter" data-level="2.5.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#nelson-aalen"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen</a></li>
+<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric Survival Estimation</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#kaplan-meier-estimates"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimates</a></li>
+<li class="chapter" data-level="2.5.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#nelson-aalen-estimates"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen Estimates</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional models: Survival regression</a>
-<ul>
+<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional Models: Survival regression</a><ul>
 <li class="chapter" data-level="2.6.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#the-cox-proportional-hazard-model"><i class="fa fa-check"></i><b>2.6.1</b> The Cox Proportional Hazard Model</a></li>
 <li class="chapter" data-level="2.6.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#cox-models-based-on-life-insurer-data"><i class="fa fa-check"></i><b>2.6.2</b> Cox Models Based on Life Insurer Data</a></li>
 <li class="chapter" data-level="2.6.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#conditional-life-tables"><i class="fa fa-check"></i><b>2.6.3</b> Conditional Life Tables</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#notes-and-comments"><i class="fa fa-check"></i><b>2.7</b> Notes and Comments</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCFunc"><i class="fa fa-check"></i><b>3.1</b> Valuation of Cash Flows under Uncertainty</a>
-<ul>
+<li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a><ul>
+<li class="chapter" data-level="3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCFunc"><i class="fa fa-check"></i><b>3.1</b> Valuation of Cash Flows under Uncertainty</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#moment-calculations"><i class="fa fa-check"></i><b>3.1.1</b> Moment Calculations</a></li>
 <li class="chapter" data-level="3.1.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#illustrative-moments-of-cash-flows"><i class="fa fa-check"></i><b>3.1.2</b> Illustrative Moments of Cash Flows</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitActNot"><i class="fa fa-check"></i><b>3.2</b> Life Insurance Benefits</a>
-<ul>
+<li class="chapter" data-level="3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitActNot"><i class="fa fa-check"></i><b>3.2</b> Life Insurance Benefits</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitWL"><i class="fa fa-check"></i><b>3.2.1</b> Whole of life insurance</a></li>
 <li class="chapter" data-level="3.2.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitTI"><i class="fa fa-check"></i><b>3.2.2</b> Term insurance</a></li>
 <li class="chapter" data-level="3.2.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#pure-endowment"><i class="fa fa-check"></i><b>3.2.3</b> Pure endowment</a></li>
 <li class="chapter" data-level="3.2.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#endowment-insurance"><i class="fa fa-check"></i><b>3.2.4</b> Endowment insurance</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitAnnuity"><i class="fa fa-check"></i><b>3.3</b> Life Annuity Benefits</a>
-<ul>
+<li class="chapter" data-level="3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitAnnuity"><i class="fa fa-check"></i><b>3.3</b> Life Annuity Benefits</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#life-annuity"><i class="fa fa-check"></i><b>3.3.1</b> Life annuity</a></li>
 <li class="chapter" data-level="3.3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:TermLifeAnnuity"><i class="fa fa-check"></i><b>3.3.2</b> Term life annuity</a></li>
 <li class="chapter" data-level="3.3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#deferred-life-annuity"><i class="fa fa-check"></i><b>3.3.3</b> Deferred life annuity</a></li>
 <li class="chapter" data-level="3.3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#guaranteed-life-annuity"><i class="fa fa-check"></i><b>3.3.4</b> Guaranteed life annuity</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitSpread"><i class="fa fa-check"></i><b>3.4</b> Valuing Life Contingent Benefits using a Spreadsheet</a></li>
-<li class="chapter" data-level="3.5" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCS"><i class="fa fa-check"></i><b>3.5</b> Case Study: A Portfolio of Term Insurance Policies</a>
-<ul>
+<li class="chapter" data-level="3.5" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCS"><i class="fa fa-check"></i><b>3.5</b> Case Study: A Portfolio of Term Insurance Policies</a><ul>
 <li class="chapter" data-level="3.5.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSInd"><i class="fa fa-check"></i><b>3.5.1</b> An individual policy</a></li>
 <li class="chapter" data-level="3.5.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSPort"><i class="fa fa-check"></i><b>3.5.2</b> Moments of a portfolio of policies</a></li>
 <li class="chapter" data-level="3.5.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#simulated-distribution-of-a-portfolio-of-policies"><i class="fa fa-check"></i><b>3.5.3</b> Simulated distribution of a portfolio of policies</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>3.6</b> Further Resources and Contributors</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a>
-<ul>
+<li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a><ul>
+<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:BasicConceptsmthly"><i class="fa fa-check"></i><b>4.1.1</b> Basic Concepts</a></li>
 <li class="chapter" data-level="4.1.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#illustrative-cash-flows"><i class="fa fa-check"></i><b>4.1.2</b> Illustrative Cash Flows</a></li>
 <li class="chapter" data-level="4.1.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.1.3</b> Contingent Cash Flows in Continuous Time</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a>
-<ul>
+<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#population-subsets-and-sampling-bias"><i class="fa fa-check"></i><b>4.2.1</b> Population Subsets and Sampling Bias</a></li>
 <li class="chapter" data-level="4.2.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#sampling-bias-in-actuarial-practice"><i class="fa fa-check"></i><b>4.2.2</b> Sampling Bias in Actuarial Practice</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a>
-<ul>
+<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ActuarialFairRiskClass"><i class="fa fa-check"></i><b>4.3.1</b> Actuarially Fair Prices and Risk Classification</a></li>
 <li class="chapter" data-level="4.3.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SelectionAdverse"><i class="fa fa-check"></i><b>4.3.2</b> Selection and Adverse Selection</a></li>
 <li class="chapter" data-level="4.3.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:AsymmericInfo"><i class="fa fa-check"></i><b>4.3.3</b> Asymmetric Information</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ApplicationsContingent"><i class="fa fa-check"></i><b>4.4</b> Contingent Payment Applications</a></li>
-<li class="chapter" data-level="4.5" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:PetInsurance"><i class="fa fa-check"></i><b>4.5</b> Pet Insurance</a>
-<ul>
+<li class="chapter" data-level="4.5" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:PetInsurance"><i class="fa fa-check"></i><b>4.5</b> Pet Insurance</a><ul>
 <li class="chapter" data-level="4.5.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:IntroPet"><i class="fa fa-check"></i><b>4.5.1</b> Introduction to Pet Health Insurance</a></li>
 <li class="chapter" data-level="4.5.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:CanineMort"><i class="fa fa-check"></i><b>4.5.2</b> Canine Mortality</a></li>
 <li class="chapter" data-level="4.5.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DogCostCare"><i class="fa fa-check"></i><b>4.5.3</b> Cost of Care</a></li>
 <li class="chapter" data-level="4.5.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-pet-insurance-markets"><i class="fa fa-check"></i><b>4.5.4</b> More on Pet Insurance Markets</a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DisIncInsurance"><i class="fa fa-check"></i><b>4.6</b> Disability Income Insurance</a>
-<ul>
+<li class="chapter" data-level="4.6" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DisIncInsurance"><i class="fa fa-check"></i><b>4.6</b> Disability Income Insurance</a><ul>
 <li class="chapter" data-level="4.6.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#introduction-to-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.1</b> Introduction to Disability Income Insurance</a></li>
 <li class="chapter" data-level="4.6.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#disability-recovery-rates"><i class="fa fa-check"></i><b>4.6.2</b> Disability Recovery Rates</a></li>
 <li class="chapter" data-level="4.6.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#actuarial-present-values-of-disability-income"><i class="fa fa-check"></i><b>4.6.3</b> Actuarial Present Values of Disability Income</a></li>
 <li class="chapter" data-level="4.6.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.4</b> More on Disability Income Insurance</a></li>
 </ul></li>
-<li class="chapter" data-level="4.7" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#exercises"><i class="fa fa-check"></i><b>4.7</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a>
-<ul>
+<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a><ul>
 <li class="chapter" data-level="5.1" data-path="C-Forward.html"><a href="C-Forward.html#table-of-contents"><i class="fa fa-check"></i><b>5.1</b> Table of Contents</a></li>
 <li class="chapter" data-level="5.2" data-path="C-Forward.html"><a href="C-Forward.html#usage-data"><i class="fa fa-check"></i><b>5.2</b> Usage Data</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html"><i class="fa fa-check"></i><b>6</b> Appendix: Data Dictionary</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataUSPoPCounts"><i class="fa fa-check"></i><b>6.1</b> United States Population Mortality Counts</a></li>
-<li class="chapter" data-level="6.2" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:SyntheticInsData"><i class="fa fa-check"></i><b>6.2</b> Synthetic Insurer Data</a></li>
-<li class="chapter" data-level="6.3" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#canine-mortality"><i class="fa fa-check"></i><b>6.3</b> Canine Mortality</a></li>
-<li class="chapter" data-level="6.4" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#canadian-female-select-and-ultimate-mortality-table"><i class="fa fa-check"></i><b>6.4</b> Canadian Female Select and Ultimate Mortality Table</a></li>
-<li class="chapter" data-level="6.5" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality-by-insured-status"><i class="fa fa-check"></i><b>6.5</b> Korean Mortality by Insured Status</a>
-<ul>
+<li class="chapter" data-level="6" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>6</b> Exercises</a><ul>
+<li class="chapter" data-level="6.1" data-path="exercises.html"><a href="exercises.html#chapter-4-exercises"><i class="fa fa-check"></i><b>6.1</b> Chapter 4 Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html"><i class="fa fa-check"></i><b>7</b> Appendix: Data Dictionary</a><ul>
+<li class="chapter" data-level="7.1" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataUSPoPCounts"><i class="fa fa-check"></i><b>7.1</b> United States Population Mortality Counts</a></li>
+<li class="chapter" data-level="7.2" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:SyntheticInsData"><i class="fa fa-check"></i><b>7.2</b> Synthetic Insurer Data</a></li>
+<li class="chapter" data-level="7.3" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:CanineMortality"><i class="fa fa-check"></i><b>7.3</b> Canine Mortality</a></li>
+<li class="chapter" data-level="7.4" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:CanadianSelect"><i class="fa fa-check"></i><b>7.4</b> Canadian Female Select and Ultimate Mortality Table</a></li>
+<li class="chapter" data-level="7.5" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:KoreanMortality"><i class="fa fa-check"></i><b>7.5</b> Korean Mortality by Insured Status</a><ul>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---insured-lives"><i class="fa fa-check"></i>Korean Mortality - Insured Lives</a></li>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---annuitants"><i class="fa fa-check"></i>Korean Mortality - Annuitants</a></li>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---population"><i class="fa fa-check"></i>Korean Mortality - Population</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#mortality-by-country"><i class="fa fa-check"></i><b>6.6</b> Mortality by Country</a>
-<ul>
+<li class="chapter" data-level="7.6" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:MortalityCountry"><i class="fa fa-check"></i><b>7.6</b> Mortality by Country</a><ul>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---japan"><i class="fa fa-check"></i>Population Mortality - Japan</a></li>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---poland"><i class="fa fa-check"></i>Population Mortality - Poland</a></li>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---united-states"><i class="fa fa-check"></i>Population Mortality - United States</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataDisIncome"><i class="fa fa-check"></i><b>6.7</b> Disability Income</a>
-<ul>
+<li class="chapter" data-level="7.7" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataDisIncome"><i class="fa fa-check"></i><b>7.7</b> Disability Income</a><ul>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---male"><i class="fa fa-check"></i>Disability Recovery Rates - Male</a></li>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---female"><i class="fa fa-check"></i>Disability Recovery Rates - FeMale</a></li>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---male"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Male</a></li>
 <li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---female"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Female</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>7</b> Appendix: Conventions for Notation</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>7.1</b> Actuarial Notation</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>7.1.1</b> Life Table Symbols</a></li>
-<li class="chapter" data-level="7.1.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeInsSymbols"><i class="fa fa-check"></i><b>7.1.2</b> Life Insurance Symbols</a></li>
-<li class="chapter" data-level="7.1.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeAnnSymbols"><i class="fa fa-check"></i><b>7.1.3</b> Annuity Certain and Life Annuity Symbols</a></li>
+<li class="chapter" data-level="8" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>8</b> Appendix: Conventions for Notation</a><ul>
+<li class="chapter" data-level="8.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>8.1</b> Actuarial Notation</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>8.1.1</b> Life Table Symbols</a></li>
+<li class="chapter" data-level="8.1.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeInsSymbols"><i class="fa fa-check"></i><b>8.1.2</b> Life Insurance Symbols</a></li>
+<li class="chapter" data-level="8.1.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeAnnSymbols"><i class="fa fa-check"></i><b>8.1.3</b> Annuity Certain and Life Annuity Symbols</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NotConv:Halo"><i class="fa fa-check"></i><b>7.2</b> Halo System</a></li>
-<li class="chapter" data-level="7.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:General"><i class="fa fa-check"></i><b>7.3</b> General Conventions</a></li>
-<li class="chapter" data-level="7.4" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Abbreviations"><i class="fa fa-check"></i><b>7.4</b> Abbreviations</a></li>
-<li class="chapter" data-level="7.5" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:StatSymbols"><i class="fa fa-check"></i><b>7.5</b> Common Statistical Symbols and Operators</a></li>
-<li class="chapter" data-level="7.6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Symbols"><i class="fa fa-check"></i><b>7.6</b> Common Mathematical Symbols and Functions</a></li>
-<li class="chapter" data-level="7.7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#further-readings"><i class="fa fa-check"></i><b>7.7</b> Further Readings</a></li>
+<li class="chapter" data-level="8.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NotConv:Halo"><i class="fa fa-check"></i><b>8.2</b> Halo System</a></li>
+<li class="chapter" data-level="8.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:General"><i class="fa fa-check"></i><b>8.3</b> General Conventions</a></li>
+<li class="chapter" data-level="8.4" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Abbreviations"><i class="fa fa-check"></i><b>8.4</b> Abbreviations</a></li>
+<li class="chapter" data-level="8.5" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:StatSymbols"><i class="fa fa-check"></i><b>8.5</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="8.6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Symbols"><i class="fa fa-check"></i><b>8.6</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="8.7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#further-readings"><i class="fa fa-check"></i><b>8.7</b> Further Readings</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
 <li class="divider"></li>
@@ -462,12 +438,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="C:BenefitExt" class="section level1" number="4">
+<div id="C:BenefitExt" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Contingent Payment Techniques</h1>
 <p><span class="math inline">\(\require{enclose}\)</span> <!-- Later equations only properly knit if this is beforehand once in the code --></p>
 <p><em>Chapter Preview.</em> We have now learned the foundations of life contingencies through Chapter <a href="C-ModelingLifeTimes.html#C:ModelingLifeTimes">2</a> survival modeling and Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> discounting of contingent cash flows. This chapter provide extensions and variations to exhibit the richness of applications.</p>
 <p>Specifically, Section <a href="C-BenefitExt.html#Sec:mthlyFlows">4.1</a> presents a relatively minor extension theoretically, allowing for <span class="math inline">\(m^{th}\)</span>ly cash flows, that has extensive practical ramifications for retirement benefits, other life contingent annuities, and premium payment plans. Section <a href="C-BenefitExt.html#Sec:SamplingBias">4.2</a> sharpens our intuition about survival modeling by linking the choice of a survival dataset to an application under consideration; when the link is not appropriate, important biases can arise. Section <a href="C-BenefitExt.html#Sec:EconomicMotivation">4.3</a> provides economic motivation for some of the measures summarizing insurance features introduced in Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a>; this motivation provides insights as why some of these are so important in practice. Through a variety of examples, Section <a href="C-BenefitExt.html#Sec:ApplicationsContingent">4.4</a> emphasizes that the framework for life contingent benefits applies to contingent payment problems that go beyond applications restricted to the life insurance industry.</p>
-<div id="Sec:mthlyFlows" class="section level2" number="4.1">
+<div id="Sec:mthlyFlows" class="section level2">
 <h2><span class="header-section-number">4.1</span> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</h2>
 <hr />
 <p>In this section, you learn how to:</p>
@@ -479,7 +455,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p>This section extends Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> by considering cases where cash flows occur more frequently than once a year. For example, it is common for retirement benefits to be paid on a monthly basis while a person is alive. As another example, premiums might be paid twice a year, as long as the policyholder is alive and the contract is in force. We use <span class="math inline">\(m\)</span> to denote the number of payments per year. For the retirement benefits example, we would use <span class="math inline">\(m=12\)</span> and for premiums, <span class="math inline">\(m=2\)</span>. Other common examples are <span class="math inline">\(m=4\)</span> for quarterly cash flows, <span class="math inline">\(m=52\)</span> for weekly, and so forth. We will even consider the case where the number of payments becomes arbitrarily large, <span class="math inline">\(m \to \infty\)</span>, corresponding to a cash flow at the moment an event such as death occurs.</p>
 <p>When describing benefits paid discretely, we started in Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> with annual payments because mortality tables have traditionally been presented on an integer age basis. In addition, business requirements such as insurance company financial reporting is done routinely on an annual basis. Nonetheless, as described above, there are also important situations where payments occur other than annually (typically more frequently, although payments once every, e.g., two years are certainly plausible).</p>
-<div id="Sec:BasicConceptsmthly" class="section level3" number="4.1.1">
+<div id="Sec:BasicConceptsmthly" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Basic Concepts</h3>
 <p>To appreciate the concerns when transiting from an annual to an <span class="math inline">\(m^{th}\)</span>ly basis, here is a modified version of Figure <a href="C-SimpleBenefit.html#fig:Benefit1a">3.1</a>.</p>
 
@@ -516,7 +492,7 @@ For integer <span class="math inline">\(k=0, 1, \dots\)</span></p>
 \]</span>
 Here, to calculate the probability of a life aged <span class="math inline">\(x\)</span> surviving <span class="math inline">\(k+j/m\)</span> years, we first calculated the probability of surviving <span class="math inline">\(k\)</span> (integer) years and then, conditional on having attained age <span class="math inline">\(x+k\)</span>, applied the <em>UDD</em> assumption to calculate the probability of surviving an additional <span class="math inline">\(j/m\)</span> fraction of a year. These expressions, together with equations <a href="C-BenefitExt.html#eq:Benefitm2">(4.1)</a> and <a href="C-BenefitExt.html#eq:ExpBenefitm2">(4.2)</a>, are enough to compute an expected present value for an <span class="math inline">\(m^{th}\)</span>ly version of any of the Chapter <a href="C-SimpleBenefit.html#C:SimpleBenefit">3</a> cash flows.</p>
 </div>
-<div id="illustrative-cash-flows" class="section level3" number="4.1.2">
+<div id="illustrative-cash-flows" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Illustrative Cash Flows</h3>
 <p>Let us see how these ideas work with a few illustrative examples. To begin, we start by assuming that we have a continuous time probability model and so no simplifying assumptions are needed.</p>
 <p><a id=tab:Ex4.11></a></p>
@@ -619,7 +595,7 @@ v ~\beta(m) A_{{\bf{x}}:\enclose{actuarial}{n}} ^ {1} \\
 \]</span></p>
 </div>
 </div>
-<div id="contingent-cash-flows-in-continuous-time" class="section level3" number="4.1.3">
+<div id="contingent-cash-flows-in-continuous-time" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Contingent Cash Flows in Continuous Time</h3>
 <p>By cash flows in “continuous time,” we are thinking of a situation where <span class="math inline">\(m\)</span> becomes arbitrarily large. So, we could start with monthly (<span class="math inline">\(m=12\)</span>), go to weekly (<span class="math inline">\(m=52\)</span>), proceed to daily (<span class="math inline">\(m=365\)</span>), and so forth. As we will see, there is little difference between a contract with daily payments versus instantaneous payments. However, the model with instantaneous payments (<span class="math inline">\(m=\infty\)</span>) is actually easier because we do not have to distinguish between payments at the beginning versus the end of the period.</p>
 <p>Models with instantaneous payments are easier to interpret and analyze in life insurance in contrast to life annuities. Because insurers typically pay benefits quickly upon the death of a policyholder, a model with payments at the moment of death is a better approximation than one that pays at the end of the year (<span class="math inline">\(m=1\)</span>). Theoretically, one can think of a continuous life annuity as an approximation to a life annuity that pays 1/365 on a daily basis. However, given that life annuities are predominantly employed on a monthly (<span class="math inline">\(m=12\)</span>) and quarterly (<span class="math inline">\(m=4\)</span>) basis, we focus our attention on life insurance products in continuous time.</p>
@@ -638,7 +614,7 @@ v^{T_{\bf x}}I(T_{\bf x} \le n) +v^n I(T_{\bf x} &gt;n) &amp; {n\text{ year  end
 <p><span class="math display">\[
 E(PV) = \int_0^{\infty} ~ v^t ~_t p_x \mu_{x+t} dt = \bar{A}_x .
 \]</span></p>
-<p>For notation, we could use <span class="math inline">\(~^{(\infty)}\)</span> to signify payments with an infinite number of payment periods. However, it is traditional and part of International Actuarial Notation to use a bar (<span class="math inline">\(\bar{\cdot}\)</span>) to denote payments at the moment of death. See Appendix Section <a href="C-NotationConventionLC.html#Sec:NotConv:Halo">7.2</a> for more on actuarial notation.</p>
+<p>For notation, we could use <span class="math inline">\(~^{(\infty)}\)</span> to signify payments with an infinite number of payment periods. However, it is traditional and part of International Actuarial Notation to use a bar (<span class="math inline">\(\bar{\cdot}\)</span>) to denote payments at the moment of death. See Appendix Section <a href="C-NotationConventionLC.html#Sec:NotConv:Halo">8.2</a> for more on actuarial notation.</p>
 <p>Similarly for an <span class="math inline">\(n\)</span> year endowment, we have</p>
 <p><span class="math display">\[
 \begin{array}{ll}
@@ -703,7 +679,7 @@ E(PV)
 </div>
 </div>
 </div>
-<div id="Sec:SamplingBias" class="section level2" number="4.2">
+<div id="Sec:SamplingBias" class="section level2">
 <h2><span class="header-section-number">4.2</span> Sampling Bias</h2>
 <hr />
 <p>In this section, you learn how to:</p>
@@ -714,7 +690,7 @@ E(PV)
 </ul>
 <hr />
 <p>In Chapter <a href="C-ModelingLifeTimes.html#C:ModelingLifeTimes">2</a> we saw that survival distributions, expressed as mortality rates, can vary not only by age and sex but also by other attributes such as smoking status, systolic blood pressure, and so forth. This naturally raises the question as whether these attributes are important in actuarial practice. To frame this question, this section reviews the statistical concept of sampling bias in the context of actuarial applications.</p>
-<div id="population-subsets-and-sampling-bias" class="section level3" number="4.2.1">
+<div id="population-subsets-and-sampling-bias" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Population Subsets and Sampling Bias</h3>
 <p>To illustrate differences among different samples, or subsets of a population, we consider three samples commonly used in actuarial practice:</p>
 <ul>
@@ -725,7 +701,7 @@ E(PV)
 <p>To compare these three samples, we examine a specific case.</p>
 <p><a id=tab:Ex4.21></a></p>
 <p><strong>Example 4.2.1. Korean Mortality by Insured Status.</strong> Here, we consider female mortality from South Korea for year 2007. The insured lives and annuitant rates were drawn from a database organized by the Society of Actuaries, <a href="https://mort.soa.org/">https://mort.soa.org/</a>.
-The general population data are drawn from the <a href="http://www.mortality.org/">Human Mortality Database</a>.</p>
+The general population data are drawn from the <a href="http://www.mortality.org/">Human Mortality Database</a>. These data are organized in Appendix Section <a href="appendix-data-dictionary.html#Sec:KoreanMortality">7.5</a>.</p>
 
 
 <div class="figure" style="text-align: center"><span id="fig:SampBiasComparePlot"></span>
@@ -740,7 +716,7 @@ Figure 4.3: <strong>Mortality by Insured Status</strong>. The left-hand panel su
 <p>In the language of statistics, a sampling error occurs when the sampling frame, the list from which the sample is drawn, is not an adequate approximation of the population of interest. A sample must be a representative subset of a population, or universe, of interest. An example of a representative subset is a sample drawn at random. With substantial sample errors, the summary measure of the sample, the statistic, is not an adequate approximation of the corresponding summary measure of the population, the difference defined as a <strong>bias</strong>. If the sample is not representative, taking a larger sample does not eliminate bias, as the same mistake is repeated over again and again.</p>
 <p>So, using data from a sample that is not representative of a population of interest can result in <strong>sampling bias</strong>. For example, an analyst investigating an insurance product might use (typically convenient) population mortality instead of a more appropriate insured lives mortality; this mismatch results in sampling bias. As an another example, one might use insured lives mortality in lieu of pensioner mortality when valuing a retirement option for an insurance product. It is also common to use experience from one country to approximate outcomes in another. To illustrate, the following example compares experience among Poland, Japan, and the United States.</p>
 <p><a id=tab:Ex4.22></a></p>
-<p><strong>Example 4.2.2. Mortality by Country (Japan, Poland, and the United States).</strong> This example focuses on population mortality and so recent 2019 experience is available from the <a href="http://www.mortality.org/">Human Mortality Database</a>. In addition to classification by country, we also look at experience by sex and age as these distinctions are well known.</p>
+<p><strong>Example 4.2.2. Mortality by Country (Japan, Poland, and the United States).</strong> This example focuses on population mortality and so recent 2019 experience is available from the <a href="http://www.mortality.org/">Human Mortality Database</a>. These data are organized in Appendix Section <a href="appendix-data-dictionary.html#Sec:MortalityCountry">7.6</a>. In addition to classification by country, we also look at experience by sex and age as these distinctions are well known.</p>
 <p>Figure <a href="C-BenefitExt.html#fig:SampIntlCompare">4.4</a> compares one year mortality rates among the three countries; the left-hand panel is for female experience and the right-hand is for males. Both panels demonstrate that Japan has the lowest mortality rates. The relationship between the United States and Poland is more complicated. For females, experience is roughly the same for ages above 50 although Poland has lower mortality rates for younger females. Younger polish men also have lower mortality rates than men in the US but the reverse is true for those older (than approximately 45).</p>
 
 
@@ -753,7 +729,7 @@ Figure 4.4: <strong>2019 Mortality Rates by Country</strong>. Both panels show t
 <hr />
 <p>Although we did not explicitly mention the sample sizes in Examples 4.2.1 and 4.2.2, they are large, and so do not confuse the issue of sampling bias with the uncertainty that arises from small data sets. The relationships observed among annuitants, insured lives, and general population as well as among countries demonstrated in these examples are commonly observed. To substantiate this claim, mortality rates from around the world are readily available at <a href="https://mort.soa.org/">https://mort.soa.org/</a> and <a href="http://www.mortality.org/">Human Mortality Database</a>. Readers are encouraged to visit these primary sources and follow up with their own analyses.</p>
 </div>
-<div id="sampling-bias-in-actuarial-practice" class="section level3" number="4.2.2">
+<div id="sampling-bias-in-actuarial-practice" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Sampling Bias in Actuarial Practice</h3>
 <p>In the prior subsection, we defined the concept of sampling bias and established that it could be a real concern in commonly encountered applications. However, you might have noticed that the vertical axes in the one year mortality rate graphs in Examples 4.2.1 and 4.2.2 are on a logarithmic scale. So the discrepancies among sampling bases seem real but how important are they in actuarial applications?</p>
 <p>To get insights into this question, we can use the different mortality distributions and, with the tools we learned in Chapter 3, express them in terms of expected present values.</p>
@@ -789,7 +765,7 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <p><strong>Exercises</strong> Quantify expected present values of life contingent benefits that vary by smoking status and systolic blood pressure.</p>
 </div>
 </div>
-<div id="Sec:EconomicMotivation" class="section level2" number="4.3">
+<div id="Sec:EconomicMotivation" class="section level2">
 <h2><span class="header-section-number">4.3</span> Using Economics to Motivate Insurance Features</h2>
 <hr />
 <p>In this section, you learn how to:</p>
@@ -799,7 +775,7 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <li>Describe moral hazard with examples from life insurance and explain how it relates to information asymmetry.</li>
 </ul>
 <hr />
-<div id="Sec:ActuarialFairRiskClass" class="section level3" number="4.3.1">
+<div id="Sec:ActuarialFairRiskClass" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Actuarially Fair Prices and Risk Classification</h3>
 <p>You may have noticed in Chapter 3 that we paid special attention to the expected present values associated with random life contingent benefits and even gave them special symbols such as <span class="math inline">\(A_x\)</span> and <span class="math inline">\(\ddot{a}_x\)</span>. This is because insurance prices are based on these expectation of losses, a concept known as an <strong>actuarially fair price</strong>.</p>
 <p>In a simple model, an actuarially fair price is the result of an assumption of zero profits. Specifically, imagine a homogeneous population where all potential insureds have the same distribution of losses.</p>
@@ -815,7 +791,7 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <p>Another foundation of insurance pricing is <strong>risk classification</strong>, defined to be the grouping of insureds into homogeneous classes. As mentioned above, by “homogeneous” we mean that each insured within a group has the same distribution of potential losses. Even within a homogeneous class of insureds, there clearly will be stark differences <em>after</em> observing their mortality. But, <em>before</em> experience is observed, everyone has the same chance (or distribution of outcomes) in a homogeneous class.</p>
 <p>Combining these ideas, one can see how insurance prices in competitive marketplaces are based on an actuarial present value for each risk class. Thus, development of distinct risk classes is a critical to fair insurance pricing.</p>
 </div>
-<div id="Sec:SelectionAdverse" class="section level3" number="4.3.2">
+<div id="Sec:SelectionAdverse" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Selection and Adverse Selection</h3>
 <p>To develop distinct risk classes, insurers can use their underwriting processes to select subsets of a population. For example, as described in <a href="../docs/C-BenefitExt.html##tab:Ex4.21">Example 4.2.1</a>, when an individual applies for life insurance, it is common for insurers to require a medical examination. Insurers only issue their so-called “standard” policies to individuals who have passed the medical exam. By this mechanism, they are effectively <em>selecting</em> a subset of the population that is healthier than the general population. (Insurers also issue “substandard” policies, at a higher cost, to those with complicated health histories, like diabetes or heart disease, as well as drug, alcohol, or tobacco abuse.)</p>
 <p>However, it is known that these selection effects do not continue indefinitely. For example, Table <a href="C-BenefitExt.html#tab:CanadianSelect">4.1</a> shows an excerpt from individual insurance mortality tables for females from Canada. To help read this table, consider a woman who became insured at age <span class="math inline">\(x=50\)</span> who initially has a mortality rate of 0.00047; one year later (at age 51) she has a mortality rate of 0.00072. This second rate is higher than 0.00053, the mortality rate for a woman who became insured at age <span class="math inline">\(x=51\)</span>. This suggests that the selection effect is becoming less important. Further, from the table we see that selection effects last for 15 years; thereafter, rates are blended into an “ultimate” column. So for example, consider two females currently age 66 where one purchased insurance 16 years ago at age 50 and the other purchased insurance 15 years ago at age 51. Both have the same ultimate rate, <span class="math inline">\(q_{66} = 0.01209\)</span>.</p>
@@ -911,7 +887,7 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 </tbody>
 </table>
 <ul>
-<li>Individual Life Experience Subcommittee, “Construction of CIA9704 Mortality Tables for Canadian Individual Insurance based on data from 1997 to 2004,” Canadian Institute of Actuaries (2010).</li>
+<li>Individual Life Experience Subcommittee, “Construction of CIA9704 Mortality Tables for Canadian Individual Insurance based on data from 1997 to 2004”, Canadian Institute of Actuaries (2010).</li>
 <li>Accessed: October, 2021 from <a href="http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf" class="uri">http://www.cia-ica.ca/docs/default-source/2010/210028e.pdf</a></li>
 <li>Data retrieved from <a href="https://mort.soa.org/" class="uri">https://mort.soa.org/</a> (Table 1458)</li>
 </ul>
@@ -919,7 +895,7 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <p>Abstracting from this a bit, you can think of the insurance pool as being comprised of two groups, those in good health and those in poor health. Providing a single insurance price for both groups violates the fundamental principle of risk classification. As we did in Section <a href="C-BenefitExt.html#Sec:ActuarialFairRiskClass">4.3.1</a>, it is easy to construct scenarios based on two insurers, one recognizing health differences and the other not doing so. In the long-run, the latter company becomes priced out of the marketplace. Insurers argue that by knowing about risk factors such as health status, the entire marketplace is better. Indeed, the entire purpose of risk classification is to mitigate the problem of adverse selection.</p>
 <p>In this section, we have seen the selection consequences of introducing, or not, a medical exam. As demonstrated in Table <a href="C-BenefitExt.html#tab:CanadianSelect">4.1</a>, when a medical exam is introduced, we are essentially fine-tuning our definition of homogeneous classes by including not only factors such as sex and age but also time since a medical exam was taken. By not requiring a medical exam, we introduce heterogeneity into our risk groups and so lose the advantages associated with risk classification. In the following subsection, we introduce other problem situations that result in heterogeneous risk groups.</p>
 </div>
-<div id="Sec:AsymmericInfo" class="section level3" number="4.3.3">
+<div id="Sec:AsymmericInfo" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Asymmetric Information</h3>
 <p>Adverse selection occurs when the additional information that the insured has is important and not revealed to the insurers, such as a poor health history. Adverse selection is a type of unequal access to information, known as <strong>information asymmetry.</strong></p>
 <p>Another type of information asymmetry is <strong>moral hazard.</strong> In moral hazard, the insurance contract itself changes the distribution of risks. To illustrate, by purchasing insurance, insureds have the incentive to take on more risks (thus increasing the probability of a risky event). For example, after purchasing life insurance, the insured may become decide to take up sky-diving, high-speed race car driving, or a life of crime. If the insurer knows about the risky activity in advance, then appropriate adjustments to the price may be made (or the contract simply not issued). The problem arises if the risky activity is taken on after the contract is issued; prices are based on one set of circumstances, losses based on another. Typically this mismatch results in a loss for the insurer. To mitigate this type of problem, insurers may introduce coverage restrictions. For example, life insurance contracts often do not pay benefits for deaths incurred while committing a crime or participating in an illegal activity.</p>
@@ -934,12 +910,12 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <p><em>Later, we may wish to gently insert a bit about discrimination/algorithmic bias.</em></p>
 </div>
 </div>
-<div id="Sec:ApplicationsContingent" class="section level2" number="4.4">
+<div id="Sec:ApplicationsContingent" class="section level2">
 <h2><span class="header-section-number">4.4</span> Contingent Payment Applications</h2>
 <hr />
 <p>In this section, you learn how to interpret life contingent techniques as applicable more broadly to general contingent payment problems.</p>
 <hr />
-<p>Our work so far has focused on modeling financial implications of survival as the time to event. This is easy to justify; the life insurance industry represents a major piece of the world economy. For example, in 2019, this industry accounted for 2512 <em>trillions</em> of U.S. dollars in developed (OECD) countries, representing more than 3.9 percent of the global economy (<span class="citation"><a href="bibliography.html#ref-OECD2020global" role="doc-biblioref">OECD</a> (<a href="bibliography.html#ref-OECD2020global" role="doc-biblioref">2020</a>)</span>).</p>
+<p>Our work so far has focused on modeling financial implications of survival as the time to event. This is easy to justify; the life insurance industry represents a major piece of the world economy. For example, in 2019, this industry accounted for 2512 <em>trillions</em> of U.S. dollars in developed (OECD) countries, representing more than 3.9 percent of the global economy (<span class="citation">OECD (<a href="#ref-OECD2020global" role="doc-biblioref">2020</a>)</span>).</p>
 <p>Nonetheless, “life contingent” techniques apply more broadly than only human mortality and so in this section we emphasize by referring to them as “contingent” techniques (omitting the life part). As our first example, Section <a href="C-BenefitExt.html#Sec:PetInsurance">4.5</a> describes a relatively small but quickly growing marketplace on pet insurance where time to survival of <em>pets</em> is the event of interest. As a second example, Section <a href="C-BenefitExt.html#Sec:DisIncInsurance">4.6</a> introduces disability income insurance. In this latter example, we present applications where the time to event is not the time to death but rather the time to <em>recovery</em> from disability.</p>
 <p>These examples illustrate that contingent payment techniques can be used to understand financial implications of a <strong>time to event</strong> and that event need not be human mortality. Another example that we will see later in the book is the time to death of the first of two people.</p>
 <h5 style="text-align: center;">
@@ -963,11 +939,11 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <li><a href="https://www.protectapet.eu/" class="uri">https://www.protectapet.eu/</a></li>
 <li><a href="https://www.petinsurance.ie/Content/documents/PolicyDoc/1598_PetInsurance_Policy_IRL_Premier_A5_V3_web.pdf" class="uri">https://www.petinsurance.ie/Content/documents/PolicyDoc/1598_PetInsurance_Policy_IRL_Premier_A5_V3_web.pdf</a></li>
 <li><a href="https://www.simplegermany.com/best-dog-insurances-germany/" class="uri">https://www.simplegermany.com/best-dog-insurances-germany/</a></li>
-<li><span class="citation"><a href="bibliography.html#ref-verteramo2021analysis" role="doc-biblioref">Verteramo Chiu et al.</a> (<a href="bibliography.html#ref-verteramo2021analysis" role="doc-biblioref">2021</a>)</span></li>
+<li><span class="citation">Verteramo Chiu et al. (<a href="#ref-verteramo2021analysis" role="doc-biblioref">2021</a>)</span></li>
 </ul>
 </div>
 </div>
-<div id="Sec:PetInsurance" class="section level2" number="4.5">
+<div id="Sec:PetInsurance" class="section level2">
 <h2><span class="header-section-number">4.5</span> Pet Insurance</h2>
 <hr />
 <p>In this section, you learn how to:</p>
@@ -978,14 +954,14 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <li>Summarize the history, regulatory environments, and economics principles affecting the pet insurance marketplace.</li>
 </ul>
 <hr />
-<div id="Sec:IntroPet" class="section level3" number="4.5.1">
+<div id="Sec:IntroPet" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Introduction to Pet Health Insurance</h3>
-<p>The COVID pandemic that began in 2019 changed life in many ways. Several studies have reported that as many businesses shifted their employees to remote work-from-home schedules, the demand for acquiring or fostering a new pet grew, <span class="citation"><a href="bibliography.html#ref-hoffman2021characterizing" role="doc-biblioref">Hoffman, Thibault, and Hong</a> (<a href="bibliography.html#ref-hoffman2021characterizing" role="doc-biblioref">2021</a>)</span>. Of course, there are costs associated with these new members of a household, some of which can be reasonably predicted and budgeted for (such as food and toys), others which are unexpected (e.g., kennel boarding of a pet when an emergency trip is to be taken by the owner), and still others that could not be remotely foreseen (e.g., the costs of repairing damages your dog did to buildings, living quarters, or other property). Naturally, insurance is one mechanism for paying for costs not anticipated. Pet insurance is a relatively small portion of the insurance marketplace but, even prior to the onslaught of the COVID pandemic, had been growing rapidly, <span class="citation"><a href="bibliography.html#ref-Contingencies2018" role="doc-biblioref">Malloy</a> (<a href="bibliography.html#ref-Contingencies2018" role="doc-biblioref">2018</a>)</span>.</p>
-<p><strong>Types of Pet Insurance</strong>. As with humans, there are many types of risks associated with pets. If one has a large or aggressive dog, then it may be necessary to purchase third party liability that covers damages your pet may do to other parties (similar to third party auto insurance). Several European countries (e.g., Sweden, Spain, parts of Germany) have requirements that dog owners maintain coverage for liability to third parties for the action of pets. In the U.S., pet owner liability to third parties from injuries caused by common household pets is generally covered by the owner’s homeowners or renters insurance policy, as long as the animal is not an excluded breed and does not have a history of aggression, <span class="citation"><a href="bibliography.html#ref-NAICPet" role="doc-biblioref">NAIC</a> (<a href="bibliography.html#ref-NAICPet" role="doc-biblioref">2019</a>)</span>.</p>
+<p>The COVID pandemic that began in 2019 changed life in many ways. Several studies have reported that as many businesses shifted their employees to remote work-from-home schedules, the demand for acquiring or fostering a new pet grew, <span class="citation">Hoffman, Thibault, and Hong (<a href="#ref-hoffman2021characterizing" role="doc-biblioref">2021</a>)</span>. Of course, there are costs associated with these new members of a household, some of which can be reasonably predicted and budgeted for (such as food and toys), others which are unexpected (e.g., kennel boarding of a pet when an emergency trip is to be taken by the owner), and still others that could not be remotely foreseen (e.g., the costs of repairing damages your dog did to buildings, living quarters, or other property). Naturally, insurance is one mechanism for paying for costs not anticipated. Pet insurance is a relatively small portion of the insurance marketplace but, even prior to the onslaught of the COVID pandemic, had been growing rapidly, <span class="citation">Malloy (<a href="#ref-Contingencies2018" role="doc-biblioref">2018</a>)</span>.</p>
+<p><strong>Types of Pet Insurance</strong>. As with humans, there are many types of risks associated with pets. If one has a large or aggressive dog, then it may be necessary to purchase third party liability that covers damages your pet may do to other parties (similar to third party auto insurance). Several European countries (e.g., Sweden, Spain, parts of Germany) have requirements that dog owners maintain coverage for liability to third parties for the action of pets. In the U.S., pet owner liability to third parties from injuries caused by common household pets is generally covered by the owner’s homeowners or renters insurance policy, as long as the animal is not an excluded breed and does not have a history of aggression, <span class="citation">NAIC (<a href="#ref-NAICPet" role="doc-biblioref">2019</a>)</span>.</p>
 <p>It is also possible to purchase life (and theft) insurance on pets. These coverages are designed to insure the lives of highly valuable animals, such as show dogs and cats. These policies reimburse owners for stolen animals and pay a death benefit if an animal dies during transport or other covered events.</p>
 <p>In terms of market share, the main type of pet insurance provides accident and illness coverage for family-owned pets, primarily dogs and cats. While some pet insurance plans also provide reimbursement for wellness procedures like vaccinations, heartworm testing and spaying or neutering, pet health insurance is primarily used to cover costs for accidents and unexpected illness. Typical coverages today can include exotic treatments such as acupuncture, chemotherapy, hydrotherapy, hyperbaric chamber treatments, oxygen treatments. In general, these coverages provide for anything that veterinarians prescribe to be medically necessary.</p>
 <p>Unlike life, theft, and pet liability coverage, pet health insurance is a stand-alone policy whose only purpose is to cover veterinary expenses. Policies have no face-value death benefit as with life insurance, although they can cover end of life expenses such as euthanasia.</p>
-<p><strong>Factors</strong>. What are the important risk factors in determining costs associated with pet insurance? In general, analysts look to an animal’s age, sex, breed, location, and other components. For example, as described in <span class="citation"><a href="bibliography.html#ref-wilson2020underwriting" role="doc-biblioref">Wilson</a> (<a href="bibliography.html#ref-wilson2020underwriting" role="doc-biblioref">2020</a>)</span>, it is known that :</p>
+<p><strong>Factors</strong>. What are the important risk factors in determining costs associated with pet insurance? In general, analysts look to an animal’s age, sex, breed, location, and other components. For example, as described in <span class="citation">Wilson (<a href="#ref-wilson2020underwriting" role="doc-biblioref">2020</a>)</span>, it is known that :</p>
 <ul>
 <li>Mixed-breed dogs are generally less expensive to care for than purebred dogs.</li>
 <li>Younger dogs are less expensive to care for than older dogs.</li>
@@ -993,10 +969,10 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 <li>Interestingly, female cats are less expensive to care for than male cats, but the opposite is true for dogs.</li>
 </ul>
 </div>
-<div id="Sec:CanineMort" class="section level3" number="4.5.2">
+<div id="Sec:CanineMort" class="section level3">
 <h3><span class="header-section-number">4.5.2</span> Canine Mortality</h3>
 <p>Like humans, dogs become increasingly frail as they age and, not surprisingly, incur additional costs to maintain a healthy lifestyle. So, consistent with the survival models developed in Chapter <a href="C-ModelingLifeTimes.html#C:ModelingLifeTimes">2</a>, we emphasize mortality patterns of pets, focusing on dogs / canines.</p>
-<p>Due to the developing and yet still competitive marketplace, it is not surprising that detailed data on <em>costs</em> associated with pet insurance are not widely available. Fortunately, this is not true of pet survival data, in part because many researchers interested in veterinary topics are publicly funded and have incentives to share their data. In this section, we draw on <span class="citation"><a href="bibliography.html#ref-pegram2021proportion" role="doc-biblioref">Pegram et al.</a> (<a href="bibliography.html#ref-pegram2021proportion" role="doc-biblioref">2021a</a>)</span>, a study of the factors that influence determinants of the choice to euthanize a pet dog.</p>
+<p>Due to the developing and yet still competitive marketplace, it is not surprising that detailed data on <em>costs</em> associated with pet insurance are not widely available. Fortunately, this is not true of pet survival data, in part because many researchers interested in veterinary topics are publicly funded and have incentives to share their data. In this section, we draw on <span class="citation">Pegram et al. (<a href="#ref-pegram2021proportion" role="doc-biblioref">2021</a><a href="#ref-pegram2021proportion" role="doc-biblioref">a</a>)</span>, a study of the factors that influence determinants of the choice to euthanize a pet dog.</p>
 <table>
 <caption><span id="tab:BreedCause">Table 4.2: </span>Breed and Cause of Death</caption>
 <thead>
@@ -1044,7 +1020,7 @@ Figure 4.6: <strong>The Sum <span class="math inline">\(A_x^{ins} + d \ddot{a}_x
 </tr>
 </tbody>
 </table>
-<p>In particular, their data are publicly available at <span class="citation"><a href="bibliography.html#ref-pegram2021Data" role="doc-biblioref">Pegram et al.</a> (<a href="bibliography.html#ref-pegram2021Data" role="doc-biblioref">2021b</a>)</span>. In this dataset, there are 29865 observations used to study euthanasia. Our interest is in survival patterns by age and so we remove records where either the date of birth or death is missing or incorrect (we also removed 17 records with missing sex information); this results in 5933 records for analysis. Of these observations, 47.9% are female and 57.4% are neutered. Table <a href="C-BenefitExt.html#tab:BreedCause">4.2</a> reports variation among the major types of breeds and causes of death.</p>
+<p>In particular, their data are publicly available at <span class="citation">Pegram et al. (<a href="#ref-pegram2021Data" role="doc-biblioref">2021</a><a href="#ref-pegram2021Data" role="doc-biblioref">b</a>)</span>. In this dataset, there are 29865 observations used to study euthanasia. Our interest is in survival patterns by age and so we remove records where either the date of birth or death is missing or incorrect (we also removed 17 records with missing sex information); this results in 5933 records for analysis. Of these observations, 47.9% are female and 57.4% are neutered. Table <a href="C-BenefitExt.html#tab:BreedCause">4.2</a> reports variation among the major types of breeds and causes of death. These data are available in Appendix Section <a href="appendix-data-dictionary.html#Sec:CanineMortality">7.3</a>.</p>
 <p>For these data, the median age at death is 12.2 and the maximum is 21. Survival distributions by sex and being neutered appeared in Figure <a href="C-BenefitExt.html#fig:SurvSexNeut">4.7</a>. The left-hand panel shows little difference by sex. The right-hand panel shows that dogs that have been neutered enjoy lower mortality.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:SurvSexNeut"></span>
@@ -1054,7 +1030,7 @@ Figure 4.7: <strong>Survival Distributions by Sex and Being Neutered</strong>
 </p>
 </div>
 <p>Figure <a href="C-BenefitExt.html#fig:SurvBreed">4.8</a> shows survival distributions by breed where we plot distributions for the six most common breed types from Table <a href="C-BenefitExt.html#tab:BreedCause">4.2</a>, the remaining breeds are grouped into an “Other” category. The differences among survival distributions for different breeds are not surprising. Breeds may be a proxy for the size and weight of a dog; a larger dog like a Labrador has more risk than a smaller dog like a Jack Russell terrier, for example. The debate about whether mixed-breed dogs are generally healthier than purebred dogs is still
-ongoing among veterinary professionals. On the one hand, mixed breed dogs may be carriers of genetic mutations that lead to health issues; on the other hand, they are less likely than purebreds to develop the disorders themselves. As noted in <span class="citation"><a href="bibliography.html#ref-NAICPet" role="doc-biblioref">NAIC</a> (<a href="bibliography.html#ref-NAICPet" role="doc-biblioref">2019</a>)</span>, it is common for insurance carriers to group the breeds into 10 to 12 rating categories, with each category assigned a rating factor.</p>
+ongoing among veterinary professionals. On the one hand, mixed breed dogs may be carriers of genetic mutations that lead to health issues; on the other hand, they are less likely than purebreds to develop the disorders themselves. As noted in <span class="citation">NAIC (<a href="#ref-NAICPet" role="doc-biblioref">2019</a>)</span>, it is common for insurance carriers to group the breeds into 10 to 12 rating categories, with each category assigned a rating factor.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:SurvBreed"></span>
 <img src="LifeCon_files/figure-html/SurvBreed-1.png" alt="Survival Distributions by Breed" width="672" />
@@ -1067,20 +1043,20 @@ Figure 4.8: <strong>Survival Distributions by Breed</strong>
 <a id="displayCode.PetInsureCoxPh.1" href="javascript:togglecode('toggleCode.PetInsureCoxPh.1','displayCode.PetInsureCoxPh.1');"><i><strong>R Code to Cox Regression Model Fit to Canine Survival</strong></i></a>
 </h5>
 <div id="toggleCode.PetInsureCoxPh.1" style="display: none">
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="C-BenefitExt.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span>
-<span id="cb66-2"><a href="C-BenefitExt.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb66-3"><a href="C-BenefitExt.html#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-4"><a href="C-BenefitExt.html#cb66-4" aria-hidden="true" tabindex="-1"></a>explanatory <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Neutered&quot;</span>, <span class="st">&quot;Breed2&quot;</span>)</span>
-<span id="cb66-5"><a href="C-BenefitExt.html#cb66-5" aria-hidden="true" tabindex="-1"></a>dependent <span class="ot">=</span> <span class="st">&quot;Surv(AgeAtDeath)&quot;</span></span>
-<span id="cb66-6"><a href="C-BenefitExt.html#cb66-6" aria-hidden="true" tabindex="-1"></a>DogMort <span class="sc">%&gt;%</span></span>
-<span id="cb66-7"><a href="C-BenefitExt.html#cb66-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coxphmulti</span>(dependent, explanatory) <span class="sc">%&gt;%</span></span>
-<span id="cb66-8"><a href="C-BenefitExt.html#cb66-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit2df</span>(<span class="at">condense =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb66-9"><a href="C-BenefitExt.html#cb66-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">metrics =</span> <span class="cn">FALSE</span>, <span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">2</span>),</span>
-<span id="cb66-10"><a href="C-BenefitExt.html#cb66-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">explanatory_name =</span> <span class="st">&quot;Risk Type&quot;</span>, <span class="at">estimate_suffix =</span> <span class="st">&quot;  -- conf interval &amp; p-value&quot;</span>,</span>
-<span id="cb66-11"><a href="C-BenefitExt.html#cb66-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">estimate_name =</span> <span class="st">&quot;Exp(Coefficent)&quot;</span>)  <span class="ot">-&gt;</span> t2</span>
-<span id="cb66-12"><a href="C-BenefitExt.html#cb66-12" aria-hidden="true" tabindex="-1"></a>t2[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Neutered&quot;</span>,<span class="st">&quot;Crossbreed&quot;</span>,<span class="st">&quot;Staffordshire Bull Terrier&quot;</span>, <span class="st">&quot;Labrador Retriever&quot;</span>, </span>
-<span id="cb66-13"><a href="C-BenefitExt.html#cb66-13" aria-hidden="true" tabindex="-1"></a>           <span class="st">&quot;Jack Russell Terrier&quot;</span>, <span class="st">&quot;German Shepherd Dog&quot;</span>, <span class="st">&quot;Yorkshire Terrier&quot;</span>)</span>
-<span id="cb66-14"><a href="C-BenefitExt.html#cb66-14" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(t2, <span class="at">align=</span><span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;r&quot;</span>),<span class="at">caption=</span><span class="st">&quot;Fit of a Cox Proportional Hazards Model&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="C-BenefitExt.html#cb66-1"></a><span class="kw">library</span>(finalfit)</span>
+<span id="cb66-2"><a href="C-BenefitExt.html#cb66-2"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb66-3"><a href="C-BenefitExt.html#cb66-3"></a></span>
+<span id="cb66-4"><a href="C-BenefitExt.html#cb66-4"></a>explanatory =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Neutered&quot;</span>, <span class="st">&quot;Breed2&quot;</span>)</span>
+<span id="cb66-5"><a href="C-BenefitExt.html#cb66-5"></a>dependent =<span class="st"> &quot;Surv(AgeAtDeath)&quot;</span></span>
+<span id="cb66-6"><a href="C-BenefitExt.html#cb66-6"></a>DogMort <span class="op">%&gt;%</span></span>
+<span id="cb66-7"><a href="C-BenefitExt.html#cb66-7"></a><span class="st">  </span><span class="kw">coxphmulti</span>(dependent, explanatory) <span class="op">%&gt;%</span></span>
+<span id="cb66-8"><a href="C-BenefitExt.html#cb66-8"></a><span class="st">  </span><span class="kw">fit2df</span>(<span class="dt">condense =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb66-9"><a href="C-BenefitExt.html#cb66-9"></a>  <span class="dt">metrics =</span> <span class="ot">FALSE</span>, <span class="dt">digits =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">2</span>),</span>
+<span id="cb66-10"><a href="C-BenefitExt.html#cb66-10"></a>  <span class="dt">explanatory_name =</span> <span class="st">&quot;Risk Type&quot;</span>, <span class="dt">estimate_suffix =</span> <span class="st">&quot;  -- conf interval &amp; p-value&quot;</span>,</span>
+<span id="cb66-11"><a href="C-BenefitExt.html#cb66-11"></a>  <span class="dt">estimate_name =</span> <span class="st">&quot;Exp(Coefficent)&quot;</span>)  -&gt;<span class="st"> </span>t2</span>
+<span id="cb66-12"><a href="C-BenefitExt.html#cb66-12"></a>t2[<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Neutered&quot;</span>,<span class="st">&quot;Crossbreed&quot;</span>,<span class="st">&quot;Staffordshire Bull Terrier&quot;</span>, <span class="st">&quot;Labrador Retriever&quot;</span>, </span>
+<span id="cb66-13"><a href="C-BenefitExt.html#cb66-13"></a>           <span class="st">&quot;Jack Russell Terrier&quot;</span>, <span class="st">&quot;German Shepherd Dog&quot;</span>, <span class="st">&quot;Yorkshire Terrier&quot;</span>)</span>
+<span id="cb66-14"><a href="C-BenefitExt.html#cb66-14"></a>knitr<span class="op">::</span><span class="kw">kable</span>(t2, <span class="dt">align=</span><span class="kw">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;r&quot;</span>),<span class="dt">caption=</span><span class="st">&quot;Fit of a Cox Proportional Hazards Model&quot;</span>)</span></code></pre></div>
 </div>
 <table>
 <caption><span id="tab:DogCoxPHa">Table 4.3: </span>Fit of a Cox Proportional Hazards Model</caption>
@@ -1126,21 +1102,21 @@ Figure 4.8: <strong>Survival Distributions by Breed</strong>
 </tbody>
 </table>
 </div>
-<div id="Sec:DogCostCare" class="section level3" number="4.5.3">
+<div id="Sec:DogCostCare" class="section level3">
 <h3><span class="header-section-number">4.5.3</span> Cost of Care</h3>
 <p>With the estimated survival distribution, we can illustrate some of the types of calculations that a financial analyst might consider to quantify the cost of pet health insurance. These calculations are only for demonstration purposes; naturally, analysts that have access to detailed insurance costs will be able to sharpen our estimates. To begin, consider a male dog that is neutered belonging to the “Crossbreed” breed. Then, it is straightforward to determine one-year mortality rates, as summarized in Figure <a href="C-BenefitExt.html#fig:OneYearCrossBreeda">4.9</a>.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.PetInsureCoxPh.2" href="javascript:togglecode('toggleCode.PetInsureCoxPh.2','displayCode.PetInsureCoxPh.2');"><i><strong>R Code to Convert Cox Regression Model Output to One-Year Mortality Rates</strong></i></a>
 </h5>
 <div id="toggleCode.PetInsureCoxPh.2" style="display: none">
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="C-BenefitExt.html#cb67-1" aria-hidden="true" tabindex="-1"></a>Cox_ph_1 <span class="ot">&lt;-</span> <span class="fu">coxph</span>(<span class="fu">Surv</span>(AgeAtDeath) <span class="sc">~</span> Sex<span class="sc">+</span>Neutered<span class="sc">+</span>Breed2, <span class="at">data=</span>DogMort)</span>
-<span id="cb67-2"><a href="C-BenefitExt.html#cb67-2" aria-hidden="true" tabindex="-1"></a>sfit <span class="ot">&lt;-</span> <span class="fu">survfit</span>(Cox_ph_1,<span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">Sex=</span><span class="st">&quot;Male&quot;</span>, <span class="at">Neutered=</span><span class="st">&quot;Neutered&quot;</span>, <span class="at">Breed2 =</span> <span class="st">&quot;Crossbreed&quot;</span>))</span>
-<span id="cb67-3"><a href="C-BenefitExt.html#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plot(sfit)</span></span>
-<span id="cb67-4"><a href="C-BenefitExt.html#cb67-4" aria-hidden="true" tabindex="-1"></a>sx <span class="ot">&lt;-</span> <span class="fu">summary</span>(sfit, <span class="at">times =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">22</span>)<span class="sc">$</span>surv</span>
-<span id="cb67-5"><a href="C-BenefitExt.html#cb67-5" aria-hidden="true" tabindex="-1"></a>sx[<span class="dv">1</span>] <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb67-6"><a href="C-BenefitExt.html#cb67-6" aria-hidden="true" tabindex="-1"></a>qx <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> sx[<span class="dv">2</span><span class="sc">:</span><span class="dv">22</span>]<span class="sc">/</span>sx[<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>]</span>
-<span id="cb67-7"><a href="C-BenefitExt.html#cb67-7" aria-hidden="true" tabindex="-1"></a>qx[<span class="dv">21</span>] <span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb67-8"><a href="C-BenefitExt.html#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">20</span>,qx, <span class="at">xlab =</span> <span class="st">&quot;Age (x)&quot;</span>, <span class="at">ylab =</span> <span class="fu">expression</span>(q[x]), <span class="at">type =</span> <span class="st">&quot;both&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="C-BenefitExt.html#cb67-1"></a>Cox_ph_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(AgeAtDeath) <span class="op">~</span><span class="st"> </span>Sex<span class="op">+</span>Neutered<span class="op">+</span>Breed2, <span class="dt">data=</span>DogMort)</span>
+<span id="cb67-2"><a href="C-BenefitExt.html#cb67-2"></a>sfit &lt;-<span class="st"> </span><span class="kw">survfit</span>(Cox_ph_<span class="dv">1</span>,<span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">Sex=</span><span class="st">&quot;Male&quot;</span>, <span class="dt">Neutered=</span><span class="st">&quot;Neutered&quot;</span>, <span class="dt">Breed2 =</span> <span class="st">&quot;Crossbreed&quot;</span>))</span>
+<span id="cb67-3"><a href="C-BenefitExt.html#cb67-3"></a><span class="co">#plot(sfit)</span></span>
+<span id="cb67-4"><a href="C-BenefitExt.html#cb67-4"></a>sx &lt;-<span class="st"> </span><span class="kw">summary</span>(sfit, <span class="dt">times =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">22</span>)<span class="op">$</span>surv</span>
+<span id="cb67-5"><a href="C-BenefitExt.html#cb67-5"></a>sx[<span class="dv">1</span>] =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb67-6"><a href="C-BenefitExt.html#cb67-6"></a>qx &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>sx[<span class="dv">2</span><span class="op">:</span><span class="dv">22</span>]<span class="op">/</span>sx[<span class="dv">1</span><span class="op">:</span><span class="dv">21</span>]</span>
+<span id="cb67-7"><a href="C-BenefitExt.html#cb67-7"></a>qx[<span class="dv">21</span>] =<span class="dv">1</span></span>
+<span id="cb67-8"><a href="C-BenefitExt.html#cb67-8"></a><span class="kw">plot</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">20</span>,qx, <span class="dt">xlab =</span> <span class="st">&quot;Age (x)&quot;</span>, <span class="dt">ylab =</span> <span class="kw">expression</span>(q[x]), <span class="dt">type =</span> <span class="st">&quot;both&quot;</span>)</span></code></pre></div>
 </div>
 
 <div class="figure" style="text-align: center"><span id="fig:OneYearCrossBreeda"></span>
@@ -1150,8 +1126,8 @@ Figure 4.9: <strong>One Year Mortality Rates for a Neutered Male Crossbreed</str
 </p>
 </div>
 <p>From this estimated mortality, it straightforward to estimate financial costs, as illustrated in the following.</p>
-<p><strong>Example. Surgical Veterinary Care.</strong> Owning a pet can be expensive. According to the American Pet Products Association’s 2021-2022 National Pet Owners Survey, the basic annual expense for caring for a dog is 1480. This total cost consists of: Surgical vet (458), food (287), routine visit (242), kennel boarding (228), food treats (81), vitamins (81), toys 56), and groomer/grooming aids (47) (<em>Source: <span class="citation"><a href="bibliography.html#ref-IIIPet" role="doc-biblioref">III</a> (<a href="bibliography.html#ref-IIIPet" role="doc-biblioref">2021</a>)</span></em>).</p>
-<p>What about unanticipated costs? We estimate the actuarial present value associated with just one component, the surgical veterinary expenses, over a lifetime for a male dog aged <span class="math inline">\(x\)</span> that has been neutered. As our baseline initial cost, we use 458 USD per year. Now, we know that expenses increase as a dog ages and we assume an annual increase of 11%. This may seem high but we are assuming a 3% increase due to inflation and an 8% real growth rate. The real growth rate is based on the rating scale from a large carrier where the age rating factor starts at 1 for pets ages 2-11 months and increases to 4.5 for pets over 20 years old, see <span class="citation"><a href="bibliography.html#ref-wilson2020underwriting" role="doc-biblioref">Wilson</a> (<a href="bibliography.html#ref-wilson2020underwriting" role="doc-biblioref">2020</a>)</span>.</p>
+<p><strong>Example. Surgical Veterinary Care.</strong> Owning a pet can be expensive. According to the American Pet Products Association’s 2021-2022 National Pet Owners Survey, the basic annual expense for caring for a dog is 1480. This total cost consists of: Surgical vet (458), food (287), routine visit (242), kennel boarding (228), food treats (81), vitamins (81), toys 56), and groomer/grooming aids (47) (<em>Source: <span class="citation">III (<a href="#ref-IIIPet" role="doc-biblioref">2021</a>)</span></em>).</p>
+<p>What about unanticipated costs? We estimate the actuarial present value associated with just one component, the surgical veterinary expenses, over a lifetime for a male dog aged <span class="math inline">\(x\)</span> that has been neutered. As our baseline initial cost, we use 458 USD per year. Now, we know that expenses increase as a dog ages and we assume an annual increase of 11%. This may seem high but we are assuming a 3% increase due to inflation and an 8% real growth rate. The real growth rate is based on the rating scale from a large carrier where the age rating factor starts at 1 for pets ages 2-11 months and increases to 4.5 for pets over 20 years old, see <span class="citation">Wilson (<a href="#ref-wilson2020underwriting" role="doc-biblioref">2020</a>)</span>.</p>
 <p>To compute the actuarial present value, we use the expression</p>
 <p><span class="math display">\[
 APV = ({\text {Initial Ann Cost}}) \sum_{k=0}^{\omega - x - 1} v^k ~(1.11)^k ~_k p_x .
@@ -1161,42 +1137,42 @@ APV = ({\text {Initial Ann Cost}}) \sum_{k=0}^{\omega - x - 1} v^k ~(1.11)^k ~_k
 <a id="displayCode.PetInsureCoxPh.3" href="javascript:togglecode('toggleCode.PetInsureCoxPh.3','displayCode.PetInsureCoxPh.3');"><i><strong>R Code to Create APVs from One-Year Mortality Rates</strong></i></a>
 </h5>
 <div id="toggleCode.PetInsureCoxPh.3" style="display: none">
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="C-BenefitExt.html#cb68-1" aria-hidden="true" tabindex="-1"></a>Cox_ph_1 <span class="ot">&lt;-</span> <span class="fu">coxph</span>(<span class="fu">Surv</span>(AgeAtDeath) <span class="sc">~</span> Sex<span class="sc">+</span>Neutered<span class="sc">+</span>Breed2, <span class="at">data=</span>DogMort)</span>
-<span id="cb68-2"><a href="C-BenefitExt.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-3"><a href="C-BenefitExt.html#cb68-3" aria-hidden="true" tabindex="-1"></a>DogAnn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x=</span>x, <span class="at">q.x=</span>qx){</span>
-<span id="cb68-4"><a href="C-BenefitExt.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  Term <span class="ot">&lt;-</span> <span class="fu">length</span>(q.x) <span class="sc">-</span> (x<span class="sc">+</span><span class="dv">1</span>)</span>
-<span id="cb68-5"><a href="C-BenefitExt.html#cb68-5" aria-hidden="true" tabindex="-1"></a>  kpx <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb68-6"><a href="C-BenefitExt.html#cb68-6" aria-hidden="true" tabindex="-1"></a>  APV  <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
-<span id="cb68-7"><a href="C-BenefitExt.html#cb68-7" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (Term<span class="sc">&gt;</span><span class="dv">0</span>){ <span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">0</span><span class="sc">:</span>(Term<span class="dv">-1</span>)){ </span>
-<span id="cb68-8"><a href="C-BenefitExt.html#cb68-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (k<span class="sc">&gt;</span><span class="dv">1</span>) {kpx <span class="ot">&lt;-</span> kpx<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q.x[x<span class="sc">+</span><span class="dv">1</span><span class="sc">+</span>k])}</span>
-<span id="cb68-9"><a href="C-BenefitExt.html#cb68-9" aria-hidden="true" tabindex="-1"></a>    APV  <span class="ot">&lt;-</span> APV  <span class="sc">+</span> kpx <span class="sc">*</span>  (<span class="dv">1</span><span class="sc">/</span><span class="fl">1.03</span>)<span class="sc">^</span>k   <span class="sc">*</span><span class="fl">1.11</span><span class="sc">^</span>k <span class="sc">*</span><span class="dv">458</span></span>
-<span id="cb68-10"><a href="C-BenefitExt.html#cb68-10" aria-hidden="true" tabindex="-1"></a>    }}</span>
-<span id="cb68-11"><a href="C-BenefitExt.html#cb68-11" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(APV)</span>
-<span id="cb68-12"><a href="C-BenefitExt.html#cb68-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb68-13"><a href="C-BenefitExt.html#cb68-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-14"><a href="C-BenefitExt.html#cb68-14" aria-hidden="true" tabindex="-1"></a>OneYearMortBreed <span class="ot">&lt;-</span> <span class="cf">function</span>(Breed){</span>
-<span id="cb68-15"><a href="C-BenefitExt.html#cb68-15" aria-hidden="true" tabindex="-1"></a>sfit <span class="ot">&lt;-</span> <span class="fu">survfit</span>(Cox_ph_1,<span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">Sex=</span><span class="st">&quot;Male&quot;</span>, <span class="at">Neutered=</span><span class="st">&quot;Neutered&quot;</span>, <span class="at">Breed2 =</span> Breed))</span>
-<span id="cb68-16"><a href="C-BenefitExt.html#cb68-16" aria-hidden="true" tabindex="-1"></a>sx <span class="ot">&lt;-</span> <span class="fu">summary</span>(sfit, <span class="at">times =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">22</span>)<span class="sc">$</span>surv</span>
-<span id="cb68-17"><a href="C-BenefitExt.html#cb68-17" aria-hidden="true" tabindex="-1"></a>sx[<span class="dv">1</span>] <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb68-18"><a href="C-BenefitExt.html#cb68-18" aria-hidden="true" tabindex="-1"></a>qx <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> sx[<span class="dv">2</span><span class="sc">:</span><span class="dv">22</span>]<span class="sc">/</span>sx[<span class="dv">1</span><span class="sc">:</span><span class="dv">21</span>]</span>
-<span id="cb68-19"><a href="C-BenefitExt.html#cb68-19" aria-hidden="true" tabindex="-1"></a>qx[<span class="dv">21</span>] <span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb68-20"><a href="C-BenefitExt.html#cb68-20" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(qx)</span>
-<span id="cb68-21"><a href="C-BenefitExt.html#cb68-21" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb68-22"><a href="C-BenefitExt.html#cb68-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-23"><a href="C-BenefitExt.html#cb68-23" aria-hidden="true" tabindex="-1"></a>CostCare <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb68-24"><a href="C-BenefitExt.html#cb68-24" aria-hidden="true" tabindex="-1"></a>qxCrossBreed <span class="ot">&lt;-</span> <span class="fu">OneYearMortBreed</span>(<span class="st">&quot;Crossbreed&quot;</span>)</span>
-<span id="cb68-25"><a href="C-BenefitExt.html#cb68-25" aria-hidden="true" tabindex="-1"></a>CostCare[<span class="dv">1</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">2</span>, <span class="at">q.x=</span>qxCrossBreed) </span>
-<span id="cb68-26"><a href="C-BenefitExt.html#cb68-26" aria-hidden="true" tabindex="-1"></a>CostCare[<span class="dv">1</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">5</span>, <span class="at">q.x=</span>qxCrossBreed)</span>
-<span id="cb68-27"><a href="C-BenefitExt.html#cb68-27" aria-hidden="true" tabindex="-1"></a>CostCare[<span class="dv">1</span>,<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">12</span>, <span class="at">q.x=</span>qxCrossBreed)</span>
-<span id="cb68-28"><a href="C-BenefitExt.html#cb68-28" aria-hidden="true" tabindex="-1"></a>qxGShepherd <span class="ot">&lt;-</span> <span class="fu">OneYearMortBreed</span>(<span class="st">&quot;German Shepherd Dog&quot;</span>)</span>
-<span id="cb68-29"><a href="C-BenefitExt.html#cb68-29" aria-hidden="true" tabindex="-1"></a>CostCare[<span class="dv">2</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">2</span>, <span class="at">q.x=</span>qxGShepherd) </span>
-<span id="cb68-30"><a href="C-BenefitExt.html#cb68-30" aria-hidden="true" tabindex="-1"></a>CostCare[<span class="dv">2</span>,<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">5</span>, <span class="at">q.x=</span>qxGShepherd)</span>
-<span id="cb68-31"><a href="C-BenefitExt.html#cb68-31" aria-hidden="true" tabindex="-1"></a>CostCare[<span class="dv">2</span>,<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">12</span>, <span class="at">q.x=</span>qxGShepherd)</span>
-<span id="cb68-32"><a href="C-BenefitExt.html#cb68-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-33"><a href="C-BenefitExt.html#cb68-33" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(CostCare) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Crossbreed&quot;</span>,<span class="st">&quot;German Shepherd Dog&quot;</span> )</span>
-<span id="cb68-34"><a href="C-BenefitExt.html#cb68-34" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(CostCare) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;x=2&quot;</span>,<span class="st">&quot;x=5&quot;</span>, <span class="st">&quot;x=12&quot;</span> )</span>
-<span id="cb68-35"><a href="C-BenefitExt.html#cb68-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-36"><a href="C-BenefitExt.html#cb68-36" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(CostCare, <span class="at">align=</span><span class="fu">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;c&quot;</span>),<span class="at">caption=</span><span class="st">&quot;Actuarial Present Value of the Lifetime Cost of Surgical Vet Care&quot;</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="C-BenefitExt.html#cb68-1"></a>Cox_ph_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">coxph</span>(<span class="kw">Surv</span>(AgeAtDeath) <span class="op">~</span><span class="st"> </span>Sex<span class="op">+</span>Neutered<span class="op">+</span>Breed2, <span class="dt">data=</span>DogMort)</span>
+<span id="cb68-2"><a href="C-BenefitExt.html#cb68-2"></a></span>
+<span id="cb68-3"><a href="C-BenefitExt.html#cb68-3"></a>DogAnn &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">x=</span>x, <span class="dt">q.x=</span>qx){</span>
+<span id="cb68-4"><a href="C-BenefitExt.html#cb68-4"></a>  Term &lt;-<span class="st"> </span><span class="kw">length</span>(q.x) <span class="op">-</span><span class="st"> </span>(x<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb68-5"><a href="C-BenefitExt.html#cb68-5"></a>  kpx &lt;-<span class="st"> </span><span class="dv">1</span> </span>
+<span id="cb68-6"><a href="C-BenefitExt.html#cb68-6"></a>  APV  &lt;-<span class="st"> </span><span class="dv">0</span> </span>
+<span id="cb68-7"><a href="C-BenefitExt.html#cb68-7"></a> <span class="cf">if</span> (Term<span class="op">&gt;</span><span class="dv">0</span>){ <span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">0</span><span class="op">:</span>(Term<span class="dv">-1</span>)){ </span>
+<span id="cb68-8"><a href="C-BenefitExt.html#cb68-8"></a>    <span class="cf">if</span> (k<span class="op">&gt;</span><span class="dv">1</span>) {kpx &lt;-<span class="st"> </span>kpx<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>q.x[x<span class="op">+</span><span class="dv">1</span><span class="op">+</span>k])}</span>
+<span id="cb68-9"><a href="C-BenefitExt.html#cb68-9"></a>    APV  &lt;-<span class="st"> </span>APV  <span class="op">+</span><span class="st"> </span>kpx <span class="op">*</span><span class="st">  </span>(<span class="dv">1</span><span class="op">/</span><span class="fl">1.03</span>)<span class="op">^</span>k   <span class="op">*</span><span class="fl">1.11</span><span class="op">^</span>k <span class="op">*</span><span class="dv">458</span></span>
+<span id="cb68-10"><a href="C-BenefitExt.html#cb68-10"></a>    }}</span>
+<span id="cb68-11"><a href="C-BenefitExt.html#cb68-11"></a> <span class="kw">return</span>(APV)</span>
+<span id="cb68-12"><a href="C-BenefitExt.html#cb68-12"></a>  }</span>
+<span id="cb68-13"><a href="C-BenefitExt.html#cb68-13"></a></span>
+<span id="cb68-14"><a href="C-BenefitExt.html#cb68-14"></a>OneYearMortBreed &lt;-<span class="st"> </span><span class="cf">function</span>(Breed){</span>
+<span id="cb68-15"><a href="C-BenefitExt.html#cb68-15"></a>sfit &lt;-<span class="st"> </span><span class="kw">survfit</span>(Cox_ph_<span class="dv">1</span>,<span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">Sex=</span><span class="st">&quot;Male&quot;</span>, <span class="dt">Neutered=</span><span class="st">&quot;Neutered&quot;</span>, <span class="dt">Breed2 =</span> Breed))</span>
+<span id="cb68-16"><a href="C-BenefitExt.html#cb68-16"></a>sx &lt;-<span class="st"> </span><span class="kw">summary</span>(sfit, <span class="dt">times =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">22</span>)<span class="op">$</span>surv</span>
+<span id="cb68-17"><a href="C-BenefitExt.html#cb68-17"></a>sx[<span class="dv">1</span>] =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb68-18"><a href="C-BenefitExt.html#cb68-18"></a>qx &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">-</span><span class="st"> </span>sx[<span class="dv">2</span><span class="op">:</span><span class="dv">22</span>]<span class="op">/</span>sx[<span class="dv">1</span><span class="op">:</span><span class="dv">21</span>]</span>
+<span id="cb68-19"><a href="C-BenefitExt.html#cb68-19"></a>qx[<span class="dv">21</span>] =<span class="dv">1</span></span>
+<span id="cb68-20"><a href="C-BenefitExt.html#cb68-20"></a><span class="kw">return</span>(qx)</span>
+<span id="cb68-21"><a href="C-BenefitExt.html#cb68-21"></a>}</span>
+<span id="cb68-22"><a href="C-BenefitExt.html#cb68-22"></a></span>
+<span id="cb68-23"><a href="C-BenefitExt.html#cb68-23"></a>CostCare &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb68-24"><a href="C-BenefitExt.html#cb68-24"></a>qxCrossBreed &lt;-<span class="st"> </span><span class="kw">OneYearMortBreed</span>(<span class="st">&quot;Crossbreed&quot;</span>)</span>
+<span id="cb68-25"><a href="C-BenefitExt.html#cb68-25"></a>CostCare[<span class="dv">1</span>,<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">2</span>, <span class="dt">q.x=</span>qxCrossBreed) </span>
+<span id="cb68-26"><a href="C-BenefitExt.html#cb68-26"></a>CostCare[<span class="dv">1</span>,<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">5</span>, <span class="dt">q.x=</span>qxCrossBreed)</span>
+<span id="cb68-27"><a href="C-BenefitExt.html#cb68-27"></a>CostCare[<span class="dv">1</span>,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">12</span>, <span class="dt">q.x=</span>qxCrossBreed)</span>
+<span id="cb68-28"><a href="C-BenefitExt.html#cb68-28"></a>qxGShepherd &lt;-<span class="st"> </span><span class="kw">OneYearMortBreed</span>(<span class="st">&quot;German Shepherd Dog&quot;</span>)</span>
+<span id="cb68-29"><a href="C-BenefitExt.html#cb68-29"></a>CostCare[<span class="dv">2</span>,<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">2</span>, <span class="dt">q.x=</span>qxGShepherd) </span>
+<span id="cb68-30"><a href="C-BenefitExt.html#cb68-30"></a>CostCare[<span class="dv">2</span>,<span class="dv">2</span>] &lt;-<span class="st"> </span><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">5</span>, <span class="dt">q.x=</span>qxGShepherd)</span>
+<span id="cb68-31"><a href="C-BenefitExt.html#cb68-31"></a>CostCare[<span class="dv">2</span>,<span class="dv">3</span>] &lt;-<span class="st"> </span><span class="kw">DogAnn</span>(<span class="dt">x=</span><span class="dv">12</span>, <span class="dt">q.x=</span>qxGShepherd)</span>
+<span id="cb68-32"><a href="C-BenefitExt.html#cb68-32"></a></span>
+<span id="cb68-33"><a href="C-BenefitExt.html#cb68-33"></a><span class="kw">rownames</span>(CostCare) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Crossbreed&quot;</span>,<span class="st">&quot;German Shepherd Dog&quot;</span> )</span>
+<span id="cb68-34"><a href="C-BenefitExt.html#cb68-34"></a><span class="kw">colnames</span>(CostCare) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;x=2&quot;</span>,<span class="st">&quot;x=5&quot;</span>, <span class="st">&quot;x=12&quot;</span> )</span>
+<span id="cb68-35"><a href="C-BenefitExt.html#cb68-35"></a></span>
+<span id="cb68-36"><a href="C-BenefitExt.html#cb68-36"></a>knitr<span class="op">::</span><span class="kw">kable</span>(CostCare, <span class="dt">align=</span><span class="kw">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;c&quot;</span>),<span class="dt">caption=</span><span class="st">&quot;Actuarial Present Value of the Lifetime Cost of Surgical Vet Care&quot;</span>, <span class="dt">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 <table>
 <caption><span id="tab:OneYearCrossBreed1a">Table 4.4: </span>Actuarial Present Value of the Lifetime Cost of Surgical Vet Care</caption>
@@ -1224,19 +1200,19 @@ APV = ({\text {Initial Ann Cost}}) \sum_{k=0}^{\omega - x - 1} v^k ~(1.11)^k ~_k
 </tbody>
 </table>
 </div>
-<div id="more-on-pet-insurance-markets" class="section level3" number="4.5.4">
+<div id="more-on-pet-insurance-markets" class="section level3">
 <h3><span class="header-section-number">4.5.4</span> More on Pet Insurance Markets</h3>
 <p><strong>History and Markets</strong></p>
-<p>As described in <span class="citation"><a href="bibliography.html#ref-NAICPet" role="doc-biblioref">NAIC</a> (<a href="bibliography.html#ref-NAICPet" role="doc-biblioref">2019</a>)</span>, the first policy on a dog was issued in Sweden in 1924. In 1947, the first pet insurance policy was issued in the United Kingdom (UK). In Sweden and the UK, modern pet insurance policies are designed with the ability to cover pet medical costs and liability to third parties for the action of pets. In the U.S., the first pet policy was issued in 1982 that covered the dog that played Lassie on a popular U.S. television series, <span class="citation"><a href="bibliography.html#ref-IIIPet" role="doc-biblioref">III</a> (<a href="bibliography.html#ref-IIIPet" role="doc-biblioref">2021</a>)</span>.</p>
+<p>As described in <span class="citation">NAIC (<a href="#ref-NAICPet" role="doc-biblioref">2019</a>)</span>, the first policy on a dog was issued in Sweden in 1924. In 1947, the first pet insurance policy was issued in the United Kingdom (UK). In Sweden and the UK, modern pet insurance policies are designed with the ability to cover pet medical costs and liability to third parties for the action of pets. In the U.S., the first pet policy was issued in 1982 that covered the dog that played Lassie on a popular U.S. television series, <span class="citation">III (<a href="#ref-IIIPet" role="doc-biblioref">2021</a>)</span>.</p>
 <p>Pet insurance is more common in European countries than in the United States, with half of all pets in Sweden covered by pet health insurance. In the U.S., only about 1% of dogs and cats kept as pets are covered by pet insurance. As noted in Section <a href="C-BenefitExt.html#Sec:IntroPet">4.5.1</a>, in part this is due to regulatory requirements. It may also be due to the longer history that pet insurance has enjoyed in parts of Europe.</p>
-<p>Nonetheless, the pet insurance marketplace has been expanding rapidly in the U.S. with (premium) growth rates exceeding 10% for many years. According to a survey conducted by a large U.S. carrier, the fastest-growing form of distribution [of pet health insurance] is through an employee benefit package with about fifty percent of Fortune 500 companies offering pet insurance as an employee benefit, <span class="citation"><a href="bibliography.html#ref-NAICPet" role="doc-biblioref">NAIC</a> (<a href="bibliography.html#ref-NAICPet" role="doc-biblioref">2019</a>)</span>.</p>
+<p>Nonetheless, the pet insurance marketplace has been expanding rapidly in the U.S. with (premium) growth rates exceeding 10% for many years. According to a survey conducted by a large U.S. carrier, the fastest-growing form of distribution [of pet health insurance] is through an employee benefit package with about fifty percent of Fortune 500 companies offering pet insurance as an employee benefit, <span class="citation">NAIC (<a href="#ref-NAICPet" role="doc-biblioref">2019</a>)</span>.</p>
 <p><strong>Regulations and Economics</strong></p>
 <p>From a regulatory perspective, in the U.S. pet insurance falls under the property/casualty area of insurance because pets are, in effect, property. This places a bit of a burden on actuaries in that statutory reporting follows traditional property and casualty procedures whereas other aspects of pet insurance are more akin to (human) health practices; in the U.S., health insurance is regulated separately from property/casualty insurance.</p>
 <p><strong>Adverse selection</strong>, introduced in Section <a href="C-BenefitExt.html#Sec:SelectionAdverse">4.3.2</a>, is an important aspect of health insurance. It is natural for those in poor health to seek health insurance because they can reasonably expect higher costs. This can be a problem for insurers if they are unaware of the poor health conditions (we called this “information asymmetry” in Section <a href="C-BenefitExt.html#Sec:AsymmericInfo">4.3.3</a>). In many jurisdictions such as the U.S., there are rules that prohibit insurers from denying coverage for pre-existing (typically poor health) conditions. In contrast, for pet insurance animals with pre-existing conditions are generally not eligible for coverage. This avoids, for example, a situation in which a pet owner could find out his or her dog has cancer or another condition requiring expensive treatment and then tries to buy insurance to cover it.</p>
 <p>Pet insurers also need to be aware of another type of information asymmetry, <strong>moral hazard,</strong> where the presence of the insurance cover alters survival probabilities (recall Section (Sec:AsymmericInfo)). Moral hazard is not necessarily bad. In fact, perhaps the primary reason that veterinarians promote pet health insurance is so that they may advise pet owners on appropriate medical treatments and not be hampered by cost concerns. For example, sometimes veterinarians feel they must offer euthanasia as an option because the animal may be suffering from a treatable condition but the client may be unable to afford the proposed treatment due to lack of pet insurance, a situation termed <em>economic euthanasia</em>.</p>
 </div>
 </div>
-<div id="Sec:DisIncInsurance" class="section level2" number="4.6">
+<div id="Sec:DisIncInsurance" class="section level2">
 <h2><span class="header-section-number">4.6</span> Disability Income Insurance</h2>
 <hr />
 <p>In this section, you learn how to:</p>
@@ -1246,15 +1222,15 @@ APV = ({\text {Initial Ann Cost}}) \sum_{k=0}^{\omega - x - 1} v^k ~(1.11)^k ~_k
 <li>Demonstrate the impact of selection on actuarial present values of disability income insurance.</li>
 </ul>
 <hr />
-<div id="introduction-to-disability-income-insurance" class="section level3" number="4.6.1">
+<div id="introduction-to-disability-income-insurance" class="section level3">
 <h3><span class="header-section-number">4.6.1</span> Introduction to Disability Income Insurance</h3>
-<p>Disability income insurance is a contract designed to provide a regular income, such as monthly, to an individual if he or she is prevented by sickness or injury from working. Policies are available on an individual basis, through membership in a group such as sponsored by an employer, and through public government sponsored insurance. The data that we consider are from the U.S. Social Security Disability Income program, <span class="citation"><a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">Zayatz</a> (<a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>. Because disability income provides benefits to those unable to work, it is not designed to be a substitute for a retirement benefit and so is usually available up to a fixed term or age, such as ceasing at age 65 as in our illustrative example.</p>
+<p>Disability income insurance is a contract designed to provide a regular income, such as monthly, to an individual if he or she is prevented by sickness or injury from working. Policies are available on an individual basis, through membership in a group such as sponsored by an employer, and through public government sponsored insurance. The data that we consider are from the U.S. Social Security Disability Income program, <span class="citation">Zayatz (<a href="#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>. Because disability income provides benefits to those unable to work, it is not designed to be a substitute for a retirement benefit and so is usually available up to a fixed term or age, such as ceasing at age 65 as in our illustrative example.</p>
 <p>Like annuity benefits introduced in Section <a href="C-SimpleBenefit.html#Sec:BenefitAnnuity">3.3</a>, the benefit is paid periodically until a random <strong>event time</strong>. However, for a life annuity, the payment stops when the policyholder dies (a sad event). In contrast, for a disability income policy, we first focus on the payment stopping when someone recovers from disability (a happy event).</p>
 <p>Contingent payment techniques can be employed for general event times that need not be tied to human mortality. Naturally, there are a few caveats to this important message. For example, both life annuities and disability income may be limited by a fixed term or age. Further, as we will see, disability income may cease upon the sooner of recovery or death, another type of event time.</p>
 </div>
-<div id="disability-recovery-rates" class="section level3" number="4.6.2">
+<div id="disability-recovery-rates" class="section level3">
 <h3><span class="header-section-number">4.6.2</span> Disability Recovery Rates</h3>
-<p>To better appreciate how often policyholders recover from disability, Figure <a href="C-BenefitExt.html#fig:DiRecRates1">4.10</a> shows male rates <span class="math inline">\(q_x^r\)</span> from the U.S. Social Security Disability Income program (<span class="citation"><a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">Zayatz</a> (<a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>, Table 14A). The <span class="math inline">\(r\)</span> superscript reminds us that these are recovery, not mortality, rates. The solid black line, denoted as <code>Select=0</code>, is for individuals who met program qualifications for disability benefits and then recovered from their disability within a year. As suggested in the figure, except for age less than about 22, this experience is very similar to individuals who had been in the program for two years, <code>Select=2</code>. The other four lines represent greater number of years of selection (4, 6, 8, and an “ultimate” column); visually, they seem similar to one another. This figure demonstrates the importance of the select effect and is consistent with medical selection in life insurance that we saw in Section <a href="C-BenefitExt.html#Sec:SelectionAdverse">4.3.2</a>. In both cases, recent admission to a program or policy can influence the “event time” experience.</p>
+<p>To better appreciate how often policyholders recover from disability, Figure <a href="C-BenefitExt.html#fig:DiRecRates1">4.10</a> shows male rates <span class="math inline">\(q_x^r\)</span> from the U.S. Social Security Disability Income program (<span class="citation">Zayatz (<a href="#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>, Table 14A). These data are organized in Appendix Section <a href="appendix-data-dictionary.html#Sec:DataDisIncome">7.7</a>. The <span class="math inline">\(r\)</span> superscript reminds us that these are recovery, not mortality, rates. The solid black line, denoted as <code>Select=0</code>, is for individuals who met program qualifications for disability benefits and then recovered from their disability within a year. As suggested in the figure, except for age less than about 22, this experience is very similar to individuals who had been in the program for two years, <code>Select=2</code>. The other four lines represent greater number of years of selection (4, 6, 8, and an “ultimate” column); visually, they seem similar to one another. This figure demonstrates the importance of the select effect and is consistent with medical selection in life insurance that we saw in Section <a href="C-BenefitExt.html#Sec:SelectionAdverse">4.3.2</a>. In both cases, recent admission to a program or policy can influence the “event time” experience.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:DiRecRates1"></span>
 <img src="LifeCon_files/figure-html/DiRecRates1-1.png" alt="Disability Recovery Rates by Attained Age and Select Period. A plot of recovery rates \(q_x^r\) by attained age \(x\). Each line represents a different select period. The lines for select 0 and 2 are similar, other lines are also similar, suggesting that selection effects have worn out beginning at select = 4." width="60%" />
@@ -1262,7 +1238,7 @@ APV = ({\text {Initial Ann Cost}}) \sum_{k=0}^{\omega - x - 1} v^k ~(1.11)^k ~_k
 Figure 4.10: <strong>Disability Recovery Rates by Attained Age and Select Period</strong>. A plot of recovery rates <span class="math inline">\(q_x^r\)</span> by attained age <span class="math inline">\(x\)</span>. Each line represents a different select period. The lines for select 0 and 2 are similar, other lines are also similar, suggesting that selection effects have worn out beginning at select = 4.
 </p>
 </div>
-<p>As in Section <a href="C-ModelingLifeTimes.html#S:DataLifeExp">2.1.1</a>, another way of looking at event times is by following <strong>cohorts</strong> of individuals. Figure <a href="C-BenefitExt.html#fig:DiRecRates2">4.11</a> follows recovery rates for several cohorts; this figure emphasizes that annual probabilities of recovery decline with advancing age. As noted in <span class="citation"><a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">Zayatz</a> (<a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>, the early year probability of recovery patterns are attributed to the scheduling of continuing disability reviews. For example, where medical improvement is expected, the review is scheduled for 6 to 24 months following the most recent disability decision. Where medical improvement is not expected, the review is scheduled between 5 and 7 years later.</p>
+<p>As in Section <a href="C-ModelingLifeTimes.html#S:DataLifeExp">2.1.1</a>, another way of looking at event times is by following <strong>cohorts</strong> of individuals. Figure <a href="C-BenefitExt.html#fig:DiRecRates2">4.11</a> follows recovery rates for several cohorts; this figure emphasizes that annual probabilities of recovery decline with advancing age. As noted in <span class="citation">Zayatz (<a href="#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>, the early year probability of recovery patterns are attributed to the scheduling of continuing disability reviews. For example, where medical improvement is expected, the review is scheduled for 6 to 24 months following the most recent disability decision. Where medical improvement is not expected, the review is scheduled between 5 and 7 years later.</p>
 <p>These patterns are most evident in the cohort depicted by the bold solid black line that follows males who entered the disability program at age 16. This is the youngest cohort in the data set; it has the least amount of experience and so is the most uncertain. From Figure <a href="C-BenefitExt.html#fig:DiRecRates2">4.11</a>, we see a very large spike in recovery rates after five or six years in the program. This spike is also evident in cohorts that entered at ages 21 and 26 although on a smaller scale. The jump in recovery rates beginning at <code>Cohort=31</code> and on is still evident but on a much lower scale.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:DiRecRates2"></span>
@@ -1272,10 +1248,10 @@ Figure 4.11: <strong>Disability Recovery Rates by Attained Age and Cohort</stron
 </p>
 </div>
 </div>
-<div id="actuarial-present-values-of-disability-income" class="section level3" number="4.6.3">
+<div id="actuarial-present-values-of-disability-income" class="section level3">
 <h3><span class="header-section-number">4.6.3</span> Actuarial Present Values of Disability Income</h3>
 <p>To get a sense of the benefit to an individual, and the cost to the program, we can compute actuarial present values. Calculation of the actuarial present value is that same as the term life annuity introduced in Section <a href="C-SimpleBenefit.html#Sec:TermLifeAnnuity">3.3.2</a> in that we assume the benefit terminates at age 65. Further, instead of probability of death we now use probability of recovery from disability (and hence exiting the program).</p>
-<p>Using an assumed <span class="math inline">\(i=\)</span> 4 percent interest rate, Figure <a href="C-BenefitExt.html#fig:DiRecRates3">4.12</a> summaries annuity calculations by attained age for several different cohorts. These annuity values assume a payment of 1 at the beginning of the year if one is in the program; for perspective, as reported in <span class="citation"><a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">Zayatz</a> (<a href="bibliography.html#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>, in 2013 (the year of the study) disability income worker beneficiaries received approximately 14,000 USD per year.</p>
+<p>Using an assumed <span class="math inline">\(i=\)</span> 4 percent interest rate, Figure <a href="C-BenefitExt.html#fig:DiRecRates3">4.12</a> summaries annuity calculations by attained age for several different cohorts. These annuity values assume a payment of 1 at the beginning of the year if one is in the program; for perspective, as reported in <span class="citation">Zayatz (<a href="#ref-zayatz2015social" role="doc-biblioref">2015</a>)</span>, in 2013 (the year of the study) disability income worker beneficiaries received approximately 14,000 USD per year.</p>
 <p>Although there are some differences at younger cohorts and attained ages, Figure <a href="C-BenefitExt.html#fig:DiRecRates3">4.12</a> shows remarkable agreement among cohorts beginning about age 30. In the figure, the thick dashed blue line marks annuity values for the <code>Cohort=31</code>; all annuity values are similar to this line. We can interpret this to mean that the actuarial present value depends on the attained age for 30 and above, not the cohort representing when an individual first entered the program.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:DiRecRates3"></span>
@@ -1294,10 +1270,10 @@ Figure 4.13: <strong>Annuities by Attained Age, Gender and Type of Departure</st
 </p>
 </div>
 </div>
-<div id="more-on-disability-income-insurance" class="section level3" number="4.6.4">
+<div id="more-on-disability-income-insurance" class="section level3">
 <h3><span class="header-section-number">4.6.4</span> More on Disability Income Insurance</h3>
 <p>This brief introduction to disability income focused on demonstrating an important application where contingent payment methods need not use mortality as the time to an event. Because of its brevity, we have omitted many important attributes of disability income such as a waiting time for benefit eligibility, the role of monthly payments, differences among individual, group, and public programs, as well as features of different international marketplaces. For a deeper dive into this fascinating topic, see
-<span class="citation"><a href="bibliography.html#ref-haberman2018actuarial" role="doc-biblioref">Haberman and Pitacco</a> (<a href="bibliography.html#ref-haberman2018actuarial" role="doc-biblioref">2018</a>)</span>.</p>
+<span class="citation">Haberman and Pitacco (<a href="#ref-haberman2018actuarial" role="doc-biblioref">2018</a>)</span>.</p>
 <p>In particular, we have not yet addressed the <em>cost of becoming disabled</em>. What we have done is provide actuarial present values of the benefit of a disability insurance program. However, for a worker, we have not yet described the probability of being disabled. More generally, in a worker’s lifetime, someone can start as an active worker, become disabled, and as we have seen, that the person may quickly recover from the disability and then re-enter the work force. This pattern of switching statuses between between healthy and working and disabled and receiving benefits, and costs associated with each status, is the topic of Chapter 7 on <strong>multiple state modeling.</strong></p>
 <h5 style="text-align: center;">
 <a id="displayExample.JedDiscussion.4" href="javascript:toggleEX('toggleExample.JedDiscussion.4','displayExample.JedDiscussion.4');"><i><strong>Section Structure Discussions</strong></i></a>
@@ -1307,437 +1283,44 @@ Figure 4.13: <strong>Annuities by Attained Age, Gender and Type of Departure</st
 <p>Easy to include moral hazard into disability income insurance discussions….</p>
 <p></span></p>
 </div>
-</div>
-</div>
-<div id="exercises" class="section level2" number="4.7">
-<h2><span class="header-section-number">4.7</span> Exercises</h2>
-<div id="section-4.3-exercises" class="section level4 unnumbered">
-<h4>Section 4.3 Exercises</h4>
-<p><strong>Exercise 4.3.1. Actuarial Present Values for Select and Ultimate Tables</strong>. The select and ultimate tables introduced in Section <a href="C-BenefitExt.html#Sec:SelectionAdverse">4.3.2</a> are complicated – is such complexity is warranted in practice? To get insights into this question, in this exercise you will compare actuarial present values derived from select and ultimate mortality to those from only ultimate mortality. To be specific, we focus consider whole life insurance for using the female Canadian experience introduced in Section <a href="C-BenefitExt.html#Sec:SelectionAdverse">4.3.2</a>; the data are available using this download button <a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211749&authkey=AGnijC6ZUbgEnHs" download >
-<button type="button"  style="background-color:#008CBA;color:white">Download the Female Canadian Select and Ultimate Mortality Table.</button></a></p>
-<p>For these data,</p>
-<ol style="list-style-type: lower-alpha">
-<li>produce <span class="math inline">\(A_x\)</span> for <span class="math inline">\(x=50, \ldots, 65\)</span> using an interest rate of <span class="math inline">\(i=0.04\)</span> based on
-<ol style="list-style-type: lower-roman">
-<li>select and ultimate mortality</li>
-<li>ultimate mortality</li>
-</ol></li>
-<li>compare these two sequences of actuarial present values by calculating their ratio.</li>
-<li>repeat parts (a) and (b) using an interest rate <span class="math inline">\(i=0.02\)</span>.</li>
-</ol>
-<p>To give you a feel for the results, Figure <a href="C-BenefitExt.html#fig:SelUlt1">4.14</a> summarizes the results.</p>
-
-<div class="figure" style="text-align: center"><span id="fig:SelUlt1"></span>
-<img src="LifeCon_files/figure-html/SelUlt1-1.png" alt="Life Insurance APV by Age, Interest, and Mortality Type. A plot of life insurance actuarial present value \(A_x\) by age \(x\). The top two lines are based on \(i=0.02\), the bottom two based on \(i=0.04\). For each pair, the top line uses ultimate mortality, the bottom line is based on select and ultimate mortality" width="60%" />
-<p class="caption">
-Figure 4.14: <strong>Life Insurance APV by Age, Interest, and Mortality Type</strong>. A plot of life insurance actuarial present value <span class="math inline">\(A_x\)</span> by age <span class="math inline">\(x\)</span>. The top two lines are based on <span class="math inline">\(i=0.02\)</span>, the bottom two based on <span class="math inline">\(i=0.04\)</span>. For each pair, the top line uses ultimate mortality, the bottom line is based on select and ultimate mortality
-</p>
-</div>
-<h5 style="text-align: center;">
-<a id="displayTheory.Exer4.3.1" href="javascript:toggleTheory('toggleTheory.Exer4.3.1','displayCode.Exer4.3.1');"><i><strong>Exercise 4.3.1 Answer</strong></i></a>
-</h5>
-<div id="toggleTheory.Exer4.3.1" style="display: none">
-<table>
-<caption><span id="tab:unnamed-chunk-50">Table 4.5: </span>Comparison of Life Insurance APVs, Interest is 4%</caption>
-<tbody>
-<tr class="odd">
-<td align="left">Age</td>
-<td align="right">50</td>
-<td align="right">51</td>
-<td align="right">52</td>
-<td align="right">53</td>
-<td align="right">54</td>
-<td align="right">55</td>
-<td align="right">56</td>
-<td align="right">57</td>
-</tr>
-<tr class="even">
-<td align="left">Select2 and Ultimate, i=4%</td>
-<td align="right">0.2729</td>
-<td align="right">0.282</td>
-<td align="right">0.2913</td>
-<td align="right">0.3007</td>
-<td align="right">0.3104</td>
-<td align="right">0.3201</td>
-<td align="right">0.33</td>
-<td align="right">0.3401</td>
-</tr>
-<tr class="odd">
-<td align="left">Ultimate, i=4%</td>
-<td align="right">0.2808</td>
-<td align="right">0.2908</td>
-<td align="right">0.3011</td>
-<td align="right">0.3117</td>
-<td align="right">0.3225</td>
-<td align="right">0.3336</td>
-<td align="right">0.3449</td>
-<td align="right">0.3564</td>
-</tr>
-<tr class="even">
-<td align="left">Ratio</td>
-<td align="right">0.9716</td>
-<td align="right">0.9695</td>
-<td align="right">0.9673</td>
-<td align="right">0.9649</td>
-<td align="right">0.9624</td>
-<td align="right">0.9598</td>
-<td align="right">0.957</td>
-<td align="right">0.9542</td>
-</tr>
-<tr class="odd">
-<td align="left">Age</td>
-<td align="right">58</td>
-<td align="right">59</td>
-<td align="right">60</td>
-<td align="right">61</td>
-<td align="right">62</td>
-<td align="right">63</td>
-<td align="right">64</td>
-<td align="right">65</td>
-</tr>
-<tr class="even">
-<td align="left">Select and Ultimate, i=4%</td>
-<td align="right">0.3502</td>
-<td align="right">0.3605</td>
-<td align="right">0.3709</td>
-<td align="right">0.3814</td>
-<td align="right">0.3919</td>
-<td align="right">0.4025</td>
-<td align="right">0.4132</td>
-<td align="right">0.424</td>
-</tr>
-<tr class="odd">
-<td align="left">Ultimate, i=4%</td>
-<td align="right">0.3682</td>
-<td align="right">0.3801</td>
-<td align="right">0.3923</td>
-<td align="right">0.4046</td>
-<td align="right">0.417</td>
-<td align="right">0.4294</td>
-<td align="right">0.4417</td>
-<td align="right">0.454</td>
-</tr>
-<tr class="even">
-<td align="left">Ratio</td>
-<td align="right">0.9513</td>
-<td align="right">0.9484</td>
-<td align="right">0.9455</td>
-<td align="right">0.9425</td>
-<td align="right">0.9398</td>
-<td align="right">0.9375</td>
-<td align="right">0.9355</td>
-<td align="right">0.934</td>
-</tr>
-</tbody>
-</table>
-<table style="width:100%;">
-<caption><span id="tab:unnamed-chunk-51">Table 4.6: </span>Comparison of Life Insurance APVs, Interest is 2%</caption>
-<colgroup>
-<col width="31%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">Age</td>
-<td align="right">50</td>
-<td align="right">51</td>
-<td align="right">52</td>
-<td align="right">53</td>
-<td align="right">54</td>
-<td align="right">55</td>
-<td align="right">56</td>
-<td align="right">57</td>
-</tr>
-<tr class="even">
-<td align="left">Select and Ultimate, i=2%</td>
-<td align="right">0.5063</td>
-<td align="right">0.5151</td>
-<td align="right">0.524</td>
-<td align="right">0.5329</td>
-<td align="right">0.5418</td>
-<td align="right">0.5507</td>
-<td align="right">0.5596</td>
-<td align="right">0.5686</td>
-</tr>
-<tr class="odd">
-<td align="left">Ultimate, i=2%</td>
-<td align="right">0.5122</td>
-<td align="right">0.5217</td>
-<td align="right">0.5312</td>
-<td align="right">0.5408</td>
-<td align="right">0.5506</td>
-<td align="right">0.5604</td>
-<td align="right">0.5702</td>
-<td align="right">0.5802</td>
-</tr>
-<tr class="even">
-<td align="left">Ratio</td>
-<td align="right">0.9885</td>
-<td align="right">0.9875</td>
-<td align="right">0.9864</td>
-<td align="right">0.9853</td>
-<td align="right">0.9841</td>
-<td align="right">0.9828</td>
-<td align="right">0.9814</td>
-<td align="right">0.98</td>
-</tr>
-<tr class="odd">
-<td align="left">Age</td>
-<td align="right">58</td>
-<td align="right">59</td>
-<td align="right">60</td>
-<td align="right">61</td>
-<td align="right">62</td>
-<td align="right">63</td>
-<td align="right">64</td>
-<td align="right">65</td>
-</tr>
-<tr class="even">
-<td align="left">Select and Ultimate, i=2%</td>
-<td align="right">0.5775</td>
-<td align="right">0.5864</td>
-<td align="right">0.5953</td>
-<td align="right">0.6042</td>
-<td align="right">0.6131</td>
-<td align="right">0.6219</td>
-<td align="right">0.6307</td>
-<td align="right">0.6394</td>
-</tr>
-<tr class="odd">
-<td align="left">Ultimate, i=2%</td>
-<td align="right">0.5901</td>
-<td align="right">0.6002</td>
-<td align="right">0.6102</td>
-<td align="right">0.6203</td>
-<td align="right">0.6303</td>
-<td align="right">0.6402</td>
-<td align="right">0.6499</td>
-<td align="right">0.6595</td>
-</tr>
-<tr class="even">
-<td align="left">Ratio</td>
-<td align="right">0.9786</td>
-<td align="right">0.9771</td>
-<td align="right">0.9756</td>
-<td align="right">0.9741</td>
-<td align="right">0.9727</td>
-<td align="right">0.9715</td>
-<td align="right">0.9704</td>
-<td align="right">0.9695</td>
-</tr>
-</tbody>
-</table>
-<h5 style="text-align: center;">
-<a id="displayCode.Exer4.3.1A" href="javascript:togglecode('toggleCode.Exer4.3.1A','displayCode.Exer4.3.1A');"><i><strong>Exercise 4.3.1 Solution using R Code</strong></i></a>
-</h5>
-<div id="toggleCode.Exer4.3.1A" style="display: none">
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="C-BenefitExt.html#cb69-1" aria-hidden="true" tabindex="-1"></a>CanadianSelUlt <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Data/CanadianFemaleSelectRead.csv&quot;</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb69-2"><a href="C-BenefitExt.html#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="C-BenefitExt.html#cb69-3" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> CanadianSelUlt[<span class="dv">131</span><span class="sc">:</span><span class="dv">201</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
-<span id="cb69-4"><a href="C-BenefitExt.html#cb69-4" aria-hidden="true" tabindex="-1"></a>temp1 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(temp)</span>
-<span id="cb69-5"><a href="C-BenefitExt.html#cb69-5" aria-hidden="true" tabindex="-1"></a>CanadianUlt50 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">as.numeric</span>(temp1), <span class="at">ncol=</span><span class="dv">2</span>)</span>
-<span id="cb69-6"><a href="C-BenefitExt.html#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(CanadianUlt50) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>, <span class="st">&quot;qx_Ult&quot;</span>)</span>
-<span id="cb69-7"><a href="C-BenefitExt.html#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(CanadianUlt50) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb69-8"><a href="C-BenefitExt.html#cb69-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-9"><a href="C-BenefitExt.html#cb69-9" aria-hidden="true" tabindex="-1"></a>tempSel <span class="ot">&lt;-</span> CanadianSelUlt[<span class="dv">51</span><span class="sc">:</span><span class="dv">81</span>,]</span>
-<span id="cb69-10"><a href="C-BenefitExt.html#cb69-10" aria-hidden="true" tabindex="-1"></a>tempSel1 <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(tempSel)</span>
-<span id="cb69-11"><a href="C-BenefitExt.html#cb69-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-12"><a href="C-BenefitExt.html#cb69-12" aria-hidden="true" tabindex="-1"></a>CanadianSel50 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">as.numeric</span>(tempSel1), <span class="at">ncol=</span><span class="fu">ncol</span>(tempSel))</span>
-<span id="cb69-13"><a href="C-BenefitExt.html#cb69-13" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(CanadianSel50) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb69-14"><a href="C-BenefitExt.html#cb69-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-15"><a href="C-BenefitExt.html#cb69-15" aria-hidden="true" tabindex="-1"></a>CanadianSel50.toUlt <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span>, <span class="at">nrow =</span> <span class="fu">nrow</span>(CanadianSel50), <span class="at">ncol =</span> <span class="dv">120-50</span><span class="sc">+</span><span class="dv">1</span>)</span>
-<span id="cb69-16"><a href="C-BenefitExt.html#cb69-16" aria-hidden="true" tabindex="-1"></a>CanadianSel50.toUlt[<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(CanadianSel50),<span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(CanadianSel50)] <span class="ot">&lt;-</span> CanadianSel50</span>
-<span id="cb69-17"><a href="C-BenefitExt.html#cb69-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-18"><a href="C-BenefitExt.html#cb69-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (irow <span class="cf">in</span> (<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(CanadianSel50)) ){</span>
-<span id="cb69-19"><a href="C-BenefitExt.html#cb69-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (icol <span class="cf">in</span> (<span class="dv">1</span><span class="sc">:</span> (<span class="dv">120-50-15</span><span class="sc">-</span>irow)) ){</span>
-<span id="cb69-20"><a href="C-BenefitExt.html#cb69-20" aria-hidden="true" tabindex="-1"></a>  CanadianSel50.toUlt[irow,<span class="dv">1</span><span class="sc">+</span><span class="dv">15</span><span class="sc">+</span>icol ] <span class="ot">&lt;-</span> CanadianUlt50[irow<span class="sc">+</span><span class="dv">14</span><span class="sc">+</span>icol,<span class="dv">2</span>]</span>
-<span id="cb69-21"><a href="C-BenefitExt.html#cb69-21" aria-hidden="true" tabindex="-1"></a>   }</span>
-<span id="cb69-22"><a href="C-BenefitExt.html#cb69-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb69-23"><a href="C-BenefitExt.html#cb69-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-24"><a href="C-BenefitExt.html#cb69-24" aria-hidden="true" tabindex="-1"></a><span class="co">#  Actuarial Present Value Calculations</span></span>
-<span id="cb69-25"><a href="C-BenefitExt.html#cb69-25" aria-hidden="true" tabindex="-1"></a>APV.Ult <span class="ot">&lt;-</span> <span class="cf">function</span>(xage, q.x, <span class="at">int=</span><span class="fl">0.00</span>){</span>
-<span id="cb69-26"><a href="C-BenefitExt.html#cb69-26" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>int)</span>
-<span id="cb69-27"><a href="C-BenefitExt.html#cb69-27" aria-hidden="true" tabindex="-1"></a>  num <span class="ot">=</span> <span class="fu">length</span>(xage)</span>
-<span id="cb69-28"><a href="C-BenefitExt.html#cb69-28" aria-hidden="true" tabindex="-1"></a>  A.x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">*</span>xage <span class="ot">-&gt;</span> add.x <span class="ot">-&gt;</span> e.x</span>
-<span id="cb69-29"><a href="C-BenefitExt.html#cb69-29" aria-hidden="true" tabindex="-1"></a>  A.x[num] <span class="ot">=</span> v<span class="sc">*</span>q.x[num]</span>
-<span id="cb69-30"><a href="C-BenefitExt.html#cb69-30" aria-hidden="true" tabindex="-1"></a>  add.x[num] <span class="ot">=</span> <span class="dv">1</span> <span class="sc">+</span> (<span class="dv">1</span><span class="sc">-</span>q.x[num])<span class="sc">/</span>(int <span class="sc">+</span> <span class="fl">1e-12</span>)</span>
-<span id="cb69-31"><a href="C-BenefitExt.html#cb69-31" aria-hidden="true" tabindex="-1"></a>  e.x[num] <span class="ot">=</span> <span class="dv">1</span><span class="sc">-</span>q.x[num]</span>
-<span id="cb69-32"><a href="C-BenefitExt.html#cb69-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(num<span class="dv">-1</span>)){</span>
-<span id="cb69-33"><a href="C-BenefitExt.html#cb69-33" aria-hidden="true" tabindex="-1"></a>    A.x[num<span class="sc">-</span>i] <span class="ot">=</span> v<span class="sc">*</span>q.x[num<span class="sc">-</span>i] <span class="sc">+</span> v<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q.x[num<span class="sc">-</span>i])<span class="sc">*</span>A.x[num<span class="sc">-</span>i<span class="sc">+</span><span class="dv">1</span>]</span>
-<span id="cb69-34"><a href="C-BenefitExt.html#cb69-34" aria-hidden="true" tabindex="-1"></a>    add.x[num<span class="sc">-</span>i] <span class="ot">=</span> <span class="dv">1</span> <span class="sc">+</span> v<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q.x[num<span class="sc">-</span>i])<span class="sc">*</span>add.x[num<span class="sc">-</span>i<span class="sc">+</span><span class="dv">1</span>] </span>
-<span id="cb69-35"><a href="C-BenefitExt.html#cb69-35" aria-hidden="true" tabindex="-1"></a>    e.x[num<span class="sc">-</span>i] <span class="ot">=</span>  (<span class="dv">1</span><span class="sc">-</span>q.x[num<span class="sc">-</span>i])<span class="sc">*</span>(<span class="dv">1</span><span class="sc">+</span>e.x[num<span class="sc">-</span>i<span class="sc">+</span><span class="dv">1</span>])</span>
-<span id="cb69-36"><a href="C-BenefitExt.html#cb69-36" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb69-37"><a href="C-BenefitExt.html#cb69-37" aria-hidden="true" tabindex="-1"></a>  tablelife <span class="ot">&lt;-</span> <span class="fu">cbind</span>(xage,q.x,A.x,add.x,e.x)</span>
-<span id="cb69-38"><a href="C-BenefitExt.html#cb69-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(tablelife)</span>
-<span id="cb69-39"><a href="C-BenefitExt.html#cb69-39" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb69-40"><a href="C-BenefitExt.html#cb69-40" aria-hidden="true" tabindex="-1"></a>AxUlt04 <span class="ot">&lt;-</span> <span class="fu">APV.Ult</span>(<span class="at">xage=</span> CanadianUlt50[,<span class="dv">1</span>], <span class="at">q.x=</span>CanadianUlt50[,<span class="dv">2</span>], <span class="at">int=</span><span class="fl">0.04</span>)[,<span class="dv">3</span>]</span>
-<span id="cb69-41"><a href="C-BenefitExt.html#cb69-41" aria-hidden="true" tabindex="-1"></a>AxUlt04<span class="fl">.5065</span> <span class="ot">&lt;-</span> AxUlt04[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>]</span>
-<span id="cb69-42"><a href="C-BenefitExt.html#cb69-42" aria-hidden="true" tabindex="-1"></a>AxUlt02 <span class="ot">&lt;-</span> <span class="fu">APV.Ult</span>(<span class="at">xage=</span> CanadianUlt50[,<span class="dv">1</span>], <span class="at">q.x=</span>CanadianUlt50[,<span class="dv">2</span>], <span class="at">int=</span><span class="fl">0.02</span>)[,<span class="dv">3</span>]</span>
-<span id="cb69-43"><a href="C-BenefitExt.html#cb69-43" aria-hidden="true" tabindex="-1"></a>AxUlt02<span class="fl">.5065</span> <span class="ot">&lt;-</span> AxUlt02[<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>]</span>
-<span id="cb69-44"><a href="C-BenefitExt.html#cb69-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-45"><a href="C-BenefitExt.html#cb69-45" aria-hidden="true" tabindex="-1"></a><span class="co">#  Actuarial Present Value Calculations</span></span>
-<span id="cb69-46"><a href="C-BenefitExt.html#cb69-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-47"><a href="C-BenefitExt.html#cb69-47" aria-hidden="true" tabindex="-1"></a>APV.Sel <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">int=</span><span class="fl">0.00</span>){</span>
-<span id="cb69-48"><a href="C-BenefitExt.html#cb69-48" aria-hidden="true" tabindex="-1"></a>AxSel04 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">16</span>)</span>
-<span id="cb69-49"><a href="C-BenefitExt.html#cb69-49" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>int)</span>
-<span id="cb69-50"><a href="C-BenefitExt.html#cb69-50" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iage <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>){</span>
-<span id="cb69-51"><a href="C-BenefitExt.html#cb69-51" aria-hidden="true" tabindex="-1"></a><span class="co">#iage =2</span></span>
-<span id="cb69-52"><a href="C-BenefitExt.html#cb69-52" aria-hidden="true" tabindex="-1"></a>  AxSel04[iage] <span class="ot">=</span>  v<span class="sc">*</span>CanadianSel50.toUlt[iage, <span class="dv">2</span>]</span>
-<span id="cb69-53"><a href="C-BenefitExt.html#cb69-53" aria-hidden="true" tabindex="-1"></a>kpx <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb69-54"><a href="C-BenefitExt.html#cb69-54" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(CanadianSel50.toUlt)<span class="sc">-</span><span class="dv">2</span>)) {</span>
-<span id="cb69-55"><a href="C-BenefitExt.html#cb69-55" aria-hidden="true" tabindex="-1"></a>    kpx <span class="ot">=</span> kpx<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>CanadianSel50.toUlt[iage, k<span class="sc">+</span><span class="dv">1</span>])</span>
-<span id="cb69-56"><a href="C-BenefitExt.html#cb69-56" aria-hidden="true" tabindex="-1"></a>   AxSel04[iage] <span class="ot">=</span>  AxSel04[iage] <span class="sc">+</span> v<span class="sc">**</span>(k<span class="sc">+</span><span class="dv">1</span>)<span class="sc">*</span>kpx<span class="sc">*</span>CanadianSel50.toUlt[iage, k<span class="sc">+</span><span class="dv">2</span>]</span>
-<span id="cb69-57"><a href="C-BenefitExt.html#cb69-57" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb69-58"><a href="C-BenefitExt.html#cb69-58" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb69-59"><a href="C-BenefitExt.html#cb69-59" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(AxSel04)</span>
-<span id="cb69-60"><a href="C-BenefitExt.html#cb69-60" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb69-61"><a href="C-BenefitExt.html#cb69-61" aria-hidden="true" tabindex="-1"></a>AxSel04 <span class="ot">&lt;-</span> <span class="fu">APV.Sel</span>(<span class="at">int=</span><span class="fl">0.04</span>)</span>
-<span id="cb69-62"><a href="C-BenefitExt.html#cb69-62" aria-hidden="true" tabindex="-1"></a>AxSel02 <span class="ot">&lt;-</span> <span class="fu">APV.Sel</span>(<span class="at">int=</span><span class="fl">0.02</span>)</span>
-<span id="cb69-63"><a href="C-BenefitExt.html#cb69-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-64"><a href="C-BenefitExt.html#cb69-64" aria-hidden="true" tabindex="-1"></a>Age1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;50&quot;</span>, <span class="st">&quot;51&quot;</span>, <span class="st">&quot;52&quot;</span>, <span class="st">&quot;53&quot;</span>, <span class="st">&quot;54&quot;</span>, <span class="st">&quot;55&quot;</span>, <span class="st">&quot;56&quot;</span>, <span class="st">&quot;57&quot;</span>)</span>
-<span id="cb69-65"><a href="C-BenefitExt.html#cb69-65" aria-hidden="true" tabindex="-1"></a>Age2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;58&quot;</span>, <span class="st">&quot;59&quot;</span>, <span class="st">&quot;60&quot;</span>, <span class="st">&quot;61&quot;</span>, <span class="st">&quot;62&quot;</span>, <span class="st">&quot;63&quot;</span>, <span class="st">&quot;64&quot;</span>, <span class="st">&quot;65&quot;</span>)</span>
-<span id="cb69-66"><a href="C-BenefitExt.html#cb69-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-67"><a href="C-BenefitExt.html#cb69-67" aria-hidden="true" tabindex="-1"></a>Ratio04Sel.Ult <span class="ot">&lt;-</span> AxSel04<span class="sc">/</span>AxUlt04<span class="fl">.5065</span></span>
-<span id="cb69-68"><a href="C-BenefitExt.html#cb69-68" aria-hidden="true" tabindex="-1"></a>OutPartA <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">57</span>, AxSel04[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>],  AxUlt04<span class="fl">.5065</span>[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>],  Ratio04Sel.Ult[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>], </span>
-<span id="cb69-69"><a href="C-BenefitExt.html#cb69-69" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">58</span><span class="sc">:</span><span class="dv">65</span>, AxSel04[<span class="dv">9</span><span class="sc">:</span><span class="dv">16</span>], AxUlt04<span class="fl">.5065</span>[<span class="dv">9</span><span class="sc">:</span><span class="dv">16</span>], Ratio04Sel.Ult[<span class="dv">9</span><span class="sc">:</span><span class="dv">16</span>] )</span>
-<span id="cb69-70"><a href="C-BenefitExt.html#cb69-70" aria-hidden="true" tabindex="-1"></a>OutPartA1 <span class="ot">&lt;-</span> <span class="fu">round</span>(OutPartA, <span class="at">digits =</span> <span class="dv">4</span>)</span>
-<span id="cb69-71"><a href="C-BenefitExt.html#cb69-71" aria-hidden="true" tabindex="-1"></a>OutPartA1[<span class="dv">1</span>,] <span class="ot">&lt;-</span> Age1</span>
-<span id="cb69-72"><a href="C-BenefitExt.html#cb69-72" aria-hidden="true" tabindex="-1"></a>OutPartA1[<span class="dv">5</span>,] <span class="ot">&lt;-</span> Age2</span>
-<span id="cb69-73"><a href="C-BenefitExt.html#cb69-73" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(OutPartA1) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb69-74"><a href="C-BenefitExt.html#cb69-74" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select2 and Ultimate, i=4%&quot;</span>, <span class="st">&quot;Ultimate, i=4%&quot;</span>,<span class="st">&quot;Ratio&quot;</span>, </span>
-<span id="cb69-75"><a href="C-BenefitExt.html#cb69-75" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select and Ultimate, i=4%&quot;</span>, <span class="st">&quot;Ultimate, i=4%&quot;</span>, <span class="st">&quot;Ratio&quot;</span>)</span>
-<span id="cb69-76"><a href="C-BenefitExt.html#cb69-76" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::kable(OutPartA1, align = &quot;r&quot;, caption=&quot;Select and Ultimate Female Canadian APVs&quot;)</span></span>
-<span id="cb69-77"><a href="C-BenefitExt.html#cb69-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-78"><a href="C-BenefitExt.html#cb69-78" aria-hidden="true" tabindex="-1"></a>Ratio02Sel.Ult <span class="ot">&lt;-</span> AxSel02<span class="sc">/</span>AxUlt02<span class="fl">.5065</span></span>
-<span id="cb69-79"><a href="C-BenefitExt.html#cb69-79" aria-hidden="true" tabindex="-1"></a>OutPartB <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">57</span>, AxSel02[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>],  AxUlt02<span class="fl">.5065</span>[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>],  Ratio02Sel.Ult[<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>], </span>
-<span id="cb69-80"><a href="C-BenefitExt.html#cb69-80" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">58</span><span class="sc">:</span><span class="dv">65</span>, AxSel02[<span class="dv">9</span><span class="sc">:</span><span class="dv">16</span>], AxUlt02<span class="fl">.5065</span>[<span class="dv">9</span><span class="sc">:</span><span class="dv">16</span>], Ratio02Sel.Ult[<span class="dv">9</span><span class="sc">:</span><span class="dv">16</span>] )</span>
-<span id="cb69-81"><a href="C-BenefitExt.html#cb69-81" aria-hidden="true" tabindex="-1"></a>OutPartB1 <span class="ot">&lt;-</span> <span class="fu">round</span>(OutPartB, <span class="at">digits =</span> <span class="dv">4</span>)</span>
-<span id="cb69-82"><a href="C-BenefitExt.html#cb69-82" aria-hidden="true" tabindex="-1"></a>OutPartB1[<span class="dv">1</span>,] <span class="ot">&lt;-</span> Age1</span>
-<span id="cb69-83"><a href="C-BenefitExt.html#cb69-83" aria-hidden="true" tabindex="-1"></a>OutPartB1[<span class="dv">5</span>,] <span class="ot">&lt;-</span> Age2</span>
-<span id="cb69-84"><a href="C-BenefitExt.html#cb69-84" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(OutPartB1) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb69-85"><a href="C-BenefitExt.html#cb69-85" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select and Ultimate, i=2%&quot;</span>, <span class="st">&quot;Ultimate, i=2%&quot;</span>,<span class="st">&quot;Ratio&quot;</span>, </span>
-<span id="cb69-86"><a href="C-BenefitExt.html#cb69-86" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Age&quot;</span>,  <span class="st">&quot;Select and Ultimate, i=2%&quot;</span>, <span class="st">&quot;Ultimate, i=2%&quot;</span>, <span class="st">&quot;Ratio&quot;</span>)</span>
-<span id="cb69-87"><a href="C-BenefitExt.html#cb69-87" aria-hidden="true" tabindex="-1"></a><span class="co">#knitr::kable(OutPartB1, align = &quot;r&quot;, caption=&quot;Select and Ultimate Female Canadian APVs&quot;)</span></span></code></pre></div>
-</div>
-</div>
-</div>
-<div id="section-4.5-exercises" class="section level4 unnumbered">
-<h4>Section 4.5 Exercises</h4>
-<p><strong>Exercise 4.5.1. Dog Survival Distributions and Actuarial Present Values.</strong> The analysis in Section <a href="C-BenefitExt.html#Sec:CanineMort">4.5.2</a> suggests that breed is an important factor for dog survival. To underscore this point for a broader audience, let us look at survival for a type of small dog, a “Jack Russell Terrier,” and a large dog, a “German Shepherd Dog.” We can make differences in survival distributions between small and large dogs even more meaningful by also computing selected actuarial present values that summarize future expected costs.</p>
-<p>You should begin your analysis by downloading the data, available at<a href="https://onedrive.live.com/download?cid=9F1B70CE7B0595D1&resid=9F1B70CE7B0595D1%211752&authkey=ALDTPrf5BIOX2Sg&em=2" download>
-<button type="button"  style="background-color:green;color:white">Download the Dog Mortality Data</button></a></p>
-<p>The data have been re-worked so that they can be used for your analysis. Here is a bit more code needed to convert data fields appropriately and to separate the file into two subsets, one for Terriers and one for German Shepherds.</p>
-<h5 style="text-align: center;">
-<a id="displayCode.Exer4.5.1A" href="javascript:togglecode('toggleCode.Exer4.5.1A','displayCode.Exer4.5.1A');"><i><strong>Show R Code to Pre-Process the Data</strong></i></a>
-</h5>
-<div id="toggleCode.Exer4.5.1A" style="display: none">
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="C-BenefitExt.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in Revised Data</span></span>
-<span id="cb70-2"><a href="C-BenefitExt.html#cb70-2" aria-hidden="true" tabindex="-1"></a>DogMortA <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;DogSurvivalData1.csv&quot;</span>)</span>
-<span id="cb70-3"><a href="C-BenefitExt.html#cb70-3" aria-hidden="true" tabindex="-1"></a>DogMort <span class="ot">&lt;-</span> DogMortA[,<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb70-4"><a href="C-BenefitExt.html#cb70-4" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>dateBirth <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(DogMort<span class="sc">$</span>dateBirth, <span class="st">&quot;%Y-%m-%d&quot;</span>) </span>
-<span id="cb70-5"><a href="C-BenefitExt.html#cb70-5" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>dateDeath <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(DogMort<span class="sc">$</span>dateDeath, <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
-<span id="cb70-6"><a href="C-BenefitExt.html#cb70-6" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>AgeAtDeath <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(DogMort<span class="sc">$</span>dateDeath) <span class="sc">-</span> <span class="fu">as.numeric</span>(DogMort<span class="sc">$</span>dateBirth))<span class="sc">/</span><span class="fl">365.25</span></span>
-<span id="cb70-7"><a href="C-BenefitExt.html#cb70-7" aria-hidden="true" tabindex="-1"></a>DogTerr <span class="ot">&lt;-</span> <span class="fu">subset</span>(DogMort, Breed <span class="sc">==</span> <span class="st">&quot;Jack Russell Terrier&quot;</span>)</span>
-<span id="cb70-8"><a href="C-BenefitExt.html#cb70-8" aria-hidden="true" tabindex="-1"></a>DogGShep <span class="ot">&lt;-</span> <span class="fu">subset</span>(DogMort, Breed <span class="sc">==</span> <span class="st">&quot;German Shepherd Dog&quot;</span>)</span></code></pre></div>
-</div>
-<p>For these data:</p>
-<ol style="list-style-type: lower-alpha">
-<li>Compute one-year mortality rates for both Terriers and German Shepherds. Do this over <span class="math inline">\(x=0, \ldots, 20\)</span>. Graph the results.</li>
-<li>Because you may be working with products with events occurring more frequently than once a year, you decide to follow the strategy introduced in Section <a href="C-BenefitExt.html#Sec:BasicConceptsmthly">4.1.1</a> and look at mortality rates occurring on a quarterly basis. Repeat the analysis from part (a) using quarterly rates.</li>
-<li>The results of earlier analyses indicate substantial volatility in the both quarterly rates and annual rates at later ages. One approach to mitigate this volatility is to smooth the rates. A simpler approach is to use longer periods (hence increasing exposure and reducing volatility). Repeat the analysis in part (a) using rates on a once every two year basis.</li>
-<li>To see how these rates might be used, you decide to repeat the analysis in Section <a href="C-BenefitExt.html#Sec:DogCostCare">4.5.3</a> and compute an actuarial present value of the lifetime cost of surgical vet care. Use the same assumptions as in that section with the initial annual cost as 458, <span class="math inline">\(i=0.03\)</span> interest rate and a 11 percent annual growth in surgical care costs. However, use the dog mortality from part (a). Do this for <span class="math inline">\(x=2, 5, 12\)</span>, for both breeds. You will see that that your results on German Shepherds differ slightly from those presented in Section <a href="C-BenefitExt.html#Sec:DogCostCare">4.5.3</a>; comment on why this is so.</li>
-</ol>
-<h5 style="text-align: center;">
-<a id="displayTheory.Exer4.5.1" href="javascript:toggleTheory('toggleTheory.Exer4.5.1','displayCode.Exer4.5.1');"><i><strong>Exercise 4.5.1 Answers</strong></i></a>
-</h5>
-<div id="toggleTheory.Exer4.5.1" style="display: none">
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="C-BenefitExt.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
-<span id="cb71-2"><a href="C-BenefitExt.html#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
-<span id="cb71-3"><a href="C-BenefitExt.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in Revised Data</span></span>
-<span id="cb71-4"><a href="C-BenefitExt.html#cb71-4" aria-hidden="true" tabindex="-1"></a>DogMortA <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Data/DogSurvivalData1.csv&quot;</span>)</span>
-<span id="cb71-5"><a href="C-BenefitExt.html#cb71-5" aria-hidden="true" tabindex="-1"></a>DogMort <span class="ot">&lt;-</span> DogMortA[,<span class="sc">-</span><span class="dv">1</span>]</span>
-<span id="cb71-6"><a href="C-BenefitExt.html#cb71-6" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>dateBirth <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(DogMort<span class="sc">$</span>dateBirth, <span class="st">&quot;%Y-%m-%d&quot;</span>) </span>
-<span id="cb71-7"><a href="C-BenefitExt.html#cb71-7" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>dateDeath <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(DogMort<span class="sc">$</span>dateDeath, <span class="st">&quot;%Y-%m-%d&quot;</span>)</span>
-<span id="cb71-8"><a href="C-BenefitExt.html#cb71-8" aria-hidden="true" tabindex="-1"></a>DogMort<span class="sc">$</span>AgeAtDeath <span class="ot">&lt;-</span> (<span class="fu">as.numeric</span>(DogMort<span class="sc">$</span>dateDeath) <span class="sc">-</span> <span class="fu">as.numeric</span>(DogMort<span class="sc">$</span>dateBirth))<span class="sc">/</span><span class="fl">365.25</span></span>
-<span id="cb71-9"><a href="C-BenefitExt.html#cb71-9" aria-hidden="true" tabindex="-1"></a>DogTerr <span class="ot">&lt;-</span> <span class="fu">subset</span>(DogMort, Breed <span class="sc">==</span> <span class="st">&quot;Jack Russell Terrier&quot;</span>)</span>
-<span id="cb71-10"><a href="C-BenefitExt.html#cb71-10" aria-hidden="true" tabindex="-1"></a>DogGShep <span class="ot">&lt;-</span> <span class="fu">subset</span>(DogMort, Breed <span class="sc">==</span> <span class="st">&quot;German Shepherd Dog&quot;</span>)</span>
-<span id="cb71-11"><a href="C-BenefitExt.html#cb71-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-12"><a href="C-BenefitExt.html#cb71-12" aria-hidden="true" tabindex="-1"></a>fitTerr <span class="ot">&lt;-</span> <span class="fu">survfit</span>(<span class="fu">Surv</span>(AgeAtDeath) <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data=</span>DogTerr)</span>
-<span id="cb71-13"><a href="C-BenefitExt.html#cb71-13" aria-hidden="true" tabindex="-1"></a>fitGShep <span class="ot">&lt;-</span> <span class="fu">survfit</span>(<span class="fu">Surv</span>(AgeAtDeath) <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data=</span>DogGShep)</span></code></pre></div>
-<p><strong>Part A</strong></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="C-BenefitExt.html#cb72-1" aria-hidden="true" tabindex="-1"></a>seqA1 <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span></span>
-<span id="cb72-2"><a href="C-BenefitExt.html#cb72-2" aria-hidden="true" tabindex="-1"></a>seqA2 <span class="ot">&lt;-</span> seqA1 <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb72-3"><a href="C-BenefitExt.html#cb72-3" aria-hidden="true" tabindex="-1"></a>qxTerrA  <span class="ot">&lt;-</span> (<span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqA1)<span class="sc">$</span>surv <span class="sc">-</span>   <span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqA2)<span class="sc">$</span>surv)   <span class="sc">/</span><span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqA1)<span class="sc">$</span>surv</span>
-<span id="cb72-4"><a href="C-BenefitExt.html#cb72-4" aria-hidden="true" tabindex="-1"></a>qxGShepA <span class="ot">&lt;-</span> (<span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqA1)<span class="sc">$</span>surv <span class="sc">-</span> <span class="fu">c</span>(<span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqA2)<span class="sc">$</span>surv,<span class="dv">0</span>))<span class="sc">/</span><span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqA1)<span class="sc">$</span>surv</span>
-<span id="cb72-5"><a href="C-BenefitExt.html#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(seqA1,qxTerrA, <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">ylab =</span> <span class="fu">expression</span>(q[x]))</span>
-<span id="cb72-6"><a href="C-BenefitExt.html#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">16</span>, qxGShepA, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-54"></span>
-<img src="LifeCon_files/figure-html/unnamed-chunk-54-1.png" alt="One-year Dog Mortality Rates, Blue Solid Line is for German Shepherds" width="576" />
-<p class="caption">
-Figure 4.15: One-year Dog Mortality Rates, Blue Solid Line is for German Shepherds
-</p>
-</div>
-<p><strong>Part B</strong></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="C-BenefitExt.html#cb73-1" aria-hidden="true" tabindex="-1"></a>seqB1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="fl">0.25</span>)</span>
-<span id="cb73-2"><a href="C-BenefitExt.html#cb73-2" aria-hidden="true" tabindex="-1"></a>seqB2 <span class="ot">&lt;-</span> seqB1 <span class="sc">+</span> <span class="fl">0.25</span></span>
-<span id="cb73-3"><a href="C-BenefitExt.html#cb73-3" aria-hidden="true" tabindex="-1"></a>qxTerrB  <span class="ot">&lt;-</span> (<span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqB1)<span class="sc">$</span>surv <span class="sc">-</span>   <span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqB2)<span class="sc">$</span>surv)   <span class="sc">/</span><span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqB1)<span class="sc">$</span>surv</span>
-<span id="cb73-4"><a href="C-BenefitExt.html#cb73-4" aria-hidden="true" tabindex="-1"></a>qxGShepB <span class="ot">&lt;-</span> (<span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqB1)<span class="sc">$</span>surv <span class="sc">-</span> <span class="fu">c</span>(<span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqB2)<span class="sc">$</span>surv,<span class="dv">0</span>))<span class="sc">/</span><span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqB1)<span class="sc">$</span>surv</span>
-<span id="cb73-5"><a href="C-BenefitExt.html#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(seqB1,qxTerrB, <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">ylab =</span> <span class="fu">expression</span>(q[x]))</span>
-<span id="cb73-6"><a href="C-BenefitExt.html#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(seqB1[<span class="dv">1</span><span class="sc">:</span><span class="dv">67</span>], qxGShepB, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-55"></span>
-<img src="LifeCon_files/figure-html/unnamed-chunk-55-1.png" alt="Quarterly Dog Mortality Rates, Blue Solid Line is for German Shepherds" width="576" />
-<p class="caption">
-Figure 4.16: Quarterly Dog Mortality Rates, Blue Solid Line is for German Shepherds
-</p>
-</div>
-<p><strong>Part C</strong></p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="C-BenefitExt.html#cb74-1" aria-hidden="true" tabindex="-1"></a>seqC1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">20</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
-<span id="cb74-2"><a href="C-BenefitExt.html#cb74-2" aria-hidden="true" tabindex="-1"></a>seqC2 <span class="ot">&lt;-</span> seqC1 <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb74-3"><a href="C-BenefitExt.html#cb74-3" aria-hidden="true" tabindex="-1"></a>qxTerrC  <span class="ot">&lt;-</span> (<span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqC1)<span class="sc">$</span>surv <span class="sc">-</span> <span class="fu">c</span>(<span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqC2)<span class="sc">$</span>surv,<span class="dv">0</span>))<span class="sc">/</span><span class="fu">summary</span>(fitTerr,  <span class="at">time =</span> seqC1)<span class="sc">$</span>surv</span>
-<span id="cb74-4"><a href="C-BenefitExt.html#cb74-4" aria-hidden="true" tabindex="-1"></a>qxGShepC <span class="ot">&lt;-</span> (<span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqC1)<span class="sc">$</span>surv <span class="sc">-</span> <span class="fu">c</span>(<span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqC2)<span class="sc">$</span>surv,<span class="dv">0</span>))<span class="sc">/</span><span class="fu">summary</span>(fitGShep, <span class="at">time =</span> seqC1)<span class="sc">$</span>surv</span>
-<span id="cb74-5"><a href="C-BenefitExt.html#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(seqC1,qxTerrC, <span class="at">xlab =</span> <span class="st">&quot;Age&quot;</span>, <span class="at">ylab =</span> <span class="fu">expression</span>(q[x]))</span>
-<span id="cb74-6"><a href="C-BenefitExt.html#cb74-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(seqC1[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>], qxGShepC, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-56"></span>
-<img src="LifeCon_files/figure-html/unnamed-chunk-56-1.png" alt="Two-year Dog Mortality Rates, Blue Solid Line is for German Shepherds" width="576" />
-<p class="caption">
-Figure 4.17: Two-year Dog Mortality Rates, Blue Solid Line is for German Shepherds
-</p>
-</div>
-<p><strong>Part D</strong></p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="C-BenefitExt.html#cb75-1" aria-hidden="true" tabindex="-1"></a>DogAnn <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">x=</span>x, <span class="at">q.x=</span>qx){</span>
-<span id="cb75-2"><a href="C-BenefitExt.html#cb75-2" aria-hidden="true" tabindex="-1"></a>  Term <span class="ot">&lt;-</span> <span class="fu">length</span>(q.x) <span class="sc">-</span> (x<span class="sc">+</span><span class="dv">1</span>)</span>
-<span id="cb75-3"><a href="C-BenefitExt.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  kpx <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
-<span id="cb75-4"><a href="C-BenefitExt.html#cb75-4" aria-hidden="true" tabindex="-1"></a>  APV  <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
-<span id="cb75-5"><a href="C-BenefitExt.html#cb75-5" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (Term<span class="sc">&gt;</span><span class="dv">0</span>){ <span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">0</span><span class="sc">:</span>(Term<span class="dv">-1</span>)){ </span>
-<span id="cb75-6"><a href="C-BenefitExt.html#cb75-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (k<span class="sc">&gt;</span><span class="dv">1</span>) {kpx <span class="ot">&lt;-</span> kpx<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>q.x[x<span class="sc">+</span><span class="dv">1</span><span class="sc">+</span>k])}</span>
-<span id="cb75-7"><a href="C-BenefitExt.html#cb75-7" aria-hidden="true" tabindex="-1"></a>    APV  <span class="ot">&lt;-</span> APV  <span class="sc">+</span> kpx <span class="sc">*</span>  (<span class="dv">1</span><span class="sc">/</span><span class="fl">1.03</span>)<span class="sc">^</span>k   <span class="sc">*</span><span class="fl">1.11</span><span class="sc">^</span>k <span class="sc">*</span><span class="dv">458</span></span>
-<span id="cb75-8"><a href="C-BenefitExt.html#cb75-8" aria-hidden="true" tabindex="-1"></a>    }}</span>
-<span id="cb75-9"><a href="C-BenefitExt.html#cb75-9" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(APV)</span>
-<span id="cb75-10"><a href="C-BenefitExt.html#cb75-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb75-11"><a href="C-BenefitExt.html#cb75-11" aria-hidden="true" tabindex="-1"></a><span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">2</span>, <span class="at">q.x=</span>qxTerrA)</span>
-<span id="cb75-12"><a href="C-BenefitExt.html#cb75-12" aria-hidden="true" tabindex="-1"></a><span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">5</span>, <span class="at">q.x=</span>qxTerrA)</span>
-<span id="cb75-13"><a href="C-BenefitExt.html#cb75-13" aria-hidden="true" tabindex="-1"></a><span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">12</span>, <span class="at">q.x=</span>qxTerrA)</span>
-<span id="cb75-14"><a href="C-BenefitExt.html#cb75-14" aria-hidden="true" tabindex="-1"></a><span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">2</span>, <span class="at">q.x=</span>qxGShepA)</span>
-<span id="cb75-15"><a href="C-BenefitExt.html#cb75-15" aria-hidden="true" tabindex="-1"></a><span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">5</span>, <span class="at">q.x=</span>qxGShepA)</span>
-<span id="cb75-16"><a href="C-BenefitExt.html#cb75-16" aria-hidden="true" tabindex="-1"></a><span class="fu">DogAnn</span>(<span class="at">x=</span><span class="dv">12</span>, <span class="at">q.x=</span>qxGShepA)</span></code></pre></div>
-<pre><code>[1] 7605.3
-[1] 5111.7
-[1] 1795.3
-[1] 5444.1
-[1] 3420.2
-[1] 1184.6</code></pre>
-<p>Note that the mortality estimates in this exercise are based only on data for a specific breed. In contrast, the analysis in Section <a href="C-BenefitExt.html#Sec:DogCostCare">4.5.3</a> used a Cox proportional hazards to regression model to use data from all breeds to form mortality estimates.</p>
-<hr />
-</div>
 
 </div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-haberman2018actuarial">
+<p>Haberman, Steven, and Ermanno Pitacco. 2018. <em>Actuarial Models for Disability Insurance</em>. Routledge.</p>
+</div>
+<div id="ref-hoffman2021characterizing">
+<p>Hoffman, Christy L, Melissa Thibault, and Julie Hong. 2021. “Characterizing Pet Acquisition and Retention During the Covid-19 Pandemic.” <em>Frontiers in Veterinary Science</em> 8.</p>
+</div>
+<div id="ref-IIIPet">
+<p>III. 2021. “Facts + Statistics: Pet Ownership and Insurance.” In. Insurance Information Institute. <a href="https://www.iii.org/fact-statistic/facts-statistics-pet-ownership-and-insurance">https://www.iii.org/fact-statistic/facts-statistics-pet-ownership-and-insurance</a>.</p>
+</div>
+<div id="ref-Contingencies2018">
+<p>Malloy, Michael G. 2018. “A Policy for Fluffy: Pet Insurance Is a Small Industry-but It’s Poised for Big Growth in the U.s.” <em>Contingencies</em>. <a href="https://contingencies.org/a-policy-for-fluffy-pet-insurance-is-a-small-industry-but-its-poised-for-big-growth-in-the-u-s-%E2%80%83/">https://contingencies.org/a-policy-for-fluffy-pet-insurance-is-a-small-industry-but-its-poised-for-big-growth-in-the-u-s-%E2%80%83/</a>.</p>
+</div>
+<div id="ref-NAICPet">
+<p>NAIC. 2019. “A Regulators Guide to Pet Insurance.” In. National Association of Insurance Commissioners. <a href="https://content.naic.org/sites/default/files/publication-pin-op-pet-insurance.pdf">https://content.naic.org/sites/default/files/publication-pin-op-pet-insurance.pdf</a>.</p>
+</div>
+<div id="ref-OECD2020global">
+<p>OECD. 2020. “Insurance Statistics Yearbook.” <em>Paris</em>. Organization for Economic Co-operation; Development (OECD). <a href="https://stats.oecd.org/Index.aspx?DatasetCode=INSIND">https://stats.oecd.org/Index.aspx?DatasetCode=INSIND</a>.</p>
+</div>
+<div id="ref-pegram2021proportion">
+<p>Pegram, Camilla, Carol Gray, Rowena MA Packer, Ysabelle Richards, David B Church, Dave C Brodbelt, and Dan G O’Neill. 2021a. “Proportion and Risk Factors for Death by Euthanasia in Dogs in the Uk.” <em>Scientific Reports</em> 11 (1): 1–12.</p>
+</div>
+<div id="ref-pegram2021Data">
+<p>Pegram, Camilla, Carol Gray, Rowena MA Packer, Ysabelle Richards, David B Church, Dave C Brodbelt, and Dan G O’Neill. 2021b. “Proportion and Risk Factors for Death by Euthanasia in Dogs in the Uk– Supporting Data.” <a href="https://researchonline.rvc.ac.uk/id/eprint/13486/">https://researchonline.rvc.ac.uk/id/eprint/13486/</a>.</p>
+</div>
+<div id="ref-verteramo2021analysis">
+<p>Verteramo Chiu, Leslie J, Jie Li, Guillaume Lhermie, and Casey Cazer. 2021. “Analysis of the Demand for Pet Insurance Among Uninsured Pet Owners in the United States.” <em>Veterinary Record</em>, e243.</p>
+</div>
+<div id="ref-wilson2020underwriting">
+<p>Wilson, Kimberly L. 2020. “Underwriting Criteria, Practices, and Tools of Pet Health Insurance Companies.” <em>Connecticut Insurance Law Journal</em> 27 (1): 359–405.</p>
+</div>
+<div id="ref-zayatz2015social">
+<p>Zayatz, Tim. 2015. “Social Security Disability Insurance Program Worker Experience.” <em>Actuarial Study</em> 123. <a href="https://ai.ssa.gov/OACT/NOTES/pdf_studies/study123.pdf">https://ai.ssa.gov/OACT/NOTES/pdf_studies/study123.pdf</a>.</p>
 </div>
 </div>
             </section>
