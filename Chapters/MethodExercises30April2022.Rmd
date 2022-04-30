@@ -1007,6 +1007,104 @@ $$
 </div>
 
 
+**Exercise 3.3.5.**  Recursive formula for cash flow valuation.
+
+For a ten-year term insurance life insurance contract issued to age $x$, you are given:
+
+- Cash flow for each year is 100, that is, $~_kC = 100$, for $k=0,1,\ldots, 9$.
+- The annual probabilities are given by:
+$$
+\begin{array}{lcccccccccc}
+\hline
+k & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
+q_{x+k} & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09 & 0.10 \\ \hline
+\end{array}
+$$
+- The spot rate in each year is 0.05.
+- No cash flows are paid after 10 years.
+
+a.  Prove the following recursion formula:
+$$
+A_{{x}:\enclose{actuarial}{n}} ^ {1} = v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
+$$
+b.  Calculate the expectation and the variance of the present value of this 10-year term life insurance.
+c.  Given one year later, use the result in a. above to calculate the expectation and the variance of the present value of a 9-year term life insurance issued to age $x+1$.
+
+
+`r HideProofTheory('MethodExer335',"Solution to Method Exercise 3.3.5")`
+
+The following is the proof of part a.
+$$
+\begin{eqnarray}
+A_{{x}:\enclose{actuarial}{n}} ^ {1} &=& \sum_{k=0}^{n-1} v^{k+1} ~_{k|}q_{x}  = \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} \\
+ &=& v q_x + \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} = v q_x + v p_x \sum_{k=1}^{n-1} v^{k} ~_{k-1}p_{x+1} q_{(x+1)+(k-1)} \\
+ &=& v q_x + v p_x \sum_{k=0}^{n-2} v^{k+1} ~_kp_{x+1} q_{x+1+k} \\
+ &=& v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
+\end{eqnarray}
+$$
+
+For b and c, calculations are done in `R` below. First, we calculate part b below.
+
+```{r warning=FALSE,message=FALSE, comment=NA, eval=TRUE}
+t <- 1:10
+CashFlow <- 100
+SpotRate <- 0.05
+v <- (1+SpotRate)^(-t)
+qx <- c(0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10)
+px <- c(1,1-qx[-10])
+Prob <- cumprod(px)*qx
+# Expected Present Value calculation for age x
+EPVx <- sum(CashFlow*v*Prob)
+# Standard Deviation of Present Value calculation
+EPVx2 <- sum(CashFlow^2*v^2*Prob)
+VarPVx <- EPVx2 - EPVx^2
+StDevPVx <- sqrt(VarPVx)
+out <- c(EPVx, StDevPVx)
+out
+```
+
+One year later, we follow the same exact procedure to calculate part c from scratch.
+
+```{r warning=FALSE,message=FALSE, comment=NA, eval=TRUE}
+t1 <- 1:9
+v1 <- (1+SpotRate)^(-t1)
+qx1 <- qx[-1]
+px1 <- c(1,1-qx1[-9])
+Prob1 <- cumprod(px1)*qx1
+# Expected Present Value calculation for age x+1
+EPVx1 <- sum(CashFlow*v1*Prob1)
+# Standard Deviation of Present Value calculation
+EPVx12 <- sum(CashFlow^2*v1^2*Prob1)
+VarPVx1 <- EPVx12 - EPVx1^2
+StDevPVx1 <- sqrt(VarPVx1)
+out1 <- c(EPVx1, StDevPVx1)
+out1
+```
+
+To confirm using part 1, we first note that
+$$
+A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1} = \frac{A_{{x}:\enclose{actuarial}{n}} ^ {1} - v q_x}{v(1-q_x)}
+$$
+To calculate the second moment, we simply replace $v$ by $v^2$ and square all the cash flows as well. This verification is done in R below:
+
+```{r warning=FALSE,message=FALSE, comment=NA, eval=TRUE}
+# to use the results in a to calculate c
+EPVx1 <- (EPVx - CashFlow*v[1]*qx[1])/(v[1]*(1-qx[1]))
+EPVx12 <- (EPVx2 - CashFlow^2*v[1]^2*qx[1])/(v[1]^2*(1-qx[1]))
+VarPVx1 <- EPVx12 - EPVx1^2
+StDevPVx1 <- sqrt(VarPVx1)
+out1 <- c(EPVx1, StDevPVx1)
+out1
+```
+
+Finally, numbers are reconciled!!!
+
+
+
+
+</div>
+
+
 
 ## Chapter 4 Method Exercises
 
@@ -1298,104 +1396,6 @@ Thus:
 {\ddot{a}_{\overline{60:\overline{5}|}}^{(12)}} &=& 1.000281016\cdot 14.9368685 - 0.466508028\cdot (1 - 0.016657434) = 14.481074043,\\
 {a_{\overline{60:\overline{5}|}}^{(12)}} &=& 1.000281016\cdot 13.9535259 + 0.450355658 \cdot (1 - 0.016657434) = 14.39912879.
 \end{eqnarray*}
-
-</div>
-
-
-**Exercise 4.1.7.**  Recursive formula for cash flow valuation.
-
-For a ten-year term insurance life insurance contract issued to age $x$, you are given:
-
-- Cash flow for each year is 100, that is, $~_kC = 100$, for $k=0,1,\ldots, 9$.
-- The annual probabilities are given by:
-$$
-\begin{array}{lcccccccccc}
-\hline
-k & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
-q_{x+k} & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09 & 0.10 \\ \hline
-\end{array}
-$$
-- The spot rate in each year is 0.05.
-- No cash flows are paid after 10 years.
-
-a.  Prove the following recursion formula:
-$$
-A_{{x}:\enclose{actuarial}{n}} ^ {1} = v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
-$$
-b.  Calculate the expectation and the variance of the present value of this 10-year term life insurance.
-c.  Given one year later, use the result in a. above to calculate the expectation and the variance of the present value of a 9-year term life insurance issued to age $x+1$.
-
-
-`r HideProofTheory('MethodExer417',"Solution to Method Exercise 4.1.7")`
-
-The following is the proof of part a.
-$$
-\begin{eqnarray}
-A_{{x}:\enclose{actuarial}{n}} ^ {1} &=& \sum_{k=0}^{n-1} v^{k+1} ~_{k|}q_{x}  = \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} \\
- &=& v q_x + \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} = v q_x + v p_x \sum_{k=1}^{n-1} v^{k} ~_{k-1}p_{x+1} q_{(x+1)+(k-1)} \\
- &=& v q_x + v p_x \sum_{k=0}^{n-2} v^{k+1} ~_kp_{x+1} q_{x+1+k} \\
- &=& v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
-\end{eqnarray}
-$$
-
-For b and c, calculations are done in `R` below. First, we calculate part b below.
-
-```{r warning=FALSE,message=FALSE, comment=NA, eval=TRUE}
-t <- 1:10
-CashFlow <- 100
-SpotRate <- 0.05
-v <- (1+SpotRate)^(-t)
-qx <- c(0.01,0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10)
-px <- c(1,1-qx[-10])
-Prob <- cumprod(px)*qx
-# Expected Present Value calculation for age x
-EPVx <- sum(CashFlow*v*Prob)
-# Standard Deviation of Present Value calculation
-EPVx2 <- sum(CashFlow^2*v^2*Prob)
-VarPVx <- EPVx2 - EPVx^2
-StDevPVx <- sqrt(VarPVx)
-out <- c(EPVx, StDevPVx)
-out
-```
-
-One year later, we follow the same exact procedure to calculate part c from scratch.
-
-```{r warning=FALSE,message=FALSE, comment=NA, eval=TRUE}
-t1 <- 1:9
-v1 <- (1+SpotRate)^(-t1)
-qx1 <- qx[-1]
-px1 <- c(1,1-qx1[-9])
-Prob1 <- cumprod(px1)*qx1
-# Expected Present Value calculation for age x+1
-EPVx1 <- sum(CashFlow*v1*Prob1)
-# Standard Deviation of Present Value calculation
-EPVx12 <- sum(CashFlow^2*v1^2*Prob1)
-VarPVx1 <- EPVx12 - EPVx1^2
-StDevPVx1 <- sqrt(VarPVx1)
-out1 <- c(EPVx1, StDevPVx1)
-out1
-```
-
-To confirm using part 1, we first note that
-$$
-A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1} = \frac{A_{{x}:\enclose{actuarial}{n}} ^ {1} - v q_x}{v(1-q_x)}
-$$
-To calculate the second moment, we simply replace $v$ by $v^2$ and square all the cash flows as well. This verification is done in R below:
-
-```{r warning=FALSE,message=FALSE, comment=NA, eval=TRUE}
-# to use the results in a to calculate c
-EPVx1 <- (EPVx - CashFlow*v[1]*qx[1])/(v[1]*(1-qx[1]))
-EPVx12 <- (EPVx2 - CashFlow^2*v[1]^2*qx[1])/(v[1]^2*(1-qx[1]))
-VarPVx1 <- EPVx12 - EPVx1^2
-StDevPVx1 <- sqrt(VarPVx1)
-out1 <- c(EPVx1, StDevPVx1)
-out1
-```
-
-Finally, numbers are reconciled!!!
-
-
-
 
 </div>
 

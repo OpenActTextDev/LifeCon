@@ -1359,6 +1359,89 @@ Hence, we obtain for the 95th percentile:
 \mu + 1.645 \times \sigma = 1,296.38.
 \]</span></p>
 </div>
+<p><strong>Exercise 3.3.5.</strong> Recursive formula for cash flow valuation.</p>
+<p>For a ten-year term insurance life insurance contract issued to age <span class="math inline">\(x\)</span>, you are given:</p>
+<ul>
+<li>Cash flow for each year is 100, that is, <span class="math inline">\(~_kC = 100\)</span>, for <span class="math inline">\(k=0,1,\ldots, 9\)</span>.</li>
+<li>The annual probabilities are given by:
+<span class="math display">\[
+\begin{array}{lcccccccccc}
+\hline
+k &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\ \hline
+q_{x+k} &amp; 0.01 &amp; 0.02 &amp; 0.03 &amp; 0.04 &amp; 0.05 &amp; 0.06 &amp; 0.07 &amp; 0.08 &amp; 0.09 &amp; 0.10 \\ \hline
+\end{array}
+\]</span></li>
+<li>The spot rate in each year is 0.05.</li>
+<li>No cash flows are paid after 10 years.</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li>Prove the following recursion formula:
+<span class="math display">\[
+A_{{x}:\enclose{actuarial}{n}} ^ {1} = v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
+\]</span></li>
+<li>Calculate the expectation and the variance of the present value of this 10-year term life insurance.</li>
+<li>Given one year later, use the result in a. above to calculate the expectation and the variance of the present value of a 9-year term life insurance issued to age <span class="math inline">\(x+1\)</span>.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer335" href="javascript:toggleTheory('toggleTheory.MethodExer335','displayCode.MethodExer335');"><i><strong>Solution to Method Exercise 3.3.5</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer335" style="display: none">
+<p>The following is the proof of part a.
+<span class="math display">\[
+\begin{eqnarray}
+A_{{x}:\enclose{actuarial}{n}} ^ {1} &amp;=&amp; \sum_{k=0}^{n-1} v^{k+1} ~_{k|}q_{x}  = \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} \\
+ &amp;=&amp; v q_x + \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} = v q_x + v p_x \sum_{k=1}^{n-1} v^{k} ~_{k-1}p_{x+1} q_{(x+1)+(k-1)} \\
+ &amp;=&amp; v q_x + v p_x \sum_{k=0}^{n-2} v^{k+1} ~_kp_{x+1} q_{x+1+k} \\
+ &amp;=&amp; v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
+\end{eqnarray}
+\]</span></p>
+<p>For b and c, calculations are done in <code>R</code> below. First, we calculate part b below.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="method-exercises.html#cb105-1"></a>t &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb105-2"><a href="method-exercises.html#cb105-2"></a>CashFlow &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb105-3"><a href="method-exercises.html#cb105-3"></a>SpotRate &lt;-<span class="st"> </span><span class="fl">0.05</span></span>
+<span id="cb105-4"><a href="method-exercises.html#cb105-4"></a>v &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">+</span>SpotRate)<span class="op">^</span>(<span class="op">-</span>t)</span>
+<span id="cb105-5"><a href="method-exercises.html#cb105-5"></a>qx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.01</span>,<span class="fl">0.02</span>,<span class="fl">0.03</span>,<span class="fl">0.04</span>,<span class="fl">0.05</span>,<span class="fl">0.06</span>,<span class="fl">0.07</span>,<span class="fl">0.08</span>,<span class="fl">0.09</span>,<span class="fl">0.10</span>)</span>
+<span id="cb105-6"><a href="method-exercises.html#cb105-6"></a>px &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="op">-</span>qx[<span class="op">-</span><span class="dv">10</span>])</span>
+<span id="cb105-7"><a href="method-exercises.html#cb105-7"></a>Prob &lt;-<span class="st"> </span><span class="kw">cumprod</span>(px)<span class="op">*</span>qx</span>
+<span id="cb105-8"><a href="method-exercises.html#cb105-8"></a><span class="co"># Expected Present Value calculation for age x</span></span>
+<span id="cb105-9"><a href="method-exercises.html#cb105-9"></a>EPVx &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">*</span>v<span class="op">*</span>Prob)</span>
+<span id="cb105-10"><a href="method-exercises.html#cb105-10"></a><span class="co"># Standard Deviation of Present Value calculation</span></span>
+<span id="cb105-11"><a href="method-exercises.html#cb105-11"></a>EPVx2 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v<span class="op">^</span><span class="dv">2</span><span class="op">*</span>Prob)</span>
+<span id="cb105-12"><a href="method-exercises.html#cb105-12"></a>VarPVx &lt;-<span class="st"> </span>EPVx2 <span class="op">-</span><span class="st"> </span>EPVx<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb105-13"><a href="method-exercises.html#cb105-13"></a>StDevPVx &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx)</span>
+<span id="cb105-14"><a href="method-exercises.html#cb105-14"></a>out &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx, StDevPVx)</span>
+<span id="cb105-15"><a href="method-exercises.html#cb105-15"></a>out</span></code></pre></div>
+<pre><code>[1] 31.679 36.622</code></pre>
+<p>One year later, we follow the same exact procedure to calculate part c from scratch.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="method-exercises.html#cb107-1"></a>t1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9</span></span>
+<span id="cb107-2"><a href="method-exercises.html#cb107-2"></a>v1 &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">+</span>SpotRate)<span class="op">^</span>(<span class="op">-</span>t1)</span>
+<span id="cb107-3"><a href="method-exercises.html#cb107-3"></a>qx1 &lt;-<span class="st"> </span>qx[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb107-4"><a href="method-exercises.html#cb107-4"></a>px1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="op">-</span>qx1[<span class="op">-</span><span class="dv">9</span>])</span>
+<span id="cb107-5"><a href="method-exercises.html#cb107-5"></a>Prob1 &lt;-<span class="st"> </span><span class="kw">cumprod</span>(px1)<span class="op">*</span>qx1</span>
+<span id="cb107-6"><a href="method-exercises.html#cb107-6"></a><span class="co"># Expected Present Value calculation for age x+1</span></span>
+<span id="cb107-7"><a href="method-exercises.html#cb107-7"></a>EPVx1 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">*</span>v1<span class="op">*</span>Prob1)</span>
+<span id="cb107-8"><a href="method-exercises.html#cb107-8"></a><span class="co"># Standard Deviation of Present Value calculation</span></span>
+<span id="cb107-9"><a href="method-exercises.html#cb107-9"></a>EPVx12 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v1<span class="op">^</span><span class="dv">2</span><span class="op">*</span>Prob1)</span>
+<span id="cb107-10"><a href="method-exercises.html#cb107-10"></a>VarPVx1 &lt;-<span class="st"> </span>EPVx12 <span class="op">-</span><span class="st"> </span>EPVx1<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb107-11"><a href="method-exercises.html#cb107-11"></a>StDevPVx1 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx1)</span>
+<span id="cb107-12"><a href="method-exercises.html#cb107-12"></a>out1 &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx1, StDevPVx1)</span>
+<span id="cb107-13"><a href="method-exercises.html#cb107-13"></a>out1</span></code></pre></div>
+<pre><code>[1] 32.589 38.055</code></pre>
+<p>To confirm using part 1, we first note that
+<span class="math display">\[
+A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1} = \frac{A_{{x}:\enclose{actuarial}{n}} ^ {1} - v q_x}{v(1-q_x)}
+\]</span>
+To calculate the second moment, we simply replace <span class="math inline">\(v\)</span> by <span class="math inline">\(v^2\)</span> and square all the cash flows as well. This verification is done in R below:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="method-exercises.html#cb109-1"></a><span class="co"># to use the results in a to calculate c</span></span>
+<span id="cb109-2"><a href="method-exercises.html#cb109-2"></a>EPVx1 &lt;-<span class="st"> </span>(EPVx <span class="op">-</span><span class="st"> </span>CashFlow<span class="op">*</span>v[<span class="dv">1</span>]<span class="op">*</span>qx[<span class="dv">1</span>])<span class="op">/</span>(v[<span class="dv">1</span>]<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>qx[<span class="dv">1</span>]))</span>
+<span id="cb109-3"><a href="method-exercises.html#cb109-3"></a>EPVx12 &lt;-<span class="st"> </span>(EPVx2 <span class="op">-</span><span class="st"> </span>CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v[<span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span><span class="op">*</span>qx[<span class="dv">1</span>])<span class="op">/</span>(v[<span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>qx[<span class="dv">1</span>]))</span>
+<span id="cb109-4"><a href="method-exercises.html#cb109-4"></a>VarPVx1 &lt;-<span class="st"> </span>EPVx12 <span class="op">-</span><span class="st"> </span>EPVx1<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb109-5"><a href="method-exercises.html#cb109-5"></a>StDevPVx1 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx1)</span>
+<span id="cb109-6"><a href="method-exercises.html#cb109-6"></a>out1 &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx1, StDevPVx1)</span>
+<span id="cb109-7"><a href="method-exercises.html#cb109-7"></a>out1</span></code></pre></div>
+<pre><code>[1] 32.589 38.055</code></pre>
+<p>Finally, numbers are reconciled!!!</p>
+</div>
 </div>
 </div>
 <div id="chapter-4-method-exercises" class="section level2">
@@ -1595,89 +1678,6 @@ Based on the <span class="math inline">\(\alpha\)</span>/<span class="math inlin
 {\ddot{a}_{\overline{60:\overline{5}|}}^{(12)}} &amp;=&amp; 1.000281016\cdot 14.9368685 - 0.466508028\cdot (1 - 0.016657434) = 14.481074043,\\
 {a_{\overline{60:\overline{5}|}}^{(12)}} &amp;=&amp; 1.000281016\cdot 13.9535259 + 0.450355658 \cdot (1 - 0.016657434) = 14.39912879.
 \end{eqnarray*}\]</span></p>
-</div>
-<p><strong>Exercise 4.1.7.</strong> Recursive formula for cash flow valuation.</p>
-<p>For a ten-year term insurance life insurance contract issued to age <span class="math inline">\(x\)</span>, you are given:</p>
-<ul>
-<li>Cash flow for each year is 100, that is, <span class="math inline">\(~_kC = 100\)</span>, for <span class="math inline">\(k=0,1,\ldots, 9\)</span>.</li>
-<li>The annual probabilities are given by:
-<span class="math display">\[
-\begin{array}{lcccccccccc}
-\hline
-k &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\ \hline
-q_{x+k} &amp; 0.01 &amp; 0.02 &amp; 0.03 &amp; 0.04 &amp; 0.05 &amp; 0.06 &amp; 0.07 &amp; 0.08 &amp; 0.09 &amp; 0.10 \\ \hline
-\end{array}
-\]</span></li>
-<li>The spot rate in each year is 0.05.</li>
-<li>No cash flows are paid after 10 years.</li>
-</ul>
-<ol style="list-style-type: lower-alpha">
-<li>Prove the following recursion formula:
-<span class="math display">\[
-A_{{x}:\enclose{actuarial}{n}} ^ {1} = v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
-\]</span></li>
-<li>Calculate the expectation and the variance of the present value of this 10-year term life insurance.</li>
-<li>Given one year later, use the result in a. above to calculate the expectation and the variance of the present value of a 9-year term life insurance issued to age <span class="math inline">\(x+1\)</span>.</li>
-</ol>
-<h5 style="text-align: center;">
-<a id="displayTheory.MethodExer417" href="javascript:toggleTheory('toggleTheory.MethodExer417','displayCode.MethodExer417');"><i><strong>Solution to Method Exercise 4.1.7</strong></i></a>
-</h5>
-<div id="toggleTheory.MethodExer417" style="display: none">
-<p>The following is the proof of part a.
-<span class="math display">\[
-\begin{eqnarray}
-A_{{x}:\enclose{actuarial}{n}} ^ {1} &amp;=&amp; \sum_{k=0}^{n-1} v^{k+1} ~_{k|}q_{x}  = \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} \\
- &amp;=&amp; v q_x + \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} = v q_x + v p_x \sum_{k=1}^{n-1} v^{k} ~_{k-1}p_{x+1} q_{(x+1)+(k-1)} \\
- &amp;=&amp; v q_x + v p_x \sum_{k=0}^{n-2} v^{k+1} ~_kp_{x+1} q_{x+1+k} \\
- &amp;=&amp; v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
-\end{eqnarray}
-\]</span></p>
-<p>For b and c, calculations are done in <code>R</code> below. First, we calculate part b below.</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="method-exercises.html#cb105-1"></a>t &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
-<span id="cb105-2"><a href="method-exercises.html#cb105-2"></a>CashFlow &lt;-<span class="st"> </span><span class="dv">100</span></span>
-<span id="cb105-3"><a href="method-exercises.html#cb105-3"></a>SpotRate &lt;-<span class="st"> </span><span class="fl">0.05</span></span>
-<span id="cb105-4"><a href="method-exercises.html#cb105-4"></a>v &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">+</span>SpotRate)<span class="op">^</span>(<span class="op">-</span>t)</span>
-<span id="cb105-5"><a href="method-exercises.html#cb105-5"></a>qx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.01</span>,<span class="fl">0.02</span>,<span class="fl">0.03</span>,<span class="fl">0.04</span>,<span class="fl">0.05</span>,<span class="fl">0.06</span>,<span class="fl">0.07</span>,<span class="fl">0.08</span>,<span class="fl">0.09</span>,<span class="fl">0.10</span>)</span>
-<span id="cb105-6"><a href="method-exercises.html#cb105-6"></a>px &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="op">-</span>qx[<span class="op">-</span><span class="dv">10</span>])</span>
-<span id="cb105-7"><a href="method-exercises.html#cb105-7"></a>Prob &lt;-<span class="st"> </span><span class="kw">cumprod</span>(px)<span class="op">*</span>qx</span>
-<span id="cb105-8"><a href="method-exercises.html#cb105-8"></a><span class="co"># Expected Present Value calculation for age x</span></span>
-<span id="cb105-9"><a href="method-exercises.html#cb105-9"></a>EPVx &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">*</span>v<span class="op">*</span>Prob)</span>
-<span id="cb105-10"><a href="method-exercises.html#cb105-10"></a><span class="co"># Standard Deviation of Present Value calculation</span></span>
-<span id="cb105-11"><a href="method-exercises.html#cb105-11"></a>EPVx2 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v<span class="op">^</span><span class="dv">2</span><span class="op">*</span>Prob)</span>
-<span id="cb105-12"><a href="method-exercises.html#cb105-12"></a>VarPVx &lt;-<span class="st"> </span>EPVx2 <span class="op">-</span><span class="st"> </span>EPVx<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb105-13"><a href="method-exercises.html#cb105-13"></a>StDevPVx &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx)</span>
-<span id="cb105-14"><a href="method-exercises.html#cb105-14"></a>out &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx, StDevPVx)</span>
-<span id="cb105-15"><a href="method-exercises.html#cb105-15"></a>out</span></code></pre></div>
-<pre><code>[1] 31.679 36.622</code></pre>
-<p>One year later, we follow the same exact procedure to calculate part c from scratch.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="method-exercises.html#cb107-1"></a>t1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9</span></span>
-<span id="cb107-2"><a href="method-exercises.html#cb107-2"></a>v1 &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">+</span>SpotRate)<span class="op">^</span>(<span class="op">-</span>t1)</span>
-<span id="cb107-3"><a href="method-exercises.html#cb107-3"></a>qx1 &lt;-<span class="st"> </span>qx[<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb107-4"><a href="method-exercises.html#cb107-4"></a>px1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="op">-</span>qx1[<span class="op">-</span><span class="dv">9</span>])</span>
-<span id="cb107-5"><a href="method-exercises.html#cb107-5"></a>Prob1 &lt;-<span class="st"> </span><span class="kw">cumprod</span>(px1)<span class="op">*</span>qx1</span>
-<span id="cb107-6"><a href="method-exercises.html#cb107-6"></a><span class="co"># Expected Present Value calculation for age x+1</span></span>
-<span id="cb107-7"><a href="method-exercises.html#cb107-7"></a>EPVx1 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">*</span>v1<span class="op">*</span>Prob1)</span>
-<span id="cb107-8"><a href="method-exercises.html#cb107-8"></a><span class="co"># Standard Deviation of Present Value calculation</span></span>
-<span id="cb107-9"><a href="method-exercises.html#cb107-9"></a>EPVx12 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v1<span class="op">^</span><span class="dv">2</span><span class="op">*</span>Prob1)</span>
-<span id="cb107-10"><a href="method-exercises.html#cb107-10"></a>VarPVx1 &lt;-<span class="st"> </span>EPVx12 <span class="op">-</span><span class="st"> </span>EPVx1<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb107-11"><a href="method-exercises.html#cb107-11"></a>StDevPVx1 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx1)</span>
-<span id="cb107-12"><a href="method-exercises.html#cb107-12"></a>out1 &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx1, StDevPVx1)</span>
-<span id="cb107-13"><a href="method-exercises.html#cb107-13"></a>out1</span></code></pre></div>
-<pre><code>[1] 32.589 38.055</code></pre>
-<p>To confirm using part 1, we first note that
-<span class="math display">\[
-A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1} = \frac{A_{{x}:\enclose{actuarial}{n}} ^ {1} - v q_x}{v(1-q_x)}
-\]</span>
-To calculate the second moment, we simply replace <span class="math inline">\(v\)</span> by <span class="math inline">\(v^2\)</span> and square all the cash flows as well. This verification is done in R below:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="method-exercises.html#cb109-1"></a><span class="co"># to use the results in a to calculate c</span></span>
-<span id="cb109-2"><a href="method-exercises.html#cb109-2"></a>EPVx1 &lt;-<span class="st"> </span>(EPVx <span class="op">-</span><span class="st"> </span>CashFlow<span class="op">*</span>v[<span class="dv">1</span>]<span class="op">*</span>qx[<span class="dv">1</span>])<span class="op">/</span>(v[<span class="dv">1</span>]<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>qx[<span class="dv">1</span>]))</span>
-<span id="cb109-3"><a href="method-exercises.html#cb109-3"></a>EPVx12 &lt;-<span class="st"> </span>(EPVx2 <span class="op">-</span><span class="st"> </span>CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v[<span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span><span class="op">*</span>qx[<span class="dv">1</span>])<span class="op">/</span>(v[<span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>qx[<span class="dv">1</span>]))</span>
-<span id="cb109-4"><a href="method-exercises.html#cb109-4"></a>VarPVx1 &lt;-<span class="st"> </span>EPVx12 <span class="op">-</span><span class="st"> </span>EPVx1<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb109-5"><a href="method-exercises.html#cb109-5"></a>StDevPVx1 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx1)</span>
-<span id="cb109-6"><a href="method-exercises.html#cb109-6"></a>out1 &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx1, StDevPVx1)</span>
-<span id="cb109-7"><a href="method-exercises.html#cb109-7"></a>out1</span></code></pre></div>
-<pre><code>[1] 32.589 38.055</code></pre>
-<p>Finally, numbers are reconciled!!!</p>
 </div>
 </div>
 </div>
