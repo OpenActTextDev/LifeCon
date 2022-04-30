@@ -63,6 +63,7 @@ The project goal is to have the actuarial community author our textbooks in a co
 - **Adam Butt**
 - **Edward (Jed) Frees** 
 - **Emiliano Valdez**
+- **Andrés Villegas**
 
 ## For our Readers  {-}
 

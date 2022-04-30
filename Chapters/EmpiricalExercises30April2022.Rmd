@@ -1,0 +1,657 @@
+# Empirical Exercises
+
+
+`r if (knitr:::is_html_output()) '$\\require{enclose}$'`
+<!-- Later equations only properly knit if this is beforehand once in the code $\require{enclose}$ -->
+
+## Chapter 2 Empirical Exercises
+
+**Exercise 2.3.1. Gompertz-Makeham and Survival Probabilities.** Recall the U.S. Life Expectancies introduced in Section 2.1:
+
+
+```{r echo = FALSE}
+us_les <- read.csv("Data/CDCLifeExp.csv")
+knitr::kable(us_les, align = "r", caption="Life Expectancies From 2017 U.S. National Vital Statistics")
+
+```
+
+Section 2.3 used these data to fit a Gompertz-Makeham distribution for female lives; in this exercise, we repeat this analysis but for male lives. To this end,
+
+a.  Fit a Gompertz-Makeham model to the provided US Male life expectancies.
+b.  Plot the resulting force of mortality and the survival function, compare to the one for U.S. Females from Section 2.3.
+c.  Determine the resulting model to determine the probabilities that a 20 year old survives to age 60, 70, and 80: $~_{40}p_{20}$, $~_{50}p_{20}$, and $~_{60}p_{20}$.
+
+
+`r HideRCode('Exer2.3.1A',"Exercise 2.3.1 Solution")`
+
+**Part (a)**
+
+```{r}
+S_0 <- function(t,A,B,c) { exp(- A * t - B * (exp(log(c)*t) - 1)/ log(c) )}
+le <- function(age,A,B,c){
+  S_x <- function(t){ S_0(age+t,A,B,c)/S_0(age,A,B,c)}
+  res <- integrate(S_x,lower = 0, upper = (120-age))$value
+  return(res)
+}
+
+le(20,0.001,0.0001,1.1)
+
+tomin <- function(x){
+  res <- 0
+  for (i in 1:5){
+    res <- res + (us_les[i,3] - le((i-1)*20,0.0001*(1+x[1]/100),0.000007*(1+x[2]/100),1.10*(1+x[3]/100)))^2
+  }
+  return(res)
+}
+
+library(pracma)
+res <- fminsearch(tomin,c(0,0,0))
+
+A_opt_mal <- 0.0001*(1+res$xmin[1]/100)
+B_opt_mal <- 0.000007*(1+res$xmin[2]/100)
+c_opt_mal <- 1.10*(1+res$xmin[3]/100)
+le(0,A_opt_mal,B_opt_mal,c_opt_mal)
+le(20,A_opt_mal,B_opt_mal,c_opt_mal)
+le(40,A_opt_mal,B_opt_mal,c_opt_mal)
+le(60,A_opt_mal,B_opt_mal,c_opt_mal)
+le(80,A_opt_mal,B_opt_mal,c_opt_mal)
+```
+
+**Part (b)**
+
+```{r}
+ages <- 1:110
+mus <- A_opt_mal + B_opt_mal * exp(log(c_opt_mal) * ages)
+plot(mus,type = "l", main = "Force of Mortality", xlab = "Age")
+```
+
+**Part (c)**
+
+```{r}
+S_0(60,A_opt_mal,B_opt_mal,c_opt_mal) / S_0(20,A_opt_mal,B_opt_mal,c_opt_mal)
+S_0(70,A_opt_mal,B_opt_mal,c_opt_mal) / S_0(20,A_opt_mal,B_opt_mal,c_opt_mal)
+S_0(80,A_opt_mal,B_opt_mal,c_opt_mal) / S_0(20,A_opt_mal,B_opt_mal,c_opt_mal)
+
+```
+
+</div>
+
+
+**Exercise 2.4.1. Creating a Life Table from One-Year Central Decrements.** In this exercise, we will create a life table based on one-year central decrements using data from the [Human Mortality Database](https://www.mortality.org).
+
+a.  Download the data from Appendix Section \@ref(Sec:DataUSPoPCounts). Create a subset of the data for year 2015 using female rates.
+b.  From these central death rates, create one-year mortality rates.
+c.  Starting with 100,000 lives at age 0, create a life table. Use $\omega=111$ as the limiting age. List the first six rows of your table.
+
+
+`r HideRCode('Exer2.4.1',"Exercise 2.4.1 Solution")`
+
+**Part (a)**
+
+```{r }
+dat <- read.csv("Data/HMD_mx.csv")
+#dat <- read.csv("../Data/HMD_mx.csv")
+dat_2015_fem <- dat[dat$Year_start == 2015,-c(2,5,6)]
+colnames(dat_2015_fem)[colnames(dat_2015_fem)=="Female"] <- "mx"
+```
+
+**Part (b)**
+
+```{r }
+dat_2015_fem$qx <- 1-exp(-dat_2015_fem$mx)
+```
+
+**Part (c)**
+
+```{r }
+l <- rep(0,length(dat_2015_fem$mx))
+l[1] <- 1000000
+for (i in 2:111){
+  l[i] = l[i-1] * (1-dat_2015_fem[i-1,4])
+}
+dat_2015_fem$l <- l
+
+knitr::kable(head(dat_2015_fem), align = "r", caption="Female Life Table")
+```
+
+
+</div>
+
+## Chapter 3 Empirical Exercises
+
+**Exercise 3.2.1. Whole Life Actuarial Present Values.**
+In Exercise 2.4.1, we learned how to create a life table based on one-year central decrements using data from the [Human Mortality Database](https://www.mortality.org). In this exercise, we use this life table to explore life insurance calculations in `R`.  We first include columns for $A_x$ -- the actuarial present values for whole life insurance -- and the corresponding second moment.  We then use this information to determine term and endowment insurances.  
+
+The following code demonstrates how this works for females lifes. Then, you are asked to replicate this analysis for male lives.
+
+
+**Add Columns for $A_x$ and $^2A_x$**
+
+Starting with the life table you created in Exercise 2.4.1, next you will add columns for $A_x$ and $^2A_x$.  For that, we need to fix the interest rate.  Given currently low rates, we choose $i=2\%$.
+
+```{r}
+i <- 0.02
+v <- 1/(1+i)
+```
+
+We then determine $A_x$ and $^2A_x$ via their recursion relationships, where we start with $\omega = 111$ for which $A_{\omega}=v$ and $^2A_{\omega}=v^2$:
+
+
+`r HideRCode('EmpExer3.2.1B',"R Code to Determine Whole Life Actuarial Present Values")`
+
+
+```{r }
+Ax <- rep(0,length(dat_2015_fem$mx) + 1)
+TwoAx <- rep(0,length(dat_2015_fem$mx) + 1)
+Ax[112] <- v
+TwoAx[112] <- v*v
+for (i in 1:111){
+  Ax[112-i]    = dat_2015_fem$qx[112-i] * v + (1-dat_2015_fem$qx[112-i]) * v * Ax[113-i]
+  TwoAx[112-i] = dat_2015_fem$qx[112-i] * v * v + (1-dat_2015_fem$qx[112-i]) * v * v * TwoAx[113-i]
+}
+dat_2015_fem$Ax <- Ax[1:111]
+dat_2015_fem$TwoAx <- TwoAx[1:111]
+```
+
+</div>
+
+Here is an excerpt from our now more complete life table:
+
+```{r echo = FALSE}
+dat_2015_fem[41:46,]
+```
+
+**Term and Endowment Insurance**
+
+Let's use it for pricing life insurance contracts.  Let's set $x=40$ and $n=20$, and evaluate pure endowment, term life, and endowment insurance:
+
+
+`r HideRCode('EmpExer3.2.1C',"R Code to Determine Whole Life Actuarial Present Values")`
+
+```{r}
+A40_20_1 <- dat_2015_fem$l[61]/dat_2015_fem$l[41] * v^(20)
+A40_20_1
+A40_1_20 <- dat_2015_fem$Ax[41] - A40_20_1 * dat_2015_fem$Ax[61]
+A40_1_20
+A40_20 <- A40_20_1 + A40_1_20
+A40_20
+```
+
+</div>
+
+Let's also calculate corresponding standard deviations (square roots of variances):
+
+
+`r HideRCode('EmpExer3.2.1D',"R Code to Determine Standard Deviations")`
+
+```{r}
+TwoA40_20_1 <- dat_2015_fem$l[61]/dat_2015_fem$l[41] * v^(20*2)
+sqrt(TwoA40_20_1 - A40_20_1 * A40_20_1)
+TwoA40_1_20 <- dat_2015_fem$TwoAx[41] -TwoA40_20_1 * dat_2015_fem$TwoAx[61]
+sqrt(TwoA40_1_20 - A40_1_20 * A40_1_20)
+TwoA40_20 <- TwoA40_20_1 + TwoA40_1_20
+sqrt(TwoA40_20 - A40_20 * A40_20)
+```
+
+</div>
+
+Repeat the above calculations above for the US male population. To this end, you should:
+
+*  (i) complete the male life table with columns for $A_x$ and $^2A_x$; 
+*  (ii) determine pure endowment, term life, and endowment insurance values and standard deviations for a forty year old male and a 20 year term; and 
+
+
+`r HideRCode('EmpExer3.2.1E',"R Code to Determine Whole Life Actuarial Present Values")`
+
+```{r}
+dat_2015_ma <- dat[dat$Year_start == 2015,-c(2,4,6)]
+colnames(dat_2015_ma)[colnames(dat_2015_ma)=="Male"] <- "mx"
+dat_2015_ma$qx <- 1-exp(-dat_2015_ma$mx)
+
+l <- rep(0,length(dat_2015_ma$mx))
+l[1] <- 1000000
+for (i in 2:111){
+  l[i] = l[i-1] * (1-dat_2015_ma[i-1,4])
+}
+dat_2015_ma$l <- l
+
+Ax <- rep(0,length(dat_2015_ma$mx) + 1)
+TwoAx <- rep(0,length(dat_2015_ma$mx) + 1)
+Ax[112] <- v
+TwoAx[112] <- v*v
+for (i in 1:111){
+  Ax[112-i]    = dat_2015_ma$qx[112-i] * v + (1-dat_2015_ma$qx[112-i]) * v * Ax[113-i]
+  TwoAx[112-i] = dat_2015_ma$qx[112-i] * v * v + (1-dat_2015_ma$qx[112-i]) * v * v * TwoAx[113-i]
+}
+dat_2015_ma$Ax <- Ax[1:111]
+dat_2015_ma$TwoAx <- TwoAx[1:111]
+
+dat_2015_ma[41:61,]
+
+A40_20_1 <- dat_2015_ma$l[61]/dat_2015_ma$l[41] * v^(20)
+A40_20_1
+A40_1_20 <- dat_2015_ma$Ax[41] - A40_20_1 * dat_2015_ma$Ax[61]
+A40_1_20
+A40_20 <- A40_20_1 + A40_1_20
+A40_20
+
+TwoA40_20_1 <- dat_2015_ma$l[61]/dat_2015_ma$l[41] * v^(20*2)
+sqrt(TwoA40_20_1 - A40_20_1 * A40_20_1)
+TwoA40_1_20 <- dat_2015_ma$TwoAx[41] -TwoA40_20_1 * dat_2015_ma$TwoAx[61]
+sqrt(TwoA40_1_20 - A40_1_20 * A40_1_20)
+TwoA40_20 <- TwoA40_20_1 + TwoA40_1_20
+sqrt(TwoA40_20 - A40_20 * A40_20)
+
+```
+
+</div>
+
+
+**Exercise 3.2.2. Increasing Insurance Actuarial Present Values.** As a follow-up to Exercise 3.2.1, we now consider an increasing whole life insurance. To begin, we determine the present value of an increasing insurance policy, using the basic summation,
+$$
+(IA)_x = \sum_{k=0}^{\omega} {_kp_x}\,q_{x+k}\,v^{k+1}\,(k+1).
+$$
+Here it is:
+
+`r HideRCode('EmpExer3.2.2A',"R Code to Determine APV Increasing Whole Life")`
+
+```{r}
+IA40 <- 0
+for (j in 1:70){
+  IA40 <- IA40 + j * dat_2015_fem$l[40+j]/dat_2015_fem$l[41] * dat_2015_fem$qx[40+j] * v^j
+}
+IA40 <- IA40 + dat_2015_fem$l[111]/dat_2015_fem$l[41] * (71 * dat_2015_fem$qx[111] * v^(71) 
+             + 72 * (1-dat_2015_fem$qx[111]) * v^(72))  
+IA40
+```
+
+</div>
+
+Alternatively, we can evaluate the increasing insurance present value as the sum of deferred insurance contracts:
+
+$$
+(IA)_x = \sum_{k=0}^{\omega} {_{k|}A_x}.
+$$
+
+Carrying it out...
+
+`r HideRCode('EmpExer3.2.2B',"R Code  APV of Increasing Whole Life based on Deferred Contracts")`
+
+```{r}
+BarjA40 <- rep(0,72)
+IA40_2 <- 0
+for (j in 1:71){
+  BarjA40[j] <- dat_2015_fem$l[40+j]/dat_2015_fem$l[41] * v^(j-1) * dat_2015_fem$Ax[40+j]
+  IA40_2 <- IA40_2 + BarjA40[j]
+}
+BarjA40[72] <- dat_2015_fem$l[111]/dat_2015_fem$l[41] * (1 - dat_2015_fem$qx[111]) * v^(72) 
+IA40_2 <- IA40_2 + BarjA40[72]
+```
+
+...we get the same result:
+
+```{r}
+IA40_2
+```
+
+</div>
+
+We can also plot the deferred insurance actuarial present values:
+
+```{r echo = FALSE, out.width='60%'}
+plot(BarjA40)
+```
+
+</div>
+
+Let's also evaluate the second moment, which we obtain by squaring the payoff and the discount factors:
+
+`r HideRCode('EmpExer3.2.2C',"R Code for Second Moments of Increasing Whole Life")`
+
+```{r}
+SecondMomIA <- 0
+for (j in 1:70){
+  SecondMomIA  <- SecondMomIA  + j * j * dat_2015_fem$l[40+j]/dat_2015_fem$l[41] * dat_2015_fem$qx[40+j] * v^(j*2)
+}
+SecondMomIA <- SecondMomIA + dat_2015_fem$l[111]/dat_2015_fem$l[41] * (71 * 71 * dat_2015_fem$qx[111] * v^(71*2) + 72 * 72 * (1-dat_2015_fem$qx[111]) * v^(72*2))  
+```
+
+</div>
+
+We can use it to determine the standard deviation:
+
+```{r}
+sqrt(SecondMomIA - IA40 * IA40)
+```
+
+
+
+Repeat the above calculations above for the US male population. Specifically, for an increasing whole life insurance on a 40-year old male insured, you should determine the 
+
+a.  actuarial present value and
+b.  the associated standard deviation 
+
+
+`r HideRCode('EmpExer3.2.2E',"R Code to Determine Whole Life Actuarial Present Values")`
+
+```{r}
+dat_2015_ma <- dat[dat$Year_start == 2015,-c(2,4,6)]
+colnames(dat_2015_ma)[colnames(dat_2015_ma)=="Male"] <- "mx"
+dat_2015_ma$qx <- 1-exp(-dat_2015_ma$mx)
+
+l <- rep(0,length(dat_2015_ma$mx))
+l[1] <- 1000000
+for (i in 2:111){
+  l[i] = l[i-1] * (1-dat_2015_ma[i-1,4])
+}
+dat_2015_ma$l <- l
+
+Ax <- rep(0,length(dat_2015_ma$mx) + 1)
+TwoAx <- rep(0,length(dat_2015_ma$mx) + 1)
+Ax[112] <- v
+TwoAx[112] <- v*v
+for (i in 1:111){
+  Ax[112-i]    = dat_2015_ma$qx[112-i] * v + (1-dat_2015_ma$qx[112-i]) * v * Ax[113-i]
+  TwoAx[112-i] = dat_2015_ma$qx[112-i] * v * v + (1-dat_2015_ma$qx[112-i]) * v * v * TwoAx[113-i]
+}
+dat_2015_ma$Ax <- Ax[1:111]
+dat_2015_ma$TwoAx <- TwoAx[1:111]
+
+IA40 <- 0
+for (j in 1:70){
+  IA40 <- IA40 + j * dat_2015_ma$l[40+j]/dat_2015_ma$l[41] * dat_2015_ma$qx[40+j] * v^j
+}
+IA40 <- IA40 + dat_2015_ma$l[111]/dat_2015_ma$l[41] * (71 * dat_2015_ma$qx[111] * v^(71) + 72 * (1-dat_2015_ma$qx[111]) * v^(72))  
+IA40
+
+BarjA40 <- rep(0,72)
+IA40_2 <- 0
+for (j in 1:71){
+  BarjA40[j] <- dat_2015_ma$l[40+j]/dat_2015_ma$l[41] * v^(j-1) * dat_2015_ma$Ax[40+j]
+  IA40_2 <- IA40_2 + BarjA40[j]
+}
+BarjA40[72] <- dat_2015_ma$l[111]/dat_2015_ma$l[41] * (1 - dat_2015_ma$qx[111]) * v^(72) 
+IA40_2 <- IA40_2 + BarjA40[72]
+IA40_2
+
+plot(BarjA40)
+
+SecondMomIA <- 0
+for (j in 1:70){
+  SecondMomIA  <- SecondMomIA  + j * j * dat_2015_ma$l[40+j]/dat_2015_ma$l[41] * dat_2015_ma$qx[40+j] * v^(j*2)
+}
+SecondMomIA <- SecondMomIA + dat_2015_ma$l[111]/dat_2015_ma$l[41] * (71 * 71 * dat_2015_ma$qx[111] * v^(71*2) + 72 * 72 * (1-dat_2015_ma$qx[111]) * v^(72*2))  
+sqrt(SecondMomIA - IA40 * IA40)
+```
+
+</div>
+
+## Chapter 4 Empirical Exercises
+
+
+
+#### Section 4.3 Exercises {-}
+
+**Exercise 4.3.1. Actuarial Present Values for Select and Ultimate Tables**. The select and ultimate tables introduced in Section \@ref(Sec:SelectionAdverse) are complicated -- is such complexity is warranted in practice? To get insights into this question, in this exercise you will compare actuarial present values derived from select and ultimate mortality to those from only ultimate mortality. To be specific, we focus consider whole life insurance for using the female Canadian experience introduced in Section \@ref(Sec:SelectionAdverse); the data are available in Appendix Section \@ref(Sec:CanadianSelect).
+
+For these data,
+
+a.  produce $A_x$ for $x=50, \ldots, 65$ using an interest rate of $i=0.04$ based on
+    i.  select and ultimate mortality
+    ii. ultimate mortality
+b.  compare these two sequences of actuarial present values by calculating their ratio.
+c.  repeat parts (a) and (b) using an interest rate $i=0.02$.
+
+To give you a feel for the results, Figure \@ref(fig:SelUlt1) summarizes the results.
+
+
+```{r CanadianSelectExer, echo = FALSE}
+
+CanadianSelUlt <- read.csv("Data/CanadianFemaleSelectRead.csv", stringsAsFactors = FALSE)
+
+temp <- CanadianSelUlt[131:201,1:2]
+temp1 <- as.matrix(temp)
+CanadianUlt50 <- matrix(as.numeric(temp1), ncol=2)
+colnames(CanadianUlt50) <- c("Age", "qx_Ult")
+rownames(CanadianUlt50) <- NULL
+
+tempSel <- CanadianSelUlt[51:81,]
+tempSel1 <- as.matrix(tempSel)
+
+CanadianSel50 <- matrix(as.numeric(tempSel1), ncol=ncol(tempSel))
+rownames(CanadianSel50) <- NULL
+
+CanadianSel50.toUlt <- matrix(1, nrow = nrow(CanadianSel50), ncol = 120-50+1)
+CanadianSel50.toUlt[1:nrow(CanadianSel50),1:ncol(CanadianSel50)] <- CanadianSel50
+
+for (irow in (1:nrow(CanadianSel50)) ){
+for (icol in (1: (120-50-15-irow)) ){
+  CanadianSel50.toUlt[irow,1+15+icol ] <- CanadianUlt50[irow+14+icol,2]
+   }
+}
+
+#  Actuarial Present Value Calculations
+APV.Ult <- function(xage, q.x, int=0.00){
+  v = 1/(1+int)
+  num = length(xage)
+  A.x <- 0*xage -> add.x -> e.x
+  A.x[num] = v*q.x[num]
+  add.x[num] = 1 + (1-q.x[num])/(int + 1e-12)
+  e.x[num] = 1-q.x[num]
+  for (i in 1:(num-1)){
+    A.x[num-i] = v*q.x[num-i] + v*(1-q.x[num-i])*A.x[num-i+1]
+    add.x[num-i] = 1 + v*(1-q.x[num-i])*add.x[num-i+1] 
+    e.x[num-i] =  (1-q.x[num-i])*(1+e.x[num-i+1])
+    }
+  tablelife <- cbind(xage,q.x,A.x,add.x,e.x)
+  return(tablelife)
+}
+AxUlt04 <- APV.Ult(xage= CanadianUlt50[,1], q.x=CanadianUlt50[,2], int=0.04)[,3]
+AxUlt04.5065 <- AxUlt04[1:16]
+AxUlt02 <- APV.Ult(xage= CanadianUlt50[,1], q.x=CanadianUlt50[,2], int=0.02)[,3]
+AxUlt02.5065 <- AxUlt02[1:16]
+
+#  Actuarial Present Value Calculations
+
+APV.Sel <- function(int=0.00){
+AxSel04 <- rep(0, 16)
+  v = 1/(1+int)
+for (iage in 1:16){
+#iage =2
+  AxSel04[iage] =  v*CanadianSel50.toUlt[iage, 2]
+kpx = 1
+  for (k in 1:(ncol(CanadianSel50.toUlt)-2)) {
+    kpx = kpx*(1-CanadianSel50.toUlt[iage, k+1])
+   AxSel04[iage] =  AxSel04[iage] + v**(k+1)*kpx*CanadianSel50.toUlt[iage, k+2]
+  }
+}
+return(AxSel04)
+}
+AxSel04 <- APV.Sel(int=0.04)
+AxSel02 <- APV.Sel(int=0.02)
+
+Age1 <- c("50", "51", "52", "53", "54", "55", "56", "57")
+Age2 <- c("58", "59", "60", "61", "62", "63", "64", "65")
+
+Ratio04Sel.Ult <- AxSel04/AxUlt04.5065
+OutPartA <- rbind(50:57, AxSel04[1:8],  AxUlt04.5065[1:8],  Ratio04Sel.Ult[1:8], 
+                  58:65, AxSel04[9:16], AxUlt04.5065[9:16], Ratio04Sel.Ult[9:16] )
+OutPartA1 <- round(OutPartA, digits = 4)
+OutPartA1[1,] <- Age1
+OutPartA1[5,] <- Age2
+rownames(OutPartA1) <- c(
+  "Age",  "Select2 and Ultimate, i=4%", "Ultimate, i=4%","Ratio", 
+  "Age",  "Select and Ultimate, i=4%", "Ultimate, i=4%", "Ratio")
+#knitr::kable(OutPartA1, align = "r", caption="Select and Ultimate Female Canadian APVs")
+
+Ratio02Sel.Ult <- AxSel02/AxUlt02.5065
+OutPartB <- rbind(50:57, AxSel02[1:8],  AxUlt02.5065[1:8],  Ratio02Sel.Ult[1:8], 
+                  58:65, AxSel02[9:16], AxUlt02.5065[9:16], Ratio02Sel.Ult[9:16] )
+OutPartB1 <- round(OutPartB, digits = 4)
+OutPartB1[1,] <- Age1
+OutPartB1[5,] <- Age2
+rownames(OutPartB1) <- c(
+  "Age",  "Select and Ultimate, i=2%", "Ultimate, i=2%","Ratio", 
+  "Age",  "Select and Ultimate, i=2%", "Ultimate, i=2%", "Ratio")
+#knitr::kable(OutPartB1, align = "r", caption="Select and Ultimate Female Canadian APVs")
+
+
+```
+
+
+(ref:SelUlt1) **Life Insurance APV by Age, Interest, and Mortality Type**. A plot of life insurance actuarial present value $A_x$ by age $x$. The top two lines are based on $i=0.02$, the bottom two based on $i=0.04$. For each pair, the top line uses ultimate mortality, the bottom line is based on select and ultimate mortality
+
+
+```{r SelUlt1, fig.cap='(ref:SelUlt1)', out.width='60%', fig.asp=.80, echo=FALSE}
+
+Age <- 50:65
+dataf <- data.frame(cbind(Age , AxSel04,AxSel02, AxUlt04.5065, AxUlt02.5065 ))
+
+ggplot(dataf,aes(x=Age, y=AxSel04)) + theme_bw() +
+  geom_line(aes(y = AxSel04), color = 1, linetype=4, size = 2) +
+  geom_line(aes(y = AxSel02), color = 1, linetype=1, size = 2) +
+  geom_line(aes(y = AxUlt04.5065), color = 2, linetype=2, size = 2 ) + 
+  geom_line(aes(y = AxUlt02.5065), color = 3, linetype=3 , size = 2) + 
+  xlab("Age") + ylab(expression(A[x])) +
+  annotate("text", x=55, y=0.36, size=4, label = "Interest = 4%") +
+  annotate("text", x=55, y=0.6, size=4, label = "Interest = 2%") 
+
+```
+
+
+
+`r HideProofTheory('EmpExer4.3.1',"Exercise 4.3.1 Answer")`
+
+```{r echo = FALSE}
+knitr::kable(OutPartA1, align = "r", caption="Comparison of Life Insurance APVs, Interest is 4%")
+```
+
+
+```{r echo = FALSE}
+knitr::kable(OutPartB1, align = "r", caption="Comparison of Life Insurance APVs, Interest is 2%")
+```
+
+`r HideRCode('EmpExer4.3.1A',"Exercise 4.3.1 Solution using R Code")`
+
+```{r ref.label = 'CanadianSelectExer', eval=FALSE}
+```
+
+</div>
+
+</div>
+
+
+#### Section 4.5 Exercises {-}
+
+**Exercise 4.5.1. Dog Survival Distributions and Actuarial Present Values.** The analysis in Section \@ref(Sec:CanineMort) suggests that breed is an important factor for dog survival. To underscore this point for a broader audience, let us look at survival for a type of small dog, a "Jack Russell Terrier", and a large dog, a "German Shepherd Dog". We can make differences in survival distributions between small and large dogs even more meaningful by also computing selected actuarial present values that summarize future expected costs.
+
+You should begin your analysis by downloading the data, available in Appendix Section \@ref(Sec:CanineMortality).
+        
+The data have been re-worked so that they can be used for your analysis. Here is a bit more code needed to convert data fields appropriately and to separate the file into two subsets, one for Terriers and one for German Shepherds.  
+
+`r HideRCode('EmpExer4.5.1A',"Show R Code to Pre-Process the Data")`
+
+```{r eval = FALSE}
+# Read in Revised Data
+DogMortA <- read.csv("DogSurvivalData1.csv")
+DogMort <- DogMortA[,-1]
+DogMort$dateBirth <- as.Date(DogMort$dateBirth, "%Y-%m-%d") 
+DogMort$dateDeath <- as.Date(DogMort$dateDeath, "%Y-%m-%d")
+DogMort$AgeAtDeath <- (as.numeric(DogMort$dateDeath) - as.numeric(DogMort$dateBirth))/365.25
+DogTerr <- subset(DogMort, Breed == "Jack Russell Terrier")
+DogGShep <- subset(DogMort, Breed == "German Shepherd Dog")
+
+```
+
+</div>
+         
+For these data:
+
+a.  Compute one-year mortality rates for both Terriers and German Shepherds. Do this over $x=0, \ldots, 20$. Graph the results.
+b.  Because you may be working with products with events occurring more frequently than once a year, you decide to follow the strategy introduced in Section \@ref(Sec:BasicConceptsmthly) and look at mortality rates occurring on a quarterly basis. Repeat the analysis from part (a) using quarterly rates.
+c.  The results of earlier analyses indicate substantial volatility in the both quarterly rates and annual rates at later ages. One approach to mitigate this volatility is to smooth the rates. A simpler approach is to use longer periods (hence increasing exposure and reducing volatility). Repeat the analysis in part (a) using rates on a once every two year basis.
+d.  To see how these rates might be used, you decide to repeat the analysis in Section \@ref(Sec:DogCostCare) and compute an actuarial present value of the lifetime cost of surgical vet care. Use the same assumptions as in that section with the initial annual cost as 458, $i=0.03$ interest rate and a 11 percent annual growth in surgical care costs. However, use the dog mortality from part (a). Do this for $x=2, 5, 12$, for both breeds. You will see that that your results on German Shepherds differ slightly from those presented in Section \@ref(Sec:DogCostCare); comment on why this is so.
+
+
+`r HideProofTheory('EmpExer4.5.1',"Exercise 4.5.1 Answers")`
+
+```{r DogDataExer}
+library(data.table)
+library(survival)
+# Read in Revised Data
+DogMortA <- read.csv("Data/DogSurvivalData1.csv")
+DogMort <- DogMortA[,-1]
+DogMort$dateBirth <- as.Date(DogMort$dateBirth, "%Y-%m-%d") 
+DogMort$dateDeath <- as.Date(DogMort$dateDeath, "%Y-%m-%d")
+DogMort$AgeAtDeath <- (as.numeric(DogMort$dateDeath) - as.numeric(DogMort$dateBirth))/365.25
+DogTerr <- subset(DogMort, Breed == "Jack Russell Terrier")
+DogGShep <- subset(DogMort, Breed == "German Shepherd Dog")
+
+fitTerr <- survfit(Surv(AgeAtDeath) ~ 1, data=DogTerr)
+fitGShep <- survfit(Surv(AgeAtDeath) ~ 1, data=DogGShep)
+```
+
+**Part A**
+
+```{r fig.width=6, fig.height=4.0, fig.cap = "One-year Dog Mortality Rates, Blue Solid Line is for German Shepherds"}
+seqA1 <- 0:20
+seqA2 <- seqA1 + 1
+qxTerrA  <- (summary(fitTerr,  time = seqA1)$surv -   summary(fitTerr,  time = seqA2)$surv)   /summary(fitTerr,  time = seqA1)$surv
+qxGShepA <- (summary(fitGShep, time = seqA1)$surv - c(summary(fitGShep, time = seqA2)$surv,0))/summary(fitGShep, time = seqA1)$surv
+plot(seqA1,qxTerrA, xlab = "Age", ylab = expression(q[x]))
+lines(0:16, qxGShepA, col = "blue")
+```
+
+**Part B**
+
+```{r fig.width=6, fig.height=4.0, fig.cap = "Quarterly Dog Mortality Rates, Blue Solid Line is for German Shepherds"}
+seqB1 <- seq(from = 0, to = 20, by = 0.25)
+seqB2 <- seqB1 + 0.25
+qxTerrB  <- (summary(fitTerr,  time = seqB1)$surv -   summary(fitTerr,  time = seqB2)$surv)   /summary(fitTerr,  time = seqB1)$surv
+qxGShepB <- (summary(fitGShep, time = seqB1)$surv - c(summary(fitGShep, time = seqB2)$surv,0))/summary(fitGShep, time = seqB1)$surv
+plot(seqB1,qxTerrB, xlab = "Age", ylab = expression(q[x]))
+lines(seqB1[1:67], qxGShepB, col = "blue")
+```
+
+**Part C**
+
+```{r fig.width=6, fig.height=4.0, fig.cap = "Two-year Dog Mortality Rates, Blue Solid Line is for German Shepherds"}
+seqC1 <- seq(from = 0, to = 20, by = 2)
+seqC2 <- seqC1 + 2
+qxTerrC  <- (summary(fitTerr,  time = seqC1)$surv - c(summary(fitTerr,  time = seqC2)$surv,0))/summary(fitTerr,  time = seqC1)$surv
+qxGShepC <- (summary(fitGShep, time = seqC1)$surv - c(summary(fitGShep, time = seqC2)$surv,0))/summary(fitGShep, time = seqC1)$surv
+plot(seqC1,qxTerrC, xlab = "Age", ylab = expression(q[x]))
+lines(seqC1[1:9], qxGShepC, col = "blue")
+```
+
+**Part D**
+
+```{r}
+DogAnn <- function(x=x, q.x=qx){
+  Term <- length(q.x) - (x+1)
+  kpx <- 1 
+  APV  <- 0 
+ if (Term>0){ for(k in 0:(Term-1)){ 
+    if (k>1) {kpx <- kpx*(1-q.x[x+1+k])}
+    APV  <- APV  + kpx *  (1/1.03)^k   *1.11^k *458
+    }}
+ return(APV)
+  }
+DogAnn(x=2, q.x=qxTerrA)
+DogAnn(x=5, q.x=qxTerrA)
+DogAnn(x=12, q.x=qxTerrA)
+DogAnn(x=2, q.x=qxGShepA)
+DogAnn(x=5, q.x=qxGShepA)
+DogAnn(x=12, q.x=qxGShepA)
+
+```
+
+Note that the mortality estimates in this exercise are based only on data for a specific breed. In contrast, the analysis in Section \@ref(Sec:DogCostCare) used a Cox proportional hazards to regression model to use data from all breeds to form mortality estimates.
+
+***
+
+</div>
+
+
+
+

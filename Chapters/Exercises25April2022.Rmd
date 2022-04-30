@@ -1,6 +1,8 @@
 # Exercises
 
-$\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
+
+`r if (knitr:::is_html_output()) '$\\require{enclose}$'`
+<!-- Later equations only properly knit if this is beforehand once in the code $\require{enclose}$ -->
 
 ## Chapter 4 Exercises
 

@@ -12,9 +12,10 @@ Here is a list of commonly used actuarial symbols and functions, including the l
 
 ### Life Table Symbols
 
+`r if (knitr:::is_html_output()) '$\\require{enclose}$'`
+
 $$
 {\small
-\require{enclose}
 \begin{array}{cll}  \hline
 \textbf{Symbol} & \textbf{Latex code} & \textbf{Description} \\
 \hline

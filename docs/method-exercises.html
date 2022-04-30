@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Method Exercises | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</title>
+  <meta name="description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Method Exercises | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  <meta name="github-repo" content="https://github.com/OpenActTextDev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Method Exercises | Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance" />
+  
+  <meta name="twitter:description" content="This is an interactive, online, freely available text. - The online version will contain many interactive objects (quizzes, computer demonstrations, interactive graphs, video, and the like) to promote deeper learning. - A subset of the book will be available in pdf format for low-cost printing. - The online text will be available in multiple languages to promote access to a worldwide audience." />
+  
+
+<meta name="author" content="An open text authored by the Actuarial Community" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="empirical-exercises.html"/>
+<link rel="next" href="appendix-data-dictionary.html"/>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/rglWebGL-binding-0.106.8/rglWebGL.js"></script>
+<link href="libs/rglwidgetClass-0.106.8/rgl.css" rel="stylesheet" />
+<script src="libs/rglwidgetClass-0.106.8/rglClass.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/utils.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/subscenes.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/shaders.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/textures.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/projection.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/mouse.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/init.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/pieces.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/draw.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/controls.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/selection.src.js"></script>
+<script src="libs/rglwidgetClass-0.106.8/rglTimer.src.js"></script>
+<script src="libs/CanvasMatrix4-0.106.8/CanvasMatrix.src.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+<script language="javascript">
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<script language="javascript">
+function toggle(id1,id2) {
+	var ele = document.getElementById(id1); var text = document.getElementById(id2);
+	if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Solution";}
+		else {ele.style.display = "block"; text.innerHTML = "Hide Solution";}}
+</script>
+
+<script language="javascript">
+function togglecode(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show R Code";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide R Code";}}
+</script>
+<script language="javascript">
+function toggleEX(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Example";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Example";}}
+</script>
+<script language="javascript">
+function toggleTheory(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Theory";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide Theory";}}
+</script>
+
+<script language="javascript">
+function toggleDet(id1,id2) {
+   var ele = document.getElementById(id1); var text = document.getElementById(id2);
+   if (ele.style.display == "block") {ele.style.display = "none"; text.innerHTML = "Show Details";}
+      else {ele.style.display = "block"; text.innerHTML = "Hide  Details";}}
+</script>
+
+<script language="javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+<script src=https://cdn.datacamp.com/datacamp-light-latest.min.js></script>
+
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
+
+<style>
+/* Rearrange console label */
+.datacamp-exercise ol li, .datacamp-exercise ul li {
+  margin-bottom: 0em !important;
+}
+
+/* Remove bullet marker */
+.datacamp-exercise ol li::before, .datacamp-exercise ul li::before {
+  content: '' !important;
+}
+</style>
+
+
+<script language="javascript">
+var submitAnswer = function() {
+
+  var radios = document.getElementsByName('choice');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" ) {
+    alert('please select choice answer');
+  } else if ( val == "Correct" ) {
+    alert('Answer is correct !');
+  } else {
+    alert('Answer is wrong');
+  }
+};
+</script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR3RQ92M9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HR3RQ92M9M');
+</script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Life Contingencies</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#for-our-readers"><i class="fa fa-check"></i>For our Readers</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html"><i class="fa fa-check"></i><b>2</b> Modeling Lifetimes</a><ul>
+<li class="chapter" data-level="2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:MortData"><i class="fa fa-check"></i><b>2.1</b> Mortality data: Life Expectancies, Deaths, Counts, &amp; Lifetimes</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:DataLifeExp"><i class="fa fa-check"></i><b>2.1.1</b> Life Expectancies</a></li>
+<li class="chapter" data-level="2.1.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:HMDData"><i class="fa fa-check"></i><b>2.1.2</b> Population Mortality Counts</a></li>
+<li class="chapter" data-level="2.1.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:IndivMortData"><i class="fa fa-check"></i><b>2.1.3</b> Individual Mortality Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#Sec:ModelingDeaths"><i class="fa fa-check"></i><b>2.2</b> Modeling Death</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#lifetime-random-variable-and-its-distribution"><i class="fa fa-check"></i><b>2.2.1</b> Lifetime Random Variable and its Distribution</a></li>
+<li class="chapter" data-level="2.2.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#standard-actuarial-notation-q_bfx-_tp_bfx-and-all-that"><i class="fa fa-check"></i><b>2.2.2</b> Standard Actuarial Notation: <span class="math inline">\(q_{\bf{x}}\)</span>, <span class="math inline">\(_tp_{\bf{x}}\)</span>, and All That</a></li>
+<li class="chapter" data-level="2.2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:ModelOnlyAge"><i class="fa fa-check"></i><b>2.2.3</b> The Classical Case: Age-Only Model</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:AnalMortLaws"><i class="fa fa-check"></i><b>2.3</b> Analytical Laws of Mortality</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#de-moivre-and-constant-force-models"><i class="fa fa-check"></i><b>2.3.1</b> De Moivre and Constant Force Models</a></li>
+<li class="chapter" data-level="2.3.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#gompertz-and-makeham-laws"><i class="fa fa-check"></i><b>2.3.2</b> Gompertz and Makeham Laws</a></li>
+<li class="chapter" data-level="2.3.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#makeham-law-based-on-life-expectancies-data"><i class="fa fa-check"></i><b>2.3.3</b> Makeham Law based on Life Expectancies Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTab"><i class="fa fa-check"></i><b>2.4</b> Life Tables and their Functions</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabBasics"><i class="fa fa-check"></i><b>2.4.1</b> Life Table Basics</a></li>
+<li class="chapter" data-level="2.4.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabEst"><i class="fa fa-check"></i><b>2.4.2</b> Life Table based on U.S. Population Data</a></li>
+<li class="chapter" data-level="2.4.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabRec"><i class="fa fa-check"></i><b>2.4.3</b> Curtate Quantities and Recursive Relationships</a></li>
+<li class="chapter" data-level="2.4.4" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabFrac"><i class="fa fa-check"></i><b>2.4.4</b> Fractional Year Assumptions</a></li>
+<li class="chapter" data-level="2.4.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:LifeTabMImpr"><i class="fa fa-check"></i><b>2.4.5</b> Cohort Life Tables and Mortality Improvement Modeling</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:NonParamSurv"><i class="fa fa-check"></i><b>2.5</b> Non-parametric Survival Estimation</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#kaplan-meier-estimates"><i class="fa fa-check"></i><b>2.5.1</b> Kaplan-Meier Estimates</a></li>
+<li class="chapter" data-level="2.5.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#nelson-aalen-estimates"><i class="fa fa-check"></i><b>2.5.2</b> Nelson-Aalen Estimates</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#S:SurvReg"><i class="fa fa-check"></i><b>2.6</b> Conditional Models: Survival regression</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#the-cox-proportional-hazard-model"><i class="fa fa-check"></i><b>2.6.1</b> The Cox Proportional Hazard Model</a></li>
+<li class="chapter" data-level="2.6.2" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#cox-models-based-on-life-insurer-data"><i class="fa fa-check"></i><b>2.6.2</b> Cox Models Based on Life Insurer Data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#conditional-life-tables"><i class="fa fa-check"></i><b>2.6.3</b> Conditional Life Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="C-ModelingLifeTimes.html"><a href="C-ModelingLifeTimes.html#notes-and-comments"><i class="fa fa-check"></i><b>2.7</b> Notes and Comments</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html"><i class="fa fa-check"></i><b>3</b> Basic Life Contingent Benefits</a><ul>
+<li class="chapter" data-level="3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCFunc"><i class="fa fa-check"></i><b>3.1</b> Valuation of Cash Flows under Uncertainty</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#moment-calculations"><i class="fa fa-check"></i><b>3.1.1</b> Moment Calculations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#illustrative-moments-of-cash-flows"><i class="fa fa-check"></i><b>3.1.2</b> Illustrative Moments of Cash Flows</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitActNot"><i class="fa fa-check"></i><b>3.2</b> Life Insurance Benefits</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitWL"><i class="fa fa-check"></i><b>3.2.1</b> Whole of life insurance</a></li>
+<li class="chapter" data-level="3.2.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitTI"><i class="fa fa-check"></i><b>3.2.2</b> Term insurance</a></li>
+<li class="chapter" data-level="3.2.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#pure-endowment"><i class="fa fa-check"></i><b>3.2.3</b> Pure endowment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#endowment-insurance"><i class="fa fa-check"></i><b>3.2.4</b> Endowment insurance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitAnnuity"><i class="fa fa-check"></i><b>3.3</b> Life Annuity Benefits</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#life-annuity"><i class="fa fa-check"></i><b>3.3.1</b> Life annuity</a></li>
+<li class="chapter" data-level="3.3.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:TermLifeAnnuity"><i class="fa fa-check"></i><b>3.3.2</b> Term life annuity</a></li>
+<li class="chapter" data-level="3.3.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#deferred-life-annuity"><i class="fa fa-check"></i><b>3.3.3</b> Deferred life annuity</a></li>
+<li class="chapter" data-level="3.3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#guaranteed-life-annuity"><i class="fa fa-check"></i><b>3.3.4</b> Guaranteed life annuity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitSpread"><i class="fa fa-check"></i><b>3.4</b> Valuing Life Contingent Benefits using a Spreadsheet</a></li>
+<li class="chapter" data-level="3.5" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCS"><i class="fa fa-check"></i><b>3.5</b> Case Study: A Portfolio of Term Insurance Policies</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSInd"><i class="fa fa-check"></i><b>3.5.1</b> An individual policy</a></li>
+<li class="chapter" data-level="3.5.2" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#Sec:BenefitCSPort"><i class="fa fa-check"></i><b>3.5.2</b> Moments of a portfolio of policies</a></li>
+<li class="chapter" data-level="3.5.3" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#simulated-distribution-of-a-portfolio-of-policies"><i class="fa fa-check"></i><b>3.5.3</b> Simulated distribution of a portfolio of policies</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="C-SimpleBenefit.html"><a href="C-SimpleBenefit.html#further-resources-and-contributors"><i class="fa fa-check"></i><b>3.6</b> Further Resources and Contributors</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html"><i class="fa fa-check"></i><b>4</b> Contingent Payment Techniques</a><ul>
+<li class="chapter" data-level="4.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:mthlyFlows"><i class="fa fa-check"></i><b>4.1</b> Contingent Cash Flows Occurring <span class="math inline">\(m^{th}\)</span>ly</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:BasicConceptsmthly"><i class="fa fa-check"></i><b>4.1.1</b> Basic Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#illustrative-cash-flows"><i class="fa fa-check"></i><b>4.1.2</b> Illustrative Cash Flows</a></li>
+<li class="chapter" data-level="4.1.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#contingent-cash-flows-in-continuous-time"><i class="fa fa-check"></i><b>4.1.3</b> Contingent Cash Flows in Continuous Time</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SamplingBias"><i class="fa fa-check"></i><b>4.2</b> Sampling Bias</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#population-subsets-and-sampling-bias"><i class="fa fa-check"></i><b>4.2.1</b> Population Subsets and Sampling Bias</a></li>
+<li class="chapter" data-level="4.2.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#sampling-bias-in-actuarial-practice"><i class="fa fa-check"></i><b>4.2.2</b> Sampling Bias in Actuarial Practice</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:EconomicMotivation"><i class="fa fa-check"></i><b>4.3</b> Using Economics to Motivate Insurance Features</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ActuarialFairRiskClass"><i class="fa fa-check"></i><b>4.3.1</b> Actuarially Fair Prices and Risk Classification</a></li>
+<li class="chapter" data-level="4.3.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:SelectionAdverse"><i class="fa fa-check"></i><b>4.3.2</b> Selection and Adverse Selection</a></li>
+<li class="chapter" data-level="4.3.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:AsymmericInfo"><i class="fa fa-check"></i><b>4.3.3</b> Asymmetric Information</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:ApplicationsContingent"><i class="fa fa-check"></i><b>4.4</b> Contingent Payment Applications</a></li>
+<li class="chapter" data-level="4.5" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:PetInsurance"><i class="fa fa-check"></i><b>4.5</b> Pet Insurance</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:IntroPet"><i class="fa fa-check"></i><b>4.5.1</b> Introduction to Pet Health Insurance</a></li>
+<li class="chapter" data-level="4.5.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:CanineMort"><i class="fa fa-check"></i><b>4.5.2</b> Canine Mortality</a></li>
+<li class="chapter" data-level="4.5.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DogCostCare"><i class="fa fa-check"></i><b>4.5.3</b> Cost of Care</a></li>
+<li class="chapter" data-level="4.5.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-pet-insurance-markets"><i class="fa fa-check"></i><b>4.5.4</b> More on Pet Insurance Markets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#Sec:DisIncInsurance"><i class="fa fa-check"></i><b>4.6</b> Disability Income Insurance</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#introduction-to-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.1</b> Introduction to Disability Income Insurance</a></li>
+<li class="chapter" data-level="4.6.2" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#disability-recovery-rates"><i class="fa fa-check"></i><b>4.6.2</b> Disability Recovery Rates</a></li>
+<li class="chapter" data-level="4.6.3" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#actuarial-present-values-of-disability-income"><i class="fa fa-check"></i><b>4.6.3</b> Actuarial Present Values of Disability Income</a></li>
+<li class="chapter" data-level="4.6.4" data-path="C-BenefitExt.html"><a href="C-BenefitExt.html#more-on-disability-income-insurance"><i class="fa fa-check"></i><b>4.6.4</b> More on Disability Income Insurance</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="C-Forward.html"><a href="C-Forward.html"><i class="fa fa-check"></i><b>5</b> Going Forward</a><ul>
+<li class="chapter" data-level="5.1" data-path="C-Forward.html"><a href="C-Forward.html#table-of-contents"><i class="fa fa-check"></i><b>5.1</b> Table of Contents</a></li>
+<li class="chapter" data-level="5.2" data-path="C-Forward.html"><a href="C-Forward.html#usage-data"><i class="fa fa-check"></i><b>5.2</b> Usage Data</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="empirical-exercises.html"><a href="empirical-exercises.html"><i class="fa fa-check"></i><b>6</b> Empirical Exercises</a><ul>
+<li class="chapter" data-level="6.1" data-path="empirical-exercises.html"><a href="empirical-exercises.html#chapter-2-empirical-exercises"><i class="fa fa-check"></i><b>6.1</b> Chapter 2 Empirical Exercises</a></li>
+<li class="chapter" data-level="6.2" data-path="empirical-exercises.html"><a href="empirical-exercises.html#chapter-3-empirical-exercises"><i class="fa fa-check"></i><b>6.2</b> Chapter 3 Empirical Exercises</a></li>
+<li class="chapter" data-level="6.3" data-path="empirical-exercises.html"><a href="empirical-exercises.html#chapter-4-empirical-exercises"><i class="fa fa-check"></i><b>6.3</b> Chapter 4 Empirical Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="method-exercises.html"><a href="method-exercises.html"><i class="fa fa-check"></i><b>7</b> Method Exercises</a><ul>
+<li class="chapter" data-level="7.1" data-path="method-exercises.html"><a href="method-exercises.html#chapter-2-method-exercises"><i class="fa fa-check"></i><b>7.1</b> Chapter 2 Method Exercises</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="method-exercises.html"><a href="method-exercises.html#section-2.2-method-exercises"><i class="fa fa-check"></i><b>7.1.1</b> Section 2.2 Method Exercises</a></li>
+<li class="chapter" data-level="7.1.2" data-path="method-exercises.html"><a href="method-exercises.html#section-2.3-method-exercises"><i class="fa fa-check"></i><b>7.1.2</b> Section 2.3 Method Exercises</a></li>
+<li class="chapter" data-level="7.1.3" data-path="method-exercises.html"><a href="method-exercises.html#section-2.4-method-exercises"><i class="fa fa-check"></i><b>7.1.3</b> Section 2.4 Method Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="method-exercises.html"><a href="method-exercises.html#chapter-3-method-exercises"><i class="fa fa-check"></i><b>7.2</b> Chapter 3 Method Exercises</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="method-exercises.html"><a href="method-exercises.html#section-3.2-method-exercises"><i class="fa fa-check"></i><b>7.2.1</b> Section 3.2 Method Exercises</a></li>
+<li class="chapter" data-level="7.2.2" data-path="method-exercises.html"><a href="method-exercises.html#section-3.3-method-exercises"><i class="fa fa-check"></i><b>7.2.2</b> Section 3.3 Method Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="method-exercises.html"><a href="method-exercises.html#chapter-4-method-exercises"><i class="fa fa-check"></i><b>7.3</b> Chapter 4 Method Exercises</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="method-exercises.html"><a href="method-exercises.html#section-4.1-method-exercises"><i class="fa fa-check"></i><b>7.3.1</b> Section 4.1 Method Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="method-exercises.html"><a href="method-exercises.html#chapter-5-method-exercises"><i class="fa fa-check"></i><b>7.4</b> Chapter 5 Method Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="method-exercises.html"><a href="method-exercises.html#chapter-6-method-exercises"><i class="fa fa-check"></i><b>7.5</b> Chapter 6 Method Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html"><i class="fa fa-check"></i><b>8</b> Appendix: Data Dictionary</a><ul>
+<li class="chapter" data-level="8.1" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataUSPoPCounts"><i class="fa fa-check"></i><b>8.1</b> United States Population Mortality Counts</a></li>
+<li class="chapter" data-level="8.2" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:SyntheticInsData"><i class="fa fa-check"></i><b>8.2</b> Synthetic Insurer Data</a></li>
+<li class="chapter" data-level="8.3" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:CanineMortality"><i class="fa fa-check"></i><b>8.3</b> Canine Mortality</a></li>
+<li class="chapter" data-level="8.4" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:CanadianSelect"><i class="fa fa-check"></i><b>8.4</b> Canadian Female Select and Ultimate Mortality Table</a></li>
+<li class="chapter" data-level="8.5" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:KoreanMortality"><i class="fa fa-check"></i><b>8.5</b> Korean Mortality by Insured Status</a><ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---insured-lives"><i class="fa fa-check"></i>Korean Mortality - Insured Lives</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---annuitants"><i class="fa fa-check"></i>Korean Mortality - Annuitants</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#korean-mortality---population"><i class="fa fa-check"></i>Korean Mortality - Population</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:MortalityCountry"><i class="fa fa-check"></i><b>8.6</b> Mortality by Country</a><ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---japan"><i class="fa fa-check"></i>Population Mortality - Japan</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---poland"><i class="fa fa-check"></i>Population Mortality - Poland</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#population-mortality---united-states"><i class="fa fa-check"></i>Population Mortality - United States</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#Sec:DataDisIncome"><i class="fa fa-check"></i><b>8.7</b> Disability Income</a><ul>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---male"><i class="fa fa-check"></i>Disability Recovery Rates - Male</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#disability-recovery-rates---female"><i class="fa fa-check"></i>Disability Recovery Rates - FeMale</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---male"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Male</a></li>
+<li class="chapter" data-level="" data-path="appendix-data-dictionary.html"><a href="appendix-data-dictionary.html#death-and-disability-recovery-rates---female"><i class="fa fa-check"></i>Death and Disability Recovery Rates - Female</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html"><i class="fa fa-check"></i><b>9</b> Appendix: Conventions for Notation</a><ul>
+<li class="chapter" data-level="9.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:ActSymbols"><i class="fa fa-check"></i><b>9.1</b> Actuarial Notation</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#life-table-symbols"><i class="fa fa-check"></i><b>9.1.1</b> Life Table Symbols</a></li>
+<li class="chapter" data-level="9.1.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeInsSymbols"><i class="fa fa-check"></i><b>9.1.2</b> Life Insurance Symbols</a></li>
+<li class="chapter" data-level="9.1.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:LifeAnnSymbols"><i class="fa fa-check"></i><b>9.1.3</b> Annuity Certain and Life Annuity Symbols</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NotConv:Halo"><i class="fa fa-check"></i><b>9.2</b> Halo System</a></li>
+<li class="chapter" data-level="9.3" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:General"><i class="fa fa-check"></i><b>9.3</b> General Conventions</a></li>
+<li class="chapter" data-level="9.4" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Abbreviations"><i class="fa fa-check"></i><b>9.4</b> Abbreviations</a></li>
+<li class="chapter" data-level="9.5" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:StatSymbols"><i class="fa fa-check"></i><b>9.5</b> Common Statistical Symbols and Operators</a></li>
+<li class="chapter" data-level="9.6" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#Sec:NC:Symbols"><i class="fa fa-check"></i><b>9.6</b> Common Mathematical Symbols and Functions</a></li>
+<li class="chapter" data-level="9.7" data-path="C-NotationConventionLC.html"><a href="C-NotationConventionLC.html#further-readings"><i class="fa fa-check"></i><b>9.7</b> Further Readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/OpenActTextDev/LifeCon" target="blank">Life Contingencies on GitHub</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Life Contingencies: The Mathematics, Statistics, and Economics of Life Insurance</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="method-exercises" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Method Exercises</h1>
+<p><span class="math inline">\(\require{enclose}\)</span>
+<!-- La{enumerate}ter equations only properly knit if this is beforehand once in the code $\require{enclose}$ --></p>
+<div id="chapter-2-method-exercises" class="section level2">
+<h2><span class="header-section-number">7.1</span> Chapter 2 Method Exercises</h2>
+<div id="section-2.2-method-exercises" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Section 2.2 Method Exercises</h3>
+<p><strong>Exercise 2.2.1.</strong> Complete the entries below:</p>
+<p><span class="math display">\[
+\begin{array}{c|c|c|c}
+S_0(t) &amp; F_0(t) &amp; f_0(t) &amp; \mu_t = \frac{f_0(t)}{S_0(t)} \\
+\hline
+(a)&amp; (b) &amp;(c)&amp; \tan(t),\;0 \leq t \leq \frac{\pi}{2} \\
+e^{-t},\;t\geq 0  &amp; (d)&amp; (e)&amp; (f)\\
+(g) &amp;1 - \frac{1}{1+t},\;t\geq 0   &amp; (h) &amp;
+\end{array}
+\]</span></p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer221" href="javascript:toggleTheory('toggleTheory.MethodExer221','displayCode.MethodExer221');"><i><strong>Solution to Method Exercise 2.2.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer221" style="display: none">
+<p>For parts <strong>(a), (b), (c)</strong>, we have:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\mu_t &amp;=&amp; \tan(t), 0 \leq t \leq \frac{\Pi}{2}\\
+\int_0^t \tan(u)\,du &amp;=&amp; -\log\left\{\cos(x)\right\} \\
+\Rightarrow S_0(t) &amp;=&amp; e^{-\int_0^x \tan(u)\,du} = \cos(x) \\
+\Rightarrow F_0(t) &amp;=&amp; 1- \cos(x) \\
+f_0(t) &amp;=&amp; \sin(t)
+\end{eqnarray*}\]</span></p>
+<p>For parts <strong>(d), (e), (f)</strong>, we have:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+S_0(t) &amp;=&amp; e^{-t},\,t \geq 0 \\
+F_0(t) &amp;=&amp; 1 - e^{-t} \\
+f_0(t) &amp;=&amp; e^{-t} \\
+\mu_t &amp;=&amp; 1
+\end{eqnarray*}\]</span></p>
+<p>For parts <strong>(g), (h), (i)</strong>, we have:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+F_0(t) &amp;=&amp; 1 - \frac{1}{1+t},\,x \geq 0 \\
+S_0(t) &amp;=&amp; \frac{1}{1+t} \\
+f_0(t) &amp;=&amp; \frac{1}{(1+t)^2}  \\
+\mu_t &amp;=&amp; \frac{1}{1+t}
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 2.2.2.</strong> If <span class="math inline">\(S_0(t) = \left[1 - \frac{t}{100}\right]^{1/2},\)</span> <span class="math inline">\(0\leq t \leq 100\)</span>, evaluate (a) <span class="math inline">\(_{17}p_{19}\)</span>, (b) <span class="math inline">\(_{15}q_{36}\)</span>, (c) <span class="math inline">\(_{15|13}q_{36}\)</span>, (d) <span class="math inline">\(\mu_{36} = \frac{f_0(36)}{S_0(36)}\)</span>, and (e) <span class="math inline">\(E[T_{36}]\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer222" href="javascript:toggleTheory('toggleTheory.MethodExer222','displayCode.MethodExer222');"><i><strong>Solution to Method Exercise 2.2.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer222" style="display: none">
+<p>First calculate survival function:
+<span class="math display">\[
+S_0(19) = \sqrt{1 - \frac{19}{100}} = 0.9,\,S_0(36)=0.8,\,S_0(51)=0.7,\,S_0(64)=0.6
+\]</span></p>
+<p><span class="math display">\[
+{_{17}p_{19}} = \frac{S_0(36)}{S_0(19)} = 0.8888888
+\]</span></p>
+<p><span class="math display">\[
+{_{15}q_{36}} = \frac{S_0(36) - S_0(51))}{S_0(36)} = 0.125
+\]</span></p>
+<p><span class="math display">\[
+{_{15 \mid 13}q_{36}} = \frac{S_0(51) - S_0(64)}{S_0(36)} = 0.125
+\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+\mu_{36} &amp;=&amp; \left.-\frac{S_0&#39;(x)}{S_0(x)}\right|_{x=36} = \left.-\frac{-\frac{1}{200 \sqrt{1 - \frac{x}{100}}}}{S_0(x)}\right|_{x=36} \\
+&amp;=&amp; \left.\frac{1}{200\,S_0^2(x)}\right|_{x=36} = \frac{1}{S_0(36)\,S_0(36)\,200} = 0.0078125
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+f_{x}(t) &amp;=&amp; {_tp_x}\,\mu_{x+t} = \frac{S_0(x+t)}{S_0(x)} \frac{1}{200\,S_0^2(x+t)}\\
+&amp;=&amp; \frac{1}{200\,S_0(x)\,S_0(x+t)} = \frac{1}{200}\frac{1}{\sqrt{1 - \frac{x}{100}}} \frac{1}{\sqrt{1 - \frac{x+t}{100}}}
+\end{eqnarray*}\]</span>
+<span class="math display">\[\begin{eqnarray*}
+\Rightarrow E\left[T_{36}\right] &amp;=&amp; \int_0^{64} \frac{t}{200}\frac{1}{\sqrt{1 - \frac{36}{100}}} \frac{1}{\sqrt{1 - \frac{36+t}{100}}}\,dt \\
+&amp;=&amp; \frac{1}{160} \int_0^{64} t \, \frac{1}{\sqrt{1-\frac{36+t}{100}}}\,dt \\
+&amp;\stackrel{\text{int.\ by parts}}{=}&amp; \frac{1}{160}
+\left(
+\left. -t\,200\,\sqrt{1-\frac{36+t}{100}}\right|_{t=0}^{t=64} \right. \\
+&amp;\;&amp;\;\;\;\;\;\;\;\;\;\;\;\left.+ 200\int_0^{64}\sqrt{1-\frac{36+t}{100}}\,dt
+ \right)\\
+&amp;=&amp; 1.25 \left(\left.-\frac{3}{2} 100 \left(1 - \frac{36+t}{100}\right)^{\frac{3}{2}}\right|_{t=0}^{t=64}\right)\\
+&amp;=&amp; 42.666666 \text{ years.}
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 2.2.3. </strong> The graph of a piecewise linear survival function, <span class="math inline">\(S_0(x)\)</span>, consists of 3 line segments with endpoints <span class="math inline">\((0,1)\)</span>, <span class="math inline">\((50,0.75)\)</span>, <span class="math inline">\((75,0.50)\)</span>, <span class="math inline">\((100,0)\)</span>.</p>
+<p><span class="math display">\[
+\frac{_{20|20}q_{40}}{_{20}q_{60}}.
+\]</span></p>
+<p>Note that this is similar to SOA Exam M Fall 2005 No. 31.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer223" href="javascript:toggleTheory('toggleTheory.MethodExer223','displayCode.MethodExer223');"><i><strong>Solution to Method Exercise 2.2.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer223" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+\frac{_{20|20}q_{40}}{_{20}q_{60}} &amp;=&amp; \frac{\frac{S_0(60) - S_0(80)}{S_0(40)}}{\frac{S_0(60) - S_0(80)}{S_0(60)}} = \frac{S_0(60)}{S_0(40)}.
+\end{eqnarray*}\]</span>
+Now:
+<span class="math display">\[\begin{eqnarray*}
+S_0(40) &amp;=&amp; 1 - 0.25 \left(\frac{40 - 0}{50 - 0}\right) = 1- \frac{1}{4} \times \frac{4}{5} = 0.8,\\
+S_0(40) &amp;=&amp; 0.75 - 0.25 \left(\frac{60 - 50}{75 - 50}\right) = 0.75- \frac{25}{100} \times \frac{10}{25} = 0.65.
+\end{eqnarray*}\]</span>
+Hence,
+<span class="math display">\[\begin{eqnarray*}
+\frac{_{20|20}q_{40}}{_{20}q_{60}} &amp;=&amp; \frac{S_0(60)}{S_0(40)} = \frac{0.65}{0.80} = \frac{13}{16}.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="section-2.3-method-exercises" class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Section 2.3 Method Exercises</h3>
+<p><strong>Exercise 2.3.1. </strong> For the following survival functions <span class="math inline">\(S_0\)</span>, calculate the force of mortality <span class="math inline">\(\mu_x\)</span>:</p>
+<ul>
+<li><span class="math inline">\(S_0(x) = e^{-\lambda\,x}\)</span>.</li>
+<li><span class="math inline">\(S_0(x) = \left\{\begin{array}{ll} 1 - \frac{x}{\omega}, &amp; 0\leq x \leq \omega, \\ 0 &amp; x &gt; \omega. \end{array} \right.\)</span></li>
+</ul>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer231" href="javascript:toggleTheory('toggleTheory.MethodExer231','displayCode.MethodExer231');"><i><strong>Solution to Method Exercise 2.3.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer231" style="display: none">
+<p>These are historically important examples. Here we have
+<span class="math display">\[
+\mu_x = \frac{-S_0&#39;(x)}{S_0(x)} = \frac{\lambda\,e^{-\lambda x}}{e^{-\lambda x}} = \lambda.
+\]</span>
+Thus, this case is frequently referred to as . Note that here <span class="math inline">\(T_x\)</span> is exponentially distributed.</p>
+<p>For <span class="math inline">\(0\leq x &lt; \omega\)</span>:
+<span class="math display">\[
+\mu_x = \frac{-S_0&#39;(x)}{S_0(x)} = \frac{\frac{1}{\omega}}{1 - \frac{x}{\omega}} = \frac{1}{\omega - x}.
+\]</span>
+This mortality assumption is called .</p>
+</div>
+<p><strong>Exercise 2.3.2.</strong> Confirm that each of the following functions can serve as a force of mortality. Show the corresponding survival function. In each case <span class="math inline">\(x\geq 0\)</span>.</p>
+<ul>
+<li><span class="math inline">\(B\,c^x,\;B&gt;0,\;c&gt;1\)</span> (Gompertz Law);</li>
+<li><span class="math inline">\(k\,x^n,\;n&gt;0,\;k&gt;0\)</span> (Weibull Law);</li>
+<li><span class="math inline">\(a\,(b+x)^{-1},\;a&gt;0,\;b&gt;0\)</span> (Pareto Law).</li>
+</ul>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer232" href="javascript:toggleTheory('toggleTheory.MethodExer232','displayCode.MethodExer232');"><i><strong>Solution to Method Exercise 2.3.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer232" style="display: none">
+<p><span class="math display">\[\begin{eqnarray*}
+\mu_x &amp;\geq&amp; 0 \text{ -- OK} \\
+\int_{0}^x \mu_u\,du &amp;=&amp; B \int_0^x c^u\,du \\
+&amp;=&amp; \frac{B}{\log(c)} \int_0^x \log(c)\cdot c^u\,du \\
+&amp;=&amp; \frac{B}{\log(c)} (c^x - 1) \rightarrow \infty\, (x \rightarrow \infty) \text{ -- OK} \\
+\Rightarrow S_0(x) &amp;=&amp; \exp\left\{ - \frac{B}{\log(c)} (c^x - 1)\right\}
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+\mu_x &amp;\geq&amp; 0 \text{ -- OK} \\
+\int_{0}^x \mu_u\,du &amp;=&amp; \int_0^x k\,u^n\,du \\
+&amp;=&amp; \frac{k}{n+1} x^{n+1} \rightarrow \infty\, (x \rightarrow \infty) \text{ -- OK} \\
+\Rightarrow S_0(x) &amp;=&amp; \exp\left\{ - \frac{k}{n+1} x^{n+1}\right\}
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+\mu_x &amp;\geq&amp; 0 \text{ -- OK} \\
+\int_{0}^x \mu_u\,du &amp;=&amp; \int_0^x \frac{a}{b+u}\,du \\
+&amp;=&amp; a\log(b+x) - a \log(b)
+\rightarrow \infty\, (x \rightarrow \infty) \text{ -- OK} \\
+\Rightarrow S_0(x) &amp;=&amp; \left(\frac{b}{b+x}\right)^a\\
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 2.3.3.</strong> You are given the following information about a new model for buildings with 3imiting age <span class="math inline">\(\omega\)</span>.</p>
+<ul>
+<li>The expected number of buildings surviving at age <span class="math inline">\(x\)</span> will be
+<span class="math display">\[
+l_x = \left(\omega - x\right)^{\alpha},\,x&lt;\omega.
+\]</span></li>
+<li>The new model predicts a <span class="math inline">\(50\%\)</span> higher complete life expectancy (over the previous De Moivre model with the same <span class="math inline">\(\omega\)</span>) for buildings aged 25.</li>
+<li>The complete life expectancy for buildings aged 55 under the new model is 37.5 years.</li>
+</ul>
+<p>Calculate the complete life expectancy under the previous De Moivre model for buildings aged 75.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer233" href="javascript:toggleTheory('toggleTheory.MethodExer233','displayCode.MethodExer233');"><i><strong>Solution to Method Exercise 2.3.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer233" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}^{\text{NEW}}_x &amp;=&amp; \int_0^{\infty} {_tp_x}\,dt
+= \int_0^{\infty} \frac{l_{x+t}}{l_x} \,dt\\
+&amp;=&amp; \frac{1}{(\omega - x)^{\alpha}} \int_0^{\omega - x} (\omega - x - t)^{\alpha}\,dt
+= \frac{1}{(\omega - x)^{\alpha}} \left[\frac{-1}{\alpha + 1} (\omega - x - t)^{\alpha+1}\right]_{t=0}^{t=\omega - x}\\
+&amp;=&amp; \frac{\omega - x}{\alpha + 1}
+\end{eqnarray*}\]</span>
+and
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}^{\text{OLD}}_x  &amp;=&amp; \int_0^{\infty} {_tp_x}\,dt
+= \int_0^{\infty} \frac{S_0(x+t)}{S_0(x)} \,dt\\
+&amp;=&amp; \frac{1}{1 - \frac{x}{\omega}} \int_0^{\omega - x} 1 - \frac{x+t}{\omega}\,dt
+= \frac{1}{1 - \frac{x}{\omega}} \left(\left[t\right]_{t=0}^{t=\omega - x} - \left[\frac{1}{2\omega}(x+t)^2\right]_{t=0}^{t=\omega - x}\right)\\
+&amp;=&amp; \frac{\omega^2 - 2\omega x + x^2}{2(\omega - x)}
+= \frac{\omega - x}{2}.
+\end{eqnarray*}\]</span>
+From condition (b), we obtain
+<span class="math display">\[\begin{eqnarray*}
+\underbrace{\frac{\omega - 25}{\alpha + 1}}_{=\stackrel{\circ}{e}^{\text{NEW}}_{25}} \stackrel{!}{=} \frac{3}{2}\underbrace{ \frac{\omega - 25}{2}}_{=\stackrel{\circ}{e}^{\text{OLD}}_{25}}
+\Rightarrow \underbrace{\frac{\omega - 25}{\alpha + 1}}_{=\stackrel{\circ}{e}^{\text{NEW}}_{25}} \stackrel{!}{=} \frac{\omega - 25}{4/3}
+\Rightarrow \alpha = 1/3,
+\end{eqnarray*}\]</span>
+and from (c)
+<span class="math display">\[
+\frac{\omega - 55}{4/3} = 37.5 \Rightarrow \omega = 105.
+\]</span>
+Thus,
+<span class="math display">\[
+\stackrel{\circ}{e}^{\text{OLD}}_{75} = \frac{105-75}{2} = 15.
+\]</span></p>
+</div>
+<p><strong>Exercise 2.3.4.</strong> Consider the survival function
+<span class="math display">\[
+S_0(x) = 1 - \frac{x^2}{10,000},\;0\leq x \leq 100.
+\]</span>
+Calculate the mean, median, and the variance of <span class="math inline">\(T_x\)</span> (respectively its distribution). What is the average life-expectancy of a newborn, what’s its median, mode, and variance? What is <span class="math inline">\(\stackrel{\circ}{e}_{x:\overline{n}|}\)</span>?</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer234" href="javascript:toggleTheory('toggleTheory.MethodExer234','displayCode.MethodExer234');"><i><strong>Solution to Method Exercise 2.3.4</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer234" style="display: none">
+<p>We have:</p>
+<p><strong>Mean:</strong>
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}_x &amp;=&amp; \int_0^\infty {_tp_x}\,dt \\
+&amp;=&amp; \frac{1}{S_0(x)} \int_{0}^{100-x} 1 - \frac{(x+t)^2}{10,000}\,dt \\
+&amp;=&amp; \frac{1}{S_0(x)} \left((100-x) - \frac{1}{10,000} \left[\frac{1}{3}(x+t)^3\right]_{t=0}^{t=100-x}\right)\\
+&amp;=&amp; \frac{1}{S_0(x)}\left(100-x- \frac{100}{3} +\frac{x^3}{30,000}\right)\\
+&amp;=&amp;\frac{1}{S_0(x)} \left( 66.666666 - x + \frac{x^3}{30,000} \right).
+\end{eqnarray*}\]</span>
+Similarly, we can obtain <span class="math inline">\(\stackrel{\circ}{e}_{x:\overline{n}|} = \frac{1}{S_0(x)} \int_{0}^{n} 1 - \frac{(x+t)^2}{10,000}\,dt\)</span>.</p>
+<p><strong>Variance:</strong>
+<span class="math display">\[\begin{eqnarray*}
+Var(T_x) &amp;=&amp; 2 \int_0^{100-x} t\,{_t p _x}\,dt - \stackrel{\circ}{e}^2_x \\
+&amp;=&amp; \frac{2}{S_0(x)} \int_0^{100-x} t -\frac{t(x+t)^2}{10,000}\,dt - \stackrel{\circ}{e}^2_x  \\
+&amp;=&amp; \frac{2}{S_0(x)} \int_0^{100-x} t  - \frac{x^2t}{10,000} - \frac{2xt^2}{10,000} \\
+&amp;&amp; - \frac{t^3}{10,000}\,dt - \stackrel{\circ}{e}^2_x  \\
+&amp;=&amp; \frac{2}{S_0(x)} \left( \frac{1}{2}(100-x)^2 \right.\\
+&amp;&amp; - \frac{x^2}{10,000} (100-x)^2 -\frac{2x}{30,000} (100-x)^3 \\
+&amp;&amp; \left. - \frac{1}{40,000} (100-x)^4 \right)
+- \stackrel{\circ}{e}^2_x.
+\end{eqnarray*}\]</span></p>
+<p><strong>Median</strong>: An easier way to derive the result is to work with the cumulated distribution function rather than the survival function.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+0.5 &amp;\stackrel{!}{=} &amp; P\left(T_x &gt; m(x)\right) \\
+\Rightarrow  0.5 &amp;=&amp; {_{m(x)}p_x}  \\
+\Rightarrow 0.5\left(1 - \frac{x^2}{10,000}\right) &amp;=&amp; 1 - \frac{(x+m(x))^2}{10,000} \\
+\Rightarrow 0 &amp;=&amp; 1 - \frac{x^2}{10,000} - \frac{2\,x\,m(x)}{10,000} - \frac{m^2(x)}{10,000}
+- 0.5 + \frac{x^2}{20,000} \\
+\stackrel{\cdot (-20,000)}{\Rightarrow}
+0&amp;=&amp; 2 m^2(x) + 4\,x\,m(x) + (x^2 - 10,000) \\
+\Rightarrow m(x) &amp;=&amp; \frac{-4x + \sqrt{16x^2 - 8(x^2-10,000)}}{4}.
+\end{eqnarray*}\]</span></p>
+<p>For <span class="math inline">\(x=0\)</span>:
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}_x &amp;=&amp; 66.666666 \\
+Var(T_0) &amp;=&amp; 5000 - 4444.444444 = 555.555556\\
+\Rightarrow \sigma_{T_0} &amp;=&amp; \sqrt{555.555556} = 23.57\\
+m(0) &amp;=&amp; 70.710678 \\
+\max\left\{f_{0}(t)\right\} &amp;=&amp; \max\left\{-s&#39;(t)\right\}\\
+&amp;=&amp; \max\left\{\frac{2t}{10,000} | 0 \leq t \leq 100\right\} = 0.02 \text{ for } t=100,
+\end{eqnarray*}\]</span>
+so the mode is 100.</p>
+</div>
+<p><strong>Exercise 2.3.5.</strong> For <span class="math inline">\(T\)</span>, the future lifetime random variable for <span class="math inline">\((0)\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\omega &gt; 70\)</span></li>
+<li><span class="math inline">\({_{40}p_0} = 0.6\)</span></li>
+<li><span class="math inline">\(E[T] = 62\)</span></li>
+<li><span class="math inline">\(E[\min\{T,t\}] = t - 0.005\cdot t^2\;,\;\;0&lt;t&lt;60\)</span></li>
+</ul>
+<p>Calculate the complete expectation of life at 40.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer235" href="javascript:toggleTheory('toggleTheory.MethodExer235','displayCode.MethodExer235');"><i><strong>Solution to Method Exercise 2.3.5</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer235" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+E[T] &amp;=&amp; \stackrel{\circ}{e}_0  = \int_0^{\omega} {_sp_0}\,ds = 62\\
+\text{and }E[\min\{T,t\}] &amp;=&amp; \stackrel{\circ}{e}_{0:\overline{t}|}  = \int_0^{t} {_sp_0}\,ds = t - 0.005 \times t^2,\;t&lt;60.\\
+\end{eqnarray*}\]</span>
+In particular,
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}_{0:\overline{40}|}  &amp;=&amp; \int_0^{40} {_sp_0}\,ds = 32,
+\end{eqnarray*}\]</span>
+so that
+<span class="math display">\[\begin{eqnarray*}
+\int_{40}^{\omega} {_sp_{0}}\,ds = \stackrel{\circ}{e}_0  -\stackrel{\circ}{e}_{0:\overline{40}|}  = 30.
+\end{eqnarray*}\]</span>
+Thus:
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}_{40} &amp;=&amp; \int_0^{\omega - 40}  {_sp_{40}}\,ds = \int_0^{\omega - 40} \frac{ {_sp_{40}} \,  {_{40}p_{0}}}{ {_{40}p_{0}}}\,ds \\
+&amp;=&amp; \frac{1}{ {_{40}p_{0}}} \int_0^{\omega -40} {_{s+40}p_0}\,ds \stackrel{u=s+40}{=}  \frac{1}{ {_{40}p_{0}}} \int_{40}^{\omega} {_{u}p_0}\,ds = \frac{30}{.6} =50.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="section-2.4-method-exercises" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Section 2.4 Method Exercises</h3>
+<p><strong>Exercise 2.4.1.</strong> Consider Mr. (55). By using the Life Table based on the US population, evaluate the probability</p>
+<ol style="list-style-type: lower-alpha">
+<li>that (55) survives until 70;</li>
+<li>that he survives until 60 but dies before 70;</li>
+<li>the probability for not dying before 100;</li>
+<li>the probability to die with 70.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer241" href="javascript:toggleTheory('toggleTheory.MethodExer241','displayCode.MethodExer241');"><i><strong>Solution to Method Exercise 2.4.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer241" style="display: none">
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\({_{15}p_{55}} = \frac{l_{70}}{l_{55}} = \frac{91,082.40}{97,846.20} \approx 0.930873146\)</span>.</li>
+<li><span class="math inline">\({_{5|10}q_{55}} = \frac{l_{60} - l_{70}}{l_{55}} = \frac{96,634.10 - 91,082.40}{97,846.20} \approx 0.056739046;\)</span></li>
+<li><span class="math inline">\({_{45}p_{55}} = \frac{l_{100}}{l_{55}} = \frac{6,248.20}{97,846.20} \approx 0.06385736;\)</span></li>
+<li><span class="math inline">\({_{15|}q_{55}} = \frac{d_{70}}{l_{55}} = \frac{948.40}{97,846.20} \approx 0.009692763.\)</span></li>
+</ol>
+</div>
+<p><strong>Exercise 2.4.2.</strong> You are given
+<span class="math display">\[
+q_1 = 0.1, \; q_2=0.05
+\]</span>
+Compute the temporary 1.5-year complete expected lifetime for <span class="math inline">\(x=1\)</span>, <span class="math inline">\(\stackrel{\circ}{e}_{1:\overline{1.5}|}\)</span>, under the assumption of a uniform distribution of deaths within each year of age.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer242" href="javascript:toggleTheory('toggleTheory.MethodExer242','displayCode.MethodExer242');"><i><strong>Solution to Method Exercise 2.4.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer242" style="display: none">
+<p>We have
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}_{1:\overline{1.5}|} &amp;=&amp; \int_0^{1.5} {_tp_1}\,dt = \int_0^{1} {_tp_1}\,dt + \int_1^{1.5} {_tp_1}\,dt =  \int_0^{1} 1- t\cdot {q_1}\,dt + {p_1}\,\int_1^{1.5} {_{t-1}p_2}\,dt \\
+&amp;\stackrel{s=t-1}{=}&amp;  1- {q_1}\, \int_0^{1} t\,dt + {p_1}\,\int_0^{0.5} {_{s}p_2}\,ds  = 1 - {q_1}\, \left[0.5\cdot t^2\right]_{t=0}^1 + {p_1}\, \int_0^{0.5} 1 - s\cdot {q_2}\,ds\\
+&amp;=&amp; 1 -  0.5\cdot q_1 + {p_1}\,\left(\left[s - {q_2}\cdot 0.5\cdot s^2\right]_{s=0}^{0.5}\right) =
+0.95 + 0.9\,\left(0.5 - 0.05\cdot 0.5 \cdot 0.5^2\right) = 1.394375.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 2.4.3.</strong> The actuarial department for the SharpPoint Corporation models the lifetime of pencil sharpeners from purchase using the survival function
+<span class="math display">\[
+S_0(x) = \left(1 - \frac{x}{\omega}\right)^{\alpha}, \text{ for }\alpha &gt;0 \text{ and } 0 \leq x \leq \omega.
+\]</span>
+A senior actuary examining mortality tables for pencil sharpeners has determined that the original value of <span class="math inline">\(\alpha\)</span> must change. You are given:</p>
+<ul>
+<li>The new complete expectation of life at purchase is half what it was previously.</li>
+<li>The new force of mortality for pencil sharpeners is 2.25 times the previous force of mortality for all durations.</li>
+<li><span class="math inline">\(\omega\)</span> remains the same.</li>
+</ul>
+<p>Calculate the original value of <span class="math inline">\(\alpha\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer243" href="javascript:toggleTheory('toggleTheory.MethodExer243','displayCode.MethodExer243');"><i><strong>Solution to Method Exercise 2.4.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer243" style="display: none">
+<p>We have
+<span class="math display">\[\begin{eqnarray*}
+\stackrel{\circ}{e}_0 &amp;=&amp; \int_0^{\omega} {_tp_0}\,dt = \int_0^{\omega} S_0(t)\,dt = \int_0^{\omega} (1-t/\omega)^{\alpha}\,dt \\
+&amp;=&amp; \left[-\frac{\omega}{\alpha+1} \left(1 - t/\omega\right)^{\alpha+1}\right]_{t=0}^{\omega} = \frac{\omega}{\alpha+1}.
+\end{eqnarray*}\]</span>
+Let us now denote the previous quantities by <code>$\cdot_P$" and the new quantities by</code><span class="math inline">\(\cdot_N\)</span>". Then, the first point yields
+<span class="math display">\[
+\frac{\omega}{\alpha_N + 1} = 1/2 \cdot \frac{\omega}{\alpha_P + 1} \;\; \Rightarrow \;\; \alpha_N = 2\cdot \alpha_P + 1.
+\]</span>
+Moreover, since the force of mortality is
+<span class="math display">\[
+\mu_x = \frac{-S_0&#39;(x)}{S_0(x)} = \frac{\alpha/\omega\cdot (1-x/\omega)^{\alpha-1}}{(1-x/\omega)^\alpha} = \frac{\alpha}{\omega - x},
+\]</span>
+by b. we obtain
+<span class="math display">\[
+\frac{\alpha_N}{\omega- x} = 2.25\cdot \frac{\alpha_P}{\omega- x} \;\; \Rightarrow \;\; \alpha_N = 2.25 \cdot \alpha_P.
+\]</span>
+Thus,
+<span class="math display">\[
+2.25 \cdot \alpha_P = 2\cdot \alpha_P + 1 \;\; \Rightarrow \;\; 0.25\cdot \alpha_P = 1 \;\; \Rightarrow \;\; \alpha_P = 4.
+\]</span></p>
+</div>
+<p><strong>Exercise 2.4.4.</strong> For the assumption of a constant force of mortality, determine <span class="math inline">\(_tq_x\)</span>, <span class="math inline">\(\mu_{x+t}\)</span>, <span class="math inline">\(_{1-t}q_{x+t}\)</span>, <span class="math inline">\(_{u}q_{x+t}\)</span>, <span class="math inline">\(_tp_x\)</span>, and <span class="math inline">\({_tp_x}\,\mu_{x+t}\)</span> for <span class="math inline">\(0\leq t &lt;1\)</span> and <span class="math inline">\(0 \leq u \leq 1-t\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer244" href="javascript:toggleTheory('toggleTheory.MethodExer244','displayCode.MethodExer244');"><i><strong>Solution to Method Exercise 2.4.4</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer244" style="display: none">
+<ol style="list-style-type: lower-alpha">
+<li>Constant Force of Mortality:</li>
+</ol>
+<p>We know from above for <span class="math inline">\(0\leq t \leq 1\)</span>
+<span class="math display">\[\begin{eqnarray*}
+\mu_{x+t} &amp;=&amp; -\log\{p_x\} \\
+\text{and } {_tp_x}&amp;=&amp; {p_x}^t \\
+\Rightarrow {_tq_x} &amp;=&amp; 1 - {_tp_x} = 1 - {p_x}^t.
+\end{eqnarray*}\]</span>
+Therefore, we have
+<span class="math display">\[\begin{eqnarray*}
+{_tp_x}\,\mu_{x+t} &amp;=&amp; -{p_x}^t \, \log\{p_x\} \\
+\text{and } {_{y}p_{x+t}} &amp; =&amp; \exp\left\{\int_{x+t}^{x+t+y}-\mu_s\,ds\right\}\\
+&amp;=&amp; \exp\left\{\log\{p_x\}\,\int_{x+t}^{x+t+y}\,ds\right\} = \exp\left\{\log\{p_x\}\,y\right\}\\
+&amp;=&amp; {p_x}^{y},
+\end{eqnarray*}\]</span>
+where <span class="math inline">\(0\leq y \leq 1-t\)</span>. Thus,
+<span class="math display">\[
+{_yq_{x+t}} = 1 - {p_x}^y,
+\]</span>
+and for <span class="math inline">\(y=1-t\)</span>, we have
+<span class="math display">\[
+{_{1-t}q_{x+t}} = 1 - {p_x}^{1-t}.
+\]</span></p>
+</div>
+<p><strong>Exercise 2.4.5.</strong> If <span class="math inline">\(q_{70}=0.04\)</span> and <span class="math inline">\(q_{71}=0.05\)</span>, in two ways calculate the probability that (70) will die between ages <span class="math inline">\(70\frac{1}{2}\)</span> and <span class="math inline">\(71\frac{1}{2}\)</span>. Do this under:</p>
+<ol style="list-style-type: lower-alpha">
+<li>The assumption that deaths are uniformly distributed within each year of age.</li>
+<li>The constant force assumption.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer245" href="javascript:toggleTheory('toggleTheory.MethodExer245','displayCode.MethodExer245');"><i><strong>Solution to Method Exercise 2.4.5</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer245" style="display: none">
+<p>Note that this is not the probability that (70.5) will die between 70.5 and 71.5, but that (70) will die between 70.5 and 71.5.</p>
+<p>The first probability is
+<span class="math display">\[\begin{eqnarray*}
+{q_{70.5}} &amp;=&amp; 1 - {p_{70.5}}\\
+&amp;=&amp; 1 - {_{0.5}p_{70.5}}\cdot{_{0.5}p_{71}} \\
+&amp;=&amp; 1 - ( 1 - {_{0.5}q_{70.5}})(1 - {_{0.5}q_{71}}),
+\end{eqnarray*}\]</span>
+and, therefore:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Uniform distribution of deaths within a year.
+<span class="math display">\[\begin{eqnarray*}
+{q_{70.5}} &amp;=&amp; 1 - ( 1 - \frac{0.5\,{q_{70}}}{1 - 0.5 \, q_{70}})(1 - {0.5}\,{q_{71}})\\
+&amp;=&amp; 0.044897959\\
+\Rightarrow {_{0.5|}q_{70}} &amp;=&amp; {_{0.5}p_{70}}\,{q_{70.5}} = (1 - 0.5\,q_{70}) \times {q_{70.5}} = 0.044.
+\end{eqnarray*}\]</span></p></li>
+<li><p>Constant Force:
+<span class="math display">\[\begin{eqnarray*}
+{q_{70.5}} &amp;=&amp; 1- (1 - ,q_{70})^{0.5} (1-q_{71})^{0.5}\\
+&amp;=&amp; 1-\sqrt{1-0.04}\sqrt{1-0.05} = 0.045013089\\
+\Rightarrow {_{0.5|}q_{70}} &amp;=&amp; {_{0.5}p_{70}}\,{q_{70.5}} = \sqrt{1 - q_{70}} \times {q_{70.5}} = 0.04410364.
+\end{eqnarray*}\]</span></p></li>
+</ol>
+</div>
+<p><strong>Exercise 2.4.6.</strong> You are given the following information on participants entering a special 2-year program for treatment of a disease:</p>
+<ul>
+<li>Only 20% survive to the end of the second year.</li>
+<li>The force of mortality is constant within each year.</li>
+<li>The force of mortality for year 2 is two times the force of mortality for year 1.</li>
+</ul>
+<p>Calculate the probability that a participant who survives to the end of month 3 dies by the end of month 21.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer246" href="javascript:toggleTheory('toggleTheory.MethodExer246','displayCode.MethodExer246');"><i><strong>Solution to Method Exercise 2.4.6</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer246" style="display: none">
+<p>First:
+<span class="math display">\[
+0.20 = {_2p_x} = p_x\,p_{x+1} = e^{-\mu_x}\,e^{-\mu_{x+1}} = e^{-\mu_x}\,e^{-2\,\mu_x} = e^{-3\,\mu_x}
+\]</span>
+so that
+<span class="math display">\[
+\mu_x = - \frac{\log\{0.20\}}{3} = 0.53648.
+\]</span>
+Now:
+<span class="math display">\[\begin{eqnarray*}
+{_{0.25|1.5}q_x} &amp;=&amp; {_{0.25}p_x} - {_{1.75}p_x} = e^{-0.25\,\mu_x} - e^{-\mu_x}\,e^{-0.75\,\mu_{x+1}} \\
+&amp;=&amp; e^{-0.25\,\mu_x} - e^{-\mu_x}\,e^{-0.75\,2\,\mu_x} =  e^{-0.25\,\mu_x} - e^{-2.5\,\mu_x} = 0.61295.\\
+\Rightarrow {_{1.5}q_{x+0.25}} &amp;=&amp; \frac{{_{0.25|1.5}q_x}}{_{0.25}p_x} = \frac{0.61295}{e^{-0.25\,\mu_x}}= 0.70093.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 2.4.7.</strong> What is the order of <span class="math inline">\(\int_0^1 {_tp_x}\,dt\)</span> for the different schemes? Why is it ``implied by the different interpolation schemes"? Give a short explanation.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer247" href="javascript:toggleTheory('toggleTheory.MethodExer247','displayCode.MethodExer247');"><i><strong>Solution to Method Exercise 2.4.7</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer247" style="display: none">
+<p>Comparison: From the examples above, we see that there are only slight differences in the value of the integral between the different cases. However, the order of the different schemes actually is implied by the different interpolation methods as can be seen from the following figure</p>
+<!-- \caption{Assumptions for fractional ages \label{FIGFRACAGE}} -->
+<center>
+<embed src="Figures/Graph_Interpolatiomethods.pdf" style="width:50.0%" />
+</center>
+<p>We see that for the survival function <span class="math inline">\(s\)</span>, we have the following order:
+<span class="math display">\[
+ \text{Unif.\ Dis. } &gt; \text{ Const.\ Force } &gt; \text{ Balducci}.
+\]</span>
+Since integration preserves the order, we will have the same order for <span class="math inline">\(\int_0^1 {_tp_x}\,dt\)</span>. (Balducci is an older variant that you can ignore here.)</p>
+</div>
+<p><strong>Exercise 2.4.8.</strong> You are given the following information about a select and ultimate mortality table:</p>
+<ul>
+<li>The select period is 2 years.</li>
+<li>The mortality rates in the select period are equal to 50% of the Standard Ultimate Life Table rates.</li>
+<li>Ultimate mortality follows the Standard Ultimate Life Table.</li>
+</ul>
+<p>Calculate:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(p_{[68]+1}\)</span>;</li>
+<li><span class="math inline">\({_2q_{[68]+1}}\)</span>;</li>
+<li><span class="math inline">\(_{17}p_{[68]}\)</span>;</li>
+<li><span class="math inline">\({_{10}q_{[65]+5}}\)</span>;</li>
+<li><span class="math inline">\({_{22}q_{[68]}}\)</span>.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer248" href="javascript:toggleTheory('toggleTheory.MethodExer248','displayCode.MethodExer248');"><i><strong>Solution to Method Exercise 2.4.8</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer248" style="display: none">
+<p>We have:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(p_{[68]+1} = 1-0.5\times q_{69}=0.995353\)</span>;</li>
+<li><span class="math inline">\({_2q_{[68]+1}} = 1-(1-0.5\times q_{69})\times(1-q_{70}) = 0.015011611\)</span>;</li>
+<li><span class="math inline">\(_{17}p_{[68]} = (1-0.5\times q_{68})\times(1-0.5\times q_{69})\times\frac{l_{85}}{l_{70}}=0.665857814\)</span>;</li>
+<li><span class="math inline">\({_{10}q_{[65]+5}}={_{10}q_{70}} = 1-\frac{l_{80}}{l_{70}}=0.169354343\)</span>;</li>
+<li><span class="math inline">\({_{22}q_{[68]}} = 1-(1-0.5\times q_{68})\times(1-0.5\times q_{69})\times\frac{l_{90}}{l_{70}} = 0.544655244\)</span>.</li>
+</ol>
+</div>
+<p><strong>Exercise 2.4.9.</strong> You are given the following extract from a select-and-ultimate mortality table:
+<span class="math display">\[
+\begin{array}{c || c c c || c}
+x &amp; l_{[x]} &amp; l_{[x]+1} &amp; l_{x+2} &amp; x+2\\
+\hline
+60 &amp; 80,625 &amp; 79,954 &amp; 78,839 &amp; 62\\
+61 &amp; 79,137 &amp; 78,402 &amp; 77,252 &amp; 63\\
+62 &amp; 77,575 &amp; 76,770 &amp; 75,578 &amp;  64\\
+\end{array}
+\]</span></p>
+<p>Assume that deaths are uniformly distributed between integral ages. Calculate:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\({_3p_{[60]}}\)</span>;</li>
+<li><span class="math inline">\({_{0.7}p_{[60]+1}}\)</span>;</li>
+<li><span class="math inline">\({_{1.5}p_{[60]}}\)</span>;</li>
+<li><span class="math inline">\({_{2.5}p_{[60]+0.5}}\)</span>;</li>
+<li><span class="math inline">\({_{0.9}q_{[60]+0.6}}\)</span>.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer249" href="javascript:toggleTheory('toggleTheory.MethodExer249','displayCode.MethodExer249');"><i><strong>Solution to Method Exercise 2.4.9</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer249" style="display: none">
+<p>We have:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\({_3p_{[60]}} = \frac{l_{63}}{l_{[60]}} = 0.958164341\)</span>;</li>
+<li><span class="math inline">\({_{0.7}p_{[60]+1}} = 1- 0.7 \times \frac{l_{[60]+1} - l_{62}}{l_{[60]+1}} = \frac{0.3\,l_{[60]+1} + 0.7\,l_{62}}{l_{[60]+1}} = 0.990238137\)</span>;</li>
+<li><span class="math inline">\({_{1.5}p_{[60]}} = p_{[60]} (1-0.5\times q_{[60]+1}) = \frac{0.5\,l_{[60]+1}+0.5\,l_{62}}{l_{[60]}}=0.984762791\)</span>;</li>
+<li><span class="math inline">\({_{2.5}p_{[60]+0.5}} = p_{[60]+0.5} \frac{l_{63}}{l_{[60]+1}} = \frac{p_{[60]}}{1-{_{0.5}q_{[60]}}} \frac{l_{63}}{l_{[60]+1}} = \frac{l_{63}}{0.5\,l_{[60]}+0.5\,l_{[60]+1}}= 0.962168154\)</span>;</li>
+<li>And
+<span class="math display">\[\begin{eqnarray*}
+{_{0.9}q_{[60]+0.6}} &amp;=&amp; 1-{_{0.4}p_{[60]+0.6}}\times{_{0.5}p_{[60]+1}} = 1-\frac{p_{[60]}}{_{0.6}p_{[60}}\times(1-0.5\times q_{[60]+1}) \\
+&amp;=&amp;1-\frac{0.5\times l_{[60]+1} + 0.5\times l_{62}}{0.4\times l_{[60]}+0.6\times l_{[60]+1}} = 0.01029513.
+\end{eqnarray*}\]</span></li>
+</ol>
+</div>
+<p><strong>Exercise 2.4.10.</strong> You are given the following extract from a table with a 3-year select period:
+<span class="math display">\[
+\begin{array}{c || c c c c || c}
+x &amp; q_{[x]} &amp; q_{[x]+1} &amp; q_{[x]+2} &amp; q_{x+3} &amp; x+3\\
+\hline
+60 &amp; 0.09 &amp; 0.11 &amp; 0.13 &amp; 0.15 &amp; 63\\
+61 &amp; 0.10 &amp; 0.12 &amp; 0.14 &amp; 0.16 &amp; 64\\
+62 &amp; 0.11 &amp; 0.13 &amp; 0.15 &amp; 0.17 &amp; 65\\
+63 &amp; 0.12 &amp; 0.14 &amp; 0.16 &amp; 0.18 &amp; 66\\
+64 &amp; 0.13 &amp; 0.15 &amp; 0.17 &amp; 0.19 &amp; 67
+\end{array}
+\]</span>
+Given that <span class="math inline">\(e_{64}=5.10,\)</span> calculate:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(e_{63}\)</span>;</li>
+<li><span class="math inline">\(e_{[61]+2}\)</span>;</li>
+<li><span class="math inline">\(e_{[61]}\)</span>;</li>
+<li><span class="math inline">\(e_{[60]+1}\)</span>;</li>
+<li><span class="math inline">\(e_{[60]}\)</span>.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer2410" href="javascript:toggleTheory('toggleTheory.MethodExer2410','displayCode.MethodExer2410');"><i><strong>Solution to Method Exercise 2.4.10</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer2410" style="display: none">
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(e_{63} = p_{63} + p_{63} \times e_{64} = 5.185\)</span>;</li>
+<li><span class="math inline">\(e_{[61]+2} = p_{[61]+2} + p_{[61]+2} \times e_{64} = 5.246\)</span>;</li>
+<li><span class="math inline">\(e_{[61]} = p_{[61]} + {_2p_{[61]}} + {_3p_{[61]}} + {_3p_{[61]}} \,e_{64} = 5.846832\)</span>;</li>
+<li><span class="math inline">\(e_{[60]+1} = p_{[60]+1} + {_2p_{[60]+1}} + {_3p_{[60]+1}} + {_3p_{[60]+1}} \,e_{64} = 5.6790455\)</span>;</li>
+<li><span class="math inline">\(e_{[60]} = p_{[60} + p_{[60]}\,e_{[60]+1} = 6.077931405\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="chapter-3-method-exercises" class="section level2">
+<h2><span class="header-section-number">7.2</span> Chapter 3 Method Exercises</h2>
+<div id="section-3.2-method-exercises" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Section 3.2 Method Exercises</h3>
+<p><strong>Exercise 3.2.1.</strong> Let <span class="math inline">\(\mu_{60+t} = \frac{1}{40}\)</span>, <span class="math inline">\(t \geq 0\)</span> and <span class="math inline">\(\delta = 6\%\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the actuarial present value for a whole life policy on <span class="math inline">\((60)\)</span> with benefits payable at the end of the year of death.</li>
+<li>Calculate the actuarial present value for a 20-year endowment policy with benefits payable at the end of the year of death.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer321" href="javascript:toggleTheory('toggleTheory.MethodExer321','displayCode.MethodExer321');"><i><strong>Solution to Method Exercise 3.2.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer321" style="display: none">
+<ol style="list-style-type: lower-alpha">
+<li>For the actuarial present value, we have:
+<span class="math display">\[\begin{eqnarray*}
+v &amp;=&amp; e^{-\delta} = .941764534\\
+{_tp_x} &amp;=&amp; e^{-\frac{t}{40}}\\
+q_{x+t} &amp;=&amp; 1 - p_{x+t} = 1 - e^{-\frac{1}{40}} = .02469088\\
+\Rightarrow {A_{60}} &amp;=&amp; \sum_{k=0}^{\infty} v^{k+1}\,e^{-\frac{k}{40}}\,0.02469088 = 0.02469088\left[v\sum_{k=0}^{\infty} \left(v\,e^{-\frac{1}{40}}\right)^k\right] \\
+&amp;=&amp; 0.02469088\, v\,\frac{1 }{1 -  \left(v\,e^{-\frac{1}{40}}\right)}  = 0.285355836 \\
+\text{and } {A_{60:\overline{20}|}} &amp;=&amp; \sum_{k=0}^{19} v^{k+1}\,e^{-\frac{k}{40}}\,0.02469088 + v^{20}e^{-\frac{20}{40}}\\
+&amp;=&amp; 0.02469088\left[v\sum_{k=0}^{19} \left(v\,e^{-\frac{1}{40}}\right)^k\right] + 0.182683524\\
+&amp;=&amp; 0.02469088\, v\,\frac{1 -  \left(v\,e^{-\frac{1}{40}}\right)^{20}}{1 -  \left(v\,e^{-\frac{1}{40}}\right)} +
+ 0.182683524 = 0.415902067.
+ \end{eqnarray*}\]</span></li>
+</ol>
+</div>
+<p><strong>Exercise 3.2.2.</strong> For a fully discrete, three-year term insurance issued to a select life age 60, you are given the following information:</p>
+<ul>
+<li>The death benefit is 50,000.</li>
+<li><span class="math inline">\(i=3\%\)</span>.</li>
+<li>An excerpt from the two-year select and ultimate life table applicable to this insurance:</li>
+</ul>
+<center>
+<img src="Figures/13SelT.png" style="width:50.0%" />
+</center>
+<p>Calculate the probability that the present value of the death benefit is less than 48,000.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer322" href="javascript:toggleTheory('toggleTheory.MethodExer322','displayCode.MethodExer322');"><i><strong>Solution to Method Exercise 3.2.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer322" style="display: none">
+<p>The present value of the benefit upon death in the first year is <span class="math inline">\((1.03)^{-1}\times 50,000 = 48,543.69\)</span>, which is greater than 48,000. The present value of the death benefit upon death in the 2nd, 3rd, and the following years are 47,129.80, 45,757.08, and 0, respectively, which are all less than 48,000. Hence, the individual needs to survive the first year, and the probability is <span class="math inline">\(p_{[60]} = \frac{l_{[60]+1}}{l_{[60]}}= \frac{99,000}{100,000} = 99\%\)</span>.</p>
+</div>
+<p><strong>Exercise 3.2.3.</strong> For a special 3-year term insurance on <span class="math inline">\((x)\)</span> you are given:</p>
+<ul>
+<li><span class="math inline">\(Z\)</span> is the present-value random variable for this insurance.</li>
+<li><span class="math inline">\(q_{x+k} = 0.02(k+1),\)</span> <span class="math inline">\(k=0,1,2\)</span>.</li>
+<li>The following benefits are payable at the end of the year of death:</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+k &amp; b_{k+1} \\
+\hline
+0 &amp; 300 \\
+1 &amp; 350 \\
+2 &amp; 400 \\
+\hline
+\end{array}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(i=0.06\)</span>.</li>
+</ul>
+<p>Calculate <span class="math inline">\(E[Z]\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer323" href="javascript:toggleTheory('toggleTheory.MethodExer323','displayCode.MethodExer323');"><i><strong>Solution to Method Exercise 3.2.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer323" style="display: none">
+<p><span class="math display">\[\begin{eqnarray*}
+ E[Z] &amp;=&amp; \sum_{k=0}^2 {_kp_x} \, {q_{x+k}}\,v^{k+1} \, b_{k+1}\\
+ &amp;=&amp; 0.02 \cdot v \cdot 300 + 0.98\cdot 0.04 \cdot v^2 \cdot 350 + 0.98\cdot 0.96 \cdot 0.06 \cdot v^3 \cdot 400\\
+ &amp;=&amp; 36.82906023
+ \end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 3.2.4.</strong> The actuarial present value of an  payable at the end of the year of death is denoted by <span class="math inline">\({_{m|n}A_x}\)</span>. What is the formula for this insurance?</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer324" href="javascript:toggleTheory('toggleTheory.MethodExer324','displayCode.MethodExer324');"><i><strong>Solution to Method Exercise 3.2.4</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer324" style="display: none">
+<p><span class="math display">\[
+ {_{m|n}A_x} = \sum_{k=m}^{m+n-1} v^{k+1}\,{_kp_x}\,{q_{x+k}}.
+\]</span></p>
+</div>
+<p><strong>Exercise 3.2.5.</strong> From the SOA LTAM standard ultimate life table, derive</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\({A_{35:\stackrel{1}{\overline{30}|}}}\)</span>,</li>
+<li><span class="math inline">\({A_{\stackrel{1}{35}:\overline{30}|}}\)</span>,</li>
+<li><span class="math inline">\({A_{35:\overline{30}|}}\)</span>,</li>
+<li><span class="math inline">\({_{30|}A_{35}}\)</span>.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer325" href="javascript:toggleTheory('toggleTheory.MethodExer325','displayCode.MethodExer325');"><i><strong>Solution to Method Exercise 3.2.5</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer325" style="display: none">
+<p>We have:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math display">\[\begin{eqnarray*}
+ {A_{35:\stackrel{1}{\overline{30}|}}} &amp;=&amp; {_{30}p_{35}}\,v^{30} = \frac{l_{65}}{l_{35}}\,(1+i)^{-30}\\
+ &amp;=&amp; \frac{94,579.7}{99,556.7}\frac{1}{1.05^{30}} = 0.219810517,\\
+ \end{eqnarray*}\]</span></li>
+<li><span class="math display">\[\begin{eqnarray*}
+ {A_{\stackrel{1}{35}:\overline{30}|}} &amp;=&amp; {A_{35}} -  {A_{35:\stackrel{1}{\overline{30}|}}} \,{A_{65}}\\
+ &amp;=&amp; 0.09653 - 0.219810517\cdot 0.35477 = 0.018547823.\\
+ \end{eqnarray*}\]</span></li>
+<li><span class="math display">\[\begin{eqnarray*}
+ {A_{35:\overline{30}|}} &amp;=&amp;  {A_{35:\stackrel{1}{\overline{30}|}}}  +  {A_{\stackrel{1}{35}:\overline{30}|}}\\
+ &amp;=&amp; 0.219810517 + 0.018547823 = 0.23835834.\\
+ \end{eqnarray*}\]</span></li>
+<li><span class="math display">\[\begin{eqnarray*}
+ {_{30|}A_{35}} &amp;=&amp; {A_{35}} -  {A_{\stackrel{1}{35}:\overline{30}|}} \\
+ &amp;=&amp; 0.09653 - 0.018547823 = 0.077982177.\\
+ \end{eqnarray*}\]</span></li>
+</ol>
+</div>
+<p><strong>Exercise 3.2.6.</strong> Let <span class="math inline">\(\mu_{60+t} = \frac{1}{40}\)</span>, <span class="math inline">\(t \geq 0\)</span> and <span class="math inline">\(\delta = 6\%\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate the actuarial the variance for a whole life policy on <span class="math inline">\((60)\)</span> with benefits payable at the end of the year of death.</li>
+<li>Calculate the actuarial the variance for a 20-year endowment policy with benefits payable at the end of the year of death.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer326" href="javascript:toggleTheory('toggleTheory.MethodExer326','displayCode.MethodExer326');"><i><strong>Solution to Method Exercise 3.2.6</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer326" style="display: none">
+<p><span class="math display">\[\begin{eqnarray*}
+ Var(Z^{\text{whole}})&amp;=&amp;   {^2A_{60}} - \left( A_{60} \right)^2\\
+ &amp;=&amp;  0.02469088\, \tilde{v}\,\frac{1 }{1 -  \left(\tilde{v}\,e^{-\frac{1}{40}}\right)}  - (0.285355836)^2\\
+ &amp;=&amp; 0.080812514\\
+ \text{and }Var(Z^{\text{end}})&amp;=&amp;   {^2A_{60:\overline{20}|}} - \left( {A_{60:\overline{20}|}} \right)^2\\
+ &amp;=&amp;   0.02469088\, \tilde{v}\,\frac{1 -  \left(\tilde{v}\,e^{-\frac{1}{40}}\right)^{20}}{1 -  \left(\tilde{v}\,e^{-\frac{1}{40}}\right)}  + \tilde{v}^{20}e^{-\frac{20}{40}} - (0.415902067)^2\\
+ &amp;=&amp; 0.035341403.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 3.2.7.</strong> For a special 3-year term insurance on <span class="math inline">\((x)\)</span> you are given:</p>
+<ul>
+<li>Z is the present-value random variable for this insurance.</li>
+<li><span class="math inline">\(q_{x+k} = 0.02(k+1),\)</span> <span class="math inline">\(k=0,1,2\)</span>.</li>
+<li>The following benefits are payable at the end of the year of death:</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{|c|c|}
+\hline
+k &amp; b_{k+1} \\
+\hline
+0 &amp; 300 \\
+1 &amp; 350 \\
+2 &amp; 400 \\
+\hline
+\end{array}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(i=0.06\)</span>.</li>
+</ul>
+<p>Calculate <span class="math inline">\(Var[Z]\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer327" href="javascript:toggleTheory('toggleTheory.MethodExer327','displayCode.MethodExer327');"><i><strong>Solution to Method Exercise 3.2.7</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer327" style="display: none">
+<p>Following from HW earlier…
+<span class="math display">\[\begin{eqnarray*}
+ E[Z^2] &amp;=&amp; \sum_{k=0}^2 {_kp_x} \, {q_{x+k}}\,v^{2k+2} \, b_{k+1}^2\\
+ &amp;=&amp; 0.02 \cdot v^2 \cdot 300^2 + 0.98\cdot 0.04 \cdot v^4 \cdot 350^2 + 0.98\cdot 0.96 \cdot 0.06 \cdot v^6 \cdot 400^2\\
+ &amp;=&amp; 11,772.60538\\
+ \Rightarrow Var[Z] &amp;=&amp; E[Z^2] - \left(E[Z]\right)^2 = 10,493.85.
+ \end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 3.2.8.</strong> The actuarial present value of an  payable at the end of the year of death is denoted by <span class="math inline">\({_{m|n}A_x}\)</span>. What is the variance for this insurance?</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer328" href="javascript:toggleTheory('toggleTheory.MethodExer328','displayCode.MethodExer328');"><i><strong>Solution to Method Exercise 3.2.8</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer328" style="display: none">
+<p>We have:
+<span class="math display">\[
+ {_{m|n}A_x} = \sum_{k=m}^{m+n-1} v^{k+1}\,{_kp_x}\,{q_{x+k}}.
+ \]</span></p>
+<p>Variance via the rule of moments:
+<span class="math display">\[
+Var[Z] = {^2_{m|n}A_x} - \left({_{m|n}A_x}\right)^2.
+\]</span></p>
+</div>
+<p><strong>Exercise 3.2.9.</strong> From the SOA LTAM standard ultimate life table, derive the variances for the insurances corresponding to <span class="math inline">\({A_{35:\stackrel{1}{\overline{30}|}}}\)</span>,
+<span class="math inline">\({A_{\stackrel{1}{35}:\overline{30}|}}\)</span>,
+<span class="math inline">\({A_{35:\overline{30}|}}\)</span>,
+<span class="math inline">\({_{30|}A_{35}}\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer329" href="javascript:toggleTheory('toggleTheory.MethodExer329','displayCode.MethodExer329');"><i><strong>Solution to Method Exercise 3.2.9</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer329" style="display: none">
+<p>We have:</p>
+<ul>
+<li><span class="math display">\[\begin{eqnarray*}
+ {A_{35:\stackrel{1}{\overline{30}|}}} &amp;=&amp; {_{30}p_{35}}\,v^{30} = \frac{l_{65}}{l_{35}}\,(1+i)^{-30}\\
+ &amp;=&amp; \frac{94,579.7}{99,556.7}\frac{1}{1.05^{30}} = 0.219810517,\\
+ {^2A_{35:\stackrel{1}{\overline{30}|}}} &amp;=&amp; {_{30}p_{35}}\,(\underbrace{\tilde{v}}_{=(e^{-2\,\delta})=v^2})^{30} = \frac{l_{65}}{l_{35}}\,(1+i)^{-60}\\
+ &amp;=&amp;  \frac{94,579.7}{99,556.7}\frac{1}{1.05^{60}} = 0.050859197,\\
+ Var(Z) &amp;=&amp; 0.050859197 - 0.219810517^2 = 0.002542533.
+ \end{eqnarray*}\]</span></li>
+<li><span class="math display">\[\begin{eqnarray*}
+ {A_{\stackrel{1}{35}:\overline{30}|}} &amp;=&amp; {A_{35}} -  {A_{35:\stackrel{1}{\overline{30}|}}} \,{A_{65}}\\
+ &amp;=&amp; 0.09653 - 0.219810517\cdot 0.35477 = 0.018547823,\\
+ {^2A_{\stackrel{1}{35}:\overline{30}|}} &amp;=&amp; {^2A_{35}} -  {^2A_{35:\stackrel{1}{\overline{30}|}}} \,{^2A_{65}}\\
+ &amp;=&amp; 0.01601 - 0.050859197\cdot 0.1542 = 0.008167512,\\
+ Var(Z) &amp;=&amp; 0.008167512 - 0.018547823^2 = 0.00782349.
+ \end{eqnarray*}\]</span></li>
+<li><span class="math display">\[\begin{eqnarray*}
+ {A_{35:\overline{30}|}} &amp;=&amp;  {A_{35:\stackrel{1}{\overline{30}|}}}  +  {A_{\stackrel{1}{35}:\overline{30}|}}\\
+ &amp;=&amp; 0.219810517 + 0.018547823 = 0.23835834,\\
+ {^2A_{35:\overline{30}|}} &amp;=&amp;  {^2A_{35:\stackrel{1}{\overline{30}|}}}  +  {^2A_{\stackrel{1}{35}:\overline{30}|}}\\
+ &amp;=&amp; 0.050859197 + 0.008167512 = 0.059026708,\\
+ Var(Z) &amp;=&amp; 0.059026708 -  0.23835834^2 = 0.00221201.
+ \end{eqnarray*}\]</span></li>
+<li><span class="math display">\[\begin{eqnarray*}
+ {_{30|}A_{35}} &amp;=&amp; {A_{35}} -  {A_{\stackrel{1}{35}:\overline{30}|}} \\
+ &amp;=&amp; 0.09653 - 0.018547823 = 0.077982177,\\
+ {^2_{30|}A_{35}} &amp;=&amp; {^2A_{35}} -  {^2A_{\stackrel{1}{35}:\overline{30}|}} \\
+ &amp;=&amp; 0.01601 - 0.008167512 = 0.007842488,\\
+ Var(Z) &amp;=&amp; 0.007842488 - 0.077982177^2 = 0.001761268.
+ \end{eqnarray*}\]</span></li>
+</ul>
+</div>
+</div>
+<div id="section-3.3-method-exercises" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Section 3.3 Method Exercises</h3>
+<p><strong>Exercise 3.3.1.</strong> An insurer issues a 3-year deferred whole life annuity-due of 100 per year to (80). You are given:</p>
+<ul>
+<li>Mortality follows the SOA Illustrative Life Table.</li>
+<li><span class="math inline">\(f(k,k+1)\)</span> is the <span class="math inline">\(k\)</span>-year deferred one-year forward rate.</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|}\hline f(0,1) &amp; f(1,2) &amp; f(2,3) &amp; f(3,4) &amp; f(k,k+1),k=4,5,6,...\\ \hline
+0.04 &amp; 0.045 &amp; 0.05 &amp; 0.055 &amp; 0.05\\ \hline \end{array}
+\]</span></p>
+<p>Calculate the expected present value of the annuity.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer331" href="javascript:toggleTheory('toggleTheory.MethodExer331','displayCode.MethodExer331');"><i><strong>Solution to Method Exercise 3.3.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer331" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+{_{3|}\ddot{a}_{80}} &amp;=&amp; \frac{l_{83}}{l_{80}}\times \frac{1}{1.04\times1.045\times 1.05} \; \times \underbrace{\ddot{a}_{83}}_{=1+\frac{1-q_{83}}{1.055}\ddot{a}_{84}}=5.841264779\\
+\Rightarrow 100 \times {_{3|}\ddot{a}_{80}} &amp;=&amp; 584.1264779.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 3.3.2.</strong> From the SOA LTAM standard ultimate life table, derive <span class="math inline">\(\ddot{a}_{60}\)</span>, <span class="math inline">\(a_{60}\)</span>, <span class="math inline">\({_{5|}\ddot{a}_{60}}\)</span>, <span class="math inline">\({_{5|}a_{60}}\)</span>, <span class="math inline">\(\ddot{a}_{60:\overline{5}|}\)</span>, <span class="math inline">\(a_{60:\overline{5}|}\)</span>, <span class="math inline">\(\ddot{a}_{\overline{60:\overline{5}|}}\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer332" href="javascript:toggleTheory('toggleTheory.MethodExer332','displayCode.MethodExer332');"><i><strong>Solution to Method Exercise 3.3.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer332" style="display: none">
+<ul>
+<li>Whole life annuity-due: Denoted in table:
+<span class="math display">\[
+\ddot{a}_{60} = 14.9041 \Longrightarrow \text{ Annuity-immediate: } a_{60} = 14.9041 - 1 = 13.9041.
+\]</span></li>
+<li>Deferred annuity-due:
+<span class="math display">\[
+{_{5|}\ddot{a}_{60}} = A_{60:\stackrel{1}{\overline{5}|}}\,\ddot{a}_{65} = \underbrace{\left(\frac{1}{1.05}\right)^5\,\frac{l_{65}}{l_{60}}}_{=0.766868732}\,\ddot{a}_{65} = 10.39091795
+\]</span>
+and same for annuity immediate:
+<span class="math display">\[
+{_{5|}a_{60}} = A_{60:\stackrel{1}{\overline{5}|}}\,a_{65} = \left(\frac{1}{1.05}\right)^5\,\frac{l_{65}}{l_{60}}\,a_{65} = 9.624049217
+\]</span>
+or use relationship between annuity-due and annuity-immediate:
+<span class="math display">\[
+{_{5|}a_{60}} = {_{5|}\ddot{a}_{60}} - v^5\,{_5p_{60}} = {_{5|}\ddot{a}_{60}} - \left(\frac{1}{1.05}\right)^5\,\frac{l_{65}}{l_{60}} = 9.624049217.
+\]</span></li>
+<li>Temporary annuity:
+<span class="math display">\[
+\ddot{a}_{60:\overline{5}|} = \ddot{a}_{60} - {_{5|}\ddot{a}_{60}} = 4.513182051
+\]</span>
+or
+<span class="math display">\[
+\ddot{a}_{60:\overline{5}|} = \frac{1-A_{60:\overline{5}|}}{d} = \frac{1 - \left(\left(A_{60} - \left(\frac{1}{1.05}\right)^5\,\frac{l_{65}}{l_{60}}\,A_{65}\right) + \left(\frac{1}{1.05}\right)^5\,\frac{l_{65}}{l_{60}} \right)}{\frac{0.05}{1.05}} = 4.513182051.
+\]</span></li>
+<li>For annuity-immediate:
+<span class="math display">\[
+a_{60:\overline{5}|} = a_{60} - {_{5|}a_{60}} = 4.280050783.
+\]</span></li>
+<li><span class="math display">\[
+\ddot{a}_{\overline{60:\overline{5}|}} = \ddot{a}_{5} + {_{5|}\ddot{a}_{60}} = \frac{1-v^5}{d} + {_{5|}\ddot{a}_{60}} = 14.93686845.
+\]</span>
+and
+<span class="math display">\[
+a_{\overline{60:\overline{5}|}} = a_{5} + {_{5|}a_{60}} = v\,\frac{1-v^5}{d} + {_{5|}a_{60}} = 13.95352589.
+\]</span></li>
+</ul>
+</div>
+<p><strong>Exercise 3.3.3.</strong> From the SOA LTAM standard ultimate life table, derive the variances for <span class="math inline">\(\ddot{a}_{60}\)</span>, <span class="math inline">\(a_{60}\)</span>, and <span class="math inline">\(\ddot{a}_{60:\overline{5}|}\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer333" href="javascript:toggleTheory('toggleTheory.MethodExer333','displayCode.MethodExer333');"><i><strong>Solution to Method Exercise 3.3.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer333" style="display: none">
+<p>We have:</p>
+<ul>
+<li>Variance – Whole-life annuity:
+<span class="math display">\[
+Var[\Upsilon] = \frac{{^2A_{60}} - \left(A_{60}\right)^2}{d^2} = \frac{0.10834 - (0.29028)^2}{\left(\frac{0.05}{1.05}\right)^2} = 10.61818703.
+\]</span></li>
+<li>Variance – Temporary annuity:
+<span class="math display">\[\begin{eqnarray*}
+A_{60:\overline{5}|} &amp;=&amp; \left(A_{60} - (1.05)^{-5}\,\frac{l_{65}}{l_{60}}\,A_{65}\right) + (1.05)^{-5}\,\frac{l_{65}}{l_{60}} = 0.785086712,\\
+{^2A_{60:\overline{5}|}} &amp;=&amp; \left({^2A_{60}} - (1.05)^{-10}\,\frac{l_{65}}{l_{60}}\,{^2A_{65}}\right) + (1.05)^{-10}\,\frac{l_{65}}{l_{60}} = 0.616548841,\\
+\Rightarrow Var(\Upsilon) &amp;=&amp; \frac{0.616548841 \,-\, 0.785086712^2}{d^2} = 0.082773714.
+\end{eqnarray*}\]</span></li>
+</ul>
+</div>
+<p><strong>Exercise 3.3.4.</strong> For a pension plan portfolio, you are given</p>
+<ul>
+<li>80 individuals with mutually independent future lifetimes are each to receive a whole life annuity-due.</li>
+<li><span class="math inline">\(i=6\%\)</span>.</li>
+<li></li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+\text{Age} &amp; \text{Number of annuitants} &amp; \text{Annual Payment} &amp; \ddot{a}_x &amp; A_x &amp; {^2A_x} \\
+\hline
+65 &amp; 50 &amp; 2 &amp; 9.8969 &amp; 0.43980 &amp; 0.23603 \\
+75 &amp; 30 &amp; 1&amp; 7.2170 &amp; 0.59149 &amp; 0.38681 \\
+\hline
+\end{array}
+\]</span></p>
+<p>Using the normal approximation, calculate the 95th percentile of the distribution of the present random variable of this portfolio.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer334" href="javascript:toggleTheory('toggleTheory.MethodExer334','displayCode.MethodExer334');"><i><strong>Solution to Method Exercise 3.3.4</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer334" style="display: none">
+<p>We have for the expected value:
+<span class="math display">\[
+\mu = n_{65} \, b_{65} \, \ddot{a}_{65} + n_{75} \, b_{75} \, \ddot{a}_{75}   = 1,206.2
+\]</span>
+and for the variance:
+<span class="math display">\[
+\sigma^2 = n_{65} \, b_{65}^2 \, \frac{{^2A_{65}}-{A_{65}}^2}{d^2} + n_{75} \, b_{75}^2  \, \frac{{^2A_{75}}-{A_{75}}^2}{d^2} = 3,005.5299.
+\]</span>
+Hence, we obtain for the 95th percentile:
+<span class="math display">\[
+\mu + 1.645 \times \sigma = 1,296.38.
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="chapter-4-method-exercises" class="section level2">
+<h2><span class="header-section-number">7.3</span> Chapter 4 Method Exercises</h2>
+<div id="section-4.1-method-exercises" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Section 4.1 Method Exercises</h3>
+<p><strong>Exercise 4.1.1.</strong> Assuming De Moivre’s survival function with <span class="math inline">\(\omega = 100\)</span> and <span class="math inline">\(i=0.10\)</span>, calculate</p>
+<ol style="list-style-type: lower-alpha">
+<li>Calculate <span class="math inline">\(\bar{A}_{\stackrel{1}{30}:\overline{10}|}\)</span>.</li>
+<li>The variance of the present value, at policy issue, of the benefit of the insurance in (a).</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer411" href="javascript:toggleTheory('toggleTheory.MethodExer411','displayCode.MethodExer411');"><i><strong>Solution to Method Exercise 4.1.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer411" style="display: none">
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[
+i = 0.1 \Rightarrow  \delta = \log(1.1) = 0.09531.
+\]</span>
+<span class="math display">\[\begin{eqnarray*}
+{\bar{A}_{\stackrel{1}{30}:\overline{10}|}} &amp;=&amp; \int_0^{10} e^{-0.09531\,t}\,\frac{S_0(x+t)}{S_0(x)}\,\frac{-S_0&#39;(x+t)}{S_0(x+t)}\,dt\\
+&amp;=&amp; \int_0^{10} \,e^{-0.0531\,t}\,\frac{1}{100-30}\,dt = \frac{1}{70 \cdot 0.09531} \left(1 - e^{-0.9531}\right)\\
+&amp;=&amp;0.0920988.
+\end{eqnarray*}\]</span></p></li>
+<li><p><span class="math display">\[\begin{eqnarray*}
+{^2\bar{A}_{\stackrel{1}{30}:\overline{10}|}} &amp;=&amp; \int_0^{10} e^{-2\,0.09531\,t}\,\frac{S_0(x+t)}{S_0(x)}\,\frac{-S_0&#39;(x+t)}{S_0(x+t)}\,dt\\
+&amp;=&amp; \int_0^{10} \,e^{-2\,0.09531\,t}\,\frac{1}{100-30}\,dt = \frac{1}{70 \cdot 2 \cdot 0.09531} \left(1 - e^{-10 \cdot 2 \cdot 0.09531}\right)\\
+&amp;=&amp;0.66380\\
+\Rightarrow Var[Z] &amp;=&amp; {^2\bar{A}_{\stackrel{1}{30}:\overline{10}|}}  - \left({\bar{A}_{\stackrel{1}{30}:\overline{10}|}} \right)^2 = 0.0553.
+\end{eqnarray*}\]</span></p></li>
+</ol>
+</div>
+<p><strong>Exercise 4.1.2.</strong> Let <span class="math inline">\(x=30\)</span>, <span class="math inline">\(\delta=0.06\)</span>, and <span class="math inline">\(S_0(x)=1 - \frac{x}{100}\)</span>, <span class="math inline">\(0\leq x \leq 100\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Find <span class="math inline">\({\bar{A}_{\stackrel{1}{30}:\overline{7}|}}\)</span> and the variance of the corresponding present value random variable.</li>
+<li>Find an approximate value <span class="math inline">\(z\)</span> such that the payoff for 1,000 independent insured lives with $100,000 policies each will be lower than <span class="math inline">\(z\)</span> with a probability of 97.5%.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer412" href="javascript:toggleTheory('toggleTheory.MethodExer412','displayCode.MethodExer412');"><i><strong>Solution to Method Exercise 4.1.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer412" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+\mu_{x+t} &amp;=&amp; \frac{1}{100 - (x+t)}\\
+\Rightarrow {\bar{A}_{\stackrel{1}{30}:\overline{7}|}} &amp;=&amp; \int_0^7 v^t \, {_tp_{30}}\,\mu_{30+t}\,dt\\
+&amp;=&amp; \int_0^7 v^t \frac{S_0(30+t)}{S_0(30)} \frac{1}{100\,S_0(30+t)}\,dt\\
+&amp;=&amp; \frac{1}{100\,S_0(30)} \int_0^7 e^{-0.06\,t}\,dt = 0.081655519\\
+\Rightarrow {^2\bar{A}_{\stackrel{1}{30}:\overline{7}|}} &amp;=&amp; \int_0^7 v^{2t} \, {_tp_{30}}\,\mu_{30+t}\,dt\\
+&amp;=&amp; \int_0^7 v^{2t} \frac{S_0(30+t)}{S_0(30)} \frac{1}{100\,S_0(30+t)}\,dt\\
+&amp;=&amp; \frac{1}{100\,S_0(30)} \int_0^7 e^{-0.12\,t}\,dt = 0.067653509\\
+Var(z) &amp;=&amp; 0.067653509 - 0.081655519^2 = .06098589\\
+\sigma &amp;=&amp; 0.246953205.
+\end{eqnarray*}\]</span></p>
+<p>For 1,000 lives with $100,000 policies each:
+<span class="math display">\[\begin{eqnarray*}
+\text{Mean }\mu &amp;=&amp; n\cdot d \cdot {\bar{A}_{\stackrel{1}{30}:\overline{7}|}} = 8,165,551.90\\
+\text{Variance } \sigma^2 &amp;=&amp; n\cdot d^2 \cdot Var(z) = 6.0985885\cdot 10^{11}\\
+\Rightarrow \sigma &amp;=&amp; 780,934.6003\\
+\stackrel{\text{CLT}}{\Rightarrow} \xi^{0.9} &amp;=&amp; \mu + 1.96\cdot \sigma = \$ 9,696,183.72
+\end{eqnarray*}\]</span>
+is the approximate 97.5th percentile by the normal approximation (1.96 is the 97.5th percentile of the Normal distribution).</p>
+</div>
+<p><strong>Exercise 4.1.3.</strong> From the Standard Ultimate Life Table, derive <span class="math inline">\({\bar{A}_{35}}\)</span>,
+<span class="math inline">\({\bar{A}_{\stackrel{1}{35}:\overline{30}|}}\)</span>,
+<span class="math inline">\({\bar{A}_{35:\overline{30}|}}\)</span>,
+<span class="math inline">\({_{30|}\bar{A}_{35}}\)</span> as well as the variances for these insurances under the assumption of a uniform distribution of deaths over each year of age.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer413" href="javascript:toggleTheory('toggleTheory.MethodExer413','displayCode.MethodExer413');"><i><strong>Solution to Method Exercise 4.1.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer413" style="display: none">
+<p>We have <span class="math inline">\(i = 0.05 \Rightarrow \delta = \log\{1+i\} = 0.048790164\)</span> and, thus, for the second moments by the rule of moments <span class="math inline">\(\delta^* = 2\cdot \delta = 0.097580328 \Rightarrow i^* = e^{\delta^*} = 0.1025\)</span>.
+<span class="math display">\[\begin{eqnarray*}
+ {\bar{A}_{35}} &amp;=&amp; \frac{i}{\delta} {A_{35}} = \frac{0.05}{0.048790164} 0.09653 = 0.098923627,\\
+ {^2\bar{A}_{35}} &amp;=&amp; \frac{i^*}{\delta^*}\, {^2A_{35}} = \frac{0.1025}{0.097580328} \,0.01601 = 0.01681717,\\
+ \Rightarrow Var[Z] &amp;=&amp;  {^2\bar{A}_{35}} - \left({\bar{A}_{35}}\right)^2 = 0.007031286.\\
+ {\bar{A}_{\stackrel{1}{35}:\overline{30}|}} &amp;=&amp;\frac{i}{\delta}    {A_{\stackrel{1}{35}:\overline{30}|}}
+= 0.019007748,\\
+{^2\bar{A}_{\stackrel{1}{35}:\overline{30}|}} &amp;=&amp;\frac{i^*}{\delta^*} \, {^2A_{\stackrel{1}{35}:\overline{30}|}}
+= 0.00857929,\\
+\Rightarrow Var[Z] &amp;=&amp;  {^2\bar{A}_{\stackrel{1}{35}:\overline{30}|}} - \left({\bar{A}_{\stackrel{1}{35}:\overline{30}|}} \right)^2 = 0.008217996.\\
+ {\bar{A}_{35:\overline{30}|}} &amp;=&amp;  {A_{35:\stackrel{1}{\overline{30}|}}}  +  {\bar{A}_{\stackrel{1}{35}:\overline{30}|}} =  0.219810517 + 0.019007748 = 0.238818265,\\
+ {^2\bar{A}_{35:\overline{30}|}} &amp;=&amp;  {^2A_{35:\stackrel{1}{\overline{30}|}}}  +  {^2\bar{A}_{\stackrel{1}{35}:\overline{30}|}} = 0.050859197 + 0.00857929 = 0.059438487,\\
+ \Rightarrow Var[Z] &amp;=&amp;  {^2\bar{A}_{35:\overline{30}|}}  - \left({\bar{A}_{35:\overline{30}|}} \right)^2
+ = 0.002404323.\\
+ {_{30|}\bar{A}_{35}} &amp;=&amp; {\bar{A}_{35}} -  {\bar{A}_{\stackrel{1}{35}:\overline{30}|}}  = 0.079915879,\\
+ {^2_{30|}\bar{A}_{35}} &amp;=&amp; {^2\bar{A}_{35}} -  {^2\bar{A}_{\stackrel{1}{35}:\overline{30}|}} = 0.00823788, \\
+ \Rightarrow Var[Z] &amp;=&amp;  {^2_{30|}\bar{A}_{35}}  - \left( {_{30|}\bar{A}_{35}} \right)^2 = 0.001851332.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 4.1.4.</strong> Let <span class="math inline">\(\mu_{40+t} = .025\)</span> for all <span class="math inline">\(t\)</span> and <span class="math inline">\(\delta =0.08\)</span>. Calculate <span class="math inline">\(\bar{a}_{40}\)</span>,
+<span class="math inline">\(\bar{a}_{40:\overline{5}|}\)</span>, <span class="math inline">\(_{5|}\bar{a}_{40}\)</span>, and <span class="math inline">\(\bar{a}_{\overline{40:\overline{5}|}}\)</span> as well as the variances for these contracts.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer414" href="javascript:toggleTheory('toggleTheory.MethodExer414','displayCode.MethodExer414');"><i><strong>Solution to Method Exercise 4.1.4</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer414" style="display: none">
+<p>We have:</p>
+<ul>
+<li>Whole life annuity:
+<span class="math display">\[
+{\bar{a}_{40}} = \int_0^{\infty} e^{-0.08\,t}\,e^{-0.025\,t}\,dt = \frac{1}{.105} = 9.523809524;
+\]</span></li>
+<li>Temporary life annuity
+<span class="math display">\[
+{\bar{a}_{40:\overline{5}|}} = \int_0^{5} e^{-0.08\,t}\,e^{-0.025\,t}\,dt = \frac{1 - e^{-0.105\cdot 5}}{.105} = 3.889948911;
+\]</span></li>
+<li>Deferred life annuity
+<span class="math display">\[
+{_{5|}\bar{a}_{40}} = {\bar{a}_{40}} - {\bar{a}_{40:\overline{5}|}}  = 5.633860613;
+\]</span></li>
+<li>Certain and life annuity
+<span class="math display">\[
+{\bar{a}_{\overline{40:\overline{5}|}}} = {\bar{a}_{5|}} +  {_{5|}\bar{a}_{40}} = \frac{1-v^5}{\delta} + 5.633860613 = 9.754860038;
+\]</span></li>
+<li>Whole life annuity:
+<span class="math display">\[\begin{eqnarray*}
+{^2\bar{a}_{40}} &amp;=&amp; \int_0^{\infty} e^{-.16\,t}\,e^{-0.025\,t}\,dt = \frac{1}{.185} = 5.405405405\\
+\Rightarrow Var[\Upsilon] &amp;=&amp; \frac{2}{.08}\left(9.523809524 - 5.405405405\right) - 9.523809524^2
+=12.25715513;
+\end{eqnarray*}\]</span></li>
+<li>Temporary life annuity
+<span class="math display">\[\begin{eqnarray*}
+{^2\bar{a}_{40:\overline{5}|}} &amp;=&amp; \int_0^{5} e^{-0.16\,t}\,e^{-0.025\,t}\,dt = \frac{1 - e^{-0.185\cdot 5}}{.105} = 3.261992329\\
+\Rightarrow Var[\Upsilon] &amp;=&amp; \frac{2}{.08}\left(3.889948911 - 3.261992329\right) - 3.889948911^2
+= .56721202;
+\end{eqnarray*}\]</span></li>
+<li>Deferred life annuity
+<span class="math display">\[\begin{eqnarray*}
+{\bar{a}_{45}} &amp;=&amp; \int_0^{\infty} e^{-0.08\,t}\,e^{-0.025\,t}\,dt = \frac{1}{.105} = 9.523809524,\\
+{^2\bar{a}_{45}} &amp;=&amp; \int_0^{\infty} e^{-0.16\,t}\,e^{-0.025\,t}\,dt = \frac{1}{.185} = 5.405405405,\\
+{_5p_{40}} &amp;=&amp; e^{-5\,.025} = .882496903\\
+\Rightarrow Var[\Upsilon] &amp;=&amp; \frac{2}{.08}\,0.882496903\cdot e^{-0.08\,5} \left(9.523809524 - 5.405405405\right) - 5.633860613^2\\
+&amp;=&amp; 9.086527519;
+\end{eqnarray*}\]</span></li>
+<li>Certain and life annuity
+<span class="math display">\[
+Var[\Upsilon] = 9.086527519.
+\]</span></li>
+</ul>
+</div>
+<p><strong>Exercise 4.1.5.</strong> From the Standard Ultimate Life Table, derive <span class="math inline">\({A^{(12)}_{35}}\)</span>, <span class="math inline">\({A^{(12)}_{\stackrel{1}{35}:\overline{30}|}}\)</span>, <span class="math inline">\({A^{(12)}_{35:\overline{30}|}}\)</span> as well as the variances for these insurances under the assumption of a uniform distribution of deaths over each year of age.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer415" href="javascript:toggleTheory('toggleTheory.MethodExer415','displayCode.MethodExer415');"><i><strong>Solution to Method Exercise 4.1.5</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer415" style="display: none">
+<p>We have
+<span class="math display">\[
+\left(1+\frac{i^{(12)}}{12}\right)^{12} = 1.05 \Rightarrow  i^{(12)} = \left(\left(1.05\right)^{\frac{1}{12}} - 1 \right)\cdot 12 = 0.048889485
+\]</span>
+and hence,
+<span class="math display">\[\begin{eqnarray*}
+{A_{35}^{(12)}} &amp;=&amp; \frac{i}{i^{(12)}}\, A_{35}= \frac{0.05}{0.048889485}\,0.09653 = 0.098722659,\\
+{A_{\stackrel{1}{35}:\overline{30}|}^{(12)}} &amp;=&amp; \frac{i}{i^{(12)}}\, {A_{\stackrel{1}{35}:\overline{30}|}} = 0.018969133,\\
+{A_{35:\overline{30}|}^{(12)}} &amp;=&amp; {A_{\stackrel{1}{35}:\overline{30}|}^{(12)}} + {A_{35:\stackrel{1}{\overline{30}|}}} = 0.018969133 + 0.219810517 = 0.23877965.
+\end{eqnarray*}\]</span>
+For the second moments:
+<span class="math display">\[\begin{eqnarray*}
+\delta^* &amp;=&amp; 2\cdot \delta = 2\, \log\{1.05\} = 0.097580328\\
+\Rightarrow i^* &amp;=&amp; e^{\delta^*} - 1 = 0.1025,\\
+i^{(12)*} &amp;=&amp; \left(\left(1+ i^*\right)^{\frac{1}{12}} - 1\right) \cdot 12 = 0.097978153.
+\end{eqnarray*}\]</span>
+and hence,
+<span class="math display">\[\begin{eqnarray*}
+{^2A_{35}^{(12)}} &amp;=&amp; \frac{i^*}{i^{(12)*}}\, {^2A_{35}}= \frac{0.1025}{0.097978153}\,0.01601 = 0.016748887\\
+\Rightarrow Var(Z) &amp;=&amp; {^2A_{35}^{(12)}} - \left({A_{35}^{(12)}}\right)^2 = 0.007002724.\\
+{^2A_{\stackrel{1}{35}:\overline{30}|}^{(12)}} &amp;=&amp; \frac{i^*}{i^{(12)*}}\, {^2A_{\stackrel{1}{35}:\overline{30}|}}= 0.008544456\\
+\Rightarrow Var(Z) &amp;=&amp; {^2A_{\stackrel{1}{35}:\overline{30}|}^{(12)}} - \left({A_{\stackrel{1}{35}:\overline{30}|}^{(12)}}\right)^2 = 0.008184628.\\
+{^2A_{35:\overline{30}|}^{(12)}}&amp;=&amp; {^2A_{\stackrel{1}{35}:\overline{30}|}^{(12)}} + {A_{35:\stackrel{1}{\overline{30}|}}} = 0.008544456 + 0.050859197 = 0.059403652\\
+\Rightarrow Var(Z) &amp;=&amp; 0.002387931.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 4.1.6.</strong> Determine the following quantities based on the SOA Ultimate Standard Life Table:
+<span class="math display">\[
+\ddot{a}_{60}^{(12)},\,a_{60}^{(12)},\,{_{5|}\ddot{a}_{60}^{(12)}} ,\,{_{5|}a_{60}^{(12)}},\,{\ddot{a}_{{60}:\overline{5}|}^{(12)}} ,\,{a_{{60}:\overline{5}|}^{(12)}},\, \ddot{a}_{\overline{{60}:\overline{5}|}}^{(12)},\,a_{\overline{{60}:\overline{5}|}}^{(12)}.
+\]</span></p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer416" href="javascript:toggleTheory('toggleTheory.MethodExer416','displayCode.MethodExer416');"><i><strong>Solution to Method Exercise 4.1.6</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer416" style="display: none">
+<p>Under the additional assumption of a uniform distribution of deaths over each year, we have
+<span class="math display">\[
+\ddot{a}_x^{(m)}  = \frac{1 - \frac{i}{i^{(m)}}A_x}{d^{(m)}}.
+\]</span></p>
+<p>Using the SULT :
+<span class="math display">\[\begin{eqnarray*}
+i^{(12)} &amp;=&amp; \left(1.05^{\frac{1}{12}} - 1\right)\cdot 12 = 0.048889485,\\
+d^{(12)} &amp;=&amp; \left(1 - 1.05^{-\frac{1}{12}}\right)\cdot 12 = 0.048691112,\\
+A_{60}^{(12)} &amp;= &amp;\frac{0.05}{0.048889485}\times 0.29028 = 0.29687365,\\
+\ddot{a}_{60}^{(12)} &amp;=&amp; \frac{1 - A_{60}^{(12)} }{d^{(12)}} = 14.44054826,
+\end{eqnarray*}\]</span>
+<span class="math display">\[\begin{eqnarray*}
+i^* &amp;=&amp; e^{2\,\delta} -1 = 0.1025,\\
+i^{(12)*} &amp;=&amp; \left(1.1025^{\frac{1}{12}} - 1\right)\cdot 12 = 0.097978153,\\
+{^2A_{60}^{(12)}} &amp;=&amp; \frac{0.1025}{0.097978153}0.10834 = 0.113340063,\\
+Var[\Upsilon] &amp;=&amp; \frac{{^2A_{60}^{(12)}} - \left(A_{60}^{(12)}\right)^2}{\left(d^{(12)}\right)^2}
+= 10.63178661.
+\end{eqnarray*}\]</span></p>
+<p>Similarly, in general we can write
+<span class="math display">\[\begin{eqnarray*}
+\ddot{a}_x^{(m)}  &amp;=&amp; \frac{1 - \frac{i}{i^{(m)}}A_x}{d^{(m)}} =  \frac{1 - \frac{i}{i^{(m)}}\left(1-d\,\ddot{a}_x\right)}{d^{(m)}}\\
+&amp;=&amp; \underbrace{\frac{i\,d}{i^{(m)}\,d^{(m)}}}_{\alpha(m)} \ddot{a}_x
+- \underbrace{\frac{i - i^{(m)}}{i^{(m)}\,d^{(m)}}}_{\beta(m)} =\alpha(m) \, \ddot{a}_x - \beta(m).
+\end{eqnarray*}\]</span>
+So, alternatively:
+<span class="math display">\[\begin{eqnarray*}
+\alpha(12) &amp;=&amp; \frac{i\,d}{i^{(12)}\,d^{(12)}} = 1.000197011 \approx 1,\\
+\beta(12) &amp;=&amp; \frac{i - i^{(12)}}{i^{(12)}\,d^{(12)}} = 0.46650802 = \frac{11.1962}{24} \approx \frac{11}{24}\\
+\Rightarrow \ddot{a}_{60}^{(12)} &amp;=&amp;\alpha(12) \, \ddot{a}_{60} - \beta(12) = 14.44052826.
+\end{eqnarray*}\]</span></p>
+<p>Note that in this representation, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are independent of the age, but only depend on <span class="math inline">\(i\)</span> and <span class="math inline">\(m\)</span>. In practice, the above observation that <span class="math inline">\(\alpha(m)\)</span> is close to 1 and <span class="math inline">\(\beta(m)\)</span> is close to <span class="math inline">\(\frac{m-1}{2\,m}\)</span> is often used for approximations:
+<span class="math display">\[
+\ddot{a}_x^{(m)} \approx \ddot{a}_x - \frac{m-1}{2\cdot m}.
+\]</span>
+We obtain:
+<span class="math display">\[
+\ddot{a}_{60} - \frac{12-1}{2\cdot 12} = 14.44576667 \approx \ddot{a}_{60}^{(12)}.
+\]</span>
+An even closer approximation is given by the so-called ``Three Term Woolhouse Formula," which approximates the difference in the second term via a two series Taylor approximation (note that it is given on the LTAM table):
+<span class="math display">\[
+\ddot{a}_x^{(m)} \approx \ddot{a}_x - \frac{m-1}{2\cdot m} - \frac{m^2-1}{12\times m^2}(\delta + \mu_x).
+\]</span>
+We obtain:
+<span class="math display">\[
+\ddot{a}_{60} - \frac{12-1}{2\cdot 12} - \frac{12^2-1}{12^3}(\log\{1.05\} - \log\{1-q_{60}\})= 14.44144738 \approx \ddot{a}_{60}^{(12)}.
+\]</span></p>
+Based on the <span class="math inline">\(\alpha\)</span>/<span class="math inline">\(\beta\)</span> representation, we can now find formulas for the actuarial present value of different life annuities:
+<p>Thus:
+<span class="math display">\[\begin{eqnarray*}
+{\ddot{a}_{60}^{(12)}} &amp;=&amp; 1.000197011 \cdot 14.9041 - 0.46650802 = 14.44052826,\\
+{a_{60}^{(12)}} &amp;=&amp; 1.000197011\cdot (14.9041 -1 )+ 0.450355658 = 14.35719492,\\
+{_{5|}\ddot{a}_{60}^{(12)}} &amp;=&amp; 1.000197011\cdot 10.3909 - 0.46650802 \cdot 0.766868732 = 10.03519671,\\
+{_{5|}a_{60}^{(12)}} &amp;=&amp; 1.000197011\cdot (9.62405)+ 0.450355658\cdot 0.766868732 = 9.971309719,\\
+{\ddot{a}_{60:\overline{5}|}^{(12)}} &amp;=&amp; 1.000197011\cdot 4.51318 - 0.46650802\cdot (1 - 0.766868732) = 4.405311541,\\
+{a_{60:\overline{5}|}^{(12)}} &amp;=&amp; 1.000197011\cdot 4.28005 + 0.450355658 \cdot (1 - 0.766868732) = 4.385885203,\\
+{\ddot{a}_{\overline{60:\overline{5}|}}^{(12)}} &amp;=&amp; 1.000281016\cdot 14.9368685 - 0.466508028\cdot (1 - 0.016657434) = 14.481074043,\\
+{a_{\overline{60:\overline{5}|}}^{(12)}} &amp;=&amp; 1.000281016\cdot 13.9535259 + 0.450355658 \cdot (1 - 0.016657434) = 14.39912879.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 4.1.7.</strong> Recursive formula for cash flow valuation.</p>
+<p>For a ten-year term insurance life insurance contract issued to age <span class="math inline">\(x\)</span>, you are given:</p>
+<ul>
+<li>Cash flow for each year is 100, that is, <span class="math inline">\(~_kC = 100\)</span>, for <span class="math inline">\(k=0,1,\ldots, 9\)</span>.</li>
+<li>The annual probabilities are given by:
+<span class="math display">\[
+\begin{array}{lcccccccccc}
+\hline
+k &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\ \hline
+q_{x+k} &amp; 0.01 &amp; 0.02 &amp; 0.03 &amp; 0.04 &amp; 0.05 &amp; 0.06 &amp; 0.07 &amp; 0.08 &amp; 0.09 &amp; 0.10 \\ \hline
+\end{array}
+\]</span></li>
+<li>The spot rate in each year is 0.05.</li>
+<li>No cash flows are paid after 10 years.</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li>Prove the following recursion formula:
+<span class="math display">\[
+A_{{x}:\enclose{actuarial}{n}} ^ {1} = v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
+\]</span></li>
+<li>Calculate the expectation and the variance of the present value of this 10-year term life insurance.</li>
+<li>Given one year later, use the result in a. above to calculate the expectation and the variance of the present value of a 9-year term life insurance issued to age <span class="math inline">\(x+1\)</span>.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer417" href="javascript:toggleTheory('toggleTheory.MethodExer417','displayCode.MethodExer417');"><i><strong>Solution to Method Exercise 4.1.7</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer417" style="display: none">
+<p>The following is the proof of part a.
+<span class="math display">\[
+\begin{eqnarray}
+A_{{x}:\enclose{actuarial}{n}} ^ {1} &amp;=&amp; \sum_{k=0}^{n-1} v^{k+1} ~_{k|}q_{x}  = \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} \\
+ &amp;=&amp; v q_x + \sum_{k=0}^{n-1} v^{k+1} ~_kp_{x} q_{x+k} = v q_x + v p_x \sum_{k=1}^{n-1} v^{k} ~_{k-1}p_{x+1} q_{(x+1)+(k-1)} \\
+ &amp;=&amp; v q_x + v p_x \sum_{k=0}^{n-2} v^{k+1} ~_kp_{x+1} q_{x+1+k} \\
+ &amp;=&amp; v q_x + v p_x \, A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1}
+\end{eqnarray}
+\]</span></p>
+<p>For b and c, calculations are done in <code>R</code> below. First, we calculate part b below.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="method-exercises.html#cb105-1"></a>t &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb105-2"><a href="method-exercises.html#cb105-2"></a>CashFlow &lt;-<span class="st"> </span><span class="dv">100</span></span>
+<span id="cb105-3"><a href="method-exercises.html#cb105-3"></a>SpotRate &lt;-<span class="st"> </span><span class="fl">0.05</span></span>
+<span id="cb105-4"><a href="method-exercises.html#cb105-4"></a>v &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">+</span>SpotRate)<span class="op">^</span>(<span class="op">-</span>t)</span>
+<span id="cb105-5"><a href="method-exercises.html#cb105-5"></a>qx &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.01</span>,<span class="fl">0.02</span>,<span class="fl">0.03</span>,<span class="fl">0.04</span>,<span class="fl">0.05</span>,<span class="fl">0.06</span>,<span class="fl">0.07</span>,<span class="fl">0.08</span>,<span class="fl">0.09</span>,<span class="fl">0.10</span>)</span>
+<span id="cb105-6"><a href="method-exercises.html#cb105-6"></a>px &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="op">-</span>qx[<span class="op">-</span><span class="dv">10</span>])</span>
+<span id="cb105-7"><a href="method-exercises.html#cb105-7"></a>Prob &lt;-<span class="st"> </span><span class="kw">cumprod</span>(px)<span class="op">*</span>qx</span>
+<span id="cb105-8"><a href="method-exercises.html#cb105-8"></a><span class="co"># Expected Present Value calculation for age x</span></span>
+<span id="cb105-9"><a href="method-exercises.html#cb105-9"></a>EPVx &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">*</span>v<span class="op">*</span>Prob)</span>
+<span id="cb105-10"><a href="method-exercises.html#cb105-10"></a><span class="co"># Standard Deviation of Present Value calculation</span></span>
+<span id="cb105-11"><a href="method-exercises.html#cb105-11"></a>EPVx2 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v<span class="op">^</span><span class="dv">2</span><span class="op">*</span>Prob)</span>
+<span id="cb105-12"><a href="method-exercises.html#cb105-12"></a>VarPVx &lt;-<span class="st"> </span>EPVx2 <span class="op">-</span><span class="st"> </span>EPVx<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb105-13"><a href="method-exercises.html#cb105-13"></a>StDevPVx &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx)</span>
+<span id="cb105-14"><a href="method-exercises.html#cb105-14"></a>out &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx, StDevPVx)</span>
+<span id="cb105-15"><a href="method-exercises.html#cb105-15"></a>out</span></code></pre></div>
+<pre><code>[1] 31.679 36.622</code></pre>
+<p>One year later, we follow the same exact procedure to calculate part c from scratch.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="method-exercises.html#cb107-1"></a>t1 &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9</span></span>
+<span id="cb107-2"><a href="method-exercises.html#cb107-2"></a>v1 &lt;-<span class="st"> </span>(<span class="dv">1</span><span class="op">+</span>SpotRate)<span class="op">^</span>(<span class="op">-</span>t1)</span>
+<span id="cb107-3"><a href="method-exercises.html#cb107-3"></a>qx1 &lt;-<span class="st"> </span>qx[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb107-4"><a href="method-exercises.html#cb107-4"></a>px1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="op">-</span>qx1[<span class="op">-</span><span class="dv">9</span>])</span>
+<span id="cb107-5"><a href="method-exercises.html#cb107-5"></a>Prob1 &lt;-<span class="st"> </span><span class="kw">cumprod</span>(px1)<span class="op">*</span>qx1</span>
+<span id="cb107-6"><a href="method-exercises.html#cb107-6"></a><span class="co"># Expected Present Value calculation for age x+1</span></span>
+<span id="cb107-7"><a href="method-exercises.html#cb107-7"></a>EPVx1 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">*</span>v1<span class="op">*</span>Prob1)</span>
+<span id="cb107-8"><a href="method-exercises.html#cb107-8"></a><span class="co"># Standard Deviation of Present Value calculation</span></span>
+<span id="cb107-9"><a href="method-exercises.html#cb107-9"></a>EPVx12 &lt;-<span class="st"> </span><span class="kw">sum</span>(CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v1<span class="op">^</span><span class="dv">2</span><span class="op">*</span>Prob1)</span>
+<span id="cb107-10"><a href="method-exercises.html#cb107-10"></a>VarPVx1 &lt;-<span class="st"> </span>EPVx12 <span class="op">-</span><span class="st"> </span>EPVx1<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb107-11"><a href="method-exercises.html#cb107-11"></a>StDevPVx1 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx1)</span>
+<span id="cb107-12"><a href="method-exercises.html#cb107-12"></a>out1 &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx1, StDevPVx1)</span>
+<span id="cb107-13"><a href="method-exercises.html#cb107-13"></a>out1</span></code></pre></div>
+<pre><code>[1] 32.589 38.055</code></pre>
+<p>To confirm using part 1, we first note that
+<span class="math display">\[
+A_{{x+1}:\enclose{actuarial}{n-1}} ^ {\,\,\,1} = \frac{A_{{x}:\enclose{actuarial}{n}} ^ {1} - v q_x}{v(1-q_x)}
+\]</span>
+To calculate the second moment, we simply replace <span class="math inline">\(v\)</span> by <span class="math inline">\(v^2\)</span> and square all the cash flows as well. This verification is done in R below:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="method-exercises.html#cb109-1"></a><span class="co"># to use the results in a to calculate c</span></span>
+<span id="cb109-2"><a href="method-exercises.html#cb109-2"></a>EPVx1 &lt;-<span class="st"> </span>(EPVx <span class="op">-</span><span class="st"> </span>CashFlow<span class="op">*</span>v[<span class="dv">1</span>]<span class="op">*</span>qx[<span class="dv">1</span>])<span class="op">/</span>(v[<span class="dv">1</span>]<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>qx[<span class="dv">1</span>]))</span>
+<span id="cb109-3"><a href="method-exercises.html#cb109-3"></a>EPVx12 &lt;-<span class="st"> </span>(EPVx2 <span class="op">-</span><span class="st"> </span>CashFlow<span class="op">^</span><span class="dv">2</span><span class="op">*</span>v[<span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span><span class="op">*</span>qx[<span class="dv">1</span>])<span class="op">/</span>(v[<span class="dv">1</span>]<span class="op">^</span><span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>qx[<span class="dv">1</span>]))</span>
+<span id="cb109-4"><a href="method-exercises.html#cb109-4"></a>VarPVx1 &lt;-<span class="st"> </span>EPVx12 <span class="op">-</span><span class="st"> </span>EPVx1<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb109-5"><a href="method-exercises.html#cb109-5"></a>StDevPVx1 &lt;-<span class="st"> </span><span class="kw">sqrt</span>(VarPVx1)</span>
+<span id="cb109-6"><a href="method-exercises.html#cb109-6"></a>out1 &lt;-<span class="st"> </span><span class="kw">c</span>(EPVx1, StDevPVx1)</span>
+<span id="cb109-7"><a href="method-exercises.html#cb109-7"></a>out1</span></code></pre></div>
+<pre><code>[1] 32.589 38.055</code></pre>
+<p>Finally, numbers are reconciled!!!</p>
+</div>
+</div>
+</div>
+<div id="chapter-5-method-exercises" class="section level2">
+<h2><span class="header-section-number">7.4</span> Chapter 5 Method Exercises</h2>
+<p><strong>Exercise 5.1.1.</strong> Using the standard ultimate life table, find:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\({_7P_{30}}\)</span>, the annual premium for a seven-pay (i.e., the premium is paid seven years) whole life insurance on a 30 year old.</li>
+<li><span class="math inline">\({_7P_{30:\overline{20}|}}\)</span>, the annual premium for a seven-pay (i.e., the premium is paid seven years) 20-year endowmemt insurance on a 30 year old.</li>
+<li><span class="math inline">\(P\left(_{20|}\ddot{a}_{30}\right)\)</span>, the annual premium during the deferral period for a 20-year deferred life annuity on a 30 year old.</li>
+<li><span class="math inline">\(P_{35:\overline{10}|}\)</span>, the annual premium for 10-year endowment insurance on a 30 year old.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer511" href="javascript:toggleTheory('toggleTheory.MethodExer511','displayCode.MethodExer511');"><i><strong>Solution to Method Exercise 5.1.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer511" style="display: none">
+<p>We have
+<span class="math display">\[\begin{eqnarray*}
+{_7P_{30}} &amp;=&amp; \frac{A_{30}}{\ddot{a}_{30:\overline{7}|}} = \frac{A_{30}}{\ddot{a}_{30} -{_{7|}\ddot{a}_{30}}}\\
+&amp;=&amp; \frac{A_{30}}{\ddot{a}_{30} - {_7p_{30}}\,(1.05)^{-7}\,\ddot{a}_{37}} = \frac{0.07698}{6.069988199} = 0.012682067,
+\end{eqnarray*}\]</span>
+<span class="math display">\[\begin{eqnarray*}
+{_7P_{30:\overline{20}|}} &amp;=&amp; \frac{A_{30:\overline{20}|}}{\ddot{a}_{30:\overline{7}|}}\\
+&amp;=&amp; \frac{A_{\stackrel{1}{30}:\overline{20}|} + A_{30:\stackrel{1}{\overline{20}|}}}{\ddot{a}_{30:\overline{7}|}}
+ = \frac{\left(A_{30} -{_{20}p_{30}}\,(1.05)^{-20}\,A_{50}\right) + {_{20}p_{30}}\,(1.05)^{-20}}{6.069988199} \\
+ &amp;=&amp; \frac{0.006454452+ 0.372540001}{6.069988199} = 0.062437428,
+ \end{eqnarray*}\]</span>
+<span class="math display">\[\begin{eqnarray*}
+ P\left({_{20|}\ddot{a}_{30}}\right) &amp;=&amp; \frac{_{20|}\ddot{a}_{30}}{\ddot{a}_{30:\overline{20}|}}
+= \frac{{_{20}p_{30}}\,(1.05)^{-20}\,\ddot{a}_{50}}{\left(\frac{1 - A_{30:\overline{20}|}}{d}\right)}\\
+&amp;=&amp; \frac{6.342307243}{13.04111648} = 0.486331615.
+\end{eqnarray*}\]</span>
+<span class="math display">\[\begin{eqnarray*}
+A_{35:\overline{10}|} &amp;=&amp; A_{\stackrel{1}{35}:\overline{10}|} + A_{35:\stackrel{1}{\overline{10}|}} = 0.6146328,\\
+\ddot{a}_{35:\overline{10}|} &amp;=&amp; \frac{1 - A_{35:\overline{10}|}}{d} = 8.092711194\\
+\Rightarrow P_{35:\overline{10}|} &amp;=&amp; 0.075948935
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 5.1.2.</strong> An insurance company issues a special policy to (65) with the following benefits:</p>
+<ul>
+<li>A death benefit of 50,000, payable at the end of year of death, provided death occurs before age 85.</li>
+<li>A whole life annuity-due of 15,000 per year starting on the policyholder’s 85th birthday.</li>
+</ul>
+<p>You are also given:</p>
+<ul>
+<li>Annual level premiums of P are payable for 20 years.</li>
+<li>Premiums are determined using the equivalence principle.</li>
+<li>Mortality follows the Standard Ultimate Life Table.</li>
+<li><span class="math inline">\(i = 0.05\)</span>.</li>
+</ul>
+<p>Calculate <span class="math inline">\(P\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer512" href="javascript:toggleTheory('toggleTheory.MethodExer512','displayCode.MethodExer512');"><i><strong>Solution to Method Exercise 5.1.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer512" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+q_{38} &amp;=&amp; 2 \times q_{38}^{SULT} = 0.000926,\\
+q_{39} &amp;=&amp; 2 \times q_{39}^{SULT} = 0.000986.\\
+\end{eqnarray*}\]</span>
+Since:
+<span class="math display">\[
+A_{\stackrel{1}{40}:\overline{20}|} = A_{40} - {_{20}E_{40}}\,A_{60},
+\]</span>
+we get:
+<span class="math display">\[\begin{eqnarray*}
+L &amp;=&amp; q_{38}\,v + (1-q_{38})\,q_{39}\,v^2 + (1-q_{38})\,(1-q_{39})\,v^2\, A_{\stackrel{1}{40}:\overline{20}|}\times 500,000 - Prem = 267.05.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 5.1.3.</strong> An insurer sells a single premium, 22-year term policy with a face amount of 500,000 to (38). You are given:</p>
+<ul>
+<li>The death benefit is payable at the end of the year of death.</li>
+<li>The premium is calculated assuming that mortality follows the Standard Ultimate Life Table (SULT).</li>
+<li>There are no expenses.</li>
+<li><span class="math inline">\(i = 0.05.\)</span></li>
+<li>The single premium is 7,245.</li>
+</ul>
+<p>Immediately after issue, it is discovered that the mortality rates should have been 200% of the SULT during the first 2 policy years, but reverting to the SULT mortality rates for the remaining 20 years. The premium is unchanged.</p>
+<p>Calculate the expected loss at issue on this policy.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer513" href="javascript:toggleTheory('toggleTheory.MethodExer513','displayCode.MethodExer513');"><i><strong>Solution to Method Exercise 5.1.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer513" style="display: none">
+<p>By the equivalence principle:
+<span class="math display">\[
+50,000\,A_{\stackrel{1}{65}:\overline{20}|} + 15,000 \,{_{20|}\ddot{a}_{65}} = P \, \ddot{a}_{65:\overline{20}|}.
+\]</span>
+Now:
+<span class="math display">\[\begin{eqnarray*}
+{_{20|}\ddot{a}_{65}} &amp;=&amp; {_{20}E_{65}}\,\ddot{a}_{85} = 1.6577,\\
+\ddot{a}_{65:\overline{20}|} &amp;=&amp; \ddot{a}_{65} - {_{20|}\ddot{a}_{65}} = 11.8921,\\
+A_{\stackrel{1}{65}:\overline{20}|} &amp;=&amp; A_{65} - {_{20}E_{65}}\,A_{85} = 0.1899.
+\end{eqnarray*}\]</span>
+Hence:
+<span class="math display">\[
+P = \frac{34,361.1001}{11.8921} = 2,889.41465.
+\]</span></p>
+</div>
+<p><strong>Exercise 5.1.4.</strong> For a special 2-year deferred whole life annuity-due on (40), you are given:</p>
+<ul>
+<li>The first annual payment is 1000.</li>
+<li>Payments increase by 4% (compound) each year.</li>
+<li>Level premiums are payable at the beginning of each of the first 2 years.</li>
+<li>The curtate expectation of life for (40), <span class="math inline">\(e_{40}\)</span> , is 11.06.</li>
+<li><span class="math inline">\(p_{40} = 0.99,\)</span> <span class="math inline">\(p_{41} = 0.98.\)</span></li>
+<li><span class="math inline">\(i = 0.04.\)</span></li>
+</ul>
+<p>Calculate the net premium.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer514" href="javascript:toggleTheory('toggleTheory.MethodExer514','displayCode.MethodExer514');"><i><strong>Solution to Method Exercise 5.1.4</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer514" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+\text{EPV Prem} &amp;=&amp; P\,(1+0.99\,v) = 1.9519\,P,\\
+\text{EPV Ben} &amp;=&amp; 1,000\,v^2\,{_2p_{40}}\,\underbrace{(1+v\,p_{42}\,1.04+v^2\,{_2p_{42}}\,1.04^2+...)}_{=e_{42}+1}.
+\end{eqnarray*}\]</span>
+Now:
+<span class="math display">\[
+e_{40} = p_{40} + {_2p_{40}}\,(1+e_{42}).
+\]</span>
+and:
+<span class="math display">\[
+(1+e_{42}) = 10.379 \, \Rightarrow \, P = \frac{9,310}{1.9519} = 4,770.
+\]</span></p>
+</div>
+<p><strong>Exercise 5.1.5.</strong> For a group of 250 individuals age x, you are given:</p>
+<ol style="list-style-type: lower-alpha">
+<li>The future lifetimes are independent.</li>
+<li>Each individual is paid 500 at the beginning of each year, if living.</li>
+<li><span class="math inline">\(A_x = 0.369131\)</span>.</li>
+<li><span class="math inline">\(^2A_x = 0.1774113\)</span>.</li>
+<li><span class="math inline">\(i=0.06\)</span>.</li>
+</ol>
+<p>Using the normal approximation, calculate the size of the fund needed at inception in order to be 90% certain of having enough money to pay the life annuities.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer515" href="javascript:toggleTheory('toggleTheory.MethodExer515','displayCode.MethodExer515');"><i><strong>Solution to Method Exercise 5.1.5</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer515" style="display: none">
+<p>See SOA Sample Questions # 186 for an alternative solution. If <span class="math inline">\(P\)</span> denotes the amount provided in the fund / the size of the fund, for the aggregate loss <span class="math inline">\(L^{agg}\)</span> we have:
+<span class="math display">\[\begin{eqnarray*}
+E\left[L^{agg}\right] &amp;=&amp; \mu = 250 \cdot 500 \cdot \ddot{a}_x - P = 250 \cdot 500 \cdot \frac{1 - A_x}{d} - P = 1,393,169.042 - P\\
+Var\left[L^{agg}\right] &amp;=&amp; \sigma^2 = 250 \cdot 500^2 \cdot Var(Y) = 250 \cdot 500^2 \cdot
+\frac{{^2A_x} - A_x^2}{d^2} = 802,781,083.3\\
+\Rightarrow \sigma &amp;=&amp; 28,333.29167.
+\end{eqnarray*}\]</span>
+For the probability that the fund will be sufficient, we have
+<span class="math display">\[\begin{eqnarray*}
+Pr\left(L^{agg} \leq 0 \right) &amp;=&amp; Pr\left( \frac{L^{agg} - \mu}{\sigma} \leq -\frac{\mu}{\sigma}\right) \stackrel{!}{=} 90\%\\
+\Rightarrow - \frac{\mu}{\sigma} &amp;\stackrel{!}{=}&amp; z_{90\%} = 1.282\\
+\Rightarrow -\mu &amp;=&amp; \sigma \cdot 1.282 = 36,323.40812\\
+\Rightarrow P &amp;=&amp; 36,323.40812 + 1,393,169.042  = 1,429,492.45.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="chapter-6-method-exercises" class="section level2">
+<h2><span class="header-section-number">7.5</span> Chapter 6 Method Exercises</h2>
+<p><strong>Exercise 6.1.1.</strong> Using the SOA illustrative life table:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Determine <span class="math inline">\(_5V_{30}\)</span> and <span class="math inline">\(_5V_{30:\overline{10}|}\)</span>.</li>
+<li>Determine reserves for insurance contracts with benefits payable at the moment of death, under the assumption of a uniform distribution of deaths over each year: <span class="math inline">\(_5\bar{V}\left(\bar{A}_{30}\right)\)</span>, <span class="math inline">\(_5\bar{V}\left(\bar{A}_{35:\overline{10}|}\right)\)</span>, and <span class="math inline">\(_1\bar{V}\left(\bar{A}_{60:\overline{5}|}\right)\)</span>.</li>
+</ol>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer611" href="javascript:toggleTheory('toggleTheory.MethodExer611','displayCode.MethodExer611');"><i><strong>Solution to Method Exercise 6.1.1</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer611" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+{_5V_{30}} &amp;=&amp; A_{35} - P_{30}\cdot \ddot{a}_{35}
+=  0.09653 - 0.003971439 \cdot 18.9728 = 0.021180673,\\
+ {_5\bar{V}\left(\bar{A}_{30}\right)} &amp;=&amp; \bar{A}_{35} - \bar{P}(\bar{A}_{30}) \cdot  \bar{a}_{35} = 0.098923627 - 0.004178649 \cdot 18.46840215 = 0.02175066,\\
+ {_5V_{30:\overline{10}|}} &amp;=&amp; A_{35:\overline{5}|} - P_{30:\overline{10}|}\cdot \ddot{a}_{35:\overline{5}|}
+=  0.783691731 - 0.075896166 \cdot 4.542473652 = 0.438935397,\\
+{_5\bar{V}\left(\bar{A}_{35:\overline{10}|}\right)} &amp;=&amp; \bar{A}_{40:\overline{5}|} - \bar{P}(\bar{A}_{35:\overline{10}|})\cdot \bar{a}_{40:\overline{5}|} = 0.783824135 - 0.077848915 \cdot 4.430726328 = 0.438896898,\\
+{_1\bar{V}\left(\bar{A}_{60:\overline{5}|}\right)} &amp;=&amp;  \bar{A}_{61:\overline{4}|} - \bar{P}(\bar{A}_{60:\overline{5}|})\cdot \bar{a}_{61:\overline{4}|} = 0.824139715 - 0.178710598 \cdot 3.604420844 = 0.179991512.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 6.1.2.</strong> For a fully discrete 15-payment whole life insurance of 100,000 on <span class="math inline">\((x)\)</span>, you are given:</p>
+<ol style="list-style-type: lower-alpha">
+<li>The level gross annual premium using the equivalence principle is 4669.95;</li>
+<li><span class="math inline">\(\ddot{a}_{x:\overline{15|}} = 11.35;\)</span></li>
+<li><span class="math inline">\(d = 0.02913;\)</span></li>
+<li>Expenses are incurred at the beginning of the year;</li>
+<li>Percent of premium expenses are 10% in the first year and 2% thereafter;</li>
+<li>Per policy expenses are <span class="math inline">\(K\)</span> in the first year and 5 in each year thereafter until death.</li>
+</ol>
+<p>Calculate K. (Note: Based on SOA Sample Questions No. 190, 170.)</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer612" href="javascript:toggleTheory('toggleTheory.MethodExer612','displayCode.MethodExer612');"><i><strong>Solution to Method Exercise 6.1.2</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer612" style="display: none">
+<p>By the equivalence principle, we have:
+<span class="math display">\[\begin{eqnarray*}
+P^g \times \ddot{a}_{\overline{x:15|}} &amp;=&amp; 100,000 A_x + (0.10 \,P^g + 0.02\,P^g \, a_{\overline{x:14|}} ) + (K + 5 \,a_x)\\
+\Leftrightarrow 4669.95 \times 11.35 &amp;=&amp; 51,481.97 + 0.10\, 4669.95 + 0.02\,4669.95\,\underbrace{(11.35 - 1)}_{=a_{\overline{x:14|}}} + (K  + 5 \,a_x).
+\end{eqnarray*}\]</span>
+Now:
+<span class="math display">\[\begin{eqnarray*}
+a_x &amp;=&amp; \ddot{a}_x - 1 = \frac{1 - A_x}{d}  - 1= \frac{1 - 0.5148197}{0.02913} - 1 = 15.66\\
+\Rightarrow 53,003.93 &amp;=&amp;  51,481.97 + 1,433.67 + K + 78.30 \\
+\Rightarrow K &amp;=&amp; 9.99.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 6.1.3.</strong> For a block of fully discrete whole life insurances of 1 on independent lives age <span class="math inline">\(x\)</span>, you are given:</p>
+<ul>
+<li><span class="math inline">\(i = 0.06;\)</span></li>
+<li><span class="math inline">\(A_x = 0.24905;\)</span></li>
+<li><span class="math inline">\(^2Ax =0.09476;\)</span></li>
+<li><span class="math inline">\(\pi= 0.025,\)</span> where <span class="math inline">\(\pi\)</span> is the gross premium for each policy;</li>
+<li>Losses are based on the gross premium.</li>
+</ul>
+<p>Using the normal approximation, calculate the minimum number of policies the insurer must
+issue so that the probability of a positive total loss on the policies issued is less than or equal to 0.05. %24</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer613" href="javascript:toggleTheory('toggleTheory.MethodExer613','displayCode.MethodExer613');"><i><strong>Solution to Method Exercise 6.1.3</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer613" style="display: none">
+<p>We have for the aggregate loss for <span class="math inline">\(N\)</span> policies:
+<span class="math display">\[\begin{eqnarray*}
+L^{agg} &amp;=&amp; \sum_{i=1}^N \big(v^{K_x^{(i)}+1} - \pi\,\underbrace{\ddot{a}_{\overline{\left.K_x^{(i)} + 1\right|}}}_{=\frac{1-v^{K_x^{(i)}+1}}{d}}\big)\\
+\Rightarrow \mu = E[L^{agg}] &amp;=&amp; N [A_x - \pi\,\ddot{a}_x]\\
+\text{and } \sigma^2 = Var[L^{agg}] &amp;=&amp; N \times Var[v^{K_x^{(i)}+1} (1 + \pi/d) - \pi/d]\\
+&amp;=&amp; N \, (1 + \pi/d)^2 \,[{^2A_x} - A_x^2].
+\end{eqnarray*}\]</span>
+Then:
+<span class="math display">\[\begin{eqnarray*}
+Pr(L^{agg} &gt; 0) &amp;\leq &amp; 0.05\\
+\Leftrightarrow .95 &amp;\geq &amp; Pr(L^{agg} \leq 0) = Pr\bigg(\frac{L^{agg} - \mu}{\sigma} \leq \frac{-N [A_x - \pi\,\ddot{a}_x]}{\sqrt{N} \, (1 + \pi/d) \sqrt{{^2A_x} - A_x^2}}\bigg)\\
+\Leftrightarrow \frac{N [ \pi\,\ddot{a}_x - A_x]}{\sqrt{N} \, (1 + \pi/d) \sqrt{{^2A_x} - A_x^2}} &amp;\geq&amp; 1.645\\
+\Leftrightarrow N &amp;\geq&amp;  \bigg(\frac{1.645 \times \overbrace{\sqrt{{^2A_x} - A_x^2}}^{=0.180925668}(1+\pi/d)}{\underbrace{A_x - \pi\,\ddot{a}_x}_{=0.082619583}}\bigg)^2 = \bigg(\frac{0.429072761}{0.082619583}\bigg)^2 = 26.97093017,
+\end{eqnarray*}\]</span>
+i.e. it must be more than 27 policies.</p>
+</div>
+<p><strong>Exercise 6.1.4.</strong> For a fully discrete 20-pay 35-year endowment insurance of $1,000 on (30) you are given:</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+n &amp; \ddot{a}_{30:\overline{n}|} &amp; \ddot{a}_{40:\overline{n}|} \\
+\hline
+10 &amp; 7.75 &amp; 7.70 \\
+20 &amp; 11.96 &amp; 11.76 \\
+25 &amp; 13.25 &amp; 12.95 \\
+35 &amp; 14.84 &amp; 14.27 \\
+\end{array}
+\]</span></p>
+<p>and that <span class="math inline">\(d=0.06\)</span>. Calculate the benefit reserve at the end of the 10th year.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer614" href="javascript:toggleTheory('toggleTheory.MethodExer614','displayCode.MethodExer614');"><i><strong>Solution to Method Exercise 6.1.4</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer614" style="display: none">
+<p>We have
+<span class="math display">\[\begin{eqnarray*}
+{_{10}^{20}V_{30:\overline{35}|}} &amp;=&amp; A_{40:\overline{25}|} - {_{20}P_{30:\overline{35}|}} \cdot \ddot{a}_{40:\overline{10}|}\\
+&amp;=&amp; \left(1 - d\cdot \ddot{a}_{40:\overline{25}|}\right) -\frac{1-d\cdot \ddot{a}_{30:\overline{35}|}}{\ddot{a}_{30:\overline{20}|}} \ddot 7.70 = 152.4381271.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 6.1.5.</strong> For a fully discrete 10-payment whole life insurance of 100,000 on <span class="math inline">\((x)\)</span>, you are given:</p>
+<ul>
+<li><span class="math inline">\(i=0.05\)</span></li>
+<li><span class="math inline">\(q_{x+9}=0.011\)</span></li>
+<li><span class="math inline">\(q_{x+10}=0.012\)</span></li>
+<li><span class="math inline">\(q_{x+11}=0.014\)</span></li>
+<li>The level annual benefit premium is 2078.</li>
+<li>The benefit reserve at the end of year 9 is 32,535.</li>
+</ul>
+<p>Calculate <span class="math inline">\(100,000\,A_{x+11}\)</span>.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer615" href="javascript:toggleTheory('toggleTheory.MethodExer615','displayCode.MethodExer615');"><i><strong>Solution to Method Exercise 6.1.5</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer615" style="display: none">
+<p>We have
+<span class="math display">\[\begin{eqnarray*}
+{_9^{10}V_x} &amp;=&amp; A_{x+9} - P_x \cdot \underbrace{\ddot{a}_{x+9:\overline{1}|}}_{=1}\\
+\Rightarrow A_{x+9} &amp;=&amp; {_9^{10}V_x} + P_x = 34,613\\
+\text{and }&amp;&amp; A_{x+11} \cdot \underbrace{A_{x+9:\stackrel{1}{\overline{2}|}}}_{=\frac{(1-0.011)(1-0.012)}{1.05^2}} + \underbrace{A_{\stackrel{1}{x+9}:\overline{2}|}}_{100,000\cdot \left(\frac{0.011}{1.05} + \frac{(1-0.011)}{1.05^2}0.012\right)}\\
+&amp;=&amp; A_{x+11} \cdot 0.88628753 + 2124.08163\\
+\Rightarrow A_{x+11} &amp;=&amp; \frac{34,613 - 2124.08163}{0.88628753} = 36,657.3119.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 6.1.6.</strong> For a fully discrete whole life insurance on 1000 on the select life <span class="math inline">\([60]\)</span>:</p>
+<ul>
+<li>The select period is 3 years.</li>
+<li><span class="math inline">\(i = 0.06\)</span></li>
+<li><span class="math inline">\(1000\, A_{[60]} = 359.00\)</span></li>
+<li><span class="math inline">\(A_{65} = 0.4397965\)</span></li>
+</ul>
+<p>Calculate <span class="math inline">\(1000\cdot {_5V_{[60]}}\)</span>, the benefit reserve at the end of year 5 for this insurance.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer616" href="javascript:toggleTheory('toggleTheory.MethodExer616','displayCode.MethodExer616');"><i><strong>Solution to Method Exercise 6.1.6</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer616" style="display: none">
+<p>Direct method:
+<span class="math display">\[\begin{eqnarray*}
+\ddot{a}_{[60]} &amp;=&amp; \frac{( 1 - A_{[60]})}{d} = 11.3243,\\
+1000\cdot P_{[60]} &amp;=&amp; \frac{1000\cdot A_{[60]}}{\ddot{a}_{[60]}} = 31.70,\\
+1000\cdot {_5V_{[60]}} &amp;=&amp; 1000\cdot A_{65} - 1000\cdot P_{[60]}\cdot \ddot{a}_{65} = 439.7965 - 31.70 \cdot 9.89693 = 126.06.
+\end{eqnarray*}\]</span></p>
+</div>
+<p><strong>Exercise 6.1.7.</strong> For a special fully discrete 3-year term insurance with level premiums on (x), you are given:</p>
+<p>The death benefits, <span class="math inline">\(b_{k+1}\)</span>, and mortality rates are:
+<span class="math display">\[
+\begin{array}{| c | c | c |}
+\hline
+k &amp; b_{k+1} &amp;  q_{x+k} \\
+\hline
+0  &amp; 250,000 &amp; 0.03 \\
+1 &amp; 500,000 &amp; 0.05 \\
+2 &amp; 750,000 &amp; 0.07 \\
+\hline
+\end{array}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(i = 0.06\)</span>.</li>
+</ul>
+<p>Calculate the net premium reserve at the end of the first policy year.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer617" href="javascript:toggleTheory('toggleTheory.MethodExer617','displayCode.MethodExer617');"><i><strong>Solution to Method Exercise 6.1.7</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer617" style="display: none">
+<p>For the premium:
+<span class="math display">\[\begin{eqnarray*}
+P(1 + {_1p_x}\,v + {_2p_x}\,v^2) &amp;=&amp; 250,000\,(q_x\,v+2\,p_x\,q_{x+1}\,v^2+3\,{_2p_x}\,q_{x+2}\,v^3)\\
+\Rightarrow P &amp;=&amp; 250,000 \frac{q_x\,v+2\,p_x\,q_{x+1}\,v^2+3\,{_2p_x}\,q_{x+2}\,v^3}{1 + {_1p_x}\,v + {_2p_x}\,v^2} = 25327.5.
+\end{eqnarray*}\]</span>
+Via the recursion relationship:
+<span class="math display">\[
+P (1+i) = p_x\,{_1V} + q_x\, Death benefit \Rightarrow {_1V} = \frac{P (1+i) -q_x\, 250,000}{p_x} = 19,945.
+\]</span></p>
+</div>
+<p><strong>Exercise 6.1.8.</strong> For a fully discrete whole life insurance of 1000 on (60), you are given:</p>
+<ul>
+<li><span class="math inline">\(\ddot{a}_{60} = 11.146,\, \ddot{a}_{61} = 10.903, \ddot{a}_{70} = 8.569\)</span></li>
+<li><span class="math inline">\(A_{60} = 0.3691,\, A_{61} = 0.3828, \, A_{70} = 0.5150\)</span></li>
+</ul>
+<p>Calculate the difference between the net premium reserve and the full preliminary term
+reserve at the end of the <span class="math inline">\(10^{\text{th}}\)</span> year.</p>
+<h5 style="text-align: center;">
+<a id="displayTheory.MethodExer618" href="javascript:toggleTheory('toggleTheory.MethodExer618','displayCode.MethodExer618');"><i><strong>Solution to Method Exercise 6.1.8</strong></i></a>
+</h5>
+<div id="toggleTheory.MethodExer618" style="display: none">
+<p>We have:
+<span class="math display">\[\begin{eqnarray*}
+P^n &amp;=&amp; \frac{1,000\,A_{60}}{\ddot{a}_{60}} = 33.115,\\
+P^n{fpt} &amp;=&amp; \frac{1,000\,A_{61}}{\ddot{a}_{61}} = 35.110,\\
+{_{10}V^{n}} - {_{10}V^{fpt}} &amp;=&amp; (1,000\,A_{70} - P^n\,\ddot{a}_{70}) - (1,000\,A_{70} - P^{fpt}\,\ddot{a}_{70})\\
+&amp;=&amp; (P^{fpt} - P^n)\,,\ddot{a}_{70} = 17.09.
+\end{eqnarray*}\]</span></p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="empirical-exercises.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-data-dictionary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["LifeCon.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

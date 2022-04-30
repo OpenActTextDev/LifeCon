@@ -1,7 +1,7 @@
 # Contingent Payment Techniques {#C:BenefitExt}
 
-
-$\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
+`r if (knitr:::is_html_output()) '$\\require{enclose}$'`
+<!-- Later equations only properly knit if this is beforehand once in the code -->
 
 `r chapnum = 4`
 
@@ -85,7 +85,8 @@ $$
 using $r$ is a counter for the number of $m^{th}$ly units. For probabilities associated with the cash flow indicator, as we saw in Chapter 3, we are concerned with payments either at the death or the survival of a policyholder age $x$. That is,
 
 $$
-\mathrm{E} \left(_{r/m}B\right) = \left\{\begin{array}{ccc}
+\mathrm{E} \left(_{r/m}B\right) = \left\{
+\begin{array}{cccc}
 \Pr\left(\frac{r-1}{m} < T_x \le \frac{r}{m}\right) & = & ~_{(r-1)/m} p_x - ~_{r/m} p_x& {\small \text{ prob of death}} \\
 \Pr\left(T_x \ge \frac{r}{m}\right) & =& ~_{r/m} p_x & {\small \text{ prob of survival} }.\\
 \end{array}
@@ -698,8 +699,6 @@ ggplot(KoreaMort,aes(x=Age, y=IdentOne)) + theme_bw() +
 
 
 **Exercise** Quantify the use of annuity mortality applied to life insurance, and vice-versa, as examples.
-
-$\require{enclose}$ <!-- Later equations only properly knit if this is beforehand once in the code -->
 
 ***
 
