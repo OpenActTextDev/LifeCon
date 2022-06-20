@@ -51,5 +51,10 @@ HideProofTheory <- function(arg1,arg2){
   return(paste(D1,arg1,'"',D2,arg1,C3,arg1,D4a,arg2,D4b,arg1,D5, sep=""))
 }
 
+HideHideTheory <- function(arg1,arg2){
+  arg2 <- "" -> arg1
+  return(paste(D1,arg1,'"',D2,arg1,C3,arg1,D4a,arg2,D4b,arg1,D5, sep=""))
+}
+
 ```
 
